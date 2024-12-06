@@ -1,0 +1,71 @@
+publiccodeYmlVersion: "0.4"
+name: Fascicolo del Cittadino
+applicationSuite: Fascicolo del Cittadino
+url: https://git.liguriadigitale.it/davi/Fascicolo_del_Cittadino_OpenSource/
+landingURL: https://fascicolo.comune.genova.it/portale/web/homepage/home
+softwareVersion: 1.26.0
+releaseDate: 2024-10-31
+logo: https://git.liguriadigitale.it/davi/Fascicolo_del_Cittadino_OpenSource/raw/branch/main/logo-fdc.png
+platforms:
+  - web
+categories:
+  - customer-service-and-support
+  - communications
+  - data-analytics
+  - data-visualization
+  - digital-citizenship
+  - e-signature
+  - mobile-payment
+  - online-booking
+  - payment-gateway
+  - taxes-management
+developmentStatus: stable
+softwareType: standalone/web
+description:
+  it-IT:
+    localisedName: Fascicolo del Cittadino
+    shortDescription: Applicazione per la gestione dei servizi e delle pratiche
+      amministrative comunali nella provincia di Genova
+    longDescription: Il Fascicolo del Cittadino del Comune di Genova è
+      un'applicazione che consente ai residenti e non solo di interagire
+      facilmente con i servizi comunali attraverso una piattaforma digitale.
+      Permette di consultare dati anagrafici, monitorare pratiche
+      amministrative, accedere a documenti ufficiali e molto altro,
+      centralizzando tutte le informazioni e le interazioni con la pubblica
+      amministrazione.
+    features:
+      - "Consultazione dati anagrafici: Visualizzazione delle informazioni
+        relative alla propria residenza e status anagrafico."
+      - "Gestione pratiche amministrative: Possibilità di seguire lo stato di
+        avanzamento delle pratiche in corso (ad esempio, dichiarazioni di
+        nascita, matrimonio, residenza)."
+      - "Accesso ai pagamenti: Visualizzazione e pagamento delle imposte locali
+        (TARI, IMU, ecc.) direttamente online."
+      - "Certificati online: Richiesta e rilascio di certificati anagrafici, di
+        stato civile e di residenza."
+      - "Domande per servizi comunali: Possibilità di inviare richieste per
+        ottenere servizi o benefici (ad esempio, asili nido, mense scolastiche,
+        bonus sociali)."
+legal:
+  license: EUPL-1.2
+maintenance:
+  type: internal
+localisation:
+  localisationReady: true
+  availableLanguages:
+    - it
+    - it-IT
+    - it-CH
+    - it-VA
+    - it-SM
+it:
+  countryExtensionVersion: "1.0"
+  conforme:
+    gdpr: true
+  piattaforme:
+    spid: true
+    cie: true
+    pagopa: true
+    io: true
+  riuso:
+    codiceIPA: cmge
