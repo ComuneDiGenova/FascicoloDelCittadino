@@ -11,7 +11,7 @@
 
 
 <div style="display: flex; flex-direction: row; align-items: center;">
-    <img align="right" style="max-width: 50px;" src="https://git.liguriadigitale.it/davi/fdc_backend/raw/branch/main/logo-fdc.png">
+    <img align="right" style="max-width: 50px;" src="https://raw.githubusercontent.com/ComuneDiGenova/FascicoloDelCittadino/7ef22ddff4f3841b908cc2da470d06c5cc953730/logo-fdc.png">
 </div>
 <h1>Fascicolo del Cittadino del Comune di Genova</h1>
 
