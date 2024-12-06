@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:extend>
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12 p-2">
+				<div class="mx-auto" wicket:id="stepPanel"></div>
+			</div>
+		</div>
+
+
+		<div class="row mb-2 mx-auto">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12 p-2">
+				<h4 class="text-center text-uppercase font-weight-semibold">
+					<wicket:message key="RichiestaRateizzazionePanel.titolo" />
+				</h4>
+			</div>
+		</div>
+
+		<div class="row mb-2 mx-auto" wicket:id="containerInfopagina">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12 p-2">
+				<div class="alert alert-info" role="alert">
+					<wicket:message key="RichiestaRateizzazionePanel.infoPagina" />
+				</div>
+			</div>
+		</div>
+
+		<div class="row" wicket:id="containerPrivacy">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12 p-2">
+				<div wicket:id="informativaPanel"></div>
+			</div>
+		</div>
+
+		<div wicket:id="containerStep1">
+			<div class="row mx-auto">
+				<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12 p-2">
+					<div wicket:id="datiPersonaliPanel"></div>
+				</div>
+			</div>
+			<div class="row mb-2 mx-auto">
+				<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12 p-2">
+					<h4 class="text-center">
+						<wicket:message key="RichiestaRateizzazionePanel.chiede" />
+					</h4>
+				</div>
+			</div>
+
+			<div class="row mx-auto">
+				<div class="col-sm-3 col-md-3 col-xl-3 col-lg-3 p-2">
+					<span class="font-weight-semibold"><wicket:message
+							key="RichiestaRateizzazionePanel.chiedecosa" />:</span>
+				</div>
+				<div class="col-sm-9 col-md-9 col-xl-9 col-lg-9 p-2">
+					<div wicket:id="numeroVerbale"></div>
+				</div>
+			</div>
+
+			<div class="row mt-2 mx-auto" wicket:id="proseguiInfo">
+				<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12 p-2">
+					<div class="alert alert-info" role="alert">
+						<wicket:message key="RichiestaRateizzazionePanel.proseguiInfo" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div wicket:id="containerStep2">
+			<div class="row mx-auto">
+				<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12 p-2">
+					<div wicket:id="datiIseePanel"></div>
+				</div>
+			</div>
+		</div>
+
+		<div wicket:id="containerStep3">
+			<div class="row mx-auto">
+				<div class="col-sm-12 col-md-12 col-xl-12 col-lg-12">
+					<div class="alert alert-success" role="alert">
+						<h3 class="text-left font-weight-semibold mb-0">
+							<wicket:message key="RichiestaRateizzazionePanel.esitoOk"></wicket:message>
+						</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row mx-auto">
+			<div class="col-sm-12 col-md-12 col-xl-12 col-lg-12">
+				<div class="d-sm-flex d-md-flex d-lg-flex d-xl-flex flex-sm-row justify-content-center">
+
+					<div class="p-1">
+						<button type="button" class="btn btn-primary" wicket:id="indietro">
+							<wicket:message key="RichiestaRateizzazionePanel.indietro" />
+						</button>
+					</div>
+
+					<div class="p-1">
+						<button type="submit" class="btn btn-primary" wicket:id="avanti">
+							<wicket:message key="RichiestaRateizzazionePanel.avanti" />
+						</button>
+					</div>
+
+
+					<div class="p-1">
+						<button type="submit" class="btn btn-primary" wicket:id="invia">
+							<wicket:message key="RichiestaRateizzazionePanel.invia" />
+						</button>
+					</div>
+
+
+					<div class="p-1">
+						<button type="submit" class="btn btn-primary" wicket:id="completa">
+							<wicket:message key="RichiestaRateizzazionePanel.completa" />
+						</button>
+					</div>
+
+
+					<div class="p-1">
+						<button type="button" class="btn btn-secondary"
+							wicket:id="annulla">
+							<wicket:message key="RichiestaRateizzazionePanel.annulla" />
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</wicket:extend>
+</body>
+</html>

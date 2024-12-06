@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="row content my-4 richiesta-agevolazione">
+			<div class="form-row mb-2 col-md-12 mx-auto">
+
+				<h4 class="col-12">
+					<wicket:message key="EsitoPanel.titolo" />
+				</h4>
+
+			</div>
+
+			<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback6"></div>
+
+			<div class="form-row mb-2 col-md-12 mx-auto"
+				wicket:id="containerPericolosita">
+
+				<div class="alert alert-danger col-12" role="alert">
+
+					<div class="row py-1 mb-2">
+						<div class="col-12">
+							<wicket:message key="EsitoPanel.zonaRossa" />
+							<button wicket:id="btnVaiAZonaRossa"></button>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</wicket:panel>
+</body>
+
+</html>

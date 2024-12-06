@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<wicket:panel>
+  <wicket:enclosure child="dettagliCalcolaBollo">
+		<div wicket:id="dettagliCalcolaBollo">
+			<wicket:enclosure child="tipoRiduzione">
+				<div class="row py-1 mb-2 border-bottom">
+					<div class="col-6">
+						<p class="card-text text-left font-weight-semibold">
+							<wicket:message key="BolloAutoPanel.tipoRiduzione" />
+							:
+						</p>
+					</div>
+					<div class="col-6">
+						<p class="card-text text-left d-table h-100"
+							wicket:id="tipoRiduzione">
+							<span class="d-table-cell text-capitalize align-middle"></span>
+						</p>
+					</div>
+				</div>
+			</wicket:enclosure>
+			<wicket:enclosure child="percentualeRiduzione">
+				<div class="row py-1 mb-2 border-bottom">
+					<div class="col-6">
+						<p class="card-text text-left font-weight-semibold">
+							<wicket:message key="BolloAutoPanel.percentualeRiduzione" />
+							:
+						</p>
+					</div>
+					<div class="col-6">
+						<p class="card-text text-left d-table h-100"
+							wicket:id="percentualeRiduzione">
+							<span class="d-table-cell text-capitalize align-middle"></span>
+						</p>
+					</div>
+				</div>
+			</wicket:enclosure>
+			<wicket:enclosure child="importoTassa">
+				<div class="row py-1 mb-2 border-bottom">
+					<div class="col-6">
+						<p class="card-text text-left font-weight-semibold">
+							<wicket:message key="BolloAutoPanel.importoTassa" />
+							:
+						</p>
+					</div>
+					<div class="col-6">
+						<p class="card-text text-left d-table h-100"
+							wicket:id="importoTassa">
+							<span class="d-table-cell text-capitalize align-middle"></span>
+						</p>
+					</div>
+				</div>
+			</wicket:enclosure>
+			<wicket:enclosure child="importoSanzioni">
+				<div class="row py-1 mb-2 border-bottom">
+					<div class="col-6">
+						<p class="card-text text-left font-weight-semibold">
+							<wicket:message key="BolloAutoPanel.importoSanzioni" />
+							:
+						</p>
+					</div>
+					<div class="col-6">
+						<p class="card-text text-left d-table h-100"
+							wicket:id="importoSanzioni">
+							<span class="d-table-cell text-capitalize align-middle"></span>
+						</p>
+					</div>
+				</div>
+			</wicket:enclosure>
+			<wicket:enclosure child="importoInteressi">
+				<div class="row py-1 mb-2 border-bottom">
+					<div class="col-6">
+						<p class="card-text text-left font-weight-semibold">
+							<wicket:message key="BolloAutoPanel.importoInteressi" />
+							:
+						</p>
+					</div>
+					<div class="col-6">
+						<p class="card-text text-left d-table h-100"
+							wicket:id="importoInteressi">
+							<span class="d-table-cell text-capitalize align-middle"></span>
+						</p>
+					</div>
+				</div>
+			</wicket:enclosure>
+			<wicket:enclosure child="importoTotale">
+				<div class="row py-1 mb-2 border-bottom">
+					<div class="col-6">
+						<p class="card-text text-left font-weight-semibold">
+							<wicket:message key="BolloAutoPanel.importoTotale" />
+							:
+						</p>
+					</div>
+					<div class="col-6">
+						<p class="card-text text-left d-table h-100"
+							wicket:id="importoTotale">
+							<span class="d-table-cell text-capitalize align-middle"></span>
+						</p>
+					</div>
+				</div>
+			</wicket:enclosure>
+			<wicket:enclosure child="esplicativo">
+				<div class="row py-1 mb-2 border-bottom">
+					<div class="col-6">
+						<p class="card-text text-left font-weight-semibold">
+							<wicket:message key="BolloAutoPanel.esplicativo" />
+							:
+						</p>
+					</div>
+					<div class="col-6">
+						<p class="card-text text-left d-table h-100"
+							wicket:id="esplicativo">
+							<span class="d-table-cell text-capitalize align-middle"></span>
+						</p>
+					</div>
+				</div>
+			</wicket:enclosure>
+			<wicket:enclosure child="ultimoGiornoUtile">
+				<div class="row py-1 mb-2 border-bottom">
+					<div class="col-6">
+						<p class="card-text text-left font-weight-semibold">
+							<wicket:message key="BolloAutoPanel.ultimoGiornoUtile" />
+							:
+						</p>
+					</div>
+					<div class="col-6">
+						<p class="card-text text-left d-table h-100"
+							wicket:id="ultimoGiornoUtile">
+							<span class="d-table-cell text-capitalize align-middle"></span>
+						</p>
+					</div>
+				</div>
+			</wicket:enclosure>
+			<wicket:enclosure child="ultimoGiornoUtileProrogato">
+				<div class="row py-1 mb-2">
+					<div class="col-6">
+						<p class="card-text text-left font-weight-semibold">
+							<wicket:message
+								key="BolloAutoPanel.ultimoGiornoUtileProrogato" />
+							:
+						</p>
+					</div>
+					<div class="col-6">
+						<p class="card-text text-left d-table h-100"
+							wicket:id="ultimoGiornoUtileProrogato">
+							<span class="d-table-cell text-capitalize align-middle"></span>
+						</p>
+					</div>
+				</div>
+			</wicket:enclosure>
+			<hr>
+
+	</div>
+ </wicket:enclosure>
+ <hr>
+</wicket:panel>
+
+</body>
+</html>

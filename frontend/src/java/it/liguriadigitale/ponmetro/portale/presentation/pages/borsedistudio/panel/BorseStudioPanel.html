@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="col-12">
+			<div class="h3">
+				<wicket:message key="BorseStudioPanel.titolo" />
+			</div>
+		</div>
+
+		<wicket:enclosure child="btnDomandaBorsaStudio">
+			<div class="col-sm-12 mt-2 mb-2">
+				<button class="btn btn-outline-primary">
+					<span wicket:id="btnDomandaBorsaStudio"></span>
+				</button>
+			</div>
+		</wicket:enclosure>
+
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12"
+				wicket:id="listaVuota">
+				<div class="alert alert-warning" role="alert">
+					<wicket:message key="BorseStudioPanel.vuoto" />
+				</div>
+			</div>
+		</div>
+
+		<div class="row content my-12 info-traffico">
+			<div class="col-lg-6 mb-4" wicket:id="pratiche">
+
+				<div class="card-wrapper card-space">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="" wicket:id="icona"></i>
+
+								<wicket:enclosure child="identificativoDomandaOnline">
+									<div class="h4 card-title text-left col-9 font-weight-normal">
+										<wicket:message
+											key="BorseStudioPanel.identificativoDomandaOnline" />
+										<span class="text-capitalize font-weight-semibold"
+											wicket:id="identificativoDomandaOnline"></span> <br />
+									</div>
+								</wicket:enclosure>
+
+							</div>
+
+							<div wicket:id="identificativoDomanda"></div>
+
+							<div wicket:id="nomeRichiedente"></div>
+
+							<div wicket:id="cognomeRichiedente"></div>
+
+							<div wicket:id="codiceFiscaleRichiedente"></div>
+
+							<div wicket:id="matricolaRichiedente"></div>
+
+							<div wicket:id="nomeIntestatarioBorsa"></div>
+
+							<div wicket:id="cognomeIntestatarioBorsa"></div>
+
+							<div wicket:id="codiceIntestatarioBorsa"></div>
+
+							<div wicket:id="dataNascitaIntestatarioBorsa"></div>
+
+							<div wicket:id="identificativoDocumentoIntestatarioBorsa"></div>
+
+							<div wicket:id="scuolaModificata"></div>
+
+							<div wicket:id="dataRichiesta"></div>
+
+							<div wicket:id="codiceAnnoScolastico"></div>
+
+							<div wicket:id="descrizioneAnnoScolastico"></div>
+
+							<div wicket:id="statoPratica"></div>
+
+							<div wicket:id="importoRichiesto"></div>
+
+							<div wicket:id="dataPresentazioneIsee"></div>
+
+							<div wicket:id="dataValiditaIsee"></div>
+
+							<div wicket:id="importoIsee"></div>
+
+							<div wicket:id="numeroProtocolloIsee"></div>
+
+							<div wicket:id="annoProtocolloIsee"></div>
+
+							<div wicket:id="email"></div>
+
+							<div wicket:id="cellulare"></div>
+
+							<div wicket:id="codiceParentela"></div>
+
+							<div wicket:id="descrizioneParentela"></div>
+
+							<div wicket:id="numeroFigliACarico"></div>
+
+							<div wicket:id="numeroPersoneDisabili"></div>
+
+							<div wicket:id="indirizzoCompletoResidenza"></div>
+
+							<div wicket:id="domicilioGenovaCompleto"></div>
+
+							<div wicket:id="domicilioNoGenovaCompleto"></div>
+
+							<div wicket:id="codiceCategoria"></div>
+
+							<div wicket:id="descrizioneCategoria"></div>
+
+							<div wicket:id="minClasse"></div>
+
+							<div wicket:id="maxClasse"></div>
+
+							<div wicket:id="codiceScuola"></div>
+
+							<div wicket:id="descrizioneScuola"></div>
+
+							<div wicket:id="classe"></div>
+
+							<div wicket:id="sezione"></div>
+
+							<div wicket:id="iban"></div>
+
+							<div wicket:id="importo"></div>
+
+							<div wicket:id="figlioVittimaLavoro"></div>
+
+							<div wicket:id="iseeDifforme"></div>
+
+							<div wicket:id="dichiarazioneSpesaFiscale"></div>
+
+							<div wicket:id="liquidato"></div>
+
+							<div wicket:id="accettazioneNucleoIseeAnagrafico"></div>
+
+						<!--  	<div class="row py-1 mb-2 border-bottom"
+								style="text-align: left;"
+								wicket:id="btnScaricaFileFiglioVittima"></div>
+
+							<div class="row py-1 mb-2 border-bottom"
+								style="text-align: left;" wicket:id="btnScaricaFileScontrini"></div>
+
+							<div class="row py-1 mb-2 border-bottom"
+								style="text-align: left;" wicket:id="btnScaricaFileDomanda"></div> -->
+
+							<div wicket:id="containerDocumentiOut">
+								<div class="row py-1 mb-2 border-bottom"
+									style="text-align: left;" wicket:id="btnScaricaFile"></div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-12" wicket:id="pagination"></div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

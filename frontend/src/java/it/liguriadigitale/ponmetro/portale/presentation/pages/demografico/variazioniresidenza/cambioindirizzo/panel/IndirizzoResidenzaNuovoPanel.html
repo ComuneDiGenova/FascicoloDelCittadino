@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<wicket:head>
+	<style>
+div.wicket-aa {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, Verdana;
+	font-size: 14px;
+	background-color: white;
+	border-width: 1px;
+	border-color: #cccccc;
+	border-style: solid;
+	padding: 2px;
+	margin: 1px 0 0 0;
+	text-align: left;
+}
+
+div.wicket-aa ul {
+	list-style: none;
+	padding: 2px;
+	margin: 0;
+}
+
+div.wicket-aa ul li.selected {
+	background-color: #4e73df;
+	padding: 2px;
+	color: white;
+	margin: 0;
+}
+div.wicket-aa ul li {
+	padding: 3.5px;
+}
+</style>
+</wicket:head>
+
+</head>
+
+<body>
+
+	<wicket:panel>
+
+		<div class="row content my-4 richiesta-agevolazione">
+			<div class="col-md-12 text-start mb-4">
+
+				<div class="col-lg-12 mx-auto riepilogo">
+					<form class="needs-validation was-validated mb-3 col-lg-12 mx-auto"
+						enctype="multipart/form-data" onsubmit="return checkForm(this);"
+						wicket:id="form">
+
+						<div
+							class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici">
+
+							<h4 class="col-12">
+								<wicket:message
+									key="IndirizzoResidenzaNuovoPanel.nuovoIndirizzo" />
+							</h4>
+							
+							<div class="form-group mb-2 col-md-12 mx-auto">
+									<label for="autocompleteViario"  class="sr-only"><wicket:message
+											key="IndirizzoResidenzaNuovoPanel.autocompleteViario" />:</label> 
+									<input
+										type="text" id="autocompleteViario" name="autocompleteViario"
+										title="Indirizzo" wicket:id="autocompleteViario"
+										class="form-control" placeholder="Inserisci via e numero civico" required/>
+									<span class="autocomplete-icon" aria-hidden="true">
+									    <svg class="icon icon-sm"><use href="/portale/bootstrap-italia/svg/sprites.svg#it-search"></use></svg>
+									</span>
+							</div>
+
+							<div class="form-row mb-2 col-md-12 mx-auto"
+								wicket:id="containerScalaInterno" style="padding-top: 20px;">
+
+								<div class="col-sm-6 mb-6">
+									<div class="select-wrapper">
+										<label for="selectToponomastica"><wicket:message
+												key="IndirizzoResidenzaNuovoPanel.internoEdEsponente" /></label> <select
+											id="selectToponomastica" wicket:id="selectToponomastica">
+											<option selected="" value=""><wicket:message
+													key="IndirizzoResidenzaNuovoPanel.scegliUnOpzione" /></option>
+											<wicket:container wicket:id="repeatingView">
+												<optgroup wicket:id="optGroup">
+													<wicket:container wicket:id="selectOptions">
+														<option wicket:id="option"></option>
+													</wicket:container>
+												</optgroup>
+											</wicket:container>
+										</select>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+
+						<div
+							class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici">
+
+							<h4 class="col-12">
+								<wicket:message key="IndirizzoResidenzaNuovoPanel.titolarita" />
+							</h4>
+
+							<div class="alert alert-info" role="alert">
+								<wicket:message
+									key="IndirizzoResidenzaNuovoPanel.infoTitolarita" />
+							</div>
+
+							<div class="col-sm-6 mb-6">
+								<label> <wicket:message
+										key="IndirizzoResidenzaNuovoPanel.tipoOccupazione" />
+								</label>
+								<div class="select-wrapper text-start">
+									<select wicket:id="comboTipoOccupazione" required></select>
+								</div>
+							</div>
+
+							<div class="form-row mb-2 col-md-12 mx-auto"
+								wicket:id="containerDescrizioneTitolo">
+								<input class="form-control" id="descrizioneTitolo" type="text"
+									placeholder="Descrizione titolo" wicket:id="descrizioneTitolo"
+									style="font-size: smaller;"> <small><wicket:message
+										key="IndirizzoResidenzaNuovoPanel.descrizioneTitolo" /></small> <label
+									class="sr-only" for="descrizioneTitolo"> <wicket:message
+										key="IndirizzoResidenzaNuovoPanel.descrizioneTitolo" />
+								</label>
+							</div>
+
+							<div class="form-row mb-2 col-md-12 mx-auto"
+								wicket:id="containerContratto">
+
+
+								<div class="form-row mb-2 col-md-12 mx-auto">
+									<input class="form-control" id="comuneAgEntrate" type="text"
+										placeholder="Inizia a digitare e scegli dal men&ugrave; a tendina il Comune Agenzia Entrate"
+										wicket:id="comuneAgEntrate" style="font-size: smaller;">
+									<small><wicket:message
+											key="IndirizzoResidenzaNuovoPanel.comuneAgEntrate" /></small> <label
+										class="sr-only" for="comuneAgEntrate"> <wicket:message
+											key="IndirizzoResidenzaNuovoPanel.comuneAgEntrate" />
+									</label> <span class="autocomplete-icon" aria-hidden="true"> <svg
+											class="icon icon-sm">
+									<use
+												xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-search"></use></svg>
+									</span>
+								</div>
+
+								<div class="row">
+									<div class="form-group col-md-6 mb-0">
+										<input class="form-control it-date-datepicker"
+											id="dataContratto" type="date"
+											placeholder="Data in formato gg/mm/aaaa"
+											wicket:id="dataContratto" style="font-size: smaller;">
+										<small><wicket:message
+												key="IndirizzoResidenzaNuovoPanel.dataContratto" /></small> <label
+											class="sr-only" for="dataContratto"> <wicket:message
+												key="IndirizzoResidenzaNuovoPanel.dataContratto" />
+										</label>
+									</div>
+									
+									<div class="form-group mb-2 col-md-6 mx-auto">
+									<input class="form-control" id="numeroContratto" type="text"
+										placeholder="Numero contratto" wicket:id="numeroContratto"
+										style="font-size: smaller;"> <small><wicket:message
+											key="IndirizzoResidenzaNuovoPanel.numeroContratto" /></small> <label
+										class="sr-only" for="numeroContratto"> <wicket:message
+											key="IndirizzoResidenzaNuovoPanel.numeroContratto" />
+									</label>
+									</div>
+								</div>
+								
+
+								
+							</div>
+
+						</div>
+
+						<div
+							class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici"
+							wicket:id="containerDatiCatastali">
+
+							<h4 class="col-12">
+								<wicket:message key="IndirizzoResidenzaNuovoPanel.datiCatastali" />
+							</h4>
+							
+							<div>
+								<div class="row">
+									<div class="form-group col-md-3">
+										<input class="form-control" id="sezione" type="text"
+											placeholder="Sezione" wicket:id="sezione"
+											style="font-size: smaller;"> <small><wicket:message
+												key="IndirizzoResidenzaNuovoPanel.sezione" /></small> <label
+											class="sr-only" for="sezione"> <wicket:message
+												key="IndirizzoResidenzaNuovoPanel.sezione" />
+										</label>
+									</div>
+									<div class="form-group col-md-3">
+										<input class="form-control" id="foglio" type="text"
+											placeholder="Foglio" wicket:id="foglio"
+											style="font-size: smaller;"> <small><wicket:message
+												key="IndirizzoResidenzaNuovoPanel.foglio" /></small> <label
+											class="sr-only" for="foglio"> <wicket:message
+												key="IndirizzoResidenzaNuovoPanel.foglio" />
+										</label>
+										
+									</div>
+									<div class="form-group col-md-3">
+										<input class="form-control" id="numero" type="text"
+											placeholder="Numero" wicket:id="numero"
+											style="font-size: smaller;"> <small><wicket:message
+												key="IndirizzoResidenzaNuovoPanel.numero" /></small> <label
+											class="sr-only" for="numero"> <wicket:message
+												key="IndirizzoResidenzaNuovoPanel.numero" />
+										</label>
+									</div>
+									<div class="form-group col-md-3">
+										<input class="form-control" id="subalterno" type="text"
+											placeholder="Subalterno" wicket:id="subalterno"
+											style="font-size: smaller;"> <small><wicket:message
+												key="IndirizzoResidenzaNuovoPanel.subalterno" /></small> <label
+											class="sr-only" for="subalterno"> <wicket:message
+												key="IndirizzoResidenzaNuovoPanel.subalterno" />
+										</label>
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+
+						<div
+							class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici"
+							wicket:id="containerDatiProprietario">
+
+							<h4 class="col-12">
+								<wicket:message
+									key="IndirizzoResidenzaNuovoPanel.datiProprietario" />
+							</h4>
+							
+							<div>
+								<div class="row">
+									<div class="form-group col-md-6">
+										<input class="form-control" id="nomeProprietario" type="text"
+											placeholder="Nome" wicket:id="nomeProprietario"
+											style="font-size: smaller;" required> <small><wicket:message
+												key="IndirizzoResidenzaNuovoPanel.nome" /></small> <label
+											class="sr-only" for="nomeProprietario"> <wicket:message
+												key="IndirizzoResidenzaNuovoPanel.nome" />
+										</label>
+									</div>
+									<div class="form-group col-md-6">
+										<input class="form-control" id="cognomeProprietario" type="text"
+											placeholder="Cognome" wicket:id="cognomeProprietario"
+											style="font-size: smaller;" required> <small><wicket:message
+												key="IndirizzoResidenzaNuovoPanel.cognome" /></small> <label
+											class="sr-only" for="cognomeProprietario"> <wicket:message
+												key="IndirizzoResidenzaNuovoPanel.cognome" />
+										</label>
+									</div>
+								</div>
+							</div>
+							
+							<div>
+								<div class="row">
+									<div class="form-group col-md-6">
+										<div class="select-wrapper text-start">
+											<label for="nazionalita"> <wicket:message
+												key="IndirizzoResidenzaNuovoPanel.nazionalita" />
+											</label>
+											<select id="nazionalita" wicket:id="nazionalita" required></select>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div>
+								<div class="row">
+									<div class="form-group col-md-6">
+										<input class="form-control" id="ragioneSocialeProprietario"
+											type="text" placeholder="Ragione sociale"
+											wicket:id="ragioneSocialeProprietario"
+											style="font-size: smaller;"> <small><wicket:message
+												key="IndirizzoResidenzaNuovoPanel.ragioneSociale" /></small> <label
+											class="sr-only" for="ragioneSocialeProprietario"> <wicket:message
+												key="IndirizzoResidenzaNuovoPanel.ragioneSociale" />
+										</label>
+									</div>
+									<div class="form-group col-md-6">
+										<input class="form-control" id="cfProprietario" type="text"
+											placeholder="Codice Fiscale" wicket:id="cfProprietario"
+											style="font-size: smaller;" required> <small><wicket:message
+												key="IndirizzoResidenzaNuovoPanel.cf" /></small> <label
+											class="sr-only" for="cfProprietario"> <wicket:message
+												key="IndirizzoResidenzaNuovoPanel.cf" />
+										</label>
+									</div>
+								</div>
+							</div>
+							
+							<div>
+								<div class="row">
+									<div class="form-group col-md-6">
+										<input class="form-control" id="comuneNascitaProprietario"
+											type="text"
+											placeholder="Solo se sei nato in Italia inizia a digitare e scegli dal men&ugrave; a tendina il Comune Nascita"
+											wicket:id="comuneNascitaProprietario"
+											style="font-size: smaller;"> <small><wicket:message
+												key="IndirizzoResidenzaNuovoPanel.comuneNascita" /></small> <label
+											class="sr-only" for="comuneNascitaProprietario"> <wicket:message
+												key="IndirizzoResidenzaNuovoPanel.comuneNascita" />
+										</label> <span class="autocomplete-icon" aria-hidden="true"> <svg
+												class="icon icon-sm">
+											<use
+													xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-search"></use></svg>
+										</span>
+									</div>
+									<div class="form-group col-md-6">
+										<input class="form-control it-date-datepicker"
+											id="dataNascitaProprietario" type="date"
+											placeholder="Data in formato gg/mm/aaaa"
+											wicket:id="dataNascitaProprietario" style="font-size: smaller;"
+											required> <small><wicket:message
+												key="IndirizzoResidenzaNuovoPanel.dataNascita" /></small> <label
+											class="sr-only" for="dataNascitaProprietario"> <wicket:message
+												key="IndirizzoResidenzaNuovoPanel.dataNascita" />
+										</label>
+									</div>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="form-group col-md-12 mb-0">
+									<input class="form-control" id="comuneResidenzaProprietario"
+									type="text"
+									placeholder="Inizia a digitare e scegli dal men&ugrave; a tendina il Comune Residenza"
+									wicket:id="comuneResidenzaProprietario"
+									style="font-size: smaller;"> <small><wicket:message
+										key="IndirizzoResidenzaNuovoPanel.comuneResidenza" /></small> <label
+									class="sr-only" for="comuneResidenzaProprietario"> <wicket:message
+										key="IndirizzoResidenzaNuovoPanel.comuneResidenza" />
+									</label> <span class="autocomplete-icon" aria-hidden="true"> <svg
+											class="icon icon-sm">
+										<use
+												xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-search"></use></svg>
+									</span>
+								
+								</div>
+							</div>
+							<br>
+							<div class="row">
+								<div class="form-group col-md-12 mb-2 mx-auto">
+										<input class="form-control" id="indirizzoProprietario"
+										type="text" placeholder="Indirizzo"
+										wicket:id="indirizzoProprietario" style="font-size: smaller;"
+										required> <small><wicket:message
+											key="IndirizzoResidenzaNuovoPanel.indirizzo" /></small> <label
+										class="sr-only" for="indirizzoProprietario"> <wicket:message
+											key="IndirizzoResidenzaNuovoPanel.indirizzo" />
+									</label>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="form-group col-md-6 mb-2 mx-auto">
+									<input class="form-control" id="emailProprietario" type="email"
+										placeholder="Email" wicket:id="emailProprietario"
+										style="font-size: smaller;" required> <small><wicket:message
+											key="IndirizzoResidenzaNuovoPanel.email" /></small> <label
+										class="sr-only" for="emailProprietario"> <wicket:message
+											key="IndirizzoResidenzaNuovoPanel.email" />
+									</label>
+								</div>
+								
+								<div class="form-group col-md-6 mb-2 mx-auto">
+									<input class="form-control" id="telefonoProprietario"
+										type="text" placeholder="Telefono"
+										wicket:id="telefonoProprietario" style="font-size: smaller;"
+										required> <small><wicket:message
+											key="IndirizzoResidenzaNuovoPanel.telefono" /></small> <label
+										class="sr-only" for="telefonoProprietario"> <wicket:message
+											key="IndirizzoResidenzaNuovoPanel.telefono" />
+									</label>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="form-group col-md-12 mb-3 text-center">
+							<div class="form-group col-md-12 mb-3 text-center">
+								<button class="btn btn-primary" type="submit" wicket:id="avanti">
+									<wicket:message key="IndirizzoResidenzaNuovoPanel.avanti" />
+								</button>
+								<a class="btn btn-secondary" href="#" role="button"
+									wicket:id="indietro"> <wicket:message
+										key="IndirizzoResidenzaNuovoPanel.indietro" />
+								</a> <a class="btn btn-secondary" href="#" role="button"
+									wicket:id="annulla"> <wicket:message
+										key="IndirizzoResidenzaNuovoPanel.annulla" />
+								</a>
+							</div>
+						</div>
+					</form>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="alertViario">
+			<div class="alert alert-danger" role="alert">
+				<wicket:message key="IndirizzoResidenzaNuovoPanel.alertViario" />
+			</div>
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="alertComune">
+			<div class="alert alert-danger" role="alert">
+				<wicket:message key="IndirizzoResidenzaNuovoPanel.alertComune" />
+			</div>
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback2"></div>
+
+	</wicket:panel>
+
+
+</body>
+
+</html>

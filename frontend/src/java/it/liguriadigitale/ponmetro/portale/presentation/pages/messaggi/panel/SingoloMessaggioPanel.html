@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd" >
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>
+
+		<div class="col-sm-12 mt-2 mb-4">
+			<h3 class="text-left font-weight-semibold mb-0"><wicket:message key="SingoleMessaggioPanel.title" /></h3>
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2">
+			<div class="table-responsive">
+				<table class="table table-striped table-sm">
+					<thead>
+						<tr>
+							<th scope="col"><wicket:message key="MessaggiPanel.comparto"/></th>
+							<th scope="col"><wicket:message key="MessaggiPanel.testo"/></th>
+							<th scope="col"><wicket:message key="MessaggiPanel.data"/></th>
+							<th scope="col"><wicket:message key="MessaggiPanel.azioni"/></th>
+						</tr>
+					</thead>
+					
+					<tbody>
+						<tr wicket:id="listaMessaggi">
+							<td class="align-middle" wicket:id="compartoDescrizione"></td>
+							<td class="align-middle" wicket:id="notificaTesto"></td>
+							<td class="align-middle" wicket:id="notificaData"></td>
+							<td class="align-middle"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>  
+
+	</wicket:panel>
+</body>
+</html>

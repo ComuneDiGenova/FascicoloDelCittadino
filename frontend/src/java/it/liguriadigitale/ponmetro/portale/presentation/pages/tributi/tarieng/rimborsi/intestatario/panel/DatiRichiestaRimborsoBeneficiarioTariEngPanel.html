@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="form-row col-12">
+			<div class="row">
+				<div class="col">
+					<div wicket:id="nomeBeneficiario"></div>
+				</div>
+				<div class="col">
+					<div wicket:id="cognomeBeneficiario"></div>
+				</div>
+			</div>
+			
+		</div>
+
+		<div class="form-row col-12">
+			<div class="row">
+				<div class="col">
+					<div wicket:id="codiceFiscaleBeneficiario"></div>
+				</div>
+				<div class="col"></div>
+			</div>
+		
+		</div>
+
+		<div class="form-row col-12">
+			<div class="col-md-12">
+				<div wicket:id="indirizzoBeneficiario"></div>
+			</div>
+		</div>
+
+		<div class="form-row col-12">
+			<div class="row">
+				<div class="col">
+					<div wicket:id="comuneBeneficiario"></div>
+				</div>
+				<div class="col">
+					<div wicket:id="capBeneficiario"></div>
+				</div>
+			</div>
+		
+		</div>
+
+		<div class="form-row col-12">
+			<div class="form-group col-md-12">
+				<div class="select-wrapper">
+					<label> <wicket:message
+							key="DatiRichiestaRimborsoBeneficiarioTariEngPanel.modalitaDiPagamento" />
+					</label><select wicket:id="modalitaDiPagamento"></select>
+				</div>
+			</div>
+		</div>
+
+		<div wicket:id="accreditoSuContoCorrentePanel"></div>
+
+		<div wicket:id="ritiroPressoTesoreriaPanel"></div>
+
+		<div class="form-row col-12" wicket:id="containerUploadAllegati">
+		
+			<form class="mb-3 col-md-12 mx-auto" enctype="multipart/form-data"
+				onsubmit="return checkForm(this);" wicket:id="formUploadAllegati">
+
+				<wicket:enclosure child="containerErede">
+					<div wicket:id="containerErede">
+						<medium> <wicket:message
+							key="DatiRichiestaRimborsoBeneficiarioTariEngPanel.inserisciDocumentiErede" /></medium>
+					</div>
+				</wicket:enclosure>
+
+				<wicket:enclosure child="containerIntestario">
+					<div wicket:id="containerIntestario">
+						<medium> <wicket:message
+							key="DatiRichiestaRimborsoBeneficiarioTariEngPanel.inserisciDocumentiIntestatario" /></medium>
+					</div>
+				</wicket:enclosure>
+
+				<medium> <wicket:message
+					key="DatiRichiestaRimborsoBeneficiarioTariEngPanel.consigli" /></medium>
+				<br /> <input type="file" name="allegatiRimborsoUpload"
+					id="allegatiRimborsoUpload" class="upload" accept="image/*, .pdf"
+					wicket:id="allegatiRimborsoUpload" /> <label
+					for="allegatiRimborsoUpload"> <svg class="icon icon-sm"
+						aria-hidden="true">
+                                        <use
+							xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-upload"></use>
+                                    </svg> <span><wicket:message
+							key="DatiRichiestaRimborsoBeneficiarioTariEngPanel.uploadDocumenti" /></span>
+				</label>
+
+				<div class="col-lg-12" wicket:id="containerAllegatiUpload">
+					<ul class="upload-file-list" wicket:id="listaAllegati">
+						<li class="upload-file success" style="max-width: 100%;"><svg
+								class="icon icon-sm" aria-hidden="true">
+                                                <use
+									xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+                                            </svg>
+							<p>
+								<span class="sr-only"><wicket:message
+										key="DatiRichiestaRimborsoBeneficiarioTariEngPanel.fileCaricati" /></span>
+								<span wicket:id="nomeFileAllegato"></span> <span
+									class="upload-file-weight" wicket:id="dimensioneFileAllegato"></span>
+							</p>
+							<button>
+								<svg class="icon" aria-hidden="true" style="fill: #d9364f;"
+									wicket:id="eliminaAllegato">
+                                                    <use
+										xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-close"></use>
+                                                    <title><wicket:message
+											key="DatiRichiestaRimborsoBeneficiarioTariEngPanel.eliminaFile" /></title>
+                                                </svg>
+							</button></li>
+					</ul>
+				</div>
+			</form>
+		</div>
+
+	</wicket:panel>
+</body>
+
+</html>

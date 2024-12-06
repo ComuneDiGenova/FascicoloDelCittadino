@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="row content my-4 richiesta-agevolazione">
+			<div class="col-md-12 text-left mb-4">
+				<div class="col-12">
+					<div class="col-12 alert alert-info" role="alert">
+						<wicket:message
+							key="Step4IstanzaPlCaricaDocumentiIstanzaPanel.infoPagina" />
+					</div>
+				</div>
+
+				<div class="col-lg-12 mx-auto riepilogo">
+					<form class="needs-validation was-validated mb-3 col-lg-12 mx-auto"
+						wicket:id="form">
+						<div
+							class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici">
+							<div class="col-12">
+								<p class="text-left">
+									<span class="fw-bold"><wicket:message
+											key="Step4IstanzaPlCaricaDocumentiIstanzaPanel.motivoScelto" />:</span>
+								</p>
+								<p class="text-left">
+									<span class="text-uppercase" wicket:id="motivoScelto"></span>
+								</p>
+							</div>
+
+							<wicket:enclosure child="nondevonoesserecaicatidocumenti">
+
+								<div class="col-12">
+									<p class="text-left">
+										<wicket:message
+											key="Step4IstanzaPlCaricaDocumentiIstanzaPanel.nondevonoesserecaicatidocumenti" />
+										<span class="text-capitalize"
+											wicket:id="nondevonoesserecaicatidocumenti"></span>
+									</p>
+								</div>
+
+							</wicket:enclosure>
+
+							<wicket:enclosure child="possibileinviaredocumenti">
+
+								<div class="col-12">
+									<p class="text-left">
+										<wicket:message
+											key="Step4IstanzaPlCaricaDocumentiIstanzaPanel.titolodocumenti" />
+									</p>
+								</div>
+								<div class="col-12">
+
+									<ul wicket:id="listViewDocumentazione">
+										<li class="fw-bold" wicket:id="documentazione"></li>
+									</ul>
+
+								</div>
+								<div class="col-12">
+									<p class="text-left">
+										<wicket:message
+											key="Step4IstanzaPlCaricaDocumentiIstanzaPanel.possibileinviaredocumenti" />
+										<span class="text-capitalize"
+											wicket:id="possibileinviaredocumenti"></span>
+									</p>
+								</div>
+
+
+
+								<!--  per upload file -->
+								<div class="col-lg-12" wicket:id="s4containerUploadFile">
+									<hr />
+
+									<medium> <wicket:message
+										key="Step4IstanzaPlCaricaDocumentiIstanzaPanel.File.inserisciDocumenti" /></medium>
+									<br />
+									<medium> <wicket:message
+										key="Step4IstanzaPlCaricaDocumentiIstanzaPanel.File.consigli" /></medium>
+									<!-- <form class="mb-3 col-md-12 mx-auto"
+										enctype="multipart/form-data"
+										onsubmit="return checkForm(this);"
+										wicket:id="s4formUploadAllegati">
+
+										<br /> <input type="file" name="s4documentoUpload"
+											id="s4documentoUpload" class="upload" accept="image/*, .pdf"
+											wicket:id="s4documentoUpload" /> <label
+											for="s4documentoUpload"><svg class="icon icon-sm"
+												aria-hidden="true">
+                                        <use
+													xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-upload"></use>
+                                    </svg> <span><wicket:message
+													key="Step4IstanzaPlCaricaDocumentiIstanzaPanel.File.uploadDocumenti" /></span>
+										</label>
+
+										<div class="col-lg-12" wicket:id="s4containerFileUpload">
+
+
+											<div class="col-12 alert alert-info" role="alert">
+												<wicket:message
+													key="Step4IstanzaPlCaricaDocumentiIstanzaPanel.File.infoCarica" />
+											</div>
+
+											<ul class="upload-file-list">
+												<li class="upload-file success col-12"
+													style="max-width: 100%;"><svg class="icon icon-sm"
+														aria-hidden="true">
+			                                <use
+															xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+			                            </svg>
+			                            		
+													<p>
+														<span class="sr-only">File caricato:</span> <span
+															wicket:id="nomeFile" maxlength="50"
+															style="word-break: break-all;"></span><span
+															class="upload-file-weight" wicket:id="dimensioneFile"></span>
+													</p>
+
+													<div class="col-3">
+														<a class="btn btn-primary btn-xs" href="#" role="button"
+															wicket:id="btnCaricaFile"> <svg
+																class="icon icon-white">
+                                    <use
+																	xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-plus-circle"></use>
+                                </svg> <wicket:message
+																key="Step4IstanzaPlCaricaDocumentiIstanzaPanel.File.carica" />
+														</a> <span class="col-3"></span>
+													</div>
+
+													<div class="col-3">
+														<button>
+															<svg class="icon" aria-hidden="true"
+																style="fill: #d9364f;" wicket:id="eliminaFile">
+			                                    <use
+																	xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-close-circle"></use>
+			                                    <title>Elimina file</title>
+			                                </svg>
+														</button>
+													</div></li>
+											</ul>
+										</div>
+
+
+
+
+
+
+									</form> -->
+								</div>
+
+								<hr />
+
+
+								<!-- 
+PROVA
+ -->
+								<div class="col-lg-12" wicket:id="containerDocumentiDaCaricare">
+
+									<h4 class="col-12">
+										<wicket:message
+											key="Step4IstanzaPlCaricaDocumentiIstanzaPanel.titolo3a" />
+									</h4>
+
+									<div class="row content my-4 info-traffico">
+										<div class="col-lg-12 mb-6" wicket:id="boxDocumentiDaCaricare">
+
+											<div class="card-wrapper">
+												<div class="card my-2">
+													<div class="card-body">
+														<form class="mb-3 col-md-12 mx-auto"
+															enctype="multipart/form-data"
+															onsubmit="return checkForm(this);"
+															wicket:id="s4formUploadAllegatiDaCaricare">
+
+															<div class="col-12">
+
+																<br />
+
+																<div class="row py-1 mb-2 border-bottom"
+																	wicket:id="s4containerFileUploadDaCaricare">
+
+
+																	<div class="col-12 alert alert-info" role="alert">
+																		<wicket:message
+																			key="Step4IstanzaPlCaricaDocumentiIstanzaPanel.File.infoCarica" />
+																	</div>
+
+																	<div class="row upload-file-list">
+
+																		<div class="col-sm upload-file success">
+																			<svg class="icon icon-sm" aria-hidden="true">
+			                                											<use
+																					xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+			                            											</svg>
+																			<p>
+																				<span class="sr-only">File caricato:</span> <span
+																					wicket:id="nomeFileDaCaricare" maxlength="50"
+																					style="word-break: break-all;"></span><span
+																					class="upload-file-weight"
+																					wicket:id="dimensioneFileDaCaricare"></span>
+																			</p>
+																		</div>
+																		<div class="col-sm upload-file success">
+																			<a class="btn btn-primary btn-xs" href="#"
+																				role="button" wicket:id="btnCaricaFileDaCaricare">
+																				<svg class="icon icon-white">
+                                    												<use
+																						xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-plus-circle"></use>
+                               							 						</svg> <wicket:message
+																					key="Step4IstanzaPlCaricaDocumentiIstanzaPanel.File.carica" />
+																			</a>
+
+																			<button>
+																				<svg class="icon" aria-hidden="true"
+																					style="fill: #d9364f;"
+																					wicket:id="eliminaFileDaCaricare">
+			                                    									<use
+																						xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-close-circle"></use>
+			                                    										<title>Elimina file</title>
+			                               	 									</svg>
+																			</button>
+																		</div>
+																		<div class="col-sm upload-file success"></div>
+																		<div class="col-sm upload-file success"></div>
+																		<div class="col-sm upload-file success"></div>
+																	</div>
+
+																</div>
+															</div>
+
+															<div class="row py-1 mb-2 border-bottom">
+																<wicket:enclosure child="tipoDocumentoDaCaricare">
+
+																	<div class="col-2">
+																		<p class="card-text text-left fw-bold">
+																			<wicket:message
+																				key="Step4IstanzaPlCaricaDocumentiIstanzaPanel.tipoDocumento" />
+																		</p>
+																	</div>
+																	<div class="col-3">
+																		<p class="card-text text-left d-table h-100">
+																			<span
+																				class="d-table-cell text-capitalize align-middle"
+																				style="word-break: break-all;"
+																				wicket:id="tipoDocumentoDaCaricare"></span>
+																		</p>
+																	</div>
+
+																</wicket:enclosure>
+
+
+																<wicket:enclosure child="obbligatorioSIoNO">
+																	<div class="col-2">
+																		<p class="card-text text-left fw-bold">
+																			<wicket:message
+																				key="Step4IstanzaPlCaricaDocumentiIstanzaPanel.obbligatorio" />
+																		</p>
+																	</div>
+																	<div class="col-1">
+																		<p class="card-text text-left d-table">
+																			<span
+																				class="d-table-cell text-capitalize align-middle"
+																				style="word-break: break-all;"
+																				wicket:id="obbligatorioSIoNO"></span>
+																		</p>
+																	</div>
+																</wicket:enclosure>
+																<div class="col-4">
+																	<input type="file" name="s4documentoUpload"
+																		id="s4documentoUpload" class="upload"
+																		accept="image/*, .pdf" wicket:id="s4documentoUpload" />
+																	<label wicket:id="lblS4documentoUpload"
+																		for="s4documentoUpload"><svg
+																			class="icon icon-sm" aria-hidden="true">
+                                        <use
+																				xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-upload"></use>
+                                    </svg> <span><wicket:message
+																				key="Step4IstanzaPlCaricaDocumentiIstanzaPanel.File.uploadDocumenti" /></span>
+																	</label>
+																</div>
+
+
+
+															</div>
+														</form>
+													</div>
+												</div>
+
+
+
+											</div>
+										</div>
+										<div class="col-12" wicket:id="paginationDocumentiDaCaricare"></div>
+										<!-- 									<div class="col-12">
+										<form class="mb-3 col-md-12 mx-auto"
+											enctype="multipart/form-data"
+											onsubmit="return checkForm(this);"
+											wicket:id="s4formUploadAllegatiDaCaricare">
+
+											<br /> <input type="file" name="s4documentoUpload"
+												id="s4documentoUpload" class="upload" accept="image/*, .pdf"
+												wicket:id="s4documentoUpload" /> <label
+												for="s4documentoUpload"><svg class="icon icon-sm"
+													aria-hidden="true">
+                                        <use
+														xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-upload"></use>
+                                    </svg> <span><wicket:message
+														key="Step4IstanzaPlCaricaDocumentiIstanzaPanel.File.uploadDocumenti" /></span>
+											</label>
+
+											<div class="col-lg-12"
+												wicket:id="s4containerFileUploadDaCaricare">
+
+
+												<div class="col-12 alert alert-info" role="alert">
+													<wicket:message
+														key="Step4IstanzaPlCaricaDocumentiIstanzaPanel.File.infoCarica" />
+												</div>
+
+												<ul class="upload-file-list">
+													<li class="upload-file success col-12"
+														style="max-width: 100%;"><svg class="icon icon-sm"
+															aria-hidden="true">
+			                                <use
+																xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+			                            </svg>
+														<p>
+															<span class="sr-only">File caricato:</span> <span
+																wicket:id="nomeFileDaCaricare" maxlength="50"
+																style="word-break: break-all;"></span><span
+																class="upload-file-weight"
+																wicket:id="dimensioneFileDaCaricare"></span>
+														</p>
+
+														<div class="col-3">
+															<a class="btn btn-primary btn-xs" href="#" role="button"
+																wicket:id="btnCaricaFileDaCaricare"> <svg
+																	class="icon icon-white">
+                                    <use
+																		xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-plus-circle"></use>
+                                </svg> <wicket:message
+																	key="Step4IstanzaPlCaricaDocumentiIstanzaPanel.File.carica" />
+															</a> <span class="col-3"></span>
+														</div>
+
+														<div class="col-3">
+															<button>
+																<svg class="icon" aria-hidden="true"
+																	style="fill: #d9364f;"
+																	wicket:id="eliminaFileDaCaricare">
+			                                    <use
+																		xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-close-circle"></use>
+			                                    <title>Elimina file</title>
+			                                </svg>
+															</button>
+														</div></li>
+												</ul>
+
+											</div>
+
+
+
+
+
+
+										</form>
+									</div>
+ -->
+									</div>
+
+									<!-- FINE PROVA
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+								</div>
+
+
+
+
+
+
+
+
+								<div class="col-lg-12" wicket:id="containerDocumentiCaricati">
+
+									<h4 class="col-12">
+										<wicket:message
+											key="Step4IstanzaPlCaricaDocumentiIstanzaPanel.titolo3" />
+									</h4>
+
+									<div class="row content my-4 info-traffico">
+										<div class="col-lg-6 mb-6" wicket:id="boxDocumentiCaricati">
+
+											<div class="card-wrapper">
+												<div class="card card-bg my-2">
+													<div class="card-body">
+
+														<div class="categoryicon-top row mb-2">
+															<i class="color-yellow col-3 icon-foglio"></i>
+
+															<wicket:enclosure child="tipoDocumento">
+																<h4
+																	class="card-title text-left col-9 font-weight-normal">
+																	<span class="fw-bold" wicket:id="tipoDocumento"></span>
+																</h4>
+															</wicket:enclosure>
+														</div>
+
+														<wicket:enclosure child="hashDocumento">
+															<div class="row py-1 mb-2 border-bottom">
+																<div class="col-5">
+																	<p class="card-text text-left fw-bold">
+																		<wicket:message
+																			key="Step4IstanzaPlCaricaDocumentiIstanzaPanel.hashDocumento" />
+																	</p>
+																</div>
+																<div class="col-7">
+																	<p class="card-text text-left d-table h-100">
+																		<span
+																			class="d-table-cell text-capitalize align-middle"
+																			style="word-break: break-all;"
+																			wicket:id="hashDocumento"></span>
+																	</p>
+																</div>
+															</div>
+														</wicket:enclosure>
+														<wicket:enclosure child="idDocumento">
+															<div class="row py-1 mb-2 border-bottom">
+																<div class="col-5">
+																	<p class="card-text text-left fw-bold">
+																		<wicket:message
+																			key="Step4IstanzaPlCaricaDocumentiIstanzaPanel.idDocumento" />
+																	</p>
+																</div>
+																<div class="col-7">
+																	<p class="card-text text-left d-table h-100">
+																		<span
+																			class="d-table-cell text-capitalize align-middle"
+																			style="word-break: break-all;"
+																			wicket:id="idDocumento"></span>
+																	</p>
+																</div>
+															</div>
+														</wicket:enclosure>
+
+														<wicket:enclosure child="nomeDocumento">
+															<div class="row py-1 mb-2 border-bottom">
+																<div class="col-5">
+																	<p class="card-text text-left fw-bold">
+																		<wicket:message
+																			key="Step4IstanzaPlCaricaDocumentiIstanzaPanel.nomeDocumento" />
+																	</p>
+																</div>
+																<div class="col-7">
+																	<p class="card-text text-left d-table h-100">
+																		<span
+																			class="d-table-cell text-capitalize align-middle"
+																			style="word-break: break-all;"
+																			wicket:id="nomeDocumento"></span>
+																	</p>
+																</div>
+															</div>
+														</wicket:enclosure>
+
+														<div class="row py-1 mb-2">
+
+															<div class="col-6">
+																<a class="btn btn-success btn-xs" href="#" role="button"
+																	wicket:id="btnDownloadDocumento"> <svg
+																		class="icon icon-white">
+                                    <use
+																			xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-download"></use>
+                                </svg> <wicket:message
+																		key="Step4IstanzaPlCaricaDocumentiIstanzaPanel.downloadDichiarazione" />
+																</a> <span class="col-3"></span>
+															</div>
+
+
+															<div class="col-6">
+																<wicket:enclosure child="btnCancellaDocumento">
+																	<div wicket:id="modaleEliminaAllegato"></div>
+																	<a class="btn btn-lg btn-primary btn-icon"
+																		data-toggle="modal" wicket:id="btnCancellaDocumento"
+																		style="color: white; max-width: 250px;"> <span><wicket:message
+																				key="Step4IstanzaPlCaricaDocumentiIstanzaPanel.File.eliminaFile" /></span>
+																	</a>
+																</wicket:enclosure>
+															</div>
+
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="col-12" wicket:id="paginationDocumentiCaricati"></div>
+
+									</div>
+								</div>
+								<wicket:enclosure child="numeroDocumentiDaInviare">
+									<div class="col-12">
+										<p class="text-left">
+											<wicket:message
+												key="Step4IstanzaPlCaricaDocumentiIstanzaPanel.numeroDocumentiDaInviare" />
+										</p>
+										<span class="text-capitalize"
+											wicket:id="numeroDocumentiDaInviare"></span>
+									</div>
+								</wicket:enclosure>
+								<wicket:enclosure child="numeroDocumentiInviati">
+									<div class="col-12">
+										<p class="text-left">
+											<wicket:message
+												key="Step4IstanzaPlCaricaDocumentiIstanzaPanel.numeroDocumentiInviati" />
+										</p>
+										<span class="text-capitalize"
+											wicket:id="numeroDocumentiInviati"></span>
+									</div>
+								</wicket:enclosure>
+
+								<div class="form-group col-md-12 mb-3 text-center">
+									<div class="form-group col-md-12 mb-3 text-center">
+										<a class="btn btn-primary" href="#" role="button"
+											wicket:id="avanti"> <wicket:message
+												key="Step4IstanzaPlCaricaDocumentiIstanzaPanel.avanti" />
+										</a> <a class="btn btn-secondary" href="#" role="button"
+											wicket:id="annulla"> <wicket:message
+												key="Step4IstanzaPlCaricaDocumentiIstanzaPanel.annulla" />
+										</a>
+									</div>
+								</div>
+							</wicket:enclosure>
+						</div>
+					</form>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

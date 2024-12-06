@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		
+
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12" wicket:id="listaVuota">
+				<div class="alert alert-warning" role="alert">
+					<wicket:message key="TariNetribePanel.vuoto" />
+				</div>
+			</div>
+		</div>
+
+		<div class="row content my-12 info-traffico">
+
+			<div class="col-lg-6 mb-4" wicket:id="documenti">
+
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+
+
+
+
+							<div class="container">
+								<div class="row">
+									<div class="col-sm-3">
+										<i class="color-green col-3 icon-cassonetto"></i>
+									</div>
+
+									<div class="col-sm-9">
+										<strong>
+											<wicket:enclosure child="tipologia">
+												<wicket:message key="TariNetribePanel.tipologia" />
+												<span class="text-capitalize font-weight-semibold"
+													wicket:id="tipologia"></span>
+												<br />
+											</wicket:enclosure>
+
+											<wicket:enclosure child="tipologiaUtenza">
+												<wicket:message key="TariNetribePanel.tipologiaUtenza" />
+												<span class="text-capitalize font-weight-semibold"
+													wicket:id="tipologiaUtenza"></span>
+											</wicket:enclosure>
+										</strong>
+									</div>
+
+								</div>
+							</div>
+
+							<div wicket:id="numAvviso"></div>
+
+							<div wicket:id="totaleImporto"></div>
+
+							<div wicket:id="totalePagamenti"></div>
+
+							<div wicket:id="saldo"></div>
+
+							<div wicket:id="istanza"></div>
+
+							<div wicket:id="annoRiferimento"></div>
+
+							<div wicket:id="annoConguaglio"></div>
+
+							<div class="row py-1 mb-2 col-12">
+								<div class="col-12">
+									<a class="btn btn-primary focus-visible-none"  href="#" role="button" wicket:id="btnDettagli">
+										<wicket:message key="TariNetribePanel.dettagli" />
+									</a>
+								</div>
+							</div>
+
+							<wicket:enclosure child="btnRimborso">
+								<div class="row py-1 mb-2 col-12">
+									<div class="col-12">
+										<span wicket:id="btnRimborso"></span>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-12" wicket:id="pagination"></div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

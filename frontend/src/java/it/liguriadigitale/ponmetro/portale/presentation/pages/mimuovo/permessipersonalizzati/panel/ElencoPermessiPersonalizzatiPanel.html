@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>
+		<div class="row content my-4 info-traffico">
+			<div class="col-lg-6 mb-4" wicket:id="lista">
+				<!--start card-->
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i wicket:id="icona"></i>
+									
+								<wicket:enclosure child="stato">
+									<h4 class="card-title text-left col-9 font-weight-normal">
+										<wicket:message key="ElencoPermessiPersonalizzatiPanel.stato" />
+										<span class="text-capitalize font-weight-semibold"
+											wicket:id="stato"></span>
+									</h4>
+								</wicket:enclosure>
+							</div>
+
+							<div wicket:id="idDomanda"></div>
+							<div wicket:id="descrizioneProcedimento"></div>
+							<div wicket:id="descrizioneStato"></div>
+
+
+							<button type="button" class="btn btn-primary"
+								wicket:id="btnDettaglio">
+								<wicket:message
+									key="ElencoPermessiPersonalizzatiPanel.btnDettaglio" />
+							</button>
+						</div>
+					</div>
+					<!--end card-->
+				</div>
+			</div>
+		</div>
+
+		<div wicket:id="feedback"></div>
+		<div wicket:id="pagination"></div>
+	</wicket:panel>
+</body>
+</html>

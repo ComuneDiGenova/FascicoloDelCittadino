@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="col-12">
+			<h3>
+				<wicket:message key="ContributoTariPanel.titolo" />
+			</h3>
+		</div>
+
+		<wicket:enclosure child="btnDomandaContributoTari">
+			<div class="col-sm-6 mt-2 mb-2">
+				<button class="btn btn-outline-primary">
+					<span wicket:id="btnDomandaContributoTari"></span>
+				</button>
+			</div>
+		</wicket:enclosure>
+
+		<div class="row content my-12 info-traffico">
+
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12"
+				wicket:id="listaVuota">
+				<div class="alert alert-warning" role="alert">
+					<wicket:message key="ContributoTariPanel.vuoto" />
+				</div>
+			</div>
+
+			<div class="col-lg-6 mb-4" wicket:id="domande">
+
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+
+								<i class="" wicket:id="icona"></i>
+
+								<h4 class="card-title text-left col-9 font-weight-normal">
+									<wicket:message key="ContributoTariPanel.idRichiesta" />
+									<span class="text-capitalize font-weight-semibold"
+										wicket:id="idRichiesta"></span> <br />
+									<wicket:message key="ContributoTariPanel.numeroProtocollo" />
+									<span class="text-capitalize font-weight-semibold"
+										wicket:id="numeroProtocollo"></span><br />
+									<wicket:message key="ContributoTariPanel.annoProtocollo" />
+									<span class="text-capitalize font-weight-semibold"
+										wicket:id="annoProtocollo"></span>
+								</h4>
+							</div>
+
+							<div wicket:id="dataRichiesta"></div>
+
+							<div wicket:id="codiceFiscale"></div>
+
+							<div wicket:id="nome"></div>
+
+							<div wicket:id="cognome"></div>
+
+							<div wicket:id="stato"></div>
+
+							<div wicket:id="btnScaricaFile"></div>
+
+							<wicket:enclosure id="btnDettagli">
+								<p class="card-text text-center font-weight-semibold">
+									<a class="btn btn-primary btn-icon" wicket:id="btnDettagli">
+										<span><wicket:message
+												key="ContributoTariPanel.btnDettagli" /></span>
+									</a>
+								</p>
+							</wicket:enclosure>
+
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div wicket:id="pagination"></div>
+
+		<div class="row content my-12 info-traffico">
+			<div wicket:id="messaggiInformativi"></div>
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

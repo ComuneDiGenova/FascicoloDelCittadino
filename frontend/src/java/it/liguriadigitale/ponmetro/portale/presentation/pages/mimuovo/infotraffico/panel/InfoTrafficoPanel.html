@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd" >
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>
+
+		<div class="col-sm-12 mt-2 mb-4">
+			<h3 class="text-left font-weight-semibold mb-0"><wicket:message key="InfoTrafficoPanel.title" /></h3>			
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2">
+			
+			<span wicket:id="listaInfoTraffico"></span>
+			
+			<div class="table-responsive" wicket:id="tabellaListaInfoTraffico">
+				<div class="divMensaTable">
+					<div class="divHead">
+						<div class="divMensaTh"><wicket:message key="InfoTrafficoPanel.localitaEvento"/></div>
+						<div class="divMensaTh"><wicket:message key="InfoTrafficoPanel.dettagliEvento"/></div>
+						<div class="divMensaTh"></div>
+					</div>
+					
+					<div class="divBody" wicket:id="listaSegnalazioni">
+						<div class="divMensaTd">
+							<span wicket:id="localita"></span>
+							<br>
+							<span wicket:id="inizio"></span>
+						</div>
+						<div class="divMensaTd" wicket:id="dettaglio"></div>
+						<div class="divMensaTd">
+							<button type="button" class="btn" wicket:id="btnGeolocalizzato">
+								<i class="color-blue-spid icon-mirino" title="Geolocalizza"></i>
+							</button>
+						</div>
+					</div>
+				</div>				
+			</div>
+			
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>  
+
+	</wicket:panel>
+</body>
+</html>

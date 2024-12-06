@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="row content my-4 info-traffico">
+
+			<div class="col-12">
+				<h3>
+					<wicket:message key="RapportiCaitelPanel.titolo" />
+				</h3>
+			</div>
+
+			<div class="col-lg-6 mb-4" wicket:id="rapporti">
+
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="color-fc-secondary col-3 icon-casa-camino"></i>
+
+								<h4 class="card-title text-left col-9 font-weight-normal">
+									<span class="text-capitalize font-weight-semibold"
+										wicket:id="dataRapporto"></span>
+								</h4>
+							</div>
+
+							<div wicket:id="ditta"></div>
+
+							<div wicket:id="dataProtocollo"></div>
+
+							<div wicket:id="generatore"></div>
+
+							<div wicket:id="macchina"></div>
+
+							<div wicket:id="sigla"></div>
+
+							<div wicket:id="codRapporto"></div>
+
+							<div wicket:id="rapporto"></div>
+
+							<div wicket:id="btnScaricaRapporto"></div>
+
+							<div wicket:id="ricevuta"></div>
+
+							<div wicket:id="btnScaricaRicevuta"></div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div wicket:id="pagination"></div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+	</wicket:panel>
+</body>
+
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<wicket:head>
+	<style>
+div.link-list>input[type=radio] {
+	margin-right: 0.3em;
+}
+</style>
+</wicket:head>
+</head>
+<body>
+	<wicket:panel>
+		<div class="row mb-2 mx-auto">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+				<div class="row mb-3">
+					<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+						<h4>
+							<wicket:message key="DatiSottoscrittoPanel.titolo" />
+						</h4>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4 col-lg-4 col-sm-4 col-xl-4">
+						<div wicket:id="cognome"></div>
+					</div>
+					<div class="col-md-4 col-lg-4 col-sm-4 col-xl-4">
+						<div wicket:id="nome"></div>
+					</div>
+					<div class="col-md-4 col-lg-4 col-sm-4 col-xl-4">
+						<div wicket:id="codiceFiscale"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3 col-lg-3 col-sm-3 col-xl-3">
+						<div wicket:id="dataNascita"></div>
+					</div>
+					<div class="col-md-3 col-lg-3 col-sm-3 col-xl-3">
+						<div wicket:id="sesso"></div>
+					</div>
+					<div class="col-md-3 col-lg-3 col-sm-3 col-xl-3">
+						<div wicket:id="luogoNascita"></div>
+					</div>
+					<div class="col-md-3 col-lg-3 col-sm-3 col-xl-3">
+						<div wicket:id="cittadinanza"></div>
+					</div>
+				</div>
+				<div class="row mb-3">
+				  <div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+				    <h5 class="font-weight-semibold">
+				        <wicket:message key="DatiSottoscrittoPanel.titoloResidenza"></wicket:message>
+				    </h5>
+				  </div>
+				</div>
+				<div class="row">
+					<div class="col-md-1 col-lg-1 col-sm-1 col-xl-1">
+						<div wicket:id="provincia"></div>
+					</div>
+					<div class="col-md-4 col-lg-4 col-sm-4 col-xl-4">
+						<div wicket:id="comune"></div>
+					</div>
+					<div class="col-md-7 col-lg-7 col-sm-7 col-xl-7">
+						<div wicket:id="indirizzo"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2 col-lg-2 col-sm-2 col-xl-2">
+						<div wicket:id="civico"></div>
+					</div>
+					<div class="col-md-2 col-lg-2 col-sm-2 col-xl-2">
+						<div wicket:id="esponente"></div>
+					</div>
+					<div class="col-md-2 col-lg-2 col-sm-2 col-xl-2">
+						<div wicket:id="scala"></div>
+					</div>
+					<div class="col-md-2 col-lg-2 col-sm-2 col-xl-2">
+						<div wicket:id="interno"></div>
+					</div>
+					<div class="col-md-2 col-lg-2 col-sm-2 col-xl-2">
+						<div wicket:id="colore"></div>
+					</div>
+					<div class="col-md-2 col-lg-2 col-sm-2 col-xl-2">
+						<div wicket:id="cap"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3 col-lg-3 col-sm-3 col-xl-3">
+						<div wicket:id="telefono"></div>
+					</div>
+					<div class="col-md-3 col-lg-3 col-sm-3 col-xl-3">
+						<div wicket:id="cellulare"></div>
+					</div>
+					<div class="col-md-3 col-lg-3 col-sm-3 col-xl-3">
+						<div wicket:id="email"></div>
+					</div>
+					<div class="col-md-3 col-lg-3 col-sm-3 col-xl-3">
+						<div wicket:id="pec"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+						<label class="fw-bold active"> <wicket:message
+								key="DatiSottoscrittoPanel.inQuanto" />
+						</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+						<span wicket:id="inQuanto"></span>
+					</div>
+				</div>
+				<div class="row mt-3" wicket:id="altroContainer">
+					<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+						<div class="row">
+							<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+								<div wicket:id="altro"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row mt-3" wicket:id="datiErede">
+					<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+						<div class="row mb-4">
+							<div
+								class="col-md-12 col-lg-12 col-sm-12 col-xl-12 d-flex-inline">
+								<span wicket:id="tipoErede"></span>
+							</div>
+						</div>
+						<div class="row" wicket:id="alertInfoDeleghe">
+							<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+								<div class="alert alert-info" role="alert">
+								    Allegare l'autocertificazione eredi e in caso di coerede la delega a coerede
+								</div>
+							</div>
+						</div>
+						<div class="row mb-4">
+							<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+								<form class="mb-3 mx-auto" wicket:id="formUploadFile" novalidate>
+									<div class="d-flex flex-column">
+										<div>
+											<input type="file" name="fileAttestazioneEredeUpload"
+												id="fileAttestazioneEredeUpload" class="upload"
+												wicket:id="fileAttestazioneEredeUpload" accept=".pdf, .jpg" />
+											<label for="fileAttestazioneEredeUpload"> <svg
+													class="icon icon-sm" aria-hidden="true">
+			                        		<use
+														xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-upload"></use>
+			                    		</svg> <span><wicket:message
+														key="DatiSottoscrittoPanel.delega"></wicket:message> </span>
+											</label>
+										</div>
+										<div wicket:id="containerFile">
+											<ul class="upload-file-list" wicket:id="listaFile">
+												<li class="upload-file success" style="max-width: 100%;"><svg
+														class="icon icon-sm" aria-hidden="true">
+					                                <use
+															xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+					                            </svg>
+													<p>
+														<span class="sr-only">File caricato:</span> <span
+															wicket:id="nomeFile"></span><span
+															class="upload-file-weight" wicket:id="dimensioneFile"></span>
+													</p>
+													<button>
+														<svg class="icon" aria-hidden="true"
+															style="fill: #d9364f;" wicket:id="eliminaFile">
+					                                    <use
+																xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-close"></use>
+					                                    <title>Elimina file</title>
+	                                				</svg>
+													</button></li>
+											</ul>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+
+						<div class="row mb-3">
+							<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+								<label class="fw-bold active"> <wicket:message
+										key="DatiSottoscrittoPanel.delDefunto" />
+								</label>
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-md-4 col-lg-4 col-sm-4 col-xl-4">
+								<div wicket:id="cognomeDefunto"></div>
+							</div>
+							<div class="col-md-4 col-lg-4 col-sm-4 col-xl-4">
+								<div wicket:id="nomeDefunto"></div>
+							</div>
+							<div class="col-md-4 col-lg-4 col-sm-4 col-xl-4">
+								<div wicket:id="codiceFiscaleDefunto"></div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3 col-lg-3 col-sm-3 col-xl-3">
+								<div class="select-wrapper form-group">
+									<label> <wicket:message
+											key="DatiSottoscrittoPanel.sesso" />
+									</label> <select wicket:id="sessoDefunto"></select>
+								</div>
+							</div>
+							<div class="col-md-3 col-lg-3 col-sm-3 col-xl-3">
+								<div wicket:id="dataNascitaDefunto"></div>
+							</div>
+							<div class="col-md-3 col-lg-3 col-sm-3 col-xl-3">
+								<div wicket:id="luogoNascitaDefunto"></div>
+							</div>
+							<div class="col-md-3 col-lg-3 col-sm-3 col-xl-3">
+								<div wicket:id="cittadinanzaDefunto"></div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6 col-lg-6 col-sm-6 col-xl-6">
+								<div wicket:id="dataDecesso"></div>
+							</div>
+							<div class="col-md-6 col-lg-6 col-sm-6 col-xl-6">
+								<div wicket:id="luogoDecesso"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</wicket:panel>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <wicket:panel>
+
+			<div class="col-sm-12 mt-2 mb-2">
+				<div class="alert alert-warning font-weight-bold" role="alert"
+				wicket:id="listaVerbaliVuota"></div>	
+			</div>
+		
+        <div class="row content my-4 info-traffico">
+            
+            <!--<div class="alert alert-warning font-weight-bold" role="alert"
+				wicket:id="listaVerbaliVuota"></div>-->
+            <div class="col-lg-6 mb-4" wicket:id="box">
+
+                <div class="card-wrapper">
+                    <div class="card card-bg my-2">
+                        <div class="card-body">
+                            <div class="categoryicon-top row mb-2">
+                                <i class="" wicket:id="icona"></i>
+
+								<wicket:enclosure child="targa">
+	                                <h4 class="card-title text-start col-9 font-weight-normal">
+			                            <wicket:message key="MieiVerbaliPanel.targa"/> 
+			                            <span class="text-capitalize fw-bold" wicket:id="targa"></span>		                     
+	                            	</h4>
+                            	</wicket:enclosure>
+                            </div>
+
+                            <wicket:enclosure child="numeroAvviso">
+                                <div class="row py-1 mb-2 border-bottom">
+                                    <div class="col-5">
+                                        <p class="card-text text-start fw-bold">
+                                            <wicket:message key="MieiVerbaliPanel.numeroAvviso" />:</p>
+                                    </div>
+                                    <div class="col-7">
+                                        <p class="card-text text-start d-table h-100"><span class="d-table-cell text-capitalize align-middle" wicket:id="numeroAvviso"></span></p>
+                                    </div>
+                                </div>
+                            </wicket:enclosure>
+
+                            <wicket:enclosure child="numeroProtocollo">
+                                <div class="row py-1 mb-2 border-bottom">
+                                    <div class="col-5">
+                                        <p class="card-text text-start fw-bold">
+                                            <wicket:message key="MieiVerbaliPanel.numeroProtocollo" />:</p>
+                                    </div>
+                                    <div class="col-7">
+                                        <p class="card-text text-start d-table h-100"><span class="d-table-cell text-capitalize align-middle" wicket:id="numeroProtocollo"></span></p>
+                                    </div>
+                                </div>
+                            </wicket:enclosure>
+
+                            <wicket:enclosure child="dataAccertamento">
+                                <div class="row py-1 mb-2 border-bottom">
+                                    <div class="col-5">
+                                        <p class="card-text text-start fw-bold">
+                                            <wicket:message key="MieiVerbaliPanel.dataAccertamento" />:</p>
+                                    </div>
+                                    <div class="col-7">
+                                        <p class="card-text text-start d-table h-100"><span class="d-table-cell text-capitalize align-middle" wicket:id="dataAccertamento"></span></p>
+                                    </div>
+                                </div>
+                            </wicket:enclosure>
+
+                            <wicket:enclosure child="localita">
+                                <div class="row py-1 mb-2 border-bottom">
+                                    <div class="col-5">
+                                        <p class="card-text text-start fw-bold">
+                                            <wicket:message key="MieiVerbaliPanel.localita" />:</p>
+                                    </div>
+                                    <div class="col-7">
+                                        <p class="card-text text-start d-table h-100"><span class="d-table-cell text-capitalize align-middle" wicket:id="localita"></span></p>
+                                    </div>
+                                </div>
+                            </wicket:enclosure>
+
+                            <wicket:enclosure child="articoliViolati">
+                                <div class="row py-1 mb-2 border-bottom">
+                                    <div class="col-5">
+                                        <p class="card-text text-start fw-bold">
+                                            <wicket:message key="MieiVerbaliPanel.articoliViolati" />:</p>
+                                    </div>
+                                    <div class="col-7">
+                                        <span class="d-table-cell text-capitalize align-middle" wicket:id="articoliViolati"></span>
+                                    </div>
+                                </div>
+                            </wicket:enclosure>
+
+                            <wicket:enclosure child="importo">
+                                <div class="row py-1 mb-2 border-bottom">
+                                    <div class="col-5">
+                                        <p class="card-text text-start fw-bold">
+                                            <wicket:message key="MieiVerbaliPanel.importo" />:</p>
+                                    </div>
+                                    <div class="col-7">
+                                        <p class="card-text text-start d-table h-100">
+                                            <span class="badge badge-pill"  wicket:id="importo"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </wicket:enclosure>
+
+                            <wicket:enclosure child="stato">
+                                <div class="row py-1 mb-2 border-bottom">
+                                    <div class="col-5">
+                                        <p class="card-text text-start fw-bold">
+                                            <wicket:message key="MieiVerbaliPanel.stato" />:</p>
+                                    </div>
+                                    <div class="col-7">
+                                        <p class="card-text text-start d-table h-100"><span class="d-table-cell text-capitalize align-middle" wicket:id="stato"></span></p>
+                                    </div>
+                                </div>
+                            </wicket:enclosure>
+
+                            <wicket:enclosure child="dataSconto">
+                                <div class="row py-1 mb-2 border-bottom">
+                                    <div class="col-5">
+                                        <p class="card-text text-start fw-bold">
+                                            <wicket:message key="MieiVerbaliPanel.dataSconto" />:</p>
+                                    </div>
+                                    <div class="col-7">
+                                        <p class="card-text text-start d-table h-100"><span class="d-table-cell text-capitalize align-middle" wicket:id="dataSconto"></span></p>
+                                    </div>
+                                </div>
+                            </wicket:enclosure>
+                            
+                            <wicket:enclosure child="puntiPatente">
+                                <div class="row py-1 mb-2 border-bottom">
+                                    <div class="col-5">
+                                        <p class="card-text text-start fw-bold">
+                                            <wicket:message key="MieiVerbaliPanel.puntiPatente" />:</p>
+                                    </div>
+                                    <div class="col-7">
+                                        <p class="card-text text-start d-table h-100"><span class="d-table-cell text-capitalize align-middle" wicket:id="puntiPatente"></span></p>
+                                    </div>
+                                </div>
+                            </wicket:enclosure>
+                            
+                            <wicket:enclosure child="alertPuntiPatente">   
+                                <div class="row">
+							         <div class="col-md-12 col-lg-12 col-sm-12 col-xl-12" wicket:id="alertPuntiPatente">
+							                <div class="alert alert-info" role="alert">
+							                	<wicket:message key="MieiVerbaliPanel.alertPuntiPatente"/>
+							                </div>
+							            </div>
+								</div>
+                            </wicket:enclosure>
+                            
+                            <wicket:enclosure child="alertIscrittoARuolo">
+                                <div class="row py-1 mb-2 border-bottom">
+                                    <div class="col-12 alert alert-info" role="alert" wicket:id="alertIscrittoARuolo">
+                                        <wicket:message key="MieiVerbaliPanel.alertIscrittoARuolo" />
+                                    </div>
+                                </div>
+                            </wicket:enclosure>
+
+                            <div class="row py-1 mb-2">
+                                <div class="col text-center">
+                                    <a class="btn btn-primary btn-xs" href="#" role="button" wicket:id="btnDettagliVerbale">
+                                        <wicket:message key="MieiVerbaliPanel.dettagliVerbale" />
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                
+        <div wicket:id="paginationMieiVerbali"></div>
+
+        <div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+    </wicket:panel>
+</body>
+
+</html>

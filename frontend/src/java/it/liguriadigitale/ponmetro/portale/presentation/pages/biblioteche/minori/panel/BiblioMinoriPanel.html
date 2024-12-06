@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="row content my-4 info-traffico">
+
+			<h4 class="col-12">
+				<wicket:message key="BiblioMinoriPanel.titolo" />
+			</h4>
+
+			<div class="col-lg-6 mb-4" wicket:id="box">
+
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="" wicket:id="icona"></i>
+
+								<h4 class="card-title text-left col-9 font-weight-normal">
+									<span class="font-weight-bold" wicket:id="nomeCognome"></span>
+									<br />
+									<wicket:message key="BiblioMinoriPanel.dataNascita" />
+									<span class="font-weight-semibold" wicket:id="dataNascita"></span>
+									<br />
+									<wicket:message key="BiblioMinoriPanel.eta" />
+									<span class="font-weight-semibold" wicket:id="eta"></span> <span
+										wicket:id="mesiAnni"></span>
+								</h4>
+							</div>
+
+							<div class="row">
+								<wicket:enclosure child="btnIscrivizioneOMovimenti">
+									<div class="col-sm-6 mt-2 mb-2">
+										<button class="btn btn-outline-primary">
+											<span wicket:id="btnIscrivizioneOMovimenti"></span>
+										</button>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="btnBiblioInternet">
+									<div class="col-sm-6 mt-2 mb-2">
+										<button class="btn btn-outline-primary">
+											<span wicket:id="btnBiblioInternet"></span>
+										</button>
+									</div>
+								</wicket:enclosure>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div wicket:id="paginationBiblioMinori"></div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

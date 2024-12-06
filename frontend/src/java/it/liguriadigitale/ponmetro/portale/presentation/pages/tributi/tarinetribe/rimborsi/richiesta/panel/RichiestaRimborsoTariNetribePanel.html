@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:extend>
+		<fieldset>
+
+			<legend id="form-title" class="mb-3">
+				<strong>
+					<wicket:message key="RichiestaRimborsoTariNetribePanel.titolo" />
+				</strong>
+			</legend>
+
+			<div class="row">
+				<div class="col-lg-12 mx-auto" wicket:id="stepPanel"></div>
+			</div>
+
+			<div class="row mb-5">
+
+				<div class="col-12" wicket:id="datiRimborsoPanel"></div>
+
+				<div class="col-12" wicket:id="datiRimborsoBeneficiarioPanel"></div>
+
+				<div class="col-12" wicket:id="listaAllegatiInLetturaPanel"></div>
+
+				<div class="col-12" wicket:id="esitoRimborsoTariPanel"></div>
+
+			</div>
+
+			<div class="row mb-5">
+				<div class="col-12">
+					<div class="form-row col-12 alert alert-info" style="margin-bottom: 30px;"
+						wicket:id="containerInfoInvia">
+						<wicket:message key="RichiestaRimborsoTariNetribePanel.infoInvia" />
+					</div>
+				</div>
+			</div>
+
+
+			<div class="row justify-content-center">
+				<div class="col-sm-auto">
+					<div class="d-flex justify-content-center">
+
+						<wicket:enclosure child="indietro">
+							<button type="button" class="btn btn-secondary focus-visible-none mx-3" wicket:id="indietro">
+								<wicket:message key="RichiestaRimborsoTariNetribePanel.indietro" />
+							</button>
+						</wicket:enclosure>
+
+						<wicket:enclosure child="avanti">
+							<button type="submit" class="btn btn-primary focus-visible-none mx-3" wicket:id="avanti">
+								<wicket:message key="RichiestaRimborsoTariNetribePanel.avanti" />
+							</button>
+						</wicket:enclosure>
+
+						<wicket:enclosure child="annulla">
+							<button type="button" class="btn btn-secondary focus-visible-none mx-3" wicket:id="annulla">
+								<wicket:message key="RichiestaRimborsoTariNetribePanel.annulla" />
+							</button>
+						</wicket:enclosure>
+					</div>
+				</div>
+			</div>
+
+		</fieldset>
+
+	</wicket:extend>
+</body>
+
+</html>

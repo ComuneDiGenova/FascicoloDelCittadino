@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<wicket:head>
+	<style>
+div.wicket-aa {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, Verdana;
+	font-size: 14px;
+	background-color: white;
+	border-width: 1px;
+	border-color: #cccccc;
+	border-style: solid;
+	padding: 2px;
+	margin: 1px 0 0 0;
+	text-align: left;
+}
+
+div.wicket-aa ul {
+	list-style: none;
+	padding: 2px;
+	margin: 0;
+}
+
+div.wicket-aa ul li.selected {
+	background-color: #4e73df;
+	padding: 2px;
+	color: white;
+	margin: 0;
+}
+</style>
+</wicket:head>
+
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div wicket:id="messaggiInformativi"></div>
+
+		<div class="row content my-4 info-traffico">
+
+			<div class="col-md-12 text-start mb-4">
+				<h4>
+					<wicket:message key="BibliotecheIscrizionePanel.info" />
+				</h4>
+			</div>
+
+			<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+			<div class="col-lg-12 mx-auto">
+				<div class="steppers">
+					<ul class="steppers-header">
+						<li class="active no-line"><span class="steppers-number"><span
+								class="sr-only">Step </span>1</span> <span class="steppers-status"><wicket:message
+									key="BibliotecheIscrizionePanel.step1"></wicket:message></span> <span
+							class="sr-only"><wicket:message
+									key="BibliotecheIscrizionePanel.step1"></wicket:message></span></li>
+						<li><span class="steppers-number"><span
+								class="sr-only">Step </span>2</span> <span class="steppers-status"><wicket:message
+									key="BibliotecheIscrizionePanel.step2"></wicket:message></span> <span
+							class="sr-only"><wicket:message
+									key="BibliotecheIscrizionePanel.step2"></wicket:message></span></li>
+						<li><span class="steppers-number"><span
+								class="sr-only">Step </span>3</span> <span class="steppers-status"><wicket:message
+									key="BibliotecheIscrizionePanel.step3"></wicket:message></span> <span
+							class="sr-only"><wicket:message
+									key="BibliotecheIscrizionePanel.step3"></wicket:message></span></li>
+						<li class="steppers-index" aria-hidden="true"><span
+							class="active">1</span> <span>2</span> <span><wicket:message
+									key="BibliotecheIscrizionePanel.step3"></wicket:message></span></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-lg-10 mx-auto riepilogo">
+				<form class="mb-3 col-lg-10 mx-auto" wicket:id="form"
+					enctype="multipart/form-data">
+					<div class="form-row mb-2 col-md-12 mx-auto">
+
+						<div
+							class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici">
+
+							<h4 class="col-12">
+								<wicket:message key="BibliotecheIscrizionePanel.datiRichiedente" />
+							</h4>
+
+							<div class="row">
+								<div class="col">
+									<wicket:enclosure child="nome">
+											<p class="text-start">
+												<span class="fw-bold"><wicket:message
+														key="BibliotecheIscrizionePanel.nome" /></span> <span
+													class="text-capitalize" wicket:id="nome"></span>
+											</p>
+									</wicket:enclosure>
+								</div>
+								<div class="col">
+									<wicket:enclosure child="cognome">
+											<p class="text-start">
+												<span class="fw-bold"><wicket:message
+														key="BibliotecheIscrizionePanel.cognome" /></span> <span
+													class="text-capitalize" wicket:id="cognome"></span>
+											</p>
+									</wicket:enclosure>
+								
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="col">
+									<wicket:enclosure child="dataNascita">
+											<p class="text-start">
+												<span class="fw-bold"><wicket:message
+														key="BibliotecheIscrizionePanel.dataNascita" /></span> <span
+													class="text-capitalize" wicket:id="dataNascita"></span>
+											</p>
+									</wicket:enclosure>
+								</div>
+								<div class="col">
+									<wicket:enclosure child="luogoNascita">
+											<p class="text-start">
+												<span class="fw-bold"><wicket:message
+														key="BibliotecheIscrizionePanel.luogoNascita" /></span> <span
+													class="text-capitalize" wicket:id="luogoNascita"></span>
+											</p>
+									</wicket:enclosure>
+								</div>
+								<div class="col">
+									<wicket:enclosure child="sesso">
+											<p class="text-start">
+												<span class="fw-bold"><wicket:message
+														key="BibliotecheIscrizionePanel.sesso" /></span> <span
+													class="text-capitalize" wicket:id="sesso"></span>
+											</p>
+									</wicket:enclosure>
+								</div>
+							</div>
+
+							<!--  	<div class="col-12" style="padding-top: 20px;">
+								<div wicket:id="fdcSelect2"></div>
+							</div> -->
+
+
+							<div class="col-12 autocomplete-wrapper">
+								<label for="autocompleteCittadinanza"><wicket:message
+										key="BibliotecheIscrizionePanel.autocompleteCittadinanza" />:</label> <input
+									type="text" id="autocompleteCittadinanza" name="autocompleteCittadinanza"
+									title="Cittadinanza" wicket:id="autocompleteCittadinanza"
+									class="form-control" />
+							</div>
+
+						</div>
+
+
+
+
+						<div
+							class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici"
+							wicket:id="datiDocumentoIdentitaContainer">
+
+							<div class="col-12">
+								<h4>
+									<wicket:message
+										key="BibliotecheIscrizionePanel.datiDocumentoIdentita" />
+								</h4>
+							</div>
+
+							<wicket:enclosure child="numeroCI">
+								<div class="col-6">
+									<p class="text-start">
+										<span class="fw-bold"><wicket:message
+												key="BibliotecheIscrizionePanel.numeroCI" /></span> <span
+											class="text-capitalize" wicket:id="numeroCI"></span>
+									</p>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="ciRilasciataDa">
+								<div class="col-6">
+									<p class="text-start">
+										<span class="fw-bold"><wicket:message
+												key="BibliotecheIscrizionePanel.ciRilasciataDa" /></span> <span
+											class="text-capitalize" wicket:id="ciRilasciataDa"></span>
+									</p>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="ciValidaDal">
+								<div class="col-6">
+									<p class="text-start">
+										<span class="fw-bold"><wicket:message
+												key="BibliotecheIscrizionePanel.ciValidaDal" /></span> <span
+											class="text-capitalize" wicket:id="ciValidaDal"></span>
+									</p>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="ciValidaFinoAl">
+								<div class="col-6">
+									<p class="text-start">
+										<span class="fw-bold"><wicket:message
+												key="BibliotecheIscrizionePanel.ciValidaFinoAl" /></span> <span
+											class="text-capitalize" wicket:id="ciValidaFinoAl"></span>
+									</p>
+								</div>
+							</wicket:enclosure>
+
+						</div>
+
+						<div
+							class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici">
+
+							<div class="col-12">
+								<h4>
+									<wicket:message key="BibliotecheIscrizionePanel.datiResidenza" />
+								</h4>
+							</div>
+
+							<wicket:enclosure child="indirizzoResidenza">
+								<div class="col-12">
+									<p class="text-start">
+										<span class="fw-bold"><wicket:message
+												key="BibliotecheIscrizionePanel.indirizzo" /></span> <span
+											class="text-capitalize" wicket:id="indirizzoResidenza"></span>
+									</p>
+								</div>
+							</wicket:enclosure>
+
+							<div class="row">
+									<div class="col">
+										<wicket:enclosure child="capResidenza">
+												<p class="text-start">
+													<span class="fw-bold"><wicket:message
+															key="BibliotecheIscrizionePanel.cap" /></span> <span
+														class="text-capitalize" wicket:id="capResidenza"></span>
+												</p>
+										</wicket:enclosure>
+									</div>
+									<div class="col">
+										<wicket:enclosure child="cittaResidenza">
+											<p class="text-start">
+												<span class="fw-bold"><wicket:message
+														key="BibliotecheIscrizionePanel.citta" /></span> <span
+													class="text-capitalize" wicket:id="cittaResidenza"></span>
+											</p>
+										</wicket:enclosure>
+									</div>
+									<div class="col">
+										<wicket:enclosure child="provinciaResidenza">
+												<p class="text-start">
+													<span class="fw-bold"><wicket:message
+															key="BibliotecheIscrizionePanel.pronvicia" /></span> <span
+														class="text-capitalize" wicket:id="provinciaResidenza"></span>
+												</p>
+										</wicket:enclosure>
+									</div>
+									<div class="col">
+										<wicket:enclosure child="statoResidenza">
+												<p class="text-start">
+													<span class="fw-bold"><wicket:message
+															key="BibliotecheIscrizionePanel.stato" /></span> <span
+														class="text-capitalize" wicket:id="statoResidenza"></span>
+												</p>
+										</wicket:enclosure>
+									</div>
+							</div>
+						
+
+						</div>
+
+						<div
+							class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici"
+							wicket:id="containerDocumentoGenitore">
+
+							<div class="col-12">
+								<h4>
+									<wicket:message
+										key="BibliotecheIscrizionePanel.datiDocumentoIdentitaGenitore" />
+								</h4>
+							</div>
+
+							<div class="row">
+								<div class="col">
+									<wicket:enclosure child="nomeGenitore">
+											<p class="text-start">
+												<span class="fw-bold"><wicket:message
+														key="BibliotecheIscrizionePanel.nome" /></span> <span
+													class="text-capitalize" wicket:id="nomeGenitore"></span>
+											</p>
+									</wicket:enclosure>
+								</div>
+								<div class="col">
+									<wicket:enclosure child="cognomeGenitore">
+											<p class="text-start">
+												<span class="fw-bold"><wicket:message
+														key="BibliotecheIscrizionePanel.cognome" /></span> <span
+													class="text-capitalize" wicket:id="cognomeGenitore"></span>
+											</p>
+									</wicket:enclosure>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col">
+									
+									<wicket:enclosure child="numeroCIGenitore">
+											<p class="text-start">
+												<span class="fw-bold"><wicket:message
+														key="BibliotecheIscrizionePanel.numeroCI" /></span> <span
+													class="text-capitalize" wicket:id="numeroCIGenitore"></span>
+											</p>
+									</wicket:enclosure>
+								</div>
+								<div class="col">
+									
+									<wicket:enclosure child="ciRilasciataDaGenitore">
+										<p class="text-start">
+											<span class="fw-bold"><wicket:message
+													key="BibliotecheIscrizionePanel.ciRilasciataDa" /></span> <span
+												class="text-capitalize" wicket:id="ciRilasciataDaGenitore"></span>
+										</p>
+									</wicket:enclosure>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col">
+									
+									<wicket:enclosure child="ciValidaDalGenitore">
+											<p class="text-start">
+												<span class="fw-bold"><wicket:message
+														key="BibliotecheIscrizionePanel.ciValidaDal" /></span> <span
+													class="text-capitalize" wicket:id="ciValidaDalGenitore"></span>
+											</p>
+									</wicket:enclosure>
+								</div>
+								
+								<div class="col">
+									
+									<wicket:enclosure child="ciValidaFinoAlGenitore">
+											<p class="text-start">
+												<span class="fw-bold"><wicket:message
+														key="BibliotecheIscrizionePanel.ciValidaFinoAl" /></span> <span
+													class="text-capitalize" wicket:id="ciValidaFinoAlGenitore"></span>
+											</p>
+									</wicket:enclosure>
+								</div>
+							</div>
+
+						</div>
+
+						<div
+							class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici">
+
+							<h4 class="col-12">
+								<wicket:message key="BibliotecheIscrizionePanel.riferimenti" />
+							</h4>
+
+							<div class="form-row mb-2 col-md-12 mx-auto">
+								<div class="row">
+								<div class="form-group col-md-6 mb-0">
+									<input class="form-control" id="email" type="email"
+										placeholder="Email (no PEC)" wicket:id="email"> <small><wicket:message
+											key="BibliotecheIscrizionePanel.email" /></small> <label
+										class="sr-only" for="email"> <wicket:message
+											key="BibliotecheIscrizionePanel.email" />
+									</label>
+								</div>
+
+								<div class="form-group col-md-6 mb-0">
+									<input class="form-control" id="cellulare" type="text"
+										oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+										placeholder="Cellulare" wicket:id="cellulare"> <small><wicket:message
+											key="BibliotecheIscrizionePanel.cellulare" /></small> <label
+										class="sr-only" for="cellulare"> <wicket:message
+											key="BibliotecheIscrizionePanel.cellulare" />
+									</label>
+								</div>
+								</div>
+							</div>
+
+						</div>
+
+						<div>
+							<div
+								class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici">
+								<h3>
+									<wicket:message
+										key="BibliotecheIscrizionePanel.informativaPrivacy" />
+								</h3>
+
+								<div class="form-group col-md-12 mb-3 text-center">
+									<button class="btn btn-success btn-xs btn-icon"
+										wicket:id="btnScaricaPrivacy">
+										<svg class="icon icon-white">
+										<use
+												xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+									</svg>
+										<span><wicket:message
+												key="BibliotecheIscrizionePanel.scarica" /></span>
+									</button>
+								</div>
+
+								<div class="row">
+									<div class="form-row mb-2 col-md-12 mx-auto"
+										wicket:id="containerPrivacy">
+										<div class="toggles">
+											<label for="autorizzazioneTrattamentoDati"> <wicket:message
+													key="BibliotecheIscrizionePanel.autorizzazioneTrattamentoDati" />
+												<input type="checkbox" id="autorizzazioneTrattamentoDati"
+												wicket:id="autorizzazioneTrattamentoDati"> <span
+												class="lever"></span>
+											</label>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="form-row mb-2 col-md-12 mx-auto"
+										wicket:id="containerMail">
+										<div class="toggles">
+											<label for="autorizzazioneMail"> <wicket:message
+													key="BibliotecheIscrizionePanel.autorizzazioneMail" /> <input
+												type="checkbox" id="autorizzazioneMail"
+												wicket:id="autorizzazioneMail"> <span class="lever"></span>
+											</label>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="col-12"></div>
+
+							<div class="form-group col-md-12 mb-3 text-center">
+								<div class="form-group col-md-12 mb-3 text-center">
+									<button type="submit" class="btn btn-primary">
+										<wicket:message key="BibliotecheIscrizionePanel.prosegui" />
+									</button>
+									<button type="button" class="btn btn-secondary"
+										wicket:id="annulla">
+										<wicket:message key="BibliotecheIscrizionePanel.annulla" />
+									</button>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				</form>
+			</div>
+
+			<div class="alert alert-danger" role="alert" wicket:id="alertToggle">
+				<wicket:message key="BibliotecheIscrizionePanel.alertToggle" />
+			</div>
+
+		</div>
+
+	</wicket:panel>
+</body>
+
+</html>

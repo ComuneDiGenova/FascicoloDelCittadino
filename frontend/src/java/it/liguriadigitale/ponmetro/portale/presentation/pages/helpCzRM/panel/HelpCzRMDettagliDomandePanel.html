@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<body>
+	<wicket:panel>
+
+		<div class="col-12">
+			<h3 wicket:id="titolo"></h3>
+		</div>
+
+		<div class="row content my-12 info-traffico">
+			<div class="it-timeline-wrapper">
+				<div class="row">
+
+					<div class="col-12" wicket:id="box">
+						<div class="timeline-element">
+							<div class="it-pin-wrapper it-evidence">
+								<div class="pin-icon">
+									<svg class="icon">
+              <use
+											href="/bootstrap-italia/dist/svg/sprites.svg#it-code-circle"></use>
+            </svg>
+								</div>
+								<div class="pin-text">
+									<span wicket:id="messageDate"></span>
+								</div>
+							</div>
+							<div class="card-wrapper">
+								<div class="card">
+									<div class="card-body">
+										<div class="category-top">
+											<p class="category" wicket:id="category"></p>
+										</div>
+										<h5 class="card-title" wicket:id="subject"></h5>
+										<p class="card-text" wicket:id="htmlBody"></p>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

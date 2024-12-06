@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>
+		<div
+			class="form-row mb-2 col-md-12 my-auto mx-auto form-servizi-anagrafici">
+			<div class="col-4">
+				<span wicket:id="lblEtichettaAllegato"></span>
+			</div>
+			<div class="col-8">
+
+				<form class="mb-3 col-lg-12 my-auto mx-auto"
+					wicket:id="formDocumentoAllegatoPermessiPersonalizzati"
+					enctype="multipart/form-data">
+					<div class="form-row mb-2 col-md-12 my-auto mx-auto">
+
+						<div class="col-lg-12">
+							<form class="mb-3 col-md-12 my-auto mx-auto"
+								wicket:id="formUpload" enctype="multipart/form-data"
+								onsubmit="return checkForm(this);">
+
+								<input type="file" name="uploadFile1" id="uploadFile1"
+									class="upload" wicket:id="uploadFile" accept="image/*, .pdf" />
+								<label wicket:id="wmkUploadLabel" for="uploadFile1"> <svg
+										class="icon icon-sm" aria-hidden="true">
+			                        <use
+											xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-upload"></use>
+			                    </svg> <span><small> <span
+											wicket:id="lblPulsanteUpload"></span>
+									</small></span>
+								</label>
+
+								<div class="col-lg-12" wicket:id="containerFileUpload">
+									<ul class="upload-file-list">
+										<li class="upload-file success" style="max-width: 100%;"><svg
+												class="icon icon-sm" aria-hidden="true">
+			                                <use
+													xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+			                            </svg>
+											<p>
+												<span class="sr-only">File caricato:</span>  <span wicket:id="nomeFile"
+													maxlength="50"></span>
+												 <span class="upload-file-weight" wicket:id="dimensioneFile"></span>
+											</p>
+											<button>
+												<svg class="icon" aria-hidden="true" style="fill: #d9364f;"
+													wicket:id="eliminaFile">
+			                                    <use
+														xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-close"></use>
+			                                    <title>Elimina file</title>
+			                                </svg>
+											</button></li>
+									</ul>
+								</div>
+							</form>
+						</div>
+
+					</div>
+
+				</form>
+
+
+				<div class="col-lg-12" id="containerFileUploadab"
+					wicket:id="wmkAllegatoInSolaLettura">
+					<ul class="upload-file-list">
+						<li class="upload-file success" style="max-width: 100%;"><svg
+								class="icon icon-sm" aria-hidden="true">
+			                                <use
+									xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+			                            </svg>
+							<p>
+								<span class="sr-only">File caricato:</span> 
+								<a wicket:id="btnDownloadInSolaLettura"> 
+								</a>
+								<span class="upload-file-weight" wicket:id="dimensioneFileInsolaLettura">454,00 KB</span>
+								
+							</p></li>
+					</ul>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-12 mt-2 mb-2"
+						wicket:id="feedbackDocumentiAllegati"></div>
+				</div>
+			</div>
+		</div>
+
+	</wicket:panel>
+</body>
+</html>

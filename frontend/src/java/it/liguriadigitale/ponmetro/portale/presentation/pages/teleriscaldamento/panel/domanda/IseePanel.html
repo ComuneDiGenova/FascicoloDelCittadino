@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="form-row mb-2 col-md-12 mx-auto">
+
+			<div class="form-row col-md-12" wicket:id="titolo"></div>
+
+			<div class="form-row col-12" wicket:id="containerDati">
+				<div class="row">
+					<div class="col-md-6">
+						<div wicket:id="importoIsee"></div>
+					</div>
+	
+					<div class="col-md-6">
+						<div wicket:id="numeroComponenti"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="alert alert-warning" role="alert"
+				wicket:id="containerIseeNonPresente">
+				<wicket:message key="IseePanel.iseeNonPresente" />
+			</div>
+
+			<div class="alert alert-warning" role="alert"
+				wicket:id="containerIseePresente">
+				<wicket:message key="IseePanel.issePresente" />
+			</div>
+
+			<div class="alert alert-warning" role="alert"
+				wicket:id="issePresenteMaFuoriRange">
+				<wicket:message key="IseePanel.issePresenteMaFuoriRange" />
+			</div>
+
+		</div>
+	</wicket:panel>
+
+</body>
+
+</html>

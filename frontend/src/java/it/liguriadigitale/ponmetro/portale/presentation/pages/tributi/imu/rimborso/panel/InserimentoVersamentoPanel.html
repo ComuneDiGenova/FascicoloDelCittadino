@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="row">
+		<div class="col-12">
+			<div class="row mb-3">
+				<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+					<div class="select-wrapper form-group">
+						<label> <wicket:message
+								key="InsertVersamentoPanel.annolabel" />
+						</label> <select wicket:id="anno"></select>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+					<div class="select-wrapper">
+						<label for="tipoQuota">Quota</label> <span
+							wicket:id="tipoQuota" id="tipoQuota"></span>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+					<div wicket:id="totale"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+					<div class="select-wrapper">
+						<label for="motivazione">Motivazione</label> <span
+							wicket:id="motivazione" id="motivazione"></span>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+					<div class="d-flex justify-content-end" style="gap: 2px">
+						<button type="button" class="btn btn-primary">
+							<wicket:message key="InsertVersamentoPanel.salva" />
+						</button>
+
+						<wicket:enclosure child="btnAnnulla">
+							<button type="button" class="btn btn-danger"
+								wicket:id="btnAnnulla">
+								<wicket:message key="InsertVersamentoPanel.annulla" />
+							</button>
+						</wicket:enclosure>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

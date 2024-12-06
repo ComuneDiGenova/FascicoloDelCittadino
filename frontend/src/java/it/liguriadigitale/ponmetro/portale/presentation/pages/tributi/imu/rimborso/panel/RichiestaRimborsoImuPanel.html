@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<wicket:extend>
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12 mx-auto"
+				wicket:id="stepPanel"></div>
+		</div>
+
+		<div class="row mb-2 mx-auto">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+				<h4 class="text-center text-uppercase font-weight-bold">
+					<wicket:message key="RichiestaRimborsoImuPanel.titolo" />
+				</h4>
+			</div>
+		</div>
+
+		<div class="row" wicket:id="infoAllegati">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+				<div class="alert alert-info" role="alert">
+					<div class="d-flex flex-column">
+						<div>
+							<h5 class="font-weight-bold text-uppercase">
+								<wicket:message key="RichiestaRimborsoImuPanel.elencoAllegati"></wicket:message>
+							</h5>
+						</div>
+
+						<div>
+							<ul>
+								<li><wicket:message
+										key="RichiestaRimborsoImuPanel.versamentiTributari"></wicket:message></li>
+								<li><a wicket:id="autocertificazionErediLink"></a></li>
+								<li><a wicket:id="linkDelegaRiscossione"></a></li>
+								<li>
+								    <wicket:message
+										key="RichiestaRimborsoImuPanel.documentoDelegato"></wicket:message>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div wicket:id="containerStep1">
+			<div class="row mb-2 mx-auto">
+				<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+					<div wicket:id="datiSottoscrittoPanel"></div>
+				</div>
+			</div>
+		</div>
+
+		<div wicket:id="containerStep2">
+			<div class="row mb-2 mx-auto">
+				<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12"
+					wicket:id="datiVersamentiPanel"></div>
+			</div>
+		</div>
+
+		<div wicket:id="containerStep3">
+			<div class="row mb-2 mx-auto">
+				<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12"
+					wicket:id="datiImmobiliPanel"></div>
+			</div>
+		</div>
+
+		<div wicket:id="containerStep4">
+			<div class="row mb-2 mx-auto">
+				<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12"
+					wicket:id="datiModalitaPagamentoPanel"></div>
+			</div>
+		</div>
+
+		<div wicket:id="containerStep6" class="form-card-speciali">
+			<div class="row mb-2 mx-auto">
+				<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+					<div class="alert alert-success" role="alert">
+						<span class="font-weight-bold"> <wicket:message
+								key="RichiestaRimborsoImuPanel.esito"></wicket:message>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div
+					class="col-md-12 col-lg-12 col-sm-12 col-xl-12 d-flex justify-content-center">
+					<wicket:enclosure child="btnAllegaFile">
+						<a wicket:id="btnAllegaFile" style="min-width: 100px"> <wicket:message
+								key="RichiestaRimborsoImuPanel.allegaFile" />
+						</a>
+					</wicket:enclosure>
+				</div>
+			</div>
+		</div>
+
+		<div
+			class="d-sm-flex flex-md-row flex-xl-row flex-lg-row flex-sm-column justify-content-sm-center mb-3"
+			style="gap: 5px">
+			<wicket:enclosure child="indietro">
+				<div>
+					<button type="button" class="btn btn-primary" wicket:id="indietro">
+						<wicket:message key="RichiestaRimborsoImuPanel.indietro" />
+					</button>
+				</div>
+			</wicket:enclosure>
+
+			<wicket:enclosure child="prosegui">
+				<div>
+					<button type="submit" class="btn btn-primary" wicket:id="prosegui">
+						<wicket:message key="RichiestaRimborsoImuPanel.prosegui" />
+					</button>
+				</div>
+			</wicket:enclosure>
+
+			<wicket:enclosure child="invia">
+				<div>
+					<button type="submit" class="btn btn-primary" wicket:id="invia">
+						<wicket:message key="RichiestaRimborsoImuPanel.salva" />
+					</button>
+				</div>
+			</wicket:enclosure>
+
+			<wicket:enclosure child="annulla">
+				<div>
+					<button type="button" class="btn btn-secondary" wicket:id="annulla">
+						<wicket:message key="RichiestaRimborsoImuPanel.annulla" />
+					</button>
+				</div>
+			</wicket:enclosure>
+
+		</div>
+
+	</wicket:extend>
+</body>
+</html>

@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="col-12">
+
+			<div class="col-12" wicket:id="containerDatiGenerali">
+
+				<h5 class="col-12">
+					<wicket:message key="DettagliVariazioniPanel.datiGenerali" />
+				</h5>
+
+				<div class="col-lg-6 mb-4">
+
+					<div class="card-wrapper">
+						<div class="card card-bg my-2">
+							<div class="card-body">
+								<div class="categoryicon-top row mb-2">
+									<i class="" wicket:id="icona"></i>
+
+									<wicket:enclosure child="id">
+										<h4 class="card-title text-start col-9 font-weight-normal">
+											<wicket:message key="DettagliVariazioniPanel.id" />
+											<span class="text-capitalize fw-bold"
+												wicket:id="id"></span>
+										</h4>
+									</wicket:enclosure>
+								</div>
+
+								<wicket:enclosure child="numero">
+									<div class="row py-1 mb-2 border-bottom">
+										<div class="col-5">
+											<p class="card-text text-start fw-bold">
+												<wicket:message key="DettagliVariazioniPanel.numero" />
+											</p>
+										</div>
+										<div class="col-7">
+											<p class="card-text text-start d-table h-100">
+												<span class="d-table-cell text-capitalize align-middle"
+													wicket:id="numero"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="anno">
+									<div class="row py-1 mb-2 border-bottom">
+										<div class="col-5">
+											<p class="card-text text-start fw-bold">
+												<wicket:message key="DettagliVariazioniPanel.anno" />
+											</p>
+										</div>
+										<div class="col-7">
+											<p class="card-text text-start d-table h-100">
+												<span class="d-table-cell text-capitalize align-middle"
+													wicket:id="anno"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="tipo">
+									<div class="row py-1 mb-2 border-bottom">
+										<div class="col-5">
+											<p class="card-text text-start fw-bold">
+												<wicket:message key="DettagliVariazioniPanel.tipo" />
+											</p>
+										</div>
+										<div class="col-7">
+											<p class="card-text text-start d-table h-100">
+												<span class="d-table-cell text-capitalize align-middle"
+													wicket:id="tipo"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="dataInizio">
+									<div class="row py-1 mb-2 border-bottom">
+										<div class="col-5">
+											<p class="card-text text-start fw-bold">
+												<wicket:message key="DettagliVariazioniPanel.dataInizio" />
+											</p>
+										</div>
+										<div class="col-7">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="dataInizio"></span>
+										</div>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="dataScadenza">
+									<div class="row py-1 mb-2 border-bottom">
+										<div class="col-5">
+											<p class="card-text text-start fw-bold">
+												<wicket:message key="DettagliVariazioniPanel.dataScadenza" />
+											</p>
+										</div>
+										<div class="col-7">
+											<p class="card-text text-start d-table h-100">
+												<span class="badge badge-pill" wicket:id="dataScadenza"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="termineRicorso">
+									<div class="row py-1 mb-2 border-bottom">
+										<div class="col-5">
+											<p class="card-text text-start fw-bold">
+												<wicket:message key="DettagliVariazioniPanel.termineRicorso" />
+											</p>
+										</div>
+										<div class="col-7">
+											<p class="card-text text-start d-table h-100">
+												<span class="d-table-cell text-capitalize align-middle"
+													wicket:id="termineRicorso"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="ufficioAtti">
+									<div class="row py-1 mb-2 border-bottom">
+										<div class="col-5">
+											<p class="card-text text-start fw-bold">
+												<wicket:message key="DettagliVariazioniPanel.ufficioAtti" />
+											</p>
+										</div>
+										<div class="col-7">
+											<p class="card-text text-start d-table h-100">
+												<span class="d-table-cell text-capitalize align-middle"
+													wicket:id="ufficioAtti"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="stato">
+									<div class="row py-1 mb-2 border-bottom">
+										<div class="col-5">
+											<p class="card-text text-start fw-bold">
+												<wicket:message key="DettagliVariazioniPanel.stato" />
+											</p>
+										</div>
+										<div class="col-7">
+											<p class="card-text text-start d-table h-100">
+												<span class="d-table-cell text-capitalize align-middle"
+													wicket:id="stato"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="unita">
+									<div class="row py-1 mb-2 border-bottom">
+										<div class="col-5">
+											<p class="card-text text-start fw-bold">
+												<wicket:message key="DettagliVariazioniPanel.unita" />
+											</p>
+										</div>
+										<div class="col-7">
+											<p class="card-text text-start d-table h-100">
+												<span class="d-table-cell text-capitalize align-middle"
+													wicket:id="unita"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="responsabile">
+									<div class="row py-1 mb-2 border-bottom">
+										<div class="col-5">
+											<p class="card-text text-start fw-bold">
+												<wicket:message key="DettagliVariazioniPanel.responsabile" />
+											</p>
+										</div>
+										<div class="col-7">
+											<p class="card-text text-start d-table h-100">
+												<span class="d-table-cell align-middle"
+													wicket:id="responsabile"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="nomeIs">
+									<div class="row py-1 mb-2 border-bottom">
+										<div class="col-5">
+											<p class="card-text text-start fw-bold">
+												<wicket:message key="DettagliVariazioniPanel.nomeIs" />
+											</p>
+										</div>
+										<div class="col-7">
+											<p class="card-text text-start d-table h-100">
+												<span class="d-table-cell text-capitalize align-middle"
+													wicket:id="nomeIs"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="cognomeIs">
+									<div class="row py-1 mb-2 border-bottom">
+										<div class="col-5">
+											<p class="card-text text-start fw-bold">
+												<wicket:message key="DettagliVariazioniPanel.cognomeIs" />
+											</p>
+										</div>
+										<div class="col-7">
+											<p class="card-text text-start d-table h-100">
+												<span class="d-table-cell text-capitalize align-middle"
+													wicket:id="cognomeIs"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="nomeProprietario">
+									<div class="row py-1 mb-2 border-bottom">
+										<div class="col-5">
+											<p class="card-text text-start fw-bold">
+												<wicket:message
+													key="DettagliVariazioniPanel.nomeProprietario" />
+											</p>
+										</div>
+										<div class="col-7">
+											<p class="card-text text-start d-table h-100">
+												<span class="d-table-cell text-capitalize align-middle"
+													wicket:id="nomeProprietario"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="cognomeProprietario">
+									<div class="row py-1 mb-2 border-bottom">
+										<div class="col-5">
+											<p class="card-text text-start fw-bold">
+												<wicket:message
+													key="DettagliVariazioniPanel.cognomeProprietario" />
+											</p>
+										</div>
+										<div class="col-7">
+											<p class="card-text text-start d-table h-100">
+												<span class="d-table-cell text-capitalize align-middle"
+													wicket:id="cognomeProprietario"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="ragioneSocialeProprietario">
+									<div class="row py-1 mb-2 border-bottom">
+										<div class="col-5">
+											<p class="card-text text-start fw-bold">
+												<wicket:message
+													key="DettagliVariazioniPanel.ragioneSocialeProprietario" />
+											</p>
+										</div>
+										<div class="col-7">
+											<p class="card-text text-start d-table h-100">
+												<span class="d-table-cell text-capitalize align-middle"
+													wicket:id="ragioneSocialeProprietario"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="codiceFiscaleProprietario">
+									<div class="row py-1 mb-2 border-bottom">
+										<div class="col-5">
+											<p class="card-text text-start fw-bold">
+												<wicket:message
+													key="DettagliVariazioniPanel.codiceFiscaleProprietario" />
+											</p>
+										</div>
+										<div class="col-7">
+											<p class="card-text text-start d-table h-100">
+												<span class="d-table-cell text-capitalize align-middle"
+													wicket:id="codiceFiscaleProprietario"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="viario">
+									<div class="row py-1 mb-2 border-bottom">
+										<div class="col-5">
+											<p class="card-text text-start fw-bold">
+												<wicket:message key="DettagliVariazioniPanel.viario" />
+											</p>
+										</div>
+										<div class="col-7">
+											<p class="card-text text-start d-table h-100">
+												<span class="d-table-cell text-capitalize align-middle"
+													wicket:id="viario"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="numeroCivico">
+									<div class="row py-1 mb-2 border-bottom">
+										<div class="col-5">
+											<p class="card-text text-start fw-bold">
+												<wicket:message key="DettagliVariazioniPanel.numeroCivico" />
+											</p>
+										</div>
+										<div class="col-7">
+											<p class="card-text text-start d-table h-100">
+												<span class="d-table-cell text-capitalize align-middle"
+													wicket:id="numeroCivico"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="esponente">
+									<div class="row py-1 mb-2 border-bottom">
+										<div class="col-5">
+											<p class="card-text text-start fw-bold">
+												<wicket:message key="DettagliVariazioniPanel.esponente" />
+											</p>
+										</div>
+										<div class="col-7">
+											<p class="card-text text-start d-table h-100">
+												<span class="d-table-cell text-capitalize align-middle"
+													wicket:id="esponente"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>
+								
+								<wicket:enclosure child="scala">
+									<div class="row py-1 mb-2 border-bottom">
+										<div class="col-5">
+											<p class="card-text text-start fw-bold">
+												<wicket:message key="DettagliVariazioniPanel.scala" />
+											</p>
+										</div>
+										<div class="col-7">
+											<p class="card-text text-start d-table h-100">
+												<span class="d-table-cell text-capitalize align-middle"
+													wicket:id="scala"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>
+								
+								<wicket:enclosure child="piano">
+									<div class="row py-1 mb-2 border-bottom">
+										<div class="col-5">
+											<p class="card-text text-start fw-bold">
+												<wicket:message key="DettagliVariazioniPanel.piano" />
+											</p>
+										</div>
+										<div class="col-7">
+											<p class="card-text text-start d-table h-100">
+												<span class="d-table-cell text-capitalize align-middle"
+													wicket:id="piano"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="interno">
+									<div class="row py-1 mb-2 border-bottom">
+										<div class="col-5">
+											<p class="card-text text-start fw-bold">
+												<wicket:message key="DettagliVariazioniPanel.interno" />
+											</p>
+										</div>
+										<div class="col-7">
+											<p class="card-text text-start d-table h-100">
+												<span class="d-table-cell text-capitalize align-middle"
+													wicket:id="interno"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>
+								
+								<wicket:enclosure child="internoEsponente">
+									<div class="row py-1 mb-2 border-bottom">
+										<div class="col-5">
+											<p class="card-text text-start fw-bold">
+												<wicket:message key="DettagliVariazioniPanel.internoEsponente" />
+											</p>
+										</div>
+										<div class="col-7">
+											<p class="card-text text-start d-table h-100">
+												<span class="d-table-cell text-capitalize align-middle"
+													wicket:id="internoEsponente"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>
+								
+								<wicket:enclosure child="colore">
+									<div class="row py-1 mb-2 border-bottom">
+										<div class="col-5">
+											<p class="card-text text-start fw-bold">
+												<wicket:message key="DettagliVariazioniPanel.colore" />
+											</p>
+										</div>
+										<div class="col-7">
+											<p class="card-text text-start d-table h-100">
+												<span class="d-table-cell text-capitalize align-middle"
+													wicket:id="colore"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row content my-4 info-traffico"
+				wicket:id="containerIndividuiCollegati">
+
+				<h5 class="col-12">
+					<wicket:message key="DettagliVariazioniPanel.individuiCollegati" />
+				</h5>
+
+				<div class="col-lg-6 mb-4" wicket:id="boxIndividui">
+
+					<div class="card-wrapper">
+						<div class="card card-bg my-2">
+							<div class="card-body">
+								<div class="categoryicon-top row mb-2">
+									<i class="" wicket:id="iconaIndividuo"></i>
+
+									<wicket:enclosure child="nominativo">
+										<h4 class="card-title text-start col-9 font-weight-normal">
+											<wicket:message key="DettagliVariazioniPanel.id" />
+											<span class="text-capitalize fw-bold"
+												wicket:id="nominativo"></span>
+										</h4>
+									</wicket:enclosure>
+								</div>
+
+								<wicket:enclosure child="parentela">
+									<div class="row py-1 mb-2 border-bottom">
+										<div class="col-5">
+											<p class="card-text text-start fw-bold">
+												<wicket:message key="DettagliVariazioniPanel.parentela" />
+											</p>
+										</div>
+										<div class="col-7">
+											<p class="card-text text-start d-table h-100">
+												<span class="d-table-cell text-capitalize align-middle"
+													wicket:id="parentela"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>
+
+								<!--  <wicket:enclosure child="dataNascita">
+									<div class="row py-1 mb-2 border-bottom">
+										<div class="col-5">
+											<p class="card-text text-start fw-bold">
+												<wicket:message key="DettagliVariazioniPanel.dataNascita" />
+											</p>
+										</div>
+										<div class="col-7">
+											<p class="card-text text-start d-table h-100">
+												<span class="d-table-cell text-capitalize align-middle"
+													wicket:id="dataNascita"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>-->
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-12 mt-2 mb-2" wicket:id="paginationIndividui"></div>
+
+			</div>
+
+			<div class="row content my-4 info-traffico"
+				wicket:id="containerDocumenti">
+				<h5 class="col-12">
+					<wicket:message key="DettagliVariazioniPanel.documentiAllegati" />
+				</h5>
+
+				<div class="col-lg-4 mb-4" wicket:id="boxDocumenti">
+
+					<div class="card-wrapper">
+						<div class="card card-bg my-2">
+							<div class="card-body">
+								<div class="categoryicon-top row mb-2">
+									<i class=" color-yellow col-3 icon-foglio"></i>
+
+									<wicket:enclosure child="idDocumento">
+										<h4 class="card-title text-start col-9 font-weight-normal">
+											<wicket:message key="DettagliVariazioniPanel.id" />
+											<span class="text-capitalize fw-bold"
+												wicket:id="idDocumento"></span>
+										</h4>
+									</wicket:enclosure>
+								</div>
+
+								<wicket:enclosure child="nomeDocumento">
+									<div class="row py-1 mb-2 border-bottom">
+										<div class="col-5">
+											<p class="card-text text-start fw-bold">
+												<wicket:message key="DettagliVariazioniPanel.nomeDocumento" />
+											</p>
+										</div>
+										<div class="col-7">
+											<p class="card-text text-start d-table h-100">
+												<span class="d-table-cell text-capitalize align-middle"
+													style="word-break: break-all;" wicket:id="nomeDocumento"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>
+
+								<div class="row py-1 mb-2">
+									<div class="col-12">
+										<a class="btn btn-success btn-xs" href="#" role="button"
+											wicket:id="btnScarica"> <svg class="icon icon-white">
+                                    <use
+													xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-download"></use>
+                                </svg> <wicket:message
+												key="DettagliVariazioniPanel.scarica" />
+										</a> <span class="col-3"></span>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-12 mt-2 mb-2" wicket:id="paginationDocumenti"></div>
+			</div>
+
+
+			<div class="row content my-4 info-traffico"
+				wicket:id="containerAzioni">
+				<h5 class="col-12">
+					<wicket:message key="DettagliVariazioniPanel.infoBottoni" />
+				</h5>
+
+				<div class="col-lg-12 mb-4">
+
+					<div class="card-wrapper">
+						<div class="card card-bg my-2">
+							<div class="card-body">
+
+								<div class="row py-1 mb-2">
+									<div class="col-6 text-center">
+										<wicket:enclosure child="btnRiprendi">
+												<a class="btn btn-primary btn-lg  btn-icon" href="#" role="button"
+													wicket:id="btnRiprendi"> <wicket:message
+														key="DettagliVariazioniPanel.btnRiprendi" />
+												</a>
+										</wicket:enclosure>
+									
+									</div>
+									<div class="col-6 text-center">
+										<wicket:enclosure child="btnElimina">
+											<div wicket:id="modaleEliminaPratica"></div>
+											<a class="btn btn-lg btn-primary btn-icon" data-toggle="modal"
+												wicket:id="btnElimina"> <span><wicket:message
+														key="DettagliVariazioniPanel.btnElimina" /></span>
+											</a>
+										</wicket:enclosure>
+									</div>
+								
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+		</div>
+	</wicket:panel>
+</body>
+
+</html>

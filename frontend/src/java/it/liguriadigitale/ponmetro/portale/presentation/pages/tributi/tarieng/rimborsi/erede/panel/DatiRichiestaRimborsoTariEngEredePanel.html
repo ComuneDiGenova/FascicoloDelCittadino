@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="col-md-12" wicket:id="titolo"></div>
+
+		<div class="form-row col-md-12">
+			<div class="form-group col-md-6">
+				<div class="select-wrapper">
+					<label> <wicket:message
+							key="DatiRichiestaRimborsoTariEngEredePanel.tipologiaRichiedente" />
+					</label><select wicket:id="tipologiaRichiedente"></select>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-row col-md-12">
+			<div class="row">
+				<div class="col-md-6">
+					<div wicket:id="nome"></div>
+				</div>
+				<div class="col-md-6">
+					<div wicket:id="cognome"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-row col-md-12">
+			<div class="row">
+				<div class="col-md-6">
+					<div wicket:id="codiceFiscale"></div>
+				</div>
+				<div class="col-md-6">
+					<div wicket:id="email"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-row col-md-12 alert alert-info"
+			style="margin-bottom: 30px;">
+
+			<div class="form-row col-md-12">
+				<wicket:message
+					key="DatiRichiestaRimborsoTariEngEredePanel.infoIdDebNumeroDocumento" />
+			</div>
+			
+			<div class="form-row col-md-12">
+				<wicket:message
+					key="DatiRichiestaRimborsoTariEngEredePanel.infoIdDebNumeroDocumentoEsempioNetribe" />
+
+				<a href="#" role="button" wicket:id="btnDownloadEsempioNetribe">
+					<wicket:message
+						key="DatiRichiestaRimborsoTariEngEredePanel.btnDownloadEsempioNetribe" />
+				</a>
+
+				<wicket:message
+					key="DatiRichiestaRimborsoTariEngEredePanel.infoIdDebNumeroDocumentoEsempio2Netribe" />
+			</div>
+			
+			<div class="form-row col-md-12">
+				<wicket:message
+					key="DatiRichiestaRimborsoTariEngEredePanel.infoIdDebNumeroDocumento2" />
+			</div>
+			
+			<div class="form-row col-md-12">
+				<wicket:message
+					key="DatiRichiestaRimborsoTariEngEredePanel.infoIdDebNumeroDocumentoEsempioEng" />
+
+
+				<a href="#" role="button" wicket:id="btnDownloadEsempioEng"> <wicket:message
+						key="DatiRichiestaRimborsoTariEngEredePanel.btnDownloadEsempioEng" />
+				</a>
+
+				<wicket:message
+					key="DatiRichiestaRimborsoTariEngEredePanel.infoIdDebNumeroDocumentoEsempio2Eng" />
+			</div>
+			
+			
+
+		</div>
+
+		<div class="form-row col-md-12">
+			<div class="row">
+				<div class="col-md-6">
+					<div wicket:id="idDeb"></div>
+				</div>
+				<div class="col-md-6">
+					<div wicket:id="numeroDocumento"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-row col-md-12">
+			<div class="col-md-12">
+				<div wicket:id="note"></div>
+			</div>
+		</div>
+
+		<div class="form-row col-md-12 alert alert-info"
+			style="margin-bottom: 30px;">
+			<wicket:message
+				key="DatiRichiestaRimborsoTariEngEredePanel.infoEccedenze" />
+		</div>
+
+		<div class="form-row col-md-12">
+			<div class="form-group col-md-6">
+				<div class="select-wrapper">
+					<label> <wicket:message
+							key="DatiRichiestaRimborsoTariEngEredePanel.tipoEccedenzaRimborso" />
+					</label><select wicket:id="tipoEccedenzaRimborso"></select>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-row col-md-12" wicket:id="containerEccedenze">
+
+			<wicket:enclosure child="eccTari">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="eccTari" class="active"><wicket:message
+								key="DatiRichiestaRimborsoTariEngEredePanel.eccTari"></wicket:message></label>
+						<span class="input-number"> <input type="number" step="any"
+							min="0" wicket:id="eccTari" id="eccTari" class="form-control"
+							required />
+						</span>
+					</div>
+				</div>
+			</wicket:enclosure>
+
+			<wicket:enclosure child="eccTefa">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="eccTefa" class="active"><wicket:message
+								key="DatiRichiestaRimborsoTariEngEredePanel.eccTefa"></wicket:message></label>
+						<span class="input-number"> <input type="number" step="any"
+							min="0" wicket:id="eccTefa" id="eccTefa" class="form-control"
+							required />
+						</span>
+					</div>
+				</div>
+			</wicket:enclosure>
+
+			<wicket:enclosure child="eccTariR">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="eccTariR" class="active"><wicket:message
+								key="DatiRichiestaRimborsoTariEngEredePanel.eccTariR"></wicket:message></label>
+						<span class="input-number"> <input type="number" step="any"
+							min="0" wicket:id="eccTariR" id="eccTariR" class="form-control"
+							required />
+						</span>
+					</div>
+				</div>
+			</wicket:enclosure>
+
+			<div class="col-md-6"></div>
+
+		</div>
+
+	</wicket:panel>
+</body>
+
+</html>

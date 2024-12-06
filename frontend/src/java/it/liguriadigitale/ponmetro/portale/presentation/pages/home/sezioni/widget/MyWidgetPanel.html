@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<wicket:panel>
+	<div class="col-md-4 col-sm-6 hero-feature">
+		<!--start card-->
+		<div class="card-wrapper card-space">
+			<div class="card card-big">
+				<div class="card-body">
+					<a href="#" wicket:id="genitore">
+						<h4 class="card-title">io Genitore</h4>
+					</a>
+					<div class="card-icon">
+						<i class="icon-bimbo color-orange"></i>
+						<i class="icon-bimba color-grey-light"></i>
+						<i class="icon-bimbo color-grey-light"></i>
+					</div>
+					<p class="card-text" wicket:id="listview">
+						<span wicket:id="nome"></span> <a href="#" wicket:id="cfLink"><span wicket:id="cf"></span></a><span wicket:id="scuola"></span>
+					</p>
+					<p class="card-text font-weight-bold">
+						<a href="#" wicket:id="presenze"><span wicket:id="presenzeLabel" class="presenze"></span></a>
+					</p>
+					<p class="card-text">
+						<span wicket:id="presenzeDi"></span>
+					</p>
+				</div>
+			</div>
+		</div>
+		<!--end card-->
+	</div>
+</wicket:panel>		
+</body>
+</html>

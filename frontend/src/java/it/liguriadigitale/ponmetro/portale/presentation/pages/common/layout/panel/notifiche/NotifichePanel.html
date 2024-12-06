@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<title>Footer Panel</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="container">
+			<p class="h4 text-center fw-bold mb-3">Notifiche dai servizi del tuo Fascicolo</p>
+			<nav class="bottom-nav mb-4 col-12 mx-auto">
+				<ul>
+
+					<wicket:enclosure child="linkGlobo">
+						<li>
+							<div class="badge-wrapper"></div> <span wicket:id="linkGlobo">
+						</span>
+						</li>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="linkPagamenti">
+						<li>
+							<div class="badge-wrapper"></div> <span wicket:id="linkPagamenti">
+						</span>
+						</li>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="linkMessaggi">
+						<li>
+							<div class="badge-wrapper">
+								<span class="bottom-nav-badge" wicket:id="messaggi-counter">0</span>
+							</div> <a wicket:id="linkMessaggi"> <span
+								class="icon-lettera color-orange"></span> <span
+								class="bottom-nav-label">Messaggi<span class="sr-only">da
+										leggere</span></span>
+						</a>
+						</li>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="linkscadenze">
+						<li><a wicket:id="linkscadenze"> <span
+								class="icon-calendario2 color-blue-spid"></span> <span
+								class="bottom-nav-label">Scadenze<span class="sr-only">da
+										visualizzare</span></span>
+						</a></li>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="linkPrivacy">
+						<li><a wicket:id="linkPrivacy"> <span
+								class="icon-download color-blue-spid"></span> <span
+								class="bottom-nav-label">Informativa privacy</span>
+						</a></li>
+					</wicket:enclosure>
+
+				<!-- <wicket:enclosure child="linkPrenotaAppuntamento">
+						<li>
+							<a wicket:id="linkPrenotaAppuntamento">			
+								<span
+								class="icon-orologio color-blue-spid"></span> <span
+								class="bottom-nav-label">Prenota appuntamento</span>
+								</a>
+						</li>
+					</wicket:enclosure>  -->	
+					
+					
+					<wicket:enclosure child="linkPrenotaAppuntamento">
+						<li>
+							<div class="icon-orologio color-blue-spid"></div> <span wicket:id="linkPrenotaAppuntamento">
+						</span>
+						</li>
+					</wicket:enclosure>
+
+				</ul>
+			</nav>
+		</div>
+
+	</wicket:panel>
+
+</body>
+
+</html>

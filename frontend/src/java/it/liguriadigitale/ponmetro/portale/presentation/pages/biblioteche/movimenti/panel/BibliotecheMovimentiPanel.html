@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+		<div class="row content my-4 info-traffico">
+
+			<div class="col-12 alert alert-warning" role="alert"
+				wicket:id="listaMovimentiVuota"></div>
+
+			<div class="col-lg-6 mb-4" wicket:id="box">
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="" wicket:id="icona"></i>
+
+								<wicket:enclosure child="tipoMovimento">
+									<h4 class="card-title text-start col-9 font-weight-normal">
+										<span class="text-capitalize fw-bold"
+											wicket:id="tipoMovimento"></span>
+									</h4>
+								</wicket:enclosure>
+							</div>
+
+							<wicket:enclosure child="codiceMovimentoBiblioteca">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message
+												key="BibliotecheMovimentiPanel.codiceMovimentoBiblioteca" />
+											:
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="codiceMovimentoBiblioteca"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="statoMovimento">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message
+												key="BibliotecheMovimentiPanel.statoMovimento" />
+											:
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="statoMovimento"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="isbd">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="BibliotecheMovimentiPanel.isbd" />
+											:
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="isbd"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="inve">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="BibliotecheMovimentiPanel.inve" />
+											:
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="inve"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="collocazione">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="BibliotecheMovimentiPanel.collocazione" />
+											:
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="collocazione"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="dsFasVol">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="BibliotecheMovimentiPanel.dsFasVol" />
+											:
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="dsFasVol"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="dtInizio">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="BibliotecheMovimentiPanel.dtInizio" />
+											:
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="dtInizio"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="dtStimaFine">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="BibliotecheMovimentiPanel.dtStimaFine" />
+											:
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="dtStimaFine"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<p>
+								<wicket:enclosure child="listViewMovimentiInfoContabili">
+									<span><wicket:message
+											key="BibliotecheMovimentiPanel.listaMovimentiInfoContabili" /></span>
+
+									<p wicket:id="listViewMovimentiInfoContabili">
+									<ul>
+										<li class="fw-bold" wicket:id="infoContabile"></li>
+									</ul>
+							</p>
+							</wicket:enclosure>
+							</p>
+
+							<wicket:enclosure child="infoKit">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="BibliotecheMovimentiPanel.infoKit" />
+											:
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="infoKit"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="infoILL">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="BibliotecheMovimentiPanel.infoILL" />
+											:
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="infoILL"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<hr>
+
+							<wicket:enclosure child="modalViewPanel">
+								<div wicket:id="modalViewPanel"></div>
+								<a class="btn btn-xs btn-primary btn-icon" data-toggle="modal"
+									wicket:id="btnAnnullaMovimento"> <span><wicket:message
+											key="BibliotecheMovimentiPanel.annullaMovimento" /></span>
+								</a>
+							</wicket:enclosure>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div wicket:id="paginationIoLeggo"></div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+</html>

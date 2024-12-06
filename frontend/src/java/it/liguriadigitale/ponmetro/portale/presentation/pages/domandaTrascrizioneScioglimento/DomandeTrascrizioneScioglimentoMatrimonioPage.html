@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<body>
+	<wicket:extend>
+
+		<div wicket:id="breadcrumbPanel"></div>
+
+		<div wicket:id="messaggiInformativi"></div>
+
+		<wicket:enclosure child="btnDomandaTrascrizioneScioglimento">
+			<div class="col-sm-12 mt-2 mb-2">
+				<button class="btn btn-outline-primary">
+					<span wicket:id="btnDomandaTrascrizioneScioglimento"></span>
+				</button>
+			</div>
+		</wicket:enclosure>
+
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12"
+				wicket:id="domandeTrascrizioneScioglimentoPanel"></div>
+		</div>
+
+	</wicket:extend>
+</body>
+</html>

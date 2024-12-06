@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>
+
+		<div class="col-sm">
+			<div class="toggles" style="margin: 13px;">
+				<label wicket:id="wmkChkDichiarazione"> <input
+					type="checkbox" wicket:id="chkDichiarazione"> <span
+					class="lever"></span> <span wicket:id="lblDichiarazione"></span>
+
+				</label>
+			</div>
+			
+			<div class="container">
+				<div class="row justify-content-md-center">
+					<div class="col-8" wicket:id="wmkVeicolo">
+						<input class="form-control" id="classe" type="text" placeholder=""
+							wicket:id="targaAutoVeicoloProprioODelFamiliare" required> <small><wicket:message
+								key="DichiarazionePPPanel.targaAutoVeicoloProprioODelFamiliare" /></small>
+						<label class="sr-only" for="classe"> <wicket:message
+								key="DichiarazionePPPanel.targaAutoVeicoloProprioODelFamiliare" />
+						</label> <input class="form-control" id="classe" type="text"
+							placeholder=""
+							wicket:id="codiceFiscaleAutoVeicoloProprioODelFamiliare" required>
+						<small><wicket:message
+								key="DichiarazionePPPanel.codiceFiscaleAutoVeicoloProprioODelFamiliare" /></small>
+						<label class="sr-only" for="classe"> <wicket:message
+								key="DichiarazionePPPanel.codiceFiscaleAutoVeicoloProprioODelFamiliare" />
+						</label> <input class="form-control" id="classe" type="text"
+							placeholder=""
+							wicket:id="cognomeProprietarioAutoVeicoloProprioODelFamiliare" required>
+						<small><wicket:message
+								key="DichiarazionePPPanel.cognomeProprietarioAutoVeicoloProprioODelFamiliare" /></small>
+						<label class="sr-only" for="classe"> <wicket:message
+								key="DichiarazionePPPanel.cognomeProprietarioAutoVeicoloProprioODelFamiliare" />
+						</label> <input class="form-control" id="classe" type="text"
+							placeholder=""
+							wicket:id="nomeProprietarioAutoVeicoloProprioODelFamiliare" required>
+						<small><wicket:message
+								key="DichiarazionePPPanel.nomeProprietarioAutoVeicoloProprioODelFamiliare" /></small>
+						<label class="sr-only" for="classe"> <wicket:message
+								key="DichiarazionePPPanel.nomeProprietarioAutoVeicoloProprioODelFamiliare" />
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</wicket:panel>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>
+		<div class="container richiesta-agevolazione">
+
+			<div class="row clearfix">
+				<div class="col-sm-12 mt-2 mb-5">
+					<p class="text-left font-weight-semibold mb-0">
+						<wicket:message key="RichiestaAgevolazionePanel.title" />
+					</p>
+				</div>
+			</div>
+
+			<div class="row justify-content-md-center mb-4">
+				<div class="col-12 col-lg-10">
+					<div class="steppers">
+						<ul class="steppers-header">
+							<li class="confirmed"><span class="steppers-number"><span
+									class="sr-only">Step </span>1</span> <span class="steppers-status"><wicket:message
+										key="RichiestaAgevolazionePanel.step1"></wicket:message></span> <span
+								class="sr-only"><wicket:message
+										key="RichiestaAgevolazionePanel.step1"></wicket:message></span></li>
+							<li class="confirmed"><span class="steppers-number"><span
+									class="sr-only">Step </span>2</span> <span class="steppers-status"><wicket:message
+										key="RichiestaAgevolazionePanel.step2"></wicket:message></span> <span
+								class="sr-only"><wicket:message
+										key="RichiestaAgevolazionePanel.step2"></wicket:message></span></li>
+							<li class="active no-line"><span class="steppers-number"><span
+									class="sr-only">Step </span>3</span> <span class="steppers-status"><wicket:message
+										key="RichiestaAgevolazionePanel.step3"></wicket:message></span> <span
+								class="sr-only"><wicket:message
+										key="RichiestaAgevolazionePanel.step3"></wicket:message></span></li>
+							<li class="steppers-index" aria-hidden="true"><span
+								class="confirmed">1</span> <span class="confirmed">2</span> <span
+								class="active"><wicket:message
+										key="RichiestaAgevolazionePanel.step3"></wicket:message></span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div wicket:id="feedback"></div>
+
+			<div class="row mt-5 mb-2">
+				<div class="col-10">
+					<p class="text-left font-weight-semibold">
+						<wicket:message key="RichiestaAgevolazionePanel.per" />
+						:
+					</p>
+				</div>
+			</div>
+
+			<div class="row mb-2">
+				<div class="col-5">
+					<p class="text-left">
+						<span class="font-weight-semibold"><wicket:message
+								key="RichiestaAgevolazionePanel.nomeCognome" />:</span> <span
+							class="text-capitalize" wicket:id="listaNomiIscritti"></span>
+					</p>
+				</div>
+				<div class="col-5">
+					<p class="text-left">
+						<span class="font-weight-semibold mr-1"><wicket:message
+								key="RichiestaAgevolazionePanel.annoScolastico" />:</span> <span
+							class="text-capitalize" wicket:id="annoScolasticoSelezionato"></span>
+					</p>
+				</div>
+			</div>
+
+			<div wicket:id="boxDisoccupati">
+
+				<div class="row mt-5 mb-2">
+					<div class="col-10">
+						<p class="text-left font-weight-semibold">
+							<wicket:message key="RichiestaAgevolazionePanel.dichiaro" />
+							:
+						</p>
+					</div>
+				</div>
+
+				<div class="row mb-2">
+					<div class="col-10">
+						<p class="text-left">
+							<span class="font-weight-semibold"><wicket:message
+									key="RichiestaAgevolazionePanel.codiceFiscale" />:</span> <span
+								class="text-capitalize" wicket:id="codiceFiscale">Codice
+								fiscale 1</span>
+						</p>
+					</div>
+					<div class="col-10">
+						<p class="text-left">
+							<span class="font-weight-semibold mr-1"><wicket:message
+									key="RichiestaAgevolazionePanel.dataInizioDisoccupazione" />:</span>
+							<span class="text-capitalize" wicket:id="data"></span>
+						</p>
+					</div>
+				</div>
+
+			</div>
+
+			<!--  
+			<wicket:enclosure child="codiceFiscale1">
+				<div class="row mt-5 mb-2">
+					<div class="col-10">
+						<p class="text-left font-weight-semibold">
+							<wicket:message key="RichiestaAgevolazionePanel.dichiaro" />
+							:
+						</p>
+					</div>
+				</div>
+
+				<div class="row mb-2">
+					<div class="col-10">
+						<p class="text-left">
+							<span class="font-weight-semibold"><wicket:message
+									key="RichiestaAgevolazionePanel.codiceFiscale" />:</span> <span
+								class="text-capitalize" wicket:id="codiceFiscale1">Codice
+								fiscale 1</span>
+						</p>
+					</div>
+					<div class="col-10">
+						<p class="text-left">
+							<span class="font-weight-semibold mr-1"><wicket:message
+									key="RichiestaAgevolazionePanel.dataInizioDisoccupazione" />:</span>
+							<span class="text-capitalize" wicket:id="data1"></span>
+						</p>
+					</div>
+				</div>
+				<wicket:enclosure child="codiceFiscale2">
+					<div class="row mb-2">
+						<div class="col-10">
+							<p class="text-left">
+								<span class="font-weight-semibold"><wicket:message
+										key="RichiestaAgevolazionePanel.codiceFiscale" />:</span> <span
+									class="text-capitalize" wicket:id="codiceFiscale2">Codice
+									fiscale 2</span>
+							</p>
+						</div>
+						<div class="col-10">
+							<p class="text-left">
+								<span class="font-weight-semibold mr-1"><wicket:message
+										key="RichiestaAgevolazionePanel.dataInizioDisoccupazione" />:</span>
+								<span class="text-capitalize" wicket:id="data2"></span>
+							</p>
+						</div>
+					</div>
+				</wicket:enclosure>
+			</wicket:enclosure>
+			
+			-->
+
+			<div class="row mt-5 mb-2">
+				<div class="col-10">
+					<p class="text-left font-weight-semibold">
+						<wicket:message key="RichiestaAgevolazionePanel.recapiti" />
+						:
+					</p>
+				</div>
+			</div>
+
+			<div class="row mb-2">
+				<div class="col-10">
+					<p class="text-left">
+						<span class="font-weight-semibold"><wicket:message
+								key="RichiestaAgevolazionePanel.emailContatto" />:</span> <span
+							class="text-capitalize" wicket:id="email">mio@contatto.com</span>
+					</p>
+				</div>
+				<div class="col-10">
+					<p class="text-left">
+						<span class="font-weight-semibold mr-1"><wicket:message
+								key="RichiestaAgevolazionePanel.telefonoContatto" />:</span> <span
+							class="text-capitalize" wicket:id="telefono">010/123 456</span>
+					</p>
+				</div>
+			</div>
+
+		</div>
+
+	</wicket:panel>
+
+</body>
+</html>

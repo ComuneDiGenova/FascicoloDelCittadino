@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+
+	<wicket:panel>
+		<div class="card-wrapper">
+			<div class="card card-bg my-2">
+				<div class="card-body">
+					<h3 class="text-left font-weight-semibold col-9" wicket:id="titolo"></h3>
+					<div>
+						<h2 wicket:id="listaComproprietariVuota"></h2>
+					</div>
+
+					<div class="row content my-4 info-traffico">
+						<div class="col-lg-4 mb-4" wicket:id="box">
+							<div class="card-wrapper">
+								<div class="card card-bg my-2">
+									<div class="card-body">
+										<span wicket:id="contenuto"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-12 mt-2 mb-2"
+						wicket:id="paginationComproprietari"></div>
+
+				</div>
+			</div>
+		</div>
+	</wicket:panel>
+</body>
+
+</html>

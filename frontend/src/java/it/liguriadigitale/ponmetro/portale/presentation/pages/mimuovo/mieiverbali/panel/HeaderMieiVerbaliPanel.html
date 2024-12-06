@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+		<div class="row content my-4 info-traffico">
+			<div class="col-12">
+				<h4>
+					<wicket:message key="HeaderMieiVerbaliPanel.legenda" />
+				</h4>
+
+				<h4>
+					<a wicket:id="flagVerbaleAperto" class="badge bg-danger"><wicket:message
+							key="HeaderMieiVerbaliPanel.aperti" /></a> <a
+						wicket:id="flagVerbaleInAttesa" class="badge bg-warning"><wicket:message
+							key="HeaderMieiVerbaliPanel.inAttesa" /></a> <a
+						wicket:id="flagVerbaleArchiviato" class="badge bg-success"><wicket:message
+							key="HeaderMieiVerbaliPanel.archiviati" /></a> <a
+						wicket:id="flagVerbaleOggettoRicorso" class="badge bg-primary"><wicket:message
+							key="HeaderMieiVerbaliPanel.oggettoDiRicorso" /></a> <a
+						wicket:id="flagVerbaleInvioAdAutorita" class="badge bg-primary"><wicket:message
+							key="HeaderMieiVerbaliPanel.invioAdAutorita" /></a> <a
+						wicket:id="flagVerbaleIscrittoARuolo" class="badge bg-primary"><wicket:message
+							key="HeaderMieiVerbaliPanel.iscrittoARuolo" /></a> <a
+						wicket:id="flagTuttiVerbali" class="badge bg-secondary"><wicket:message
+							key="HeaderMieiVerbaliPanel.tutti" /></a>
+				</h4>
+			</div>
+
+			<div class="col-12">
+				<div wicket:id="messaggiInformativi"></div>
+			</div>
+
+			<div class="col-12">
+				<div class="form-row mt-5 mb-2">
+					<div class="form-group col-md-12 mb-0">
+						<h4>
+							<wicket:message key="HeaderMieiVerbaliPanel.info" />
+							<a class="btn btn-primary btn-xs" href="#" role="button"
+								wicket:id="btnRicercaVerbale"> <wicket:message
+									key="HeaderMieiVerbaliPanel.cerca" />
+							</a>
+						</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+	</wicket:panel>
+</body>
+</html>

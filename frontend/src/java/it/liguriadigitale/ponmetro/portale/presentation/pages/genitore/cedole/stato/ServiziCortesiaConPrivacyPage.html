@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<body>
+	<wicket:extend>
+
+		<div wicket:id="breadcrumbPanel"></div>
+		<div wicket:id="messaggiInformativi"></div>
+		<div wicket:id="messaggi"></div>
+
+
+		
+		<div class="col-12">
+			<div class="alert alert-warning col-12" role="alert"
+				wicket:id="nonIscritto">
+
+				<div class="row py-1 mb-2 col-12">
+					<wicket:message key="ServiziCortesiaConPrivacyPage.nonIscritto" />
+				</div>
+
+				<div class="row py-1 mb-2 col-12">
+					<div class="col-6">
+						<button class="btn btn-primary" type="button"
+							wicket:id="btnRecuperaRegistrazione"></button>
+					</div>
+					<div class="col-6">
+						<button class="btn btn-primary" type="button"
+							wicket:id="btnPrimaRegistrazione"></button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+		<div class="col-12">
+			<a class="btn btn-primary mx-3" href="#" role="button"
+				wicket:id="btnVerificaEmail"> <wicket:message
+					key="ServiziCortesiaPanel.btnVerificaEmail" />
+			</a>
+		
+			<a class="btn btn-primary mx-3" href="#" role="button"
+				wicket:id="btnCambiaEmail"> <wicket:message
+					key="ServiziCortesiaPanel.btnCambiaEmail" />
+			</a>
+		</div>
+
+
+		<div class="col-12" wicket:id="serviziCortesiaPanel"></div>
+
+		<wicket:child />
+
+	</wicket:extend>
+</body>
+</html>

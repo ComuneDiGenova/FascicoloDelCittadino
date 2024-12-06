@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>
+		<div class="container">
+
+			<div class="col-sm-12 mt-2 mb-2">
+				<h3 class="text-start fw-bold mb-0">
+					<wicket:message key="AnteprimaRicevutaDppCondCondPanel.title" />
+				</h3>
+			</div>
+
+			<div class="row justify-content-md-center mb-4">
+				<div class="col-12 col-lg-10">
+					<div class="steppers">
+						<ul class="steppers-header">
+							<li class="confirmed"><span class="steppers-number"><span
+									class="sr-only">Step </span>1</span> <span class="steppers-status"><wicket:message
+										key="AnteprimaRicevutaDppCondCondPanel.step1"></wicket:message></span>
+								<span class="sr-only"><wicket:message
+										key="AnteprimaRicevutaDppCondCondPanel.step1"></wicket:message></span></li>
+
+							<li class="confirmed"><span class="steppers-number"><span
+									class="sr-only">Step </span>2</span> <span class="steppers-status"><wicket:message
+										key="AnteprimaRicevutaDppCondCondPanel.step2"></wicket:message></span>
+								<span class="sr-only"><wicket:message
+										key="AnteprimaRicevutaDppCondCondPanel.step2"></wicket:message></span></li>
+
+							<li class="active no-line"><span class="steppers-number"><span
+									class="sr-only">Step </span>3</span> <span class="steppers-status"><wicket:message
+										key="AnteprimaRicevutaDppCondCondPanel.step3"></wicket:message></span>
+								<span class="sr-only"><wicket:message
+										key="AnteprimaRicevutaDppCondCondPanel.step3"></wicket:message></span></li>
+
+							<li><span class="steppers-number"><span
+									class="sr-only">Step </span>4</span> <span class="steppers-status"><wicket:message
+										key="AnteprimaRicevutaDppCondCondPanel.step4"></wicket:message></span>
+								<span class="sr-only"><wicket:message
+										key="AnteprimaRicevutaDppCondCondPanel.step4"></wicket:message></span></li>
+
+							<li class="steppers-index" aria-hidden="true"><span
+								class="confirmed">1</span> <span class="confirmed">2</span> <span
+								class="confirmed">3</span> <span class="active"><wicket:message
+										key="AnteprimaRicevutaDppCondCondPanel.step4"></wicket:message></span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div>
+
+				<div>
+					<h3>
+						<wicket:message
+							key="AnteprimaRicevutaDppCondCondPanel.titoloRicevuta" />
+					</h3>
+				</div>
+
+				<br>
+
+				<p>
+					<wicket:enclosure child="numeroAvviso">
+						<span><wicket:message
+								key="AnteprimaRicevutaDppCondCondPanel.relativoA" /></span>
+						<span class="fw-bold" wicket:id="numeroAvviso"></span>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="dataVerbale">
+						<span><wicket:message
+								key="AnteprimaRicevutaDppCondCondPanel.del" /></span>
+						<span class="fw-bold" wicket:id="dataVerbale"></span>
+					</wicket:enclosure>
+				</p>
+
+				<p>
+					<span><wicket:message
+							key="AnteprimaRicevutaDppCondCondPanel.info2" /></span>
+				</p>
+
+				<p>
+					<wicket:enclosure child="proprietario">
+						<span><wicket:message
+								key="AnteprimaRicevutaDppCondCondPanel.il" /></span>
+						<span class="fw-bold" wicket:id="proprietario"></span>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="cfProprietario">
+						<span><wicket:message
+								key="AnteprimaRicevutaDppCondCondPanel.cf" /></span>
+						<span class="fw-bold" wicket:id="cfProprietario"></span>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="natoAProprietario">
+						<span><wicket:message
+								key="AnteprimaRicevutaDppCondCondPanel.natoA" /></span>
+						<span class="fw-bold" wicket:id="natoAProprietario"></span>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="natoProvinciaProprietario">
+						<span><wicket:message
+								key="AnteprimaRicevutaDppCondCondPanel.provincia" /></span>
+						<span class="fw-bold"
+							wicket:id="natoProvinciaProprietario"></span>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="natoIlProprietario">
+						<span><wicket:message
+								key="AnteprimaRicevutaDppCondCondPanel.natoIl" /></span>
+						<span class="fw-bold" wicket:id="natoIlProprietario"></span>
+					</wicket:enclosure>
+				</p>
+
+				<p>
+					<wicket:enclosure child="proprietarioResidenteIn">
+						<span><wicket:message
+								key="AnteprimaRicevutaDppCondCondPanel.residenteIn" /></span>
+						<span class="fw-bold"
+							wicket:id="proprietarioResidenteIn"></span>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="proprietarioResidenteCap">
+						<span><wicket:message
+								key="AnteprimaRicevutaDppCondCondPanel.residenteCap" /></span>
+						<span class="fw-bold"
+							wicket:id="proprietarioResidenteCap"></span>
+					</wicket:enclosure>
+				</p>
+
+				<p>
+					<wicket:enclosure child="info3">
+						<span><wicket:message
+								key="AnteprimaRicevutaDppCondCondPanel.info3" /></span>
+						<span class="fw-bold" wicket:id="info3"></span>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="del">
+						<span><wicket:message
+								key="AnteprimaRicevutaDppCondCondPanel.del" /></span>
+						<span class="fw-bold" wicket:id="del"></span>
+					</wicket:enclosure>
+
+					<span><wicket:message
+							key="AnteprimaRicevutaDppCondCondPanel.info4" /></span>
+				</p>
+
+				<p>
+					<span><wicket:message
+							key="AnteprimaRicevutaDppCondCondPanel.info5" /></span> <span
+						class="fw-bold"><wicket:message
+							key="AnteprimaRicevutaDppCondCondPanel.dichiaro" /></span> <span><wicket:message
+							key="AnteprimaRicevutaDppCondCondPanel.info6" /></span> <span
+						class="fw-bold"><wicket:message
+							key="AnteprimaRicevutaDppCondCondPanel.info7" /></span> <span><wicket:message
+							key="AnteprimaRicevutaDppCondCondPanel.contestata" /></span> <br>
+					<span><wicket:message
+							key="AnteprimaRicevutaDppCondCondPanel.info8" /></span>
+				</p>
+
+				<p>
+					<wicket:enclosure child="categoriaPatente">
+						<span><wicket:message
+								key="AnteprimaRicevutaDppCondCondPanel.categoriaPatente" /></span>
+						<span class="fw-bold" wicket:id="categoriaPatente"></span>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="numeroPatente">
+						<span><wicket:message
+								key="AnteprimaRicevutaDppCondCondPanel.numeroPatente" /></span>
+						<span class="fw-bold" wicket:id="numeroPatente"></span>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="patenteRilasciataDa">
+						<span><wicket:message
+								key="AnteprimaRicevutaDppCondCondPanel.patenteRilasciataDa" /></span>
+						<span class="fw-bold" wicket:id="patenteRilasciataDa"></span>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="patenteRilasciataIl">
+						<span><wicket:message
+								key="AnteprimaRicevutaDppCondCondPanel.patenteRilasciataIl" /></span>
+						<span class="fw-bold" wicket:id="patenteRilasciataIl"></span>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="patenteValida">
+						<span><wicket:message
+								key="AnteprimaRicevutaDppCondCondPanel.patenteValida" /></span>
+						<span class="fw-bold" wicket:id="patenteValida"></span>
+					</wicket:enclosure>
+
+				</p>
+
+				<p>
+					<wicket:enclosure child="info9">
+						<span><wicket:message
+								key="AnteprimaRicevutaDppCondCondPanel.info9" /></span>
+						<span class="fw-bold" wicket:id="info9"></span>
+					</wicket:enclosure>
+				</p>
+
+				<p>
+					<span class="fw-bold"><wicket:message
+							key="AnteprimaRicevutaDppCondCondPanel.info10" /></span>
+				</p>
+
+				<div class="form-row mt-5 mb-0">
+					<div class="form-group col-md-12 mb-3 text-center">
+						<button type="submit" class="btn btn-primary"
+							wicket:id="confermaDpp">
+							<wicket:message key="AnteprimaRicevutaDppCondCondPanel.prosegui" />
+						</button>
+						<button wicket:id="indietro" type="button"
+							class="btn btn-secondary">
+							<wicket:message key="AnteprimaRicevutaDppCondCondPanel.indietro" />
+						</button>
+						<button wicket:id="annulla" type="button"
+							class="btn btn-secondary">
+							<wicket:message key="AnteprimaRicevutaDppCondCondPanel.annulla" />
+						</button>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+
+</body>
+</html>

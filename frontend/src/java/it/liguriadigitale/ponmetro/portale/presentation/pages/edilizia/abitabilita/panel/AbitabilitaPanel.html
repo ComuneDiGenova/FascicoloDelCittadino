@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:extend>
+
+		<div class="form-row col-md-12" wicket:id="titolo"></div>
+
+		<div class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici">
+
+			<div class="form-row col-md-12" wicket:id="titoloRicerca"></div>
+
+			<div class="form-row col-12">
+				<div class="col-md-12">
+					<div wicket:id="via"></div>
+				</div>
+			</div>
+
+			<div class="form-row col-12">
+				<div class="row">
+					<div class="col-md-6">
+						<div wicket:id="civicoDa"></div>
+					</div>
+
+					<div class="col-md-6">
+						<div wicket:id="civicoA"></div>
+					</div>
+				</div>
+				
+			</div>
+
+			<div class="form-row col-12">
+			
+				<div class="row">
+					<div class="col-md-6">
+						<div wicket:id="letteraInterno"></div>
+					</div>
+	
+					<div class="col-sm-6">
+						<div class="select-wrapper text-start">
+							<label> <wicket:message key="AbitabilitaPanel.colore" />
+							</label> <select  wicket:id="colore">
+							</select>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="form-row col-12">
+				<div class="row">
+					<div class="col-md-6">
+						<div wicket:id="numeroCartellinoDecreto"></div>
+					</div>
+	
+					<div class="col-md-6">
+						<div wicket:id="annoDecreto"></div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+		<div class="form-group col-md-12 mb-3 text-center">
+			<div class="form-group col-md-12 mb-3 text-center">
+
+				<button type="submit" class="btn btn-primary" wicket:id="cerca">
+					<wicket:message key="AbitabilitaPanel.cerca" />
+				</button>
+
+				<a class="btn btn-secondary" href="#" role="button"
+					wicket:id="annulla"> <wicket:message
+						key="AbitabilitaPanel.annulla" />
+				</a>
+
+			</div>
+		</div>
+
+		<div class="row content my-12 info-traffico"
+			wicket:id="containerDecretiAbitabilita">
+
+			<div class="col-lg-6 mb-4" wicket:id="listview">
+
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="color-fc-secondary col-3 icon-rimborsi-imu"></i>
+
+								<h4 class="card-title text-start col-9 font-weight-normal">
+									<span class="text-capitalize fw-bold"
+										wicket:id="numeroDecreto"></span> <br /> <span
+										class="text-capitalize fw-bold"
+										wicket:id="annoDecretoTrovato"></span>
+								</h4>
+							</div>
+
+
+							<div wicket:id="unitaDocumentaria"></div>
+
+							<div wicket:id="listviewPDF" class="row py-1 mb-2 border-bottom">
+								<div class="col-5">
+									<p class="card-text text-start fw-bold">
+										<span wicket:id="nomeFile"></span>
+									</p>
+								</div>
+								<div class="col-md-6">
+									<div wicket:id="btnScaricaPDF"></div>
+								</div>
+
+							</div>
+
+							<div wicket:id="listaIndirizzi"></div>
+
+							<div wicket:id="autocertificata"></div>
+
+
+
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+		
+		
+	</wicket:extend>
+</body>
+
+</html>

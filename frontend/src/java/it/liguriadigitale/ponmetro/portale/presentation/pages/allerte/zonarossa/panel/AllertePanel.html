@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:extend>
+		<div class="col-12">
+			<h3>
+				<wicket:message key="AllertePanel.titolo" />
+			</h3>
+		</div>
+
+		<div class="alert alert-warning col-md-12 col-lg-12 col-sm-12 col-xl-12" role="alert"
+			wicket:id="nonIscritto">
+			
+			<div class="row py-1 mb-2">
+				<div class="col-md-6 col-lg-6 col-sm-6 col-xl-6" style="text-align: center;">
+					<wicket:message key="AllertePanel.vuoto" /><br> <br>
+				</div>
+				<div class="col-md-6 col-lg-6 col-sm-6 col-xl-6" style="text-align: center;">
+					<a class="btn btn-primary btn-xs" href="#" role="button"
+						wicket:id="btnRegistrati"> </a>
+				</div>
+			</div>
+		
+
+		</div>
+
+		<div class="row content my-12 info-traffico" wicket:id="iscritto">
+
+			<div class="col-lg-12 mb-4">
+
+				<div class="categoryicon-top row mb-2">
+					<i class="color-fc-pink col-3 icon-servizi-allerta"></i>
+				</div>
+
+				<div wicket:id="nome"></div>
+
+				<div wicket:id="cognome"></div>
+
+				<div wicket:id="codiceFiscale"></div>
+
+				<div wicket:id="iscrizione"></div>
+
+				<div wicket:id="dataRegistrazione"></div>
+
+				<div wicket:id="email"></div>
+
+				<div wicket:id="vulnerabilitaPersonale"></div>
+
+				<wicket:enclosure child="btnAggiungiTelefono">
+					<div class="form-row col-12">
+						<a class="btn btn-primary" href="#" role="button"
+							wicket:id="btnAggiungiTelefono"> <wicket:message
+								key="AllertePanel.btnAggiungiTelefono" />
+						</a>
+					</div>
+				</wicket:enclosure>
+
+				<wicket:enclosure child="contatti">
+
+					<div class="row content my-12 info-traffico">
+						<div class="col-lg-4 mb-4" wicket:id="contatti">
+
+							<div class="card-wrapper">
+								<div class="card card-bg my-2">
+									<div class="card-body">
+										<div class="categoryicon-top row mb-2">
+											<i class="" wicket:id="iconaTelefono"></i>
+
+											<h4 class="card-title text-left col-9 font-weight-normal">
+												<span class="text-capitalize font-weight-semibold"
+													wicket:id="numeroDiTelefono"></span>
+											</h4>
+
+										</div>
+
+										<div wicket:id="idContatto"></div>
+
+										<div wicket:id="tipoTelefono"></div>
+
+										<div wicket:id="lingua"></div>
+
+										<div wicket:id="linguaNoItalia"></div>
+
+										<wicket:enclosure child="btnCancellaTelefono">
+											<div wicket:id="modaleCancellaTelefono"></div>
+											<a class="btn btn-xs btn-danger btn-icon" data-toggle="modal"
+												wicket:id="btnCancellaTelefono" style="color: white;"> <span><wicket:message
+														key="AllertePanel.btnCancellaTelefono" /></span>
+											</a>
+										</wicket:enclosure>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</wicket:enclosure>
+
+				<wicket:enclosure child="btnAggiungiCivico">
+					<div class="form-row col-12">
+						<a class="btn btn-primary" href="#" role="button"
+							wicket:id="btnAggiungiCivico"> <wicket:message
+								key="AllertePanel.btnAggiungiCivico" />
+						</a>
+					</div>
+				</wicket:enclosure>
+
+				<wicket:enclosure child="civici">
+					<div class="row content my-12 info-traffico">
+						<div class="col-lg-4 mb-4" wicket:id="civici">
+
+							<div class="card-wrapper">
+								<div class="card card-bg my-2">
+									<div class="card-body">
+										<div class="categoryicon-top row mb-2">
+											<i class="color-fc-pink col-3 icon-case"></i>
+
+
+											<h4 class="card-title text-left col-9 font-weight-normal">
+												<span class="text-capitalize font-weight-semibold"
+													wicket:id="indirizzoCompleto"></span>
+											</h4>
+
+										</div>
+
+										<wicket:enclosure child="btnDettagliCivico">
+
+											<div class="form-row col-12">
+												<a class="btn btn-primary" href="#" role="button"
+													wicket:id="btnDettagliCivico"> <wicket:message
+														key="AllertePanel.btnDettagliCivico" />
+												</a>
+											</div>
+										</wicket:enclosure>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</wicket:enclosure>
+
+			</div>
+		</div>
+
+
+
+	</wicket:extend>
+</body>
+
+</html>

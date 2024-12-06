@@ -1,0 +1,4 @@
+@FdCPackagePropertiesAnnotation
+package it.liguriadigitale.ponmetro.portale.presentation.pages.segnalazionedanni;
+
+import it.liguriadigitale.ponmetro.portale.presentation.common.FdCPackagePropertiesAnnotation;

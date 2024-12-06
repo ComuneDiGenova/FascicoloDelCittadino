@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>    
+
+		<div class="col-sm-12 mt-2 mb-2">
+			<h3 class="text-start fw-bold mb-0" wicket:id="titleChiusuraRistorazione"></h3>
+			<br>
+			<h5 class="text-start fw-bold mb-0"><wicket:message key="RichiestaChiusuraIscrizioneRefezionePanel.subTitle" /></h5>
+		</div>
+
+		<!-- STEP 1 -->
+		<div class="col-lg-12 mx-auto">
+			<div class="steppers">
+				<ul class="steppers-header">
+					<li class="active no-line" >
+						<span class="steppers-number"><span class="sr-only">Step </span>1</span>
+						<span class="steppers-status"><wicket:message key="RichiestaChiusuraIscrizioneRefezionePanel.step1"></wicket:message></span>
+						<span class="sr-only"><wicket:message key="RichiestaChiusuraIscrizioneRefezionePanel.step1"></wicket:message></span>
+					</li>
+					<li>
+						<span class="steppers-number"><span class="sr-only">Step </span>2</span>
+						<span class="steppers-status"><wicket:message key="RichiestaChiusuraIscrizioneRefezionePanel.step2"></wicket:message></span>
+						<span class="sr-only"><wicket:message key="RichiestaChiusuraIscrizioneRefezionePanel.step2"></wicket:message></span>
+					</li>
+					<li>
+						<span class="steppers-number"><span class="sr-only">Step </span>3</span>
+						<span class="steppers-status"><wicket:message key="RichiestaChiusuraIscrizioneRefezionePanel.step3"></wicket:message></span>
+						<span class="sr-only"><wicket:message key="RichiestaChiusuraIscrizioneRefezionePanel.step3"></wicket:message></span>
+					</li>
+					<li class="steppers-index" aria-hidden="true">
+						<span class="active">1</span> 
+						<span>2</span> 
+						<span><wicket:message key="RichiestaChiusuraIscrizioneRefezionePanel.step3"></wicket:message></span> 
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- RIEPILOGO -->
+		<div class="col-lg-10 mx-auto riepilogo" >
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>  
+
+			<div class="col-md-10 text-start mb-4">
+				<h4><wicket:message key="RichiestaChiusuraIscrizioneRefezionePanel.info1" />:</h4>
+			</div>
+
+			<div class="row mb-0 d-flex justify-content-center">
+				<div class="col-5">
+					<p class="text-start">
+						<span class="fw-bold"><wicket:message key="RichiestaChiusuraIscrizioneRefezionePanel.nomeCognome" />:</span>
+						<span class="text-capitalize" wicket:id="nomeCognome"></span>
+					</p>
+				</div>
+				<div class="col-5">
+					<p class="text-start">
+						<span class="fw-bold"><wicket:message key="RichiestaChiusuraIscrizioneRefezionePanel.sesso" />:</span>
+						<span class="text-capitalize" wicket:id="sesso"></span>
+					</p>
+				</div>
+			</div>
+
+			<div class="row mb-0 d-flex justify-content-center">
+				<div class="col-5">
+					<p class="text-start">
+						<span class="fw-bold mr-1"><wicket:message key="RichiestaChiusuraIscrizioneRefezionePanel.luogoNascita" />:</span>
+						<span class="text-capitalize" wicket:id="luogoNascita"></span>
+					</p>
+				</div>
+				<div class="col-5">
+					<p class="text-start">
+						<span class="fw-bold mr-1"><wicket:message key="RichiestaChiusuraIscrizioneRefezionePanel.dataNascita" />:</span>
+						<span wicket:id="dataNascita"></span>
+					</p>
+				</div>
+			</div>
+
+			<div class="row mb-0 d-flex justify-content-center">
+				<div class="col-10">
+					<p class="text-start">
+						<span class="fw-bold mr-1"><wicket:message key="RichiestaChiusuraIscrizioneRefezionePanel.codiceFiscale" />:</span>
+						<span wicket:id="codiceFiscale"></span>
+					</p>
+				</div>
+			</div>
+
+			<div class="row mb-0 d-flex justify-content-center">
+				<div class="col-10">
+					<p class="text-start">
+						<span class="fw-bold mr-1"><wicket:message key="RichiestaChiusuraIscrizioneRefezionePanel.residente" />:</span>
+						<span class="text-capitalize" wicket:id="residente"></span>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<form class="needs-validation was-validated mb-3 col-lg-10 mx-auto" wicket:id="form">
+
+			<div class="form-row mt-5 mb-2">
+				<div class="form-group col-md-12 mb-0">
+					<h4><wicket:message key="RichiestaChiusuraIscrizioneRefezionePanel.info2" />:</h4>
+				</div>
+			</div>
+
+			<div class="form-row mb-2 col-md-10 mx-auto">
+				<div class="form-group col-md-8 mb-0">
+					<input class="form-control" id="email" type="email" placeholder="Email" wicket:id="emailContatto" required>
+					<label class="sr-only" for="email"><wicket:message key="RichiestaChiusuraIscrizioneRefezionePanel.emailContatto" /></label>
+					<div class="invalid-feedback"><wicket:message key="RichiestaChiusuraIscrizioneRefezionePanel.emailContattoFeedback" /></div>
+				</div>
+			</div>
+
+			<div class="form-row mb-2 col-md-10 mx-auto">
+				<div class="form-group col-md-8 mb-0">
+					<input class="form-control" id="telContatto" type="text" pattern="^[0-9]{1,10}" placeholder="Telefono" wicket:id="telefonoContatto" required>
+					<label class="sr-only" for="telContatto"><wicket:message key="RichiestaChiusuraIscrizioneRefezionePanel.telefonoContatto" /></label>
+					<div class="invalid-feedback"><wicket:message key="RichiestaChiusuraIscrizioneRefezionePanel.telefonoContattoFeedback" /></div>
+				</div>
+			</div>
+
+			<div class="form-row mb-2 col-md-10 mx-auto">
+				<div class="form-group col-md-8 mb-0">
+					<input class="form-control" id="note" type="text" placeholder="Note" wicket:id="note" required>
+					<label class="sr-only" for="note"><wicket:message key="RichiestaChiusuraIscrizioneRefezionePanel.note" /></label>
+					<div class="invalid-feedback"><wicket:message key="RichiestaChiusuraIscrizioneRefezionePanel.noteFeedback" /></div>
+				</div>
+			</div>
+			
+			<!-- PULSANTI -->
+			<div class="form-row mt-5 mb-0">
+				<div class="form-group col-md-12 mb-3 text-center">
+					<button type="submit" class="btn btn-primary"><wicket:message key="RichiestaChiusuraIscrizioneRefezionePanel.prosegui" /></button>
+					<button type="button" class="btn btn-secondary"  wicket:id="annulla"><wicket:message key="RichiestaChiusuraIscrizioneRefezionePanel.annulla" /></button>
+				</div>
+			</div>
+
+		</form>
+
+
+	</wicket:panel>
+</body>
+</html>

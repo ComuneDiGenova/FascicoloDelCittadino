@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="container calendario">
+			<h3>
+				<wicket:message key="RicercaDebitoFormPanel.title" />
+			</h3>
+		</div>
+
+		<div class="container calendario" wicket:id="containerMessaggiInfo">
+			<div class="alert alert-info" role="alert">
+				<wicket:message key="RicercaDebitoFormPanel.info1" />
+			</div>
+
+			<div class="alert alert-info" role="alert">
+				<wicket:message key="RicercaDebitoFormPanel.infoVerbali" />
+				<a href="imieiverbali" wicket:id="mieiVerbali"> <wicket:message
+						key="RicercaDebitoFormPanel.verbali" />
+				</a>
+			</div>
+
+		</div>
+
+		<div class="container calendario">
+			<h4>
+				<wicket:message key="RicercaDebitoFormPanel.legenda" />
+				: <span class="badge badge-success"
+					style="margin-right: 15px; width: 220px; text-align: center;"><wicket:message
+						key="RicercaDebitoFormPanel.pagato" /></span> <span
+					class="badge badge-danger"
+					style="margin-right: 15px; width: 220px; text-align: center;"><wicket:message
+						key="RicercaDebitoFormPanel.daPagare" /></span>
+			</h4>
+		</div>
+
+		<form class="needs-validation was-validated mb-3 col-lg-10 mx-auto"
+			wicket:id="form">
+			<div class="form-row mt-5 mb-2">
+				<div class="form-group col-md-12 mb-0">
+					<h4>
+						<wicket:message key="RicercaDebitoFormPanel.info" />
+						:
+					</h4>
+				</div>
+			</div>
+
+			<div class="form-row mb-2 col-md-12 mx-auto">
+				
+				<!--  <div class="col-sm-6 mb-6 combo-figli">
+					<label> <wicket:message
+							key="RicercaDebitoFormPanel.seleziona" /> <select 
+						wicket:id="comboServizi"></select>
+					</label>
+				</div>-->
+
+				<div class="select-wrapper text-left col-12">
+					<select  wicket:id="comboServizi"></select>
+				</div>
+
+			</div>
+		</form>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+	</wicket:panel>
+</body>
+</html>

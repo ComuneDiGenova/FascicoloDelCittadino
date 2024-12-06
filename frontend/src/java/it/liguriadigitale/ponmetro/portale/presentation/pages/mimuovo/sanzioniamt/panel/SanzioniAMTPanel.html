@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="col-12 alert alert-warning" wicket:id="listaVuota">
+			<wicket:message key="SanzioniAMTPanel.listaVuota" />
+		</div>
+
+		<div class="row content my-4 info-traffico">
+
+			<div class="col-lg-6 mb-4" wicket:id="box">
+
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="" wicket:id="icona"></i>
+
+								<h4 class="card-title text-left col-9 font-weight-normal">
+									<span class="text-capitalize font-weight-semibold"
+										wicket:id="nominativo"></span><br>
+									<span class="text-capitalize font-weight-semibold"
+										wicket:id="serieNumero"></span>
+								</h4>
+							</div>
+
+							<div wicket:id="cfSanzione"></div>
+
+							<div wicket:id="dataOraVerbale"></div>
+
+							<div wicket:id="linea"></div>
+
+							<wicket:enclosure child="totaleSanzione">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-left font-weight-semibold">
+											<wicket:message key="SanzioniAMTPanel.totaleSanzione" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-left d-table h-100">
+											<span wicket:id="totaleSanzione"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<div wicket:id="pagato"></div>
+
+							<div wicket:id="stato"></div>
+
+							<wicket:enclosure child="urlPagamento">
+								<div class="row py-1 mb-2">
+									<div class="col-12">
+										<a class="btn btn-primary btn-xs" href="#" role="button"
+											wicket:id="urlPagamento" target="_blank"> <wicket:message
+												key="SanzioniAMTPanel.urlPagamento" />
+										</a>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div wicket:id="paginationSanzioni"></div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

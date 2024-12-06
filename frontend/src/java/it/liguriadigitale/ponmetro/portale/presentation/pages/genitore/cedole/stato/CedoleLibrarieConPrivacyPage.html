@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title></title>
+</head>
+<body>
+	<wicket:extend>
+		<div wicket:id="breadcrumbPanel"></div>
+		<div class="row content my-4 io-genitore">
+
+			<!--  		<div class="col-12 alert alert-info" role="alert">
+				<wicket:message key="CedoleLibrariePage.infoSospensione" />
+			</div> -->
+
+			
+			<div wicket:id="messaggiInformativi"></div>
+
+			<wicket:enclosure child="privacyCedole">
+				<div class="col-12">
+
+					<div class="col-3">
+
+						<div class="card-icon mt-4 mb-1">
+							<span wicket:id="privacyCedole"></span>
+						</div>
+						
+					</div>
+
+				</div>
+			</wicket:enclosure>
+
+			<div wicket:id="bambino"></div>
+			<div wicket:id="domanda" class="col-lg-6 mb-4"></div>
+			
+		</div>
+		<wicket:child />
+	</wicket:extend>
+</body>
+</html>

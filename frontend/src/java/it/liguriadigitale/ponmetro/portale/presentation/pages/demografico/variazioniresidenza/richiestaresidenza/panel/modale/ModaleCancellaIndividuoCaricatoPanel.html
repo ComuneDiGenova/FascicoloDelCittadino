@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+		<wicket:extend>
+		
+			<div class="text-end">
+				<button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Chiudi finestra modale">
+					<svg class="icon">
+						<use href="/bootstrap-italia/dist/svg/sprites.svg#it-close"></use>
+					</svg>
+				</button>
+			</div>
+
+			<div class="modal-header">
+				<h5 class="fw-bold">
+					<wicket:message key="ModaleCancellaIndividuoCaricatoPanel.titolo" />
+				</h5>
+			</div>
+
+			<div class="modal-body">
+
+				<span wicket:id="individuoDaCancellare"></span>
+			</div>
+
+			<br>
+
+			<div class="modal-footer">
+				<div class="row mb-3 p-2">
+					<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+						<div class="d-flex justify-content-end">
+							<button class="btn btn-outline-primary" type="button"
+								data-dismiss="modal" wicket:id="btnNo" style="min-width: 100px">
+								<wicket:message key="ModaleCancellaIndividuoCaricatoPanel.no" />
+							</button>
+							&nbsp;
+							<button class="btn btn-primary" type="button"
+								wicket:id="btnSi" style="min-width: 100px">
+								<wicket:message key="ModaleCancellaIndividuoCaricatoPanel.si" />
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</wicket:extend>
+	</wicket:panel>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:extend>
+
+		<div class="col-12" wicket:id="titolo"></div>
+
+		<div class="form-row col-12" wicket:id="listaContatti">
+			<div class="col-md-6">
+			 	<div wicket:id="tipoContatto"></div> 
+			</div>
+		</div>
+
+		<div class="form-group col-md-12 mb-3 text-center">
+			<div class="form-group col-md-12 mb-3 text-center">
+
+				<button type="submit" class="btn btn-primary"
+					wicket:id="salvaContatti">
+					<wicket:message key="SalvaContattiPanel.salvaContatti" />
+				</button>
+
+			</div>
+		</div>
+
+	</wicket:extend>
+</body>
+
+</html>

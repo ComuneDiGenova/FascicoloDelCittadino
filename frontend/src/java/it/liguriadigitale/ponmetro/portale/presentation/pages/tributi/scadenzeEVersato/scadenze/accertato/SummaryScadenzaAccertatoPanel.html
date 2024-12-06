@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+
+	<wicket:panel>
+		<!-- 		<div class="card-wrapper">
+			<div class="card card-bg my-2">
+				<div class="card-body"> -->
+
+		<h3 class="text-start fw-bold col-12 mt-5"
+			wicket:id="titolo"></h3>
+		<div>
+			<h2 wicket:id="listaVuota"></h2>
+		</div>
+
+		<div class="row content info-traffico">
+			<div class="col-lg-12 mb-4" wicket:id="box">
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<span class="" wicket:id="icona"></span>
+								<wicket:enclosure child="titolo">
+									<h4 class="card-title text-start col-9 font-weight-normal">
+										<span class="text-capitalize fw-bold"
+											wicket:id="titolo"></span>
+									</h4>
+								</wicket:enclosure>
+							</div>
+
+							<span wicket:id="contenuto"></span>
+
+							<div class="row py-1 mb-2">
+								<div class="col-12">
+									<a class="btn btn-primary btn-xs" href="#" role="button"
+										wicket:id=bottoneDettagli></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="pagination"></div>
+		<!-- 
+				</div>
+			</div>
+		</div> -->
+	</wicket:panel>
+</body>
+
+</html>

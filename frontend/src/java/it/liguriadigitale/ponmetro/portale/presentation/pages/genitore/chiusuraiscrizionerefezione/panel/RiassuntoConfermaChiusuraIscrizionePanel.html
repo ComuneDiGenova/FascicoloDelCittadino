@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>    
+
+		<div class="col-sm-12 mt-2 mb-2">
+			<h3 class="text-start fw-bold mb-0"><wicket:message key="RiassuntoConfermaChiusuraIscrizionePanel.titleDisiscrivi" /></h3>
+		</div>
+
+		<!-- STEP 2 -->
+		<div class="col-lg-12 mx-auto">
+			<div class="steppers">
+				<ul class="steppers-header">
+					<li class="confirmed" >
+						<span class="steppers-number"><span class="sr-only">Step </span>1</span>
+						<span class="steppers-status"><wicket:message key="RiassuntoConfermaChiusuraIscrizionePanel.step1"></wicket:message></span>
+						<span class="sr-only"><wicket:message key="RiassuntoConfermaChiusuraIscrizionePanel.step1"></wicket:message></span>
+					</li>
+					<li class="active no-line" >
+						<span class="steppers-number"><span class="sr-only">Step </span>2</span>
+						<span class="steppers-status"><wicket:message key="RiassuntoConfermaChiusuraIscrizionePanel.step2"></wicket:message></span>
+						<span class="sr-only"><wicket:message key="RiassuntoConfermaChiusuraIscrizionePanel.step2"></wicket:message></span>
+					</li>
+					<li>
+						<span class="steppers-number"><span class="sr-only">Step </span>3</span>
+						<span class="steppers-status"><wicket:message key="RiassuntoConfermaChiusuraIscrizionePanel.step3"></wicket:message></span>
+						<span class="sr-only"><wicket:message key="RiassuntoConfermaChiusuraIscrizionePanel.step3"></wicket:message></span>
+					</li>
+					<li class="steppers-index" aria-hidden="true">
+						<span class="confirmed">1</span> 
+						<span class="active">2</span> 
+						<span><wicket:message key="RiassuntoConfermaChiusuraIscrizionePanel.step3"></wicket:message></span> 
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- RIEPILOGO -->
+		<div class="col-lg-10 mx-auto riepilogo" >
+
+			<div class="col-md-10 text-start mb-4">
+				<h4><wicket:message key="RiassuntoConfermaChiusuraIscrizionePanel.info1" /></h4>
+			</div>
+
+			<div class="row mb-0 d-flex justify-content-center">
+				<div class="col-5">
+					<p class="text-start">
+						<span class="fw-bold"><wicket:message key="RiassuntoConfermaChiusuraIscrizionePanel.nomeCognome" />:</span>
+						<span class="text-capitalize" wicket:id="nomeCognome"></span>
+					</p>
+				</div>
+				<div class="col-5">
+					<p class="text-start">
+						<span class="fw-bold"><wicket:message key="RiassuntoConfermaChiusuraIscrizionePanel.sesso" />:</span>
+						<span class="text-capitalize" wicket:id="sesso"></span>
+					</p>
+				</div>
+			</div>
+
+			<div class="row mb-0 d-flex justify-content-center">
+				<div class="col-5">
+					<p class="text-start">
+						<span class="fw-bold mr-1"><wicket:message key="RiassuntoConfermaChiusuraIscrizionePanel.luogoNascita" />:</span>
+						<span class="text-capitalize" wicket:id="luogoNascita"></span>
+					</p>
+				</div>
+				<div class="col-5">
+					<p class="text-start">
+						<span class="fw-bold mr-1"><wicket:message key="RiassuntoConfermaChiusuraIscrizionePanel.dataNascita" />:</span>
+						<span wicket:id="dataNascita"></span>
+					</p>
+				</div>
+			</div>
+
+			<div class="row mb-0 d-flex justify-content-center">
+				<div class="col-10">
+					<p class="text-start">
+						<span class="fw-bold mr-1"><wicket:message key="RiassuntoConfermaChiusuraIscrizionePanel.codiceFiscale" />:</span>
+						<span wicket:id="codiceFiscale"></span>
+					</p>
+				</div>
+			</div>
+
+			<div class="row mb-0 d-flex justify-content-center">
+				<div class="col-10">
+					<p class="text-start">
+						<span class="fw-bold mr-1"><wicket:message key="RiassuntoConfermaChiusuraIscrizionePanel.residente" />:</span>
+						<span class="text-capitalize" wicket:id="residente"></span>
+					</p>
+				</div>
+			</div>
+			
+			<div class="row mb-0 d-flex justify-content-center">
+				<div class="col-10">
+					<p class="text-start">
+						<span class="fw-bold mr-1"><wicket:message key="RiassuntoConfermaChiusuraIscrizionePanel.email" />:</span>
+						<span class="text-capitalize" wicket:id="email"></span>
+					</p>
+				</div>
+			</div>
+			
+			<div class="row mb-0 d-flex justify-content-center">
+				<div class="col-10">
+					<p class="text-start">
+						<span class="fw-bold mr-1"><wicket:message key="RiassuntoConfermaChiusuraIscrizionePanel.telefono" />:</span>
+						<span class="text-capitalize" wicket:id="telefono"></span>
+					</p>
+				</div>
+			</div>
+			
+			<div class="row mb-0 d-flex justify-content-center">
+				<div class="col-10">
+					<p class="text-start">
+						<span class="fw-bold mr-1"><wicket:message key="RiassuntoConfermaChiusuraIscrizionePanel.note" />:</span>
+						<span class="text-capitalize" wicket:id="note"></span>
+					</p>
+				</div>
+			</div>
+			
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md text-center">
+					<button wicket:id="confermaChiusuraIscrizione" type="submit"
+						class="btn btn-primary">
+						<wicket:message
+							key="RiassuntoConfermaChiusuraIscrizionePanel.prosegui" />
+					</button>
+					<button wicket:id="indietroChiusuraIscrizione" type="button"
+						class="btn btn-secondary">
+						<wicket:message
+							key="RiassuntoConfermaChiusuraIscrizionePanel.indietro" />
+					</button>
+					<button wicket:id="annullaChiusuraIscrizione" type="button"
+						class="btn btn-secondary">
+						<wicket:message
+							key="RiassuntoConfermaChiusuraIscrizionePanel.annulla" />
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>  
+
+	</wicket:panel>
+
+</body>
+</html>

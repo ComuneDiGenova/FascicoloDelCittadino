@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xl-12" wicket:id="listaVuota">
+                <div class="alert alert-warning" role="alert">
+                	<wicket:message key="QuadroTributarioTariPanel.vuoto" />
+                </div>
+            </div>
+		</div>  
+
+		<div class="row content my-12 info-traffico">
+
+			<div class="col-12" wicket:id="titoloBoxRimborsi"></div>
+
+			<div class="row col-12">
+				<div class="col-lg-6 mb-4" wicket:id="boxRimborsi">
+
+					<div class="card-wrapper">
+						<div class="card card-bg my-2">
+							<div class="card-body">
+
+								<div class="categoryicon-top row mb-2">
+									<i class="color-green col-3 icon-foglio-penna"></i>
+
+									<h4 class="card-title text-left col-9 font-weight-normal">
+										<span wicket:id="boxRimborsiTitolo"></span>
+									</h4>
+
+								</div>
+
+								<div wicket:id="tipoUtenzaRimborsi"></div>
+
+								<div wicket:id="idDebRimborsi"></div>
+
+								<div wicket:id="dov"></div>
+
+								<div wicket:id="pag"></div>
+
+								<div wicket:id="totaleEccedenzeRimborsi"></div>
+
+								<wicket:enclosure child="messaggioPosizione">
+									<div class="col-sm-12 mt-2 mb-2">
+										<div class="alert alert-info" role="alert">
+
+											<span wicket:id="messaggioPosizione"></span>
+
+										</div>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="messaggioRimborsi">
+									<div class="col-sm-12 mt-2 mb-2">
+										<div class="alert alert-info" role="alert">
+
+											<span wicket:id="messaggioRimborsi"></span>
+
+										</div>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="btnRimborso">
+									<div class="row py-1 mb-2 col-12">
+										<div class="col-12">
+											<span wicket:id="btnRimborso"></span>
+										</div>
+									</div>
+								</wicket:enclosure>
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="col-12" wicket:id="paginationBoxRimborsi"></div>
+
+			<div class="col-12" wicket:id="titoloBoxDocumenti"></div>
+
+			<div class="col-lg-6 mb-4" wicket:id="documenti">
+
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+
+							<div class="categoryicon-top row mb-2">
+								<i class="" wicket:id="icona"></i>
+
+								<h4 class="card-title text-left col-9 font-weight-normal">
+									<wicket:enclosure child="tipoDoc">
+										<wicket:message key="QuadroTributarioTariPanel.tipoDoc" />
+										<span class="text-capitalize font-weight-semibold"
+											wicket:id="tipoDoc"></span>
+										<br />
+									</wicket:enclosure>
+
+									<wicket:enclosure child="tipoUtz">
+										<wicket:message key="QuadroTributarioTariPanel.tipoUtz" />
+										<span class="text-capitalize font-weight-semibold"
+											wicket:id="tipoUtz"></span>
+									</wicket:enclosure>
+								</h4>
+
+							</div>
+
+							<div wicket:id="esito"></div>
+
+							<div wicket:id="idDeb"></div>
+
+							<div wicket:id="desc"></div>
+
+							<div wicket:id="imp"></div>
+
+							<div wicket:id="incassato"></div>
+
+							<div wicket:id="eccTari"></div>
+
+							<div wicket:id="ruolo"></div>
+
+							<div wicket:id="numDoc"></div>
+
+							<div wicket:id="annoEmissione"></div>
+
+							<wicket:enclosure child="messaggioDocumento">
+								<div class="col-sm-12 mt-2 mb-2">
+									<div class="alert alert-info" role="alert">
+
+										<span wicket:id="messaggioDocumento"></span>
+
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<div class="row py-1 mb-2 col-12">
+								<div class="col-12">
+									<a class="btn btn-primary btn-xs" href="#" role="button"
+										wicket:id="btnDettagli"> <wicket:message
+											key="QuadroTributarioTariPanel.dettagli" />
+									</a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-12" wicket:id="paginationDocumenti"></div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+	</wicket:panel>
+</body>
+
+</html>

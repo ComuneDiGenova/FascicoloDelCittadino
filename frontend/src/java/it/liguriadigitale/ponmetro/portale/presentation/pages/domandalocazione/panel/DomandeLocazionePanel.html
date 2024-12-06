@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="col-12">
+			<h3>
+				<wicket:message key="DomandeLocazionePanel.titolo" />
+			</h3>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12"
+				wicket:id="listaVuota">
+				<div class="alert alert-warning" role="alert">
+					<wicket:message key="DomandeLocazionePanel.vuoto" />
+				</div>
+			</div>
+		</div>
+
+		<div class="row content my-12 info-traffico">
+
+			<!--  
+			<div class="col-lg-6 mb-4" wicket:id="pratiche">
+
+				<div class="card-wrapper card-space">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="color-cyan col-3 icon-contratti-immobili"></i>
+							</div>
+
+							<div wicket:id="id"></div>
+
+						
+						
+
+						</div>
+					</div>
+				</div>
+			</div>
+			-->
+
+			<div class="col-lg-6 mb-4">
+
+				<div class="card-wrapper card-space" wicket:id="elemDettaglio">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="color-fc-secondary col-3 icon-contratti-immobili"></i>
+
+								<wicket:enclosure child="codIdentificativoDomanda">
+									<h4 class="card-title text-start col-9 font-weight-normal">
+										<wicket:message
+											key="DomandeLocazionePanel.codIdentificativoDomanda" />
+										<span class="text-capitalize fw-bold"
+											wicket:id="codIdentificativoDomanda"></span>
+									</h4>
+								</wicket:enclosure>
+							</div>
+
+							<div wicket:id="statoDomanda"></div>
+
+							<div wicket:id="descrizioneStato"></div>
+
+							<div wicket:id="dataPresentazione"></div>
+
+							<div wicket:id="numeroProtocollo"></div>
+
+							<div wicket:id="dataProtocollo"></div>
+
+							<div wicket:id="btnScaricaRicevuta"></div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--  <div class="col-12" wicket:id="pagination"></div> -->
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

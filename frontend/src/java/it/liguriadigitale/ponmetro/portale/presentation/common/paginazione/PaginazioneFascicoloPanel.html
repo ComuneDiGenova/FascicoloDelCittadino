@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <wicket:panel>
+
+        <!-- pagination-total -->
+        <nav class="pagination-wrapper justify-content-center" aria-label="Navigazione della pagina">
+            <ul class="pagination">
+
+                <li class="page-item">
+                    <a class="page-link" wicket:id="first" title="Vai alla prima pagina">
+                        <i class="icon-freccia-inizio"></i>
+                        <span class="sr-only">Prima pagina</span>
+                    </a>
+                </li>
+
+                <li class="page-item">
+                    <a class="page-link" wicket:id="prev" title="Vai alla pagina precedente">
+                        <i class="icon-freccia-indietro"></i>
+                        <span class="sr-only">Pagina precedente</span>
+                    </a>
+                </li>
+
+                <li class="page-item" wicket:id="navigation">
+                    <a class="current" wicket:id="pageLink">
+                        <!-- class="page-link " -->
+                        <span wicket:id="pageNumber"></span>
+                    </a>
+                </li>
+
+                <li class="page-item">
+                    <a class="page-link" href="#" wicket:id="next" title="Vai alla pagina successiva">
+                        <i class="icon-freccia-avanti"></i>
+                        <span class="sr-only">Pagina successiva</span>
+                    </a>
+                </li>
+
+                <li class="page-item">
+                    <a class="page-link" href="#" wicket:id="last" title="Vai all'ultima pagina">
+                        <i class="icon-freccia-fine"></i>
+                        <span class="sr-only">Ultima pagina</span>
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+
+    </wicket:panel>
+
+</body>
+
+</html>

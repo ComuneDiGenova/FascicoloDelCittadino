@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:extend>
+
+		<div wicket:id="wmkMessaggio" class="alert alert-warning" role="alert">
+			<h4 class="alert-heading">Attenzione!</h4>
+			<p wicket:id="lblMessaggio"></p>
+		</div>
+
+		<div wicket:id="wmkFormInserimentoIban">
+
+			<div class="categoryicon-top row mb-4">
+				<h4 class="card-title text-start fw-bold col-12">
+					Inserimento dati per il pagamento (<label
+						wicket:id="lblDescTipoElezioni"></label>)
+					<label
+						wicket:id="lblDescPeriodo"></label>	
+				</h4>
+			</div>
+			<div class="container">
+
+			
+
+				<div class="form-row">
+					<div class="row">
+						<div class="col-9">
+							<label> <b wicket:id="labelComboTipoPagamento"></b>
+							</label>
+						</div>
+						<div class="col-3">
+							<div class="select-wrapper text-start">
+								<select  wicket:id="comboTipoPagamento" required></select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<br>
+				<div class="form-row" wicket:id="wmkMessaggioPagamentoIncontanti">
+					<div class="col-sm-12 mt-2 mb-2" id="messagePanelc6">
+						<ul class="list-unstyled">
+							<li>
+								<div class="errorlevel alert alert-warning">
+									<div>
+										<wicket:message
+											key="ServiziSeggiElettoraliPanel.infoNonPossiedo" />
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>				
+				
+				<br>
+				<div class="form-row" wicket:id="wmkMessaggioInfoConfermaIban">
+					<div class="col-sm-12 mt-2 mb-2" id="messagePanelc6">
+						<ul class="list-unstyled">
+							<li>
+								<div class="errorlevel alert alert-warning">
+									<div>
+										<wicket:message
+											key="ServiziSeggiElettoraliPanel.infoConfermaIban" />
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="col-md-6">
+						<div wicket:id="codiceIBAN"></div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="col-md-12 text-center">
+						<button wicket:id="btnSalva" type="button" class="btn btn-primary">
+							<wicket:message key="ServiziSeggiElettoraliPanel.btnSalva" />
+						</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</wicket:extend>
+</body>
+
+</html>

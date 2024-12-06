@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title></title>
+</head>
+<body>
+	<wicket:extend>
+		<div wicket:id="breadcrumbPanel"></div>
+		<div class="col-sm-12 mt-2 mb-2">
+			<div class="alert alert-warning font-weight-semibold" role="alert" wicket:id="emergenzaCovid">
+				<wicket:message key="AssicurazioneRevisionePage.emergenzaCovid"/>
+			</div>
+		</div>
+		<div class="row content my-4 miei-dati">
+			<div class="col-lg-6 mb-4" wicket:id="datiAssicurazionePanel"></div>
+			<div class="col-lg-6 mb-4" wicket:id="datiRevisionePanel"></div>
+		</div>
+		<wicket:child/>
+    </wicket:extend>    
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+    <head>
+        <meta charset="ISO-8859-1" />
+        <title>Insert title here</title>
+    </head>
+    <body>
+        <wicket:panel>
+            <!--start card-->
+            <div class="card-wrapper">
+                <div class="card card-bg my-2">
+                    <div class="card-body">
+                        <!-- wicket:id="oggi" -->
+                        <!--<h4 class="card-title"></h4>-->
+                        <div class="table-responsive" wicket:id="cell">
+                            <div class="divHead">
+                                <div class="divMensaTh">
+                                    <wicket:message key="ListaScadenzePanel.giornoScadenza" />
+                                </div>
+                                <div class="divMensaTh">
+                                    <wicket:message key="ListaScadenzePanel.comparto" />
+                                </div>
+                                <div class="divMensaTh">
+                                    <wicket:message key="ListaScadenzePanel.scadenza" />
+                                </div>
+                                <div class="divMensaTh">
+                                    <wicket:message key="ListaScadenzePanel.azioni" />
+                                </div>
+                            </div>
+
+                            <div class="divBody" wicket:id="listaItemScadenze">
+                                <div class="divMensaTd" wicket:id="giornoScadenza"></div>
+                                <div class="divMensaTd" wicket:id="comparto"></div>
+                                <div class="divMensaTd" wicket:id="dataScadenza"></div>
+                                <div class="divMensaTd">
+                                    <a class="btn btn-primary btn-xs" href="#" role="button" wicket:id="azioniLink">Vai</a>
+                                </div>
+                            </div>
+                        </div>
+                        <h4 class="card-title" wicket:id="messaggioListaVuota"></h4>
+                    </div>
+                </div>
+            </div>
+            <!--end card-->
+
+            <div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+        </wicket:panel>
+    </body>
+</html>

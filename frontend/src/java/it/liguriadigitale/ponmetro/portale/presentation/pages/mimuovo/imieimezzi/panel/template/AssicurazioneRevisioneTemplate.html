@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<wicket:panel>
+<!--start card-->
+<div class="card-wrapper card-space">
+	<div class="card card-bg my-2">
+		<div class="card-body">
+			<div class="categoryicon-top row mb-2">
+			
+                <i class="" wicket:id="icona"></i>
+          
+             	<h4 class="card-title text-left col-9 font-weight-normal">
+	               <!-- <wicket:message key="AssicurazioneRevisioneTemplate.titoloAssicurazione"/>  -->
+	               <span class="text-capitalize font-weight-semibold" wicket:id="titolo"></span>
+	               <br/>
+	               <wicket:message key="AssicurazioneRevisioneTemplate.targa"/> 
+	               <span class="text-capitalize font-weight-semibold" wicket:id="targa"></span>
+	               <br/>	
+	               <wicket:message key="AssicurazioneRevisioneTemplate.tipoVeicolo"/> 
+	               <span class="text-capitalize font-weight-semibold" wicket:id="tipoVeicolo"></span>
+	               <br/>	                           
+             	</h4>			
+
+			</div>
+			
+			<div wicket:id="feedback"></div>
+			
+			<div class="container" wicket:id="containerAssicurazioneRevisione">
+				<wicket:child />
+			</div>
+			
+		</div>
+	</div>
+</div>
+<!--end card-->
+</wicket:panel>
+</body>
+</html>

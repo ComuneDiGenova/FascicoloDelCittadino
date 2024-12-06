@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<wicket:enclosure child="btnPaginaVersato">
+			<div class="col-sm-6 mt-2 mb-2">
+				<button class="btn btn-outline-primary"
+					style="width: -webkit-fill-available;">
+					<span wicket:id="btnPaginaVersato"></span>
+				</button>
+			</div>
+		</wicket:enclosure>
+
+		<wicket:enclosure child="btnPaginaScadenze"
+			style="width: -webkit-fill-available;">
+			<div class="col-sm-6 mt-2 mb-2">
+				<button class="btn btn-outline-primary"
+					style="width: -webkit-fill-available;">
+					<span wicket:id="btnPaginaScadenze"></span>
+				</button>
+			</div>
+		</wicket:enclosure>
+
+	</wicket:panel>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<wicket:panel>
+	<!--start card-->
+	
+	<div class="card-wrapper card-space">
+		<div class="card card-big card-bg my-2">
+			<div class="card-body">
+				<h4 class="card-title"><span wicket:id="testoTitoloCard"></span></h4>
+				<hr />
+				<form wicket:id="form">
+					<!---Widget1-->
+					<div class="select-wrapper">
+					<select wicket:id="widgetTop" title="widget superiore"></select>
+					</div>
+					<hr />
+					<!---Widget2-->
+					<div class="select-wrapper">
+					<select wicket:id="widgetBottom" title="widget inferiore"></select>
+					</div>
+					<hr />
+					<div class="form-row mt-5 mb-0">
+						<div class="form-group col-md-12 mb-3 text-center">
+							<button type="submit" class="btn btn-primary" wicket:id="button" role="button"><wicket:message key="MostraWidgetPanel.save" /></button>
+						</div>
+					</div>
+				</form>
+				<div wicket:id="feedback"></div>
+			</div>
+		</div>
+	</div>
+	<!--end card-->
+</wicket:panel>		
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>    
+
+		<div class="row clearfix">
+			<div class="col-sm-12 my-2 mb-2 mio-stato d-table">
+				<i class="icon-ristorazione color-orange"></i>
+				<h3 class="text-left font-weight-semibold mb-0 d-table-cell align-middle">
+					<span wicket:id="iscritto"></span>: <span wicket:id="statoIscrizione"></span>
+				</h3>
+			</div>
+		</div>
+
+		<div class="row justify-content-md-center mb-2">
+			<div class="col-12 col-lg-10">
+				<div class="steppers">
+					<ul class="steppers-header">
+						<li wicket:id="step1" >
+							<span class="steppers-number">
+							<span class="sr-only">Step </span>1</span><span class="steppers-status"><wicket:message key="Portale.stato.inviata"></wicket:message></span>
+							<span class="sr-only"><wicket:message key="Portale.stato.inviata"></wicket:message></span>
+						</li>
+						<li wicket:id="step2" >
+							<span class="steppers-number"><span class="sr-only">Step </span>2</span>
+							<span class="steppers-status"><wicket:message key="Portale.stato.elaborazione"></wicket:message></span>
+							<span class="sr-only"><wicket:message key="Portale.stato.attivo"></wicket:message></span>
+						</li>
+						<li wicket:id="step3">
+							<span class="steppers-number"><span class="sr-only">Step </span>3</span>
+							<span class="steppers-status"><wicket:message key="Portale.stato.accettata"></wicket:message></span>
+						</li>
+						<li class="steppers-index" aria-hidden="true">
+							<span>1</span> 
+							<span>2</span> 
+							<span>3</span> 
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="row justify-content-md-center mb-4">
+			<div class="col-lg-8">
+				<!--start card-->
+				<div class="card-wrapper">
+					<div class="card card-bg">
+						<div class="card-body text-left">
+							<div class="it-list-wrapper">
+							<h4 class="card-title text-center" wicket:id="nomeCognome"></h4>
+								<ul class="it-list">									
+									<wicket:enclosure child="containerScuola">
+										<wicket:container wicket:id="containerIscrittoDal"> 
+											<li>
+												<div class="it-right-zone">
+													<span class="text"><wicket:message key="StatoIscrizionePanel.iscritto"><span wicket:id="iscrizione">[iscrizione]</span></wicket:message>:<em><span wicket:id="iscrittoDal"></span></em></span>
+												</div>
+											</li>
+										</wicket:container>
+										<wicket:container wicket:id="containerScuola"> 
+											<li>
+												<div class="it-right-zone">
+													<span class="text"><wicket:message key="StatoIscrizionePanel.presso"/>:<em><span class="text-capitalize" wicket:id="scuola"></span></em></span>
+												</div>
+											</li>
+										</wicket:container>
+										<wicket:container wicket:id="containerClasse"> 
+											<li>
+												<div class="it-right-zone">
+													<span class="text"><wicket:message key="StatoIscrizionePanel.classe"/>:<em><span class="text-capitalize" wicket:id="sezione"></span></em></span>
+												</div>
+											</li>
+										</wicket:container>
+									</wicket:enclosure>									
+									
+									<li>
+										<div class="it-right-zone">
+											<span class="text"><wicket:message key="StatoIscrizionePanel.nomeImpegnato"/>:<em><span wicket:id="nomeImpegnato"></span></em></span>
+										</div>
+									</li>
+									
+									<wicket:container wicket:id="containerPdf"> 
+										<li>
+											<div class="it-right-zone">
+												<span class="text"><wicket:message key="StatoIscrizionePanel.pdf"/><em><span wicket:id="codicepdf"></span></em></span>
+						
+												<a class="btn btn-success btn-lg btn-icon" wicket:id="btnDownload">
+													<svg class="icon icon-white">
+														<use xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-download"></use>
+													</svg>
+													<span><wicket:message key="StatoIscrizionePanel.scaricapdf"/></span>
+												</a>
+											</div>
+										</li>
+									</wicket:container>
+								</ul>
+							</div>							
+						</div>
+					</div>
+				</div>
+				<!--end card-->
+			</div>
+		</div>
+		
+		<!-- 
+		<div class="col-12 my-2 text-center">
+			<div class="d-flex justify-content-center">
+				<i class="icon-stampante color-black-light"></i>
+			</div>
+		</div>
+		 -->
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>  
+
+</wicket:panel>
+</body>
+</html>

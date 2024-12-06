@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+		
+		<div class="row content my-4 info-traffico">
+
+			<!--<div class="col-12 alert alert-info" role="alert">
+				<wicket:message key="VerbaliCommissioneMensaPanel.info" />
+			</div>-->
+			
+			<div wicket:id="messaggiInformativi"></div>
+			
+			
+		
+	            <div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+	                <div class="alert alert-warning" role="alert" wicket:id="listaVuota">
+	                	<wicket:message key="VerbaliCommissioneMensaPanel.listaVuota" />
+	                </div>
+	            </div>
+			
+			
+			
+			
+			<!--<div class="col-12 alert alert-warning" role="alert" wicket:id="listaVuota">
+				<wicket:message key="VerbaliCommissioneMensaPanel.listaVuota" />
+			</div>-->
+
+			<div class="col-lg-6 mb-4" wicket:id="box">
+
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="" wicket:id="icona"></i>
+
+								<wicket:enclosure child="identificativo">
+									<h4 class="card-title text-start col-9 font-weight-normal">
+										<wicket:message
+											key="VerbaliCommissioneMensaPanel.identificativo" />
+										<span class="text-capitalize fw-bold"
+											wicket:id="identificativo"></span>
+									</h4>
+								</wicket:enclosure>
+							</div>					
+
+							<wicket:enclosure child="dataEffettiva">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message
+												key="VerbaliCommissioneMensaPanel.dataEffettiva" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="dataEffettiva"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="dataFine">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="VerbaliCommissioneMensaPanel.dataFine" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="dataFine"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="unita">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="VerbaliCommissioneMensaPanel.unita" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="unita"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="descrizione">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message
+												key="VerbaliCommissioneMensaPanel.descrizione" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="descrizione"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="tipologia">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="VerbaliCommissioneMensaPanel.tipologia" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="tipologia"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="centroProduzione">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message
+												key="VerbaliCommissioneMensaPanel.centroProduzione" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="centroProduzione"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="centroProduzione">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message
+												key="VerbaliCommissioneMensaPanel.centroProduzione" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="centroProduzione"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="commissario1">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message
+												key="VerbaliCommissioneMensaPanel.commissario1" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="commissario1"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="commissario2">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message
+												key="VerbaliCommissioneMensaPanel.commissario2" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="commissario2"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="protocollo">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="VerbaliCommissioneMensaPanel.protocollo" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="protocollo"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="azienda">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="VerbaliCommissioneMensaPanel.azienda" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="azienda"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<h4 class="col-lg-12 mb-4" style="text-align: left;" wicket:id="titoloVerbali">
+								<wicket:message key="VerbaliCommissioneMensaPanel.verbali" />
+							</h4>
+
+							<div class="col-lg-6 mb-4" wicket:id="boxVerbali">
+
+								<div class="card-wrapper">
+									<div class="card card-bg my-2">
+										<div class="card-body">
+											<div class="categoryicon-top row mb-2">
+												<wicket:enclosure child="idVerbale">
+													<h4 class="card-title text-start col-9 font-weight-normal">
+														<wicket:message
+															key="VerbaliCommissioneMensaPanel.idVerbale" />
+														<span class="text-capitalize fw-bold"
+															wicket:id="idVerbale"></span>
+													</h4>
+												</wicket:enclosure>
+											</div>										
+
+											<wicket:enclosure child="tipoMensa">
+												<div class="row py-1 mb-2 border-bottom">
+													<div class="col-6">
+														<p class="card-text text-start fw-bold">
+															<wicket:message
+																key="VerbaliCommissioneMensaPanel.tipoMensa" />
+														</p>
+													</div>
+													<div class="col-6">
+														<p class="card-text text-start d-table h-100">
+															<span class="d-table-cell text-capitalize align-middle"
+																wicket:id="tipoMensa"></span>
+														</p>
+													</div>
+												</div>
+											</wicket:enclosure>
+
+											<wicket:enclosure child="btnScarica">
+												<div class="row py-1 mb-2 border-bottom">
+													<div class="col-12">
+														<a class="btn btn-success btn-xs btn-icon"
+															wicket:id="btnScarica"> <svg class="icon icon-white">
+                                    <use
+																	xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-download"></use>
+                                </svg> <span><wicket:message
+																	key="VerbaliCommissioneMensaPanel.btnScarica" /></span>
+														</a>
+													</div>
+												</div>
+											</wicket:enclosure>
+
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div wicket:id="pagination"></div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

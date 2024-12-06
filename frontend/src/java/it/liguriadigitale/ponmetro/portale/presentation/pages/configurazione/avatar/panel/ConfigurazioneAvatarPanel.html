@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+    <head>
+        <meta charset="ISO-8859-1" />
+        <title>Insert title here</title>
+    </head>
+    <body>
+        <wicket:panel>
+            <h3>
+                <span><wicket:message key="ConfigurazioneAvatarPanel.avatarTitle" /></span>
+            </h3>
+            <span><wicket:message key="ConfigurazioneAvatarPanel.avatarSubtitle" /></span>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 mb-4 mb-md-0">
+                        <div class="avatar-upload-wrapper">
+                            <div class="avatar size-xxl avatar-upload">
+                                <img wicket:id="imageUpload" alt="avatar corrente" />
+                                <form wicket:id="form" class="upload-avatar-container" aria-label="Cambia immagine avatar">
+                                    <input wicket:id="fileInput"  role="button" type="file" name="fileInput" id="fileInput" class="upload-avatar" accept=".png, .jpg" />
+                                    <label for="fileInput">
+                                        <svg class="icon icon-sm" aria-hidden="true">
+                                            <use xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-camera"></use>
+                                        </svg>
+                                        <span><wicket:message key="ConfigurazioneAvatarPanel.info" /></span>
+                                    </label>
+                                    <input type="submit" value="submit" class=" visibility: hidden"/>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+        </wicket:panel>
+    </body>
+</html>

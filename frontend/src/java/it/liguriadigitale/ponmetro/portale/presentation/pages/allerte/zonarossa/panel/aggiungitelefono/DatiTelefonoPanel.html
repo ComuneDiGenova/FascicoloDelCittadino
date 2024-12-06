@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="form-row mb-2 col-md-12 mx-auto">
+
+			<div class="form-row col-md-12" wicket:id="titolo"></div>
+
+			<div class="form-row col-12">
+				<div class="row">
+					<div class="col">
+						<div wicket:id="numero"></div>
+					</div>
+					
+					<div class="col">
+						<div class="form-group">
+							<div class="select-wrapper">
+								<label> <wicket:message
+										key="DatiTelefonoPanel.tipo" />
+								</label><select wicket:id="tipo"></select>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+							
+			</div>
+			
+			<div class="form-row col-12">
+				<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<div class="select-wrapper">
+							<label> <wicket:message
+									key="DatiTelefonoPanel.lingua" />
+							</label><select wicket:id="lingua"></select>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-group">
+						<div class="select-wrapper" wicket:id="wmkLinguaNoItalia">
+							<label> <wicket:message
+									key="DatiTelefonoPanel.linguaNoItalia" />
+							</label><select wicket:id="linguaNoItalia"></select>
+						</div>
+					</div>
+				</div>
+				</div>	
+				
+					
+			</div>
+
+		</div>
+	</wicket:panel>
+
+</body>
+
+</html>

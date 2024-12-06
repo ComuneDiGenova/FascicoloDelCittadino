@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+    <wicket:head>
+        <title>Fascicolo del Cittadino</title>
+    </wicket:head>
+
+    <body>
+        <wicket:panel>
+            <nav class="breadcrumb-container" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="home"><wicket:message key="BreadcrumbPagamentiFormPanel.home" /></a><span class="separator">/</span>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a wicket:id="pagamenti"><wicket:message key="BreadcrumbPagamentiFormPanel.pagamenti" /></a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page"><span class="separator">/</span><wicket:message key="BreadcrumbPagamentiFormPanel.current" /></li>
+                </ol>
+            </nav>
+
+            <div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+        </wicket:panel>
+    </body>
+</html>

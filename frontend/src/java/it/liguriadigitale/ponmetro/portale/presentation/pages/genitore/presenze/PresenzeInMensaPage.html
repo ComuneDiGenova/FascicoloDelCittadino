@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title></title>
+</head>
+<body>
+	<wicket:extend>
+	
+		<div wicket:id="breadcrumbPanel"></div>
+		<div class="row clearfix my-4 mio-stato">
+			<div class="col-sm-12 my-2">
+				<i class="icon-ristorazione color-orange"></i>
+				<p class="text-left font-weight-semibold mb-0"><span wicket:id="figliIscritti"></span></p>
+			</div>
+		</div>
+
+		<div class="col-sm-12 mb-4 combo-figli">
+			<br>
+			<div class="row">
+				<div class="col select-wrapper">
+					<label for="comboFigli">Le presenze in mensa di</label>
+					<select id="comboFigli" wicket:id="comboFigli"></select>
+				</div>
+				<div class="col">
+						<br>
+						<label>a <span wicket:id="mese"></span> sono <span class="fw-bold" wicket:id="totale"></span></label>
+				</div>
+			</div>
+		</div>
+
+		<div class="row presenze-mensa flex-sm-row-reverse">
+			<div class="col-lg-4 mb-4 calendario" wicket:id="calendarioMensa"></div>
+			<div class="col-lg-8 mb-4 menu-mensa" wicket:id="menuMensa"></div>
+			<div class="col-lg-3 mb-4 riepilogo-mensa" wicket:id="riepilogoMensa"></div> 
+		</div> 		
+ 
+	<wicket:child/>
+    </wicket:extend>    
+   		<div class="row comunicazioni">
+			<div class="col-lg-6 mb-4">
+				<!--start card -->
+				<div class="card-wrapper">
+					<div class="card card-bg disable">
+						<div class="card-body">
+							<div class="row mb-0">
+								<div class="text text-left col-9">
+									<h4 class="card-title text-left font-weight-semibold mb-1">Rinuncia al pasto</h4>
+									<p class="card-text text-left mb-0">Comunico che <span class="font-weight-semibold">Luca Rossi</span> della classe <span class="font-weight-semibold">IB Scuola Primaria Nome Scuola oggi 12 Marzo</span> rinuncia al pasto.</p>
+								</div>
+								<i class="icon-lettera color-grey-light col-3"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+			<!--	end card-->
+			</div>
+			<div class="col-lg-6 mb-4">
+				<!--start card-->
+				<div class="card-wrapper">
+					<div class="card card-bg enable">
+						<div class="card-body">
+							<div class="row mb-0">
+								<div class="text text-left col-9">
+									<h4 class="card-title text-left font-weight-semibold mb-1">Segnala un'assenza</h4>
+									<p class="card-text text-left mb-0">Comunico che <span class="font-weight-semibold">Luca Rossi</span> della classe <span class="font-weight-semibold">IB Scuola Primaria Nome Scuola oggi 12 Marzo</span> è stato assente.</p>
+								</div>
+								<i class="icon-lettera color-yellow col-3"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+			<!--	end card-->
+			</div>
+		</div>
+</body>
+</html>

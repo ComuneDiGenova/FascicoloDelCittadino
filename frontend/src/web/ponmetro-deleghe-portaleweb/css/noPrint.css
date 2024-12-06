@@ -1,0 +1,5 @@
+.printable { display:none; }
+@media only print {
+    .container { display:none !important; } <-- This is the wrapper container for all of the site data
+    .printable { display:block !important; } <-- This is my added printable container with a message about not printing the page
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>
+		<div class="container">
+
+			<div class="col-sm-12 mt-2 mb-2">
+				<h3 class="text-left font-weight-semibold mb-0">
+					<wicket:message key="ConfermaDppConducentePanel.title" />
+				</h3>
+			</div>
+
+			<div class="row justify-content-md-center mb-4">
+				<div class="col-12 col-lg-10">
+					<div class="steppers">
+						<ul class="steppers-header">
+							<li class="confirmed"><span class="steppers-number"><span
+									class="sr-only">Step </span>1</span> <span class="steppers-status"><wicket:message
+										key="ConfermaDppConducentePanel.step1"></wicket:message></span>
+								<span class="sr-only"><wicket:message
+										key="ConfermaDppConducentePanel.step1"></wicket:message></span>
+							</li>
+							<li class="confirmed"><span class="steppers-number"><span
+									class="sr-only">Step </span>2</span> <span class="steppers-status"><wicket:message
+										key="ConfermaDppConducentePanel.step2"></wicket:message></span>
+								<span class="sr-only"><wicket:message
+										key="ConfermaDppConducentePanel.step2"></wicket:message></span>
+							</li>
+							<li class="confirmed"><span class="steppers-number"><span
+									class="sr-only">Step </span>3</span> <span class="steppers-status"><wicket:message
+										key="ConfermaDppConducentePanel.step3"></wicket:message></span>
+								<span class="sr-only"><wicket:message
+										key="ConfermaDppConducentePanel.step3"></wicket:message></span>
+							</li>
+							<li class="active no-line"><span class="steppers-number"><span
+									class="sr-only">Step </span>4</span> <span class="steppers-status"><wicket:message
+										key="ConfermaDppConducentePanel.step4"></wicket:message></span>
+								<span class="sr-only"><wicket:message
+										key="ConfermaDppConducentePanel.step4"></wicket:message></span>
+							</li>
+							<li class="steppers-index" aria-hidden="true"><span
+								class="confirmed">1</span> <span class="confirmed">2</span> <span class="confirmed">3</span><span
+								class="active"><wicket:message
+										key="ConfermaDppConducentePanel.step4"></wicket:message></span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row mb-0 d-flex justify-content-center">
+
+				<wicket:enclosure child="codiceFiscaleDichiarante">
+					<div class="col-5">
+						<p class="text-left">
+							<span class="font-weight-semibold"><wicket:message
+									key="ConfermaDppConducentePanel.codiceFiscaleDichiarante" />:</span>
+							<span class="text-capitalize" wicket:id="codiceFiscaleDichiarante"></span>
+						</p>
+					</div>
+				</wicket:enclosure>
+				
+				<wicket:enclosure child="numeroPatente">
+					<div class="col-5">
+						<p class="text-left">
+							<span class="font-weight-semibold"><wicket:message
+									key="ConfermaDppConducentePanel.numeroPatente" />:</span>
+							<span class="text-capitalize" wicket:id="numeroPatente"></span>
+						</p>
+					</div>
+				</wicket:enclosure>
+				
+				<wicket:enclosure child="emailDichiarante">
+					<div class="col-5">
+						<p class="text-left">
+							<span class="font-weight-semibold"><wicket:message
+									key="ConfermaDppConducentePanel.emailDichiarante" />:</span>
+							<span class="text-capitalize" wicket:id="emailDichiarante"></span>
+						</p>
+					</div>
+				</wicket:enclosure>
+				
+				<wicket:enclosure child="stato">
+					<div class="col-5">
+						<p class="text-left">
+							<span class="font-weight-semibold"><wicket:message
+									key="ConfermaDppConducentePanel.stato" />:</span>
+							<span class="text-capitalize" wicket:id="stato"></span>
+						</p>
+					</div>
+				</wicket:enclosure>
+
+				<div class="col-10">
+					<a class="btn btn-success btn-xs btn-icon" wicket:id="btnDownload">
+						<svg class="icon icon-white">
+	                    	<use xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-download"></use>
+	                    </svg> <span><wicket:message key="ConfermaDppConducentePanel.scaricapdf" /></span>
+					</a>
+				</div>
+						
+			</div>
+
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+
+</body>
+</html>

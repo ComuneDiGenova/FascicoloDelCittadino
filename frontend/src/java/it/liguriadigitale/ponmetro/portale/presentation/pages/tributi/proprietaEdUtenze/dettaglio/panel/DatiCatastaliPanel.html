@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+		<div class="card-wrapper">
+			<div class="card card-bg my-2">
+				<div class="card-body">
+					<div class="categoryicon-top row mb-2">
+						<i class="" wicket:id="icona"></i>
+
+						<wicket:enclosure child="titolo">
+							<h4 class="card-title text-left col-9 font-weight-normal">
+								<span class="text-capitalize font-weight-semibold"
+									wicket:id="titolo"></span>
+							</h4>
+						</wicket:enclosure>
+					</div>
+					<span wicket:id="contenuto"></span>
+				</div>
+			</div>
+		</div>
+	</wicket:panel>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<wicket:panel>
+	<!---Widget2-->
+	<wicket:enclosure child="presenzeDi">
+		<div class="card-icon font-weight-bold mt-4 mb-1">
+			<a href="#" wicket:id="presenze"><span wicket:id="presenzeLabel" class="presenze"></span></a>
+		</div>
+		<div class="card-text mt-2 mb-4">
+			<div class="card-content">
+				<span><wicket:message key="PresenzeWidget.presenze"/></span>
+				<span class="font-weight-semibold" wicket:id="presenzeDi"></span>
+			</div>
+		</div>
+	</wicket:enclosure>
+</wicket:panel>		
+</body>
+</html>

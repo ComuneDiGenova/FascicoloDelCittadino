@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<wicket:head>
+	<style>
+div.wicket-aa {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, Verdana;
+	font-size: 14px;
+	background-color: white;
+	border-width: 1px;
+	border-color: #cccccc;
+	border-style: solid;
+	padding: 2px;
+	margin: 1px 0 0 0;
+	text-align: left;
+}
+
+div.wicket-aa ul {
+	list-style: none;
+	padding: 2px;
+	margin: 0;
+}
+
+div.wicket-aa ul li.selected {
+	background-color: #4e73df;
+	padding: 2px;
+	color: white;
+	margin: 0;
+}
+</style>
+</wicket:head>
+
+</head>
+<body>
+	<wicket:panel>
+
+		<div class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici">
+			<h4 class="col-12">Ubicazione parcheggio</h4>
+
+
+			<div class="form-row mb-2 col-md-6 mx-auto">
+
+				<!--  	<input wicket:id="indirizzo" type="hidden" style="width: 300px;"
+					multiple="multiple" />  -->
+
+				<div class="form-row mb-2 col-md-12 mx-auto">
+					<div class="col-12 autocomplete-wrapper">
+						<input type="text" id="indirizzo" name="indirizzo"
+							title="Ubicazione parcheggio" wicket:id="indirizzo"
+							class="form-control" />
+					</div>
+				</div>
+
+				<input class="form-control" id="descIndirizzo" type="text"
+					placeholder="" wicket:id="descIndirizzo"> <small><wicket:message
+						key="UbicazioneParcheggioPanel.geoserverUbicazioneParcheggio" /></small>
+				<label class="sr-only" for="descIndirizzo"> <wicket:message
+						key="UbicazioneParcheggioPanel.geoserverUbicazioneParcheggio" />
+				</label>
+
+			</div>
+
+		</div>
+
+	</wicket:panel>
+</body>
+</html>

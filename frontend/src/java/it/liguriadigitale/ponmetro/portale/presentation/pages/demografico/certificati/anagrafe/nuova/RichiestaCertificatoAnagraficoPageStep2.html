@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<body>
+	<wicket:extend>
+
+		<ul wicket:id="breadcrumbPanel"></ul>
+		<div wicket:id="stepPanel"></div>
+
+
+
+		<div class="container">
+			<form wicket:id="form" aria-labelledby="form-title">
+				<fieldset>
+					<div class="form-servizi-anagrafici mb-3">
+
+						<legend id="form-title" class="mb-3">
+							<strong>
+								<wicket:message key="RichiestaCertificatoAnagraficoPage.spiegazione" />
+							</strong>
+						</legend>
+
+						<div class="row mb-5">
+							<div class="col-sm select-wrapper">
+								<label for="tipologiaCertificato">
+									<wicket:message key="RichiestaCertificatoAnagraficoPage.tipo" />
+								</label>
+								<select autocomplete="on" id="tipologiaCertificato"
+									class="col-md-12 col-lg-12 col-sm-12 col-xl-12" wicket:id="combo" required></select>
+							</div>
+
+
+						</div>
+
+						<div class="row mb-5">
+							<div class="col-sm">
+								<wicket:enclosure child="dataDa">
+
+									<label class="active" for="dataDa"><strong>
+											<wicket:message key="RichiestaCertificatoAnagraficoPage.dataDa" />
+										</strong></label>
+									<input placeholder="Data in formato gg/mm/aaaa" autocomplete="off" type="date"
+										id="dataDa" wicket:id="dataDa">
+
+								</wicket:enclosure>
+							</div>
+						</div>
+						<div class="row mb-5">
+							<div class="col-sm">
+								<wicket:enclosure child="dataInizio">
+									<label class="active" for="dataInizio"><strong>
+											<wicket:message key="RichiestaCertificatoAnagraficoPage.dataInizio" />
+										</strong></label>
+									<input placeholder="Data in formato gg/mm/aaaa" autocomplete="off" type="date"
+										id="dataInizio" wicket:id="dataInizio">
+								</wicket:enclosure>
+							</div>
+
+							<div class="col-sm">
+								<wicket:enclosure child="dataFine">
+									<label class="active" for="dataFine"><strong>
+											<wicket:message key="RichiestaCertificatoAnagraficoPage.dataFine" />
+										</strong></label>
+									<input placeholder="Data in formato gg/mm/aaaa" autocomplete="off" type="date"
+										id="dataFine" wicket:id="dataFine">
+								</wicket:enclosure>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="row justify-content-center">
+						<div class="col-sm-auto">
+							<div class="d-flex justify-content-center">
+								<button type="submit" class="btn btn-primary focus-visible-none mx-3">
+									<wicket:message key="RichiestaCertificatoAnagraficoPage.avanti" />
+								</button>
+								<a class="btn btn-secondary focus-visible-none mx-3" href="#" role="button"
+									wicket:id="indietro">
+									<wicket:message key="RichiestaCertificatoAnagraficoPage.indietro" />
+								</a>
+								<a class="btn btn-secondary focus-visible-none mx-3" href="#" role="button"
+									wicket:id="annulla">
+									<wicket:message key="RichiestaCertificatoAnagraficoPage.annulla" />
+								</a>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+
+			</form>
+		</div>
+
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+
+
+		<wicket:child />
+
+
+
+	</wicket:extend>
+</body>
+
+</html>

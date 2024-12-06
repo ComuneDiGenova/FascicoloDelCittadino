@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:extend>
+		<fieldset>
+			<legend id="form-title" class="mb-3">
+				<strong>
+					<span wicket:id="titolo"></span>
+				</strong>
+			</legend>
+
+			<div wicket:id="stepPanel"></div>
+
+
+			<div wicket:id="datiIntestatarioBorsaStudioPanel"></div>
+
+			<div wicket:id="datiRichiedenteBorseStudioPanel"></div>
+
+			<div wicket:id="domandaPanel"></div>
+
+			<div wicket:id="dichiarazioniPanel"></div>
+
+			<div wicket:id="esitoPanel"></div>
+
+
+
+			<div class="form-group col-md-12 mb-3 text-center">
+
+				<button type="button" class="btn btn-secondary" wicket:id="indietro">
+					<wicket:message key="DomandaBorsaStudioPanel.indietro" />
+				</button>
+
+				<button type="submit" class="btn btn-primary" wicket:id="avanti">
+					<wicket:message key="DomandaBorsaStudioPanel.avanti" />
+				</button>
+
+				<button type="button" class="btn btn-secondary" wicket:id="annulla">
+					<wicket:message key="DomandaBorsaStudioPanel.annulla" />
+				</button>
+
+
+			</div>
+
+		</fieldset>
+
+	</wicket:extend>
+</body>
+
+</html>

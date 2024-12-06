@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="row content my-4 richiesta-agevolazione">
+			<div class="col-md-12 text-start mb-4">
+				<div class="col-12">
+					<div class="col-12 alert alert-info" role="alert">
+						<wicket:message
+							key="Step3IstanzaPlAltriVerbaliIstanzaPanel.infoPagina" />
+					</div>
+				</div>
+
+				<div class="col-lg-12 mx-auto riepilogo">
+					<form class="needs-validation was-validated mb-3 col-lg-12 mx-auto"
+						wicket:id="form">
+						<div
+							class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici">
+							<div class="col-12">
+								<p class="text-start">
+									<span class="fw-bold"><wicket:message
+											key="Step3IstanzaPlAltriVerbaliIstanzaPanel.motivoScelto" />:</span>
+								</p>
+								<p class="text-start">
+									<span class="text-uppercase" wicket:id="motivoScelto"></span>
+								</p>
+							</div>
+							<wicket:enclosure child="nonpossibileselezionarealtriverbali">
+								<hr />
+								<p class="text-start">
+									<wicket:message
+										key="Step3IstanzaPlAltriVerbaliIstanzaPanel.nonpossibileselezionarealtriverbali" />
+									<span class="text-capitalize"
+										wicket:id="nonpossibileselezionarealtriverbali"></span>
+								</p>
+
+							</wicket:enclosure>
+
+							<wicket:enclosure child="possibileselezionarealtriverbali">
+								<hr />
+								<h4 class="text-center col-12">
+									<wicket:message
+										key="Step3IstanzaPlAltriVerbaliIstanzaPanel.01.sottotitolo" />
+									<span class="text-capitalize"
+										wicket:id="possibileselezionarealtriverbali"></span>
+								</h4>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="listavuotaVerbali">
+								<div>
+									<h2 wicket:id="listavuotaVerbali"></h2>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="box">
+								<div class="col-lg-6 mb-4" wicket:id="box">
+									<div class="card-wrapper">
+										<div class="card card-bg my-2">
+											<div class="card-body">
+												<div class="categoryicon-top row mb-2">
+													<i class="" wicket:id="icona"></i>
+													<h4 class="card-title text-start col-9 font-weight-normal">
+														<wicket:message
+															key="Step3IstanzaPlAltriVerbaliIstanzaPanel.verbale.titolo" />
+													</h4>
+												</div>
+
+												<wicket:enclosure child="numeroavviso">
+													<div class="row py-1 mb-2 border-bottom">
+														<div class="col-5">
+															<p class="card-text text-start fw-bold">
+																<wicket:message
+																	key="Step3IstanzaPlAltriVerbaliIstanzaPanel.verbale.numeroavviso" />
+															</p>
+														</div>
+														<div class="col-7">
+															<p class="card-text text-start d-table h-100">
+																<span class="d-table-cell text-capitalize align-middle"
+																	wicket:id="numeroavviso"></span>
+															</p>
+														</div>
+													</div>
+												</wicket:enclosure>
+
+												<wicket:enclosure child="numeroprotocollo">
+													<div class="row py-1 mb-2 border-bottom">
+														<div class="col-5">
+															<p class="card-text text-start fw-bold">
+																<wicket:message
+																	key="Step3IstanzaPlAltriVerbaliIstanzaPanel.verbale.numeroprotocollo" />
+															</p>
+														</div>
+														<div class="col-7">
+															<p class="card-text text-start d-table h-100">
+																<span class="d-table-cell text-capitalize align-middle"
+																	wicket:id="numeroprotocollo"></span>
+															</p>
+														</div>
+													</div>
+												</wicket:enclosure>
+
+												<wicket:enclosure child="articoli">
+													<div class="row py-1 mb-2 border-bottom">
+														<div class="col-5">
+															<p class="card-text text-start fw-bold">
+																<wicket:message
+																	key="Step3IstanzaPlAltriVerbaliIstanzaPanel.verbale.articoli" />
+															</p>
+														</div>
+														<div class="col-7">
+															<p class="card-text text-start d-table h-100">
+																<span class="d-table-cell text-capitalize align-middle"
+																	wicket:id="articoli"></span>
+															</p>
+														</div>
+													</div>
+												</wicket:enclosure>
+
+												<wicket:enclosure child="serie">
+													<div class="row py-1 mb-2 border-bottom">
+														<div class="col-5">
+															<p class="card-text text-start fw-bold">
+																<wicket:message
+																	key="Step3IstanzaPlAltriVerbaliIstanzaPanel.verbale.serie" />
+															</p>
+														</div>
+														<div class="col-7">
+															<p class="card-text text-start d-table h-100">
+																<span class="d-table-cell text-capitalize align-middle"
+																	wicket:id="serie"></span>
+															</p>
+														</div>
+													</div>
+												</wicket:enclosure>
+
+												<wicket:enclosure child="dataaccertamento">
+													<div class="row py-1 mb-2 border-bottom">
+														<div class="col-5">
+															<p class="card-text text-start fw-bold">
+																<wicket:message
+																	key="Step3IstanzaPlAltriVerbaliIstanzaPanel.verbale.dataaccertamento" />
+															</p>
+														</div>
+														<div class="col-7">
+															<p class="card-text text-start d-table h-100">
+																<span class="d-table-cell text-capitalize align-middle"
+																	wicket:id="dataaccertamento"></span>
+															</p>
+														</div>
+													</div>
+												</wicket:enclosure>
+
+												<wicket:enclosure child="localita">
+													<div class="row py-1 mb-2 border-bottom">
+														<div class="col-5">
+															<p class="card-text text-start fw-bold">
+																<wicket:message
+																	key="Step3IstanzaPlAltriVerbaliIstanzaPanel.verbale.localita" />
+															</p>
+														</div>
+														<div class="col-7">
+															<p class="card-text text-start d-table h-100">
+																<span class="d-table-cell text-capitalize align-middle"
+																	wicket:id="localita"></span>
+															</p>
+														</div>
+													</div>
+												</wicket:enclosure>
+
+												<wicket:enclosure child="selezionato">
+													<div class="row py-1 mb-2 border-bottom">
+														<div class="col-5">
+															<p class="card-text text-start fw-bold">Seleziona
+															</p>
+														</div>
+														<div class="col-7 text-start">
+															<input type="checkbox" wicket:id="selezionato" aria-label="Seleziona">
+														</div>
+
+													</div>
+												</wicket:enclosure>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-12" wicket:id="pagination"></div>
+							</wicket:enclosure>
+
+							<div class="col-12">
+								<div class="col-12 alert alert-info" role="alert">
+									<wicket:message
+										key="Step3IstanzaPlAltriVerbaliIstanzaPanel.infoBottoni" />
+								</div>
+							</div>
+
+							<div class="form-group col-md-12 mb-3 text-center">
+								<div class="form-group col-md-12 mb-3 text-center">
+									<a class="btn btn-primary" href="#" role="button"
+										wicket:id="avanti"> <wicket:message
+											key="Step3IstanzaPlAltriVerbaliIstanzaPanel.avanti" />
+									</a> <a class="btn btn-secondary" href="#" role="button"
+										wicket:id="indietro"> <wicket:message
+											key="Step3IstanzaPlAltriVerbaliIstanzaPanel.indietro" />
+									</a> <a class="btn btn-secondary" href="#" role="button"
+										wicket:id="annulla"> <wicket:message
+											key="Step3IstanzaPlAltriVerbaliIstanzaPanel.annulla" />
+									</a>
+								</div>
+							</div>
+						</div>
+
+					</form>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

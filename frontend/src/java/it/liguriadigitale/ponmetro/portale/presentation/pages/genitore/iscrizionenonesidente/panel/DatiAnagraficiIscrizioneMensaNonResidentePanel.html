@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<wicket:head>
+	<style>
+div.wicket-aa {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, Verdana;
+	font-size: 14px;
+	background-color: white;
+	border-width: 1px;
+	border-color: #cccccc;
+	border-style: solid;
+	padding: 2px;
+	margin: 1px 0 0 0;
+	text-align: left;
+}
+
+div.wicket-aa ul {
+	list-style: none;
+	padding: 2px;
+	margin: 0;
+}
+
+div.wicket-aa ul li.selected {
+	background-color: #4e73df;
+	padding: 2px;
+	color: white;
+	margin: 0;
+}
+
+div.wicket-aa ul li {
+	padding: 3.5px;
+}
+</style>
+</wicket:head>
+
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="form-row mb-2 col-md-12 mx-auto">
+
+			<div class="form-row col-md-12" wicket:id="titoloDatiAnagrafici"></div>
+
+			<div class="form-row col-12">
+
+				<div class="row">
+					<div class="col-md-6">
+						<div wicket:id="nome"></div>
+					</div>
+
+					<div class="col-md-6">
+						<div wicket:id="cognome"></div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<div wicket:id="codiceFiscale"></div>
+					</div>
+
+					<div class="col-md-6">
+						<div wicket:id="dataNascita"></div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<div wicket:id="email"></div>
+					</div>
+
+					<div class="col-md-6">
+						<div wicket:id="telefono"></div>
+					</div>
+				</div>
+
+				<div class="form-row col-md-12" wicket:id="titoloDatiNascita"></div>
+
+				<wicket:enclosure child="autocompleteCittadinanze">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group col-12 select-wrapper" style="z-index: 1">
+								<label for="autocompleteCittadinanze"><wicket:message
+										key="DatiAnagraficiIscrizioneMensaNonResidentePanel.autocompleteCittadinanze" /></label>
+								<input type="text" id="autocompleteCittadinanze"
+									name="autocompleteCittadinanze" title="Cittadinanza"
+									wicket:id="autocompleteCittadinanze" class="form-control" /> <span
+									class="autocomplete-icon" aria-hidden="true"> <svg
+										class="icon icon-sm">
+										<use
+											href="/portale/bootstrap-italia/svg/sprites.svg#it-search"></use></svg>
+								</span>
+							</div>
+						</div>
+
+						<div class="col-md-6"></div>
+					</div>
+				</wicket:enclosure>
+
+				<wicket:enclosure child="autocompleteStatoNascita">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group col-12 select-wrapper" style="z-index: 1">
+								<label for="autocompleteStatoNascita"><wicket:message
+										key="DatiAnagraficiIscrizioneMensaNonResidentePanel.autocompleteStatoNascita" /></label>
+								<input type="text" id="autocompleteStatoNascita"
+									name="autocompleteStatoNascita" title="Cittadinanza"
+									wicket:id="autocompleteStatoNascita" class="form-control" /> <span
+									class="autocomplete-icon" aria-hidden="true"> <svg
+										class="icon icon-sm">
+										<use
+											href="/portale/bootstrap-italia/svg/sprites.svg#it-search"></use></svg>
+								</span>
+							</div>
+						</div>
+
+						<div class="col-md-6"></div>
+					</div>
+				</wicket:enclosure>
+
+			</div>
+
+			<div class="form-row col-12">
+
+				<div class="row" wicket:id="containerProvinciaComuneItaliani">
+					<div class="col-md-6">
+						<div class="form-group col-12 select-wrapper" style="z-index: 1">
+							<label for="autocompleteProvinciaNascita"><wicket:message
+									key="DatiAnagraficiIscrizioneMensaNonResidentePanel.autocompleteProvinciaNascita" /></label>
+							<input type="text" id="autocompleteProvinciaNascita"
+								name="autocompleteProvinciaNascita" title="Provincia nascita"
+								wicket:id="autocompleteProvinciaNascita" class="form-control" />
+							<span class="autocomplete-icon" aria-hidden="true"> <svg
+									class="icon icon-sm">
+									<use href="/portale/bootstrap-italia/svg/sprites.svg#it-search"></use></svg>
+							</span>
+						</div>
+					</div>
+
+					<div wicket:id="wmkComuneNascita" class="col-md-6"
+						style="padding-bottom: 20px;">
+
+						<div class="form-group col-12 select-wrapper" style="z-index: 1">
+							<label for="autocompleteComuneNascita"><wicket:message
+									key="DatiAnagraficiIscrizioneMensaNonResidentePanel.autocompleteComuneNascita" /></label>
+							<input type="text" id="autocompleteComuneNascita"
+								name="autocompleteComuneNascita" title="Comune nascita"
+								wicket:id="autocompleteComuneNascita" class="form-control" /> <span
+								class="autocomplete-icon" aria-hidden="true"> <svg
+									class="icon icon-sm">
+									<use href="/portale/bootstrap-italia/svg/sprites.svg#it-search"></use></svg>
+							</span>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="form-row col-md-12" wicket:id="titoloDatiResidenza"></div>
+
+			<div class="form-row col-12">
+
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group col-12 select-wrapper" style="z-index: 1">
+							<label for="autocompleteProvinciaResidenza"><wicket:message
+									key="DatiAnagraficiIscrizioneMensaNonResidentePanel.autocompleteProvinciaResidenza" /></label>
+							<input type="text" id="autocompleteProvinciaResidenza"
+								name="autocompleteProvinciaResidenza"
+								title="Provincia residenza"
+								wicket:id="autocompleteProvinciaResidenza" class="form-control" />
+							<span class="autocomplete-icon" aria-hidden="true"> <svg
+									class="icon icon-sm">
+									<use href="/portale/bootstrap-italia/svg/sprites.svg#it-search"></use></svg>
+							</span>
+						</div>
+					</div>
+
+					<div wicket:id="wmkComuneResidenza" class="col-md-6"
+						style="padding-bottom: 20px;">
+
+						<div class="form-group col-12 select-wrapper" style="z-index: 1">
+							<label for="autocompleteComuneResidenza"><wicket:message
+									key="DatiAnagraficiIscrizioneMensaNonResidentePanel.autocompleteComuneResidenza" /></label>
+							<input type="text" id="autocompleteComuneResidenza"
+								name="autocompleteComuneResidenza" title="Comune residenza"
+								wicket:id="autocompleteComuneResidenza" class="form-control" />
+							<span class="autocomplete-icon" aria-hidden="true"> <svg
+									class="icon icon-sm">
+									<use href="/portale/bootstrap-italia/svg/sprites.svg#it-search"></use></svg>
+							</span>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="row">
+					<div class="col-md-3">
+						<div wicket:id="viaResidenza"></div>
+					</div>
+
+					<div class="col-md-3">
+						<div wicket:id="civicoResidenza"></div>
+					</div>
+
+					<div class="col-md-3">
+						<div wicket:id="internoResidenza"></div>
+					</div>
+
+					<div class="col-md-3">
+						<div wicket:id="capResidenza"></div>
+					</div>
+				</div>
+
+			</div>
+
+			<wicket:enclosure child="datiResidenzaDomicilioCoincidonoGenitore">
+				<div class="row">
+					<div class="col">
+						<div class="form-group">
+							<div class="select-wrapper">
+								<label> <wicket:message
+										key="DatiAnagraficiIscrizioneMensaNonResidentePanel.datiResidenzaDomicilioCoincidono" />
+								</label><select wicket:id="datiResidenzaDomicilioCoincidonoGenitore"></select>
+							</div>
+						</div>
+					</div>
+					<div class="col"></div>
+				</div>
+			</wicket:enclosure>
+
+			<wicket:enclosure child="datiResidenzaDomicilioCoincidonoFiglio">
+				<div class="row">
+					<div class="col">
+						<div class="form-group">
+							<div class="select-wrapper">
+								<label> <wicket:message
+										key="DatiAnagraficiIscrizioneMensaNonResidentePanel.datiResidenzaDomicilioCoincidono" />
+								</label><select wicket:id="datiResidenzaDomicilioCoincidonoFiglio"></select>
+							</div>
+						</div>
+					</div>
+					<div class="col"></div>
+				</div>
+			</wicket:enclosure>
+
+			<div wicket:id="containerDatiDomicilio">
+				<div class="form-row col-md-12" wicket:id="titoloDatiDomicilio"></div>
+
+				<div class="form-row col-12">
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group col-12 select-wrapper" style="z-index: 1">
+								<label for="autocompleteProvinciaDomicilio"><wicket:message
+										key="DatiAnagraficiIscrizioneMensaNonResidentePanel.autocompleteProvinciaDomicilio" /></label>
+								<input type="text" id="autocompleteProvinciaDomicilio"
+									name="autocompleteProvinciaDomicilio"
+									title="Provincia domicilio"
+									wicket:id="autocompleteProvinciaDomicilio" class="form-control" />
+								<span class="autocomplete-icon" aria-hidden="true"> <svg
+										class="icon icon-sm">
+										<use
+											href="/portale/bootstrap-italia/svg/sprites.svg#it-search"></use></svg>
+								</span>
+							</div>
+						</div>
+
+						<div wicket:id="wmkComuneDomicilio" class="col-md-6"
+							style="padding-bottom: 20px;">
+
+							<div class="form-group col-12 select-wrapper" style="z-index: 1">
+								<label for="autocompleteComuneDomicilio"><wicket:message
+										key="DatiAnagraficiIscrizioneMensaNonResidentePanel.autocompleteComuneDomicilio" /></label>
+								<input type="text" id="autocompleteComuneDomicilio"
+									name="autocompleteComuneDomicilio" title="Comune domicilio"
+									wicket:id="autocompleteComuneDomicilio" class="form-control" />
+								<span class="autocomplete-icon" aria-hidden="true"> <svg
+										class="icon icon-sm">
+										<use
+											href="/portale/bootstrap-italia/svg/sprites.svg#it-search"></use></svg>
+								</span>
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="row" wicket:id="containerIndirizzoDomicilioFuoriGenova">
+						<div class="col-md-3">
+							<div wicket:id="viaDomicilio"></div>
+						</div>
+
+						<div class="col-md-3">
+							<div wicket:id="civicoDomicilio"></div>
+						</div>
+
+						<div class="col-md-3">
+							<div wicket:id="internoDomicilio"></div>
+						</div>
+
+						<div class="col-md-3">
+							<div wicket:id="capDomicilio"></div>
+						</div>
+					</div>
+
+					<div class="row" wicket:id="containerIndirizzoDomicilioInGenova">
+
+						<div class="form-row mb-2 col-md-12 mx-auto"
+							style="padding-bottom: 20px;">
+							<div class="col-12 select-wrapper" style="z-index: 1;">
+								<label for="autocompleteViario"><wicket:message
+										key="DatiAnagraficiIscrizioneMensaNonResidentePanel.autocompleteViario" />:</label>
+								<input type="text" id="autocompleteViario"
+									name="autocompleteViario" title="indirizzo"
+									wicket:id="autocompleteViario" class="form-control" /> <span
+									class="autocomplete-icon" aria-hidden="true"> <svg
+										class="icon icon-sm">
+										<use
+											href="/portale/bootstrap-italia/svg/sprites.svg#it-search"></use></svg>
+								</span>
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-md-6">
+								<div wicket:id="internoDomicilioGenova"></div>
+							</div>
+
+							<div class="col-md-6">
+								<div wicket:id="capDomicilioGenova"></div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div wicket:id="containerDatiBollettazione">
+				<div class="form-row col-md-12" wicket:id="titoloDatiBollettazione"></div>
+
+				<div class="form-row col-12 alert alert-info" role="alert" style="margin-bottom: 40px;">
+					<wicket:message
+						key="DatiAnagraficiIscrizioneMensaNonResidentePanel.infoBollettazione" />
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<div class="select-wrapper">
+								<label> <wicket:message
+										key="DatiAnagraficiIscrizioneMensaNonResidentePanel.datiBollettazione" />
+								</label><select wicket:id="modalitaBollettazione"></select>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div wicket:id="emailBollettazione"></div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</wicket:panel>
+
+</body>
+
+</html>

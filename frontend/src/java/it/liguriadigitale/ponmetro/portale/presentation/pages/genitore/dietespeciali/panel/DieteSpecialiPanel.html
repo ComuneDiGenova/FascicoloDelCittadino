@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="row content my-4 info-traffico">
+
+			<wicket:enclosure child="btnRichiestaDieta">
+				<div class="col-sm-12 mt-2 mb-2">
+					<button class="btn btn-outline-primary">
+						<span wicket:id="btnRichiestaDieta"></span>
+					</button>
+				</div>
+			</wicket:enclosure>
+
+			<div class="col-sm-12 mt-2 mb-2">
+				<div class="col-12 alert alert-warning" role="alert"
+					wicket:id="listaVuota"></div>
+
+			</div>
+
+			<div class="row content my-12 info-traffico"
+				wicket:id="containerDietaValida">
+				<div class="col-lg-6 mb-4">
+					<div class="card-wrapper card-space">
+						<div class="card card-bg my-2">
+							<div class="card-body">
+
+								<div class="categoryicon-top row mb-2">
+									<i class="color-orange col-3 icon-menu"></i>
+
+									<h4 class="card-title text-left col-9 font-weight-normal">
+										<wicket:message key="DieteSpecialiPanel.infoDietaValidaTitolo" />
+										<br>
+										<wicket:message key="DieteSpecialiPanel.identificativo" />
+										<span class="text-capitalize font-weight-semibold"
+											wicket:id="idDietaValida"></span>
+									</h4>
+
+								</div>
+
+								<div class="row">
+									<div class="alert alert-info" role="alert"
+										wicket:id="containerInfoDietaValida">
+										<wicket:message key="DieteSpecialiPanel.infoDietaValida" />
+									</div>
+								</div>
+
+								<div wicket:id="codiceFiscaleValida"></div>
+
+								<div wicket:id="nomeValida"></div>
+
+								<div wicket:id="cognomeValida"></div>
+
+								<div wicket:id="tipoMenuValida"></div>
+
+								<div wicket:id="tipoDietaValida"></div>
+
+								<div wicket:id="annoScolasticoValida"></div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+			<div class="col-lg-6 mb-4" wicket:id="box">
+
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<div class="col-4">
+									<i class="" wicket:id="icona"></i>
+								</div>
+								<div class="col-8 d-flex flex-column">
+									<wicket:enclosure child="identificativo">
+										<h4 class="card-title text-start font-weight-normal">
+											<wicket:message key="DieteSpecialiPanel.identificativo" />
+											<span class="text-capitalize fw-bold"
+												wicket:id="identificativo"></span>
+										</h4>
+										<div class="d-flex justify-content-start">
+											<span class="card-title text-start font-weight-normal">
+												<wicket:message key="DieteSpecialiPanel.statoRichiesta" />
+												&nbsp;
+											</span> <span class="text-capitalize fw-bold"
+												wicket:id="statoRichiesta"></span>
+										</div>
+									</wicket:enclosure>
+								</div>
+							</div>
+
+							<wicket:enclosure child="cfIscritto">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="DieteSpecialiPanel.cf" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="cfIscritto"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="nomeIscritto">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="DieteSpecialiPanel.nome" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="nomeIscritto"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="cognomeIscritto">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="DieteSpecialiPanel.cognome" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="cognomeIscritto"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+
+
+
+							<wicket:enclosure child="nomeRichiedente">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="DieteSpecialiPanel.nomeRichiedente" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="nomeRichiedente"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="cognomeRichiedente">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="DieteSpecialiPanel.cognomeRichiedente" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="cognomeRichiedente"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="cfRichiedente">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="DieteSpecialiPanel.cfRichiedente" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="cfRichiedente"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="nomeRichiedenteRevoca">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message
+												key="DieteSpecialiPanel.nomeRichiedenteRevoca" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="nomeRichiedenteRevoca"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="cognomeRichiedenteRevoca">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message
+												key="DieteSpecialiPanel.cognomeRichiedenteRevoca" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="cognomeRichiedenteRevoca"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="cfRichiedenteRevoca">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="DieteSpecialiPanel.cfRichiedenteRevoca" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="cfRichiedenteRevoca"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="tipoDieta">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="DieteSpecialiPanel.tipoDieta" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="tipoDieta"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="dietaMotiviReligiosi">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="DieteSpecialiPanel.dietaMotiviReligiosi" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="dietaMotiviReligiosi"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="anafilassi">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="DieteSpecialiPanel.anafilassi" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="anafilassi"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="codiceScuola">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="DieteSpecialiPanel.codiceScuola" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="codiceScuola"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="descrizioneScuola">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="DieteSpecialiPanel.descrizioneScuola" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="descrizioneScuola"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="annoScolastico">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="DieteSpecialiPanel.annoScolastico" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="annoScolastico"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="classe">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="DieteSpecialiPanel.classe" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="classe"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="sezione">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="DieteSpecialiPanel.sezione" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="sezione"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="rientri">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="DieteSpecialiPanel.rientri" />
+										</p>
+									</div>
+									<div class="col-7">
+										<span class="d-table-cell text-capitalize" wicket:id="rientri"></span>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="noteIntegrative">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="DieteSpecialiPanel.noteIntegrative" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="noteIntegrative"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="noteBackoffice">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="DieteSpecialiPanel.noteBackoffice" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="noteBackoffice"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="dataRichiesta">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="DieteSpecialiPanel.dataRichiesta" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="dataRichiesta"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="dataInizio">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="DieteSpecialiPanel.dataInizio" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="dataInizio"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="dataFine">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="DieteSpecialiPanel.dataFine" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="dataFine"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<div class="row py-1 mb-2">
+								<div class="col-12">
+									<p class="card-text text-start fw-bold">
+										<wicket:message key="DieteSpecialiPanel.allegati" />
+									</p>
+								</div>
+							</div>
+
+							<wicket:enclosure child="btnPdfDomanda">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-12">
+										<a class="btn btn-success btn-xs btn-icon"
+											wicket:id="btnPdfDomanda"> <svg class="icon icon-white">
+                                    <use
+													xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-download"></use>
+                                </svg> <span><wicket:message
+													key="DieteSpecialiPanel.domanda" /></span>
+										</a>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="btnPdfDichiarazioneSanitaria">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-12">
+										<a class="btn btn-success btn-xs btn-icon"
+											wicket:id="btnPdfDichiarazioneSanitaria"> <svg
+												class="icon icon-white">
+                                    <use
+													xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-download"></use>
+                                </svg> <span><wicket:message
+													key="DieteSpecialiPanel.dichiarazioneSanitaria" /></span>
+										</a>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="btnPdfDieta">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-12">
+										<a class="btn btn-success btn-xs btn-icon"
+											wicket:id="btnPdfDieta"> <svg class="icon icon-white">
+                                    <use
+													xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-download"></use>
+                                </svg> <span><wicket:message
+													key="DieteSpecialiPanel.dieta" /></span>
+										</a>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="btnPdfDomandaRevoca">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-12">
+										<a class="btn btn-success btn-xs btn-icon"
+											wicket:id="btnPdfDomandaRevoca"> <svg
+												class="icon icon-white">
+                                    <use
+													xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-download"></use>
+                                </svg> <span><wicket:message
+													key="DieteSpecialiPanel.revoca" /></span>
+										</a>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+						</div>
+
+						<div class="row py-1 mb-2">
+							<div class="col-6">
+								<a class="btn btn-primary btn-xs" href="#" role="button"
+									wicket:id="btnRevocaDieta"> <wicket:message
+										key="DieteSpecialiPanel.revocaDieta" />
+								</a>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div wicket:id="pagination"></div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+	</wicket:panel>
+</body>
+
+</html>

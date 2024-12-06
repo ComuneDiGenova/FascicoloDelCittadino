@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="col-12">
+			<h3>
+				<wicket:message key="BorseStudioModificaIbanPanel.titolo" />
+			</h3>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12"
+				wicket:id="listaVuota">
+				<div class="alert alert-warning" role="alert">
+					<wicket:message key="BorseStudioModificaIbanPanel.vuoto" />
+				</div>
+			</div>
+		</div>
+
+		<div class="row content my-12 info-traffico">
+			<div class="col-lg-6 mb-4" wicket:id="pratiche">
+
+				<div class="card-wrapper card-space">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="color-fc-pink col-3 icon-borsa_studio"></i>
+
+								<h4 class="card-title text-left col-9 font-weight-normal">
+									<wicket:enclosure child="idDomandaOnline">
+										<wicket:message
+											key="BorseStudioModificaIbanPanel.idDomandaOnline" />
+										<span class="text-capitalize font-weight-semibold"
+											wicket:id="idDomandaOnline"></span>
+										<br />
+									</wicket:enclosure>
+
+									<wicket:enclosure child="idDomanda">
+										<wicket:message key="BorseStudioModificaIbanPanel.idDomanda" />
+										<span class="text-capitalize font-weight-semibold"
+											wicket:id="idDomanda"></span>
+									</wicket:enclosure>
+								</h4>
+
+							</div>
+
+							<div wicket:id="intestatarioBorsa"></div>
+
+							<div wicket:id="codiceFiscaleIntestatarioBorsa"></div>
+
+							<div wicket:id="richiedente"></div>
+
+							<div wicket:id="codiceFiscaleRichiedente"></div>
+							
+							<div wicket:id="datiModificaBorseStudioIbanPanel"></div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-12" wicket:id="pagination"></div>
+
+		<div style="z-index: 21"
+			class="notification dismissable with-icon success" role="alert"
+			id="notificationDismTopFix" aria-labelledby="notificationDismTopFix"
+			wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

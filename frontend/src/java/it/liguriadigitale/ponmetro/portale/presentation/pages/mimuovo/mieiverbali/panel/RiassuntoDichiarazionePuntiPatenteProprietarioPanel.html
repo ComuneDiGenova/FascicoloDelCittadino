@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="col-sm-12 mt-2 mb-2">
+			<h3 class="text-left font-weight-semibold mb-0">
+				<wicket:message
+					key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.title" />
+			</h3>
+		</div>
+
+		<div class="col-lg-12 mx-auto">
+			<div class="steppers">
+				<ul class="steppers-header">
+					<li class="confirmed"><span class="steppers-number"><span
+							class="sr-only">Step </span>1</span> <span class="steppers-status"><wicket:message
+								key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.step1"></wicket:message></span>
+						<span class="sr-only"><wicket:message
+								key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.step1"></wicket:message></span>
+					</li>
+					<li class="active no-line"><span class="steppers-number"><span
+							class="sr-only">Step </span>2</span> <span class="steppers-status"><wicket:message
+								key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.step2"></wicket:message></span>
+						<span class="sr-only"><wicket:message
+								key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.step2"></wicket:message></span>
+					</li>
+					<li><span class="steppers-number"><span class="sr-only">Step
+						</span>3</span> <span class="steppers-status"><wicket:message
+								key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.step3"></wicket:message></span>
+						<span class="sr-only"><wicket:message
+								key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.step3"></wicket:message></span>
+					</li>
+					<li><span class="steppers-number"><span class="sr-only">Step
+						</span>4</span> <span class="steppers-status"><wicket:message
+								key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.step4"></wicket:message></span>
+						<span class="sr-only"><wicket:message
+								key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.step4"></wicket:message></span>
+					</li>
+					<li class="steppers-index" aria-hidden="true"><span
+						class="confirmed">1</span> <span class="active">2</span> <span><wicket:message
+								key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.step4"></wicket:message></span>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="col-lg-10 mx-auto riepilogo">
+
+			<div class="row mb-0 d-flex justify-content-center">
+				<h4>
+					<wicket:message
+						key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.info3" />
+				</h4>
+			</div>
+
+			<div class="row mb-0 d-flex justify-content-center">
+
+				<wicket:enclosure child="numeroAvviso">
+					<div class="col-5">
+						<p class="text-left">
+							<span class="font-weight-semibold"><wicket:message
+									key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.numeroAvviso" />:</span>
+							<span class="text-capitalize" wicket:id="numeroAvviso"></span>
+						</p>
+					</div>
+				</wicket:enclosure>
+
+				<wicket:enclosure child="numeroProtocollo">
+					<div class="col-5">
+						<p class="text-left">
+							<span class="font-weight-semibold"><wicket:message
+									key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.numeroProtocollo" />:</span>
+							<span class="text-capitalize" wicket:id="numeroProtocollo"></span>
+						</p>
+					</div>
+				</wicket:enclosure>
+
+				<wicket:enclosure child="dataVerbale">
+					<div class="col-5">
+						<p class="text-left">
+							<span class="font-weight-semibold"><wicket:message
+									key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.dataVerbale" />:</span>
+							<span class="text-capitalize" wicket:id="dataVerbale"></span>
+						</p>
+					</div>
+				</wicket:enclosure>
+
+				<wicket:enclosure child="targa">
+					<div class="col-5">
+						<p class="text-left">
+							<span class="font-weight-semibold"><wicket:message
+									key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.targa" />:</span>
+							<span class="text-capitalize" wicket:id="targa"></span>
+						</p>
+					</div>
+				</wicket:enclosure>
+
+				<div class="row mb-0 d-flex justify-content-center" wicket:id="containerDatiProprietario">
+					<div class="col-md-10 text-left mb-4">
+						<h4>
+							<wicket:message
+								key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.info2" />
+						</h4>
+					</div>
+
+					<wicket:enclosure child="nomeCognomeProprietario">
+						<div class="col-5">
+							<p class="text-left">
+								<span class="font-weight-semibold"><wicket:message
+										key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.nomeCognomeProprietario" />:</span>
+								<span class="text-capitalize"
+									wicket:id="nomeCognomeProprietario"></span>
+							</p>
+						</div>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="cfProprietario">
+						<div class="col-5">
+							<p class="text-left">
+								<span class="font-weight-semibold"><wicket:message
+										key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.cfProprietario" />:</span>
+								<span class="text-capitalize" wicket:id="cfProprietario"></span>
+							</p>
+						</div>
+					</wicket:enclosure>
+			
+					<wicket:enclosure child="proprietarioNatoA">
+						<div class="col-5">
+							<p class="text-left">
+								<span class="font-weight-semibold"><wicket:message
+										key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.natoAConducente" />:</span>
+								<span class="text-capitalize" wicket:id="proprietarioNatoA"></span>
+							</p>
+						</div>
+					</wicket:enclosure>
+					
+					<wicket:enclosure child="proprietarioNatoIl">
+						<div class="col-5">
+							<p class="text-left">
+								<span class="font-weight-semibold"><wicket:message
+										key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.natoIlConducente" />:</span>
+								<span class="text-capitalize" wicket:id="proprietarioNatoIl"></span>
+							</p>
+						</div>
+					</wicket:enclosure>
+					
+					<wicket:enclosure child="proprietarioResidenteIn">
+						<div class="col-10">
+							<p class="text-left">
+								<span class="font-weight-semibold"><wicket:message
+										key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.residenteInConducente" />:</span>
+								<span class="text-capitalize" wicket:id="proprietarioResidenteIn"></span>
+							</p>
+						</div>
+					</wicket:enclosure>
+					
+					<wicket:enclosure child="categoriaPatente">
+						<div class="col-5">
+							<p class="text-left">
+								<span class="font-weight-semibold"><wicket:message
+										key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.categoriaPatente" />:</span>
+								<span class="text-capitalize" wicket:id="categoriaPatente"></span>
+							</p>
+						</div>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="numeroPatente">
+						<div class="col-5">
+							<p class="text-left">
+								<span class="font-weight-semibold"><wicket:message
+										key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.numeroPatente" />:</span>
+								<span class="text-capitalize" wicket:id="numeroPatente"></span>
+							</p>
+						</div>
+					</wicket:enclosure>
+					
+					<wicket:enclosure child="patenteRilasciataDa">
+						<div class="col-5">
+							<p class="text-left">
+								<span class="font-weight-semibold"><wicket:message
+										key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.patenteRilasciataDa" />:</span>
+								<span class="text-capitalize" wicket:id="patenteRilasciataDa"></span>
+							</p>
+						</div>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="patenteRilasciataIl">
+						<div class="col-5">
+							<p class="text-left">
+								<span class="font-weight-semibold"><wicket:message
+										key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.patenteRilasciataIl" />:</span>
+								<span class="text-capitalize" wicket:id="patenteRilasciataIl"></span>
+							</p>
+						</div>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="patenteValidaFinoAl">
+						<div class="col-5">
+							<p class="text-left">
+								<span class="font-weight-semibold"><wicket:message
+										key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.patenteValidaFinoAl" />:</span>
+								<span class="text-capitalize" wicket:id="patenteValidaFinoAl"></span>
+							</p>
+						</div>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="emailProprietario">
+						<div class="col-5">
+							<p class="text-left">
+								<span class="font-weight-semibold"><wicket:message
+										key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.emailProprietario" />:</span>
+								<span class="text-capitalize" wicket:id="emailProprietario"></span>
+							</p>
+						</div>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="patenteProprietarioAllegata">
+						<div class="col-10">
+							<p class="text-left">
+								<span class="font-weight-semibold"><wicket:message
+										key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.patenteProprietarioAllegata" />:</span>
+								<span class="text-capitalize"
+									wicket:id="patenteProprietarioAllegata"></span>
+							</p>
+						</div>
+					</wicket:enclosure>
+
+				</div>
+
+				<div class="row mb-0 d-flex justify-content-center" wicket:id="containerDatiConducente">
+					<div class="col-md-10 text-left mb-4">
+						<h4>
+							<wicket:message
+								key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.info1" />
+						</h4>
+					</div>
+
+					<wicket:enclosure child="nomeCognomeConducente">
+						<div class="col-5">
+							<p class="text-left">
+								<span class="font-weight-semibold"><wicket:message
+										key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.nomeCognomeConducente" />:</span>
+								<span class="text-capitalize" wicket:id="nomeCognomeConducente"></span>
+							</p>
+						</div>
+					</wicket:enclosure>
+					
+					<wicket:enclosure child="cfConducente">
+						<div class="col-5">
+							<p class="text-left">
+								<span class="font-weight-semibold"><wicket:message
+										key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.cfProprietario" />:</span>
+								<span class="text-capitalize" wicket:id="cfConducente"></span>
+							</p>
+						</div>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="natoAConducente">
+						<div class="col-5">
+							<p class="text-left">
+								<span class="font-weight-semibold"><wicket:message
+										key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.natoAConducente" />:</span>
+								<span class="text-capitalize" wicket:id="natoAConducente"></span>
+							</p>
+						</div>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="natoIlConducente">
+						<div class="col-5">
+							<p class="text-left">
+								<span class="font-weight-semibold"><wicket:message
+										key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.natoIlConducente" />:</span>
+								<span class="text-capitalize" wicket:id="natoIlConducente"></span>
+							</p>
+						</div>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="residenteInConducente">
+						<div class="col-5">
+							<p class="text-left">
+								<span class="font-weight-semibold"><wicket:message
+										key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.residenteInConducente" />:</span>
+								<span class="text-capitalize" wicket:id="residenteInConducente"></span>
+							</p>
+						</div>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="emailConducente">
+						<div class="col-5">
+							<p class="text-left">
+								<span class="font-weight-semibold"><wicket:message
+										key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.emailConducente" />:</span>
+								<span class="text-capitalize" wicket:id="emailConducente"></span>
+							</p>
+						</div>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="categoriaPatenteConducente">
+						<div class="col-5">
+							<p class="text-left">
+								<span class="font-weight-semibold"><wicket:message
+										key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.categoriaPatente" />:</span>
+								<span class="text-capitalize"
+									wicket:id="categoriaPatenteConducente"></span>
+							</p>
+						</div>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="numeroPatenteConducente">
+						<div class="col-5">
+							<p class="text-left">
+								<span class="font-weight-semibold"><wicket:message
+										key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.numeroPatente" />:</span>
+								<span class="text-capitalize"
+									wicket:id="numeroPatenteConducente"></span>
+							</p>
+						</div>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="patenteConducenteRilasciataDa">
+						<div class="col-5">
+							<p class="text-left">
+								<span class="font-weight-semibold"><wicket:message
+										key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.patenteRilasciataDa" />:</span>
+								<span class="text-capitalize"
+									wicket:id="patenteConducenteRilasciataDa"></span>
+							</p>
+						</div>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="patenteConducenteRilasciataIl">
+						<div class="col-5">
+							<p class="text-left">
+								<span class="font-weight-semibold"><wicket:message
+										key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.patenteRilasciataIl" />:</span>
+								<span class="text-capitalize"
+									wicket:id="patenteConducenteRilasciataIl"></span>
+							</p>
+						</div>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="patenteConducenteValidaFinoAl">
+						<div class="col-5">
+							<p class="text-left">
+								<span class="font-weight-semibold"><wicket:message
+										key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.patenteValidaFinoAl" />:</span>
+								<span class="text-capitalize"
+									wicket:id="patenteConducenteValidaFinoAl"></span>
+							</p>
+						</div>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="patenteConducenteAllegata">
+						<div class="col-5">
+							<p class="text-left">
+								<span class="font-weight-semibold"><wicket:message
+										key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.patenteConducenteAllegata" />:</span>
+								<span class="text-capitalize"
+									wicket:id="patenteConducenteAllegata"></span>
+							</p>
+						</div>
+					</wicket:enclosure>
+
+				</div>
+				
+				<div class="col-10">
+					<wicket:enclosure child="toggleDichiarazione">
+						<div class="form-check">
+							<input id="toggleDichiarazione" type="checkbox"
+								wicket:id="toggleDichiarazione" disabled> 
+								<label for="toggleDichiarazione" class="disabled" wicket:id="labelToggleDichiarazione"></label>
+						</div>
+					</wicket:enclosure>
+				</div>
+
+				<div class="col-10">
+					<div class="alert alert-warning" role="alert">
+						<wicket:message
+							key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.alertIndietro" />
+					</div>
+				</div>
+
+				<div class="form-row mt-5 mb-0">
+					<div class="form-group col-md-12 mb-3 text-center">
+						<button type="submit" class="btn btn-primary"  wicket:id="confermaDpp">
+							<wicket:message
+								key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.prosegui" />
+						</button>
+						<button wicket:id="indietro" type="button"
+							class="btn btn-secondary">
+							<wicket:message
+								key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.indietro" />
+						</button>
+						<button wicket:id="annulla" type="button"
+							class="btn btn-secondary">
+							<wicket:message
+								key="RiassuntoDichiarazionePuntiPatenteProprietarioPanel.annulla" />
+						</button>
+					</div>
+				</div>
+
+			</div>
+			
+			</div>
+
+			<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+	</wicket:panel>
+
+</body>
+
+</html>

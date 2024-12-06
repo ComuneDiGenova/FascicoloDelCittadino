@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="col-12">
+			<h3>
+				<wicket:message key="HelpCzRMDomandePanel.titolo" />
+			</h3>
+		</div>
+
+		<wicket:enclosure child="btnCreaSegnalazioneCzrm">
+			<div class="col-sm-12 mt-2 mb-2">
+				<button class="btn btn-outline-primary">
+					<span wicket:id="btnCreaSegnalazioneCzrm"></span>
+				</button>
+			</div>
+		</wicket:enclosure>
+
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12"
+				wicket:id="listaVuota">
+				<div class="alert alert-warning" role="alert">
+					<wicket:message key="HelpCzRMDomandePanel.vuoto" />
+				</div>
+			</div>
+		</div>
+
+		<div class="row content my-12 info-traffico">
+			<div class="col-lg-6 mb-4" wicket:id="segnalazioni">
+
+				<div class="card-wrapper card-space">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="color-orange-segnalaci col-3 icon-suggerimenti"></i>
+
+								<wicket:enclosure child="caseNumber">
+									<h4 class="card-title text-start col-9 font-weight-normal">
+										<wicket:message key="HelpCzRMDomandePanel.caseNumber" />
+										<span class="text-capitalize fw-bold" wicket:id="caseNumber"></span>
+									</h4>
+								</wicket:enclosure>
+
+							</div>
+
+							<div wicket:id="statoFrontEndC"></div>
+
+							<div wicket:id="suppliedEmail"></div>
+
+							<div wicket:id="suppliedPhone"></div>
+
+							<div wicket:id="subject"></div>
+
+							<div wicket:id="description"></div>
+
+							<div wicket:id="createdDate"></div>
+
+							<div wicket:id="lastModifiedDate"></div>
+
+							<div wicket:id="sottofascicoloC"></div>
+
+							<div wicket:id="servizioC"></div>
+
+							<div wicket:id="direzioneUfficioC"></div>
+							
+							<div class="row py-1 mb-2">
+                                <div class="col text-center">
+                                    <a class="btn btn-primary btn-xs" href="#" role="button" wicket:id="btnDettagli">
+                                        <wicket:message key="HelpCzRMDomandePanel.btnDettagli" />
+                                    </a>
+                                </div>
+                            </div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-12" wicket:id="pagination"></div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

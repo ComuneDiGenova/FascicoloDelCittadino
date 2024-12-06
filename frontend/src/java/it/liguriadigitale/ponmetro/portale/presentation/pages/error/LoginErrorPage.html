@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<title>Pagina di errore</title>
+<style>
+.error-template {
+	padding: 40px 15px;
+	text-align: center;
+}
+
+.error-actions {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.error-actions .btn {
+	margin-right: 10px;
+}
+</style>
+
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="error-template">
+					<h1>FASCICOLO DEL CITTADINO</h1>
+					<div class="error-details">La fase di login non &egrave; andata a buon fine. Contatta il supporto tecnico per ulteriori informazioni</div>
+					<div class="error-actions">
+						<a href="#" class="btn btn-primary btn-lg" wicket:id="supportoTec">
+							<span class="glyphicon glyphicon-envelope"></span>  </a>
+					</div>
+					<div>
+						<img src="/portale/images/404.jpg"
+							alt="ACCESS DENIED" style="left: 50%; top: -5%;">
+					</div>
+					<hr>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+
+		<div class="form-row col-md-12" wicket:id="titolo"></div>
+
+		<div class="form-row col-12" wicket:id="containerDati">
+
+			<div class="row">
+
+				<div class="col-md-6">
+					<div wicket:id="nomeRichiedente"></div>
+				</div>
+
+				<div class="col-md-6">
+					<div wicket:id="cognomeRichiedente"></div>
+				</div>
+
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div wicket:id="codiceFiscaleRichiedente"></div>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-md-6">
+					<div wicket:id="email"></div>
+				</div>
+
+				<div class="col-md-6">
+					<div wicket:id="cellulare"></div>
+				</div>
+			</div>
+
+			<div class="row">
+
+				<div class="col-md-6">
+					<wicket:enclosure child="numeroPersoneDisabili">
+						<div class="form-group">
+							<label wicket:id="numeroPersoneDisabiliLabel" class="text-wrap lh-1 active" style="position: relative;
+    top: 10px;"></label> <input wicket:id="numeroPersoneDisabili" type="number" id="numeroPersoneDisabili"
+								class="form-control" required>
+						</div>
+					</wicket:enclosure>
+				</div>
+
+				<div class="col-md-6">
+					<wicket:enclosure child="numeroFigliACarico">
+						<div class="form-group">
+							<label wicket:id="numeroFigliACaricoLabel"></label> <input wicket:id="numeroFigliACarico"
+								type="number" id="numeroFigliACarico" class="form-control" required>
+						</div>
+					</wicket:enclosure>
+				</div>
+
+			</div>
+
+			<div class="row">
+				<div class="form-group col-md-6">
+					<div class="select-wrapper">
+						<label wicket:id="lblFiglioVittimaLavoroString" class="text-wrap lh-1" style="position: relative;
+    top: 10px;">
+							<wicket:message key="DatiRichiedenteBorseStudioPanel.figlioVittimaLavoroString" />
+						</label><select autocomplete="off" wicket:id="figlioVittimaLavoroString"></select>
+					</div>
+				</div>
+
+				<div class="col-md-6"></div>
+			</div>
+
+			<div class="row">
+				<div class="form-group col-md-6">
+
+					<div class="select-wrapper">
+						<label wicket:id="lblDichiarazioneSpesaFiscaleString" class="text-wrap lh-1" style="position: relative;
+    top: 10px;">
+							<wicket:message key="DatiRichiedenteBorseStudioPanel.dichiarazioneSpesaFiscaleString" />
+						</label><select autocomplete="off" wicket:id="dichiarazioneSpesaFiscaleString"></select>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+
+
+	</wicket:panel>
+
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="col-12">
+			<h3 wicket:id="titolo"></h3>
+		</div>
+		
+		<div class="alert alert-warning col-12" role="alert"
+			wicket:id="listaVuota">
+			<span wicket:id="messaggioListaVuota"></span>
+		</div>
+
+		<div class="row content my-12 info-traffico">
+			<div class="col-lg-6 mb-4" wicket:id="matrimoni">
+
+				<div class="card-wrapper card-space">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<!--  <i class="color-yellow col-3 icon-aggiungi-preferiti"></i> -->
+								<i class="" wicket:id="icona"></i>
+								
+								<h4 class="card-title text-start col-9 font-weight-normal">
+									<wicket:message key="DomandeMatrimonioPanel.name"/> <span class="text-capitalize fw-bold"
+										wicket:id="name"></span>
+								</h4>
+							</div>
+
+							<div wicket:id="statoPraticaC"></div>
+
+							<div wicket:id="dichiarante"></div>
+
+							<div wicket:id="dichiaranteEmail"></div>
+
+							<div wicket:id="dichiaranteCel"></div>
+
+							<div wicket:id="coniuge"></div>
+							
+							<div wicket:id="unendo"></div>
+							
+							<div wicket:id="coniugeEmail"></div>
+							
+							<div wicket:id="unendoEmail"></div>
+
+							<div wicket:id="coniugeCel"></div>
+							
+							<div wicket:id="unendoCel"></div>
+
+							<div wicket:id="createdDate"></div>
+
+							<div wicket:id="lastModifiedDate"></div>
+
+							<div wicket:id="comuneC"></div>
+
+							<div wicket:id="provinciaC"></div>
+
+							<div wicket:id="dataAppuntamentoC"></div>
+							
+							<div wicket:id="dataAppuntamento2C"></div>
+							
+							<div wicket:id="numeroProtocolloC"></div>
+
+							<div wicket:id="ritoC"></div>
+
+							<div wicket:id="dataPresuntaC"></div>
+
+							<wicket:enclosure child="uRLPubblicoPdfC">
+								<div>
+									<a wicket:id="uRLPubblicoPdfC" class="btn btn-primary btn-xs"
+										target="_blank"> <wicket:message
+											key="DomandeMatrimonioPanel.uRLPubblicoPdfC" />
+									</a>
+								</div>
+							</wicket:enclosure>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-12" wicket:id="pagination"></div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

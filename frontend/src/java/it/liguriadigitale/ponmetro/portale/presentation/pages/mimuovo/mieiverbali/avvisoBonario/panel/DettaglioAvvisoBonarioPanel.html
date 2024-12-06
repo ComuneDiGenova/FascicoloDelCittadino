@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:extend>
+
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+				<div class="d-flex justify-content-center">
+					<h3 class="text-uppercase font-weight-semibold">
+						<wicket:message key="DettaglioAvvisoBonarioPanel.titolo" />
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="row mt-4 mb-3">
+			<div class="col-md-6 col-lg-6 col-sm-6 col-xl-6">
+				<div class="card-wrapper">
+					<div class="card card-bg my-auto mb-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="" wicket:id="iconaAvviso"></i>
+							</div>
+
+							<div wicket:id="numero"></div>
+							<div wicket:id="stato"></div>
+							<div wicket:id="data"></div>
+							<div wicket:id="importo"></div>
+
+							<div class="row">
+								<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+									<div class="d-flex justify-content-start">
+										<div>
+											<a class="btn btn-success btn-xs btn-icon"
+												wicket:id="pdfAvvisoIuvDue"> <svg
+													class="icon icon-white">
+		                    	<use
+														xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-download"></use>
+		                    </svg> <span><wicket:message
+														key="DettaglioAvvisoBonarioPanel.btnScaricaAvviso" /></span>
+											</a>
+										</div>
+										<div>
+											<button type="submit" class="btn btn-primary"
+												wicket:id="pagaDue">
+												<wicket:message key="DettaglioAvvisoBonarioPanel.paga" />
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row mb-3">
+			<div
+				class="col-md-12 col-lg-12 col-sm-12 col-xl-12 d-flex justify-content-center">
+				<h4 class="text-uppercase font-weight-semibold">
+					<wicket:message key="DettaglioAvvisoBonarioPanel.verbali" />
+				</h4>
+			</div>
+		</div>
+		<div class="row mt-2">
+			<div class="col-md-6 col-lg-6 col-sm-6 col-xl-6 mb-2"
+				wicket:id="lista">
+
+				<div class="card-wrapper">
+					<div class="card card-bg my-auto mb-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="" wicket:id="icona"></i>
+
+								<wicket:enclosure child="targa">
+									<h4 class="card-title text-left font-weight-normal">
+										<wicket:message key="DettaglioAvvisoBonarioPanel.targa" /> :
+										<span class="text-capitalize font-weight-semibold"
+											wicket:id="targa"></span>
+									</h4>
+								</wicket:enclosure>
+							</div>
+
+							<div wicket:id="stato"></div>
+							<div wicket:id="numeroAvviso"></div>
+							<div wicket:id="numeroProtocollo"></div>
+							<div wicket:id="dataAccertamento"></div>
+							<div wicket:id="localita"></div>
+							<div wicket:id="articoliViolati"></div>
+
+							<wicket:enclosure child="importo">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-left font-weight-semibold">
+											<wicket:message key="DettaglioAvvisoBonarioPanel.importo" />
+											:
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-left d-table h-100">
+											<span class="badge badge-pill" wicket:id="importo"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<div class="row">
+								<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+									<div class="d-flex justify-content-started">
+										<a class="btn btn-primary btn-xs" href="#" role="button"
+											wicket:id="btnDettagliVerbale" style="min-width: 200px"><wicket:message
+												key="MieiVerbaliPanel.dettagliVerbale" /> </a>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+				<div class="mt-1" wicket:id="pagination"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div
+				class="col-md-12 col-lg-12 col-sm-12 col-xl-12 d-flex justify-content-center"
+				style="gap: 2px;">
+				<div>
+					<a class="btn btn-success btn-xs btn-icon" wicket:id="pdfAvvisoIuv">
+						<svg class="icon icon-white">
+		                    	<use
+								xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-download"></use>
+		                    </svg> <span><wicket:message
+								key="DettaglioAvvisoBonarioPanel.btnScaricaAvviso" /></span>
+					</a>
+				</div>
+				<div>
+					<button type="submit" class="btn btn-primary" wicket:id="paga">
+						<wicket:message key="DettaglioAvvisoBonarioPanel.paga" />
+					</button>
+				</div>
+				<div>
+					<button type="button" class="btn btn-secondary" wicket:id="annulla">
+						<wicket:message key="DettaglioAvvisoBonarioPanel.annulla" />
+					</button>
+				</div>
+			</div>
+		</div>
+
+	</wicket:extend>
+</body>
+</html>

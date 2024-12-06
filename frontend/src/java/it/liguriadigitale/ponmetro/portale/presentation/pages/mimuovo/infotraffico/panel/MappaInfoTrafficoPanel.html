@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd" >
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>
+
+		<div class="col-sm-12 mt-2 mb-4">
+			<h3 class="text-left font-weight-semibold mb-0"><wicket:message key="MappaInfoTrafficoPanel.title" /></h3>
+									
+			<br>
+			
+			<div id="mapId" style="width: 100%; height: 500px;" wicket:id="mappa"></div>
+			 <script>
+
+			 var map = L.map('mapId', {
+    			center: [44.407222, 8.934167],
+    			zoom: 11
+			});
+			 
+			 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+			 }).addTo(map);
+
+    		</script>
+    
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>  
+
+	</wicket:panel>
+</body>
+</html>

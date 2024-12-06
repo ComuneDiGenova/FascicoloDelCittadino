@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<wicket:panel>
+	<!--start card-->
+	<div class="card-wrapper">
+		<div class="card card-bg my-2">
+			<div class="card-body">
+				<h4 class="card-title text-start font-weight-normal mb-4">Men&ugrave; del <span wicket:id="giorno" class="fw-bold"></span></h4>
+				<wicket:enclosure child='menuSpeciale'><h5><!--menuSpeciale--><span wicket:id="menuSpeciale"></span></h5></wicket:enclosure>
+				<wicket:enclosure child='nessunMenu'><h5><!--nessunMenu--><span wicket:id="nessunMenu"></span></h5></wicket:enclosure>
+
+				<!--start accordion-->
+				<div id="accordionMenu" class="collapse-div" role="tablist">
+					<div wicket:id="listaPortate">
+						<div class="collapse-header" >
+							<button data-toggle="collapse" data-target="#accordion" aria-expanded="true" aria-controls="accordion" wicket:id="collapse">
+								<i wicket:id="piatto"> <span wicket:id="piattoDescrizione"></span></i>
+							</button>
+						</div>
+						<div id="accordion" class="collapse " role="tabpanel" aria-labelledby="headingA" wicket:id="accordion">
+							<div class="collapse-body">
+								<div class="row mb-1" wicket:id="listaMenu">
+									<h5 class="card-text text-start mb-0 w-100"><span wicket:id="nome" ></span></h5>
+									<p class="card-text text-start mb-0 w-100"><wicket:enclosure child='calorie'><span class="fw-bold" wicket:message key="StatoIscrizionePanel.calorie"></span> <span wicket:id="calorie" ></span></wicket:enclosure></p>
+									<p class="card-text text-start mb-0 w-100"><wicket:enclosure child='ingredienti'><span class="fw-bold" wicket:message key="StatoIscrizionePanel.ingredienti"></span> <span wicket:id="ingredienti" ></span></wicket:enclosure></p>
+									<p class="card-text text-start mb-0 w-100"><wicket:enclosure child='warning'><span class="fw-bold" wicket:message key="StatoIscrizionePanel.avvertenze"></span> <span wicket:id="warning" ></span></wicket:enclosure></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<br>
+				<div>
+					<p class="card-text text-start mb-0 w-100"><span class="fw-bold"><wicket:message key="MenuMensaPanel.info1" /></span></p>
+				</div>
+				<div>
+					<p class="card-text text-start mb-0 w-100"><span class="fw-bold"><wicket:message key="MenuMensaPanel.info2" /></span></p>
+				</div>
+				<br> 
+				<div>
+					<p class="card-text text-start fw-bold">
+                    	<a wicket:id="linkMenuScolastici" target="_blank">
+                        	<wicket:message key="MenuMensaPanel.lattantiA" />
+                        </a>
+                    </p>
+				</div>
+				<!--end accordion-->				
+			</div>
+		</div>
+	</div>
+	<!--end card-->
+</wicket:panel>
+				<!--start accordion-->
+				<div id="accordionMenu" class="collapse-div" role="tablist">
+
+					<div class="collapse-header" id="headingA1">
+						<button data-toggle="collapse" data-target="#accordion1" aria-expanded="true" aria-controls="accordion1">
+							<i class="icon-primo-piatto"> Primi Piatti</i>
+						</button>
+					</div>
+					<div id="accordion1" class="collapse show" role="tabpanel" aria-labelledby="headingA1" data-parent="#accordionMenu">
+						<div class="collapse-body">
+							<div class="row mb-1">
+								<h5 class="card-text text-start mb-0 w-100">pasta al sugo di pomodoro</h5>
+								<p class="card-text text-start mb-0 w-100"><span class="fw-bold">Calorie: </span>350 Kcal</p>
+								<p class="card-text text-start mb-0 w-100"><span class="fw-bold">Ingredienti: </span>Pasta, Olio e Pomodoro</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="collapse-header" id="headingA2">
+						<button data-toggle="collapse" data-target="#accordion2" aria-expanded="true" aria-controls="accordion2">
+							<i class="icon-secondo-piatto"> Secondi Piatti</i>
+						</button>
+					</div>
+					<div id="accordion2" class="collapse" role="tabpanel" aria-labelledby="headingA2" data-parent="#accordionMenu">
+						<div class="collapse-body">
+							<div class="row mb-2">
+								<h5 class="card-text text-start mb-0 w-100">Robiola</h5>
+								<p class="card-text text-start mb-0 w-100"><span class="fw-bold">Calorie: </span>150 Kcal</p>
+								<p class="card-text text-start mb-0 w-100"><span class="fw-bold">Ingredienti: </span>Latte</p>
+							</div>
+							<div class="row mb-2">
+								<h5 class="card-text text-start mb-0 w-100">Formaggio fresco spalmabile</h5>
+								<p class="card-text text-start mb-0 w-100"><span class="fw-bold">Calorie: </span>250 Kcal</p>
+								<p class="card-text text-start mb-0 w-100"><span class="fw-bold">Ingredienti: </span>Latte</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--end accordion-->	
+</body>
+</html>

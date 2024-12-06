@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="row content my-4 info-traffico">
+
+			<div class="col-12 alert alert-warning" role="alert"
+				wicket:id="vuoto">
+				<wicket:message key="PuntiTariPanel.vuoto" />
+			</div>
+
+			<div class="col-12" wicket:id="pieno">
+
+				<h5 class="col-12">
+					<wicket:message key="PuntiTariPanel.titolo" />
+				</h5>
+
+				<wicket:enclosure child="codiceFiscale">
+					<div class="col-6">
+						<p class="text-left">
+							<span class="fw-bold"><wicket:message
+									key="PuntiTariPanel.codiceFiscale" /></span> <span
+								class="text-capitalize" wicket:id="codiceFiscale"></span>
+						</p>
+					</div>
+				</wicket:enclosure>
+
+				<wicket:enclosure child="codiceTia">
+					<div class="col-6">
+						<p class="text-left">
+							<span class="fw-bold"><wicket:message
+									key="PuntiTariPanel.codiceTia" /></span> <span
+								class="text-capitalize" wicket:id="codiceTia"></span>
+						</p>
+					</div>
+				</wicket:enclosure>
+
+				<wicket:enclosure child="punti">
+					<div class="col-6">
+						<p class="text-left">
+							<span class="fw-bold"><wicket:message
+									key="PuntiTariPanel.punti" /></span> <span class="text-capitalize"
+								wicket:id="punti"></span>
+						</p>
+					</div>
+				</wicket:enclosure>
+
+				<div class="col-6"></div>
+
+			</div>
+
+			<div class="col-lg-4 mb-4" wicket:id="box">
+
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="color-green-light col-3 icon-casa-riciclo"></i>
+
+								<wicket:enclosure child="descrizione">
+									<h4 class="card-title text-left col-9 font-weight-normal">
+										<span class="text-capitalize fw-bold"
+											wicket:id="descrizione"></span>
+									</h4>
+								</wicket:enclosure>
+
+							</div>
+
+							<div wicket:id="data"></div>
+
+							<div wicket:id="conferitore"></div>
+
+							<div wicket:id="luogo"></div>
+
+							<div wicket:id="quantita"></div>
+
+							<wicket:enclosure child="punti">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-left fw-bold">
+											<wicket:message key="PuntiTariPanel.punti" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-left d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="punti"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div wicket:id="paginationPuntiTari"></div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

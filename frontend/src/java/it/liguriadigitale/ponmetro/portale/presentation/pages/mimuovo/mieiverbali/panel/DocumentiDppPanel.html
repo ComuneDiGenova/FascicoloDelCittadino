@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <wicket:panel>
+
+        <hr>
+
+        <h3 class="text-start fw-bold col-9" wicket:id="titoloDocumentiDpp"></h3>
+
+        <div class="row content my-4 info-traffico">
+
+            <div class="col-lg-4 mb-4" wicket:id="box">
+                <div class="card-wrapper">
+                    <div class="card card-bg my-2">
+                        <div class="card-body">
+
+                            <wicket:enclosure child="descrizione">
+                                <div class="row py-1 mb-2">
+                                    <div class="col-5">
+                                        <p class="card-text text-start fw-bold">
+                                            <wicket:message key="DocumentiDppPanel.descrizione" /> :
+                                        </p>
+                                    </div>
+                                    <div class="col-7" style="word-break: break-word;">
+                                        <p class="card-text text-start d-table h-100" wicket:id="descrizione">
+                                            <span class="d-table-cell text-capitalize align-middle"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </wicket:enclosure>
+                            
+                            <wicket:enclosure child="stato">
+                                <div class="row py-1 mb-2">
+                                    <div class="col-5">
+                                        <p class="card-text text-start fw-bold">
+                                            <wicket:message key="DocumentiDppPanel.stato" /> :
+                                        </p>
+                                    </div>
+                                    <div class="col-7">
+                                        <p class="card-text text-start d-table h-100" wicket:id="stato">
+                                            <span class="d-table-cell text-capitalize align-middle"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </wicket:enclosure>
+                            
+                            <wicket:enclosure child="estensione">
+                                <div class="row py-1 mb-2">
+                                    <div class="col-5">
+                                        <p class="card-text text-start fw-bold">
+                                            <wicket:message key="DocumentiDppPanel.estensione" /> :
+                                        </p>
+                                    </div>
+                                    <div class="col-7">
+                                        <p class="card-text text-start d-table h-100" wicket:id="estensione">
+                                            <span class="d-table-cell text-capitalize align-middle"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </wicket:enclosure>
+                            
+                            <wicket:enclosure child="dimensione">
+                                <div class="row py-1 mb-2">
+                                    <div class="col-5">
+                                        <p class="card-text text-start fw-bold">
+                                            <wicket:message key="DocumentiDppPanel.dimensione" /> :
+                                        </p>
+                                    </div>
+                                    <div class="col-7">
+                                        <p class="card-text text-start d-table h-100" wicket:id="dimensione">
+                                            <span class="d-table-cell text-capitalize align-middle"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </wicket:enclosure>
+                            
+                            <div class="col-sm-12 mt-2 mb-2" wicket:id="infoStato">
+					            <div class="alert alert-info fw-bold" role="alert">
+					                <wicket:message key="DocumentiDppPanel.infoStato" />
+					            </div>
+        					</div>
+                            
+                            <a class="btn btn-success btn-xs btn-icon" wicket:id="btnDownload"> 
+                                <svg class="icon icon-white">
+                                    <use xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-download"></use>
+                                </svg>
+                                <span><wicket:message key="DocumentiDppPanel.scaricapdf"/></span>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+    </wicket:panel>
+</body>
+
+</html>

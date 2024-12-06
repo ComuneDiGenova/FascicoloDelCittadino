@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>
+    
+		<div class="col-sm-12 mt-2 mb-5">
+			<h3 class="text-left font-weight-semibold mb-0"><wicket:message key="ElencaIscrizioniPanel.titolo"/> 
+			&nbsp; &nbsp; &nbsp; &nbsp;
+			<span class="lb-form-control" wicket:id="anno" style="color:white"></span></h3>
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-5">
+			<div class="table-responsive">
+
+				<table class="table table-striped">
+					<thead>
+						<tr>
+						<th scope="col"><wicket:message key="ElencaIscrizioniPanel.nome"/></th>
+						<th scope="col"><wicket:message key="ElencaIscrizioniPanel.cognome"/></th>
+						<th scope="col"><wicket:message key="ElencaIscrizioniPanel.dataNascita"/></th>
+						<th scope="col"><wicket:message key="ElencaIscrizioniPanel.dataIscrizione"/></th>
+						<th scope="col"><wicket:message key="ElencaIscrizioniPanel.validita"/></th>
+						<th scope="col"><wicket:message key="ElencaIscrizioniPanel.stato"/></th>
+						<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr wicket:id="resultlist" class="even">
+						<td class="align-middle" wicket:id="nome"></td>
+						<td class="align-middle" wicket:id="cognome"></td>
+						<td class="align-middle" wicket:id="dataNascita"></td>
+						<td class="align-middle" wicket:id="dataIscrizione"></td>
+						<td class="align-middle" ></td>
+						<td class="align-middle" wicket:id="stato"></td>
+						<td>
+							<a wicket:id="visualizza" class="btn btn-primary btn-sm btn-block" href="#">
+								<i class="glyphicon glyphicon-pencil"></i> <wicket:message key="ElencaIscrizioniPanel.pulsante.visualizza"/>
+							</a>
+							<a wicket:id="iscrivi" class="btn btn-primary btn-sm btn-block" href="#">
+								<i class="glyphicon glyphicon-pencil"></i> <wicket:message key="ElencaIscrizioniPanel.pulsante.iscrivi"/>
+							</a>
+						</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div style="text-align: center;">
+	 		<ul wicket:id="navigator" class="pagination pagination-centered padding-left"></ul>
+	 	</div>
+	
+		<div wicket:id="feedback"></div>  
+
+	</wicket:panel>
+
+</body>
+</html>

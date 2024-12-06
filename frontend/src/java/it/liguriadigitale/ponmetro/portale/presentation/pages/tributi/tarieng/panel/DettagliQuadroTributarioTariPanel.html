@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="row content my-4 info-traffico">
+
+			<div class="col-lg-6 mb-4">
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="" wicket:id="icona"></i>
+
+								<h4 class="card-title text-left col-9 font-weight-normal">
+									<span wicket:id="tipoDoc"></span>
+								</h4>
+							</div>
+
+							<div wicket:id="denominazione"></div>
+
+							<div wicket:id="indirizzo"></div>
+
+							<div wicket:id="idDeb"></div>
+
+							<div wicket:id="idDoc"></div>
+
+							<div wicket:id="numDoc"></div>
+
+							<div wicket:id="anno"></div>
+
+							<div wicket:id="annoEmissione"></div>
+
+							<div wicket:id="btnDocumento"></div>
+
+							<br>
+
+							<wicket:enclosure child="infoAnnullamentoIuv">
+								<div class="alert alert-info" role="alert">
+									<span wicket:id="infoAnnullamentoIuv"></span>
+								</div>
+							</wicket:enclosure>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-6 mb-4">
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+
+							<div class="categoryicon-top row mb-2">
+								<h4 class="card-title text-start col-9 fw-bold">
+									<span wicket:id="tipoDocNegliImporti"></span>
+								</h4>
+							</div>
+
+							<wicket:enclosure child="importo">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message
+												key="DettagliQuadroTributarioTariPanel.importo" />
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="importo"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="incassato">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message
+												key="DettagliQuadroTributarioTariPanel.incassato" />
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="incassato"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<div class="row py-1 mb-2 border-bottom" wicket:id="boxRate">
+
+								<wicket:enclosure child="totaleRate">
+									<div class="col-12">
+										<div class="card-text text-start fw-bold"
+											wicket:id="totaleRate"></div>
+									</div>
+								</wicket:enclosure>
+
+								<br>
+
+								<wicket:enclosure child="numeroRata">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<span><wicket:message
+													key="DettagliQuadroTributarioTariPanel.rata" /> </span>&nbsp; <span
+												wicket:id="numeroRata"></span>
+									</div>
+								</wicket:enclosure>
+								<wicket:enclosure child="scadenzaRata">
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100">
+											entro il &nbsp;<span
+												class="d-table-cell text-capitalize align-middle"
+												wicket:id="scadenzaRata"></span>
+										</p>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="importoTari">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<span><wicket:message
+													key="DettagliQuadroTributarioTariPanel.importoTari" /> </span>&nbsp;
+											<span wicket:id="importoTari"></span>
+									</div>
+								</wicket:enclosure>
+								<wicket:enclosure child="incassatoTari">
+									<div class="col-6">
+										<p class="card-text text-start">
+											<span><wicket:message
+													key="DettagliQuadroTributarioTariPanel.incassatoTari" /> </span>&nbsp;
+											<span wicket:id="incassatoTari"></span>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="importoTefa">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<span><wicket:message
+													key="DettagliQuadroTributarioTariPanel.importoTefa" /> </span>&nbsp;
+											<span wicket:id="importoTefa"></span>
+									</div>
+								</wicket:enclosure>
+								<wicket:enclosure child="incassatoTefa">
+									<div class="col-6">
+										<p class="card-text text-start">
+											<span><wicket:message
+													key="DettagliQuadroTributarioTariPanel.incassatoTefa" /> </span>&nbsp;
+											<span wicket:id="incassatoTefa"></span>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="importoConIuv">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<span wicket:id="importoConIuv"></span>
+									</div>
+								</wicket:enclosure>
+								<wicket:enclosure child="incassatoConIuv">
+									<div class="col-6">
+										<p class="card-text text-start">
+											<span><wicket:message
+													key="DettagliQuadroTributarioTariPanel.incassato" /> </span>&nbsp;
+											<span wicket:id="incassatoConIuv"></span>
+									</div>
+								</wicket:enclosure>
+								<wicket:enclosure child="incassatoMIP">
+									<div class="col-6">
+										<p class="card-text text-start">
+											<span><wicket:message
+													key="DettagliQuadroTributarioTariPanel.incassato" /> </span>&nbsp;
+											<span wicket:id="incassatoMIP"></span>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="iuv">
+									<div class="col-6">
+										<p class="card-text text-start">
+											<span><wicket:message
+													key="DettagliQuadroTributarioTariPanel.iuv" /> </span>&nbsp; <span
+												wicket:id="iuv"></span>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="btnPaga">
+									<div class="col-6">
+										<a class="btn btn-primary btn-xs" role="button"
+											wicket:id="btnPaga"><wicket:message
+												key="DettagliQuadroTributarioTariPanel.paga" /></a>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="btnRicevutaMIP">
+									<div class="col-6" style="text-align: left;">
+										<a class="btn btn-success btn-xs btn-icon"
+											wicket:id="btnRicevutaMIP"> <svg class="icon icon-white">
+                                                <use
+													xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-download"></use>
+                                            </svg> <span><wicket:message
+													key="DettagliQuadroTributarioTariPanel.btnRicevutaMIP" /></span>
+										</a>
+									</div>
+								</wicket:enclosure>
+
+							</div>
+
+							<wicket:enclosure child="messaggioAccontoPagatoParzialmente">
+								<div class="col-12">
+									<p class="alert alert-info" role="alert">
+										<span wicket:id="messaggioAccontoPagatoParzialmente"></span>
+								</div>
+							</wicket:enclosure>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+	</wicket:panel>
+</body>
+
+</html>

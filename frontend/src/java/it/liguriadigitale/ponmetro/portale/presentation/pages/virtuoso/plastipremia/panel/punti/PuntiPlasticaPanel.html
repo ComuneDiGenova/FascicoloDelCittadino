@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="row content my-4 info-traffico">
+
+			<wicket:enclosure child="codiceFiscale">
+				<div class="col-6">
+					<p class="text-left">
+						<span class="font-weight-semibold"><wicket:message
+								key="PuntiPlasticaPanel.codiceFiscale" /></span> <span
+							class="text-capitalize" wicket:id="codiceFiscale"></span>
+					</p>
+				</div>
+			</wicket:enclosure>
+
+			<wicket:enclosure child="utenteRegistrato">
+				<div class="col-6">
+					<p class="text-left">
+						<span class="font-weight-semibold"><wicket:message
+								key="PuntiPlasticaPanel.utenteRegistrato" /></span> <span
+							class="text-capitalize" wicket:id="utenteRegistrato"></span>
+					</p>
+				</div>
+			</wicket:enclosure>
+
+			<wicket:enclosure child="puntiAttuali">
+				<div class="col-6">
+					<p class="text-left">
+						<span class="font-weight-semibold"><wicket:message
+								key="PuntiPlasticaPanel.puntiAttuali" /></span> <span
+							class="text-capitalize" wicket:id="puntiAttuali"></span>
+					</p>
+				</div>
+			</wicket:enclosure>
+			
+			<div class="col-6"></div>
+			
+			<wicket:enclosure child="linkRegistrazione">
+				<div class="col-12">
+					<p class="card-text text-left font-weight-semibold">
+						<span><wicket:message key="PuntiPlasticaPanel.vaiAlLink" /></span>
+						<a wicket:id="linkRegistrazione" target="_blank"> <wicket:message
+								key="PuntiPlasticaPanel.linkRegistrazione" />
+						</a>
+					</p>
+				</div>
+			</wicket:enclosure>
+
+			<div class="col-lg-4 mb-4" wicket:id="box">
+
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="color-green-light col-3 icon-plastipremia-logo"></i>
+
+								  <wicket:enclosure child="anno">
+									<h4 class="card-title text-left col-9 font-weight-normal">
+										<span class="text-capitalize font-weight-semibold"
+											wicket:id="anno"></span>
+									</h4>
+								</wicket:enclosure>
+
+							</div>
+							
+							<wicket:enclosure child="puntiAccumulati">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-left font-weight-semibold">
+											<wicket:message key="PuntiPlasticaPanel.puntiAccumulati" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-left d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="puntiAccumulati"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+							
+							<wicket:enclosure child="puntiUtilizzati">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-left font-weight-semibold">
+											<wicket:message key="PuntiPlasticaPanel.puntiUtilizzati" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-left d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="puntiUtilizzati"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+							
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="col-12" wicket:id="paginationPlasTiPremia"></div>
+
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+	</wicket:panel>
+</body>
+
+</html>

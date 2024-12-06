@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<body>
+	<wicket:extend>
+
+
+		<ul wicket:id="breadcrumbPanel"></ul>
+		<div wicket:id="stepPanel"></div>
+
+
+		<div class="container">
+			<form wicket:id="form" aria-labelledby="form-title">
+				<fieldset>
+
+					<div class="form-servizi-anagrafici mb-3">
+
+						<legend id="form-title" class="mb-3">
+							<strong>
+								<wicket:message key="RichiestaCertificatoAnagraficoPage.spiegazione" />
+							</strong>
+						</legend>
+
+
+						<div class="row mb-5">
+							<div class="col-sm select-wrapper">
+								<label for="componenteSelezionato">
+									<strong>
+										<wicket:message key="RichiestaCertificatoAnagraficoPage.nucleo" />
+									</strong>
+								</label>
+								<select autocomplete="on" id="componenteSelezionato" wicket:id="combo"
+									required></select>
+							</div>
+						</div>
+
+
+
+						<div class="row mb-3">
+							<div class="col-sm">
+								<div class="form-group mb-0">
+									<label for="codiceFiscale">
+										<strong>
+											<wicket:message key="RichiestaCertificatoAnagraficoPage.codiceFiscale" />
+										</strong>
+									</label>
+									<input autocomplete="off" REQUIRED class="form-control" type="text"
+										placeholder="codice fiscale" id="codiceFiscale" wicket:id="codiceFiscale"
+										style="font-size: smaller;" readonly>
+								</div>
+							</div>
+							<div class="col-sm">
+								<div class="form-group  mb-0">
+									<label for="nome">
+										<strong>
+											<wicket:message key="RichiestaCertificatoAnagraficoPage.nome" />
+										</strong>
+									</label>
+									<input autocomplete="off" REQUIRED class="form-control" id="nome" type="text"
+										placeholder="nome" wicket:id="nome" style="font-size: smaller;" readonly>
+
+								</div>
+							</div>
+							<div class="col-sm">
+
+								<div class="form-group  mb-0">
+									<label for="cognome">
+										<strong>
+											<wicket:message key="RichiestaCertificatoAnagraficoPage.cognome" />
+										</strong>
+									</label>
+									<input autocomplete="off" REQUIRED class="form-control" id="cognome" type="text"
+										placeholder="cognome" wicket:id="cognome" style="font-size: smaller;" readonly>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="row justify-content-center">
+						<div class="col-sm-auto">
+							<div class="d-flex justify-content-center">
+								<button type="submit" class="btn btn-primary focus-visible-none mx-3">
+									<wicket:message key="RichiestaCertificatoAnagraficoPage.avanti" />
+								</button>
+
+								<a class="btn btn-secondary focus-visible-none mx-3" href="#" role="button"
+									wicket:id="annulla">
+									<wicket:message key="RichiestaCertificatoAnagraficoPage.annulla" />
+								</a>
+							</div>
+						</div>
+					</div>
+
+				</fieldset>
+
+			</form>
+		</div>
+
+
+
+
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+		<wicket:child />
+
+	</wicket:extend>
+</body>
+
+</html>

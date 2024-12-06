@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:extend>
+
+
+		<div wicket:id="breadcrumbPanel"></div>
+
+		<div wicket:id="legendaPanel"></div>
+
+		<br>
+
+		<p class="text-start" wicket:id="nome"></p>
+
+		<div class="row content my-4 info-traffico form-servizi-anagrafici">
+
+			<h4 class="col-12">
+				<wicket:message key="BibliotecheMovimentiDettaglioPage.recapiti" />
+			</h4>
+
+			<div class="col">
+			
+				<wicket:enclosure child="email">
+				
+					<p class="text-start">
+						<span class="fw-bold"><wicket:message
+								key="BibliotecheMovimentiDettaglioPage.email" /></span> <span
+							class="text-capitalize" wicket:id="email"></span>
+					</p>
+
+				</wicket:enclosure>
+			
+			</div>
+			
+			
+			<div class="col">
+				<wicket:enclosure child="telefono">
+					<p class="text-start">
+						<span class="fw-bold"><wicket:message
+								key="BibliotecheMovimentiDettaglioPage.telefono" /></span> <span
+							class="text-capitalize" wicket:id="telefono"></span>
+					</p>
+					
+			</wicket:enclosure>
+			</div>
+			
+		
+			<div class="row">
+				<div class="col">
+				<p class="text-center">
+					<a class="btn btn-primary btn-xs" href="#" role="button"
+						wicket:id="btnModificaDati"> <wicket:message
+							key="BibliotecheMovimentiDettaglioPage.modificaDati" />
+					</a>
+				</p>
+			</div>
+			</div>
+			
+
+		</div>
+
+		<div class="row content my-4 info-traffico" wicket:id="tabsPanel"></div>
+
+		<div
+			class="rowContainerAlert content my-4 info-traffico alert alert-info"
+			role="alert">
+			<wicket:message key="BibliotecheMovimentiDettaglioPage.info"></wicket:message>
+		</div>
+
+		<wicket:child />
+
+	</wicket:extend>
+</body>
+</html>

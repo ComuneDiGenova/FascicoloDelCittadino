@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project basedir="."  default="analyze-source"   name="DAE"  xmlns:ivy="antlib:fr.jayasoft.ivy.ant" >
+
+  <description>Build UTILITA per il progetto: [GAS-Gestore]</description>
+  <!-- -->
+  <property file="buildfiles/build7.properties" />
+  <property file="buildfiles/${deployContext}/dist.properties" />
+  <property file="buildfiles/${deployContext}/ws.properties" />	
+
+  <!--  QA Properties -->
+	<property name="pathToCheckstyle" value="antlib/checkStyle" />
+	<property name="pathToFindBugs" value="antlib/findBugs" />
+	<property name="pathToCpd" value="antlib/cpd" />
+	<property name="checkstyle.output.dir" value="antlib/checkStyle/output" />
+	<property name="findbugs.home" value="c:/tools/findbugs-1.3.9" />
+  <!-- -->
+  <path id="library.ref">
+    <fileset dir="${lib}">
+      <include name="**/*.jar" />
+      <include name="**/*.zip" />
+    </fileset>
+  </path>
+
+  <path id="antlib.ref">	
+    <fileset dir="antlib">
+      <include name="**/*.jar" />
+      <include name="**/*.zip" />
+    </fileset>
+  </path>
+
+  <path id="jaxws-classpath">
+	<fileset dir="${jaxws.lib.dir}">
+		<include name="**/*.jar" />
+	</fileset>
+   </path>	
+	
+  <path id="tattletale-classpath">
+	<fileset dir="antlib/analyze">
+		<include name="**/*.jar" />
+	</fileset>
+   </path>	
+	
+  <property name="path-commons" value="src/resources/"/> 
+  <property name="path-libreria" value=""/>	  	
+	
+  <!-- -->
+  <!-- ############################################################# -->
+  <!-- # Target: init                                              # -->
+  <!-- ############################################################# -->
+  <!-- -->
+  <target name="init">
+    <tstamp />
+    <condition property="target" value="dev">
+      <equals arg1="${target}" arg2="$${target}" />
+    </condition>
+    <mkdir dir="${build}/classes" />
+    <mkdir dir="${temp}/${target}/${earLib}" />
+  	<mkdir dir="${build}/archives"/>
+    <mkdir dir="${build}/archives/${target}" />
+  	<mkdir dir="${build}/archives/${target}/lib" />
+    <mkdir dir="${dist}/${target}" />
+    <mkdir dir="${build}/javadoc" />
+    <mkdir dir="${build}/jsp" />
+    <mkdir dir="${build}/cache" />
+    <antcall target="timestamp">
+      <param name="message" value="Inizio:" />
+    </antcall>
+  </target>
+
+	  <!-- -->
+	  <!-- ############################################################# -->
+	  <!-- # Target: timestamp                                         # -->
+	  <!-- ############################################################# -->
+	  <!-- -->
+	<target name="timestamp">
+	  <tstamp>
+	    <format property="current.time" pattern="MM/dd/yyyy hh:mm:ss aa" />
+	  </tstamp>
+	
+	  <echo message="${message} ${current.time}" />      
+	</target>
+
+  <!-- -->
+  <!-- ############################################################# -->
+  <!-- # Target: environment-recreate                              # -->
+  <!-- ############################################################# -->
+  <!-- -->
+  <target name="environment-recreate" depends="clean-all">
+    <mkdir dir="build/temp/conf" />
+    <copy todir="build/temp/conf" overwrite="true">
+      <fileset dir="${conf}" />
+    </copy>
+  </target>
+
+	
+  <!-- -->
+  <!-- ############################################################# -->
+  <!-- # [CLEAN]: clean-all                                        # -->
+  <!-- ############################################################# -->
+  <!-- -->
+  <target name="clean-all" depends="clean-archives,clean-cache,clean-classes,clean-javadoc,clean-jsp,clean-temp"/>
+
+  <!-- -->
+  <!-- ############################################################# -->
+  <!-- # [CLEAN]: clean-cache                                      # -->
+  <!-- ############################################################# -->
+  <!-- -->
+  <target name="clean-cache">
+  </target>
+
+	<!-- -->
+  <!-- ############################################################# -->
+  <!-- # [CLEAN]: clean-temp                                       # -->
+  <!-- ############################################################# -->
+  <!-- -->
+  <target name="clean-temp">
+    <delete dir="${temp}" />
+  </target>
+
+  <!-- -->
+  <!-- ############################################################# -->
+  <!-- # [CLEAN]: clean-ws                                       # -->
+  <!-- ############################################################# -->
+  <!-- -->	
+  <target name="clean-ws">
+    <delete dir="${build}/classesws" />
+  </target>	
+	
+
+  <!-- -->
+  <!-- ############################################################# -->
+  <!-- # [CLEAN]: clean-archives                                  # -->
+  <!-- ############################################################# -->
+  <!-- -->
+	  <target name="clean-archives">
+	  		<mkdir dir="${build}/archives"/>
+		  	<delete includeemptydirs="true">
+		  	    <fileset dir="${build}/archives" defaultexcludes="false">
+		  	       <include name="**/**" />
+		  	    </fileset>
+		  	</delete>
+	  </target>
+
+  <!-- -->
+  <!-- ############################################################# -->
+  <!-- # [CLEAN]: clean-dist                                       # -->
+  <!-- ############################################################# -->
+  <!-- -->
+  <target name="clean-dist">
+    <delete dir="${dist}" />
+  </target>
+
+  <!-- -->
+  <!-- ############################################################# -->
+  <!-- # [CLEAN]: clean-classes                                    # -->
+  <!-- ############################################################# -->
+  <!-- -->
+  <target name="clean-classes">
+	<mkdir dir="${build}/classes"/>
+  	<delete includeemptydirs="true">
+  	    <fileset dir="${build}/classes" defaultexcludes="false">
+  	       <include name="**/**" />
+  	    </fileset>
+  	</delete>
+  </target>
+
+  <!-- -->
+  <!-- ############################################################# -->
+  <!-- # [CLEAN]: clean-javadoc                                    # -->
+  <!-- ############################################################# -->
+  <!-- -->
+  <target name="clean-javadoc">
+    <delete dir="${build}/javadoc" />
+  </target>
+
+  <!-- -->
+  <!-- ############################################################# -->
+  <!-- # [CLEAN]: clean-jsp                                        # -->
+  <!-- ############################################################# -->
+  <!-- -->
+  <target name="clean-jsp">
+    <delete dir="${build}/jsp" />
+  </target>
+
+  <!-- -->
+  <!-- ############################################################# -->
+  <!-- # [CLEAN]: _clean-web-inf                                   # -->
+  <!-- ############################################################# -->
+  <!-- -->
+  <target name="_clean-web-inf">
+    <delete dir="${srcweb}/WEB-INF/classes" />
+    <delete dir="${srcweb}/WEB-INF/lib" />
+  </target>
+	
+  <!-- -->
+  <!-- ############################################################# -->
+  <!-- # Target: compile-all                                       # -->
+  <!-- ############################################################# -->
+  <!-- -->
+  
+  <target name="compile-all" >
+  	<echo message="Inizio target compile-all" />
+  	<ant antfile="build_7.xml" target="compile-all" useNativeBasedir="true" />
+  </target>
+
+ 
+  <!-- -->
+  <!-- ############################################################# -->
+  <!-- # Target: create DAO                                        # -->
+  <!-- ############################################################# -->
+  <!-- -->
+	
+
+   <target name="create_dao" description="Creazione delle classi dao e pojo">
+    <mkdir dir="${basedir}/temp"/>
+  	<java classname="net.datasiel.tablegen.TableGen" 
+  		  fork="true"
+          failonerror="true"
+          maxmemory="128m" logerror="${basedir}/temp/mm.log">
+		  <classpath refid="antlib.ref"/>
+	  	 <arg value="${basedir}/buildfiles/tablegen.properties"/>
+    </java>
+  	<move todir="${src}/java/it/liguriadigitale/${prodotto}/${componente}/integration/test/common">
+  	  <fileset dir="${basedir}/temp">
+  		<exclude name="*DAO.java"/>
+  	    <exclude name="*DAOTest.java"/>
+  	    <include name="AbstractVisteTest*.java"/>
+  	   </fileset>
+     </move>
+  	<move todir="${src}/java/it/liguriadigitale/${prodotto}/${componente}/pojo/gen">
+      <fileset dir="${basedir}/temp">
+      	<exclude name="*DAO.java"/>
+        <exclude name="*DAOTest.java"/>
+      </fileset>
+    </move>
+  	<move todir="${src}/java/it/liguriadigitale/${prodotto}/${componente}/integration/dao/gen">
+  	      <fileset dir="${basedir}/temp">
+  	      	<include name="*DAO.java"/>
+  	      </fileset>
+  	    </move>
+  	<move todir="${src}/java/it/liguriadigitale/${prodotto}/${componente}/integration/test/gen">
+  	  	  <fileset dir="${basedir}/temp">
+  	  	 	<include name="*DAOTest.java"/>
+  	  	   </fileset>
+  	     </move>
+  </target>	
+	
+  <!-- -->
+  <!-- ############################################################# -->
+  <!-- # [WS-GENERATE]: _generate-ws-SAIA                          # -->
+  <!-- ############################################################# -->
+  <!-- -->	
+	 
+   <target name="ws:generate-ws-SAIA"  depends="ws:import:taskdef, ws:clean" >
+         <wsimport          
+                       wsdl="${path-libreria}${path-commons}${resSAIA}/FseSaia_Operatore.wsdl"     
+                       sourcedestdir="src/java"
+                       verbose="true"
+                       package="${saia.package}"
+                       xnocompile="true"
+                       keep="true"
+                     binding="${path-libreria}${path-commons}${resSAIA}/binding.xml"
+                >
+         </wsimport>
+   </target>
+
+		
+	  <!-- -->
+	  <!-- ############################################################# -->
+	  <!-- # [WS-GENERATE]: _generate-jaxws                                  # -->
+	  <!-- ############################################################# -->
+	  <!-- -->	
+		
+		<target name="ws:import:taskdef">
+			<taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+				<classpath>
+					<path refid="jaxws-classpath" />
+				</classpath>
+			</taskdef>
+		</target>
+		
+			
+		<target name="ws:generate-demo" depends="ws:generate-ws-SAIA" />
+		<target name="ws:generate" depends="ws:generate-demo" description="Rigenera classi per i client webservice" />
+		
+		<target name="ws:clean">
+			<delete dir="${ws.del.src.dir}" />
+			<mkdir dir="${ws.del.src.dir}"/>
+		</target> 
+	
+	  <!-- -->
+	  <!-- ############################################################# -->
+	  <!-- # [CHECK]: _checkstyle                                      # -->
+	  <!-- ############################################################# -->
+	  <!-- -->	
+	<target name="checkstyle"
+	        description="Generates a report of code convention violations.">
+	  <taskdef resource="checkstyletask.properties"
+		         classpath="antlib/checkstyle/jar/checkstyle-5.4-all.jar"/>
+	  <checkstyle config="antlib/checkstyle/sun_checks.xml" failOnViolation="false">
+		  <property key="checkstyle.cache.file" file="antlib/checkstyle/output/cachefile"/>
+		  <formatter type="xml" tofile="antlib/checkstyle/output/checkstyle_report.xml"/>
+	    <fileset dir="src" includes="**/*.java"/>
+	  </checkstyle>
+	</target>
+	
+	  <!-- -->
+	  <!-- ############################################################# -->
+	  <!-- # [CHECK]: findBugs                                         # -->
+	  <!-- ############################################################# -->
+	  <!-- -->	
+	<target name="findBugs" description="Generates a report of code convention violations." depends="compile-all">
+		<taskdef name="findbugs" classpath="antlib/findBugs/jar/findbugs-ant.jar" classname="edu.umd.cs.findbugs.anttask.FindBugsTask"/>
+		<findbugs home="${findbugs.home}"
+	        output="xml"
+	        outputFile="antlib/findBugs/output/fb-output.xml" 
+			  jvmargs="-Xmx512m" >
+		<auxClasspath refid="library.ref"  />
+		<sourcePath path="src" />
+		<class location="build" />
+	 	</findbugs>		
+	</target>
+
+	  <!-- -->
+	  <!-- ############################################################# -->
+	  <!-- # [CHECK]: cpd                                              # -->
+	  <!-- ############################################################# -->
+	  <!-- -->	
+	<target name="cpd" description="Generates a report of code convention violations.">
+	  <taskdef name="cpd" classpath="antlib/cpd/jar/pmd-4.2.6.jar" classname="net.sourceforge.pmd.cpd.CPDTask" />
+	  <cpd minimumTokenCount="50" outputFile="antlib/cpd/output/output.xml" format="xml"  >
+	      <fileset dir="src">
+	          <include name="**/*.java"/>
+	      	<exclude name="net/datasiel/filseweb/newdb/dao/**"/>
+	      	<exclude name="net/datasiel/filseweb/newdb/pojo/**"/>
+	      </fileset>
+	  </cpd>
+	</target>
+
+	  <!-- -->
+	  <!-- ############################################################# -->
+	  <!-- # Target: analyze                                           # -->
+	  <!-- ############################################################# -->
+	  <!-- -->	
+
+	<target name="analyze-source" depends="clean-temp">
+		<taskdef name="tattletale" classname="org.jboss.tattletale.ant.ReportTask"  >
+			<classpath>
+				<path refid="tattletale-classpath" />
+			</classpath>
+		</taskdef>
+		<tattletale	source="lib" destination="antlib/analyze/output" classloader="ee6"  /> 
+	</target>
+	
+</project>

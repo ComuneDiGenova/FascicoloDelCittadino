@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="row content my-4 richiesta-agevolazione">
+			<div class="col-md-12 text-start mb-4">
+				
+				<div class="col-lg-12 mx-auto riepilogo">
+					<div wicket:id="messaggiInformativi"></div>
+				</div>
+						
+				<div class="col-lg-12 mx-auto riepilogo">
+					<form class="needs-validation was-validated mb-3 col-lg-12 mx-auto"
+						wicket:id="form">
+
+						<div
+							class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici">
+
+							<h4 class="col-12">
+								<wicket:message
+									key="DatiGeneraliCambioIndirizzoPanel.richiedente" />
+							</h4>
+
+							<div class="row">
+								<div class="col">
+									<p class="text-start">
+										<span class="fw-bold"><wicket:message
+												key="DatiGeneraliCambioIndirizzoPanel.cf" />:</span> <span
+											class="text-capitalize" wicket:id="cf"></span>
+									</p>
+								</div>
+
+								<div class="col">
+									<p class="text-start">
+										<span class="fw-bold"><wicket:message
+												key="DatiGeneraliCambioIndirizzoPanel.nominativo" />:</span> <span
+											class="text-capitalize" wicket:id="nominativo"></span>
+									</p>
+								</div>
+							</div>
+						
+							<div class="row">
+								<div class="col">
+									<div class="form-group mb-0">
+										<input class="form-control" id="emailRichiedente" type="email"
+											placeholder="Email" wicket:id="emailRichiedente"
+											pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+											required style="font-size: smaller;"> <small><wicket:message
+												key="DatiGeneraliCambioIndirizzoPanel.email" /></small> <label
+											class="sr-only" for="emailRichiedente"> <wicket:message
+												key="DatiGeneraliCambioIndirizzoPanel.email" />
+										</label>
+									</div>
+								</div>
+								
+								<div class="col">
+									<div class="form-group mb-0">
+										<input class="form-control" id="pec" type="email"
+											placeholder="PEC"
+											pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+											wicket:id="pec"> <small><wicket:message
+												key="DatiGeneraliCambioIndirizzoPanel.pec" /></small> <label
+											class="sr-only" for="pec"> <wicket:message
+												key="DatiGeneraliCambioIndirizzoPanel.pec" />
+										</label>
+									</div>
+								</div> 
+							
+							</div>
+						
+							<div class="row">
+							
+									<div class="col">
+									<div class="form-group mb-0">
+										<input class="form-control" id="telefono" type="text"
+											pattern="^\+?\d*$" placeholder="Telefono" wicket:id="telefono"
+											required> <small><wicket:message
+												key="DatiGeneraliCambioIndirizzoPanel.telefono" /></small> <label
+											class="sr-only" for="telefono"> <wicket:message
+												key="DatiGeneraliCambioIndirizzoPanel.telefono" />
+										</label>
+									</div>
+								</div>
+								<div class="col">
+									<div class="form-group  mb-0">
+										<input class="form-control" id="secondoTelefono" type="text"
+											pattern="^\+?\d*$" placeholder="Secondo telefono"
+											wicket:id="secondoTelefono" style="font-size: smaller;">
+										<small><wicket:message
+												key="DatiGeneraliCambioIndirizzoPanel.secondoTelefono" /></small>
+										<label class="sr-only" for="telefono"> <wicket:message
+												key="DatiGeneraliCambioIndirizzoPanel.secondoTelefono" />
+										</label>
+									</div>
+								</div>
+							</div>
+							
+
+						</div>
+
+						<div
+							class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici">
+
+							<h4 class="col-12">
+								<wicket:message
+									key="DatiGeneraliCambioIndirizzoPanel.tipologiaRichiesta" />
+							</h4>
+							<br>
+							<div class="col-sm-12 mb-12">
+								
+								<div class="select-wrapper text-start">
+									<label for="tipologiaIscrizione"><wicket:message
+										key="DatiGeneraliCambioIndirizzoPanel.tipologiaIscrizione" />
+									</label>
+									<select id="tipologiaIscrizione" wicket:id="comboTipologiaIscrizione"
+										required></select>
+								</div>
+							</div>
+
+							<div class="col-6">
+								<p class="text-start">
+									<span class="fw-bold"><wicket:message
+											key="DatiGeneraliCambioIndirizzoPanel.dataDecorrenza" />:</span> <span
+										class="text-capitalize" wicket:id="dataDecorrenza"></span>
+								</p>
+							</div>
+
+							<div class="col-6"></div>
+
+						</div>
+
+						<div class="form-group col-md-12 mb-3 text-center">
+							<div class="form-group col-md-12 mb-3 text-center">
+								<button class="btn btn-primary" type="submit" wicket:id="avanti">
+									<wicket:message key="DatiGeneraliCambioIndirizzoPanel.avanti" />
+								</button>
+								<a class="btn btn-secondary" href="#" role="button"
+									wicket:id="annulla"> <wicket:message
+										key="DatiGeneraliCambioIndirizzoPanel.annulla" />
+								</a>
+							</div>
+						</div>
+
+					</form>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

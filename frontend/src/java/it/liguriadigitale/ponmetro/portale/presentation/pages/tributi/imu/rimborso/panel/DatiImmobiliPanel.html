@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<wicket:head>
+	<style>
+div.link-list>input[type=radio] {
+	margin-right: 0.3em;
+}
+</style>
+</wicket:head>
+</head>
+<body>
+	<wicket:panel>
+		<div class="row mb-4">
+			<div class="col-md-4 col-lg-4 col-sm-4 col-xl-4">
+
+				<wicket:enclosure child="btnAggiungi">
+					<button type="button" class="btn btn-primary"
+						wicket:id="btnAggiungi">
+						<wicket:message key="DatiImmobiliPanel.aggiungi" />
+					</button>
+				</wicket:enclosure>
+
+			</div>
+		</div>
+
+		<div class="row p-3" wicket:id="containerImmobile">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+			  <wicket:child>
+				 <div wicket:id="inserimentoImmobilePanel"></div>
+			 </wicket:child>
+			</div>
+		</div>
+
+		<div class="row mt-2" wicket:id="listaVuota">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12 mt-2 mb-2">
+				<div class="alert alert-warning" role="alert">
+					<wicket:message key="DatiImmobiliPanel.listaVuota"></wicket:message>
+				</div>
+			</div>
+		</div>
+
+		<div class="row mt-2" wicket:id="containerLista">
+			<div class="col-md-6 col-lg-6 col-sm-6 col-xl-6 mb-2"
+				wicket:id="listaImmobili">
+				<div class="card-wrapper">
+					<div class="card card-bg my-auto mb-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="" wicket:id="icona"></i>
+							</div>
+
+							<div wicket:id="tipo"></div>
+							<div wicket:id="sezione"></div>
+							<div wicket:id="foglio"></div>
+							<div wicket:id="particella"></div>
+							<div wicket:id="subalterno"></div>
+							<div wicket:id="categoria"></div>
+							<div wicket:id="provincia"></div>
+							<div wicket:id="comune"></div>
+							<div wicket:id="indirizzo"></div>
+							<div wicket:id="civico"></div>
+							<div wicket:id="esponente"></div>
+							<div wicket:id="scala"></div>
+							<div wicket:id="piano"></div>
+							<div wicket:id="interno"></div>
+							<div wicket:id="colore"></div>
+							<div wicket:id="cap"></div>
+							<div wicket:id="classe"></div>
+							<div wicket:id="percentualePossesso"></div>
+							<div wicket:id="utilizzo"></div>
+							<div wicket:id="altro"></div>
+							<div class="row" wicket:id="alert">
+								<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+									<div class="alert alert-danger" role="alert">
+										<wicket:message key="DatiImmobiliPanel.alert"></wicket:message>
+									</div>
+								</div>
+							</div>
+
+
+
+							<form wicket:id="immobiliAction">
+								<div wicket:id="modalViewPanel"></div>
+								<div class="row py-1 mb-2">
+									<div class="col-md-6 col-lg-6 col-sm-6 col-xl-6">
+										<wicket:enclosure child="btnEdit">
+											<button type="submit" class="btn btn-primary"
+												wicket:id="btnEdit">
+												<wicket:message key="DatiImmobiliPanel.modifica" />
+											</button>
+										</wicket:enclosure>
+									</div>
+									<div class="col-md-6 col-lg-6 col-sm-6 col-xl-6">
+										<wicket:enclosure child="btnEliminaVersamento">
+											<button type="submit" class="btn btn-danger"
+												wicket:id="btnEliminaVersamento">
+												<wicket:message key="DatiImmobiliPanel.elimina" />
+											</button>
+										</wicket:enclosure>
+									</div>
+								</div>
+
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row" wicket:id="containerPaginazione">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+				<div class="mt-1" wicket:id="pagination"></div>
+			</div>
+		</div>
+	</wicket:panel>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<wicket:head>
+	<title>Fascicolo del Cittadino</title>
+	<script>
+		window.__PUBLIC_PATH__ = '/portale/bootstrap-italia/fonts'
+	</script>
+	<link rel="stylesheet" type="text/css"
+		href="/portale/bootstrap-italia/css/bootstrap-italia.min.css">
+	<link rel="stylesheet" type="text/css" href="/portale/css/style.css">
+	<link rel="stylesheet" type="text/css"
+		href="/portale/css/fascicolo.css">
+
+</wicket:head>
+
+<header id="header" class="it-header-wrapper">
+	<div class="it-header-slim-wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="it-header-slim-wrapper-content">
+						<a class="d-lg-block navbar-brand"
+							href="https://www.comune.genova.it/" target="_blank">Comune
+							di Genova</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="it-header-center-wrapper theme-light">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="it-header-center-content-wrapper">
+						<div class="it-brand-wrapper">
+							<a> <img class="logo" src="/portale/images/comunegenova.png"
+								alt="Comune di Genova">
+								<div class="it-brand-text">
+									<h1 class="no_toc">Fascicolo del Cittadino</h1>
+								</div>
+							</a>
+						</div>
+						<div class="it-right-zone"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<body id="body">
+	<div class="container d-flex justify-content-center align-items-center">
+		<div wicket:id="messaggiInformativi"></div>
+	</div>
+</body>
+
+<footer id="footer">
+	<div class="container">
+		<section>
+			<div class="row clearfix">
+				<div class="loghipom mx-auto">
+					<img
+						src="/portale/images/loghi/banner_pon_metro/svg/loghiponmetro.svg"
+						class="logo-pom img-fluid ml-lg-4 ml-1 mb-2"
+						alt="logo Pon Metro Unione Comune Repubblica">
+
+				</div>
+			</div>
+		</section>
+
+		<section class="lista-linkutili md-4 sm-2">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 my-2 text-center">
+					<p style="font-size: initial">PROGETTO COFINANZIATO DALL'UNIONE
+						EUROPEA - FONDI STRUTTURALI E DI INVESTIMENTO EUROPEI | PROGRAMMA
+						OPERATIVO CITT&Agrave; METROPOLITANE 2014-2020</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="lista-sezioni mb-md-4 mb-sm-2">
+			<div class="row">
+				<div class="col-lg-3 col-md-3 col-sm-6 my-2">
+					<p>Sede Amministrativa</p>
+					<p>Via Garibaldi 9, Palazzo Tursi, 16124 Genova</p>
+					<p>P. Iva: 00856930102</p>
+				</div>
+
+				<div class="col-lg-4 col-md-3 col-sm-6 my-2">
+					<p>Contatti</p>
+					<p class="footer_text">
+						<a target="_blank" class="text-decoration-underline"
+							href="https://www.comune.genova.it/amministrazione/uffici/ufficio-relazioni-con-il-pubblico">URP - Ufficio
+							Relazioni con il Pubblico</a>
+					</p>
+					<p>
+						Posta Elettronica Certificata (PEC): <a class="text-decoration-underline"
+							href="mailto:comunegenova@postemailcertificata.it">comunegenova@postemailcertificata.it</a>
+					</p>
+					<p>Numero Unico: 010.1010</p>
+				</div>
+
+				<div class="col-lg-3 col-md-3 col-sm-6 my-2">
+					<p>Informazioni</p>
+					<p>
+						<a
+							href="http://www.comune.genova.it/servizi/amministrazionetrasparente"
+							target="_blank">Amministrazione Trasparente</a>
+					</p>
+
+					<p>
+						<a href="https://www.comune.genova.it/note-legali" target="_blank">Note
+							Legali e Privacy Policy</a>
+					</p>
+					
+					<p>
+						<a
+							href="https://form.agid.gov.it/view/fcbdceb0-71bd-11ef-82de-bde789a434a5"
+							target="_blank">Dichiarazione di accessibilità</a>
+					</p>
+				</div>
+
+				<div class="col-lg-2 col-md-3 col-sm-6 my-2">
+					<p>Seguici Su</p>
+					<ul class="list-inline text-left social">
+						<li class="list-inline-item"><a target="_blank"
+							aria-label="Collegamento a sito esterno - Twitter - nuova finestra"
+							href="http://twitter.com/comunedigenova"
+							title="Seguici su Twitter"> <span wicket:id="twitter-fa"
+								class="fab fa-twitter fa-lg"></span> <span class="hidden">Seguici
+									su Twitter</span>
+						</a></li>
+						<li class="list-inline-item"><a target="_blank"
+							aria-label="Collegamento a sito esterno - Facebook - nuova finestra"
+							href="http://www.facebook.com/Comune.di.Genova"
+							title="Seguici su Facebook"> <span wicket:id="facebook-fa"
+								class="fab fa-facebook-square fa-lg"></span> <span
+								class="hidden">Seguici su Facebook</span>
+						</a></li>
+						<li class="list-inline-item"><a target="_blank"
+							aria-label="Collegamento a sito esterno - YouTube - nuova finestra"
+							href="http://www.youtube.com/user/GenoaMunicipality"
+							title="Seguici su YouTube"> <span wicket:id="youtube-fa"
+								class="fab fa-youtube fa-lg"></span> <span class="hidden">Seguici
+									su YouTube</span>
+						</a></li>
+						<li class="list-inline-item"><a target="_blank"
+							aria-label="Collegamento a sito esterno - Instagram - nuova finestra"
+							href="https://www.instagram.com/genovamorethanthis/"
+							title="Seguici su Instagram"> <span wicket:id="instagram-fa"
+								class="fab fa-instagram fa-lg"></span> <span class="hidden">Seguici
+									su Instagram</span>
+						</a></li>
+						<li class="list-inline-item"><a target="_blank"
+							aria-label="Collegamento a sito esterno - Flickr - nuova finestra"
+							href="http://www.flickr.com/photos/genovacittadigitale/sets/"
+							title="Seguici su Flickr"> <span wicket:id="flickr-fa"
+								class="fab fa-flickr fa-lg"></span> <span class="hidden">Seguici
+									su Flickr</span>
+						</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section class="lista-linkutili md-4 sm-2">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 my-2 text-center">
+					<p style="font-size: initial">
+						Comune di Genova - Sito realizzato su template <a
+							href="https://italia.github.io/bootstrap-italia/" target="_blank">Bootstrap
+							Italia</a> da <a href="https://www.liguriadigitale.it"
+							target="_blank">Liguria Digitale Spa</a> - Societ&agrave; in
+						house del Comune di Genova
+					</p>
+				</div>
+			</div>
+		</section>
+
+	</div>
+</footer>
+
+</html>

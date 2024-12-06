@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="form-row col-12 alert alert-info"
+			style="margin-bottom: 30px;">
+			<wicket:message key="FdCPagamentoSuContoCorrentePanel.info" />
+		</div>
+
+		<div class="form-row col-12">
+			<div class="row">
+				<div class="col">
+					<div wicket:id="iban"></div>
+				</div>
+				<div class="col">
+					<div wicket:id="swift"></div>
+				</div>
+			</div>
+			
+		</div>
+
+		<div class="form-row col-12" wicket:id="containerAltriCampi">
+			<div class="row">
+				<div class="col">
+					<div wicket:id="nominativoIntestatario"></div>
+				</div>
+				<div class="col">
+					<div wicket:id="codiceFiscaleIntestatario"></div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col">
+					<div wicket:id="istituto"></div>
+				</div>
+				<div class="col"></div>
+			</div>
+		
+		</div>
+
+		<div class="form-row col-12" wicket:id="containerCampiDelegato">
+
+			<div class="col-12">
+				<div class="form-row col-12 alert alert-info"
+					style="margin-bottom: 30px;" wicket:id="infoDelegato">
+					<wicket:message key="FdCPagamentoSuContoCorrentePanel.infoDelegato" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div wicket:id="nomeDelegato"></div>
+				</div>
+				<div class="col">
+					<div wicket:id="cognomeDelegato"></div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col">
+					<div wicket:id="codiceFiscaleDelegato"></div>
+				</div>
+				<div class="col"></div>
+			</div>
+		
+			
+		</div>
+
+	</wicket:panel>
+</body>
+
+</html>

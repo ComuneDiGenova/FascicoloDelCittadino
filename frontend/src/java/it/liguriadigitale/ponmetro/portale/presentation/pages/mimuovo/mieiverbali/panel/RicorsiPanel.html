@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<hr>
+
+		<h3 class="text-start fw-bold col-9" wicket:id="titoloRicorsi"></h3>
+
+		<wicket:enclosure child="nonPuoiPresentareRicorsoAlPrefetto">
+			<div class="col-12 alert alert-warning fw-bold" role="alert"
+				wicket:id="nonPuoiPresentareRicorsoAlPrefetto">
+				<wicket:message
+					key="RicorsiPanel.nonPuoiPresentareRicorsoAlPrefetto" />
+			</div>
+		</wicket:enclosure>
+
+		<wicket:enclosure child="puoiPresentareRicorsoAlPrefetto">
+			<div class="col-12 alert alert-warning fw-bold" role="alert"
+				wicket:id="puoiPresentareRicorsoAlPrefetto">
+				<wicket:message key="RicorsiPanel.puoiPresentareRicorsoAlPrefetto" />
+			</div>
+		</wicket:enclosure>
+
+		<wicket:enclosure child="btnDomandaRicorsoAlPrefetto">
+			<div class="col-sm-12 mt-2 mb-2">
+				<button class="btn btn-outline-primary">
+					<span wicket:id="btnDomandaRicorsoAlPrefetto"></span>
+				</button>
+			</div>
+		</wicket:enclosure>
+
+		<div class="link-list-wrapper">
+			<wicket:enclosure child="datiRicorsiAlPrefetto">
+				<p wicket:id="datiRicorsiAlPrefetto">
+				<ul class="link-list">
+					<li><svg class="icon icon-success icon-sm">
+							<use
+								xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-arrow-right-circle"></use></svg>
+						<span class="fw-bold" wicket:id="datiRicorso"></span> <br> <span>
+							<button type="button" class="btn btn-xs btn-primary"
+								wicket:id="btnDettagli">Dettagli</button>
+					</span></li>
+				</ul>
+				</p>
+			</wicket:enclosure>
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>
+		<form wicket:id="yesOrNo" action="">
+			<div class="row">
+			  <div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+			     <span>
+			        <label wicket:id="message"></label>
+			     </span>
+			  </div>
+			</div>
+
+			<div class="row mb-2">
+				<div
+					class="col-md-12 col-lg-12 col-sm-12 col-xl-12 d-flex justify-content-end">
+					
+					<button class="btn btn-outline-primary btn-xs" type="button"
+						data-dismiss="modal" wicket:id="btnNo">
+						<wicket:message key="ModaleConfermaPanel.no" />
+					</button>
+					&nbsp;
+					<button class="btn btn-primary btn-xs" type="button"
+						wicket:id="btnSi">
+						<wicket:message key="ModaleConfermaPanel.si" />
+					</button>
+				</div>
+			</div>
+         </form>
+	</wicket:panel>
+</body>
+</html>

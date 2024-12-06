@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <wicket:panel>
+        <div class="row content my-4 info-traffico">
+            <div class="categoryicon-top row mb-4" wicket:id="containerErrore">
+                <i wicket:message="class:IMieiMezziTemplate.icona"></i>
+                <h4 class="card-title text-left font-weight-bold col-9"><wicket:message key="IMieiMezziTemplate.titolo"/></h4>
+            </div>
+
+            <div wicket:id="feedback"></div>
+
+            <div wicket:id="containerIMieiMezzi">
+               <wicket:child />
+            </div>
+            
+        </div>
+    </wicket:panel>
+</body>
+
+</html>

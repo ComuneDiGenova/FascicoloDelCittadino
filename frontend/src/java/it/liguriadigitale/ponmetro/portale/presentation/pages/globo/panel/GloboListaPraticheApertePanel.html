@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Procecdimenti Globo</title>
+</head>
+<body>
+	<wicket:panel>
+		<br/><br/><br/>
+		<div wicket:id="titolo">Oppure scegli tra le pratiche aperte:</div>
+		<div class="row content my-4 io-genitore">
+			<div wicket:id="lista">
+			 <wicket:enclosure child="denominazioneProcedimento">
+				<div class="col-lg-3 mb-4" >
+					<div class="card-wrapper">
+						<div class="card card-bg my-2">
+							<div class="card-body">
+								<div class="card-icon mt-4 mb-1">
+									<i class="icon-foglio-penna col-auto color-yellow"></i>
+									<h4 wicket:id="denominazioneProcedimento"></h4><br/><br/>
+									</div>
+									<span wicket:id="idPratica"></span>
+									<span wicket:id="data"></span>
+									<span wicket:id="stato"></span>
+									<div wicket:id="linkToGlobo"></div>
+									<br/>
+									<div wicket:id="scaricaPdf"></div>
+								</div>
+							</div>
+						</div>
+					</div>	
+				</wicket:enclosure>
+			</div>
+		</div>
+	</wicket:panel>
+</body>
+</html>

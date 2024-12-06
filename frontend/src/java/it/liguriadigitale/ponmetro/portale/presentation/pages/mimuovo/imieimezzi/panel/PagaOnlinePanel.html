@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <wicket:panel>
+
+        <div class="col-sm-12 mt-2 mb-2">
+            <h3 class="text-left font-weight-semibold mb-0"><wicket:message key="PagaOnlinePanel.title" /></h3>
+        </div>
+
+        <div class="col-lg-10 mx-auto riepilogo">
+
+            <form wicket:id="form">
+
+                <div class="col-md-10 text-left mb-4">
+                    <h4><wicket:message key="PagaOnlinePanel.info" />:</h4>
+                </div>
+
+                <div class="row mb-0 d-flex justify-content-center">
+                    <div class="col-5">
+                        <p class="text-left">
+                            <span class="font-weight-semibold"><wicket:message key="PagaOnlinePanel.nomeCognome" />:</span>
+                            <span class="text-capitalize" wicket:id="nomeCognome"></span>
+                        </p>
+                    </div>
+                    <div class="col-5">
+                        <p class="text-left">
+                            <span class="font-weight-semibold"><wicket:message key="PagaOnlinePanel.mail" />:</span>
+                            <span class="text-capitalize" wicket:id="mailUtente"></span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row mb-0 d-flex justify-content-center">
+                    <div class="col-5">
+                        <p class="text-left">
+                            <span class="font-weight-semibold"><wicket:message key="PagaOnlinePanel.targa" />:</span>
+                            <span class="text-capitalize" wicket:id="targa"></span>
+                        </p>
+                    </div>
+                    <div class="col-5">
+                        <p class="text-left">
+                            <span class="font-weight-semibold"><wicket:message key="PagaOnlinePanel.tipoVeicolo" />:</span>
+                            <span class="text-capitalize" wicket:id="tipoVeicolo"></span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row mb-0 d-flex justify-content-center">
+                    <div class="col-5">
+                        <p class="text-left">
+                            <span class="font-weight-semibold"><wicket:message key="PagaOnlinePanel.scadenza" />:</span>
+                            <span class="text-capitalize" wicket:id="scadenza"></span>
+                        </p>
+                    </div>
+                    <div class="col-5">
+                        <p class="text-left">
+                            <span class="font-weight-semibold"><wicket:message key="PagaOnlinePanel.ultimoGiornoUtile" />:</span>
+                            <span class="text-capitalize" wicket:id="ultimoGiornoUtile"></span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row mb-0 d-flex justify-content-center">
+                    <div class="col-5">
+                        <p class="text-left">
+                            <span class="font-weight-semibold"><wicket:message key="PagaOnlinePanel.tassa" />:</span>
+                            <span class="text-capitalize" wicket:id="tassa"></span>&euro;
+                        </p>
+                    </div>
+                    <div class="col-5">
+                        <p class="text-left">
+                            <span class="font-weight-semibold"><wicket:message key="PagaOnlinePanel.sanzioni" />:</span>
+                            <span class="text-capitalize" wicket:id="sanzioni"></span>&euro;
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row mb-0 d-flex justify-content-center">
+                    <div class="col-5">
+                        <p class="text-left">
+                            <span class="font-weight-semibold"><wicket:message key="PagaOnlinePanel.interessi" />:</span>
+                            <span class="text-capitalize" wicket:id="interessi"></span>&euro;
+                        </p>
+                    </div>
+                    <div class="col-5">
+                        <p class="text-left">
+                            <span class="font-weight-semibold"><wicket:message key="PagaOnlinePanel.importoTotale" />:</span>
+                            <span class="text-capitalize" wicket:id="importoTotale"></span>&euro;
+                        </p>
+                    </div>
+                </div>
+
+                <input type="hidden" name="alias" wicket:id="alias" />
+                <input type="hidden" name="importo" wicket:id="importo" />
+                <input type="hidden" name="codTrans" wicket:id="codTrans" />
+                <input type="hidden" name="divisa" wicket:id="divisa" />
+                <input type="hidden" name="url" wicket:id="url" />
+                <input type="hidden" name="url_back" wicket:id="url_back" />
+                <input type="hidden" name="urlpost" wicket:id="urlpost" />
+                <input type="hidden" name="mac" wicket:id="mac" />
+                <input type="hidden" name="identificativoFiscalePagatore" wicket:id="identificativoFiscalePagatore" />
+                <input type="hidden" name="tipoPagatore" wicket:id="tipoPagatore" />
+                <input type="hidden" name="anagraficaPagatore" wicket:id="anagraficaPagatore" />
+                <input type="hidden" name="mail" wicket:id="mail" />
+
+                <div class="form-row mt-5 mb-0">
+                    <div class="form-group col-md-12 mb-3 text-center">
+                        <button type="submit" class="btn btn-primary">
+                            <wicket:message key="PagaOnlinePanel.prosegui" />
+                        </button>
+                        <button type="button" class="btn btn-secondary" wicket:id="annulla">
+                            <wicket:message key="PagaOnlinePanel.annulla" />
+                        </button>
+                    </div>
+                </div>
+                
+            </form>
+            
+            <div class="col-md-10 text-left mb-4">
+            	<h4 wicket:id="messaggioErrorePagamento"></h4>
+            </div>
+                
+        </div>
+
+        <div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+    </wicket:panel>
+
+</body>
+
+</html>

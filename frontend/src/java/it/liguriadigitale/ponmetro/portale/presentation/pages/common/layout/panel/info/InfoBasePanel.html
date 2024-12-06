@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+		<div class="row content my-4 info-traffico">
+			<div wicket:id="elements" class="col-12"> <div
+				wicket:id="elementContainer" class="alert alert-info" role="alert">
+					<span wicket:id="element"></span>
+					<wicket:enclosure child="bottone1">
+						<div class="row pt-3 mb-2">
+							<div class="col-12">
+								<a class="btn btn-primary btn-xs" href="#" role="button"
+									wicket:id="bottone1" target="_blank"> <wicket:message
+										key="InfoBasePanel.urlEsternoCalcolatrice" />
+								</a>
+							</div>
+						</div>
+					</wicket:enclosure>
+				</div>
+				
+			</div>
+		</div>
+	</wicket:panel>
+</body>
+</html>
+

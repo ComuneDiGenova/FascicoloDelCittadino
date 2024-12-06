@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<wicket:panel>
+<!--start card-->
+			<div class="col-lg-6 mb-4">
+				<!--start card-->
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="" wicket:id="icona"></i>
+								<h4 class="card-title text-start col-9 font-weight-normal">
+									<span class="fw-bold" wicket:id="nome"></span> <br />
+									<wicket:message key="RiepilogoIscrizioniPanel.dataNascita" />
+									<span class="fw-bold" wicket:id="data"></span> <br />
+									<wicket:message key="RiepilogoIscrizioniPanel.eta" />
+									<span class="fw-bold" wicket:id="eta"></span> <span
+										wicket:id="mesiAnni"></span>
+								</h4>
+							</div>
+							<wicket:enclosure child="scuola">
+								<div class="row mb-4 border-bottom">
+									<div class="col-3">
+										<p class="card-text text-start fw-bold"
+											wicket:id="iscritto"></p>
+									</div>
+									<div class="col-9">
+										<p class="card-text text-start mb-2">
+											<wicket:message key="RiepilogoIscrizioniPanel.scuola" />
+											<span class="text-capitalize fw-bold"
+												wicket:id="scuola"></span><br/>
+											<wicket:enclosure child="classe">
+												<wicket:message key="RiepilogoIscrizioniPanel.classe" />
+												<span class="text-capitalize fw-bold"
+													wicket:id="classe"></span>
+											</wicket:enclosure>
+											<wicket:message key="RiepilogoIscrizioniPanel.sezione" />
+											<span class="text-capitalize fw-bold"
+												wicket:id="sezione"></span>
+										</p>
+									</div>
+								</div>
+								<div class="row mb-4 border-bottom">
+									<div class="col-3">
+										<p class="card-text text-start fw-bold"></p>
+									</div>
+									<div class="col-9">
+										<p class="card-text text-start mb-2">
+											<wicket:message key="RiepilogoIscrizioniPanel.anno" />
+											<span class="text-capitalize fw-bold" wicket:id="annoScolastico"></span><br/>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+				</div>
+				</div>
+				</div>
+				</div>
+	
+
+<!--end card-->
+</wicket:panel>
+</body>
+</html>

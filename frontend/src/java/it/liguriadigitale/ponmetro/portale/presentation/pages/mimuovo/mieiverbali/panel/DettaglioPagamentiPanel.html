@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<h3 class="text-start fw-bold col-9">
+			<wicket:message key="DettaglioPagamentiPanel.pagamenti" />
+		</h3>
+
+		<p>
+			<wicket:enclosure child="importo">
+				<span><wicket:message key="DettaglioPagamentiPanel.importo" /></span>
+				<span class="fw-bold" wicket:id="importo"></span>
+			</wicket:enclosure>
+		</p>
+
+		<div class="link-list-wrapper">
+			<wicket:enclosure child="listViewImportiPagati">
+				<span><wicket:message
+						key="DettaglioPagamentiPanel.importiPagati" /></span>
+
+				<p wicket:id="listViewImportiPagati">
+				<ul class="link-list">
+					<li><svg class="icon icon-success icon-sm">
+							<use
+								xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-check-circle"></use></svg>
+						<span class="fw-bold" wicket:id="importoPagato"></span>
+						<br> <a class="btn btn-primary btn-xs"
+						style="display: inline-block;" target="_blank" role="button"
+						wicket:id="btnRicevutaMip"> <svg class="icon icon-white">
+                                    <use
+									xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-download"></use>
+                                </svg> <wicket:message
+								key="DettaglioPagamentiPanel.ricevutaMIP" />
+					</a></li>
+				</ul>
+				</p>
+
+			</wicket:enclosure>
+		</div>
+
+		<div wicket:id="containerMessaggioRicorso">
+			<div class="alert alert-info" role="alert">
+				<wicket:message key="DettaglioPagamentiPanel.infoRicorso" />
+			</div>
+		</div>
+
+		<div wicket:id="containerMessaggioInvioARuolo">
+			<div class="alert alert-info" role="alert">
+				<wicket:message key="DettaglioPagamentiPanel.alertInvioARuolo" />
+			</div>
+		</div>
+
+		<div wicket:id="containerMessaggioImporti">
+			<div class="alert alert-info" role="alert">
+				<wicket:message key="DettaglioPagamentiPanel.infoImporto" />
+			</div>
+		</div>
+
+		<div wicket:id="containerMessaggioInfoScontoDpp">
+			<div class="alert alert-info" role="alert">
+				<p wicket:id="infoScontoDpp"></p>
+			</div>
+		</div>
+
+		<div wicket:id="containerDaPagare">
+
+			<div wicket:id="pagamentoIuv0">
+				<span class="fw-bold"><wicket:message
+						key="DettaglioPagamentiPanel.pagamentoIuv0" /></span> <br>
+
+				<wicket:enclosure child="codiceAvvisoIuv0">
+					<span><wicket:message
+							key="DettaglioPagamentiPanel.codiceAvvisoIuv0" /></span>
+					<span class="fw-bold" wicket:id="codiceAvvisoIuv0"></span>
+				</wicket:enclosure>
+
+				<wicket:enclosure child="importoIuv0">
+					<span><wicket:message
+							key="DettaglioPagamentiPanel.importoIuv0" /></span>
+					<span class="fw-bold" wicket:id="importoIuv0"></span>
+				</wicket:enclosure>
+
+				<a class="btn btn-success btn-xs btn-icon" wicket:id="pdfAvvisoIuv0">
+					<svg class="icon icon-white">
+		                    	<use
+							xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-download"></use>
+		                    </svg> <span><wicket:message
+							key="DettaglioPagamentiPanel.btnScaricaAvviso" /></span>
+				</a> <a class="btn btn-primary btn-xs" target="_blank" role="button"
+					wicket:id="btnPagaIuv0"><wicket:message
+						key="DettaglioPagamentiPanel.vaiAlPagamento" /></a>
+			</div>
+
+			<div class="table-responsive" wicket:id="tabellaImportiPagabili">
+				<span><wicket:message
+						key="DettaglioPagamentiPanel.importiPagabili" /></span>
+
+				<div class="divTable">
+					<div class="divHead">
+						<div class="divTh">
+							<wicket:message key="DettaglioPagamentiPanel.entro5ggtitle" />
+						</div>
+						<div class="divTh">
+							<wicket:message key="DettaglioPagamentiPanel.entro60ggtitle" />
+						</div>
+						<div class="divTh">
+							<wicket:message key="DettaglioPagamentiPanel.oltre60ggtitle" />
+						</div>
+					</div>
+
+					<div class="divBody">
+						<wicket:enclosure child="data5gg">
+							<div class="divTd" wicket:id="data5gg"></div>
+						</wicket:enclosure>
+						<wicket:enclosure child="dataEntro60gg">
+							<div class="divTd" wicket:id="dataEntro60gg"></div>
+						</wicket:enclosure>
+						<wicket:enclosure child="dataOltre60gg">
+							<div class="divTd" wicket:id="dataOltre60gg"></div>
+						</wicket:enclosure>
+					</div>
+
+					<div class="divBody">
+						<wicket:enclosure child="importoEntro5gg">
+							<div class="divTd" wicket:id="importoEntro5gg"></div>
+						</wicket:enclosure>
+						<wicket:enclosure child="importoEntro60gg">
+							<div class="divTd" wicket:id="importoEntro60gg"></div>
+						</wicket:enclosure>
+						<wicket:enclosure child="importoOltre60gg">
+							<div class="divTd" wicket:id="importoOltre60gg"></div>
+						</wicket:enclosure>
+					</div>
+
+					<div class="divBody">
+						<wicket:enclosure child="codiceAvvisoEntro5GG">
+							<div class="divTd" wicket:id="codiceAvvisoEntro5GG"></div>
+						</wicket:enclosure>
+						<wicket:enclosure child="codiceAvvisoEntro60GG">
+							<div class="divTd" wicket:id="codiceAvvisoEntro60GG"></div>
+						</wicket:enclosure>
+						<wicket:enclosure child="codiceAvvisoOltre60gg">
+							<div class="divTd" wicket:id="codiceAvvisoOltre60gg"></div>
+						</wicket:enclosure>
+					</div>
+
+					<div class="divBody">
+						<div class="divTh">
+							<a class="btn btn-success btn-xs btn-icon"
+								wicket:id="pdfAvvisoEntro5GG"> <svg class="icon icon-white">
+		                    	<use
+										xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-download"></use>
+		                    </svg> <span><wicket:message
+										key="DettaglioPagamentiPanel.btnScaricaAvviso" /></span>
+							</a>
+						</div>
+
+						<div class="divTh">
+							<a class="btn btn-success btn-xs btn-icon"
+								wicket:id="pdfAvvisoEntro60GG"> <svg class="icon icon-white">
+		                    	<use
+										xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-download"></use>
+		                    </svg> <span><wicket:message
+										key="DettaglioPagamentiPanel.btnScaricaAvviso" /></span>
+							</a>
+						</div>
+
+						<div class="divTh">
+							<a class="btn btn-success btn-xs btn-icon"
+								wicket:id="pdfAvvisoOltre60GG"> <svg class="icon icon-white">
+		                    	<use
+										xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-download"></use>
+		                    </svg> <span><wicket:message
+										key="DettaglioPagamentiPanel.btnScaricaAvviso" /></span>
+							</a>
+						</div>
+					</div>
+
+					<div class="divBody">
+						<div class="divTd"></div>
+						<wicket:enclosure child="importoIntegrazioneEntro60gg">
+							<div class="divTd" wicket:id="importoIntegrazioneEntro60gg"></div>
+						</wicket:enclosure>
+						<wicket:enclosure child="importoIntegrazioneOltre60gg">
+							<div class="divTd" wicket:id="importoIntegrazioneOltre60gg"></div>
+						</wicket:enclosure>
+					</div>
+
+					<div class="divBody">
+						<wicket:enclosure child="codiceAvvisoIntegrazioneEntro5GG">
+							<div class="divTd" wicket:id="codiceAvvisoIntegrazioneEntro5GG"></div>
+						</wicket:enclosure>
+						<wicket:enclosure child="codiceAvvisoIntegrazioneEntro60GG">
+							<div class="divTd" wicket:id="codiceAvvisoIntegrazioneEntro60GG"></div>
+						</wicket:enclosure>
+						<wicket:enclosure child="codiceAvvisoIntegrazioneOltre60gg">
+							<div class="divTd" wicket:id="codiceAvvisoIntegrazioneOltre60gg"></div>
+						</wicket:enclosure>
+					</div>
+
+					<div class="divBody">
+						<div class="divTh">
+							<a class="btn btn-success btn-xs btn-icon"
+								wicket:id="pdfAvvisoIntegrazioneEntro5GG"> <svg
+									class="icon icon-white">
+		                    	<use
+										xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-download"></use>
+		                    </svg> <span><wicket:message
+										key="DettaglioPagamentiPanel.btnScaricaAvvisoIntegrazione" /></span>
+							</a>
+						</div>
+						<div class="divTh">
+							<a class="btn btn-success btn-xs btn-icon"
+								wicket:id="pdfAvvisoIntegrazioneEntro60GG"> <svg
+									class="icon icon-white">
+		                    	<use
+										xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-download"></use>
+		                    </svg> <span><wicket:message
+										key="DettaglioPagamentiPanel.btnScaricaAvvisoIntegrazione" /></span>
+							</a>
+						</div>
+						<div class="divTd">
+							<a class="btn btn-success btn-xs btn-icon"
+								wicket:id="pdfAvvisoIntegrazioneOltre60gg"> <svg
+									class="icon icon-white">
+		                    	<use
+										xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-download"></use>
+		                    </svg> <span><wicket:message
+										key="DettaglioPagamentiPanel.btnScaricaAvvisoIntegrazione" /></span>
+							</a>
+						</div>
+					</div>
+
+					<div class="divBody">
+						<div class="divTd">
+							<a class="btn btn-primary btn-xs" role="button"
+								wicket:id="btnGeneraAvviso5gg"><wicket:message
+									key="DettaglioPagamentiPanel.btnGeneraAvviso" /></a>
+						</div>
+						<div class="divTd">
+							<a class="btn btn-primary btn-xs" role="button"
+								wicket:id="btnGeneraAvviso60gg"><wicket:message
+									key="DettaglioPagamentiPanel.btnGeneraAvviso" /></a>
+						</div>
+						<div class="divTd">
+							<a class="btn btn-primary btn-xs" role="button"
+								wicket:id="btnGeneraAvvisoDopo60gg"><wicket:message
+									key="DettaglioPagamentiPanel.btnGeneraAvviso" /></a>
+						</div>
+					</div>
+
+					<div class="divBody">
+						<div class="divTd">
+							<a class="btn btn-primary btn-xs" target="_blank" role="button"
+								wicket:id="btnPaga5gg"><wicket:message
+									key="DettaglioPagamentiPanel.vaiAlPagamento" /></a>
+						</div>
+						<div class="divTd">
+							<a class="btn btn-primary btn-xs" target="_blank" role="button"
+								wicket:id="btnPaga60gg"><wicket:message
+									key="DettaglioPagamentiPanel.vaiAlPagamento" /></a>
+						</div>
+						<div class="divTd">
+							<a class="btn btn-primary btn-xs" target="_blank" role="button"
+								wicket:id="btnPagaDopo60gg"><wicket:message
+									key="DettaglioPagamentiPanel.vaiAlPagamento" /></a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		
+		<div class="row" wicket:id="alertAvvisoBonario">
+		  <div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+		      <div class="alert alert-warning" role="alert">
+                <wicket:message key="DettaglioPagamentiPanel.avvisoBonario" />&nbsp;
+                  <a wicket:id="avvisoBonarioLink">
+                     <wicket:message key="DettaglioPagamentiPanel.cliccaqui" />
+                  </a>
+            </div>
+		  </div>
+		</div>
+
+		<div wicket:id="containerRate">
+			<wicket:child>
+				<div wicket:id="pagamentoRate"></div>
+			</wicket:child>
+		</div>
+
+		<div wicket:id="containerMessaggioVerbaleVecchio">
+			<div class="alert alert-warning" role="alert">
+				<wicket:message key="DettaglioPagamentiPanel.infoVerbaleVecchio" />
+			</div>
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

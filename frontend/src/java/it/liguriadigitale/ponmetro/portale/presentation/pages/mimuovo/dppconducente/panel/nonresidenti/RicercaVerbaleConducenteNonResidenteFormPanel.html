@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="col-lg-10 mx-auto riepilogo">
+
+			<div class="col-sm-12 mt-2 mb-2">
+				
+				
+				<div wicket:id="messaggiInformativi"></div>
+			</div>
+
+			<div class="col-md-12 text-left mb-4">
+				<h4>
+					<wicket:message
+						key="RicercaVerbaleConducenteNonResidenteFormPanel.info" />
+					:
+				</h4>
+			</div>
+
+			<div class="col-lg-12 mx-auto">
+				<div class="steppers">
+					<ul class="steppers-header">
+						<li class="active no-line"><span class="steppers-number"><span
+								class="sr-only">Step </span>1</span> <span class="steppers-status"><wicket:message
+									key="RicercaVerbaleConducenteNonResidenteFormPanel.step1"></wicket:message></span>
+							<span class="sr-only"><wicket:message
+									key="RicercaVerbaleConducenteNonResidenteFormPanel.step1"></wicket:message></span>
+						</li>
+						<li><span class="steppers-number"><span
+								class="sr-only">Step </span>2</span> <span class="steppers-status"><wicket:message
+									key="RicercaVerbaleConducenteNonResidenteFormPanel.step2"></wicket:message></span>
+							<span class="sr-only"><wicket:message
+									key="RicercaVerbaleConducenteNonResidenteFormPanel.step2"></wicket:message></span>
+						</li>
+						<li><span class="steppers-number"><span
+								class="sr-only">Step </span>3</span> <span class="steppers-status"><wicket:message
+									key="RicercaVerbaleConducenteNonResidenteFormPanel.step3"></wicket:message></span>
+							<span class="sr-only"><wicket:message
+									key="RicercaVerbaleConducenteNonResidenteFormPanel.step3"></wicket:message></span>
+						</li>
+						<li><span class="steppers-number"><span
+								class="sr-only">Step </span>4</span> <span class="steppers-status"><wicket:message
+									key="RicercaVerbaleConducenteNonResidenteFormPanel.step4"></wicket:message></span>
+							<span class="sr-only"><wicket:message
+									key="RicercaVerbaleConducenteNonResidenteFormPanel.step4"></wicket:message></span>
+						</li>
+						<li class="steppers-index" aria-hidden="true"><span
+							class="active">1</span> <span>2</span> <span>3</span> <span><wicket:message
+									key="RicercaVerbaleConducenteNonResidenteFormPanel.step4"></wicket:message></span>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<form class="mb-3 col-lg-10 mx-auto" wicket:id="form"
+				enctype="multipart/form-data" onsubmit="returncheckForm(this);">
+
+				<div class="col-md-10 text-left mb-4">
+					<h4>
+						<wicket:message
+							key="RicercaVerbaleConducenteNonResidenteFormPanel.datiVerbale" />
+					</h4>
+				</div>
+
+				<div class="form-row mb-2 col-md-12 mx-auto">
+					<div class="form-group col-md-6 mb-0">
+						<input class="form-control" id="numeroAvviso" type="text"
+							placeholder="Inserisci Numero Avviso" maxlength="10"
+							oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+							wicket:id="numeroAvviso" style="font-size: smaller;"> <small><wicket:message
+								key="RicercaVerbaleConducenteNonResidenteFormPanel.inserisciNumeroAvviso" /></small>
+						<label class="sr-only" for="numeroAvviso"> <wicket:message
+								key="RicercaVerbaleConducenteNonResidenteFormPanel.inserisciNumeroAvviso" />
+						</label>
+					</div>
+
+					<div class="form-group col-md-6 mb-0"></div>
+
+					<div class="form-group col-md-6 mb-0">
+						<input class="form-control" id="targa" type="text"
+							placeholder="Inserisci Targa" wicket:id="targa"
+							style="font-size: smaller;"> <small><wicket:message
+								key="RicercaVerbaleConducenteNonResidenteFormPanel.inserisciTarga" /></small>
+						<label class="sr-only" for="targa"> <wicket:message
+								key="RicercaVerbaleConducenteNonResidenteFormPanel.inserisciTarga" />
+						</label>
+					</div>
+
+					<div class="form-group col-md-6 mb-0">
+						<input class="form-control it-date-datepicker" id="dataVerbale"
+							type="date" placeholder="Inserisci data verbale gg/mm/aaaa"
+							wicket:id="dataVerbale" style="font-size: smaller;"> <small><wicket:message
+								key="RicercaVerbaleConducenteNonResidenteFormPanel.inserisciDataVerbale" /></small>
+						<label class="sr-only" for="dataVerbale"> <wicket:message
+								key="RicercaVerbaleConducenteNonResidenteFormPanel.inserisciDataVerbale" />
+						</label>
+					</div>
+
+					<div class="col-md-10 text-left">
+						<br>
+					</div>
+
+					<div class="col-md-10 text-left">
+						<h4>
+							<wicket:message
+								key="RicercaVerbaleConducenteNonResidenteFormPanel.datiConducente" />
+						</h4>
+					</div>
+
+					<wicket:enclosure child="nomeConducente">
+						<div class="col-6">
+							<p class="text-left">
+								<span class="font-weight-semibold"><wicket:message
+										key="RicercaVerbaleConducenteNonResidenteFormPanel.nome" />:</span>
+								<span class="text-capitalize" wicket:id="nomeConducente"></span>
+							</p>
+						</div>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="cognomeConducente">
+						<div class="col-6">
+							<p class="text-left">
+								<span class="font-weight-semibold"><wicket:message
+										key="RicercaVerbaleConducenteNonResidenteFormPanel.cognome" />:</span>
+								<span class="text-capitalize" wicket:id="cognomeConducente"></span>
+							</p>
+						</div>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="cfConducente">
+						<div class="col-6">
+							<p class="text-left">
+								<span class="font-weight-semibold"><wicket:message
+										key="RicercaVerbaleConducenteNonResidenteFormPanel.cf" />:</span> <span
+									class="text-capitalize" wicket:id="cfConducente"></span>
+							</p>
+						</div>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="dataNascitaConducente">
+						<div class="col-6">
+							<p class="text-left">
+								<span class="font-weight-semibold"><wicket:message
+										key="RicercaVerbaleConducenteNonResidenteFormPanel.natoIl" />:</span>
+								<span class="text-capitalize" wicket:id="dataNascitaConducente"></span>
+							</p>
+						</div>
+					</wicket:enclosure>
+
+					<div class="form-group col-md-6 mb-0">
+						<input class="form-control" id="cittaNascitaConducente"
+							type="text" placeholder="Inserisci Nato a"
+							wicket:id="cittaNascitaConducente" style="font-size: smaller;">
+						<small><wicket:message
+								key="RicercaVerbaleConducenteNonResidenteFormPanel.natoA" /></small> <label
+							class="sr-only" for="cittaNascitaConducente"> <wicket:message
+								key="RicercaVerbaleConducenteNonResidenteFormPanel.natoA" />
+						</label>
+					</div>
+
+					<div class="form-group col-md-6 mb-0">
+						<input class="form-control" id="provinciaNascitaConducente"
+							type="text" placeholder="Provincia"
+							wicket:id="provinciaNascitaConducente"
+							style="font-size: smaller;"> <small><wicket:message
+								key="RicercaVerbaleConducenteNonResidenteFormPanel.natoAPronvicia" /></small>
+						<label class="sr-only" for="provinciaNascitaConducente"> <wicket:message
+								key="RicercaVerbaleConducenteNonResidenteFormPanel.natoAPronvicia" />
+						</label>
+					</div>
+
+					<div class="form-group col-md-7 mb-0">
+						<input class="form-control" id="indirizzoConducente" type="text"
+							placeholder="Inserisci residente in"
+							wicket:id="indirizzoConducente" style="font-size: smaller;">
+						<small><wicket:message
+								key="RicercaVerbaleConducenteNonResidenteFormPanel.residenteIn" /></small>
+						<label class="sr-only" for="indirizzoConducente"> <wicket:message
+								key="RicercaVerbaleConducenteNonResidenteFormPanel.residenteIn" />
+						</label>
+					</div>
+
+					<div class="form-group col-md-3 mb-0">
+						<input class="form-control" id="cittaConducente" type="text"
+							placeholder="Comune" wicket:id="cittaConducente"
+							style="font-size: smaller;"> <small><wicket:message
+								key="RicercaVerbaleConducenteNonResidenteFormPanel.residenteCitta" /></small>
+						<label class="sr-only" for="cittaConducente"> <wicket:message
+								key="RicercaVerbaleConducenteNonResidenteFormPanel.residenteCitta" />
+						</label>
+					</div>
+
+					<div class="form-group col-md-2 mb-0">
+						<input class="form-control" id="capConducente" type="text"
+							placeholder="Cap" wicket:id="capConducente" maxlength="5"
+							oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+							style="font-size: smaller;"> <small><wicket:message
+								key="RicercaVerbaleConducenteNonResidenteFormPanel.cap" /></small> <label
+							class="sr-only" for="capConducente"> <wicket:message
+								key="RicercaVerbaleConducenteNonResidenteFormPanel.cap" />
+						</label>
+					</div>
+
+					<div class="form-group col-md-6 mb-0">
+						<input class="form-control" id="emailDichiarante" type="email"
+							placeholder="Inserisci Email" wicket:id="emailDichiarante"
+							style="font-size: smaller;"> <small><wicket:message
+								key="RicercaVerbaleConducenteNonResidenteFormPanel.inserisciEmailDichiarante" /></small>
+						<label class="sr-only" for="emailDichiarante"> <wicket:message
+								key="RicercaVerbaleConducenteNonResidenteFormPanel.inserisciEmailDichiarante" />
+						</label>
+					</div>
+
+					<div class="form-group col-md-6 mb-0">
+						<input class="form-control" id="categoriaPatente" type="text"
+							placeholder="Inserisci Categoria Patente"
+							wicket:id="categoriaPatente" style="font-size: smaller;">
+						<small><wicket:message
+								key="RicercaVerbaleConducenteNonResidenteFormPanel.inserisciCategoriaPatente" /></small>
+						<label class="sr-only" for="categoriaPatente"> <wicket:message
+								key="RicercaVerbaleConducenteNonResidenteFormPanel.inserisciCategoriaPatente" />
+						</label>
+					</div>
+
+					<div class="form-group col-md-6 mb-0">
+						<input class="form-control" id="numeroPatente" type="text"
+							placeholder="Inserisci Numero Patente" wicket:id="numeroPatente"
+							style="font-size: smaller;"> <small><wicket:message
+								key="RicercaVerbaleConducenteNonResidenteFormPanel.inserisciNumeroPatente" /></small>
+						<label class="sr-only" for="numeroPatente"> <wicket:message
+								key="RicercaVerbaleConducenteNonResidenteFormPanel.inserisciNumeroPatente" />
+						</label>
+					</div>
+
+					<div class="form-group col-md-6 mb-0">
+						<input class="form-control" id="patenteRilasciataDa" type="text"
+							placeholder="Inserisci Patente rilasciata da"
+							wicket:id="patenteRilasciataDa" style="font-size: smaller;">
+						<small><wicket:message
+								key="RicercaVerbaleConducenteNonResidenteFormPanel.inserisciPatenteRilasciataDa" /></small>
+						<label class="sr-only" for="patenteRilasciataDa"> <wicket:message
+								key="RicercaVerbaleConducenteNonResidenteFormPanel.inserisciPatenteRilasciataDa" />
+						</label>
+					</div>
+
+					<div class="form-group col-md-6 mb-0">
+						<div class="form-group">
+							<input class="form-control it-date-datepicker"
+								id="patenteRilasciataIl" type="date"
+								placeholder="Data in formato gg/mm/aaaa"
+								wicket:id="patenteRilasciataIl" style="font-size: smaller;">
+							<small><wicket:message
+									key="RicercaVerbaleConducenteNonResidenteFormPanel.inserisciPatenteRilasciataIl" /></small>
+							<label class="sr-only" for="patenteRilasciataIl"> <wicket:message
+									key="RicercaVerbaleConducenteNonResidenteFormPanel.inserisciPatenteRilasciataIl" />
+							</label>
+						</div>
+					</div>
+
+					<div class="form-group col-md-6 mb-0">
+						<div class="form-group">
+							<input class="form-control it-date-datepicker"
+								id="patenteValidaFinoAl" type="date"
+								placeholder="Data in formato gg/mm/aaaa"
+								wicket:id="patenteValidaFinoAl" style="font-size: smaller;">
+							<small><wicket:message
+									key="RicercaVerbaleConducenteNonResidenteFormPanel.inserisciPatenteValidaFinoAl" /></small>
+							<label class="sr-only" for="patenteValidaFinoAl"> <wicket:message
+									key="RicercaVerbaleConducenteNonResidenteFormPanel.inserisciPatenteValidaFinoAl" />
+							</label>
+						</div>
+					</div>
+
+					<div class="col-lg-12">
+						<form class="mb-3 col-md-12 mx-auto" wicket:id="formUpload"
+							enctype="multipart/form-data" onsubmit="returncheckForm(this);">
+							<small><wicket:message
+									key="RicercaVerbaleConducenteNonResidenteFormPanel.inserisciFilePatente" /></small>
+							<input type="file" name="uploadPatente" id="uploadPatente"
+								class="upload" wicket:id="uploadPatente" accept="image/*, .pdf" />
+							<label for="uploadPatente"> <svg class="icon icon-sm"
+									aria-hidden="true">
+			                        <use
+										xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-upload"></use>
+			                    </svg> <span>Upload patente</span>
+							</label>
+
+							<div class="col-lg-12" wicket:id="containerFileUpload">
+								<ul class="upload-file-list">
+									<li class="upload-file success" style="max-width: 100%;">
+										<svg class="icon icon-sm" aria-hidden="true">
+			                                <use
+												xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+			                            </svg>
+										<p>
+											<span class="sr-only">File caricato:</span> <span
+												wicket:id="nomeFile"></span><span class="upload-file-weight"
+												wicket:id="dimensioneFile"></span>
+										</p>
+										<button>
+											<svg class="icon" aria-hidden="true" style="fill: #d9364f;"
+												wicket:id="eliminaFile">
+			                                    <use
+													xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-close"></use>
+			                                    <title>Elimina file</title>
+			                                </svg>
+										</button>
+									</li>
+								</ul>
+							</div>
+						</form>
+					</div>
+
+					<div class="form-check col-md-12 mb-0">
+						<div class="toggles">
+							<label for="toggleDichiarazione"> <wicket:message
+									key="RicercaVerbaleConducenteNonResidenteFormPanel.dichiarazione" />
+								<input type="checkbox" id="toggleDichiarazione"
+								wicket:id="toggleDichiarazione"> <span class="lever"></span>
+							</label>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="alert alert-danger" role="alert" wicket:id="alertToggle">
+					<wicket:message
+						key="RicercaVerbaleConducenteNonResidenteFormPanel.alertToggle" />
+				</div>
+
+				<div class="alert alert-danger" role="alert" wicket:id="alertDate">
+					<wicket:message
+						key="RicercaVerbaleConducenteNonResidenteFormPanel.alertDate" />
+				</div>
+
+				<div class="alert alert-danger" role="alert"
+					wicket:id="alertPeriodoDate">
+					<wicket:message
+						key="RicercaVerbaleConducenteNonResidenteFormPanel.alertPeriodoDate" />
+				</div>
+
+				<div class="alert alert-danger" role="alert"
+					wicket:id="alertDataRilascioNelFuturo">
+					<wicket:message
+						key="RicercaVerbaleConducenteNonResidenteFormPanel.alertDataRilascioNelFuturo" />
+				</div>
+
+				<div class="alert alert-danger" role="alert"
+					wicket:id="alertDataVerbaleNelFuturo">
+					<wicket:message
+						key="RicercaVerbaleConducenteNonResidenteFormPanel.alertDataVerbaleNelFuturo" />
+				</div>
+
+				<div class="alert alert-danger" role="alert"
+					wicket:id="alertDataRilascioPrimaDiNascita">
+					<wicket:message
+						key="RicercaVerbaleConducenteNonResidenteFormPanel.alertDataRilascioPrimaDiNascita" />
+				</div>
+
+				<div class="alert alert-danger" role="alert"
+					wicket:id="alertEstensioneFile">
+					<wicket:message
+						key="RicercaVerbaleConducenteNonResidenteFormPanel.alertEstensioneFile" />
+				</div>
+
+				<div class="alert alert-danger" role="alert"
+					wicket:id="alertFileObbligatorio">
+					<wicket:message
+						key="RicercaVerbaleConducenteNonResidenteFormPanel.alertFileObbligatorio" />
+				</div>
+
+				<div class="alert alert-danger" role="alert"
+					wicket:id="alertCategoriaPatente">
+					<wicket:message
+						key="RicercaVerbaleConducenteNonResidenteFormPanel.alertCategoriaPatente" />
+				</div>
+
+				<div class="alert alert-danger" role="alert" wicket:id="alert150gg">
+					<wicket:message
+						key="RicercaVerbaleConducenteNonResidenteFormPanel.alert150gg" />
+				</div>
+				
+				<div class="alert alert-danger" role="alert" wicket:id="alertLunghezzaNomeFile">
+					<wicket:message key="RicercaVerbaleConducenteNonResidenteFormPanel.alertLunghezzaNomeFile" />
+				</div>
+
+				<div class="form-row mt-5 mb-0">
+					<div class="form-group col-md-12 mb-3 text-center">
+						<button type="submit" class="btn btn-primary">
+							<wicket:message
+								key="RicercaVerbaleConducenteNonResidenteFormPanel.prosegui" />
+						</button>
+						<button type="button" class="btn btn-secondary"
+							wicket:id="annulla">
+							<wicket:message
+								key="RicercaVerbaleConducenteNonResidenteFormPanel.annulla" />
+						</button>
+					</div>
+				</div>
+
+			</form>
+
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

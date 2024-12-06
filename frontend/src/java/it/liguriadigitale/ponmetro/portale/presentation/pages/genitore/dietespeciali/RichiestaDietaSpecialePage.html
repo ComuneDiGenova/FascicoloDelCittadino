@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title></title>
+</head>
+<body>
+	<wicket:extend>
+
+		<div wicket:id="breadcrumbPanel"></div>
+
+		<wicket:enclosure child="containerModaleDieta">
+			<div wicket:id="containerModaleDieta">
+				<div wicket:id="modaleDieteSpeciali"></div>
+			</div>
+		</wicket:enclosure>
+
+		<wicket:enclosure child="richiestaDietaSpecialeNewPanel">
+			<div class="col-12" wicket:id="richiestaDietaSpecialeNewPanel"></div>
+		</wicket:enclosure>
+
+		<wicket:child />
+
+	</wicket:extend>
+</body>
+</html>

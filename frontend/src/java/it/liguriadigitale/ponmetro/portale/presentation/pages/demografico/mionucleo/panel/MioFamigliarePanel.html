@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>
+		<wicket:enclosure child='nomeParente'>
+			<div class="card card-bg my-2">
+				<div class="card-body">
+					<div class="categoryicon-top row mb-4">
+						<i class="" wicket:id="icona"></i>
+
+						<h4 class="card-title text-start font-weight-bold col-9">
+							<span wicket:id="parentela"></span> <br />
+
+							<!--  
+							<wicket:enclosure child="sorgenteStatoCivile">
+								<div>
+									<span wicket:id="sorgenteStatoCivile"></span>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="sorgenteAutodichiarazione">
+								<div>
+									<span wicket:id="sorgenteAutodichiarazione"></span>
+								</div>
+							</wicket:enclosure>
+							-->
+
+						</h4>
+					</div>
+
+					<div class="container">
+						<div class="row mb-2">
+							<div class="col-4">
+								<p class="card-text text-start fw-bold">
+									<wicket:message key="MioFamigliarePanel.nome" />
+								</p>
+							</div>
+							<div class="col-8">
+								<p class="card-text text-start fw-bold">
+									<span class="text-capitalize" wicket:id="nomeParente"></span>
+								</p>
+							</div>
+						</div>
+						<div class="row mb-2">
+							<div class="col-4">
+								<p class="card-text text-start fw-bold"
+									wicket:id="labelNato"></p>
+							</div>
+							<div class="col-8">
+								<p class="card-text text-start">
+									<span class="text-capitalize" wicket:id="natoA"></span>
+								</p>
+							</div>
+						</div>
+						<div class="row mb-2">
+							<div class="col-4">
+								<p class="card-text text-start fw-bold">
+									<wicket:message key="MioFamigliarePanel.il" />
+								</p>
+							</div>
+							<div class="col-8">
+								<p class="card-text text-start">
+									<span wicket:id="natoIl"></span>
+								</p>
+							</div>
+						</div>
+						<div class="row mb-2">
+							<div class="col-4">
+								<p class="card-text text-start fw-bold">
+									<wicket:message key="MioFamigliarePanel.codiceFiscale" />
+								</p>
+							</div>
+							<div class="col-8">
+								<p class="card-text text-start">
+									<span wicket:id="cf"></span>
+								</p>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</wicket:enclosure>
+	</wicket:panel>
+</body>
+</html>

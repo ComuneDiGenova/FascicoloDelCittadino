@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>
+
+		<div class="col-sm-12 mt-2 mb-2">
+			<p class="text-start fw-bold mb-0">
+				<wicket:message key="RichiestaAgevolazionePanel.title" />
+			</p>
+		</div>
+
+		<div class="col-lg-12 mx-auto">
+			<div class="steppers">
+				<ul class="steppers-header">
+					<li class="confirmed"><span class="steppers-number"><span
+							class="sr-only">Step </span>1</span> <span class="steppers-status"><wicket:message
+								key="RichiestaAgevolazionePanel.step1"></wicket:message></span> <span
+						class="sr-only"><wicket:message
+								key="RichiestaAgevolazionePanel.step1"></wicket:message></span></li>
+					<li class="active no-line"><span class="steppers-number"><span
+							class="sr-only">Step </span>2</span> <span class="steppers-status"><wicket:message
+								key="RichiestaAgevolazionePanel.step2"></wicket:message></span> <span
+						class="sr-only"><wicket:message
+								key="RichiestaAgevolazionePanel.step2"></wicket:message></span></li>
+					<li><span class="steppers-number"><span class="sr-only">Step
+						</span>3</span> <span class="steppers-status"><wicket:message
+								key="RichiestaAgevolazionePanel.step3"></wicket:message></span> <span
+						class="sr-only"><wicket:message
+								key="RichiestaAgevolazionePanel.step3"></wicket:message></span></li>
+					<li class="steppers-index" aria-hidden="true"><span
+						class="confirmed">1</span> <span class="active">2</span> <span><wicket:message
+								key="RichiestaAgevolazionePanel.step3"></wicket:message></span></li>
+				</ul>
+			</div>
+		</div>
+
+		<form
+			class="needs-validation was-validated mb-5 col-11 mx-auto form-servizi-anagrafici"
+			wicket:id="form">
+
+			<div wicket:id="containerDatiForm">
+				<div class="form-row">
+					<div class="form-group flex-auto mb-1">
+						<p class="text-start fw-bold">
+							<wicket:message key="RichiestaAgevolazionePanel.per" />
+						</p>
+					</div>
+				</div>
+
+				<div class="col-sm-12 mt-2 mb-5">
+
+					<div class="row mb-0 d-flex justify-content-center">
+						<div class="col-10">
+							<p class="text-start">
+								<span class="fw-bold"><wicket:message
+										key="RichiestaAgevolazionePanel.nomeCognome" />:</span> <span
+									class="text-capitalize"><span
+									wicket:id="listaNomiIscritti"></span></span>
+							</p>
+						</div>
+					</div>
+
+					<div class="row mb-0 d-flex justify-content-center">
+						<div class="col-10">
+							<p class="text-start">
+								<span class="fw-bold mr-1"><wicket:message
+										key="RichiestaAgevolazionePanel.annoScolastico" />:</span> <span
+									class="text-capitalize" wicket:id="annoScolasticoSelezionato">2020</span>
+							</p>
+						</div>
+					</div>
+
+					<div class="row mb-0 d-flex justify-content-center">
+						<div class="col-md-6">
+							<p class="text-start">
+								<span class="fw-bold mr-1"> <label
+									wicket:id="numeroMinoriACaricoLabel"></label> <input
+									wicket:id="numeroMinoriACarico" type="number"
+									id="numeroMinoriACarico" class="form-control" required>
+								</span>
+
+							</p>
+						</div>
+
+						<div class="col-md-6"></div>
+					</div>
+
+				</div>
+
+				<div class="form-row mt-5 mb-2">
+					<div class="form-group flex-auto mb-1">
+						<p class="text-start fw-bold" wicket:id="dichiaroPuntoA"></p>
+					</div>
+				</div>
+
+				<div class="form-row mb-2">
+					<div class="select-wrapper text-start">
+						<select wicket:id="comboSiNoPuntoA"></select>
+					</div>
+				</div>
+
+				<div class="form-row mb-2" wicket:id="containerDisoccupati">
+
+					<div class="col-12" wicket:id="boxMembriNucleoCheAvevanoReddito">
+
+						<wicket:enclosure child="nomeMembroComboSiNo">
+							<div class="col-sm-4 mb-4">
+								<label wicket:id="nomeMembroComboSiNo"> </label>
+								<div class="select-wrapper text-start">
+									<select wicket:id="comboSiNoMembroNucleo"></select>
+								</div>
+							</div>
+						</wicket:enclosure>
+
+						<div wicket:id="wmkDataDisoccupazione" class="col-md-4 mb-0"
+							style="padding-top: 50px;">
+							<input id="dataDisoccupazioneMembroNucleo"
+								class="form-control it-date-datepicker" type="date"
+								placeholder="Data in formato gg/mm/aaaa"
+								wicket:id="dataDisoccupazioneMembroNucleo"
+								style="font-size: smaller;"> <small><wicket:message
+									key="RichiestaAgevolazionePanel.dataInizioDisoccupazione" /></small> <label
+								class="sr-only" wicket:id="labelData"> </label>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="alert alert-warning" role="alert">
+					<wicket:message
+						key="RichiestaAgevolazionePanel.messaggioAttenzione" />
+				</div>
+
+				<div class="form-row mt-5 mb-0">
+					<div class="form-group flex-auto mb-1">
+						<p class="text-start fw-bold m-0">
+							<wicket:message key="RichiestaAgevolazionePanel.recapiti" />
+						</p>
+					</div>
+				</div>
+
+				<div class="form-row mb-0">
+
+					<div class="row">
+						<div class="col-md-6 mb-0">
+							<wicket:enclosure child="emailContatto">
+
+								<input type="email" class="form-control" id="emailContatto"
+									wicket:id="emailContatto"
+									pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+									required>
+								<label class="sr-only" for="emailContatto"><wicket:message
+										key="RichiestaAgevolazionePanel.emailContatto" /></label>
+								<div class="invalid-feedback">
+									<wicket:message
+										key="RichiestaAgevolazionePanel.emailContattoFeedback" />
+								</div>
+
+							</wicket:enclosure>
+						</div>
+						<div class="col-md-6 mb-0">
+							<wicket:enclosure child="telefonoContatto">
+
+								<input type="text" class="form-control" id="telefonoContatto"
+									wicket:id="telefonoContatto" required>
+								<label class="sr-only" for="telefonoContatto"><wicket:message
+										key="RichiestaAgevolazionePanel.telefonoContatto" /></label>
+								<div class="invalid-feedback">
+									<wicket:message
+										key="RichiestaAgevolazionePanel.telefonoContattoFeedback" />
+								</div>
+
+							</wicket:enclosure>
+						</div>
+					</div>
+
+
+
+				</div>
+
+			</div>
+
+			<div class="form-row mt-5 mb-0">
+				<div class="form-group col-md-12 mb-3 text-center">
+					<button type="submit" class="btn btn-primary">
+						<wicket:message key="RichiestaAgevolazionePanel.invia" />
+					</button>
+					<button type="button" class="btn btn-secondary"
+						wicket:id="indietro">
+						<wicket:message key="RichiestaAgevolazionePanel.indietro" />
+					</button>
+					<button type="button" class="btn btn-secondary" wicket:id="annulla">
+						<wicket:message key="RichiestaAgevolazionePanel.annulla" />
+					</button>
+				</div>
+			</div>
+
+		</form>
+
+		<div class="form-row mt-5 mb-0">
+			<div class="form-group col-md-12 mb-3 text-center">
+				<button type="button" class="btn btn-secondary"
+					wicket:id="tornaIndietro">
+					<wicket:message key="RichiestaAgevolazionePanel.annulla" />
+				</button>
+			</div>
+		</div>
+
+
+		<div wicket:id="containerSitoInps">
+			<wicket:message key="RichiestaAgevolazionePanel.sitoInps" />
+		</div>
+
+		<div class="col-md-12 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+
+</body>
+</html>

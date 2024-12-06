@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<wicket:panel>
+	<!---Widget1-->
+	<div class="card-icon mt-4 mb-1">
+		<span class="icon-Studente color-orange"></span>
+		<span class="icon-Studessa color-orange"></span>
+	</div>
+	<div class="card-text mt-2 mb-4">
+		<div class="card-content">
+			<p wicket:id="listview">
+				<span class="font-weight-semibold" wicket:id="nome"></span>
+				<br>
+				<span wicket:id="presso"></span>
+				<span class="font-weight-semibold" wicket:id="scuola"></span>
+			</p>
+		<!--<div class="card-content">
+				<p>
+				   <a href="#" wicket:id="cfLink"><wicket:message key="IscrizioniWidget.verifica"/></a> 
+				</p>
+			</div>
+		-->
+		</div>
+	</div>
+</wicket:panel>		
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<body>
+	<wicket:extend>
+		<div wicket:id="breadcrumbPanel"></div>
+		<div wicket:id="stepPanel"></div>
+
+		<div class="row content my-4 richiesta-agevolazione">
+			<div class="col-md-12 text-left mb-4">
+
+				<div class="col-lg-12 mx-auto riepilogo">
+					<form class="needs-validation was-validated mb-3 col-lg-12 mx-auto"
+						wicket:id="form">
+						
+						<div wicket:id="inserimentoDomandaPanel"></div>
+						<div wicket:id="soggettiCoinvoltiPanel"></div>
+						<div wicket:id="ubicazioneParcheggioPanel"></div>
+						
+						<div wicket:id="dichiarazioniPermessiPersonalizzatiPanel"></div>
+						<div wicket:id="documentiAllegatiPermessiPersonalizzatiPanel"></div>
+						<div wicket:id="riepilogoPermessiPersonalizzatiPanel"></div>
+						<div wicket:id="finePermessiPersonalizzatiPanel"></div>
+						
+						<div class="form-group col-md-12 mb-3 text-center">
+							<div class="form-group col-md-12 mb-3 text-center">
+								<button wicket:id="indietro" type="button" class="btn btn-secondary">
+									<wicket:message
+										key="RichiestaPermessiPersonalizzatiPage.indietro" />
+								</button>
+								<button wicket:id="avanti" type="submit" class="btn btn-primary">
+									<wicket:message
+										key="RichiestaPermessiPersonalizzatiPage.avanti" />
+								</button>
+								
+								<button class="btn btn-primary" href="#" role="button"
+									wicket:id="annulla"> <wicket:message
+										key="RichiestaPermessiPersonalizzatiPage.annulla" />
+								</button>
+								<button class="btn btn-primary" href="#" role="button"
+									wicket:id="btnVaiAllaListaDeiPermessiPersonalizzati"> <wicket:message
+										key="RichiestaPermessiPersonalizzatiPage.btnVaiAllaListaDeiPermessiPersonalizzati" />
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="col-sm-12 mt-2 mb-2" wicket:id="messagePanel"></div>
+				<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+			</div>
+		</div>
+
+		<wicket:child />
+
+	</wicket:extend>
+</body>
+</html>

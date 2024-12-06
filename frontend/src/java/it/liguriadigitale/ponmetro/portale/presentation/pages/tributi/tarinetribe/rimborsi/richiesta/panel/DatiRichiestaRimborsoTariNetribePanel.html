@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+		
+		
+
+		<div class="col-12">
+
+			<div class="form-row col-md-12">
+				<div class="form-group col-md-6">
+					<div class="select-wrapper">
+						<label for="tipologiaRichiedenteRimborso">
+							<wicket:message key="DatiRichiestaRimborsoTariNetribePanel.tipologiaRichiedenteRimborso" />
+						</label><select autocomplete="off" id="tipologiaRichiedenteRimborso"
+							wicket:id="tipologiaRichiedenteRimborso"></select>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-row col-12">
+
+				<div class="row">
+					<div class="col-md-6">
+						<div wicket:id="nomeIntestatario"></div>
+					</div>
+					<div class="col-md-6">
+						<div wicket:id="cognomeIntestatario"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-row col-12">
+				<div class="row">
+					<div class="col-md-6">
+						<div wicket:id="codiceFiscaleIntestatario"></div>
+					</div>
+					<div class="col-md-6"></div>
+				</div>
+			</div>
+
+			<div class="form-row col-md-12 alert alert-info" style="margin-bottom: 30px;"
+				wicket:id="containerInfoIdAvviso">
+
+				<div class="form-row col-md-12">
+					<wicket:message key="DatiRichiestaRimborsoTariNetribePanel.infoIdDebNumeroDocumento" />
+				</div>
+
+				<div class="form-row col-md-12">
+					<wicket:message
+						key="DatiRichiestaRimborsoTariNetribePanel.infoIdDebNumeroDocumentoEsempioNetribe" />
+
+
+					<a style="text-decoration: underline" class="focus-visible-none" href="#" role="button" wicket:id="btnDownloadEsempioNetribe">
+						<wicket:message key="DatiRichiestaRimborsoTariNetribePanel.btnDownloadEsempioNetribe" />
+					</a>
+
+					<wicket:message
+						key="DatiRichiestaRimborsoTariNetribePanel.infoIdDebNumeroDocumentoEsempio2Netribe" />
+				</div>
+
+				<div class="form-row col-md-12">
+					<wicket:message key="DatiRichiestaRimborsoTariNetribePanel.infoIdDebNumeroDocumento2" />
+				</div>
+
+				<div class="form-row col-md-12">
+					<wicket:message key="DatiRichiestaRimborsoTariNetribePanel.infoIdDebNumeroDocumentoEsempioEng" />
+
+
+					<a style="text-decoration: underline" class="focus-visible-none" href="#" role="button" wicket:id="btnDownloadEsempioEng">
+						<wicket:message key="DatiRichiestaRimborsoTariNetribePanel.btnDownloadEsempioEng" />
+					</a>
+
+					<wicket:message key="DatiRichiestaRimborsoTariNetribePanel.infoIdDebNumeroDocumentoEsempio2Eng" />
+				</div>
+
+			</div>
+
+			<div class="form-row col-12">
+				<div class="row">
+					<div class="col-md-6">
+						<div wicket:id="idAvvisoBolletta"></div>
+					</div>
+					<div class="col-md-6">
+						<div wicket:id="importoRimborso"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-row col-12">
+				<div class="row" wicket:id="listaSaldi">
+
+					<div class="col-md-6">
+						<div wicket:id="importo"></div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="form-row col-12">
+				<div class="row">
+					<div class="col-md-6">
+						<div wicket:id="note"></div>
+					</div>
+					<div class="col-md-6"></div>
+				</div>
+			</div>
+
+		</div>
+
+	</wicket:panel>
+</body>
+
+</html>

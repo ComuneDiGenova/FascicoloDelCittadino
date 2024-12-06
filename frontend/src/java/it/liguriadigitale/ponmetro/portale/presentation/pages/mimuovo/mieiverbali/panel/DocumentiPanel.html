@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <wicket:panel>
+
+        <hr>
+
+        <h3 class="text-left font-weight-semibold col-9" wicket:id="titoloDocumenti"></h3>
+
+        <div class="row content my-4 info-traffico">
+
+            <div class="col-lg-6 mb-4" wicket:id="box">
+                <div class="card-wrapper">
+                    <div class="card card-bg my-2">
+                        <div class="card-body">
+
+                            <wicket:enclosure child="descrizione">
+                                <div class="row py-1 mb-2">
+                                    <div class="col-6">
+                                        <p class="card-text text-left font-weight-semibold">
+                                            <wicket:message key="DocumentiPanel.descrizione" /> :
+                                        </p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="card-text text-left d-table h-100" wicket:id="descrizione">
+                                            <span class="d-table-cell text-capitalize align-middle"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </wicket:enclosure>
+                             
+                            <wicket:enclosure child="tipo">
+                                <div class="row py-1 mb-2">
+                                    <div class="col-6">
+                                        <p class="card-text text-left font-weight-semibold">
+                                            <wicket:message key="DocumentiPanel.tipo" /> :
+                                        </p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="card-text text-left d-table h-100" wicket:id="tipo">
+                                            <span class="d-table-cell text-capitalize align-middle"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </wicket:enclosure>
+                            
+                            <wicket:enclosure child="dataPresentazione">
+                                <div class="row py-1 mb-2">
+                                    <div class="col-6">
+                                        <p class="card-text text-left font-weight-semibold">
+                                            <wicket:message key="DocumentiPanel.dataPresentazione" /> :
+                                        </p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="card-text text-left d-table h-100" wicket:id="dataPresentazione">
+                                            <span class="d-table-cell text-capitalize align-middle"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </wicket:enclosure>
+                            
+                            <wicket:enclosure child="dataProroga">
+                                <div class="row py-1 mb-2">
+                                    <div class="col-6">
+                                        <p class="card-text text-left font-weight-semibold">
+                                            <wicket:message key="DocumentiPanel.dataProroga" /> :
+                                        </p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="card-text text-left d-table h-100" wicket:id="dataProroga">
+                                            <span class="d-table-cell text-capitalize align-middle"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </wicket:enclosure>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+    </wicket:panel>
+</body>
+
+</html>

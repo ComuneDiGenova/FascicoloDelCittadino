@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:extend>
+
+		<div class="col-12" wicket:id="titolo"></div>
+
+		<div class="form-row col-12">
+			<div class="col-md-6">
+				<div wicket:id="nome"></div>
+			</div>
+			
+			<div class="col-md-6">
+				<div wicket:id="cognome"></div>
+			</div>
+		</div>
+
+		<div class="form-row col-12">
+			<div class="col-md-12">
+				<div wicket:id="motivo"></div>
+			</div>
+		</div>
+
+		<div class="form-group col-md-12 mb-3 text-center">
+			<div class="form-group col-md-12 mb-3 text-center">
+
+				<button type="submit" class="btn btn-primary" wicket:id="avanti">
+					<wicket:message key="CancellaComponenteAllerteRossePanel.avanti" />
+				</button>
+
+				<a class="btn btn-secondary" href="#" role="button"
+					wicket:id="annulla"> <wicket:message
+						key="CancellaComponenteAllerteRossePanel.annulla" />
+				</a>
+
+			</div>
+		</div>
+
+		<div class="form-row col-12" wicket:id="containerSeiSicuro">
+
+			<div class="col-12" wicket:id="seiSicuro"></div>
+
+			<button type="submit" class="btn btn-success" wicket:id="conferma">
+				<wicket:message key="CancellaComponenteAllerteRossePanel.conferma" />
+			</button>
+		</div>
+
+	</wicket:extend>
+</body>
+
+</html>

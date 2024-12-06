@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="row content my-4 info-traffico">
+
+			<div class="col-md-12 text-left mb-4">
+
+				<div wicket:id="icona">
+					<img wicket:id="image" alt="logo Sebina"
+						style="display: block; margin-left: auto; margin-right: auto;">
+				</div>
+
+				<br>
+
+				<div class="col-12 alert alert-warning" role="alert">
+					<wicket:message key="BibliotecheIscrizioneNonResidentiPanel.testo" />
+				</div>
+
+			</div>
+
+			<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+		</div>
+
+	</wicket:panel>
+</body>
+
+</html>

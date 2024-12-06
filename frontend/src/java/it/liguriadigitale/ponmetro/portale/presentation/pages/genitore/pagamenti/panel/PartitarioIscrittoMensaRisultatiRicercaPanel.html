@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+    <head>
+        <meta charset="ISO-8859-1" />
+        <title>Insert title here</title>
+    </head>
+    <body>
+        <wicket:panel>
+            <div class="col-sm-12 mt-2 mb-2">
+                <h3 class="text-start fw-bold mb-0">
+                    <wicket:message key="PartitarioIscrittoMensaRisultatiRicercaPanel.title" />
+                </h3>
+            </div>
+            
+            <!-- FDCOMGE-61 -->
+            <!--  <div class="col-sm-12 mt-2 mb-2">
+            	<div class="alert alert-warning fw-bold" role="alert" wicket:id="containerNonImpegnato">
+					<wicket:message key="PartitarioIscrittoMensaRisultatiRicercaPanel.nonImpegnato"/>
+				</div>
+            </div>-->
+
+            <div class="row col-sm-12 mt-2 mb-2" wicket:id="containerDati">
+                <wicket:enclosure child="nomeBambino">
+                	<div class="row">
+	                    <div class="col-4">
+	                        <p class="card-text text-start fw-bold"><wicket:message key="PartitarioIscrittoMensaRisultatiRicercaPanel.nomeBambino" />:</p>
+	                    </div>
+	                    <div class="col-8">
+	                        <p class="card-text text-start d-table h-100"><span class="d-table-cell text-capitalize align-middle" wicket:id="nomeBambino"></span></p>
+	                    </div>
+                    </div>
+                </wicket:enclosure>
+
+                <wicket:enclosure child="nomeImpegnato">
+                	<div class="row">
+	                    <div class="col-4">
+	                        <p class="card-text text-start fw-bold"><wicket:message key="PartitarioIscrittoMensaRisultatiRicercaPanel.nomeImpegnato" />:</p>
+	                    </div>
+	                    <div class="col-8">
+	                        <p class="card-text text-start d-table h-100"><span class="d-table-cell text-capitalize align-middle" wicket:id="nomeImpegnato"></span></p>
+	                    </div>
+                   	</div>
+                    
+                </wicket:enclosure>
+            </div>
+
+            <div class="col-12 mt-4" wicket:id="tabsPanel"></div>
+            
+ 			<div class="col-sm-12 mt-2 mb-2">
+				<span wicket:id="listaTabsPartitarioVuota"></span>
+			 </div>
+            
+        </wicket:panel>
+    </body>
+</html>

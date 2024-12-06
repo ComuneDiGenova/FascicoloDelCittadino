@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<wicket:head>
+	<style>
+div.link-list>input[type=radio] {
+	margin-right: 0.3em;
+}
+</style>
+</wicket:head>
+</head>
+<body>
+	<wicket:panel>
+		<div class="row">
+			<div
+				class="col-md-12 col-lg-12 col-sm-12 col-xl-12 d-flex justify-content-center">
+				<h3 class="fw-bold text-uppercase">
+					<wicket:message key="DatiVersamentiPanel.chiede"></wicket:message>
+				</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div
+				class="col-md-12 col-lg-12 col-sm-12 col-xl-12 d-flex justify-content-center">
+				<label> <wicket:message
+						key="DatiVersamentiPanel.sottotitolo"></wicket:message>
+				</label>
+			</div>
+		</div>
+
+		<div class="row mb-4">
+			<div class="col-4">
+				<wicket:enclosure child="btnAggiungi">
+					<button type="button" class="btn btn-primary"
+						wicket:id="btnAggiungi">
+						<wicket:message key="DatiVersamentiPanel.aggiungi" />
+					</button>
+				</wicket:enclosure>
+			</div>
+		</div>
+		<div class="row form-card-speciali p-2"
+			wicket:id="containerVersamento">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12 mt-1 p-2">
+				<form wicket:id="insertVersamento">
+					<div class="form-row col-12">
+						<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+							<div class="select-wrapper form-group">
+								<label> <wicket:message
+										key="DatiVersamentiPanel.annolabel" />
+								</label> <select wicket:id="anno"></select>
+							</div>
+						</div>
+					</div>
+					<!-- <div class="row">
+						<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+							<div class="select-wrapper form-group">
+								<label for="tipoQuota">Quota</label> <select
+									wicket:id="tipoQuota" id="tipoQuota"></select>
+							</div>
+						</div>
+					</div>-->
+					<div class="form-row col-12">
+						<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+							<div class="form-group">
+								<label class="active" for="quotaComune"><wicket:message
+										key="DatiVersamentiPanel.quotaComune"></wicket:message></label> <input
+									type="number" step="any" wicket:id="quotaComune"
+									id="quotaComune" class="form-control" />
+							</div>
+						</div>
+					</div>
+					<div class="form-row col-12">
+						<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+							<div class="form-group">
+								<label class="active" for="quotaStato"><wicket:message
+										key="DatiVersamentiPanel.quotaStato"></wicket:message></label> <input
+									type="number" step="any" wicket:id="quotaStato" id="quotaStato"
+									class="form-control" />
+							</div>
+						</div>
+					</div>
+					<!-- <div class="row">
+						<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+							<div class="form-group">
+								<label for="totale" class="active"><wicket:message
+										key="DatiVersamentiPanel.totale"></wicket:message></label> <input
+									type="number" step="any" wicket:id="totale" id="totale"
+									class="form-control" required />
+							</div>
+						</div>
+					</div> -->
+					<div class="row">
+						<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+							<label for="motivazione" class="fw-bold"> <wicket:message
+									key="DatiVersamentiPanel.motivazione"></wicket:message>
+							</label> <span wicket:id="motivazione" id="motivazione"></span>
+						</div>
+					</div>
+					<div class="row mb-1" wicket:id="containerAltro">
+						<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+							<label for="altro" class="fw-bold"> <wicket:message
+									key="DatiVersamentiPanel.altro"></wicket:message>
+							</label><input type="text" wicket:id="altro" class="form-control"
+								id="altro" />
+						</div>
+					</div>
+					<div class="row">
+						<div
+							class="col-md-12 col-lg-12 col-sm-12 col-xl-12 d-flex justify-content-end">
+							<button type="submit" class="btn btn-primary"
+								style="min-width: 100px">
+								<wicket:message key="DatiVersamentiPanel.salva" />
+							</button>
+							&nbsp;
+							<wicket:enclosure child="btnAnnulla">
+								<button type="submit" class="btn btn-danger"
+									style="min-width: 100px" wicket:id="btnAnnulla">
+									<wicket:message key="DatiVersamentiPanel.annulla" />
+								</button>
+							</wicket:enclosure>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12 mt-2 mb-2">
+				<div class="alert alert-warning" role="alert" wicket:id="listaVuota"></div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6 col-lg-6 col-sm-6 col-xl-6 mb-2"
+				wicket:id="listaVersamenti">
+				<div class="card-wrapper">
+					<div class="card card-bg my-auto mb-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="" wicket:id="icona"></i>
+							</div>
+
+							<div wicket:id="annoV"></div>
+							<div wicket:id="quotaComuneV"></div>
+							<div wicket:id="quotaStatoV"></div>
+							<div wicket:id="totaleImportoV"></div>
+							<div wicket:id="motivazioneV"></div>
+							<div wicket:id="altroV"></div>
+
+							<div class="row py-1 mb-2">
+								<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+									<wicket:enclosure child="btnEliminaVersamento">
+										<button type="submit" class="btn btn-danger"
+											wicket:id="btnEliminaVersamento">
+											<wicket:message key="DatiVersamentiPanel.elimina" />
+										</button>
+									</wicket:enclosure>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+				<div class="mt-1" wicket:id="pagination"></div>
+			</div>
+		</div>
+	</wicket:panel>
+</body>
+</html>

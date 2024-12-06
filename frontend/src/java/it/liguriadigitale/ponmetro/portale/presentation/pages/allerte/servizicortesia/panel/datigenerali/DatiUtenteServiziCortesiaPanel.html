@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:extend>
+		<fieldset>
+			<legend id="form-title" class="mb-3">
+				<strong>
+					<span wicket:id="titolo"></span>
+				</strong>
+			</legend>
+
+
+
+
+			<div wicket:id="iscritto">
+
+
+				<div class="row mb-4">
+					<div class="col">
+						<a wicket:id="btnVModificaUtente" class="btn btn-primary" href="#" role="button">
+							<wicket:message key="ServiziCortesiaPanel.btnModificaUtente" />
+						</a>
+					</div>
+				</div>
+
+
+				<div class="row mb-2">
+					<div class="col">
+						<i class="color-fc-secondary col-3 icon-servizi-allerta"></i>
+
+						<div wicket:id="titoloIscritto"></div>
+					</div>
+				</div>
+
+				<div wicket:id="cognome"></div>
+
+				<div wicket:id="nome"></div>
+
+				<div wicket:id="email"></div>
+
+				<div wicket:id="emailVerificata"></div>
+
+				<wicket:enclosure child="btnVerificaEmail">
+					<div class="form-row col-12">
+						<a class="btn btn-primary focus-visible-none" href="#" role="button" wicket:id="btnVerificaEmail">
+							<wicket:message key="ServiziCortesiaPanel.btnVerificaEmail" />
+						</a>
+					</div>
+				</wicket:enclosure>
+				<wicket:enclosure child="btnCambiaEmail">
+					<div class="form-row col-12">
+						<a class="btn btn-primary focus-visible-none" href="#" role="button" wicket:id="btnCambiaEmail">
+							<wicket:message key="ServiziCortesiaPanel.btnCambiaEmail" />
+						</a>
+					</div>
+				</wicket:enclosure>
+
+				<div wicket:id="nazione"></div>
+
+				<div wicket:id="provincia"></div>
+
+				<div wicket:id="comune"></div>
+
+				<div wicket:id="cap"></div>
+
+				<div wicket:id="indirizzo"></div>
+
+				<div wicket:id="telefonoFisso"></div>
+
+				<div wicket:id="telefonoCellulare"></div>
+
+				<div wicket:id="telefonoCellulareVerificato"></div>
+
+				<wicket:enclosure child="btnVerificaCellulare">
+					<div class="form-row col-12 mb-3">
+						<a class="btn btn-primary focus-visible-none" href="#" role="button" wicket:id="btnVerificaCellulare">
+							<wicket:message key="ServiziCortesiaPanel.btnVerificaCellulare" />
+						</a>
+					</div>
+				</wicket:enclosure>
+
+				<wicket:enclosure child="btnCambiaCellulare">
+					<div class="form-row col-12">
+						<a class="btn btn-primary focus-visible-none" href="#" role="button" wicket:id="btnCambiaCellulare">
+							<wicket:message key="ServiziCortesiaPanel.btnCambiaCellulare" />
+						</a>
+					</div>
+				</wicket:enclosure>
+
+				<div wicket:id="verificaAnagrafica"></div>
+
+				<div wicket:id="flagInserimentoEventi"></div>
+
+				<div wicket:id="flagImportazioneEventi"></div>
+
+				<div wicket:id="flagImmediato"></div>
+
+				<div wicket:id="emailSpid"></div>
+
+				<div wicket:id="dataAggiornamento"></div>
+
+
+				<div wicket:id="listaServiziCortesia">
+					<div id="collapseDiv1-sc1" class="collapse-div collapse-background-active"
+						wicket:id="servizioCortesiaPanel"></div>
+				</div>
+
+
+			</div>
+			<button type="submit"  style="display: none;" ></button>
+		</fieldset>
+
+	</wicket:extend>
+</body>
+
+</html>

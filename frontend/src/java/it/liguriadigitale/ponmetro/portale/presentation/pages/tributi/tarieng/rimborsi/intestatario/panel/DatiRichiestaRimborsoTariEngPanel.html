@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="col-12" wicket:id="titolo"></div>
+
+		<div class="form-row col-12 alert alert-warning" wicket:id="containerRimborsoGiaChiesto">
+			<wicket:message
+				key="DatiRichiestaRimborsoTariEngPanel.messaggioRimborsoGiaChiesto" />
+		</div>
+
+		<div class="col-12" wicket:id="containerRimborsoDaChiedere">
+
+			<div class="form-row col-12">
+				
+				<div class="row">
+					<div class="col-md-6">
+						<div wicket:id="nome"></div>
+					</div>
+					<div class="col-md-6">
+						<div wicket:id="cognome"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-row col-12">
+				<div class="row">
+					<div class="col-md-6">
+						<div wicket:id="codiceFiscale"></div>
+					</div>
+					<div class="col-md-6">
+						<div wicket:id="email"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-row col-12">
+				<div class="row">
+					<div class="col-md-6">
+						<div wicket:id="idDeb"></div>
+					</div>
+				</div>
+				<!--  <div class="col-md-6">
+				<div wicket:id="numeroDocumento"></div>
+			</div>-->
+				<div class="col-md-6"></div>
+			</div>
+
+			<div class="form-row col-12">
+				<div class="col-md-12">
+					<div wicket:id="note"></div>
+				</div>
+			</div>
+
+			<div class="form-row col-12">
+				<div class="col-md-12">
+					<div wicket:id="sommaEccedenze"></div>
+				</div>
+			</div>
+
+			<div class="form-row col-12 alert alert-info"
+				style="margin-bottom: 30px;">
+				<wicket:message
+					key="DatiRichiestaRimborsoTariEngPanel.infoEccedenze" />
+			</div>
+
+			<div class="form-row col-12">
+				<div class="row">
+					<div class="col-md-6">
+						<div wicket:id="eccTari"></div>
+					</div>
+	
+					<div class="col-md-6">
+						<div wicket:id="infoEccTari"></div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-6">
+						<div wicket:id="eccTefa"></div>
+					</div>
+	
+					<div class="col-md-6">
+						<div wicket:id="infoEccTefa"></div>
+					</div>
+				</div>
+		
+				<div class="row">
+					<div class="col-md-6">
+						<div wicket:id="eccTariR"></div>
+					</div>
+					<div class="col-md-6">
+						<div wicket:id="infoEccTariR"></div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</wicket:panel>
+</body>
+
+</html>

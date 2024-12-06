@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+    <head>
+        <meta charset="ISO-8859-1" />
+        <title></title>
+    </head>
+    <body>
+        <wicket:panel>
+            <div class="tabbable">
+                <ul class="nav nav-tabs nav-tabs-cards" wicket:id="tabs-container">
+                    <li wicket:id="tabs" class="nav-item p-0" style="margin-right: 2px; margin-left: 2px;">
+                        <a data-toggle="tab" href="#" wicket:id="link" class="nav-link"><span wicket:id="title"></span></a>
+                    </li>
+                </ul>
+                <div class="tab-content" wicket:id="panel"></div>
+            </div>
+        </wicket:panel>
+    </body>
+</html>

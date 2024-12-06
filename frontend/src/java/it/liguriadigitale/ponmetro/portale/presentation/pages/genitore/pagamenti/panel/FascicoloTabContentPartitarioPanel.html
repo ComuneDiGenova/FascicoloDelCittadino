@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1" />
+<title></title>
+</head>
+<body>
+	<wicket:panel>
+		<div>
+			<h2 wicket:id="listaPartitarioVuota"></h2>
+		</div>
+
+		<div class="divMensaTable" wicket:id="tabellaPartitario">
+			<div class="divHead">
+				<div class="divMensaTh">
+					<wicket:message key="FascicoloTabContentPartitarioPanel.labelAnno" />
+				</div>
+				<div class="divMensaTh">
+					<wicket:message
+						key="FascicoloTabContentPartitarioPanel.labelPeriodo" />
+				</div>
+				<div class="divMensaTh">
+					<wicket:message
+						key="FascicoloTabContentPartitarioPanel.labelDescrizione" />
+				</div>
+				<div class="divMensaTh">
+					<wicket:message
+						key="FascicoloTabContentPartitarioPanel.labelDataOperazione" />
+				</div>
+				<div class="divMensaTh">
+					<wicket:message
+						key="FascicoloTabContentPartitarioPanel.labelCredito" />
+				</div>
+				<div class="divMensaTh">
+					<wicket:message
+						key="FascicoloTabContentPartitarioPanel.labelDebito" />
+				</div>
+			</div>
+
+			<div class="divBody" wicket:id="listaPartitario">
+				<div class="divMensaTd" wicket:id="valoreAnno"></div>
+				<div class="divMensaTd" wicket:id="valorePeriodo"></div>
+				<div class="divMensaTd" wicket:id="valoreDescrizione"></div>
+				<div class="divMensaTd" wicket:id="valoreDataOperazione"></div>
+				<div class="divMensaTd" wicket:id="valoreCredito"></div>
+				<div class="divMensaTd" wicket:id="valoreDebito"></div>
+			</div>
+		</div>
+
+		<wicket:enclosure child="btnVaiPagamenti">
+			<div class="col-sm-6 mt-2 mb-2">
+				<button class="btn btn-outline-primary">
+					<span wicket:id="btnVaiPagamenti"></span>
+				</button>
+			</div>
+		</wicket:enclosure>
+
+
+	</wicket:panel>
+</body>
+</html>

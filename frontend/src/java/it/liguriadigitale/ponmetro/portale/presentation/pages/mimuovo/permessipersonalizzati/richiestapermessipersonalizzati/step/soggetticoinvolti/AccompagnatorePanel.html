@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>
+
+		<div class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici">
+
+			<h4 class="col-12">Dati accompagnatore</h4>
+
+			<div class="col-12" wicket:id="wmkFaParteDelNucleoFamigliare">
+				<div class="toggles">
+					<label for="faParteDelNucleoFamigliare"> <wicket:message
+							key="AccompagnatorePanel.faParteDelNucleoFamigliare" /> <input
+						type="checkbox" id="faParteDelNucleoFamigliare"
+						wicket:id="faParteDelNucleoFamigliare"> <span
+						class="lever"></span>
+					</label>
+					
+				</div>
+				<br>
+			</div>
+			<div class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici"
+				wicket:id="wmkRicercaAcccompagnatorePerCodiceFiscalePatente">
+				<div class="row">
+
+					<h4 class="col-12">Ricerca accompagnatore per codice fiscale e
+						carta di identit&agrave;</h4>
+
+					<div class="col-5">
+						<input class="form-control" id="codiceFiscalePerRicercaAccompagnatore" type="text" placeholder=""
+							wicket:id="codiceFiscalePerRicercaAccompagnatore" required> <small><wicket:message
+								key="AccompagnatorePanel.codiceFiscalePerRicercaAccompagnatore" /></small>
+						<label class="sr-only" for="codiceFiscalePerRicercaAccompagnatore"> <wicket:message
+								key="AccompagnatorePanel.codiceFiscalePerRicercaAccompagnatore" />
+						</label>
+					</div>
+					<div class="col-2">
+						<button wicket:id="cercaPerCodiceFiscale" type="submit"
+							class="btn btn-primary">
+							<wicket:message key="RichiestaPermessiPersonalizzatiPage.avanti" />
+						</button>
+					</div>
+				</div>
+			</div>
+			<wicket:enclosure child="comboComponentiNucleoFamigliare">
+				<!--<div class="col-12" style="padding-top: 10px;">
+					<label> <wicket:message
+							key="AccompagnatorePanel.comboComponentiNucleoFamigliare" /> <select
+						 wicket:id="comboComponentiNucleoFamigliare"></select>
+					</label>
+				</div>-->
+				<div class="col-sm-6 mb-6 select-wrapper">
+					<label for="componenteNucleoFamigliare">
+						<wicket:message
+							key="AccompagnatorePanel.comboComponentiNucleoFamigliare" /> 
+					</label>
+					<select wicket:id="comboComponentiNucleoFamigliare"></select>
+				</div>
+			</wicket:enclosure>
+
+			<div wicket:id="wmkDatiAccompagnatore">
+				<div class="row">
+					<div class="col-6">
+						<input class="form-control" id="codiceFiscaleAccompagnatore" type="text" placeholder=""
+							wicket:id="codiceFiscaleAccompagnatore"> <small><wicket:message
+								key="AccompagnatorePanel.codiceFiscaleAccompagnatore" /></small> <label
+							class="sr-only" for="codiceFiscaleAccompagnatore"> <wicket:message
+								key="AccompagnatorePanel.codiceFiscaleAccompagnatore" />
+						</label>
+					</div>
+					<div class="col-6">
+						<input class="form-control" id="cognomeAccompagnatore" type="text" placeholder=""
+							wicket:id="cognomeAccompagnatore"> <small><wicket:message
+								key="AccompagnatorePanel.cognomeAccompagnatore" /></small> <label
+							class="sr-only" for="cognomeAccompagnatore"> <wicket:message
+								key="AccompagnatorePanel.cognomeAccompagnatore" />
+						</label>
+					</div>
+					<div class="col-6">
+						<input class="form-control" id="nomeAccompagnatore" type="text" placeholder=""
+							wicket:id="nomeAccompagnatore"> <small><wicket:message
+								key="AccompagnatorePanel.nomeAccompagnatore" /></small> <label
+							class="sr-only" for="nomeAccompagnatore"> <wicket:message
+								key="AccompagnatorePanel.nomeAccompagnatore" />
+						</label>
+					</div>
+					<div class="col-6">
+
+						<input class="form-control it-date-datepicker"
+							id="dataNascitaAccompagnatore" type="date"
+							placeholder="Data in formato gg/mm/aaaa"
+							wicket:id="dataNascitaAccompagnatore" style="font-size: smaller;">
+						<small><wicket:message
+								key="AccompagnatorePanel.dataNascitaAccompagnatore" /></small> <label
+							class="sr-only" for="dataNascitaAccompagnatore"> <wicket:message
+								key="AccompagnatorePanel.dataNascitaAccompagnatore" />
+						</label>
+
+					</div>
+					<div class="col-6">
+						<input class="form-control" id="luogoNascitaAccompagnatore" type="text" placeholder=""
+							wicket:id="luogoNascitaAccompagnatore"> <small><wicket:message
+								key="AccompagnatorePanel.luogoNascitaAccompagnatore" /></small> <label
+							class="sr-only" for="luogoNascitaAccompagnatore"> <wicket:message
+								key="AccompagnatorePanel.luogoNascitaAccompagnatore" />
+						</label>
+					</div>
+					<div class="col-6">
+						<input class="form-control" id="provinciaNascitaAccompagnatore" type="text" placeholder=""
+							wicket:id="provinciaNascitaAccompagnatore"> <small><wicket:message
+								key="AccompagnatorePanel.provinciaNascitaAccompagnatore" /></small> <label
+							class="sr-only" for="provinciaNascitaAccompagnatore"> <wicket:message
+								key="AccompagnatorePanel.provinciaNascitaAccompagnatore" />
+						</label>
+					</div>
+				</div>
+				<div wicket:id="wmkResidenza" class="row">
+					<h4 class="col-12">Residenza</h4>
+					<div class="col-6">
+						<input class="form-control" id="indirizzoResidenzaAccompagnatore" type="text" placeholder=""
+							wicket:id="indirizzoResidenzaAccompagnatore"> <small><wicket:message
+								key="AccompagnatorePanel.indirizzoResidenzaAccompagnatore" /></small> <label
+							class="sr-only" for="indirizzoResidenzaAccompagnatore"> <wicket:message
+								key="AccompagnatorePanel.indirizzoResidenzaAccompagnatore" />
+						</label>
+					</div>
+					<div class="col-6">
+						<input class="form-control" id="capResidenzaAccompagnatore" type="text" placeholder=""
+							wicket:id="capResidenzaAccompagnatore"> <small><wicket:message
+								key="AccompagnatorePanel.capResidenzaAccompagnatore" /></small> <label
+							class="sr-only" for="capResidenzaAccompagnatore"> <wicket:message
+								key="AccompagnatorePanel.capResidenzaAccompagnatore" />
+						</label>
+					</div>
+					<div class="col-6">
+						<input class="form-control" id="cittaResidenzaAccompagnatore" type="text" placeholder=""
+							wicket:id="cittaResidenzaAccompagnatore"> <small><wicket:message
+								key="AccompagnatorePanel.cittaResidenzaAccompagnatore" /></small> <label
+							class="sr-only" for="cittaResidenzaAccompagnatore"> <wicket:message
+								key="AccompagnatorePanel.cittaResidenzaAccompagnatore" />
+						</label>
+					</div>
+					<div class="col-6">
+						<input class="form-control" id="provinciaResidenzaAccompagnatore" type="text" placeholder=""
+							wicket:id="provinciaResidenzaAccompagnatore"> <small><wicket:message
+								key="AccompagnatorePanel.provinciaResidenzaAccompagnatore" /></small> <label
+							class="sr-only" for="provinciaResidenzaAccompagnatore"> <wicket:message
+								key="AccompagnatorePanel.provinciaResidenzaAccompagnatore" />
+						</label>
+					</div>
+				</div>
+				<div class="row">
+					<p class="col-12">Contatti</p>
+
+
+					<div class="form-group col-md-6 mb-0">
+						<input class="form-control" id="cellulareAccompagnatore"
+							type="text"
+							oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+							placeholder="" wicket:id="cellulareAccompagnatore"
+							style="font-size: smaller;"> <small><wicket:message
+								key="AccompagnatorePanel.cellulareAccompagnatore" /></small> <label
+							class="sr-only" for="telefono"> <wicket:message
+								key="AccompagnatorePanel.cellulareAccompagnatore" />
+						</label>
+					</div>
+
+					<div class="form-group col-md-6 mb-0">
+						<input class="form-control" id="telefonoAccompagnatore"
+							type="text"
+							oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+							placeholder="" wicket:id="telefonoAccompagnatore"
+							style="font-size: smaller;"> <small><wicket:message
+								key="AccompagnatorePanel.telefonoAccompagnatore" /></small> <label
+							class="sr-only" for="telefono"> <wicket:message
+								key="AccompagnatorePanel.telefonoAccompagnatore" />
+						</label>
+					</div>
+
+					
+
+
+					<div class="form-group col-md-6 mb-0">
+						<input class="form-control" id="emailAccompagnatore" type="email"
+							placeholder="" wicket:id="emailAccompagnatore"
+							style="font-size: smaller;"
+							pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+							> <small><wicket:message
+								key="AccompagnatorePanel.emailAccompagnatore" /></small> <label
+							class="sr-only" for="emailRichiedente"> <wicket:message
+								key="AccompagnatorePanel.emailAccompagnatore" />
+						</label>
+					</div>
+
+					<div class="form-group col-md-6 mb-0">
+						<input class="form-control" id="pecAccompagnatore" type="email"
+							placeholder="" wicket:id="pecAccompagnatore"
+							pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+							style="font-size: smaller;"> <small><wicket:message
+								key="AccompagnatorePanel.pecAccompagnatore" /></small> <label
+							class="sr-only" for="pec"> <wicket:message
+								key="AccompagnatorePanel.pecAccompagnatore" />
+						</label>
+					</div>
+
+					<h4 class="col-12">Patente</h4>
+					<div class="col-6">
+					
+						<select  wicket:id="tipoPatenteAccompagnatore"></select> 
+						<label
+							class="sr-only" for="tipoPatenteAccompagnatore"> <wicket:message
+								key="AccompagnatorePanel.tipoPatenteAccompagnatore" />
+						</label>
+					</div>
+					<div class="col-6">
+						<input class="form-control" id="numeroPantenteAccompagnatore" type="text" placeholder=""
+							wicket:id="numeroPantenteAccompagnatore" required> <small><wicket:message
+								key="AccompagnatorePanel.numeroPantenteAccompagnatore" /></small> <label
+							class="sr-only" for="numeroPantenteAccompagnatore"> <wicket:message
+								key="AccompagnatorePanel.numeroPantenteAccompagnatore" />
+						</label>
+					</div>
+
+					<div class="col-6">
+
+						<input class="form-control it-date-datepicker"
+							id="dataRilascioPatenteAccompagnatore" type="date"
+							placeholder="Data in formato gg/mm/aaaa"
+							wicket:id="dataRilascioPatenteAccompagnatore"
+							style="font-size: smaller;" required> <small><wicket:message
+								key="AccompagnatorePanel.dataRilascioPatenteAccompagnatore" /></small>
+						<label class="sr-only" for="dataRilascioPatenteAccompagnatore">
+							<wicket:message
+								key="AccompagnatorePanel.dataRilascioPatenteAccompagnatore" />
+						</label>
+
+					</div>
+					<div class="col-6">
+
+						<input class="form-control it-date-datepicker"
+							id="dataScadenzaPatenteAccompagnatore" type="date"
+							placeholder="Data in formato gg/mm/aaaa"
+							wicket:id="dataScadenzaPatenteAccompagnatore"
+							style="font-size: smaller;" required> <small><wicket:message
+								key="AccompagnatorePanel.dataScadenzaPatenteAccompagnatore" /></small>
+						<label class="sr-only" for="dataScadenzaPatenteAccompagnatore">
+							<wicket:message
+								key="AccompagnatorePanel.dataScadenzaPatenteAccompagnatore" />
+						</label>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback4"></div>
+		<div wicket:id="messagePanelAccompagnatore"></div>
+
+	</wicket:panel>
+</body>
+</html>

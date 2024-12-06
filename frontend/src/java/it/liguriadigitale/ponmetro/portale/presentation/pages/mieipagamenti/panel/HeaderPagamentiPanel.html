@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+		<div class="row content my-4 info-traffico">
+
+			<div class="container calendario">
+				<h3>
+					<wicket:message key="HeaderPagamentiPanel.title" />
+				</h3>
+			</div>
+
+			<div class="container calendario" wicket:id="containerMessaggiInfo">
+				<div class="alert alert-info" role="alert">
+					<wicket:message key="HeaderPagamentiPanel.info1" />
+				</div>
+
+				<!--  
+				<div class="alert alert-info" role="alert">
+					<wicket:message key="HeaderPagamentiPanel.infoVerbali" />
+					<a href="imieiverbali" wicket:id="mieiVerbali"> <wicket:message
+							key="HeaderPagamentiPanel.verbali" />
+					</a>
+				</div>
+				-->
+
+				<wicket:enclosure child="mieiVerbali">
+					<div class="alert alert-info" role="alert">
+						<wicket:message key="HeaderPagamentiPanel.infoVerbali" />
+						<button class="btn btn-xs">
+							<span wicket:id="mieiVerbali"></span>
+						</button>
+					</div>
+				</wicket:enclosure>
+
+				<!--  	
+				<div class="alert alert-info" role="alert">
+					<wicket:message key="HeaderPagamentiPanel.infoTariEng" />
+					<a href="tariEng" wicket:id="tariEng"> <wicket:message
+							key="HeaderPagamentiPanel.tariEng" />
+					</a>
+				</div>
+				-->
+
+				<wicket:enclosure child="tariEng">
+					<div class="alert alert-info" role="alert">
+						<wicket:message key="HeaderPagamentiPanel.infoTariEng" />
+						<button class="btn btn-xs">
+							<span wicket:id="tariEng"></span>
+						</button>
+					</div>
+				</wicket:enclosure>
+
+			</div>
+
+			<div class="container calendario">
+				<h4>
+					<wicket:message key="HeaderPagamentiPanel.legenda" />
+					: <span class="badge bg-success"
+						style="margin-right: 15px; width: 220px; text-align: center;"><wicket:message
+							key="HeaderPagamentiPanel.pagato" /></span> <span
+						class="badge bg-danger"
+						style="margin-right: 15px; width: 220px; text-align: center;"><wicket:message
+							key="HeaderPagamentiPanel.daPagare" /></span>
+				</h4>
+			</div>
+
+			<div class="form-row mt-5 mb-2" wicket:id="containerRicerca">
+				<div class="form-group col-md-12 mb-0">
+					<h4>
+						<wicket:message key="HeaderPagamentiPanel.info" />
+						: <a class="btn btn-primary btn-xs" href="#" role="button"
+							wicket:id="btnRicercaDebito"> <wicket:message
+								key="HeaderPagamentiPanel.cerca" />
+						</a>
+					</h4>
+				</div>
+			</div>
+
+		</div>
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+	</wicket:panel>
+</body>
+</html>

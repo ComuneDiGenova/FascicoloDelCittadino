@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+    <head>
+        <meta charset="ISO-8859-1" />
+        <title>Insert title here</title>
+    </head>
+
+    <body>
+        <wicket:panel>
+            <div class="col-lg-12">
+            	<form class="mb-3 col-lg-10 mx-auto" wicket:id="formUpload" enctype="multipart/form-data" onsubmit="return checkForm(this);">
+            	
+            	
+                <input type="file" name="uploadPatente" id="uploadPatente" class="upload" multiple="multiple" wicket:id="uploadPatente" />
+                <label for="uploadPatente">
+                    <svg class="icon icon-sm" aria-hidden="true">
+                        <use xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-upload"></use>
+                    </svg>
+                    <span>Upload patente</span>
+                </label>
+                <div class="col-lg-12" wicket:id="containerFileUpload">
+                    <ul class="upload-file-list">
+                        <li class="upload-file success">
+                            <svg class="icon icon-sm" aria-hidden="true">
+                                <use xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+                            </svg>
+                            <p><span class="sr-only">File caricato:</span> <span wicket:id="nomeFile"></span></p>
+                            <button disabled>
+                                <span class="sr-only">Caricamento ultimato</span>
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-check"></use>
+                                    <title>File caricato!</title>
+                                </svg>
+                            </button>
+                            <button>
+                                <span class="sr-only">Elimina file caricato nome-file-04.jpg</span>
+                                <svg class="icon" aria-hidden="true" style="fill: #d9364f;" wicket:id="eliminaFile">
+                                    <use xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-close"></use>
+                                    <title>Elimina file</title>
+                                </svg>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                
+                </form>
+                
+            </div>
+        </wicket:panel>
+    </body>
+</html>

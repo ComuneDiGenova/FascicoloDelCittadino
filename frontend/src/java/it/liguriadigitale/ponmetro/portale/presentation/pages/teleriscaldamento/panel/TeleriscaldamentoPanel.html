@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="col-12">
+			<h3>
+				<wicket:message key="TeleriscaldamentoPanel.titolo" />
+			</h3>
+		</div>
+
+		<wicket:enclosure child="btnDomandaTeleriscaldamento">
+			<div class="col-sm-6 mt-2 mb-2">
+				<button class="btn btn-outline-primary">
+					<span wicket:id="btnDomandaTeleriscaldamento"></span>
+				</button>
+			</div>
+		</wicket:enclosure>
+
+		<div class="row content my-12 info-traffico">
+
+			<div class="alert alert-warning col-12" role="alert"
+				wicket:id="listaVuota">
+				<wicket:message key="TeleriscaldamentoPanel.vuoto" />
+			</div>
+
+			<div class="col-lg-6 mb-4" wicket:id="domande">
+
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i
+									class="col-auto color-fc-secondary col-3 icon-teleriscaldamento"></i>
+
+								<!--<h4 class="card-title text-start col-9 font-weight-normal">
+									<span class="text-capitalize fw-bold"
+										wicket:id="identificativo"></span>
+								</h4>-->
+							</div>
+
+							<div wicket:id="annoDomanda"></div>
+
+							<div wicket:id="idStato"></div>
+
+							<div wicket:id="statoPratica"></div>
+
+							<div wicket:id="dataInvioIREN"></div>
+
+							<div wicket:id="numProtocollo"></div>
+
+							<div wicket:id="dataProtocollo"></div>
+
+							<div wicket:id="cognomeRichiedente"></div>
+
+							<div wicket:id="nomeRichiedente"></div>
+
+							<div wicket:id="cfRichiedente"></div>
+
+							<div wicket:id="telefono"></div>
+
+							<div wicket:id="cellulare"></div>
+
+							<div wicket:id="email"></div>
+
+							<div wicket:id="numNucleoFamiliare"></div>
+
+							<div wicket:id="indicatoreIsee12"></div>
+
+							<div wicket:id="indicatoreIsee20"></div>
+
+							<div wicket:id="indicatoreIsee25"></div>
+
+							<div wicket:id="tipoUtenza"></div>
+
+							<div wicket:id="numeroCliente"></div>
+
+							<div wicket:id="numContratto"></div>
+
+							<div wicket:id="viaFornitura"></div>
+
+							<div wicket:id="comuneFornitura"></div>
+
+							<div wicket:id="numCivicoFornitura"></div>
+
+							<div wicket:id="provinciaFornitura"></div>
+
+							<div wicket:id="capFornitura"></div>
+
+							<div wicket:id="nominativoContratto"></div>
+
+							<div wicket:id="cfIntestarioContratto"></div>
+
+							<div wicket:id="pIvaContratto"></div>
+
+							<div wicket:id="nominativoApt"></div>
+
+							<div wicket:id="nominativoAmmCond"></div>
+
+							<div wicket:id="viaAmmCondominio"></div>
+
+							<div wicket:id="comuneAmmCondominio"></div>
+
+							<div wicket:id="civicoAmmCondominio"></div>
+
+							<div wicket:id="capAmmCondominio"></div>
+
+							<div wicket:id="provAmmCondominio"></div>
+
+							<div wicket:id="telAmmCondominio"></div>
+
+							<div wicket:id="cellAmmCondominio"></div>
+
+							<div wicket:id="emailAmmCondominio"></div>
+
+							<wicket:enclosure child="consensoPrivacy">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="TeleriscaldamentoPanel.consensoPrivacy" />
+											:
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="consensoPrivacy"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="consensoInf">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="TeleriscaldamentoPanel.consensoInf" />
+											:
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="consensoInf"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="datiVerificati">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="TeleriscaldamentoPanel.datiVerificati" />
+											:
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="datiVerificati"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="esitoVerifica">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="TeleriscaldamentoPanel.esitoVerifica" />
+											:
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-start d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												wicket:id="esitoVerifica"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div wicket:id="pagination"></div>
+
+		<div class="row content my-12 info-traffico">
+			<div wicket:id="messaggiInformativi"></div>
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

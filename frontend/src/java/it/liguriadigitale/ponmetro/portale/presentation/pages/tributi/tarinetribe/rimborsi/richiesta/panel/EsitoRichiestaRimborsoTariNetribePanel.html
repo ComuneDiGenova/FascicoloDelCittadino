@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="row content my-12 info-traffico">
+
+			<wicket:enclosure child="rimborsoKO">
+				<div class="alert alert-danger" role="alert" wicket:id="rimborsoKO">
+					<p wicket:id="messaggioKO"></p>
+				</div>
+			</wicket:enclosure>
+
+			<button type="submit" style="display: none;" class="btn btn-primary focus-visible-none mx-3">
+				<wicket:message key="RichiestaRimborsoTariNetribePanel.avanti" />
+			</button>
+
+			<wicket:enclosure child="rimborsi">
+				<div class="col-lg-12 mb-4" wicket:id="rimborsi">
+					<div class="alert alert-success" role="alert" wicket:id="rimborsoOK">
+
+						<p wicket:id="messaggioOK"></p>
+
+						<div wicket:id="btnDocumento"></div>
+
+					</div>
+				</div>
+			</wicket:enclosure>
+
+		</div>
+
+	</wicket:panel>
+</body>
+
+</html>

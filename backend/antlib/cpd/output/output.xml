@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd-cpd>
+<duplication lines="18" tokens="184">
+<file line="15" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\common\panel\RenderHeader.java"/>
+<file line="28" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\gestore\presenze\PresenzeAssenzePage.java"/>
+<codefragment>
+<![CDATA[
+	public static void render(IHeaderResponse response) {
+
+		response.render(MetaDataHeaderItem.forMetaTag("Expires", "0"));
+		response.render(MetaDataHeaderItem.forMetaTag("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0, private"));
+		response.render(MetaDataHeaderItem.forMetaTag("Pragma", "no-cache"));
+		response.render(MetaDataHeaderItem.forMetaTag("Author", "Liguria Digitale"));
+		response.render(MetaDataHeaderItem.forMetaTag("Description", Constants.Componente.GESTORE.getNomeComponente()));
+
+		response.render(CssContentHeaderItem.forUrl("/" + Constants.Componente.GESTORE.getWebContext()
+				+ "/bootstrap/3.3.7-1/cerulean/bootstrap.cerulean-ver-1490080862000.css"));
+		// CSS di GAS
+		response.render(CssContentHeaderItem.forUrl("/" + Constants.Componente.GESTORE.getWebContext() + "/css/"
+				+ "gasweb.css"));
+		response.render(CssContentHeaderItem.forUrl("/" + Constants.Componente.GESTORE.getWebContext() + "/css/"
+				+ Constants.Componente.GESTORE.getNomeComponente() + ".css"));
+
+		response.render(JavaScriptHeaderItem.forReference(JqueryJsResourceReference.instance()));
+		response.render(JavaScriptHeaderItem.forReference(BootstrapJsResourceReference.instance()));
+]]>
+</codefragment>
+</duplication>
+<duplication lines="14" tokens="147">
+<file line="94" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\gestore\contratti\lista\panel\ElencaContrattiPerAnnoPanel.java"/>
+<file line="94" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\gestore\debito\lista\panel\ElencaContrattiPerAnnoDebitoPanel.java"/>
+<codefragment>
+<![CDATA[
+		log.debug("[ElencaContrattiPerAnnoPanel]-- creaDataTable INIZIO=" + dataProvider.size());
+		DataView<ContrattoUnicoCompleto> dataView = new DataView<ContrattoUnicoCompleto>("resultlist", dataProvider) {
+
+			private static final long	serialVersionUID	= 2699892435561227586L;
+
+			@Override
+			protected void populateItem(Item<ContrattoUnicoCompleto> item) {
+				final ContrattoUnicoCompleto contratto = item.getModelObject();
+				Label labelArea = new Label("area", contratto.getComboArea().getDescArea());
+				Label labelEnte = new Label("ente", contratto.getComboEnte().getDenominazione());
+				Label labelBudget = new Label("budget", contratto.getBudget());
+				Label labelNumContratto = new Label("numContratto", contratto.getNumContratto());
+				Label labelStato = new Label("stato", contratto.getStato().name());
+				Link<Void> link = new Link<Void>("visualizza") {
+]]>
+</codefragment>
+</duplication>
+<duplication lines="28" tokens="127">
+<file line="123" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\gestore\contratti\lista\panel\ElencaContrattiPerAnnoPanel.java"/>
+<file line="122" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\gestore\debito\lista\panel\ElencaContrattiPerAnnoDebitoPanel.java"/>
+<codefragment>
+<![CDATA[
+							log.error("[ElencaContrattiPerAnnoPanel] Errore durante la ricerca del contratto ", e);
+						}
+					}
+				};
+				nascondiSeContrattoNonDefinitivo(contratto, labelArea, labelEnte, labelBudget, link);
+
+				item.add(labelArea);
+				item.add(labelEnte);
+				item.add(labelBudget);
+				item.add(labelNumContratto);
+				item.add(labelStato);
+				item.add(link);
+			}
+
+			private void nascondiSeContrattoNonDefinitivo(final ContrattoUnicoCompleto contratto, Label labelArea, Label labelEnte,
+					Label labelBudget, Link<Void> link) {
+				if (!contratto.getStato().equals(EnumStatoContrattoU.Definitivo)) {
+					link.setVisible(false);
+					labelArea.setVisible(false);
+					labelEnte.setVisible(false);
+					labelBudget.setVisible(false);
+				}
+			}
+		};
+		return dataView;
+	}
+
+}
+]]>
+</codefragment>
+</duplication>
+<duplication lines="19" tokens="125">
+<file line="29" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\business\login\impl\GestioneLoginImpl.java"/>
+<file line="51" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\business\login\impl\GestioneLoginImpl.java"/>
+<codefragment>
+<![CDATA[
+			String token = service.login(username, password);
+			utente = new Utente();
+			utente.setLogin(username);
+			utente.setTokenId(token);
+			Applicazione app = appAutorizzata(service.getApplications(username), applicazioni);
+			utente.setApplicazione(app);
+			return utente;
+		} catch (RemoteException e) {
+			log.error("Errore. " + e.getClass().getName() + " " + e.getMessage(), e);
+			throw new BusinessException(e);
+		} catch (SRMException e) {
+			log.error("Errore. " + e.getClass().getName() + " " + e.getMessage(), e);
+			throw new BusinessException(e);
+		}
+	}
+
+	/** Metodo che mi restituisce un utente da mettere in sessione senza passare pwd a SRM */
+	@Override
+	public Utente getUtente(String username, Properties applicazioni) throws BusinessException {
+]]>
+</codefragment>
+</duplication>
+<duplication lines="13" tokens="109">
+<file line="290" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\rest\CalendarioPresenzeResource.java"/>
+<file line="350" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\rest\CalendarioPresenzeResource.java"/>
+<codefragment>
+<![CDATA[
+						it.liguriadigitale.siss.gestore.presentation.pages.util.DateUtil.getGiornoFromDate(data));
+				presenza.setGiornoSettimana(
+						it.liguriadigitale.siss.gestore.presentation.pages.util.DateUtil.getGiornoDellaSettimana(data));
+
+				presenza.setNumeroSettimana(it.liguriadigitale.siss.gestore.presentation.pages.util.DateUtil
+						.getNumeroSettimanaNelMese(data));
+				presenza.setNumeroMese(
+						it.liguriadigitale.siss.gestore.presentation.pages.util.DateUtil.getNumeroMeseAnno(data));
+				presenza.setAnno(it.liguriadigitale.siss.gestore.presentation.pages.util.DateUtil.getAnno(data));
+
+				presenze.add(presenza);
+
+			}
+]]>
+</codefragment>
+</duplication>
+<duplication lines="23" tokens="99">
+<file line="59" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\common\AbstractPannelloModificaDatiPanel.java"/>
+<file line="31" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\common\AbstractPannelloSoloVisualizzazioneDatiPanel.java"/>
+<codefragment>
+<![CDATA[
+	public String getTestoDescrizionepanel() {
+		return testoDescrizionepanel;
+	}
+
+	public void setTestoDescrizionepanel(String testoDescrizionepanel) {
+		this.testoDescrizionepanel = testoDescrizionepanel;
+	}
+
+	@Override
+	public void fillDati(final Object dati) {
+		removeAll();
+		if (dati instanceof AutorizzazioneCompleta)
+			setTestoDescrizionepanel(creaTestoDescrizionePanel((AutorizzazioneCompleta) dati));
+		add(new Label("descrizionepanel", new Model() {
+			private static final long	serialVersionUID	= 1L;
+
+			@Override
+			public Serializable getObject() {
+				return testoDescrizionepanel;
+			}
+		}));
+		Fragment viewFragment = fillDatiPannelloView(dati);
+		this.add(viewFragment);
+]]>
+</codefragment>
+</duplication>
+<duplication lines="25" tokens="98">
+<file line="74" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\gestore\contratti\visualizza\VisualizzaContrattoUnicoPage.java"/>
+<file line="206" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\gestore\debito\inserimento\DebitoInformativoPage.java"/>
+<codefragment>
+<![CDATA[
+	}
+
+	protected void creaPulsanteIndietro() {
+		Link<AziendeCompleteRicerca> backLink = new Link<AziendeCompleteRicerca>("backbrowser") {
+			private static final long	serialVersionUID	= -428160747642870743L;
+
+			@Override
+			public void onClick() {
+				setResponsePage(getReference().getPage());
+			}
+		};
+
+		final Label label = new Label("backbrowsertext", "Cambia contratto");
+		backLink.add(label);
+		this.add(backLink);
+	}
+
+	public PageReference getReference() {
+		return reference;
+	}
+
+	public void setReference(PageReference reference) {
+		this.reference = reference;
+	}
+}
+]]>
+</codefragment>
+</duplication>
+<duplication lines="21" tokens="96">
+<file line="112" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\gestore\struttura\panel\GestioneDatiAziendaPanel.java"/>
+<file line="89" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\gestore\struttura\panel\GestioneDatiUnitaLocalePanel.java"/>
+<codefragment>
+<![CDATA[
+		viewFragment.add(creaPulsanteBackBrowser());
+		return "Modifica";
+	}
+
+	protected Link<AziendeCompleteRicerca> creaPulsanteBackBrowser() {
+		Link<AziendeCompleteRicerca> backLink = new Link<AziendeCompleteRicerca>("backbrowser") {
+			private static final long	serialVersionUID	= -428160747642870743L;
+
+			@Override
+			public void onClick()
+			{
+				setResponsePage(getReference().getPage());
+			}
+		};
+
+		final Label label = new Label("backbrowsertext", "Indietro");
+		backLink.add(label);
+		if (getReference() == null)
+			backLink.setVisible(false);
+		return backLink;
+	}
+]]>
+</codefragment>
+</duplication>
+<duplication lines="12" tokens="96">
+<file line="250" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\rest\CalendarioPresenzeResource.java"/>
+<file line="373" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\rest\CalendarioPresenzeResource.java"/>
+<codefragment>
+<![CDATA[
+				degente.setDataFinePeriodo(presenzeAssistitiRsa.getDatafine());
+				// degente.setPresenze(presenze);
+
+				degente.setCodTipoEnte(presenzeAssistitiRsa.getCodtipoente());
+				degente.setCodEnte(presenzeAssistitiRsa.getCodente());
+				degente.setIdArea("" + area);
+				degente.setIdDegenza(presenzeAssistitiRsa.getIdDegenza());
+				degente.setProgressivo("" + presenzeAssistitiRsa.getProgressivo());
+				degente.setIdUl("" + presenzeAssistitiRsa.getIdul());
+				degente.setIdMod("" + idMod);
+				AbstractLoginInSession session = (AbstractLoginInSession) Session.get();
+				degente.setUtente(session.getUtente().getLogin());
+]]>
+</codefragment>
+</duplication>
+<duplication lines="22" tokens="95">
+<file line="29" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\integration\test\TestHelperDAO.java"/>
+<file line="54" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\integration\test\TestHelperDAO.java"/>
+<codefragment>
+<![CDATA[
+			int numRecord = dao.insertPrepared(con);
+			log.debug("Numero Record inseriti" + numRecord);
+			con.commit();
+		} catch (SQLException e) {
+			log.debug("errore durante inserimento della domanda" + e.getMessage());
+			try {
+				con.rollback();
+			} catch (SQLException sqle) {
+				throw new BusinessException(sqle);
+			}
+		} finally {
+			try {
+				if (con != null)
+					con.close();
+			} catch (SQLException sqle) {
+				throw new BusinessException(sqle);
+			}
+		}
+		log.debug("Fine chiamata al metodo inserisciDomandaOnLine");
+	}
+
+	public void aggiornaOggetto(Connection con) throws BusinessException {
+]]>
+</codefragment>
+</duplication>
+<duplication lines="16" tokens="92">
+<file line="16" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\common\PraticaGestoreGasPanel.java"/>
+<file line="90" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\components\panel\GasWebPanel.java"/>
+<codefragment>
+<![CDATA[
+		super(id);
+	}
+
+	protected String decodificaIndirizzo(AziendaCompleta aCompleta) {
+		return decodificaIndirizzoCompleto(aCompleta.getDescTipoVia(), aCompleta.getVia(), null);
+	}
+
+	protected String decodificaIndirizzoCompleto(UnitaLocaleCompleta uLocale) {
+		return decodificaIndirizzoCompleto(uLocale.getDescTipoVia(), uLocale.getVia(), uLocale.getNCivico());
+	}
+
+	protected String decodificaIndirizzoCompleto(AziendaCompleta aCompleta) {
+		return decodificaIndirizzoCompleto(aCompleta.getDescTipoVia(), aCompleta.getVia(), aCompleta.getNCivico());
+	}
+
+	protected String decodificaIndirizzoCompleto(VSituazionePostiXGestore situazionePosti) {
+]]>
+</codefragment>
+</duplication>
+<duplication lines="21" tokens="91">
+<file line="120" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\integration\test\TestHelperDAO.java"/>
+<file line="149" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\integration\test\TestHelperDAO.java"/>
+<codefragment>
+<![CDATA[
+				log.debug("Numero Record inseriti" + numRecord);
+				con.commit();
+			} else
+				throw new BusinessException("Metodo non supportato");
+		} catch (SQLException e) {
+			log.debug("errore durante inserimento della domanda" + e.getMessage());
+			try {
+				con.rollback();
+			} catch (SQLException sqle) {
+				throw new BusinessException(sqle);
+			}
+
+		} finally {
+			try {
+				if (con != null)
+					con.close();
+			} catch (SQLException sqle) {
+				throw new BusinessException(sqle);
+			}
+		}
+		log.debug("Fine chiamata al metodo inserisciDomandaOnLine");
+]]>
+</codefragment>
+</duplication>
+<duplication lines="19" tokens="91">
+<file line="29" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\integration\test\TestHelperDAO.java"/>
+<file line="54" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\integration\test\TestHelperDAO.java"/>
+<file line="175" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\integration\test\TestHelperDAO.java"/>
+<codefragment>
+<![CDATA[
+			int numRecord = dao.insertPrepared(con);
+			log.debug("Numero Record inseriti" + numRecord);
+			con.commit();
+		} catch (SQLException e) {
+			log.debug("errore durante inserimento della domanda" + e.getMessage());
+			try {
+				con.rollback();
+			} catch (SQLException sqle) {
+				throw new BusinessException(sqle);
+			}
+		} finally {
+			try {
+				if (con != null)
+					con.close();
+			} catch (SQLException sqle) {
+				throw new BusinessException(sqle);
+			}
+		}
+		log.debug("Fine chiamata al metodo inserisciDomandaOnLine");
+]]>
+</codefragment>
+</duplication>
+<duplication lines="18" tokens="90">
+<file line="191" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\gestore\debito\inserimento\DebitoInformativoPage.java"/>
+<file line="31" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\gestore\debito\inserimento\panel\TemplateTabDebitoInformativoPanel.java"/>
+<codefragment>
+<![CDATA[
+	private ValoreProduzione ricercaDebitoInformativo() {
+
+		DebitoInformativoRicerca ricerca = new DebitoInformativoRicerca();
+		ricerca.setAnno(contratto.getAnno());
+		ricerca.setMese(new Long(meseCorrente));
+		ricerca.setIdContrattoUnico(contratto.getIdcontrU());
+
+		try {
+			ValoreProduzione valore = ServiceLocator.getInstance().getGestori().getDebitoInformativo(getUtente(),
+					ricerca);
+			return valore;
+		} catch (BusinessException e) {
+			log.error("Errore: ", e);
+			throw new RestartResponseAtInterceptPageException(ErrorPage.class);
+		}
+	}
+
+	protected void creaPulsanteIndietro() {
+]]>
+</codefragment>
+</duplication>
+<duplication lines="12" tokens="82">
+<file line="48" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\delegate\helper\ServizioRicercaHelper.java"/>
+<file line="98" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\delegate\helper\ServizioRicercaHelper.java"/>
+<codefragment>
+<![CDATA[
+		List<VMaxAutorizzazioni> listaAutorizzazioniAttive = new ArrayList<VMaxAutorizzazioni>();
+
+		if (idUnitaLocale != null)
+			try {
+				servizio = ServiceLocator.getInstance().getAutorizzazioni();
+				final AziendeCompleteRicerca ricerca = new AziendeCompleteRicerca();
+				final UnitaLocaleCompletaRicerca ricercaUnitaLocaleCompletaRicerca = new UnitaLocaleCompletaRicerca();
+				ricercaUnitaLocaleCompletaRicerca.setIdUnitaLocale(idUnitaLocale);
+				ricercaUnitaLocaleCompletaRicerca.setIsCessata(false);
+				ricerca.setUnitaLocale(ricercaUnitaLocaleCompletaRicerca);
+				log.debug("Ricerca con i parametri " + idUnitaLocale + " " + false);
+				listaAutorizzazioniAttive = servizio.cercaAutorizzazioniAttive(utente, ricerca);
+]]>
+</codefragment>
+</duplication>
+<duplication lines="20" tokens="81">
+<file line="31" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\integration\test\TestHelperDAO.java"/>
+<file line="123" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\integration\test\TestHelperDAO.java"/>
+<codefragment>
+<![CDATA[
+			con.commit();
+		} catch (SQLException e) {
+			log.debug("errore durante inserimento della domanda" + e.getMessage());
+			try {
+				con.rollback();
+			} catch (SQLException sqle) {
+				throw new BusinessException(sqle);
+			}
+		} finally {
+			try {
+				if (con != null)
+					con.close();
+			} catch (SQLException sqle) {
+				throw new BusinessException(sqle);
+			}
+		}
+		log.debug("Fine chiamata al metodo inserisciDomandaOnLine");
+	}
+
+	public void aggiornaOggetto(Connection con) throws BusinessException {
+]]>
+</codefragment>
+</duplication>
+<duplication lines="21" tokens="80">
+<file line="56" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\integration\test\TestHelperDAO.java"/>
+<file line="123" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\integration\test\TestHelperDAO.java"/>
+<codefragment>
+<![CDATA[
+			con.commit();
+		} catch (SQLException e) {
+			log.debug("errore durante inserimento della domanda" + e.getMessage());
+			try {
+				con.rollback();
+			} catch (SQLException sqle) {
+				throw new BusinessException(sqle);
+			}
+
+		} finally {
+			try {
+				if (con != null)
+					con.close();
+			} catch (SQLException sqle) {
+				throw new BusinessException(sqle);
+			}
+		}
+		log.debug("Fine chiamata al metodo inserisciDomandaOnLine");
+	}
+
+	public Object cercaOggettoByKey(Connection con) throws BusinessException {
+]]>
+</codefragment>
+</duplication>
+<duplication lines="17" tokens="76">
+<file line="31" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\integration\test\TestHelperDAO.java"/>
+<file line="56" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\integration\test\TestHelperDAO.java"/>
+<file line="152" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\integration\test\TestHelperDAO.java"/>
+<codefragment>
+<![CDATA[
+			con.commit();
+		} catch (SQLException e) {
+			log.debug("errore durante inserimento della domanda" + e.getMessage());
+			try {
+				con.rollback();
+			} catch (SQLException sqle) {
+				throw new BusinessException(sqle);
+			}
+		} finally {
+			try {
+				if (con != null)
+					con.close();
+			} catch (SQLException sqle) {
+				throw new BusinessException(sqle);
+			}
+		}
+		log.debug("Fine chiamata al metodo inserisciDomandaOnLine");
+]]>
+</codefragment>
+</duplication>
+<duplication lines="18" tokens="76">
+<file line="123" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\integration\test\TestHelperDAO.java"/>
+<file line="177" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\integration\test\TestHelperDAO.java"/>
+<codefragment>
+<![CDATA[
+				throw new BusinessException("Metodo non supportato");
+		} catch (SQLException e) {
+			log.debug("errore durante inserimento della domanda" + e.getMessage());
+			try {
+				con.rollback();
+			} catch (SQLException sqle) {
+				throw new BusinessException(sqle);
+			}
+
+		} finally {
+			try {
+				if (con != null)
+					con.close();
+			} catch (SQLException sqle) {
+				throw new BusinessException(sqle);
+			}
+		}
+		log.debug("Fine chiamata al metodo inserisciDomandaOnLine");
+]]>
+</codefragment>
+</duplication>
+<duplication lines="15" tokens="73">
+<file line="37" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\gestore\contratti\lista\panel\ElencaContrattiPerAnnoPanel.java"/>
+<file line="38" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\gestore\debito\lista\panel\ElencaContrattiPerAnnoDebitoPanel.java"/>
+<codefragment>
+<![CDATA[
+		log.debug("[ElencaContrattiPerAnnoPanel] -- lista=" + lista.size());
+
+		String annoLabel = "n/d";
+		if (annoCorrente != 0L)
+			annoLabel = annoCorrente.toString();
+		add(new Label("anno", annoLabel));
+
+		final Anno anno = new Anno(annoCorrente);
+
+		ScorriAnnoLink linkAnnoPrecedente = new ScorriAnnoLink(anno, ScorriAnnoLink.Tipo.PRECEDENTE) {
+
+			private static final long	serialVersionUID	= 5177195204925924189L;
+
+			@Override
+			public void onClick() {
+]]>
+</codefragment>
+</duplication>
+<duplication lines="16" tokens="71">
+<file line="40" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\common\AbstractPannelloListaDatiPanel.java"/>
+<file line="59" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\common\AbstractPannelloSoloVisualizzazioneDatiPanel.java"/>
+<codefragment>
+<![CDATA[
+		viewFragment.add(new Label("descrizionepanel", Model.of(testoDescrizionepanel)));
+		return viewFragment;
+	}
+
+	protected String creaTestoDescrizionePanel(AutorizzazioneCompleta autorizzazioneCompleta) {
+		String testoDescrizionepanel = "";
+
+		if (autorizzazioneCompleta != null)
+			testoDescrizionepanel = "Autorizzazione N." +
+					autorizzazioneCompleta.getNumAutorizz() + " - "
+					+ autorizzazioneCompleta.getDenominazioneAutorizzazione() + " - "
+					+ "rilasciata da: ";
+		if (autorizzazioneCompleta.getEnteAutorizzatore().getDenominazione() != null)
+			testoDescrizionepanel += autorizzazioneCompleta.getEnteAutorizzatore().getDenominazione();
+		return testoDescrizionepanel;
+	}
+]]>
+</codefragment>
+</duplication>
+<duplication lines="16" tokens="69">
+<file line="142" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\common\AbstractPannelloModificaDatiPanel.java"/>
+<file line="61" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\common\AbstractPannelloSoloVisualizzazioneDatiPanel.java"/>
+<codefragment>
+<![CDATA[
+	}
+
+	protected String creaTestoDescrizionePanel(AutorizzazioneCompleta autorizzazioneCompleta) {
+		String testoDescrizionepanel = "";
+
+		if (autorizzazioneCompleta != null)
+			testoDescrizionepanel = "Autorizzazione N." +
+					autorizzazioneCompleta.getNumAutorizz() + " - "
+					+ autorizzazioneCompleta.getDenominazioneAutorizzazione() + " - "
+					+ "rilasciata da: ";
+		if (autorizzazioneCompleta.getEnteAutorizzatore().getDenominazione() != null)
+			testoDescrizionepanel += autorizzazioneCompleta.getEnteAutorizzatore().getDenominazione();
+		return testoDescrizionepanel;
+	}
+
+}
+]]>
+</codefragment>
+</duplication>
+<duplication lines="14" tokens="68">
+<file line="42" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\common\AbstractPannelloListaDatiPanel.java"/>
+<file line="142" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\common\AbstractPannelloModificaDatiPanel.java"/>
+<codefragment>
+<![CDATA[
+	}
+
+	protected String creaTestoDescrizionePanel(AutorizzazioneCompleta autorizzazioneCompleta) {
+		String testoDescrizionepanel = "";
+
+		if (autorizzazioneCompleta != null)
+			testoDescrizionepanel = "Autorizzazione N." +
+					autorizzazioneCompleta.getNumAutorizz() + " - "
+					+ autorizzazioneCompleta.getDenominazioneAutorizzazione() + " - "
+					+ "rilasciata da: ";
+		if (autorizzazioneCompleta.getEnteAutorizzatore().getDenominazione() != null)
+			testoDescrizionepanel += autorizzazioneCompleta.getEnteAutorizzatore().getDenominazione();
+		return testoDescrizionepanel;
+	}
+]]>
+</codefragment>
+</duplication>
+<duplication lines="8" tokens="66">
+<file line="51" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\business\gas\impl\GasAziendeImpl.java"/>
+<file line="77" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\business\gas\impl\GasAziendeImpl.java"/>
+<codefragment>
+<![CDATA[
+			listaAziende.addAll(setAziende.values());
+		} catch (it.liguriadigitale.framework.business.exceptions.BusinessException e) {
+			log.error("Errore durante la ricerca: ", e);
+			throw new BusinessException(e);
+		} catch (net.datasiel.gas.gasweb.business.exceptions.BusinessException e) {
+			log.error("Errore durante la ricerca: ", e);
+			throw new BusinessException(e);
+		}
+]]>
+</codefragment>
+</duplication>
+<duplication lines="10" tokens="65">
+<file line="52" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\layout\GestoreGasLayoutPage.java"/>
+<file line="25" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\template\SkeletonBasePage.java"/>
+<codefragment>
+<![CDATA[
+	@Override
+	protected void checkUserLogged(WebRequest request) {
+		if (loginSession == null) {
+			loginSession = (LoginInSession) getSession();
+			@SuppressWarnings("unused")
+			final ClientProperties properties = ((WebClientInfo) Session.get().getClientInfo()).getProperties();
+		}
+
+		if (loginSession.getUtente() == null) {
+			final FrameworkUtente utente = retrieveUserByHeaderRequest(request);
+]]>
+</codefragment>
+</duplication>
+<duplication lines="10" tokens="61">
+<file line="63" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\gestore\contratti\lista\panel\ElencaContrattiPerAnnoPanel.java"/>
+<file line="64" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\gestore\debito\lista\panel\ElencaContrattiPerAnnoDebitoPanel.java"/>
+<codefragment>
+<![CDATA[
+				ContrattiLandingPage page = new ContrattiLandingPage(anno.getAnnoSelezionato() + 1L);
+				setResponsePage(page);
+			}
+
+		};
+		ScorriComponente panelSuccessivo = new ScorriComponente("annoSuccessivo", linkAnnoSuccessivo);
+		ScorriComponente panelPrecedente = new ScorriComponente("annoPrecedente", linkAnnoPrecedente);
+		Collections.sort(lista, new ContrattoUnicoCompletoComparator());
+		ListDataProvider<ContrattoUnicoCompleto> dataProvider = new ListDataProvider<ContrattoUnicoCompleto>(lista);
+		DataView<ContrattoUnicoCompleto> dataView = creaDataTable(dataProvider);
+]]>
+</codefragment>
+</duplication>
+<duplication lines="11" tokens="59">
+<file line="48" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\delegate\helper\ServizioRicercaHelper.java"/>
+<file line="72" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\delegate\helper\ServizioRicercaHelper.java"/>
+<file line="98" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\delegate\helper\ServizioRicercaHelper.java"/>
+<codefragment>
+<![CDATA[
+		List<VMaxAutorizzazioni> listaAutorizzazioniAttive = new ArrayList<VMaxAutorizzazioni>();
+
+		if (idUnitaLocale != null)
+			try {
+				servizio = ServiceLocator.getInstance().getAutorizzazioni();
+				final AziendeCompleteRicerca ricerca = new AziendeCompleteRicerca();
+				final UnitaLocaleCompletaRicerca ricercaUnitaLocaleCompletaRicerca = new UnitaLocaleCompletaRicerca();
+				ricercaUnitaLocaleCompletaRicerca.setIdUnitaLocale(idUnitaLocale);
+				ricercaUnitaLocaleCompletaRicerca.setIsCessata(false);
+				ricerca.setUnitaLocale(ricercaUnitaLocaleCompletaRicerca);
+				log.debug("Ricerca con i parametri " + idUnitaLocale + " " + false);
+]]>
+</codefragment>
+</duplication>
+<duplication lines="14" tokens="59">
+<file line="36" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\common\PraticaGestoreGasPanel.java"/>
+<file line="103" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\components\panel\GasWebPanel.java"/>
+<codefragment>
+<![CDATA[
+	}
+
+	protected String decodificaIndirizzoCompleto(String descTipoVia, String descVia, String nCivico) {
+
+		String indirizzoCompleto = "";
+		if (descTipoVia != null)
+			indirizzoCompleto += " " + descTipoVia;
+		if (descVia != null)
+			indirizzoCompleto += " " + descVia;
+		if (nCivico != null)
+			indirizzoCompleto += " " + nCivico;
+
+		return indirizzoCompleto.trim();
+	}
+]]>
+</codefragment>
+</duplication>
+<duplication lines="13" tokens="59">
+<file line="74" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\gestore\contratti\visualizza\VisualizzaContrattoUnicoPage.java"/>
+<file line="206" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\gestore\debito\inserimento\DebitoInformativoPage.java"/>
+<file line="132" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\gestore\struttura\step3\VisualizzaDatiAutorizzazionePage.java"/>
+<codefragment>
+<![CDATA[
+	}
+
+	protected void creaPulsanteIndietro() {
+		Link<AziendeCompleteRicerca> backLink = new Link<AziendeCompleteRicerca>("backbrowser") {
+			private static final long	serialVersionUID	= -428160747642870743L;
+
+			@Override
+			public void onClick() {
+				setResponsePage(getReference().getPage());
+			}
+		};
+
+		final Label label = new Label("backbrowsertext", "Cambia contratto");
+]]>
+</codefragment>
+</duplication>
+<duplication lines="11" tokens="55">
+<file line="76" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\gestore\contratti\visualizza\VisualizzaContrattoUnicoPage.java"/>
+<file line="208" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\gestore\debito\inserimento\DebitoInformativoPage.java"/>
+<file line="116" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\gestore\struttura\panel\GestioneDatiAziendaPanel.java"/>
+<file line="93" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\gestore\struttura\panel\GestioneDatiUnitaLocalePanel.java"/>
+<file line="134" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\gestore\struttura\step3\VisualizzaDatiAutorizzazionePage.java"/>
+<codefragment>
+<![CDATA[
+	protected void creaPulsanteIndietro() {
+		Link<AziendeCompleteRicerca> backLink = new Link<AziendeCompleteRicerca>("backbrowser") {
+			private static final long	serialVersionUID	= -428160747642870743L;
+
+			@Override
+			public void onClick() {
+				setResponsePage(getReference().getPage());
+			}
+		};
+
+		final Label label = new Label("backbrowsertext", "Cambia contratto");
+]]>
+</codefragment>
+</duplication>
+<duplication lines="15" tokens="54">
+<file line="17" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\common\AbstractPannelloListaDatiPanel.java"/>
+<file line="57" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\common\AbstractPannelloModificaDatiPanel.java"/>
+<codefragment>
+<![CDATA[
+	}
+
+	public String getTestoDescrizionepanel() {
+		return testoDescrizionepanel;
+	}
+
+	public void setTestoDescrizionepanel(String testoDescrizionepanel) {
+		this.testoDescrizionepanel = testoDescrizionepanel;
+	}
+
+	@Override
+	public void fillDati(final Object dati) {
+		removeAll();
+		if (dati instanceof AutorizzazioneCompleta)
+			setTestoDescrizionepanel(creaTestoDescrizionePanel((AutorizzazioneCompleta) dati));
+]]>
+</codefragment>
+</duplication>
+<duplication lines="15" tokens="53">
+<file line="83" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\integration\test\TestHelperDAO.java"/>
+<file line="100" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\integration\test\TestHelperDAO.java"/>
+<codefragment>
+<![CDATA[
+				throw new BusinessException("Metodo non supportato");
+		} catch (SQLException e) {
+			throw new BusinessException(e);
+		} finally {
+			try {
+				if (con != null)
+					con.close();
+			} catch (SQLException sqle) {
+				throw new BusinessException(sqle);
+			}
+			log.debug("Fine chiamata al metodo trovaDomanda");
+		}
+	}
+
+	public List cercaOggetti(Connection con) throws BusinessException {
+]]>
+</codefragment>
+</duplication>
+<duplication lines="13" tokens="53">
+<file line="19" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\common\AbstractPannelloListaDatiPanel.java"/>
+<file line="31" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\common\AbstractPannelloSoloVisualizzazioneDatiPanel.java"/>
+<codefragment>
+<![CDATA[
+	public String getTestoDescrizionepanel() {
+		return testoDescrizionepanel;
+	}
+
+	public void setTestoDescrizionepanel(String testoDescrizionepanel) {
+		this.testoDescrizionepanel = testoDescrizionepanel;
+	}
+
+	@Override
+	public void fillDati(final Object dati) {
+		removeAll();
+		if (dati instanceof AutorizzazioneCompleta)
+			setTestoDescrizionepanel(creaTestoDescrizionePanel((AutorizzazioneCompleta) dati));
+]]>
+</codefragment>
+</duplication>
+<duplication lines="6" tokens="52">
+<file line="84" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\util\DateUtil.java"/>
+<file line="95" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\util\DateUtil.java"/>
+<file line="105" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\util\DateUtil.java"/>
+<codefragment>
+<![CDATA[
+	public static Long settimanaDelMese(String data) {
+		if (data != null && !data.equalsIgnoreCase("")) {
+			Date dtData = getDate(data);
+			Calendar calendar = Calendar.getInstance();
+			calendar.setTime(dtData);
+			return Long.valueOf(calendar.get(Calendar.WEEK_OF_MONTH));
+]]>
+</codefragment>
+</duplication>
+<duplication lines="6" tokens="51">
+<file line="67" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\business\gas\impl\GasAutorizzazioniImpl.java"/>
+<file line="93" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\business\gas\impl\GasAutorizzazioniImpl.java"/>
+<codefragment>
+<![CDATA[
+	public List<VMaxAutorizNoDettagli> cercaAutorizzazioniNoDettagli(Utente paramUtente, AziendeCompleteRicerca paramAziendeCompleteRicerca)
+			throws BusinessException {
+		try {
+			UtenteConverter converter = new UtenteConverter(paramUtente);
+			net.datasiel.gas.gasweb.pojo.login.Utente utenteGas = converter.toUtenteGAS();
+			return EJB3Locator.getInstance().getAutorizzazioniEjb3Gas().cercaAutorizzazioniNoDettagli(utenteGas, paramAziendeCompleteRicerca);
+]]>
+</codefragment>
+</duplication>
+<duplication lines="17" tokens="51">
+<file line="77" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\gestore\contratti\lista\panel\ElencaContrattiPerAnnoPanel.java"/>
+<file line="78" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\gestore\debito\lista\panel\ElencaContrattiPerAnnoDebitoPanel.java"/>
+<codefragment>
+<![CDATA[
+			log.debug("[ElencaContrattiPerAnnoPanel] --Non sono presenti contratti per l’anno selezionato: lista=" + lista.size());
+
+		}
+
+		add(unNavigator);
+		add(dataView);
+		add(panelSuccessivo);
+		add(panelPrecedente);
+		createFeedBackPanel();
+	}
+
+	@Override
+	public void fillDati(Object dati) {
+		// TODO Auto-generated method stub
+	}
+
+	private DataView<ContrattoUnicoCompleto> creaDataTable(ListDataProvider<ContrattoUnicoCompleto> dataProvider) {
+]]>
+</codefragment>
+</duplication>
+<duplication lines="6" tokens="51">
+<file line="61" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\layout\GestoreGasLayoutPage.java"/>
+<file line="39" path="D:\_lavoro_locale\SVN\SANITA\GAS\trunk\gestore\src\java\it\liguriadigitale\siss\gestore\presentation\pages\template\SkeletonBasePage.java"/>
+<codefragment>
+<![CDATA[
+			final FrameworkUtente utente = retrieveUserByHeaderRequest(request);
+			if (utente != null) {
+				if (loginSession.signIn(utente.getLogin(), "")) {
+					loginSession.setUtente(utente);
+					log.debug("[PORTALE] BasePage: Utente " + utente.getLogin() + " loggato: " + utente);
+				} else
+]]>
+</codefragment>
+</duplication>
+</pmd-cpd>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="col-12">
+			<h3>
+				<wicket:message key="RicorsiAlPrefettoPanel.titolo" />
+			</h3>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12"
+				wicket:id="listaVuota">
+				<div class="alert alert-warning" role="alert">
+					<wicket:message key="RicorsiAlPrefettoPanel.vuoto" />
+				</div>
+			</div>
+		</div>
+
+		<div class="row content my-12 info-traffico">
+			<div class="col-lg-6 mb-4" wicket:id="ricorsi">
+
+				<div class="card-wrapper card-space">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="color-cyan col-3 icon-fogli"></i>
+
+								<h4 class="card-title text-start col-9 font-weight-normal">
+									<span class="text-capitalize fw-bold"
+										wicket:id="identificativoRicorso"></span>
+								</h4>
+							</div>
+
+							<div wicket:id="stato"></div>
+
+							<div wicket:id="numeroAvviso"></div>
+
+							<div wicket:id="numeroProtocollo"></div>
+
+							<div wicket:id="dataVerbale"></div>
+
+							<div wicket:id="targa"></div>
+
+							<div wicket:id="nomeRichiedente"></div>
+
+							<div wicket:id="cognomeRichiedente"></div>
+
+							<div wicket:id="codiceFiscaleRichiedente"></div>
+
+							<div wicket:id="emailRichiedente"></div>
+
+							<div wicket:id="pecRichiedente"></div>
+
+							<div wicket:id="cellulareRichiedente"></div>
+
+							<div wicket:id="natoIlRichiedente"></div>
+
+							<div wicket:id="indirizzoRichiedente"></div>
+
+							<div wicket:id="dataRichiestaRicorso"></div>
+
+							<div wicket:id="noteRichiedente"></div>
+
+							<div wicket:id="dataRicevuta"></div>
+
+							<wicket:enclosure child="btnFileAllegato">
+								<div class="row py-1 mb-2 border-bottom"
+									style="text-align: left;" wicket:id="btnFileAllegato"></div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="btnPdfRicevuta">
+								<div class="row py-1 mb-2 border-bottom"
+									style="text-align: left;" wicket:id="btnPdfRicevuta"></div>
+							</wicket:enclosure>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-12" wicket:id="pagination"></div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

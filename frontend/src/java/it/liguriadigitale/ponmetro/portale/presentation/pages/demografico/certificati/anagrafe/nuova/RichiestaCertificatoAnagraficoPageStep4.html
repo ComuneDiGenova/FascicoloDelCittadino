@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<body>
+	<wicket:extend>
+
+		<ul wicket:id="breadcrumbPanel"></ul>
+		<div wicket:id="stepPanel"></div>
+
+
+		<div class="container">
+			<form wicket:id="form" aria-labelledby="form-title">
+				<fieldset>
+
+					<div class="form-servizi-anagrafici mb-3">
+
+						<legend id="form-title" class="mb-3">
+							<strong>
+								<wicket:message key="RichiestaCertificatoAnagraficoPage.spiegazione" />
+							</strong>
+						</legend>
+
+
+
+
+						<div class="row mb-3">
+							<div class="col-sm">
+								<div class="form-group mb-0">
+									<label for="marcaBollo">
+										<strong>
+											<wicket:message key="RichiestaCertificatoAnagraficoPage.marca" />
+										</strong>
+									</label>
+									<input autocomplete="off" class="form-control" type="text"
+										placeholder="marca da bollo" wicket:id="marcaBollo" id="marcaBollo"
+										style="font-size: smaller;" required>
+
+								</div>
+							</div>
+							<div class="col-sm">
+								<div class="form-group mb-0">
+									<label for="dataBollo">
+										<wicket:message key="RichiestaCertificatoAnagraficoPage.dataBollo" />
+									</label>
+									<input autocomplete="off" class="form-control" type="date"
+										placeholder="data marca da bollo" wicket:id="dataBollo" id="dataBollo"
+										style="font-size: smaller;" required>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-12" wicket:id="feedback"></div>
+					</div>
+
+					<div class="row justify-content-center">
+						<div class="col-sm-auto">
+							<div class="d-flex justify-content-center">
+
+								<button type="submit" class="btn btn-primary focus-visible-none mx-3">
+									<wicket:message key="RichiestaCertificatoAnagraficoPage.avanti" />
+								</button>
+								<a class="btn btn-secondary focus-visible-none mx-3" href="#" role="button"
+									wicket:id="indietro">
+									<wicket:message key="RichiestaCertificatoAnagraficoPage.indietro" />
+								</a>
+								<a class="btn btn-secondary focus-visible-none mx-3" href="#" role="button"
+									wicket:id="annulla">
+									<wicket:message key="RichiestaCertificatoAnagraficoPage.annulla" />
+								</a>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+
+
+
+		<wicket:child />
+
+
+
+	</wicket:extend>
+</body>
+
+</html>

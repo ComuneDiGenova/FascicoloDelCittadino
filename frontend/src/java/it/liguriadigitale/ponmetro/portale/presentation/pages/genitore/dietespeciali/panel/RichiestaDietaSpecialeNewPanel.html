@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<wicket:head>
+	<style>
+div.wicket-aa {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, Verdana;
+	font-size: 1rem;
+	font-weight: 500;
+	background-color: white;
+	border-width: 1px;
+	border-color: #cccccc;
+	border-style: solid;
+	padding: 2px;
+	margin: 1px 0 0 0;
+	text-align: left;
+	z-index: 1000000;
+}
+
+div.wicket-aa ul {
+	list-style: none;
+	padding: 2px;
+	margin: 0;
+}
+
+div.wicket-aa ul li.selected {
+	background-color: #4e73df;
+	padding: 2px;
+	color: white;
+	margin: 0;
+}
+
+.card-body .form-servizi-anagrafici {
+	border: none;
+}
+
+.form-diete-speciali {
+	padding: 1rem;
+	margin-top: 1rem;
+	border: solid #f3f3f5;
+	border-width: 4px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+div.link-list>input[type=checkbox] {
+	margin-right: 0.3em;
+}
+</style>
+</wicket:head>
+
+</head>
+<body>
+	<wicket:extend>
+		<div class="row">
+			<div class="col-12" wicket:id="stepPanel"></div>
+		</div>
+
+		<div class="row">
+			<div class="col-12 d-flex justify-content-center">
+				<h4 class="text-uppercase font-weight-bold">
+					<wicket:message key="RichiestaDietaSpecialeNewPanel.titolo" />
+				</h4>
+			</div>
+		</div>
+
+		<div class="row form-diete-speciali">
+			<div class="col-12" wicket:id="container">
+				<div class="form-row mb-2 col-12 ">
+					<h4 class="col-12">
+						<wicket:message
+							key="RichiestaDietaSpecialeNewPanel.datiRichiedente" />
+					</h4>
+				</div>
+				<br>
+				<div class="form-row col-12 mb-2"></div>
+				<div class="form-row col-12 ">
+					<div class="row">
+						<div class="col">
+							<div wicket:id="nome"></div>
+						</div>
+						<div class="col">
+							<div wicket:id="cognome"></div>
+						</div>
+					</div>
+				</div>
+				<div class="form-row col-12 ">
+					<div class="row">
+						<div class="col">
+							<div wicket:id="cf"></div>
+						</div>
+						<div class="col">
+							<div wicket:id="email"></div>
+						</div>
+					</div>
+				</div>
+				<div class="form-row col-12 mb-2"></div>
+				<div class="form-row mb-4 col-12">
+					<h4 class="col-12">
+						<wicket:message key="RichiestaDietaSpecialeNewPanel.datiBambino" />
+					</h4>
+				</div>
+				<div class="form-row col-12 ">
+					<div class="row">
+						<div class="col">
+							<div wicket:id="nomeIscritto"></div>
+						</div>
+						<div class="col">
+							<div wicket:id="cognomeIscritto"></div>
+						</div>
+					</div>
+				</div>
+				<div class="form-row col-12 ">
+					<div class="row">
+						<div class="col">
+							<div wicket:id="cfIscritto"></div>
+						</div>
+						<div class="col"></div>
+					</div>
+				</div>
+
+				<div class="form-row col-12">
+					<div class="col-12 ">
+						<div class="select-wrapper">
+							<label> <wicket:message
+									key="RichiestaDietaSpecialeNewPanel.direzioneTerritoriale" /></label>
+							<select wicket:id="direzioneTerritoriale"></select>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-row col-12 mb-4"></div>
+
+				<div class="form-row col-12">
+					<div class="col-12 select-wrapper">
+						<label> <wicket:message
+								key="RichiestaDietaSpecialeNewPanel.scuola" /></label> <select
+							wicket:id="scuola"></select>
+					</div>
+				</div>
+
+				<div class="form-row col-12 mb-4"></div>
+
+				<div class="form-row col-12">
+					<div class="row">
+						<div class="col">
+							<wicket:enclosure child="classe">
+								<div class="form-group">
+									<label wicket:id="classeLabel"></label> <input
+										wicket:id="classe" type="number" id="classe"
+										class="form-control" min="1" max="5" required>
+								</div>
+							</wicket:enclosure>
+						</div>
+						<div class="col">
+							<div wicket:id="sezione"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-row col-12">
+					<div class="col-6 ">
+						<div class="select-wrapper">
+							<label> <wicket:message
+									key="RichiestaDietaSpecialeNewPanel.annoScolastico" /></label> <select
+								wicket:id="annoScolastico"></select>
+						</div>
+					</div>
+
+					<div class="col-6 "></div>
+				</div>
+
+				<div class="form-row col-12 mb-4"></div>
+
+				<div class="form-row col-12 mb-1">
+					<div class="col-12">
+						<label class="font-weight-bold active"> <wicket:message
+								key="RichiestaDietaSpecialeNewPanel.rientri" />
+						</label>
+					</div>
+
+				</div>
+				<div class="form-row col-12">
+					<div class="col-12 link-list-wrapper">
+						<span wicket:id="listaGiorniRientri"></span>
+					</div>
+				</div>
+				<div class="form-row col-12 mb-3"></div>
+				<br>
+				<div class="form-row col-12">
+					<div class="col-12 select-wrapper">
+						<label> <wicket:message
+								key="RichiestaDietaSpecialeNewPanel.tipoDieta" />
+						</label> <select wicket:id="tipoDieta"></select>
+					</div>
+				</div>
+
+				<div class="form-row col-12 mb-4"></div>
+			</div>
+
+			<div class="form-row col-12" wicket:id="containerDietaMotiviSalute">
+				<div class="form-row col-12 mb-4">
+					<div class="col-12">
+						<wicket:message key="RichiestaDietaSpecialeNewPanel.infoDocumento" />
+					</div>
+				</div>
+				<div class="form-row col-12 mb-4">
+					<div class="col-12">
+						<form class="mb-3 col-md-12 mx-auto" wicket:id="formUploadFile">
+							<small><wicket:message
+									key="RichiestaDietaSpecialeNewPanel.inserisciFile" /></small> <br></br>
+							<input type="file" name="fileAttestazioneMedicaUpload"
+								id="fileAttestazioneMedicaUpload" class="upload"
+								wicket:id="fileAttestazioneMedicaUpload" accept=".pdf, .jpg" />
+							<label for="fileAttestazioneMedicaUpload"> <svg
+									class="icon icon-sm" aria-hidden="true">
+			                        		<use
+										xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-upload"></use>
+			                    		</svg> <span>Upload attestazione medica</span>
+							</label>
+
+							<div class="col-lg-10" wicket:id="containerFile">
+								<ul class="upload-file-list">
+									<li class="upload-file success" style="max-width: 100%;"><svg
+											class="icon icon-sm" aria-hidden="true">
+					                                <use
+												xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+					                            </svg>
+										<p>
+											<span class="sr-only">File caricato:</span> <span
+												wicket:id="nomeFile"></span><span class="upload-file-weight"
+												wicket:id="dimensioneFile"></span>
+										</p>
+										<button>
+											<svg class="icon" aria-hidden="true" style="fill: #d9364f;"
+												wicket:id="eliminaFile">
+					                                    <use
+													href="/portale/bootstrap-italia/svg/sprites.svg#it-close-circle"
+													xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-close-circle"></use>
+					                                    <title>Elimina file</title>
+	                                				</svg>
+										</button></li>
+								</ul>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="form-row col-12 mb-4">
+					<div class="col-6">
+						<div class="toggles">
+							<label for="anafilassi"> <wicket:message
+									key="RichiestaDietaSpecialeNewPanel.anafilassi" /> <input
+								type="checkbox" id="anafilassi" wicket:id="anafilassi">
+								<span class="lever"></span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-row col-12"
+				wicket:id="containerDietaMotiviReligiosi">
+
+				<div class="col-12 select-wrapper">
+					<label> <wicket:message
+							key="RichiestaDietaSpecialeNewPanel.menu" /></label> <select
+						wicket:id="comboMenu"></select>
+				</div>
+			</div>
+
+			<div class="form-row col-12 mt-4"
+				wicket:id="containerNoteIntegrative">
+				<div class="col-12">
+					<div wicket:id="noteIntegrative"></div>
+				</div>
+			</div>
+
+			<div class="form-row col-12 mt-4" wicket:id="containerEsito">
+				<div class="col-12 text-center d-flex flex-column">
+					<div class="alert alert-success" role="alert">
+						<h3 class="text-left font-weight-semibold mb-0">
+							<label wicket:id="labelEsito"> </label>
+						</h3>
+					</div>
+					<div>
+						<button type="button" class="btn btn-success"
+							wicket:id="tornaIndietro">
+							<wicket:message
+								key="RichiestaDietaSpecialeNewPanel.tornaIndietro" />
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<br>
+
+		<div class="form-group col-md-12 mb-3 text-center">
+			<div class="form-group col-md-12 mb-3 text-center">
+				<button type="button" class="btn btn-primary" wicket:id="indietro">
+					<wicket:message key="RichiestaDietaSpecialeNewPanel.indietro" />
+				</button>
+
+				<button type="submit" class="btn btn-primary" wicket:id="prosegui">
+					<wicket:message key="RichiestaDietaSpecialeNewPanel.prosegui" />
+				</button>
+
+				<button type="submit" class="btn btn-primary" wicket:id="invia">
+					<wicket:message key="RichiestaDietaSpecialeNewPanel.invia" />
+				</button>
+
+				<button type="button" class="btn btn-secondary" wicket:id="annulla">
+					<wicket:message key="RichiestaDietaSpecialeNewPanel.annulla" />
+				</button>
+			</div>
+		</div>
+
+	</wicket:extend>
+</body>
+</html>

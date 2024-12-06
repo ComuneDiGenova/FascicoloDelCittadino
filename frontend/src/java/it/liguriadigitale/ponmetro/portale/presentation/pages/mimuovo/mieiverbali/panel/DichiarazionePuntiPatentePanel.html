@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="col-lg-10 mx-auto riepilogo">
+			<div class="col-md-12 text-left mb-4">
+				<h4>
+					<wicket:message key="DichiarazionePuntiPatentePanel.info" />
+					:
+				</h4>
+			</div>
+		</div>
+
+		<div class="col-lg-12 mx-auto">
+			<div class="steppers">
+				<ul class="steppers-header">
+					<li class="active no-line"><span class="steppers-number"><span
+							class="sr-only">Step </span>1</span> <span class="steppers-status"><wicket:message
+								key="DichiarazionePuntiPatentePanel.step1"></wicket:message></span> <span
+						class="sr-only"><wicket:message
+								key="DichiarazionePuntiPatentePanel.step1"></wicket:message></span></li>
+					<li><span class="steppers-number"><span class="sr-only">Step
+						</span>2</span> <span class="steppers-status"><wicket:message
+								key="DichiarazionePuntiPatentePanel.step2"></wicket:message></span> <span
+						class="sr-only"><wicket:message
+								key="DichiarazionePuntiPatentePanel.step2"></wicket:message></span></li>
+					<li><span class="steppers-number"><span class="sr-only">Step
+						</span>3</span> <span class="steppers-status"><wicket:message
+								key="DichiarazionePuntiPatentePanel.step3"></wicket:message></span> <span
+						class="sr-only"><wicket:message
+								key="DichiarazionePuntiPatentePanel.step3"></wicket:message></span></li>
+					<li><span class="steppers-number"><span class="sr-only">Step
+						</span>4</span> <span class="steppers-status"><wicket:message
+								key="DichiarazionePuntiPatentePanel.step4"></wicket:message></span> <span
+						class="sr-only"><wicket:message
+								key="DichiarazionePuntiPatentePanel.step4"></wicket:message></span></li>
+					<li class="steppers-index" aria-hidden="true"><span
+						class="active">1</span> <span>2</span> <span>3</span> <span><wicket:message
+								key="DichiarazionePuntiPatentePanel.step4"></wicket:message></span></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="col-lg-10 mx-auto riepilogo">
+
+			<div class="row mb-0 d-flex justify-content-center">
+				<div class="col-md-10 text-left mb-4">
+					<h4>
+						<wicket:message key="DichiarazionePuntiPatentePanel.datiVerbale" />
+					</h4>
+				</div>
+
+				<div class="col-5">
+					<p class="text-left">
+						<span class="font-weight-semibold"><wicket:message
+								key="DichiarazionePuntiPatentePanel.numeroAvviso" />:</span> <span
+							class="text-capitalize" wicket:id="numeroAvviso"></span>
+					</p>
+				</div>
+				<div class="col-5">
+					<p class="text-left">
+						<span class="font-weight-semibold"><wicket:message
+								key="DichiarazionePuntiPatentePanel.numeroProtocollo" />:</span> <span
+							class="text-capitalize" wicket:id="numeroProtocollo"></span>
+					</p>
+				</div>
+
+				<div class="col-5">
+					<p class="text-left">
+						<span class="font-weight-semibold"><wicket:message
+								key="DichiarazionePuntiPatentePanel.dataVerbale" />:</span> <span
+							class="text-capitalize" wicket:id="dataVerbale"></span>
+					</p>
+				</div>
+				<div class="col-5">
+					<p class="text-left">
+						<span class="font-weight-semibold"><wicket:message
+								key="DichiarazionePuntiPatentePanel.targa" />:</span> <span
+							class="text-capitalize" wicket:id="targa"></span>
+					</p>
+				</div>
+
+				<div class="col-md-10 text-left mb-4">
+					<h4>
+						<wicket:message
+							key="DichiarazionePuntiPatentePanel.datiProprietario" />
+					</h4>
+				</div>
+
+				<div class="col-5">
+					<p class="text-left">
+						<span class="font-weight-semibold"><wicket:message
+								key="DichiarazionePuntiPatentePanel.nomeCognomeProprietario" />:</span>
+						<span class="text-capitalize" wicket:id="nomeCognomeProprietario"></span>
+					</p>
+				</div>
+				<div class="col-5">
+					<p class="text-left">
+						<span class="font-weight-semibold"><wicket:message
+								key="DichiarazionePuntiPatentePanel.cfProprietario" />:</span> <span
+							class="text-capitalize" wicket:id="cfProprietario"></span>
+					</p>
+				</div>
+
+				<div class="col-5">
+					<p class="text-left">
+						<span class="font-weight-semibold"><wicket:message
+								key="DichiarazionePuntiPatentePanel.proprietatioNatoA" />:</span> <span
+							class="text-capitalize" wicket:id="proprietarioNatoA"></span>
+					</p>
+				</div>
+				<div class="col-5">
+					<p class="text-left">
+						<span class="font-weight-semibold"><wicket:message
+								key="DichiarazionePuntiPatentePanel.proprietarioNatoIl" />:</span> <span
+							class="text-capitalize" wicket:id="proprietarioNatoIl"></span>
+					</p>
+				</div>
+
+				<div class="col-5">
+					<p class="text-left">
+						<span class="font-weight-semibold"><wicket:message
+								key="DichiarazionePuntiPatentePanel.proprietarioResidenteIn" />:</span>
+						<span class="text-capitalize" wicket:id="proprietarioResidenteIn"></span>
+					</p>
+				</div>
+
+				<div class="col-5"></div>
+
+				<form class="mb-3 col-lg-10 mx-auto" enctype="multipart/form-data"
+					wicket:id="form">
+
+					<fieldset role="radiogroup" aria-labelledby="dichiarazione">
+						<div class="form-row mb-2">
+							<div class="mt-4 mb-2 text-left">
+								<h4 id="dichiarazione">
+									<wicket:message
+										key="DichiarazionePuntiPatentePanel.dichiarazione" />
+								</h4>
+							</div>
+						</div>
+						<div class="form-row mb-0 col-md-12 mx-auto font-weight-semibold"
+							wicket:id="dichiarazioneProprietario"></div>
+					</fieldset>
+
+					<div wicket:id="containerDatiProprietario">
+						<div class="row mb-0 d-flex justify-content-center">
+							<div class="form-group col-md-4 mb-0">
+								<input class="form-control" id="categoriaPatente" type="text"
+									placeholder="Inserisci categoria patente"
+									wicket:id="categoriaPatente" style="font-size: smaller;">
+								<small><wicket:message
+										key="DichiarazionePuntiPatentePanel.categoriaPatente" /></small> <label
+									class="sr-only" for="categoriaPatente"> <wicket:message
+										key="DichiarazionePuntiPatentePanel.categoriaPatente" />
+								</label>
+							</div>
+							<div class="form-group col-md-3 mb-0">
+								<input class="form-control" id="numeroPatente" type="text"
+									placeholder="Inserisci numero patente"
+									wicket:id="numeroPatente" style="font-size: smaller;">
+								<small><wicket:message
+										key="DichiarazionePuntiPatentePanel.numeroPatente" /></small> <label
+									class="sr-only" for="numeroPatente"> <wicket:message
+										key="DichiarazionePuntiPatentePanel.numeroPatente" />
+								</label>
+							</div>
+							<div class="form-group col-md-5 mb-0">
+								<input class="form-control" id="patenteRilasciataDa" type="text"
+									placeholder="Inserisci patente rilasciata da"
+									wicket:id="patenteRilasciataDa" style="font-size: smaller;">
+								<small><wicket:message
+										key="DichiarazionePuntiPatentePanel.patenteRilasciataDa" /></small> <label
+									class="sr-only" for="patenteRilasciataDa"> <wicket:message
+										key="DichiarazionePuntiPatentePanel.patenteRilasciataDa" />
+								</label>
+							</div>
+
+							<div class="form-group col-md-6 mb-0">
+								<input class="form-control it-date-datepicker"
+									id="patenteRilasciataIl" type="date"
+									placeholder="Data in formato gg/mm/aaaa"
+									wicket:id="patenteRilasciataIl" style="font-size: smaller;">
+								<small><wicket:message
+										key="DichiarazionePuntiPatentePanel.patenteRilasciataIl" /></small> <label
+									class="sr-only" for="patenteRilasciataIl"> <wicket:message
+										key="DichiarazionePuntiPatentePanel.patenteRilasciataIl" />
+								</label>
+							</div>
+
+							<div class="form-group col-md-6 mb-0">
+								<input class="form-control it-date-datepicker"
+									id="patenteValidaFinoAl" type="date"
+									placeholder="Data in formato gg/mm/aaaa"
+									wicket:id="patenteValidaFinoAl" style="font-size: smaller;">
+								<small><wicket:message
+										key="DichiarazionePuntiPatentePanel.patenteValidaFinoAl" /></small> <label
+									class="sr-only" for="patenteValidaFinoAl"> <wicket:message
+										key="DichiarazionePuntiPatentePanel.patenteValidaFinoAl" />
+								</label>
+							</div>
+
+							<div class="form-group col-md-6 mb-0">
+								<input class="form-control" id="emailProprietario" type="email"
+									placeholder="Inserisci Email" wicket:id="emailProprietario"
+									style="font-size: smaller;"> <small><wicket:message
+										key="DichiarazionePuntiPatentePanel.emailProprietario" /></small> <label
+									class="sr-only" for="emailProprietario"> <wicket:message
+										key="DichiarazionePuntiPatentePanel.emailProprietario" />
+								</label>
+							</div>
+
+							<div class="form-group col-md-6 mb-0"></div>
+
+							<div class="col-lg-12">
+								<form class="mb-3 col-md-12 mx-auto"
+									enctype="multipart/form-data"
+									onsubmit="return checkForm(this);"
+									wicket:id="formUploadProprietario">
+									<small><wicket:message
+											key="DichiarazionePuntiPatentePanel.inserisciFilePatenteProprietario" /></small>
+									<br></br> <input type="file" name="patenteProprietarioUpload"
+										id="patenteProprietarioUpload" class="upload"
+										wicket:id="patenteProprietarioUpload" accept="image/*, .pdf" />
+									<label for="patenteProprietarioUpload"> <svg
+											class="icon icon-sm" aria-hidden="true">
+			                        		<use
+												xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-upload"></use>
+			                    		</svg> <span>Upload patente</span>
+									</label>
+
+									<div class="col-lg-12"
+										wicket:id="containerFileUploadProprietario">
+										<ul class="upload-file-list">
+											<li class="upload-file success" style="max-width: 100%;">
+												<svg class="icon icon-sm" aria-hidden="true">
+					                                <use
+														xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+					                            </svg>
+												<p>
+													<span class="sr-only">File caricato:</span> <span
+														wicket:id="nomeFilePatenteProprietario"></span><span
+														class="upload-file-weight"
+														wicket:id="dimensioneFileProprietario"></span>
+												</p>
+												<button>
+													<svg class="icon" aria-hidden="true" style="fill: #d9364f;"
+														wicket:id="eliminaPatenteProprietario">
+					                                    <use
+															xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-close"></use>
+					                                    <title>Elimina file</title>
+	                                				</svg>
+												</button>
+											</li>
+										</ul>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+
+					<div class="row mb-0 d-flex justify-content-center"
+						wicket:id="containerDatiConducente">
+						<div class="col-md-10 text-left mb-4">
+							<h4>
+								<wicket:message
+									key="DichiarazionePuntiPatentePanel.datiConducente" />
+							</h4>
+						</div>
+
+						<div class="form-group col-md-6 mb-0">
+							<input class="form-control" id="nomeConducente" type="text"
+								placeholder="Inserisci nome" wicket:id="nomeConducente"
+								style="font-size: smaller;"> <small><wicket:message
+									key="DichiarazionePuntiPatentePanel.nomeConducente" /></small> <label
+								class="sr-only" for="nomeConducente"> <wicket:message
+									key="DichiarazionePuntiPatentePanel.nomeConducente" />
+							</label>
+						</div>
+						<div class="form-group col-md-6 mb-0">
+							<input class="form-control" id="cognomeConducente" type="text"
+								placeholder="Inserisci cognome" wicket:id="cognomeConducente"
+								style="font-size: smaller;"> <small><wicket:message
+									key="DichiarazionePuntiPatentePanel.cognomeConducente" /></small> <label
+								class="sr-only" for="nomeConducente"> <wicket:message
+									key="DichiarazionePuntiPatentePanel.cognomeConducente" />
+							</label>
+						</div>
+
+						<div class="form-group col-md-6 mb-0">
+							<input class="form-control" id="cfConducente" type="text"
+								placeholder="Inserisci cf" wicket:id="cfConducente"
+								style="font-size: smaller;"> <small><wicket:message
+									key="DichiarazionePuntiPatentePanel.cfProprietario" /></small> <label
+								class="sr-only" for="nomeConducente"> <wicket:message
+									key="DichiarazionePuntiPatentePanel.cfProprietario" />
+							</label>
+						</div>
+						<div class="form-group col-md-6 mb-0"></div>
+
+						<div class="form-group col-md-6 mb-0">
+							<input class="form-control" id="conducenteNatoA" type="text"
+								placeholder="Inserisci nato a" wicket:id="conducenteNatoA"
+								style="font-size: smaller;"> <small><wicket:message
+									key="DichiarazionePuntiPatentePanel.conducenteNatoA" /></small> <label
+								class="sr-only" for="conducenteNatoA"> <wicket:message
+									key="DichiarazionePuntiPatentePanel.conducenteNatoA" />
+							</label>
+						</div>
+						<div class="form-group col-md-6 mb-0">
+							<input class="form-control" id="conducenteNatoAProvincia"
+								type="text" placeholder="Inserisci provincia"
+								wicket:id="conducenteNatoAProvincia" style="font-size: smaller;">
+							<small><wicket:message
+									key="DichiarazionePuntiPatentePanel.conducenteNatoAProvincia" /></small>
+							<label class="sr-only" for="conducenteNatoAProvincia"> <wicket:message
+									key="DichiarazionePuntiPatentePanel.conducenteNatoAProvincia" />
+							</label>
+						</div>
+						<div class="form-group col-md-6 mb-0">
+							<input class="form-control it-date-datepicker"
+								id="conducenteNatoIl" type="date"
+								placeholder="Data in formato gg/mm/aaaa"
+								wicket:id="conducenteNatoIl" style="font-size: smaller;">
+							<small><wicket:message
+									key="DichiarazionePuntiPatentePanel.conducenteNatoIl" /></small> <label
+								class="sr-only" for="conducenteNatoIl"> <wicket:message
+									key="DichiarazionePuntiPatentePanel.conducenteNatoIl" />
+							</label>
+						</div>
+
+						<div class="form-group col-md-6 mb-0">
+							<input class="form-control" id="emailConducente" type="email"
+								placeholder="Inserisci Email" wicket:id="emailConducente"
+								style="font-size: smaller;"> <small><wicket:message
+									key="DichiarazionePuntiPatentePanel.emailConducente" /></small> <label
+								class="sr-only" for="emailConducente"> <wicket:message
+									key="DichiarazionePuntiPatentePanel.emailConducente" />
+							</label>
+						</div>
+
+						<div class="form-group col-md-6 mb-0">
+							<input class="form-control" id="conducenteResidenteA" type="text"
+								placeholder="Inserisci residente a"
+								wicket:id="conducenteResidenteA" style="font-size: smaller;">
+							<small><wicket:message
+									key="DichiarazionePuntiPatentePanel.conducenteResidenteA" /></small> <label
+								class="sr-only" for="conducenteResidenteA"> <wicket:message
+									key="DichiarazionePuntiPatentePanel.conducenteResidenteA" />
+							</label>
+						</div>
+						<div class="form-group col-md-6 mb-0">
+							<input class="form-control" id="conducenteResidenteProvincia"
+								type="text" placeholder="Inserisci provincia"
+								wicket:id="conducenteResidenteProvincia"
+								style="font-size: smaller;"> <small><wicket:message
+									key="DichiarazionePuntiPatentePanel.conducenteResidenteProvincia" /></small>
+							<label class="sr-only" for="conducenteResidenteProvincia">
+								<wicket:message
+									key="DichiarazionePuntiPatentePanel.conducenteResidenteProvincia" />
+							</label>
+						</div>
+						<div class="form-group col-md-8 mb-0">
+							<input class="form-control" id="conducenteResidenteIn"
+								type="text" placeholder="Inserisci in"
+								wicket:id="conducenteResidenteIn" style="font-size: smaller;">
+							<small><wicket:message
+									key="DichiarazionePuntiPatentePanel.conducenteResidenteIn" /></small>
+							<label class="sr-only" for="conducenteResidenteIn"> <wicket:message
+									key="DichiarazionePuntiPatentePanel.conducenteResidenteIn" />
+							</label>
+						</div>
+						<div class="form-group col-md-2 mb-0">
+							<input class="form-control" id="conducenteResidenteNumCivico"
+								type="text" placeholder="Inserisci civico"
+								wicket:id="conducenteResidenteNumCivico"
+								style="font-size: smaller;"> <small><wicket:message
+									key="DichiarazionePuntiPatentePanel.conducenteResidenteNumCivico" /></small>
+							<label class="sr-only" for="conducenteResidenteNumCivico">
+								<wicket:message
+									key="DichiarazionePuntiPatentePanel.conducenteResidenteNumCivico" />
+							</label>
+						</div>
+						<div class="form-group col-md-2 mb-0">
+							<input class="form-control" id="conducenteResidenteCap"
+								type="text" placeholder="Inserisci cap"
+								wicket:id="conducenteResidenteCap" maxlength="5"
+								oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+								style="font-size: smaller;"> <small><wicket:message
+									key="DichiarazionePuntiPatentePanel.conducenteResidenteCap" /></small>
+							<label class="sr-only" for="conducenteResidenteCap"> <wicket:message
+									key="DichiarazionePuntiPatentePanel.conducenteResidenteCap" />
+							</label>
+						</div>
+
+						<div class="form-group col-md-3 mb-0">
+							<input class="form-control" id="categoriaPatenteConducente"
+								type="text" placeholder="Inserisci categoria patente"
+								wicket:id="categoriaPatenteConducente"
+								style="font-size: smaller;"> <small><wicket:message
+									key="DichiarazionePuntiPatentePanel.categoriaPatente" /></small> <label
+								class="sr-only" for="categoriaPatenteConducente"> <wicket:message
+									key="DichiarazionePuntiPatentePanel.categoriaPatente" />
+							</label>
+						</div>
+						<div class="form-group col-md-4 mb-0">
+							<input class="form-control" id="numeroPatenteConducente"
+								type="text" placeholder="Inserisci numero patente"
+								wicket:id="numeroPatenteConducente" style="font-size: smaller;">
+							<small><wicket:message
+									key="DichiarazionePuntiPatentePanel.numeroPatente" /></small> <label
+								class="sr-only" for="numeroPatenteConducente"> <wicket:message
+									key="DichiarazionePuntiPatentePanel.numeroPatente" />
+							</label>
+						</div>
+						<div class="form-group col-md-5 mb-0">
+							<input class="form-control" id="patenteConducenteRilasciataDa"
+								type="text" placeholder="Inserisci patente rilasciata da"
+								wicket:id="patenteConducenteRilasciataDa"
+								style="font-size: smaller;"> <small><wicket:message
+									key="DichiarazionePuntiPatentePanel.patenteRilasciataDa" /></small> <label
+								class="sr-only" for="patenteConducenteRilasciataDa"> <wicket:message
+									key="DichiarazionePuntiPatentePanel.patenteRilasciataDa" />
+							</label>
+						</div>
+
+						<div class="form-group col-md-6 mb-0">
+							<input class="form-control it-date-datepicker"
+								id="patenteConducenteRilasciataIl" type="date"
+								placeholder="Data in formato gg/mm/aaaa"
+								wicket:id="patenteConducenteRilasciataIl"
+								style="font-size: smaller;"> <small><wicket:message
+									key="DichiarazionePuntiPatentePanel.patenteRilasciataIl" /></small> <label
+								class="sr-only" for="patenteConducenteRilasciataIl"> <wicket:message
+									key="DichiarazionePuntiPatentePanel.patenteRilasciataIl" />
+							</label>
+						</div>
+
+						<div class="form-group col-md-6 mb-0">
+							<input class="form-control it-date-datepicker"
+								id="patenteConducenteValidaFinoAl" type="date"
+								placeholder="Data in formato gg/mm/aaaa"
+								wicket:id="patenteConducenteValidaFinoAl"
+								style="font-size: smaller;"> <small><wicket:message
+									key="DichiarazionePuntiPatentePanel.patenteValidaFinoAl" /></small> <label
+								class="sr-only" for="patenteConducenteValidaFinoAl"> <wicket:message
+									key="DichiarazionePuntiPatentePanel.patenteValidaFinoAl" />
+							</label>
+						</div>
+
+						<div class="col-lg-12">
+							<form class="mb-3 col-md-12 mx-auto"
+								enctype="multipart/form-data" onsubmit="return checkForm(this);"
+								wicket:id="formUploadConducente">
+								<small><wicket:message
+										key="DichiarazionePuntiPatentePanel.inserisciFilePatenteConducente" /></small>
+								<br></br> <input type="file" name="patenteConducenteUpload"
+									id="patenteConducenteUpload" class="upload"
+									wicket:id="patenteConducenteUpload" accept="image/*, .pdf" />
+								<label for="patenteConducenteUpload"> <svg
+										class="icon icon-sm" aria-hidden="true">
+		                        		<use
+											xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-upload"></use>
+		                    		</svg> <span>Upload patente</span>
+								</label>
+
+								<div class="col-lg-12" wicket:id="containerFileUploadConducente">
+									<ul class="upload-file-list">
+										<li class="upload-file success" style="max-width: 100%;">
+											<svg class="icon icon-sm" aria-hidden="true">
+				                                <use
+													xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+				                            </svg>
+											<p>
+												<span class="sr-only">File caricato:</span> <span
+													wicket:id="nomeFilePatenteConducente"></span><span
+													class="upload-file-weight"
+													wicket:id="dimensioneFileConducente"></span>
+											</p>
+											<button>
+												<svg class="icon" aria-hidden="true" style="fill: #d9364f;"
+													wicket:id="eliminaPatenteConducente">
+				                                    <use
+														xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-close"></use>
+				                                    <title>Elimina file</title>
+                                				</svg>
+											</button>
+										</li>
+									</ul>
+								</div>
+							</form>
+						</div>
+
+					</div>
+
+					<div wicket:id="containerAlert">
+						<div class="alert alert-danger" role="alert" wicket:id="alertDate">
+							<wicket:message key="DichiarazionePuntiPatentePanel.alertDate" />
+						</div>
+
+						<div class="alert alert-danger" role="alert"
+							wicket:id="alertPeriodoDate">
+							<wicket:message
+								key="DichiarazionePuntiPatentePanel.alertPeriodoDate" />
+						</div>
+
+						<div class="alert alert-danger" role="alert"
+							wicket:id="alertDataRilascioNelFuturo">
+							<wicket:message
+								key="DichiarazionePuntiPatentePanel.alertDataRilascioNelFuturo" />
+						</div>
+
+						<div class="alert alert-danger" role="alert"
+							wicket:id="alertDataRilascioPrimaDiNascita">
+							<wicket:message
+								key="DichiarazionePuntiPatentePanel.alertDataRilascioPrimaDiNascita" />
+						</div>
+
+						<div class="alert alert-danger" role="alert"
+							wicket:id="alertEstensioneFile">
+							<wicket:message
+								key="DichiarazionePuntiPatentePanel.alertEstensioneFile" />
+						</div>
+
+						<div class="alert alert-danger" role="alert"
+							wicket:id="alertFileObbligatorio">
+							<wicket:message
+								key="DichiarazionePuntiPatentePanel.alertFileObbligatorio" />
+						</div>
+
+						<div class="alert alert-danger" role="alert"
+							wicket:id="alertCategoriaPatente">
+							<wicket:message
+								key="DichiarazionePuntiPatentePanel.alertCategoriaPatente" />
+						</div>
+
+						<div class="alert alert-danger" role="alert"
+							wicket:id="alertLunghezzaNomeFile">
+							<wicket:message
+								key="DichiarazionePuntiPatentePanel.alertLunghezzaNomeFile" />
+						</div>
+
+					</div>
+
+					<div class="form-row mt-5 mb-0">
+						<div class="form-group col-md-12 mb-3 text-center">
+							<button type="submit" class="btn btn-primary">
+								<wicket:message key="DichiarazionePuntiPatentePanel.dichiara" />
+							</button>
+							<button type="button" class="btn btn-secondary"
+								wicket:id="annulla">
+								<wicket:message key="DichiarazionePuntiPatentePanel.annulla" />
+							</button>
+						</div>
+					</div>
+
+				</form>
+
+			</div>
+
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="col-12">
+			<h3>
+				<wicket:message key="DettagliContributoTariPanel.titolo" />
+			</h3>
+		</div>
+
+		<div class="col-lg-12 mx-auto riepilogo form-servizi-anagrafici">
+
+			<div class="row mb-0 d-flex justify-content-left">
+
+				<div class="form-row col-md-12" wicket:id="datiGenerali"></div>
+
+				<div class="col-md-6">
+					<div wicket:id="idRichiesta"></div>
+				</div>
+
+				<div class="col-md-6">
+					<div wicket:id="dataRichiesta"></div>
+				</div>
+
+				<div class="col-md-6">
+					<div wicket:id="numeroProtocollo"></div>
+				</div>
+
+				<div class="col-md-6">
+					<div wicket:id="annoProtocollo"></div>
+				</div>
+
+				<div class="col-md-6">
+					<div wicket:id="btnScaricaProtocollo"></div>
+				</div>
+
+				<div class="col-md-6">
+					<div wicket:id="stato"></div>
+				</div>
+
+				<div class="col-md-6">
+					<div wicket:id="motivoRifiuto"></div>
+				</div>
+
+				<div class="col-md-6">
+					<div wicket:id="dataAnnullamento"></div>
+				</div>
+
+				<div class="col-md-6">
+					<div wicket:id="dataValidazione"></div>
+				</div>
+
+				<div class="col-md-6">
+					<div wicket:id="dataAutorizzazione"></div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-lg-12 mx-auto riepilogo form-servizi-anagrafici">
+
+			<div class="row mb-0 d-flex justify-content-left">
+
+				<div class="form-row col-md-12" wicket:id="datiRichiedente"></div>
+
+				<div class="col-md-6">
+					<div wicket:id="nome"></div>
+				</div>
+
+				<div class="col-md-6">
+					<div wicket:id="cognome"></div>
+				</div>
+
+				<div class="col-md-6">
+					<div wicket:id="codiceFiscale"></div>
+				</div>
+
+				<div class="col-md-6">
+					<div wicket:id="email"></div>
+				</div>
+
+				<div class="col-md-6">
+					<div wicket:id="telefono"></div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-lg-12 mx-auto riepilogo form-servizi-anagrafici">
+
+			<div class="row mb-0 d-flex justify-content-left">
+
+				<div class="form-row col-md-12" wicket:id="autodichiarazioni"></div>
+
+				<div class="col-md-6">
+					<div wicket:id="flagCategoriaImmobileDiversaDaA1A8A9"></div>
+				</div>
+
+				<div class="col-md-6">
+					<div wicket:id="flagInRegolaTari"></div>
+				</div>
+
+				<div class="col-md-6">
+					<div wicket:id="flagSuperficieImmobileEntroMq"></div>
+				</div>
+
+				<div class="col-md-6">
+					<div wicket:id="flagBeneficarioNonFruitoreAltreAgevolazioni"></div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-lg-12 mx-auto riepilogo form-servizi-anagrafici">
+
+			<div class="row mb-0 d-flex justify-content-left">
+
+				<div class="form-row col-md-12" wicket:id="modalitaPagamento"></div>
+
+				<div class="col-md-12">
+					<div wicket:id="tipologiamodalitaPagamento"></div>
+				</div>
+
+				<div class="col-md-6">
+					<div wicket:id="nomeDelegatoAlRitiro"></div>
+				</div>
+
+				<div class="col-md-6">
+					<div wicket:id="cognomeDelegatoAlRitiro"></div>
+				</div>
+
+				<div class="col-md-6">
+					<div wicket:id="codiceFiscaleDelegatoAlRitiro"></div>
+				</div>
+
+				<div class="col-md-6"></div>
+
+				<div class="col-md-6">
+					<div wicket:id=iban></div>
+				</div>
+
+				<div class="col-md-6">
+					<div wicket:id="swift"></div>
+				</div>
+				
+				<div class="col-md-6">
+					<div wicket:id="btnScaricaDocumento"></div>
+				</div>
+
+				<div class="col-md-6"></div>
+
+			</div>
+		</div>
+
+		<div class="col-lg-12 mx-auto riepilogo form-servizi-anagrafici">
+
+			<div class="row mb-0 d-flex justify-content-left">
+
+				<div class="form-row col-md-12" wicket:id="datiPersoneACarico"></div>
+
+				<div class="row" wicket:id="boxACarico">
+
+					<div class="col-md-6">
+						<div wicket:id="nominativoACarico"></div>
+					</div>
+
+					<div class="col-md-6">
+						<div wicket:id="aCarico"></div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-lg-12 mx-auto riepilogo form-servizi-anagrafici">
+
+			<div class="row mb-0 d-flex justify-content-left">
+
+				<div class="form-row col-md-12" wicket:id="datiIsee"></div>
+
+				<div class="col-md-6">
+					<div wicket:id="valoreTotaleIsee"></div>
+				</div>
+
+				<div class="col-md-6"></div>
+
+				<div class="row" wicket:id="boxIsee">
+
+					<div class="col-md-3">
+						<div wicket:id="nominativoIsee"></div>
+					</div>
+
+					<div class="col-md-3">
+						<div wicket:id="valoreIsee"></div>
+					</div>
+
+					<div class="col-md-3">
+						<div wicket:id="dataIsee"></div>
+					</div>
+
+					<div class="col-md-3">
+						<div wicket:id="protocolloIsee"></div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

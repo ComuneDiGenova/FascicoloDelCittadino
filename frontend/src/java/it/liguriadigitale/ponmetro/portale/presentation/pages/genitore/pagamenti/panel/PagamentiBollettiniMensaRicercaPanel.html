@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>
+
+		<div class="row col-sm-12 mt-2 mb-2">
+			<h3 class="text-left font-weight-semibold mb-0">
+				<wicket:message
+					key="PagamentiBollettiniMensaRicercaPanel.title" />
+			</h3>
+		</div>
+
+		<div class="row col-12">
+			<div class="col-md-4">
+				<wicket:message
+					key="PagamentiBollettiniMensaRicercaPanel.labelSeleziona" />
+			</div>
+
+			<div class="col-md-6 select-wrapper">
+				<select title="Scegli una opzione"
+					wicket:id="comboSceltaAnnoPagamenti">
+					<option value="">Scegli l'anno</option>
+				</select>
+			</div>
+
+			<div class="col-md-2 mb-0">
+				<div class="form-group col-md-12 mb-3 text-center">
+					<a class="btn btn-success btn-lg btn-icon" wicket:id="bottoneCerca">
+					<svg class="icon icon-white">
+							<use xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-search"></use>
+						</svg> <span><wicket:message
+								key="PagamentiBollettiniMensaRicercaPanel.buttonCerca" /></span>
+					</a>
+				</div>
+			</div>
+			
+		</div>
+
+	</wicket:panel>
+</body>
+</html>

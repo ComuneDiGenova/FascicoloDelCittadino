@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+		<wicket:extend>
+			<div class="col-sm-12 mt-2 mb-2">
+				<div class="alert alert-warning fw-bold" role="alert"
+					wicket:id="emergenzaCovid">
+					<wicket:message key="BolloAutoPanel.emergenzaCovid" />
+				</div>
+			</div>
+			<div class="col-lg-6 mb-4" wicket:id="box">
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="" wicket:id="icona"></i>
+
+								<h4 class="card-title text-start font-weight-bold col-9">
+									<wicket:message key="BolloAutoTemplate.titolo" />
+									<br />
+									<wicket:message key="BolloAutoTemplate.targa" />
+									<span class="text-capitalize fw-bold" wicket:id="targa"></span>
+									<br />
+									<wicket:message key="BolloAutoTemplate.anno" />
+									<span class="text-capitalize fw-bold" wicket:id="anno"></span>
+									<br />
+								</h4>
+							</div>
+							<wicket:enclosure child="tipoVeicolo">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="BolloAutoPanel.tipoVeicolo" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100"
+											wicket:id="tipoVeicolo">
+											<span class="d-table-cell text-capitalize align-middle"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="scadenza">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="BolloAutoPanel.scadenza" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100"
+											wicket:id="scadenza">
+											<span class="d-table-cell text-capitalize align-middle"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="validita">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="BolloAutoPanel.validita" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100"
+											wicket:id="validita">
+											<span class="d-table-cell text-capitalize align-middle"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="situazione">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="BolloAutoPanel.situazione" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100"
+											wicket:id="situazione">
+											<span class="d-table-cell text-capitalize align-middle"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<div class="row py-1 mb-2 border-bottom">
+								<div class="col-6">
+									<p class="card-text text-start fw-bold">
+										<wicket:message key="BolloAutoPanel.isPagabile" />
+										:
+									</p>
+								</div>
+								<div class="col-6">
+									<p class="card-text text-start d-table h-100"
+										wicket:id="isPagabile">
+										<span class="d-table-cell text-capitalize align-middle"></span>
+									</p>
+								</div>
+							</div>
+
+							<wicket:enclosure child="hasRuolo">
+								<div class="row py-1 mb-2">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="BolloAutoPanel.hasRuolo" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100"
+											wicket:id="hasRuolo">
+											<span class="d-table-cell text-capitalize align-middle"></span>
+										</p>
+									</div>
+								</div>
+
+							</wicket:enclosure>
+
+							<hr />
+
+							<div class="row py-1 mb-2">
+								<div class="col-6">
+									<a class="btn btn-primary btn-xs" href="#" role="button"
+										wicket:id="btnCalcola"> <wicket:message
+											key="BolloAutoPanel.calcola" />
+									</a>
+								</div>
+
+								<div class="col-6">
+									<a class="btn btn-primary btn-xs" href="#" role="button"
+										wicket:id="btnPagamento"> <wicket:message
+											key="BolloAutoPanel.pagamento" />
+									</a>
+								</div>
+							</div>
+							<wicket:enclosure child="dettagliCalcolaBollo">
+								<div wicket:id="dettagliCalcolaBollo">
+									<wicket:enclosure child="tipoRiduzione">
+										<div class="row py-1 mb-2 border-bottom">
+											<div class="col-6">
+												<p class="card-text text-start fw-bold">
+													<wicket:message key="BolloAutoPanel.tipoRiduzione" />
+													:
+												</p>
+											</div>
+											<div class="col-6">
+												<p class="card-text text-start d-table h-100"
+													wicket:id="tipoRiduzione">
+													<span class="d-table-cell text-capitalize align-middle"></span>
+												</p>
+											</div>
+										</div>
+									</wicket:enclosure>
+									<wicket:enclosure child="percentualeRiduzione">
+										<div class="row py-1 mb-2 border-bottom">
+											<div class="col-6">
+												<p class="card-text text-start fw-bold">
+													<wicket:message key="BolloAutoPanel.percentualeRiduzione" />
+													:
+												</p>
+											</div>
+											<div class="col-6">
+												<p class="card-text text-start d-table h-100"
+													wicket:id="percentualeRiduzione">
+													<span class="d-table-cell text-capitalize align-middle"></span>
+												</p>
+											</div>
+										</div>
+									</wicket:enclosure>
+									<wicket:enclosure child="importoTassa">
+										<div class="row py-1 mb-2 border-bottom">
+											<div class="col-6">
+												<p class="card-text text-start fw-bold">
+													<wicket:message key="BolloAutoPanel.importoTassa" />
+													:
+												</p>
+											</div>
+											<div class="col-6">
+												<p class="card-text text-start d-table h-100"
+													wicket:id="importoTassa">
+													<span class="d-table-cell text-capitalize align-middle"></span>
+												</p>
+											</div>
+										</div>
+									</wicket:enclosure>
+									<wicket:enclosure child="importoSanzioni">
+										<div class="row py-1 mb-2 border-bottom">
+											<div class="col-6">
+												<p class="card-text text-start fw-bold">
+													<wicket:message key="BolloAutoPanel.importoSanzioni" />
+													:
+												</p>
+											</div>
+											<div class="col-6">
+												<p class="card-text text-start d-table h-100"
+													wicket:id="importoSanzioni">
+													<span class="d-table-cell text-capitalize align-middle"></span>
+												</p>
+											</div>
+										</div>
+									</wicket:enclosure>
+									<wicket:enclosure child="importoInteressi">
+										<div class="row py-1 mb-2 border-bottom">
+											<div class="col-6">
+												<p class="card-text text-start fw-bold">
+													<wicket:message key="BolloAutoPanel.importoInteressi" />
+													:
+												</p>
+											</div>
+											<div class="col-6">
+												<p class="card-text text-start d-table h-100"
+													wicket:id="importoInteressi">
+													<span class="d-table-cell text-capitalize align-middle"></span>
+												</p>
+											</div>
+										</div>
+									</wicket:enclosure>
+									<wicket:enclosure child="importoTotale">
+										<div class="row py-1 mb-2 border-bottom">
+											<div class="col-6">
+												<p class="card-text text-start fw-bold">
+													<wicket:message key="BolloAutoPanel.importoTotale" />
+													:
+												</p>
+											</div>
+											<div class="col-6">
+												<p class="card-text text-start d-table h-100"
+													wicket:id="importoTotale">
+													<span class="d-table-cell text-capitalize align-middle"></span>
+												</p>
+											</div>
+										</div>
+									</wicket:enclosure>
+									<wicket:enclosure child="esplicativo">
+										<div class="row py-1 mb-2 border-bottom">
+											<div class="col-6">
+												<p class="card-text text-start fw-bold">
+													<wicket:message key="BolloAutoPanel.esplicativo" />
+													:
+												</p>
+											</div>
+											<div class="col-6">
+												<p class="card-text text-start d-table h-100"
+													wicket:id="esplicativo">
+													<span class="d-table-cell text-capitalize align-middle"></span>
+												</p>
+											</div>
+										</div>
+									</wicket:enclosure>
+									<wicket:enclosure child="ultimoGiornoUtile">
+										<div class="row py-1 mb-2 border-bottom">
+											<div class="col-6">
+												<p class="card-text text-start fw-bold">
+													<wicket:message key="BolloAutoPanel.ultimoGiornoUtile" />
+													:
+												</p>
+											</div>
+											<div class="col-6">
+												<p class="card-text text-start d-table h-100"
+													wicket:id="ultimoGiornoUtile">
+													<span class="d-table-cell text-capitalize align-middle"></span>
+												</p>
+											</div>
+										</div>
+									</wicket:enclosure>
+									<wicket:enclosure child="ultimoGiornoUtileProrogato">
+										<div class="row py-1 mb-2">
+											<div class="col-6">
+												<p class="card-text text-start fw-bold">
+													<wicket:message
+														key="BolloAutoPanel.ultimoGiornoUtileProrogato" />
+													:
+												</p>
+											</div>
+											<div class="col-6">
+												<p class="card-text text-start d-table h-100"
+													wicket:id="ultimoGiornoUtileProrogato">
+													<span class="d-table-cell text-capitalize align-middle"></span>
+												</p>
+											</div>
+										</div>
+									</wicket:enclosure>
+									<hr>
+									<div class="row py-1 mb-2">
+										<div class="col-6">
+											<a class="btn btn-primary btn-xs" href="#" role="button"
+												wicket:id="btnGeneraAvviso"> <wicket:message
+													key="BolloAutoPanel.generaAvviso" />
+											</a>
+										</div>
+
+										<wicket:enclosure child="btnPagaOnline">
+											<div class="col-6">
+												<span wicket:id="btnPagaOnline"></span>
+												<!-- 											<a class="btn btn-primary btn-xs" href="#" role="button"
+												wicket:id="btnPagaOnline"> <wicket:message
+													key="BolloAutoPanel.pagaOnline" />
+											</a> -->
+											</div>
+										</wicket:enclosure>
+									</div>
+
+
+
+								</div>
+							</wicket:enclosure>
+							<wicket:enclosure child="dettagliPagamentoBollo">
+								<div wicket:id="dettagliPagamentoBollo">
+									<wicket:enclosure child="identificativoPagamento">
+										<div class="row py-1 mb-2 border-bottom">
+											<div class="col-6">
+												<p class="card-text text-start fw-bold">
+													<wicket:message
+														key="BolloAutoPanel.identificativoPagamento" />
+													:
+												</p>
+											</div>
+											<div class="col-6">
+												<p class="card-text text-start d-table h-100"
+													wicket:id="identificativoPagamento">
+													<span class="d-table-cell text-capitalize align-middle"></span>
+												</p>
+											</div>
+										</div>
+									</wicket:enclosure>
+
+									<wicket:enclosure child="importoRiduzione">
+										<div class="row py-1 mb-2 border-bottom">
+											<div class="col-6">
+												<p class="card-text text-start fw-bold">
+													<wicket:message key="BolloAutoPanel.importoRiduzione" />
+													:
+												</p>
+											</div>
+											<div class="col-6">
+												<p class="card-text text-start d-table h-100"
+													wicket:id="importoRiduzione">
+													<span class="d-table-cell text-capitalize align-middle"></span>
+												</p>
+											</div>
+										</div>
+									</wicket:enclosure>
+
+									<wicket:enclosure child="tipoRiduzioneVersamento">
+										<div class="row py-1 mb-2 border-bottom">
+											<div class="col-6">
+												<p class="card-text text-start fw-bold">
+													<wicket:message
+														key="BolloAutoPanel.tipoRiduzioneVersamento" />
+													:
+												</p>
+											</div>
+											<div class="col-6">
+												<p class="card-text text-start d-table h-100"
+													wicket:id="tipoRiduzioneVersamento">
+													<span class="d-table-cell text-capitalize align-middle"></span>
+												</p>
+											</div>
+										</div>
+									</wicket:enclosure>
+
+									<wicket:enclosure child="regioneBeneficiaria">
+										<div class="row py-1 mb-2 border-bottom">
+											<div class="col-6">
+												<p class="card-text text-start fw-bold">
+													<wicket:message key="BolloAutoPanel.regioneBeneficiaria" />
+													:
+												</p>
+											</div>
+											<div class="col-6">
+												<p class="card-text text-start d-table h-100"
+													wicket:id="regioneBeneficiaria">
+													<span class="d-table-cell text-capitalize align-middle"></span>
+												</p>
+											</div>
+										</div>
+									</wicket:enclosure>
+
+									<wicket:enclosure child="regioneIncasso">
+										<div class="row py-1 mb-2 border-bottom">
+											<div class="col-6">
+												<p class="card-text text-start fw-bold">
+													<wicket:message key="BolloAutoPanel.regioneIncasso" />
+													:
+												</p>
+											</div>
+											<div class="col-6">
+												<p class="card-text text-start d-table h-100"
+													wicket:id="regioneIncasso">
+													<span class="d-table-cell text-capitalize align-middle"></span>
+												</p>
+											</div>
+										</div>
+									</wicket:enclosure>
+
+									<wicket:enclosure child="datiCalcolo">
+										<div class="row py-1 mb-2 border-bottom">
+											<div class="col-6">
+												<p class="card-text text-start fw-bold">
+													<wicket:message key="BolloAutoPanel.datiCalcolo" />
+													:
+												</p>
+											</div>
+											<div class="col-6">
+												<p class="card-text text-start d-table h-100"
+													wicket:id="datiCalcolo">
+													<span class="d-table-cell text-capitalize align-middle"></span>
+												</p>
+											</div>
+										</div>
+									</wicket:enclosure>
+
+									<wicket:enclosure child="dataPagamento">
+										<div class="row py-1 mb-2 border-bottom">
+											<div class="col-6">
+												<p class="card-text text-start fw-bold">
+													<wicket:message key="BolloAutoPanel.dataPagamento" />
+													:
+												</p>
+											</div>
+											<div class="col-6">
+												<p class="card-text text-start d-table h-100"
+													wicket:id="dataPagamento">
+													<span class="d-table-cell text-capitalize align-middle"></span>
+												</p>
+											</div>
+										</div>
+									</wicket:enclosure>
+
+									<wicket:enclosure child="numeroRicevuta">
+										<div class="row py-1 mb-2 border-bottom">
+											<div class="col-6">
+												<p class="card-text text-start fw-bold">
+													<wicket:message key="BolloAutoPanel.numeroRicevuta" />
+													:
+												</p>
+											</div>
+											<div class="col-6">
+												<p class="card-text text-start d-table h-100"
+													wicket:id="numeroRicevuta">
+													<span class="d-table-cell text-capitalize align-middle"></span>
+												</p>
+											</div>
+										</div>
+									</wicket:enclosure>
+
+									<wicket:enclosure child="importoTassaVersamento">
+										<div class="row py-1 mb-2 border-bottom">
+											<div class="col-6">
+												<p class="card-text text-start fw-bold">
+													<wicket:message key="BolloAutoPanel.importoTassaVersamento" />
+													:
+												</p>
+											</div>
+											<div class="col-6">
+												<p class="card-text text-start d-table h-100"
+													wicket:id="importoTassaVersamento">
+													<span class="d-table-cell text-capitalize align-middle"></span>
+												</p>
+											</div>
+										</div>
+									</wicket:enclosure>
+
+									<wicket:enclosure child="importoSanzioniVersamento">
+										<div class="row py-1 mb-2 border-bottom">
+											<div class="col-6">
+												<p class="card-text text-start fw-bold">
+													<wicket:message
+														key="BolloAutoPanel.importoSanzioniVersamento" />
+													:
+												</p>
+											</div>
+											<div class="col-6">
+												<p class="card-text text-start d-table h-100"
+													wicket:id="importoSanzioniVersamento">
+													<span class="d-table-cell text-capitalize align-middle"></span>
+												</p>
+											</div>
+										</div>
+									</wicket:enclosure>
+
+									<wicket:enclosure child="importoInteressiVersamento">
+										<div class="row py-1 mb-2 border-bottom">
+											<div class="col-6">
+												<p class="card-text text-start fw-bold">
+													<wicket:message
+														key="BolloAutoPanel.importoInteressiVersamento" />
+													:
+												</p>
+											</div>
+											<div class="col-6">
+												<p class="card-text text-start d-table h-100"
+													wicket:id="importoInteressiVersamento">
+													<span class="d-table-cell text-capitalize align-middle"></span>
+												</p>
+											</div>
+										</div>
+									</wicket:enclosure>
+
+									<wicket:enclosure child="importoTotaleVersamento">
+										<div class="row py-1 mb-2 border-bottom">
+											<div class="col-6">
+												<p class="card-text text-start fw-bold">
+													<wicket:message
+														key="BolloAutoPanel.importoTotaleVersamento" />
+													:
+												</p>
+											</div>
+											<div class="col-6">
+												<p class="card-text text-start d-table h-100"
+													wicket:id="importoTotaleVersamento">
+													<span class="d-table-cell text-capitalize align-middle"></span>
+												</p>
+											</div>
+										</div>
+									</wicket:enclosure>
+
+									<wicket:enclosure child="tipoIntermediario">
+										<div class="row py-1 mb-2 border-bottom">
+											<div class="col-6">
+												<p class="card-text text-start fw-bold">
+													<wicket:message key="BolloAutoPanel.tipoIntermediario" />
+													:
+												</p>
+											</div>
+											<div class="col-6">
+												<p class="card-text text-start d-table h-100"
+													wicket:id="tipoIntermediario">
+													<span class="d-table-cell text-capitalize align-middle"></span>
+												</p>
+											</div>
+										</div>
+									</wicket:enclosure>
+
+									<wicket:enclosure child="dataScadenza">
+										<div class="row py-1 mb-2 border-bottom">
+											<div class="col-6">
+												<p class="card-text text-start fw-bold">
+													<wicket:message key="BolloAutoPanel.dataScadenza" />
+													:
+												</p>
+											</div>
+											<div class="col-6">
+												<p class="card-text text-start d-table h-100"
+													wicket:id="dataScadenza">
+													<span class="d-table-cell text-capitalize align-middle"></span>
+												</p>
+											</div>
+										</div>
+									</wicket:enclosure>
+
+									<wicket:enclosure child="validita">
+										<div class="row py-1 mb-2 border-bottom">
+											<div class="col-6">
+												<p class="card-text text-start fw-bold">
+													<wicket:message key="BolloAutoPanel.validita" />
+													:
+												</p>
+											</div>
+											<div class="col-6">
+												<p class="card-text text-start d-table h-100"
+													wicket:id="validita">
+													<span class="d-table-cell text-capitalize align-middle"></span>
+												</p>
+											</div>
+										</div>
+									</wicket:enclosure>
+
+									<wicket:enclosure child="messaggioPiuVersamenti">
+										<div class="row py-1 mb-2">
+											<div class="col-12">
+												<p class="card-text text-start fw-bold"
+													wicket:id="messaggioPiuVersamenti"></p>
+											</div>
+										</div>
+									</wicket:enclosure>
+
+								</div>
+							</wicket:enclosure>
+
+							<div wicket:id="containerMessaggioListaPagamentiVuoto">
+								<div class="alert alert-warning " role="alert">Non
+									risultano pagamenti</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</wicket:extend>
+	</wicket:panel>
+</body>
+
+</html>

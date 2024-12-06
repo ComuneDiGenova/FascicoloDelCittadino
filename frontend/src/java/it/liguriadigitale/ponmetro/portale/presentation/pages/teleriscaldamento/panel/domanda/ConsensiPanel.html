@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="form-row mb-2 col-md-12 mx-auto">
+
+			<div class="form-row col-md-12" wicket:id="titolo"></div>
+
+			<div class="form-row col-12">
+
+				<div class="form-row col-md-12" wicket:id="ioSottoscritto"></div>
+
+				<div class="alert alert-info" role="alert"
+					style="margin-bottom: 40px;">
+					<wicket:message key="ConsensiPanel.infoArt43" />
+				</div>
+
+
+				<div class="form-group col-md-12">
+
+					<div class="col-12">
+						<div class="select-wrapper">
+							<label> <wicket:message key="ConsensiPanel.art43" />
+							</label><select wicket:id="art43"></select>
+						</div>
+					</div>
+
+				</div>
+
+				<br></br>
+
+			</div>
+
+			<div class="row">
+				<div class="col-12">
+					<div class="alert alert-info" role="alert">
+						<wicket:message key="ConsensiPanel.infoPrivacy" />
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6">
+					<div wicket:id="btnScaricaInformativa"></div>
+				</div>
+				<div class="col-6">
+					<div class="select-wrapper" style="margin-top: 30px;">
+						<label> <wicket:message key="ConsensiPanel.privacy" />
+						</label><select wicket:id="privacy"></select>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		
+	</wicket:panel>
+
+</body>
+
+</html>

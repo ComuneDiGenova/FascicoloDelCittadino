@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<head>
+<title></title>
+</head>
+<body>
+	<wicket:extend>
+		<div wicket:id="breadcrumbPanel"></div>
+		<div class="row content my-4 mio-profilo">
+
+			<div class="col-md-3 mb-4">
+				<div class="list-group ">
+					<div class="list-group-item list-group-item-action active">
+						<wicket:message key="DatiSpidPage.titolo" />
+					</div>
+					<wicket:enclosure child="idSpid">
+						<div class="list-group-item list-group-item-action">
+							<wicket:message key="DatiSpidPage.ID" />
+							: <span wicket:id="idSpid"></span>
+						</div>
+					</wicket:enclosure>
+					<div class="list-group-item list-group-item-danger danger">
+						<wicket:message key="DatiSpidPage.attenzione" />
+						:
+					</div>
+					<div class="list-group-item list-group-item-active">
+						<wicket:message key="DatiSpidPage.attenzioneTesto" />
+					</div>
+
+					<div class="list-group-item list-group-item-active">
+						<wicket:message key="DatiSpidPage.versione" />
+						<span wicket:id="build_version"></span>
+					</div>
+
+				</div>
+			</div>
+			<div class="col-md-9 mb-4">
+				<div class="card-wrapper card-space">
+					<div class="card card-bg">
+						<div class="card-body text-start">
+							<div class="it-list-wrapper">
+								<ul class="it-list">
+									<wicket:enclosure child="nome">
+										<li>
+											<div class="it-right-zone">
+												<span class="text"><wicket:message
+														key="DatiSpidPage.nome" />:<em><span
+														class="text-capitalize" wicket:id="nome"></span></em></span>
+											</div>
+										</li>
+									</wicket:enclosure>
+
+									<wicket:enclosure child="cf">
+										<li>
+											<div class="it-right-zone">
+												<span class="text"><wicket:message
+														key="DatiSpidPage.codiceFiscale" />:<em><span
+														wicket:id="cf"></span></em></span>
+											</div>
+										</li>
+									</wicket:enclosure>
+
+									<wicket:enclosure child="luogoNascita">
+										<li>
+											<div class="it-right-zone">
+												<span class="text"><wicket:message
+														key="DatiSpidPage.natoA" />:<em><span
+														class="text-capitalize" wicket:id="luogoNascita"></span></em></span>
+											</div>
+										</li>
+									</wicket:enclosure>
+
+									<wicket:enclosure child="dataNascita">
+										<li>
+											<div class="it-right-zone">
+												<span class="text"><wicket:message
+														key="DatiSpidPage.il" />:<em><span
+														wicket:id="dataNascita"></span></em></span>
+											</div>
+										</li>
+									</wicket:enclosure>
+
+									<wicket:enclosure child="emailUtente">
+										<li>
+											<div class="it-right-zone">
+												<span class="text"><wicket:message
+														key="DatiSpidPage.email" />:<em><span
+														wicket:id="emailUtente"></span></em></span>
+											</div>
+										</li>
+									</wicket:enclosure>
+
+									<wicket:enclosure child="cellulareUtente">
+										<li>
+											<div class="it-right-zone">
+												<span class="text"><wicket:message
+														key="DatiSpidPage.mobile" />:<em><span
+														wicket:id="cellulareUtente"></span></em></span>
+											</div>
+										</li>
+									</wicket:enclosure>
+
+									<wicket:enclosure child="sesso">
+										<li>
+											<div class="it-right-zone">
+												<span class="text"><wicket:message
+														key="DatiSpidPage.sesso" />:<em><span
+														wicket:id="sesso"></span></em></span>
+											</div>
+										</li>
+									</wicket:enclosure>
+
+									<wicket:enclosure child="domicilio">
+										<li>
+											<div class="it-right-zone">
+												<span class="text"><wicket:message
+														key="DatiSpidPage.domicilio" />:<em><span
+														class="text-capitalize" wicket:id="domicilio"></span></em></span>
+											</div>
+										</li>
+									</wicket:enclosure>
+
+									<wicket:enclosure child="pec">
+										<li>
+											<div class="it-right-zone">
+												<span class="text"><wicket:message
+														key="DatiSpidPage.domicilioDigitalePEC" />:<em><span
+														wicket:id="pec"></span></em></span>
+											</div>
+										</li>
+									</wicket:enclosure>
+
+									<li>
+										<div class="row py-1 mb-2">
+											<div class="col text-center">
+												<a class="btn btn-primary btn-xs" href="#" role="button"
+													wicket:id="btnModificaContatti"> <wicket:message
+														key="DatiSpidPage.btnModificaContatti" />
+												</a>
+											</div>
+										</div>
+									</li>
+								
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</wicket:extend>
+	
+</body>
+</html>

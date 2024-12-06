@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+		<div class="row content my-4 info-traffico">
+			<div>
+				<h2 wicket:id="listaVuota"></h2>
+			</div>
+
+			<div class="col-lg-6 mb-4" wicket:id="box">
+
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+
+							<div class="categoryicon-top row mb-2">
+								<i class="" wicket:id="icona"></i>
+
+								<wicket:enclosure child="titolo">
+									<h4 class="card-title text-start col-9 font-weight-normal">
+										<span class="text-capitalize fw-bold"
+											wicket:id="titolo"></span>
+									</h4>
+								</wicket:enclosure>
+							</div>
+							<span wicket:id="contenuto"></span>
+							<wicket:enclosure child="urlEsternoCalcolatrice">
+								<div class="row py-1 mb-2">
+									<div class="col-12">
+										<a class="btn btn-primary btn-xs" href="#" role="button"
+											wicket:id="urlEsternoCalcolatrice" target="_blank"> <wicket:message
+												key="QuadroTributarioPanel.urlEsternoCalcolatrice" />
+										</a>
+									</div>
+								</div>
+							</wicket:enclosure>
+							<div class="row py-1 mb-2">
+								<div class="col-6">
+									<a class="btn btn-primary btn-xs" href="#" role="button"
+										wicket:id=bottoneDettagli></a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div wicket:id="pagination"></div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+	</wicket:panel>
+</body>
+</html>

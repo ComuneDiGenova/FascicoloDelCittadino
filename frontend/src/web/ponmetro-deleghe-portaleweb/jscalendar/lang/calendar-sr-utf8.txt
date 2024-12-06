@@ -1,0 +1,116 @@
+<div class="moz-text-flowed" style="font-family: -moz-fixed">/* Serbian language file for the DHTML Calendar
+* Author Srle Doberman <srleiqnet@hotmail.com>, September 2005.
+* Feel free to use this script under the terms of the GNU Lesser General
+* Public License, as long as you do not remove or alter this notice.
+*/
+// ** I18N
+
+// cela imena dana
+Calendar._DN = new Array
+("Nedelja",
+"Ponedeljak",
+"Utorak",
+"Sreda",
+"Četvrtak",
+"Petak",
+"Subota",
+"Nedelja");
+
+// kratka imena dana
+Calendar._SDN = new Array
+("Ned",
+"Pon",
+"Uto",
+"Sre",
+"Čet",
+"Pet",
+"Sub",
+"Ned");
+
+// Prvi dan u nedelji. "0" znači da je Nedelja prvi dan, , "1" znači da je
+// Ponedeljak prvi dan, itd.
+Calendar._FD = 0;
+
+// cela imena meseci
+Calendar._MN = new Array
+("Januar",
+"Februar",
+"Mart",
+"April",
+"Maj",
+"Jun",
+"July",
+"Avgust",
+"Septembar",
+"Oktobar",
+"Novembar",
+"Decembar");
+
+// kratka imena meseci
+Calendar._SMN = new Array
+("Jan",
+"Feb",
+"Mar",
+"Apr",
+"Maj",
+"Jun",
+"Jul",
+"Avg",
+"Sep",
+"Okt",
+"Nov",
+"Dec");
+
+// tooltips
+Calendar._TT = {};
+Calendar._TT["INFO"] = "O kalendaru";
+
+Calendar._TT["ABOUT"] =
+"DHTML Date/Time Selector\n" +
+"(c) dynarch.com 2002-2005 / Author: Mihai Bazon\n" + // don't translate 
+this this ;-)
+"For latest version visit: http://www.dynarch.com/projects/calendar/\n" +
+"Distributed under GNU LGPL.  See http://gnu.org/licenses/lgpl.html for 
+details." +
+"\n\n" +
+"Selekcija datuma:\n" +
+"- Koristite \xab, \xbb dugmiće za selekciju godine\n" +
+"- Koristite " + String.fromCharCode(0x2039) + ", " + 
+String.fromCharCode(0x203a) + " dugmiće za selekciju meseca\n" +
+"- Dugi pritisak na dugmiće iznad za bržu selekciju.";
+Calendar._TT["ABOUT_TIME"] = "\n\n" +
+"Selekcija vremena:\n" +
+"- Pritisnite na bilo koji deo vremena za njegovo povećanje\n" +
+"- ili (Shift-)Pritisnite za umanjivanje vremena\n" +
+"- ili pritisnite i povucite za bržu selekciju.";
+
+Calendar._TT["PREV_YEAR"] = "Prethodna godina (dugi pritisak za meni)";
+Calendar._TT["PREV_MONTH"] = "Prethodni mesec (dugi pritisak za meni)";
+Calendar._TT["GO_TODAY"] = "Idite do današnjeg datuma";
+Calendar._TT["NEXT_MONTH"] = "Sledeći mesec (dugi pritisak za meni)";
+Calendar._TT["NEXT_YEAR"] = "Sledeća godina (dugi pritisak za meni)";
+Calendar._TT["SEL_DATE"] = "Izaberite datum";
+Calendar._TT["DRAG_TO_MOVE"] = "Pritisnite i povucite za promenu pozicije";
+Calendar._TT["PART_TODAY"] = " (danas)";
+
+// Namešta "%s" kao prvi dan u nedelji.
+// %s će biti zamenjen sa imenom dana.
+Calendar._TT["DAY_FIRST"] = "Prikažite %s kao prvi dan";
+
+// Sledeće promenljive su zavisne od lokaliteta. Specificirani su dani 
+vikenda,
+// kao aray brojeva odvojenih zarezom. Brojevi su od 0 do 6:
+// 0 predstavlja Nedelju, 1 predstavlja Ponedeljak, itd.
+Calendar._TT["WEEKEND"] = "0,6";
+Calendar._TT["CLOSE"] = "Zatvorite";
+Calendar._TT["TODAY"] = "Danas";
+Calendar._TT["TIME_PART"] = "(Shift-)Pritisnite ili povucite za promenu 
+vrednosti";
+
+// format datuma
+Calendar._TT["DEF_DATE_FORMAT"] = "%d.%m.%Y";
+Calendar._TT["TT_DATE_FORMAT"] = "%A %d.%m.%Y";
+
+Calendar._TT["WK"] = "Nd";
+Calendar._TT["TIME"] = "Vreme:";
+</div>

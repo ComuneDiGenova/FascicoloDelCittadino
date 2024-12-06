@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+		<div class="row content my-4 info-traffico">
+			<div class="col-12">
+				<h4 class="d-flex flex-wrap">
+					<wicket:message key="HeaderMieIstanzePanel.legenda" />
+				
+					 <span class="d-flex my-1"><a wicket:id="flagIstanzaCMP" class="badge mx-2 bg-secondary "><wicket:message
+							key="HeaderMieIstanzePanel.CMP" /></a>
+					 </span><span class="d-flex my-1"><a wicket:id="flagIstanzaIVT" class="badge mx-2 badge-sun "><wicket:message
+							key="HeaderMieIstanzePanel.IVT" /></a>
+					 </span><span class="d-flex my-1"><a wicket:id="flagIstanzaPCR" class="badge mx-2 bg-warning "><wicket:message
+							key="HeaderMieIstanzePanel.PCR" /></a>
+					 </span><span class="d-flex my-1"><a wicket:id="flagIstanzaATT" class="badge mx-2 bg-dark "><wicket:message
+							key="HeaderMieIstanzePanel.ATT" /></a>
+					</span> <span class="d-flex my-1"><a wicket:id="flagIstanzaEVA" class="badge mx-2 bg-success "><wicket:message
+							key="HeaderMieIstanzePanel.EVA" /></a>
+					 </span><span class="d-flex my-1"><a wicket:id="flagIstanzaEVP" class="badge mx-2 bg-primary "><wicket:message
+							key="HeaderMieIstanzePanel.EVP" /></a>
+					 </span><span class="d-flex my-1"><a wicket:id="flagIstanzaEVR" class="badge mx-2 bg-danger "><wicket:message
+							key="HeaderMieIstanzePanel.EVR" /></a>
+					 </span><span class="d-flex my-1"><a wicket:id="flagIstanzaTUTTE" class="badge mx-2 badge-flower "><wicket:message
+							key="HeaderMieIstanzePanel.TUTTE" /></a>
+						</span>	
+				</h4>
+			</div>
+
+			<div class="col-12">
+				<div class="form-row mt-5 mb-2">
+					<div class="form-group col-md-12 mb-0">
+						<h4>
+							<wicket:message key="HeaderMieIstanzePanel.info" />
+							: <a class="btn btn-primary btn-xs" href="#" role="button"
+								wicket:id="btnRicercaIstanza"> <wicket:message
+									key="HeaderMieIstanzePanel.cerca" />
+							</a>
+						</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+	</wicket:panel>
+</body>
+</html>

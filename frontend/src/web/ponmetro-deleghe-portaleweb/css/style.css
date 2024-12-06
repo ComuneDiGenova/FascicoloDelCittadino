@@ -1,0 +1,710 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?6k4fn');
+  src:  url('../fonts/icomoon.eot?6k4fn#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?6k4fn') format('truetype'),
+    url('../fonts/icomoon.woff?6k4fn') format('woff'),
+    url('../fonts/icomoon.svg?6k4fn#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  float: left;
+  position: absolute;
+  top: .9em;
+}
+
+.icon-abbonamenti:before {
+  content: "\e900";
+}
+.icon-abbonamento-annuale:before {
+  content: "\e901";
+}
+.icon-abbonamento-mensile:before {
+  content: "\e902";
+}
+.icon-abbonamento-settimanale:before {
+  content: "\e903";
+}
+.icon-accessibilita:before {
+  content: "\e904";
+}
+.icon-aggiungi-preferiti:before {
+  content: "\e905";
+}
+.icon-alberghi:before {
+  content: "\e906";
+}
+.icon-albo-pretorio:before {
+  content: "\e907";
+}
+.icon-allegati:before {
+  content: "\e908";
+}
+.icon-ambasciatori:before {
+  content: "\e909";
+}
+.icon-amministrazione-trasparente:before {
+  content: "\e90a";
+}
+.icon-assicurazione-veicolo:before {
+  content: "\e90b";
+}
+.icon-asterisco:before {
+  content: "\e90c";
+}
+.icon-attestazione-pagamento-mensa:before {
+  content: "\e90d";
+}
+.icon-autoveicolo:before {
+  content: "\e90e";
+}
+.icon-bambino:before {
+  content: "\e90f";
+}
+.icon-bandi:before {
+  content: "\e910";
+}
+.icon-bando:before {
+  content: "\e911";
+}
+.icon-beuta:before {
+  content: "\e912";
+}
+.icon-biglietti:before {
+  content: "\e913";
+}
+.icon-bimba:before {
+  content: "\e914";
+}
+.icon-bimbo:before {
+  content: "\e915";
+}
+.icon-bollo-auto:before {
+  content: "\e916";
+}
+.icon-borsa_studio:before {
+  content: "\e917";
+}
+.icon-borsa-studio:before {
+  content: "\e918";
+}
+.icon-bus:before {
+  content: "\e919";
+}
+.icon-calendario:before {
+  content: "\e91a";
+}
+.icon-calendario2:before {
+  content: "\e91b";
+}
+.icon-cambio-indirizzo:before {
+  content: "\e91c";
+}
+.icon-cambio-residenza:before {
+  content: "\e91d";
+}
+.icon-camera:before {
+  content: "\e91e";
+}
+.icon-camion:before {
+  content: "\e91f";
+}
+.icon-camper:before {
+  content: "\e920";
+}
+.icon-canile:before {
+  content: "\e921";
+}
+.icon-card:before {
+  content: "\e922";
+}
+.icon-carrello:before {
+  content: "\e923";
+}
+.icon-carta-id:before {
+  content: "\e924";
+}
+.icon-casa:before {
+  content: "\e925";
+}
+.icon-casa-camino:before {
+  content: "\e926";
+}
+.icon-casa-riciclo:before {
+  content: "\e927";
+}
+.icon-case:before {
+  content: "\e928";
+}
+.icon-cassonetto:before {
+  content: "\e929";
+}
+.icon-castello:before {
+  content: "\e92a";
+}
+.icon-cedole-librarie:before {
+  content: "\e92b";
+}
+.icon-celulare:before {
+  content: "\e92c";
+}
+.icon-cerca:before {
+  content: "\e92d";
+}
+.icon-cerchio:before {
+  content: "\e92e";
+}
+.icon-certificato-abitabilit:before {
+  content: "\e92f";
+}
+.icon-certificato-anagrafico:before {
+  content: "\e930";
+}
+.icon-certificato-stato-civile:before {
+  content: "\e931";
+}
+.icon-cestino:before {
+  content: "\e932";
+}
+.icon-check-list:before {
+  content: "\e933";
+}
+.icon-ciclomotore:before {
+  content: "\e934";
+}
+.icon-ciminiere-eco:before {
+  content: "\e935";
+}
+.icon-cimitero:before {
+  content: "\e936";
+}
+.icon-ciotola:before {
+  content: "\e937";
+}
+.icon-cloud:before {
+  content: "\e938";
+}
+.icon-coccarda:before {
+  content: "\e939";
+}
+.icon-colazione:before {
+  content: "\e93a";
+}
+.icon-come-aderire:before {
+  content: "\e93b";
+}
+.icon-come-arrivare:before {
+  content: "\e93c";
+}
+.icon-comuni-scuola:before {
+  content: "\e93d";
+}
+.icon-configura:before {
+  content: "\e93e";
+}
+.icon-contatti:before {
+  content: "\e93f";
+}
+.icon-contatti2:before {
+  content: "\e940";
+}
+.icon-contorno:before {
+  content: "\e941";
+}
+.icon-contratti-immobili:before {
+  content: "\e942";
+}
+.icon-delibere:before {
+  content: "\e943";
+}
+.icon-dessert:before {
+  content: "\e944";
+}
+.icon-docuento-condono:before {
+  content: "\e945";
+}
+.icon-documentazione-didattica:before {
+  content: "\e946";
+}
+.icon-donna:before {
+  content: "\e947";
+}
+.icon-download:before {
+  content: "\e948";
+}
+.icon-ecologia:before {
+  content: "\e949";
+}
+.icon-economia:before {
+  content: "\e94a";
+}
+.icon-esci:before {
+  content: "\e94b";
+}
+.icon-eventi:before {
+  content: "\e94c";
+}
+.icon-eventi-partecipazione:before {
+  content: "\e94d";
+}
+.icon-eventi-progetto:before {
+  content: "\e94e";
+}
+.icon-famiglia:before {
+  content: "\e94f";
+}
+.icon-fascicolo-sanitario:before {
+  content: "\e950";
+}
+.icon-fogli:before {
+  content: "\e951";
+}
+.icon-foglio:before {
+  content: "\e952";
+}
+.icon-foglio-penna:before {
+  content: "\e953";
+}
+.icon-formazione:before {
+  content: "\e954";
+}
+.icon-freccia:before {
+  content: "\e955";
+}
+.icon-freccia-avanti:before {
+  content: "\e956";
+}
+.icon-freccia-fine:before {
+  content: "\e957";
+}
+.icon-freccia-indietro:before {
+  content: "\e958";
+}
+.icon-freccia-inizio:before {
+  content: "\e959";
+}
+.icon-frutta:before {
+  content: "\e95a";
+}
+.icon-frutta-dessert:before {
+  content: "\e95b";
+}
+.icon-genova-pass:before {
+  content: "\e95c";
+}
+.icon-grafico-torta:before {
+  content: "\e95d";
+}
+.icon-gruppo:before {
+  content: "\e95e";
+}
+.icon-guanti:before {
+  content: "\e95f";
+}
+.icon-idee:before {
+  content: "\e960";
+}
+.icon-igiene:before {
+  content: "\e961";
+}
+.icon-imbucare-lettere:before {
+  content: "\e962";
+}
+.icon-immobile:before {
+  content: "\e963";
+}
+.icon-info:before {
+  content: "\e964";
+}
+.icon-io-propongo:before {
+  content: "\e965";
+}
+.icon-isee:before {
+  content: "\e966";
+}
+.icon-istogramma:before {
+  content: "\e967";
+}
+.icon-istogramma-euro:before {
+  content: "\e968";
+}
+.icon-italia:before {
+  content: "\e969";
+}
+.icon-iter:before {
+  content: "\e96a";
+}
+.icon-laboratori:before {
+  content: "\e96b";
+}
+.icon-lampadina:before {
+  content: "\e96c";
+}
+.icon-lavoratori:before {
+  content: "\e96d";
+}
+.icon-lettera:before {
+  content: "\e96e";
+}
+.icon-libri:before {
+  content: "\e96f";
+}
+.icon-link:before {
+  content: "\e970";
+}
+.icon-mappa:before {
+  content: "\e971";
+}
+.icon-mappamondo:before {
+  content: "\e972";
+}
+.icon-mascherina:before {
+  content: "\e973";
+}
+.icon-matita:before {
+  content: "\e974";
+}
+.icon-medaglie:before {
+  content: "\e975";
+}
+.icon-megafono:before {
+  content: "\e976";
+}
+.icon-membri-seggi:before {
+  content: "\e977";
+}
+.icon-mensa:before {
+  content: "\e978";
+}
+.icon-menu:before {
+  content: "\e979";
+}
+.icon-mercati:before {
+  content: "\e97a";
+}
+.icon-merenda:before {
+  content: "\e97b";
+}
+.icon-mezzi:before {
+  content: "\e97c";
+}
+.icon-mirino:before {
+  content: "\e97d";
+}
+.icon-motore-fuoribordo:before {
+  content: "\e97e";
+}
+.icon-motoscafo:before {
+  content: "\e97f";
+}
+.icon-motoveicolo:before {
+  content: "\e980";
+}
+.icon-musei:before {
+  content: "\e981";
+}
+.icon-natura:before {
+  content: "\e982";
+}
+.icon-network:before {
+  content: "\e983";
+}
+.icon-no:before {
+  content: "\e984";
+}
+.icon-nuovi-progetti:before {
+  content: "\e985";
+}
+.icon-occhiali:before {
+  content: "\e986";
+}
+.icon-omino:before {
+  content: "\e987";
+}
+.icon-omino-grafico-torta:before {
+  content: "\e988";
+}
+.icon-omino-megafono:before {
+  content: "\e989";
+}
+.icon-omino-microfono:before {
+  content: "\e98a";
+}
+.icon-orologio:before {
+  content: "\e98b";
+}
+.icon-pagamento:before {
+  content: "\e98c";
+}
+.icon-pagopa:before {
+  content: "\e98d";
+}
+.icon-palazzo_strada:before {
+  content: "\e98e";
+}
+.icon-palazzo-istituzionale:before {
+  content: "\e98f";
+}
+.icon-pane:before {
+  content: "\e990";
+}
+.icon-passeggiate:before {
+  content: "\e991";
+}
+.icon-patrimonio-immobiliare:before {
+  content: "\e992";
+}
+.icon-pennello:before {
+  content: "\e993";
+}
+.icon-persone-cerchio:before {
+  content: "\e994";
+}
+.icon-persone-tavolo-3:before {
+  content: "\e995";
+}
+.icon-persone-tavolo-5:before {
+  content: "\e996";
+}
+.icon-peso:before {
+  content: "\e997";
+}
+.icon-plastipremia:before {
+  content: "\e998";
+}
+.icon-plastipremia-logo:before {
+  content: "\e999";
+}
+.icon-polizia-municipale:before {
+  content: "\e99a";
+}
+.icon-porta:before {
+  content: "\e99b";
+}
+.icon-pratiche_edilizie:before {
+  content: "\e99c";
+}
+.icon-preferiti:before {
+  content: "\e99d";
+}
+.icon-primo-piatto:before {
+  content: "\e99e";
+}
+.icon-prodotti-locali:before {
+  content: "\e99f";
+}
+.icon-protezione-civile:before {
+  content: "\e9a0";
+}
+.icon-pubbliche-relazioni:before {
+  content: "\e9a1";
+}
+.icon-quadrato:before {
+  content: "\e9a2";
+}
+.icon-quadriciclo:before {
+  content: "\e9a3";
+}
+.icon-relazioni:before {
+  content: "\e9a4";
+}
+.icon-revisione-auto:before {
+  content: "\e9a5";
+}
+.icon-rimborsi-imu:before {
+  content: "\e9a6";
+}
+.icon-rimorchio:before {
+  content: "\e9a7";
+}
+.icon-ristorazione:before {
+  content: "\e9a8";
+}
+.icon-salva:before {
+  content: "\e9a9";
+}
+.icon-sanzione_amt:before {
+  content: "\e9aa";
+}
+.icon-schede-anagrafiche:before {
+  content: "\e9ab";
+}
+.icon-scuola-a-distanza:before {
+  content: "\e9ac";
+}
+.icon-scuole:before {
+  content: "\e9ad";
+}
+.icon-secondo-piatto:before {
+  content: "\e9ae";
+}
+.icon-semaforo:before {
+  content: "\e9af";
+}
+.icon-servizi-allerta:before {
+  content: "\e9b0";
+}
+.icon-servizi-arpal:before {
+  content: "\e9b1";
+}
+.icon-servizi-online:before {
+  content: "\e9b2";
+}
+.icon-servizi-sociali:before {
+  content: "\e9b3";
+}
+.icon-servizi-socio-sanitari:before {
+  content: "\e9b4";
+}
+.icon-share:before {
+  content: "\e9b5";
+}
+.icon-si:before {
+  content: "\e9b6";
+}
+.icon-sicurezza:before {
+  content: "\e9b7";
+}
+.icon-sicurezza2:before {
+  content: "\e9b8";
+}
+.icon-simulazione-tariffaria-mensa:before {
+  content: "\e9b9";
+}
+.icon-sindaco:before {
+  content: "\e9ba";
+}
+.icon-sinergia-progetti:before {
+  content: "\e9bb";
+}
+.icon-spazzatura:before {
+  content: "\e9bc";
+}
+.icon-sport:before {
+  content: "\e9bd";
+}
+.icon-spuntino:before {
+  content: "\e9be";
+}
+.icon-staff:before {
+  content: "\e9bf";
+}
+.icon-stampante:before {
+  content: "\e9c0";
+}
+.icon-statuto:before {
+  content: "\e9c1";
+}
+.icon-stetofonendoscopio:before {
+  content: "\e9c2";
+}
+.icon-storia:before {
+  content: "\e9c3";
+}
+.icon-strada:before {
+  content: "\e9c4";
+}
+.icon-strumenti:before {
+  content: "\e9c5";
+}
+.icon-studente:before {
+  content: "\e9c6";
+}
+.icon-studente-lavoratore:before {
+  content: "\e9c7";
+}
+.icon-studente-libro:before {
+  content: "\e9c8";
+}
+.icon-studentessa:before {
+  content: "\e9c9";
+}
+.icon-studenti:before {
+  content: "\e9ca";
+}
+.icon-suggerimenti:before {
+  content: "\e9cb";
+}
+.icon-tablet:before {
+  content: "\e9cc";
+}
+.icon-tari-porcellino:before {
+  content: "\e9cd";
+}
+.icon-team:before {
+  content: "\e9ce";
+}
+.icon-teatro:before {
+  content: "\e9cf";
+}
+.icon-telecamera:before {
+  content: "\e9d0";
+}
+.icon-telefono:before {
+  content: "\e9d1";
+}
+.icon-teleriscaldamento:before {
+  content: "\e9d2";
+}
+.icon-territorio:before {
+  content: "\e9d3";
+}
+.icon-ticket:before {
+  content: "\e9d4";
+}
+.icon-timbro:before {
+  content: "\e9d5";
+}
+.icon-triangolo:before {
+  content: "\e9d6";
+}
+.icon-tributi:before {
+  content: "\e9d7";
+}
+.icon-turismo:before {
+  content: "\e9d8";
+}
+.icon-uomo:before {
+  content: "\e9d9";
+}
+.icon-utente-donna:before {
+  content: "\e9da";
+}
+.icon-utente-uomo:before {
+  content: "\e9db";
+}
+.icon-valigia-mare:before {
+  content: "\e9dc";
+}
+.icon-verbali-mensa:before {
+  content: "\e9dd";
+}
+.icon-video-tutorial:before {
+  content: "\e9de";
+}
+.icon-vigile-paletta:before {
+  content: "\e9df";
+}
+.icon-vigile-verbale:before {
+  content: "\e9e0";
+}
+.icon-virus:before {
+  content: "\e9e1";
+}
+.icon-webcam:before {
+  content: "\e9e2";
+}

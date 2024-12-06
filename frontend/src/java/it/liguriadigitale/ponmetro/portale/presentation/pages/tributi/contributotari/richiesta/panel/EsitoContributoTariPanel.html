@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="row content my-12 info-traffico">
+
+			<wicket:enclosure child="containerMessaggioOK">
+				<div class="alert alert-success" role="alert"
+					wicket:id="containerMessaggioOK">
+					<p wicket:id="messaggioOK"></p>
+
+					<div wicket:id="btnDocumento"></div>
+				</div>
+			</wicket:enclosure>
+
+			<wicket:enclosure child="containerMessaggioKO">
+				<div class="alert alert-danger" role="alert"
+					wicket:id="containerMessaggioKO">
+					<p wicket:id="messaggioKO"></p>
+				</div>
+			</wicket:enclosure>
+
+		</div>
+
+	</wicket:panel>
+</body>
+
+</html>

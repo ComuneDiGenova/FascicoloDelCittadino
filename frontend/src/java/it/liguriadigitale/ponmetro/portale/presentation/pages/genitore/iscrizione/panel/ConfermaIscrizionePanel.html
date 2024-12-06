@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>    
+	<div class="container">
+
+		<div class="col-sm-12 mt-2 mb-2">
+			<h3 class="text-left font-weight-semibold mb-0"><wicket:message key="ConfermaIscrizionePanel.title" /></h3>
+		</div>
+
+		<!-- STEP 3 -->
+		<div class="row justify-content-md-center mb-4">
+			<div class="col-12 col-lg-10">
+				<div class="steppers">
+					<ul class="steppers-header">
+						<li class="confirmed" >
+							<span class="steppers-number"><span class="sr-only">Step </span>1</span>
+							<span class="steppers-status"><wicket:message key="ConfermaIscrizionePanel.step1"></wicket:message></span>
+							<span class="sr-only"><wicket:message key="ConfermaIscrizionePanel.step1"></wicket:message></span>
+						</li>
+						<li class="confirmed">
+							<span class="steppers-number"><span class="sr-only">Step </span>2</span>
+							<span class="steppers-status"><wicket:message key="ConfermaIscrizionePanel.step2"></wicket:message></span>
+							<span class="sr-only"><wicket:message key="ConfermaIscrizionePanel.step2"></wicket:message></span>
+						</li>
+						<li class="active no-line">
+							<span class="steppers-number"><span class="sr-only">Step </span>3</span>
+							<span class="steppers-status"><wicket:message key="ConfermaIscrizionePanel.step3"></wicket:message></span>
+							<span class="sr-only"><wicket:message key="ConfermaIscrizionePanel.step3"></wicket:message></span>
+						</li>
+						<li class="steppers-index" aria-hidden="true">
+							<span class="confirmed">1</span> 
+							<span class="confirmed">2</span> 
+							<span class="active"><wicket:message key="ConfermaIscrizionePanel.step3"></wicket:message></span> 
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!--  
+	<div class="col-12 my-2 text-center">
+		<div class="d-flex justify-content-center">
+			<i class="icon-stampante color-black-light"></i>
+		</div>
+	</div>
+	-->
+
+	<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>  
+
+	</wicket:panel>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+package it.liguriadigitale.ponmetro.portale.pojo.enums;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public enum SegnalazioniTrafficoDettaglioTipoEnum {
+  OTHER(0),
+  AGRICULTURALSHOW(1),
+  AIRSHOW(2),
+  ATHLETICSMEETING(3),
+  COMMERCIALEVENT(4),
+  CULTURALEVENT(5),
+  BALLGAME(6),
+  BASEBALLGAME(7),
+  BASKETBALLGAME(8),
+  BICYCLERACE(9),
+  BOATRACE(10),
+  BOATSHOW(11),
+  BOXINGTOURNAMENT(12),
+  BULLFIGHT(13),
+  CEREMONIALEVENT(14),
+  CONCERT(15),
+  CRICKETMATCH(16),
+  EXHIBITION(17),
+  FAIR(18),
+  FESTIVAL(19),
+  FILMTVMAKING(20),
+  FOOTBALLMATCH(21),
+  FUNFAIR(22),
+  GARDENINGORFLOWERSHOW(23),
+  GOLFTOURNAMENT(24),
+  HOCKEYGAME(25),
+  HORSERACEMEETING(26),
+  INTERNATIONALSPORTSMEETING(27),
+  MAJOREVENT(28),
+  MARATHON(29),
+  MARKET(30),
+  MATCH(31),
+  MOTORSHOW(32),
+  MOTORSPORTRACEMEETING(33),
+  PARADE(34),
+  PROCESSION(35),
+  RACEMEETING(36),
+  RUGBYMATCH(37),
+  SEVERALMAJOREVENTS(38),
+  SHOW(39),
+  SHOWJUMPING(40),
+  SPORTSMEETING(41),
+  STATEOCCASION(42),
+  TENNISTOURNAMENT(43),
+  TOURNAMENT(44),
+  TRADEFAIR(45),
+  WATERSPORTSMEETING(46),
+  WINTERSPORTSMEETING(47),
+  ACCIDENT(48),
+  CONGESTION(49),
+  EARLIERACCIDENT(50),
+  EARLIEREVENT(51),
+  EARLIERINCIDENT(52),
+  EQUIPMENTFAILURE(53),
+  EXCESSIVEHEAT(54),
+  FROST(55),
+  HOLIDAYTRAFFIC(56),
+  INFRASTRUCTUREFAILURE(57),
+  LARGENUMBERSOFVISITORS(58),
+  OBSTRUCTION(59),
+  POLLUTIONALERT(60),
+  POORWEATHER(61),
+  PROBLEMSATBORDERPOST(62),
+  PROBLEMSATCUSTOMPOST(63),
+  PROBLEMSONLOCALROADS(64),
+  RADIOACTIVELEAKALERT(65),
+  ROADSIDEEVENT(66),
+  RUBBERNECKING(67),
+  SECURITYINCIDENT(68),
+  SHEARWEIGHTOFTRAFFIC(69),
+  TECHNICALPROBLEMS(70),
+  TERRORISM(71),
+  TOXICCLOUDALERT(72),
+  VANDALISM(73),
+  OILONROAD(74),
+  FIRE(75),
+  CABLEONROAD(76),
+  RESTRICTIONS(77),
+  SLOWTRAFFIC(78),
+  HEAVYVEHICLEACCIDENT(79),
+  SERIOUSACCIDENT(80),
+  VEHICLEROLLOVER(81),
+  WIND(82),
+  UNKNOWN(999999);
+
+  private Integer value;
+  private static Map<Object, Object> map = new HashMap<>();
+
+  private SegnalazioniTrafficoDettaglioTipoEnum(Integer value) {
+    this.value = value;
+  }
+
+  static {
+    for (SegnalazioniTrafficoDettaglioTipoEnum type :
+        SegnalazioniTrafficoDettaglioTipoEnum.values()) {
+      map.put(type.value, type);
+    }
+  }
+
+  public static SegnalazioniTrafficoDettaglioTipoEnum valueOf(Integer type) {
+    return (type == null) ? UNKNOWN : (SegnalazioniTrafficoDettaglioTipoEnum) map.get(type);
+  }
+
+  public Integer getValue() {
+    return value;
+  }
+
+  public static String getStringUnknown() {
+    return UNKNOWN.toString();
+  }
+}

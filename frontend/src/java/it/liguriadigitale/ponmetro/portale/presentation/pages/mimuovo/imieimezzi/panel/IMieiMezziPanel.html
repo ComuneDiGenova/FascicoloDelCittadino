@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+		<wicket:extend>
+			
+			<div wicket:id="messaggiInformativi"></div>
+			
+			<div class="col-lg-6 mb-4" wicket:id="box">
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="" wicket:id="icona"></i>
+
+								<h4 class="card-title text-start col-9 font-weight-normal">
+									<wicket:message key="IMieiMezziPanel.targa" />
+									<span class="text-capitalize fw-bold"
+										wicket:id="targa"></span> <br />
+									<wicket:message key="IMieiMezziPanel.tipoVeicolo" />
+									<span class="text-capitalize fw-bold"
+										wicket:id="tipoVeicolo"></span>
+								</h4>
+							</div>
+
+							<wicket:enclosure child="dataImmatricolazione">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="IMieiMezziPanel.dataImmatricolazione" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100"
+											wicket:id="dataImmatricolazione">
+											<span class="d-table-cell align-middle"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="dataInizioProprieta">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="IMieiMezziPanel.dataInizioProprieta" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100"
+											wicket:id="dataInizioProprieta">
+											<span class="d-table-cell text-capitalize align-middle"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="categoriaEuro">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="IMieiMezziPanel.categoriaEuro" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100"
+											wicket:id="categoriaEuro">
+											<span class="d-table-cell text-capitalize align-middle"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="destinazione">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="IMieiMezziPanel.destinazione" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100"
+											wicket:id="destinazione">
+											<span class="d-table-cell align-middle"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="uso">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="IMieiMezziPanel.uso" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100" wicket:id="uso">
+											<span class="d-table-cell text-capitalize align-middle"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="trasportoMerci">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="IMieiMezziPanel.trasportoMerci" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100"
+											wicket:id="trasportoMerci">
+											<span class="d-table-cell align-middle"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="carrozzeria">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="IMieiMezziPanel.carrozzeria" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100"
+											wicket:id="carrozzeria">
+											<span class="d-table-cell text-capitalize align-middle"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="massaComplessiva">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="IMieiMezziPanel.massaComplessiva" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100"
+											wicket:id="massaComplessiva">
+											<span class="d-table-cell align-middle"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="portata">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="IMieiMezziPanel.portata" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100"
+											wicket:id="portata">
+											<span class="d-table-cell text-capitalize align-middle"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="potenzaEffettiva">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="IMieiMezziPanel.PotenzaEffettiva" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100"
+											wicket:id="potenzaEffettiva">
+											<span class="d-table-cell align-middle"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="cavalliFiscali">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="IMieiMezziPanel.cavalliFiscali" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100"
+											wicket:id="cavalliFiscali">
+											<span class="d-table-cell text-capitalize align-middle"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="alimentazione">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="IMieiMezziPanel.alimentazione" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100"
+											wicket:id="alimentazione">
+											<span class="d-table-cell align-middle"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="cilindrata">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="IMieiMezziPanel.cilindrata" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100"
+											wicket:id="cilindrata">
+											<span class="d-table-cell text-capitalize align-middle"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="sospensionePneumatica">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="IMieiMezziPanel.sospensionePneumatica" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100"
+											wicket:id="sospensionePneumatica">
+											<span class="d-table-cell align-middle"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="flagEcoDiesel">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="IMieiMezziPanel.flagEcoDiesel" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100"
+											wicket:id="flagEcoDiesel">
+											<span class="d-table-cell text-capitalize align-middle"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="numeroPosti">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="IMieiMezziPanel.numeroPosti" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100"
+											wicket:id="numeroPosti">
+											<span class="d-table-cell align-middle"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="numeroAssi">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="IMieiMezziPanel.numeroAssi" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100"
+											wicket:id="numeroAssi">
+											<span class="d-table-cell text-capitalize align-middle"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="presenzaGancioTraino">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="IMieiMezziPanel.presenzaGancioTraino" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100"
+											wicket:id="presenzaGancioTraino">
+											<span class="d-table-cell align-middle"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="rimorchiabilita">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="IMieiMezziPanel.rimorchiabilita" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100"
+											wicket:id="rimorchiabilita">
+											<span class="d-table-cell text-capitalize align-middle"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="massaRimorchiabile">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="IMieiMezziPanel.massaRimorchiabile" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100"
+											wicket:id="massaRimorchiabile">
+											<span class="d-table-cell align-middle"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="emissioneCO2">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="IMieiMezziPanel.emissioneCO2" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100"
+											wicket:id="emissioneCO2">
+											<span class="d-table-cell align-middle"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+						</div>
+
+						<hr>
+
+						<div class="row mb-4">
+							<div class="col-4">
+								<p class="card-text text-center fw-bold">
+									<a class="btn btn-primary btn-icon" wicket:id="linkBolloAuto">
+										<span><wicket:message
+												key="IMieiMezziPanel.linkBolloAuto" /></span>
+									</a>
+								</p>
+							</div>
+
+							<div class="col-8">
+								<p class="card-text text-center fw-bold">
+									<a class="icon-assicurazione-veicolo btn btn-primary btn-icon"
+										wicket:id="linkAssicurazioneRevisione"> <span><wicket:message
+												key="IMieiMezziPanel.linkAssicurazioneRevisione" /></span>
+									</a>
+								</p>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!--end card-->
+
+			<div class="col-lg-12 mb-4">
+				<h4 class="card-title" wicket:id="messaggioListaVuota"></h4>
+			</div>
+		</wicket:extend>
+		<div class="col-lg-12 mb-4" wicket:id="feedback"></div>
+	</wicket:panel>
+</body>
+
+</html>

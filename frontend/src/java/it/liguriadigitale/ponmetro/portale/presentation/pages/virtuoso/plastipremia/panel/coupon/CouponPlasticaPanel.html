@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="row content my-4 info-traffico">
+
+			<wicket:enclosure child="codiceFiscale">
+				<div class="col-6">
+					<p class="text-left">
+						<span class="font-weight-semibold"><wicket:message
+								key="CouponPlasticaPanel.codiceFiscale" /></span> <span
+							class="text-capitalize" wicket:id="codiceFiscale"></span>
+					</p>
+				</div>
+			</wicket:enclosure>
+
+			<wicket:enclosure child="anno">
+				<div class="col-6">
+					<p class="text-left">
+						<span class="font-weight-semibold"><wicket:message
+								key="CouponPlasticaPanel.anno" /></span> <span class="text-capitalize"
+							wicket:id="anno"></span>
+					</p>
+				</div>
+			</wicket:enclosure>
+
+			<wicket:enclosure child="punti">
+				<div class="col-6">
+					<p class="text-left">
+						<span class="font-weight-semibold"><wicket:message
+								key="CouponPlasticaPanel.punti" /></span> <span
+							class="text-capitalize" wicket:id="punti"></span>
+					</p>
+				</div>
+			</wicket:enclosure>
+
+			<div class="col-6"></div>
+
+			<div class="col-lg-4 mb-4" wicket:id="box">
+
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="color-green-light col-3 icon-plastipremia-logo"></i>
+
+								<wicket:enclosure child="titolo">
+									<h4 class="card-title text-left col-9 font-weight-normal">
+										<span class="text-capitalize font-weight-semibold"
+											wicket:id="titolo"></span>
+									</h4>
+								</wicket:enclosure>
+
+							</div>
+
+							<div wicket:id="annoCoupon"></div>
+							<div wicket:id="stato"></div>
+							<div wicket:id="validoFinoAl"></div>
+							<div wicket:id="descrizione"></div>
+
+							<wicket:enclosure child="codice">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-5">
+										<p class="card-text text-left font-weight-semibold">
+											<wicket:message key="CouponPlasticaPanel.codice" />
+										</p>
+									</div>
+									<div class="col-7">
+										<p class="card-text text-left d-table h-100">
+											<span class="d-table-cell text-capitalize align-middle"
+												style="word-break: break-all;" wicket:id="codice"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="col-12" wicket:id="paginationPlasTiCoupon"></div>
+
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+	</wicket:panel>
+</body>
+
+</html>

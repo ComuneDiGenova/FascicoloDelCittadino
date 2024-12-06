@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="row content my-4 info-traffico">
+
+			<div class="col-lg-12 mb-4">
+
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+
+							<div class="col-12" wicket:id="titoloTitolare"></div>
+
+							<div class="row">
+								<div class="col-md-6">
+									<div wicket:id="nominativoTitolare"></div>
+								</div>
+
+								<div class="col-md-6">
+									<div wicket:id="codiceFiscaleTitolare"></div>
+								</div>
+
+								<div class="col-md-6">
+									<div wicket:id="dataNascitaTitolare"></div>
+								</div>
+
+								<div class="col-md-6">
+									<div wicket:id="luogoNascitaTitolare"></div>
+								</div>
+
+								<div class="col-md-6">
+									<div wicket:id="cityPass"></div>
+								</div>
+
+								<div class="col-md-6"></div>
+							</div>
+
+							<div class="col-12" wicket:id="containerRichiedente">
+								<div class="col-12" wicket:id="titoloRichiedente"></div>
+
+								<div class="row">
+
+									<div class="col-md-6">
+										<div wicket:id="nominativoRichiedente"></div>
+									</div>
+
+									<div class="col-md-6">
+										<div wicket:id="codiceFiscaleRichiedente"></div>
+									</div>
+
+									<div class="col-md-6">
+										<div wicket:id="dataNascitaRichiedente"></div>
+									</div>
+
+									<div class="col-md-6">
+										<div wicket:id="luogoNascitaRichiedente"></div>
+									</div>
+
+								</div>
+
+							</div>
+
+							<div class="row" wicket:id="containerIsee">
+								<div class="col-md-6">
+									<div wicket:id="importoIsee"></div>
+								</div>
+
+								<div class="col-md-6">
+									<div wicket:id="protocolloIsee"></div>
+								</div>
+
+								<div class="d-flex flex-column">
+									<div class="alert alert-warning" role="alert"
+										wicket:id="isseNonPresente">
+										<wicket:message
+											key="AbbonamentiAmtDettaglioPanel.isseNonPresente" />
+									</div>
+
+									<div class="alert alert-warning" role="alert"
+										wicket:id="issePresenteMaFuoriRange">
+										<wicket:message
+											key="AbbonamentiAmtDettaglioPanel.issePresenteMaFuoriRange" />
+									</div>
+
+									<div class="alert alert-warning" role="alert"
+										wicket:id="issePresenteNelRange">
+										<wicket:message
+											key="AbbonamentiAmtDettaglioPanel.issePresenteNelRange" />
+									</div>
+
+									<div class="alert alert-info" role="alert"
+										wicket:id="alertGratuita">
+										<wicket:message
+											key="AbbonamentiAmtDettaglioPanel.alertGratuita" />
+									</div>
+
+									<div class="alert alert-warning" role="alert"
+										wicket:id="iseeForesto">
+										<wicket:message key="AbbonamentiAmtDettaglioPanel.iseeForesto" />
+									</div>
+								</div>
+
+							</div>
+
+
+							<div class="d-flex flex-row justify-content-center" style="gap: 10px">
+								<wicket:enclosure child="btnIndietro">
+									<div >
+										<button type="button" class="btn btn-xs btn-secondary"
+											wicket:id="btnIndietro">
+											<wicket:message
+												key="AbbonamentiAmtDettaglioPanel.btnIndietro" />
+										</button>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="linkRicaricaCriptazione">
+									<div >
+										<a class="btn btn-primary btn-xs" href="#" role="button"
+											wicket:id="linkRicaricaCriptazione" target="_blank"> <wicket:message
+												key="AbbonamentiAmtDettaglioPanel.vaiAlSitoAmt" />
+										</a>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="linkNuovaTesseraCriptazione">
+									<div >
+										<a class="btn btn-primary btn-xs" href="#" role="button"
+											wicket:id="linkNuovaTesseraCriptazione" target="_blank">
+											<wicket:message
+												key="AbbonamentiAmtDettaglioPanel.urlNuovaTessera" />
+										</a>
+									</div>
+								</wicket:enclosure>
+
+
+
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+	</wicket:panel>
+</body>
+
+</html>

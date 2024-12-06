@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="row content my-4 info-traffico">
+
+			<div class="col-12 alert alert-info" role="alert">
+				<wicket:message key="RimborsiTariEngPanel.messaggioInfo" />
+			</div>
+
+			<div wicket:id="legendaPanel"></div>
+
+			<wicket:enclosure child="btnRimborso">
+				<div class="col-sm-6 mt-2 mb-2">
+					<button class="btn btn-outline-primary">
+						<span wicket:id="btnRimborso"></span>
+					</button>
+				</div>
+				<div class="col-sm-6 mt-2 mb-2"></div>
+			</wicket:enclosure>
+
+			<div class="col-12 alert alert-warning" role="alert"
+				wicket:id="listaRimborsiVuota">
+				<wicket:message key="RimborsiTariEngPanel.vuoto" />
+
+			</div>
+
+			<div class="col-lg-6 mb-4" wicket:id="box">
+
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="color-green col-auto icon-cassonetto"></i>
+
+
+								<h4 class="card-title text-left col-9 font-weight-normal">
+									<wicket:enclosure child="idIstanza">
+										<wicket:message key="RimborsiTariEngPanel.idIstanza" />
+										<span class="text-capitalize font-weight-semibold"
+											wicket:id="idIstanza"></span>
+										<br />
+									</wicket:enclosure>
+
+									<wicket:enclosure child="numeroProtocolloAnnoProtocollo">
+										<wicket:message
+											key="RimborsiTariEngPanel.numeroProtocolloAnnoProtocollo" />
+										<span class="text-capitalize font-weight-semibold"
+											wicket:id="numeroProtocolloAnnoProtocollo"></span>
+											<br />
+									</wicket:enclosure>
+
+									<wicket:enclosure child="dataProtocollazione">
+										<wicket:message key="RimborsiTariEngPanel.dataProtocollazione" />
+										<span class="text-capitalize font-weight-semibold"
+											wicket:id="dataProtocollazione"></span>
+									</wicket:enclosure>
+								</h4>
+
+							</div>
+
+							<div wicket:id="dataIstanza"></div>
+
+							<div wicket:id="stato"></div>
+
+							<div wicket:id="dataValidazione"></div>
+
+							<div wicket:id="tipologiaRichiedenteRimborso"></div>
+
+							<div wicket:id="tipoRimborso"></div>
+
+							<div wicket:id="enteBeneficiarioRimborso"></div>
+
+							<div wicket:id="nominativoBeneficiario"></div>
+
+							<div wicket:id="codiceFiscaleBeneficiario"></div>
+
+							<div wicket:id="indirizzoBeneficiario"></div>
+
+							<div wicket:id="comuneBeneficiario"></div>
+
+							<div wicket:id="capBeneficiario"></div>
+
+							<div wicket:id="idDebitore"></div>
+
+							<div wicket:id="cognome"></div>
+
+							<div wicket:id="nome"></div>
+
+							<div wicket:id="cfPIva"></div>
+							
+							<div wicket:id="nominativoDebitore"></div>
+
+							<div wicket:id="nominativoDelegato"></div>
+
+							<div wicket:id="codiceFiscaleDelegato"></div>
+
+							<div wicket:id="modalitaPagamento"></div>
+
+							<div wicket:id="iban"></div>
+
+							<div wicket:id="swift"></div>
+
+							<div wicket:id="dataAnnullamento"></div>
+
+							<div wicket:id="emailDiContatto"></div>
+
+							<div wicket:id="numeroDocumento"></div>
+
+							<div wicket:id="importoInteressiRimborso"></div>
+
+							<div wicket:id="importoIstanza"></div>
+
+							<div wicket:id="importoRimborso"></div>
+
+							<div wicket:id="note"></div>
+
+							<div wicket:id="listViewFile" class="row py-1 mb-2 border-bottom">
+								<div class="col-3">
+									<p class="card-text text-left font-weight-semibold"
+										wicket:id="nomeFile"></p>
+								</div>
+
+								<div class="col-9 link-list-wrapper">
+									<a class="btn btn-success btn-xs btn-icon"
+										wicket:id="btnScaricaFile"> <svg class="icon icon-white">
+                                                <use
+												xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-download"></use>
+                                            </svg> <span><wicket:message
+												key="RimborsiTariEngPanel.download" /></span>
+									</a>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div wicket:id="pagination"></div>
+
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

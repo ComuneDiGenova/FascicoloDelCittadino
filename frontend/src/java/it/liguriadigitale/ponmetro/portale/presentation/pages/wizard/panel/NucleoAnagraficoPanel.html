@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+<wicket:panel>
+<!--start card-->
+<div class="card card-bg my-2">
+	<div class="card-body">
+		<div class="categoryicon-top row mb-4">
+			<i class="color-orange col-3 icon-famiglia"></i>
+			<h5 class="card-title text-left font-weight-bold col-9">Autodichiarazione nucleo famigliare</h5>
+		</div>
+		<div class="container">
+			<!-- scheda tu -->
+			<div class="row mb-3">
+				<div class="col-6">
+					<p class="card-text text-left font-weight-semibold">Tu:</p>
+				</div>
+				<div class="col-6">
+					<p class="card-text text-left"><span class="text-capitalize font-weight-semibold">XXXXX</span></p>
+				</div>
+			</div>
+
+			<!-- scheda convivente -->
+			<div wicket:id="listaConviventi">
+				<form wicket:id="form">
+					<div class="row mb-1">
+						<div class="col-6">
+							<div class="select-wrapper text-left">
+								<select wicket:id="combo"></select>
+							</div>
+						</div>
+						<div class="col-6">
+							<p class="card-text text-left"><span class="text-capitalize font-weight-semibold" wicket:id="nome"></span></p>
+						</div>
+					</div>
+					<div class="row mb-3">
+						<div class="col-6">
+							<p class="card-text text-left font-weight-semibold">Codice Fiscale:</p>
+						</div>
+						<div class="col-6">
+							<p class="card-text text-left"><span class="text-capitalize" wicket:id="cf"></span></p>
+						</div>
+					</div>
+					<div class="row mb-3">
+					 	<button type="button" class="btn btn-primary" wicket:id="salva">Salva</button>
+					</div>
+				</form>
+			</div>
+			<!-- scheda convivente END-->
+			<div class="row mb-2">
+				<div class="col-12">
+					<div wicket:id="feedback"></div>
+				</div>
+			</div>
+				
+			<!-- scheda check -->
+			<div class="row mb-2">
+				<div class="col-12">
+					<div class="form-check-relazione">
+					<small id="checkbox-help" class="form-text">La falsa attestazione o dichiarazione sulla identit&agrave; propria o di altri &egrave; perseguibile a norma dell'Art 495 del Codice Penale.</small>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+<!--end card-->
+</wicket:panel>
+</body>
+</html>

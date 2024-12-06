@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="col-lg-10 mx-auto riepilogo">
+
+			<div class="col-sm-12 mt-2 mb-2">
+				<!--<div class="alert alert-warning font-weight-semibold" role="alert"
+					wicket:id="info2">
+					<wicket:message key="RicercaVerbaleConducenteFormPanel.info2" />
+				</div>-->
+				
+				<div wicket:id="messaggiInformativi"></div>
+			</div>
+
+			<div class="col-sm-12 mt-2 mb-2">
+				<!--<div class="alert alert-warning font-weight-semibold" role="alert"
+					wicket:id="info3">
+					<wicket:message key="RicercaVerbaleConducenteFormPanel.info3" />
+				</div>-->
+			</div>
+
+			<div class="col-md-12 text-start mb-4">
+				<h4>
+					<wicket:message key="RicercaVerbaleConducenteFormPanel.info" />
+					:
+				</h4>
+			</div>
+
+			<div class="col-lg-12 mx-auto">
+				<div class="steppers">
+					<ul class="steppers-header">
+						<li class="active no-line"><span class="steppers-number"><span
+								class="sr-only">Step </span>1</span> <span class="steppers-status"><wicket:message
+									key="RicercaVerbaleConducenteFormPanel.step1"></wicket:message></span>
+							<span class="sr-only"><wicket:message
+									key="RicercaVerbaleConducenteFormPanel.step1"></wicket:message></span>
+						</li>
+						<li><span class="steppers-number"><span
+								class="sr-only">Step </span>2</span> <span class="steppers-status"><wicket:message
+									key="RicercaVerbaleConducenteFormPanel.step2"></wicket:message></span>
+							<span class="sr-only"><wicket:message
+									key="RicercaVerbaleConducenteFormPanel.step2"></wicket:message></span>
+						</li>
+						<li><span class="steppers-number"><span
+								class="sr-only">Step </span>3</span> <span class="steppers-status"><wicket:message
+									key="RicercaVerbaleConducenteFormPanel.step3"></wicket:message></span>
+							<span class="sr-only"><wicket:message
+									key="RicercaVerbaleConducenteFormPanel.step3"></wicket:message></span>
+						</li>
+						<li><span class="steppers-number"><span
+								class="sr-only">Step </span>4</span> <span class="steppers-status"><wicket:message
+									key="RicercaVerbaleConducenteFormPanel.step4"></wicket:message></span>
+							<span class="sr-only"><wicket:message
+									key="RicercaVerbaleConducenteFormPanel.step4"></wicket:message></span>
+						</li>
+						<li class="steppers-index" aria-hidden="true"><span
+							class="active">1</span> <span>2</span> <span>3</span> <span><wicket:message
+									key="RicercaVerbaleConducenteFormPanel.step4"></wicket:message></span>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<form class="mb-3 col-lg-10 mx-auto" wicket:id="form"
+				enctype="multipart/form-data" >
+			<!--  onsubmit="return checkForm(this);"  -->
+				<div class="col-md-10 text-start mb-4">
+					<h4>
+						<wicket:message
+							key="RicercaVerbaleConducenteFormPanel.datiVerbale" />
+					</h4>
+				</div>
+				
+				<div class="row">
+					<div class="form-group col-md-6 mb-0">
+						<input class="form-control" id="numeroAvviso" type="text"
+							placeholder="Inserisci Numero Avviso" maxlength="10"
+							oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+							wicket:id="numeroAvviso" style="font-size: smaller;"> <small><wicket:message
+								key="RicercaVerbaleConducenteFormPanel.inserisciNumeroAvviso" /></small>
+						<label class="sr-only" for="numeroAvviso"> <wicket:message
+								key="RicercaVerbaleConducenteFormPanel.inserisciNumeroAvviso" />
+						</label>
+					
+					</div>
+				
+				</div>
+				
+				<div class="row">
+					<div class="form-group col-md-6 mb-0">
+						<input class="form-control" id="targa" type="text"
+							placeholder="Inserisci Targa" wicket:id="targa" style="font-size: smaller;"> <small><wicket:message
+								key="RicercaVerbaleConducenteFormPanel.inserisciTarga" /></small> <label
+							class="sr-only" for="targa"> <wicket:message
+								key="RicercaVerbaleConducenteFormPanel.inserisciTarga" />
+						</label>
+					</div>
+					<div class="form-group col-md-6 mb-0">
+						<input class="form-control it-date-datepicker" id="dataVerbale" type="date"
+							placeholder="Data in formato gg/mm/aaaa" wicket:id="dataVerbale" style="font-size: smaller;">
+						<small><wicket:message
+								key="RicercaVerbaleConducenteFormPanel.inserisciDataVerbale" /></small>
+						<label class="sr-only" for="dataVerbale"> <wicket:message
+								key="RicercaVerbaleConducenteFormPanel.inserisciDataVerbale" />
+						</label>
+					</div>
+				</div>
+				
+				<div class="col-md-10 text-start">
+						<br>
+				</div>
+				
+				<div class="col-md-10 text-start">
+					<h4>
+						<wicket:message
+							key="RicercaVerbaleConducenteFormPanel.datiConducente" />
+					</h4>
+				</div>
+				
+				<div class="row">
+						<div class="form-group col-md-6 mb-0">
+						<input class="form-control" id="emailDichiarante" type="email"
+							placeholder="Inserisci Email" wicket:id="emailDichiarante" style="font-size: smaller;">
+						<small><wicket:message
+								key="RicercaVerbaleConducenteFormPanel.inserisciEmailDichiarante" /></small>
+						<label class="sr-only" for="emailDichiarante"> <wicket:message
+								key="RicercaVerbaleConducenteFormPanel.inserisciEmailDichiarante" />
+						</label>
+					</div>
+
+					<div class="form-group col-md-6 mb-0">
+						<input class="form-control" id="categoriaPatente" type="text"
+							placeholder="Inserisci Categoria Patente"
+							wicket:id="categoriaPatente" style="font-size: smaller;"> <small><wicket:message
+								key="RicercaVerbaleConducenteFormPanel.inserisciCategoriaPatente" /></small>
+						<label class="sr-only" for="categoriaPatente"> <wicket:message
+								key="RicercaVerbaleConducenteFormPanel.inserisciCategoriaPatente" />
+						</label>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="form-group col-md-6 mb-0">
+						<input class="form-control" id="numeroPatente" type="text"
+							placeholder="Inserisci Numero Patente" wicket:id="numeroPatente" style="font-size: smaller;">
+						<small><wicket:message
+								key="RicercaVerbaleConducenteFormPanel.inserisciNumeroPatente" /></small>
+						<label class="sr-only" for="numeroPatente"> <wicket:message
+								key="RicercaVerbaleConducenteFormPanel.inserisciNumeroPatente" />
+						</label>
+					</div>
+
+					<div class="form-group col-md-6 mb-0">
+						<input class="form-control" id="patenteRilasciataDa" type="text"
+							placeholder="Inserisci Patente rilasciata da"
+							wicket:id="patenteRilasciataDa" style="font-size: smaller;"> <small><wicket:message
+								key="RicercaVerbaleConducenteFormPanel.inserisciPatenteRilasciataDa" /></small>
+						<label class="sr-only" for="patenteRilasciataDa"> <wicket:message
+								key="RicercaVerbaleConducenteFormPanel.inserisciPatenteRilasciataDa" />
+						</label>
+					</div>
+				</div>
+				
+				<div class="row">
+						<div class="form-group col-md-6 mb-0">
+						<div class="form-group">
+							<input class="form-control it-date-datepicker" id="patenteRilasciataIl" type="date"
+								placeholder="Data in formato gg/mm/aaaa"
+								wicket:id="patenteRilasciataIl" style="font-size: smaller;"> <small><wicket:message
+									key="RicercaVerbaleConducenteFormPanel.inserisciPatenteRilasciataIl" /></small>
+							<label class="sr-only" for="patenteRilasciataIl"> <wicket:message
+									key="RicercaVerbaleConducenteFormPanel.inserisciPatenteRilasciataIl" />
+							</label>
+						</div>
+					</div>
+
+					<div class="form-group col-md-6 mb-0">
+						<div class="form-group">
+							<input class="form-control it-date-datepicker" id="patenteValidaFinoAl" type="date"
+								placeholder="Data in formato gg/mm/aaaa"
+								wicket:id="patenteValidaFinoAl" style="font-size: smaller;"> <small><wicket:message
+									key="RicercaVerbaleConducenteFormPanel.inserisciPatenteValidaFinoAl" /></small>
+							<label class="sr-only" for="patenteValidaFinoAl"> <wicket:message
+									key="RicercaVerbaleConducenteFormPanel.inserisciPatenteValidaFinoAl" />
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-row mb-2 col-md-12 mx-auto">
+					<div class="col-lg-12">
+						<form class="mb-3 col-md-12 mx-auto" wicket:id="formUpload"
+							enctype="multipart/form-data" onsubmit="returncheckForm(this);">
+							<small><wicket:message
+									key="RicercaVerbaleConducenteFormPanel.inserisciFilePatente" /></small>
+							<input type="file" name="uploadPatente" id="uploadPatente"
+								class="upload" wicket:id="uploadPatente" accept="image/*, .pdf" />
+							<label for="uploadPatente"> <svg class="icon icon-sm"
+									aria-hidden="true">
+			                        <use
+										xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-upload"></use>
+			                    </svg> <span>Upload patente</span>
+							</label>
+
+							<div class="col-lg-12" wicket:id="containerFileUpload">
+								<ul class="upload-file-list">
+									<li class="upload-file success" style="max-width: 100%;">
+										<svg class="icon icon-sm" aria-hidden="true">
+			                                <use
+												xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+			                            </svg>
+										<p>
+											<span class="sr-only">File caricato:</span> <span
+												wicket:id="nomeFile" maxlength="50"></span><span class="upload-file-weight"
+												wicket:id="dimensioneFile"></span>
+										</p>
+										<button>
+											<svg class="icon" aria-hidden="true" style="fill: #d9364f;"
+												wicket:id="eliminaFile">
+			                                    <use
+													xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-close"></use>
+			                                    <title>Elimina file</title>
+			                                </svg>
+										</button>
+									</li>
+								</ul>
+							</div>
+						</form>
+					</div>
+
+					<div class="form-check col-md-12 mb-0">
+						<div class="toggles">
+							<label for="toggleDichiarazione"> <wicket:message
+									key="RicercaVerbaleConducenteFormPanel.dichiarazione" /> <input
+								type="checkbox" id="toggleDichiarazione"
+								wicket:id="toggleDichiarazione"> <span class="lever"></span>
+							</label>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="alert alert-danger" role="alert" wicket:id="alertToggle">
+					<wicket:message key="RicercaVerbaleConducenteFormPanel.alertToggle" />
+				</div>
+
+				<div class="alert alert-danger" role="alert" wicket:id="alertDate">
+					<wicket:message key="RicercaVerbaleConducenteFormPanel.alertDate" />
+				</div>
+
+				<div class="alert alert-danger" role="alert"
+					wicket:id="alertPeriodoDate">
+					<wicket:message
+						key="RicercaVerbaleConducenteFormPanel.alertPeriodoDate" />
+				</div>
+
+				<div class="alert alert-danger" role="alert"
+					wicket:id="alertDataRilascioNelFuturo">
+					<wicket:message
+						key="RicercaVerbaleConducenteFormPanel.alertDataRilascioNelFuturo" />
+				</div>
+
+				<div class="alert alert-danger" role="alert"
+					wicket:id="alertDataVerbaleNelFuturo">
+					<wicket:message
+						key="RicercaVerbaleConducenteFormPanel.alertDataVerbaleNelFuturo" />
+				</div>
+
+				<div class="alert alert-danger" role="alert"
+					wicket:id="alertDataRilascioPrimaDiNascita">
+					<wicket:message
+						key="RicercaVerbaleConducenteFormPanel.alertDataRilascioPrimaDiNascita" />
+				</div>
+
+				<div class="alert alert-danger" role="alert"
+					wicket:id="alertEstensioneFile">
+					<wicket:message
+						key="RicercaVerbaleConducenteFormPanel.alertEstensioneFile" />
+				</div>
+
+				<div class="alert alert-danger" role="alert"
+					wicket:id="alertFileObbligatorio">
+					<wicket:message
+						key="RicercaVerbaleConducenteFormPanel.alertFileObbligatorio" />
+				</div>
+
+				<div class="alert alert-danger" role="alert"
+					wicket:id="alertCategoriaPatente">
+					<wicket:message
+						key="RicercaVerbaleConducenteFormPanel.alertCategoriaPatente" />
+				</div>
+
+				<div class="alert alert-danger" role="alert" wicket:id="alert150gg">
+					<wicket:message key="RicercaVerbaleConducenteFormPanel.alert150gg" />
+				</div>
+				
+				<div class="alert alert-danger" role="alert" wicket:id="alertLunghezzaNomeFile">
+					<wicket:message key="RicercaVerbaleConducenteFormPanel.alertLunghezzaNomeFile" />
+				</div>
+				
+				<div class="alert alert-danger" role="alert" wicket:id="alertCf">
+					<wicket:message key="RicercaVerbaleConducenteFormPanel.alertCf" />
+					
+					<a href="#" wicket:id="mieiVerbali"></a>
+				</div>
+
+				<div class="form-row mt-5 mb-0">
+					<div class="form-group col-md-12 mb-3 text-center">
+						<button type="button" class="btn btn-primary" wicket:id="prosegui">
+							<wicket:message key="RicercaVerbaleConducenteFormPanel.prosegui" />
+						</button>
+						<button type="button" class="btn btn-secondary"
+							wicket:id="annulla">
+							<wicket:message key="RicercaVerbaleConducenteFormPanel.annulla" />
+						</button>
+					</div>
+				</div>
+
+			</form>
+
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+	</wicket:panel>
+</body>
+
+</html>

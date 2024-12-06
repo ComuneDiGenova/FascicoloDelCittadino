@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>
+
+		<div class="col-sm-12 mt-2 mb-2">
+			<h4>
+				<wicket:message key="AggiungiFiglioPanel.title" />
+			</h4>
+
+			<div class="col-lg-12 mb-4">
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-4">
+								<i class="color-orange col-3 icon-foglio-penna"></i>
+								<h4 class="card-title text-left font-weight-bold col-9">
+									<wicket:message key="AggiungiFiglioPanel.autodichiarazione" />
+								</h4>
+							</div>
+							<form class="mb-3 col-lg-10 mx-auto"
+								enctype="multipart/form-data" wicket:id="form">
+
+								<div class="row mb-0 d-flex justify-content-center">
+									<div class="col-12">
+										<p class="card-text text-left font-weight-semibold">
+											<wicket:message key="AggiungiFiglioPanel.intestazione" />
+										</p>
+									</div>
+
+									<div class="form-group col-md-4 mb-0">
+										<input class="form-control" id="nome" type="text"
+											placeholder="Inserisci nome" wicket:id="nome"> <small><wicket:message
+												key="AggiungiFiglioPanel.nome" /></small> <label class="sr-only"
+											for="nome"> <wicket:message
+												key="AggiungiFiglioPanel.nome" />
+										</label>
+									</div>
+
+									<div class="form-group col-md-4 mb-0">
+										<input class="form-control" id="cognome" type="text"
+											placeholder="Inserisci cognome" wicket:id="cognome">
+										<small><wicket:message
+												key="AggiungiFiglioPanel.cognome" /></small> <label class="sr-only"
+											for="cognome"> <wicket:message
+												key="AggiungiFiglioPanel.cognome" />
+										</label>
+									</div>
+
+									<div class="form-group col-md-4 mb-0">
+										<input class="form-control" id="cf" type="text"
+											placeholder="Inserisci codice fiscale"
+											wicket:id="codiceFiscale"> <small><wicket:message
+												key="AggiungiFiglioPanel.cf" /></small> <label class="sr-only"
+											for="cf"> <wicket:message
+												key="AggiungiFiglioPanel.cf" />
+										</label>
+									</div>
+
+									<div class="form-row mb-2 col-md-10 mx-auto" style=>
+										<div class="col-sm-6 mb-6 combo-figli">
+											<label> <wicket:message
+													key="AggiungiFiglioPanel.parentela" /> <select
+												 wicket:id="comboParentela"></select>
+											</label>
+										</div>
+
+									</div>
+
+									<div class="col-sm-6 mb-6 combo-figli">
+										<div class="toggles">
+											<label for="toggleCoresidente"> <wicket:message
+													key="AggiungiFiglioPanel.toggleCoresidente" /> <input
+												type="checkbox" id="toggleCoresidente"
+												wicket:id="isCoresidente"> <span class="lever"></span>
+											</label>
+										</div>
+									</div>
+
+									<div class="form-group col-md-5 mb-0" wicket:id="salva">
+										<button type="button" wicket:id="aggiungi" class="btn btn-primary btn-xs">
+											<wicket:message key="AggiungiFiglioPanel.salva" />
+										</button>
+									</div>
+
+									<div class="form-group col-md-5 mb-0">
+										<button type="button" class="btn btn-primary btn-xs"
+											wicket:id="annulla">
+											<wicket:message key="AggiungiFiglioPanel.annulla" />
+										</button>
+									</div>
+
+								</div>
+
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+
+</body>
+</html>

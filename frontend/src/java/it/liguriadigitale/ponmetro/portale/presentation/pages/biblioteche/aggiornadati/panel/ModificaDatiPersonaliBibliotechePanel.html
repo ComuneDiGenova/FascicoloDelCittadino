@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="row content my-4 richiesta-agevolazione">
+			<div class="col-md-12 text-start mb-4">
+
+				<div class="col-lg-12 mx-auto riepilogo">
+					<form class="needs-validation was-validated mb-3 col-lg-12 mx-auto"
+						wicket:id="form">
+
+						<div
+							class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici">
+
+							<h4 class="col-12">
+								<wicket:message
+									key="ModificaDatiPersonaliBibliotechePanel.iscritto" />
+							</h4>
+							
+							<div class="row">
+									<div class="col-6">
+								<p class="text-start">
+									<span class="fw-bold"><wicket:message
+											key="ModificaDatiPersonaliBibliotechePanel.cf" /></span> <span
+										class="text-capitalize" wicket:id="cf"></span>
+								</p>
+								</div>
+	
+								<div class="col-6">
+									<p class="text-start">
+										<span class="fw-bold"><wicket:message
+												key="ModificaDatiPersonaliBibliotechePanel.nominativo" /></span> <span
+											class="text-capitalize" wicket:id="nominativo"></span>
+									</p>
+								</div>
+							</div>
+
+						
+							
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group  mb-0">
+										<input class="form-control" id="email" type="email"
+											placeholder="Email" wicket:id="email"
+											style="font-size: smaller;"
+											pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+											required> <small><wicket:message
+												key="ModificaDatiPersonaliBibliotechePanel.email" /></small> <label
+											class="sr-only" for="email"> <wicket:message
+												key="ModificaDatiPersonaliBibliotechePanel.email" />
+										</label>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group col-md-6 mb-0">
+										<input class="form-control" id="telefono" type="text"
+											pattern="^\+?\d*$" placeholder="Telefono" wicket:id="telefono"
+											style="font-size: smaller;" required> <small><wicket:message
+												key="ModificaDatiPersonaliBibliotechePanel.telefono" /></small> <label
+											class="sr-only" for="telefono"> <wicket:message
+												key="ModificaDatiPersonaliBibliotechePanel.telefono" />
+										</label>
+									</div>
+								</div>
+							</div>
+
+						
+
+						
+
+						</div>
+
+						<div class="form-group col-md-12 mb-3 text-center">
+							<div class="form-group col-md-12 mb-3 text-center">
+								<a class="btn btn-primary" href="#" role="button"
+									wicket:id="avanti"> <wicket:message
+										key="ModificaDatiPersonaliBibliotechePanel.avanti" />
+								</a> <a class="btn btn-secondary" href="#" role="button"
+									wicket:id="annulla"> <wicket:message
+										key="ModificaDatiPersonaliBibliotechePanel.annulla" />
+								</a>
+							</div>
+						</div>
+
+					</form>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

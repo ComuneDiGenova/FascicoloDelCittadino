@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+		<style>
+			div.wicket-aa {
+				font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, Verdana;
+				font-size: 14px;
+				background-color: white;
+				border-width: 1px;
+				border-color: #cccccc;
+				border-style: solid;
+				padding: 2px;
+				margin: 1px 0 0 0;
+				text-align: left;
+			
+				
+			}
+			
+			div.wicket-aa ul {
+				list-style: none;
+				padding: 2px;
+				margin: 0;
+			}
+			
+			div.wicket-aa ul li.selected {
+				background-color: #4e73df;
+				padding: 2px;
+				color: white;
+				margin: 0;
+			}
+			
+			div.wicket-aa ul li {
+				padding: 3.5px;
+			}
+			
+			</style>
+
+		<div wicket:id="messaggi"></div>
+
+		<div class="form-row col-12">
+			<div class="form-group mb-2 col-md-12 mx-auto" style="z-index:1">
+				<label for="autocompleteViario" class="sr-only">
+					<wicket:message key="StradaAllerteCortesiaPanel.autocompleteViario" />:
+				</label>
+				<input type="text" id="autocompleteViario" name="autocompleteViario" title="Indirizzo"
+					wicket:id="autocompleteViario" class="form-control" placeholder="Inserisci via e numero civico" />
+				<span class="autocomplete-icon" aria-hidden="true">
+					<svg aria-label="Ricerca via" class="icon icon-sm">
+						<use href="/portale/bootstrap-italia/svg/sprites.svg#it-search"></use>
+					</svg>
+				</span>
+			</div>
+		</div>
+
+		
+	</wicket:panel>
+</body>
+
+</html>

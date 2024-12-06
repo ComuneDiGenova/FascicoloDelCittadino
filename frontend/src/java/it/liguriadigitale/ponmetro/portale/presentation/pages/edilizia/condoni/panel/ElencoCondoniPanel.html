@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>
+		<div class="row content my-4 info-traffico">
+			<div class="col-lg-6 mb-4" wicket:id="lista">
+				
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							
+							<div wicket:id="statoPratica"></div>
+							<div wicket:id="numeroPratica"></div>
+							<div wicket:id="annoPratica"></div>
+							<div wicket:id="recId"></div>
+							
+							<div wicket:id="listaIndirizzi"></div>
+							
+							<button type="button" class="btn btn-primary"
+								wicket:id="btnDettaglio">
+								<wicket:message
+									key="ElencoCondoniPanel.btnDettaglio" />
+							</button>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div wicket:id="feedback"></div>
+		<div wicket:id="pagination"></div>
+	</wicket:panel>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="col-12">
+			<h3>
+				<wicket:message key="FattureArtePanel.titolo" />
+			</h3>
+		</div>
+
+		<div class="alert alert-warning col-12" role="alert"
+			wicket:id="listaVuota">
+			<wicket:message key="FattureArtePanel.vuoto" />
+		</div>
+
+		<div class="row content my-4 info-traffico">
+
+			<div class="col-lg-6 mb-4" wicket:id="fatture">
+
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="color-fc-secondary col-3 icon-foglio"></i>
+
+
+								<h4 class="card-title text-left col-9 font-weight-normal">
+									<span class="text-capitalize font-weight-semibold"
+										wicket:id="nomePdf"></span>
+								</h4>
+
+							</div>
+
+							<div wicket:id="anno"></div>
+
+							<div wicket:id="mese"></div>
+
+							<div wicket:id="btnScaricaFattura"></div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div wicket:id="pagination"></div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+	</wicket:panel>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<body>
+	<wicket:extend>
+	
+		<ul wicket:id="breadcrumbPanel"></ul>
+		<div wicket:id="stepPanel"></div>
+
+		<div class="row content my-4 richiesta-agevolazione">
+			<div class="col-md-12 text-left mb-4">
+
+				<div class="col-lg-12 mx-auto riepilogo">
+					<form class="needs-validation was-validated mb-3 col-lg-12 mx-auto"
+						wicket:id="form">
+
+						<div
+							class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici">
+
+							<h4 class="col-12">
+								<wicket:message
+									key="RichiestaCertificatoStatoCivilePage.spiegazione" />
+							</h4>
+							<br>
+							<div class="form-row mb-2 col-md-12 mx-auto combo-figli">
+							
+								<div class="select-wrapper">
+									<label for="tipologiaCertificato">
+										<wicket:message
+										key="RichiestaCertificatoStatoCivilePage.tipo" /> 
+									</label>
+									<select id="tipologiaCertificato" class="col-md-12 col-lg-12 col-sm-12 col-xl-12"
+									 wicket:id="comboAtti" required ></select>
+								</div>
+								 
+								
+							</div>
+							<div class="form-group col-md-4 mb-0">
+								<wicket:enclosure child="dataDa">
+									<input class="form-control it-date-datepicker" id="dataDa"
+										type="date" placeholder="Data in formato gg/mm/aaaa"
+										wicket:id="dataDa" style="font-size: smaller;" required>
+									<small><wicket:message
+											key="RichiestaCertificatoStatoCivilePage.dataDa" /></small>
+									<label class="sr-only" for="dataDa"> <wicket:message
+											key="RichiestaCertificatoStatoCivilePage.dataDa" />
+									</label>
+								</wicket:enclosure>
+							</div>
+							
+							<div class="alert alert-info"
+								role="alert" wicket:id="containerInfoData">
+								<span wicket:id="testoInfo"></span>
+							</div>
+			
+							<div wicket:id="messaggiInformativi"></div>
+														
+
+						</div>
+						<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+						<div class="form-group col-md-12 mb-3 text-center">
+							<div class="form-group col-md-12 mb-3 text-center">
+								<button type="submit" class="btn btn-primary">
+									<wicket:message
+										key="RichiestaCertificatoStatoCivilePage.avanti" />
+								</button>
+								<a class="btn btn-secondary" href="#" role="button"
+									wicket:id="indietro"> <wicket:message
+										key="RichiestaCertificatoStatoCivilePage.indietro" />
+								</a> <a class="btn btn-secondary" href="#" role="button"
+									wicket:id="annulla"> <wicket:message
+										key="RichiestaCertificatoStatoCivilePage.annulla" />
+								</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+
+
+		<wicket:child />
+
+
+
+	</wicket:extend>
+</body>
+</html>

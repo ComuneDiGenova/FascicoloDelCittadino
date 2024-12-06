@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<body>
+	<wicket:extend>
+
+		<div wicket:id="breadcrumbPanel"></div>
+
+
+		<dl class="row form-servizi-anagrafici">
+
+			<wicket:enclosure child="recId">
+				<dt class="col-sm-3">
+					<wicket:message key="DettaglioCondoniPage.recId" />
+				</dt>
+
+				<dd class="col-sm-9" wicket:id="recId"></dd>
+			</wicket:enclosure>
+
+			<dt class="col-sm-3">
+				<wicket:message key="DettaglioCondoniPage.numeroPratica" />
+			</dt>
+			<dd class="col-sm-9" wicket:id="numeroPratica"></dd>
+
+			<dt class="col-sm-3">
+				<wicket:message key="DettaglioCondoniPage.annoPratica" />
+			</dt>
+			<dd class="col-sm-9" wicket:id="lblAnnoPratica"></dd>
+
+			<dd class="col-sm-12" wicket:id="nominativi"></dd>
+
+			<dd class="col-sm-12" wicket:id="abusi"></dd>
+
+			<dd class="col-sm-12" wicket:id="indirizzi"></dd>
+
+
+			<dd wicket:id="listView">
+			<dt class="col-sm-3">
+				<wicket:message key="DettaglioCondoniPage.nomeFile" />
+			</dt>
+			<dd class="col-5">
+				<p class="card-text text-left">
+					<span wicket:id="nomeFile"></span>
+				</p>
+			</dd>
+			<dd class="col-md-3">
+				<div wicket:id="btnScaricaPDF"></div>
+			</dd>
+			</dd>
+		</dl>
+
+
+
+
+		<wicket:child />
+
+	</wicket:extend>
+</body>
+</html>

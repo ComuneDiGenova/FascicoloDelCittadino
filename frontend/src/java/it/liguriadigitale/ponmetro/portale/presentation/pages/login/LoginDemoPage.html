@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<wicket:head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Login page</title>
+</wicket:head>
+<body>
+	<div class="container">
+		<div class="row justify-content-md-center mb-5">
+			<div class="col-12 col-lg-5 mb-5">
+				<form class="form-signin" wicket:id="signInForm">
+					<div class="form-group" wicket:id="feedback"></div>
+
+					<h4 class="form-signin-heading" style="text-align: center;">
+						<wicket:message key="LoginDemoPage.cf" />
+					</h4>
+
+					<button class="btn btn-success btn-lg btn-icon" type="submit">
+						<span class="rounded-icon"> <i
+							class="icon-omino color-white col-3"></i>
+						</span> <span><wicket:message key="LoginDemoPage.spid" /></span>
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

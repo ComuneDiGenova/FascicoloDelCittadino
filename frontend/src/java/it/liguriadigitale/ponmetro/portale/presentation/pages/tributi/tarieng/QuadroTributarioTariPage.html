@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<body>
+	<wicket:extend>
+		<div wicket:id="breadcrumbPanel"></div>
+
+		<div wicket:id="legendaPanel"></div>
+
+		<div class="col-12">
+			<div class="alert alert-info" role="alert">
+				<wicket:message key="QuadroTributarioTariPage.titolo" />
+				<div style=" margin-top: 20px;">
+	    			<div class="flex-container" style="justify-content: space-evenly;display: flex;flex-wrap: nowrap;flex-direction: row;align-items: center;margin-top: -10px;align-content: space-between;">
+		       			<div wicket:id="listaTutorialTari" >
+							<wicket:enclosure child="tutorialTari">
+								<div wicket:id="tutorialTari" style="justify-content: center;">
+								</div>
+							</wicket:enclosure>
+						</div>
+					</div>
+				 </div>
+			</div>
+		</div>
+
+		<div wicket:id="messaggiInformativi"></div>
+
+		<div class="col-12" wicket:id="tabsPanel"></div>
+
+		<wicket:child />
+	</wicket:extend>
+</body>
+</html>

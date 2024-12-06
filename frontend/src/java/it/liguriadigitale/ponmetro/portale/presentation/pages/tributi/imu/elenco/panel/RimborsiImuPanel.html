@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>
+
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+				<div wicket:id="messaggiInformativi"></div>
+			</div>
+		</div>
+
+		<div class="row content my-4 info-traffico d-flex-inline"
+			style="gap: 5px">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+				<div class="d-flex" style="gap: 3px">
+					<div>
+						<h4>
+							<strong><wicket:message key="RimborsiImuPanel.legenda" />:</strong>
+						</h4>
+
+					</div>
+					<div>
+						<a wicket:id="flagVerbaleTutti" class="badge bg-secondary"><wicket:message
+								key="RimborsiImuPanel.tutti" /></a> <a
+							wicket:id="flagVerbaleInCompilazione" class="badge bg-warning"><wicket:message
+								key="RimborsiImuPanel.inCompilazione" /></a> <a
+							wicket:id="flagVerbalePresentato" class="badge bg-success"><wicket:message
+								key="RimborsiImuPanel.presentato" /></a> <a
+							wicket:id="flagVerbaleSospeso" class="badge bg-danger"><wicket:message
+								key="RimborsiImuPanel.sospeso" /></a> <a
+							wicket:id="flagVerbaleEvasa" class="badge bg-success"><wicket:message
+								key="RimborsiImuPanel.evasa" /></a> <a
+							wicket:id="flagVerbaleAnnullata" class="badge bg-danger"><wicket:message
+								key="RimborsiImuPanel.annullata" /></a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+				<button type="button" class="btn btn-primary"
+					wicket:id="btnRichiestaRimborso">
+					<wicket:message key="RimborsiImuPanel.btnRichiestaRimborso" />
+				</button>
+			</div>
+		</div>
+
+		<div class="row" wicket:id="containerListaVuota">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12 mt-2 mb-2">
+				<div class="alert alert-warning" role="alert" wicket:id="listaVuota"></div>
+			</div>
+		</div>
+
+		<!--  Lista rimborsi inviati  -->
+		<div class="row" wicket:id="containerList">
+			<div class="col-md-5 col-lg-5 col-sm-5 col-xl-5 mb-3" wicket:id="box">
+				<div class="card-wrapper">
+					<div class="card card-bg my-auto mb-2">
+						<div class="card-body">
+							<div class="categoryicon-top row p-2">
+								<i class="" wicket:id="icona"></i>
+							</div>
+							<div wicket:id="stato"></div>
+							<div wicket:id="numeroDoc"></div>
+							<div wicket:id="annoDoc"></div>
+							<div wicket:id="dataPrep"></div>
+
+							<div class="row py-1 mb-2">
+								<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+									<div class="row mb-2">
+										<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+											<div class="d-flex justify-content-center" style="gap: 10px">
+												<div>
+													<wicket:enclosure child="btnDettagli">
+														<a wicket:id="btnDettagli" style="min-width: 100px"> <wicket:message
+																key="RimborsiImuPanel.dettagli" />
+														</a>
+													</wicket:enclosure>
+												</div>
+												<div>
+													<wicket:enclosure child="btnAllegaFile">
+														<a wicket:id="btnAllegaFile" style="min-width: 100px">
+															<wicket:message key="RimborsiImuPanel.allegaFile" />
+														</a>
+													</wicket:enclosure>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+
+											<form wicket:id="formInvia">
+												<div class="d-flex justify-content-center" style="gap: 10px">
+													<div>
+														<wicket:enclosure child="btnInvia">
+															<button type="submit" class="btn btn-primary"
+																wicket:id="btnInvia" style="min-width: 100px">
+																<wicket:message key="RimborsiImuPanel.invia" />
+															</button>
+														</wicket:enclosure>
+													</div>
+													<div>
+														<wicket:enclosure child="btnAnnulla">
+															<button type="submit" class="btn btn-danger"
+																wicket:id="btnAnnulla" style="min-width: 100px">
+																<wicket:message key="RimborsiImuPanel.annulla" />
+															</button>
+														</wicket:enclosure>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!--  <div class="row py-1 mb-2" style="row-gap: 5px">
+								<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+									<div class="d-flex justify-content-center" style="gap: 10px">
+										<div>
+											<wicket:enclosure child="btnDettagli">
+												<a wicket:id="btnDettagli" style="min-width: 100px"> <wicket:message
+														key="RimborsiImuPanel.dettagli" />
+												</a>
+											</wicket:enclosure>
+										</div>
+										<div>
+											<wicket:enclosure child="btnAllegaFile">
+												<a wicket:id="btnAllegaFile" style="min-width: 100px"> <wicket:message
+														key="RimborsiImuPanel.allegaFile" />
+												</a>
+											</wicket:enclosure>
+										</div>
+									</div>
+								</div>
+							</div>-->
+							<!-- <div class="row">
+								<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+									<form wicket:id="formInvia">
+										<div class="d-flex justify-content-center" style="gap: 10px">
+											<div>
+												<wicket:enclosure child="btnInvia">
+													<button type="submit" class="btn btn-primary"
+														wicket:id="btnInvia" style="min-width: 100px">
+														<wicket:message key="RimborsiImuPanel.invia" />
+													</button>
+												</wicket:enclosure>
+											</div>
+											<div>
+												<wicket:enclosure child="btnAnnulla">
+													<button type="submit" class="btn btn-danger"
+														wicket:id="btnAnnulla" style="min-width: 100px">
+														<wicket:message key="RimborsiImuPanel.annulla" />
+													</button>
+												</wicket:enclosure>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row" wicket:id="containerPaginazione">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12 mt-1">
+				<div wicket:id="pagination"></div>
+			</div>
+		</div>
+
+		<div style="z-index: 21"
+			class="notification dismissable with-icon success" role="alert"
+			id="notificationDismTopFix" aria-labelledby="notificationDismTopFix"
+			wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+</html>

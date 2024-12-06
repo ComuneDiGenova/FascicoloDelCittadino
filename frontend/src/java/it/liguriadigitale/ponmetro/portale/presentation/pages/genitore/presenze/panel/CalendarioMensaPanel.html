@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>
+		<div class="card-wrapper h-auto">
+			<div class="card card-bg my-2">
+				<div class="card-body">
+					<div class="table table-sm">
+						<div class="head_calendario_mensa">
+							<div class="tr_calendario_mensa">
+								<div scope="" colspan="7">
+									<div class=" mb-3 nav-data">
+
+										<div class="text-center nav-month">
+											<div class="d-flex align-content-start flex-wrap mb-0">
+												<div class="p-2 bd-highlight select-wrapper">
+													<select id="comboMesi" wicket:id="comboMesi"
+														wicket:message="title:CalendarioMensaPanel.combo.title"></select>
+												</div>
+
+												<div class="p-2 bd-highlight select-wrapper">
+													<select id="comboAnni" wicket:id="comboAnni"
+														wicket:message="title:CalendarioMensaPanel.combo.anni.title"></select>
+												</div>
+
+											</div>
+										</div>
+										
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col">
+
+									<div class="tr_calendario_mensa">
+
+										<div class="th_calendario_mensa">
+											<div class="text-center" scope="col">Lu</div>
+										</div>
+										<div class="th_calendario_mensa">
+											<div class="text-center" scope="col">Ma</div>
+										</div>
+										<div class="th_calendario_mensa">
+											<div class="text-center" scope="col">Me</div>
+										</div>
+										<div class="th_calendario_mensa">
+											<div class="text-center" scope="col">Gi</div>
+										</div>
+										<div class="th_calendario_mensa">
+											<div class="text-center" scope="col">Ve</div>
+										</div>
+										<div class="th_calendario_mensa">
+											<div class="text-center" scope="col">Sa</div>
+										</div>
+										<div class="th_calendario_mensa">
+											<div class="text-center" scope="col">Do</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col">
+								<div class="body_calendario_mensa">
+									<div class="tr_calendario_mensa" wicket:id="settimana">
+										<div class="td_calendario_mensa" wicket:id="cell0">
+											<a wicket:id="link0"><span wicket:id="day0"></span></a>
+										</div>
+										<div class="td_calendario_mensa" wicket:id="cell1">
+											<a wicket:id="link1"><span wicket:id="day1"></span></a>
+										</div>
+										<div class="td_calendario_mensa" wicket:id="cell2">
+											<a wicket:id="link2"><span wicket:id="day2"></span></a>
+										</div>
+										<div class="td_calendario_mensa" wicket:id="cell3">
+											<a wicket:id="link3"><span wicket:id="day3"></span></a>
+										</div>
+										<div class="td_calendario_mensa" wicket:id="cell4">
+											<a wicket:id="link4"><span wicket:id="day4"></span></a>
+										</div>
+										<div class="td_calendario_mensa" wicket:id="cell5">
+											<a wicket:id="link5"><span wicket:id="day5"></span></a>
+										</div>
+										<div class="td_calendario_mensa" wicket:id="cell6">
+											<a wicket:id="link6"><span wicket:id="day6"></span></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row mb-3 nav-data">
+						<div class="col-sm mr-1">
+							<a class="btn btn-outline-primary" wicket:id="tornaOggi">Torna
+								a oggi</a>
+						</div>
+					</div>
+
+					<div class="container">
+						<div class="row legenda mx-auto">
+							<div class="col-sm mr-1">
+								<span>presente a mensa</span>
+							</div>
+							<div class="col-sm mr-1">
+								<span>presente a scuola - assente a mensa</span>
+							</div>
+							<div class="col-sm">
+								<span>assente</span>
+							</div>
+						</div>
+					</div>
+
+					<br />
+
+					<div>
+						<p class="card-text text-start mb-0 w-100">
+							<wicket:enclosure child="contattoRefezione">
+								<span class="fw-bold"> <wicket:message
+										key="CalendarioMensaPanel.contattiPresenze" /> <a href="#"
+									wicket:id="contattoRefezione"></a>
+								</span>
+							</wicket:enclosure>
+						</p>
+					</div>
+
+					<div>
+						<p class="card-text text-start mb-0 w-100">
+							<span class="fw-bold"><wicket:message
+									key="CalendarioMensaPanel.presenze" /></span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</wicket:panel>
+</body>
+</html>

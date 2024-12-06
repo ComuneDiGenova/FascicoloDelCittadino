@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:extend>
+		<fieldset>
+			<legend id="form-title" class="mb-3">
+				<strong>
+					<span wicket:id="titolo"></span>
+				</strong>
+			</legend>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div wicket:id="cellulare"></div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12 mb-3 text-center">
+
+					<button type="submit" class="btn btn-primary" wicket:id="avanti">
+						<wicket:message key="VerificaCellulareAllerteCortesiaPanel.avanti" />
+					</button>
+
+					<a class="btn btn-secondary" href="#" role="button" wicket:id="annulla">
+						<wicket:message key="VerificaCellulareAllerteCortesiaPanel.annulla" />
+					</a>
+				</div>
+			</div>
+
+			<div wicket:id="containerCodiceSMS">
+
+				<div class="row">
+					<div class="col-md-12" wicket:id="titoloSMS"></div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<div wicket:id="codiceSMS"></div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12 mb-3 text-center">
+
+						<button type="submit" class="btn btn-primary" wicket:id="avantiSMS">
+							<wicket:message key="VerificaCellulareAllerteCortesiaPanel.avanti" />
+						</button>
+						<a class="btn btn-primary" href="#" role="button" wicket:id="vaiAlServizio">
+							<wicket:message key="VerificaCellulareAllerteCortesiaPanel.tornaAlServizo" />
+						</a>
+
+					</div>
+				</div>
+			</div>
+		</fieldset>
+	</wicket:extend>
+</body>
+
+</html>

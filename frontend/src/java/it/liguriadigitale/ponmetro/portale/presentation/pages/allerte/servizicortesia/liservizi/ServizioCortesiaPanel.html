@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+		<br>
+		<div class="collapse-header" wicket:id="wmkBtnServizio" id="heading1-sc1">
+			<button class="btn btn-primary focus-visible-none" type="button" data-bs-toggle="collapse" wicket:id="btnServizio"
+				data-bs-target="#collapse1-sc1" aria-expanded="true"
+				aria-controls="collapse1-sc1">
+				<span class="text-capitalize fw-bold"
+					wicket:id="descrizioneBreve"></span>
+			</button>
+		</div>
+
+		<div wicket:id="wmkServizio" id="collapse1-sc1"
+			class="collapse redimDiv mt-2" role="region"
+			aria-labelledby="heading1-sc1">
+
+			<div class="collapse-body">
+
+				<div class="row content my-12 info-traffico">
+					<div class="col-lg-12 mb-4">
+
+						<div class="categoryicon-top row mb-4">
+							<a wicket:id="btnDettagliServizio" class="btn btn-primary focus-visible-none"
+								href="#" role="button"> <wicket:message
+									key="ServizioCortesiaPanel.dettagli" />
+							</a>
+						</div>
+
+						<div class="categoryicon-top row mb-2">
+							<i
+								class="col-auto color-fc-secondary col-3 icon-contratti-immobili"></i>
+						</div>
+
+						<div wicket:id="id"></div>
+
+						<div wicket:id="descrizioneEstesa"></div>
+
+						<div class="row content my-4 info-traffico">
+							<div class="col-lg-6 mb-6" style="margin-bottom: 30px;"
+								wicket:id="boxListaFruibilita">
+
+								<div wicket:id="wmkBoxListaFruibilita" class="card-wrapper">
+									<div class="card card-bg my-2">
+										<div class="card-body">
+											<div class="categoryicon-top row mb-2">
+
+												<i
+													class="col-auto color-fc-secondary col-3 icon-contratti-immobili"></i>
+
+												<div class="h4 card-title text-left col-9 font-weight-normal">
+													<span class="text-capitalize fw-bold"
+														wicket:id="descrizioneCanale"></span>
+												</div>
+											</div>
+
+											<div wicket:id="idRelazioneServizioCanale"></div>
+
+											<div wicket:id="idCanale"></div>
+
+											<div wicket:id="verificaCanale"></div>
+
+											<div wicket:id="utenteIscritto"></div>
+
+											<div class="form-row col-12">
+												<button type="submit" class="btn btn-primary focus-visible-none"
+													wicket:id="btnRegistraServizio">
+													<wicket:message key="ServizioCortesiaPanel.registrati" />
+												</button>
+											</div>
+
+											<div class="form-row col-12">
+												<button type="submit" class="btn btn-primary focus-visible-none"
+													wicket:id="btnCancellaServizio">
+													<wicket:message key="ServizioCortesiaPanel.cancellati" />
+												</button>
+											</div>
+
+											<wicket:enclosure child="linkTelegram">
+												<div class="row py-1 mb-2 border-bottom"
+													style="margin-top: 21px;"></div>
+												<div class="form-row col-12">
+													<a wicket:id="linkTelegram"
+														class="btn btn-primary redimButton focus-visible-none" role="button"
+														aria-disabled="false" target="_blank"> <span><wicket:message
+																key="ServizioCortesiaPanel.genovaAlert" /></span>
+													</a>
+												</div>
+											</wicket:enclosure>
+
+											<div class="form-row col-12 alert alert-warning" role="alert"
+												wicket:id="infoEmail">
+												<wicket:message key="ServizioCortesiaPanel.infoEmail" />
+											</div>
+
+											<div class="form-row alert alert-warning" role="alert"
+												wicket:id="infoCel">
+												<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+													<span><wicket:message
+															key="ServizioCortesiaPanel.infoCel" /></span>
+												</div>
+
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+	</wicket:panel>
+</body>
+
+</html>

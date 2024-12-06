@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>
+	
+		<div class="col-sm-12 mt-2 mb-2">
+				<div class="alert alert-info" role="alert">
+					<wicket:message key="DomandaCedolaStep2Panel.info" />
+				</div>
+		</div>
+		<form class="needs-validation was-validated mb-3 col-lg-12 mx-auto"	wicket:id="form">
+			<div class="form-group col-md-12 mb-3 text-center">
+				<div class="form-group col-md-12 mb-3 text-center">
+					<button type="submit" class="btn btn-primary">
+						<wicket:message
+							key="DomandaCedolaStep2Panel.avanti" />
+					</button>
+
+					<button type="button" class="btn btn-secondary" wicket:id="annulla">
+						<wicket:message
+							key="DomandaCedolaStep2Panel.annulla" />
+					</button>
+				</div>
+			</div>
+		</form>	
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+	</wicket:panel>
+	
+</body>
+</html>

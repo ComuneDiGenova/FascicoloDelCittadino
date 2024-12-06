@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project basedir="." default="create-jboss-ear" name="PortaleGestore" xmlns:ivy="antlib:org.apache.ivy.ant">
+
+	<description>Build file per il progetto: [Portale]</description>
+	<!-- -->
+	<property file="buildfiles/build7.properties" />
+	<property file="buildfiles/path.properties" />
+	
+	<property file="buildfiles/${deployContext}/dist.properties" />
+	<property file="buildfiles/${deployContext}/ftp.properties" />
+	<property file="buildfiles/${deployContext}/api.properties" />
+	<property file="buildfiles/${deployContext}/mail.properties" />
+	
+	<!-- Nome file di properties per FRONTEND-->
+	<property name="fileProperties" value="fdc_frontend_configurazione.properties" />
+	<property name="filePackageProperties" value="fdc_package_finder.properties" />
+	
+	<!-- -->
+	<path id="library.ref">
+		<fileset dir="${lib}">
+			<include name="**/*.jar" />
+			<include name="**/*.zip" />
+		</fileset>
+	</path>
+
+	<!-- # Librerie per IVY                                          # -->
+	<property name="ivy.jar.dir" value="antlib" />
+	<property name="ivy.jar.file" value="${ivy.jar.dir}/ivy-2.4.0.jar" />
+
+	<path id="ivy.lib.path">
+		<pathelement location="${ivy.jar.file}" />
+	</path>
+	<taskdef resource="org/apache/ivy/ant/antlib.xml" uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path" />
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # Target: init                                              # -->
+	<!-- ############################################################# -->
+	<!-- -->
+
+	<target name="init">
+		<echo message="Inizio target init" />
+		<tstamp />
+		<condition property="target" value="dev">
+			<equals arg1="${target}" arg2="$${target}" />
+		</condition>
+		<mkdir dir="${build}/classes" />
+		<mkdir dir="${temp}/${target}/${earLib}" />
+		<mkdir dir="${build}/archives" />
+		<mkdir dir="${build}/archives/${target}" />
+		<mkdir dir="${build}/archives/${target}/lib" />
+		<mkdir dir="${dist}/${target}" />
+		<mkdir dir="${build}/javadoc" />
+		<mkdir dir="${build}/jsp" />
+		<mkdir dir="${build}/cache" />
+		<antcall target="timestamp">
+			<param name="message" value="Inizio:" />
+		</antcall>
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # Target: timestamp                                         # -->
+	<!-- ############################################################# -->
+	<!-- -->
+	<target name="timestamp">
+		<tstamp>
+			<format property="current.time" pattern="MM/dd/yyyy hh:mm:ss aa" />
+		</tstamp>
+
+		<echo message="${message} ${current.time}" />
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # Target: default                                           # -->
+	<!-- ############################################################# -->
+	<!-- -->
+
+	<target name="create-jboss-ear" description="Generazione dei prodotti per jboss">
+		<echo message="Inizio target create-jboss-ear" />
+		<condition property="first-call" value="distribution">
+			<not>
+				<equals arg1="${target}" arg2="$${target}" />
+			</not>
+		</condition>
+		<condition property="first-call" value="all-targets">
+			<equals arg1="${target}" arg2="$${target}" />
+		</condition>
+		<echo message="server: ${server}" />
+		<echo message="target: ${target}" />
+		<echo message="first-call: ${first-call}" />
+		<antcall target="${first-call}" />
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # Target: environment-recreate                              # -->
+	<!-- ############################################################# -->
+	<!-- -->
+
+	<target name="environment-recreate" depends="clean-all">
+		<echo message="Inizio target environment-recreate" />
+		<mkdir dir="build/temp/conf" />
+		<copy todir="build/temp/conf" overwrite="true">
+			<fileset dir="${conf}" />
+		</copy>
+	</target>
+
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # [PKG]: package-war                                        # -->
+	<!-- ############################################################# -->
+	<!-- -->
+
+	<target name="create-tomcat-war" description="Generazione dei prodotti x il deploy su tomcat " depends="clean-all,environment-recreate,compile-all, commons-jar,business-ejb-jar, integration-jar">
+		<echo message="Inizio target create-tomcat-war" />
+		<copy todir="${build}/classes">
+			<fileset dir="${conf}/web/${deployContext}/${webapp}/WEB-INF" includes="struts*.xml" />
+		</copy>
+		<copy todir="${temp}/${target}/${earLib}">
+			<fileset dir="${lib}" excludes="${war-exclude-libs-filter-tm}" />
+		</copy>
+		<move file="${build}/archives/${target}/${webapp}-commons.jar" tofile="${temp}/${target}/${earLib}/${webapp}-commons.jar" />
+		<move file="${build}/archives/${target}/${webapp}-integration.jar" tofile="${temp}/${target}/${earLib}/${webapp}-integration.jar" />
+		<move file="${build}/archives/${target}/${webapp}-business.jar" tofile="${temp}/${target}/${earLib}/${webapp}-business.jar" />
+		<war destfile="${build}/archives/${target}/${war-file-name}.war" webxml="${build}/temp/conf/web/${deployContext}/${webapp}/WEB-INF/web.xml" roundup="false" manifest="${build}/temp/conf/web/${deployContext}/${webapp}/META-INF/MANIFEST.MF">
+			<webinf dir="${conf}/web/${deployContext}/${webapp}/WEB-INF" includes="*.xml" />
+			<fileset dir="${srcweb}" />
+			<classes dir="${build}/jsp" includes="**" />
+			<classes dir="${build}/classes" includes="it/liguriadigitale/${prodotto}/${componente}/presentation/**,*.xml,*.properties,resources/**" />
+			<lib dir="${temp}/${target}/${earLib}" includes="*" />
+		</war>
+		<move file="${build}/archives/${target}/${war-file-name}.war" todir="${dist}/${target}/${dist-file-name}">
+		</move>
+		<delete dir="${tomcatHome}/webapps/">
+			<include name="${contesto}*" />
+		</delete>
+		<delete dir="${tomcatHome}/webapps/${contesto}" />
+		<copy todir="${tomcatHome}/webapps">
+			<fileset dir="${dist}/${target}/${dist-file-name}" />
+		</copy>
+	</target>
+
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # Target: compile-all                                       # -->
+	<!-- ############################################################# -->
+	<!-- -->
+	
+	<target name="compile-all" depends="init,load-dependencies">
+	  	<echo message="Inizio target compile-all" />
+	  	<javac srcdir="${src}/java" destdir="${build}/classes" debug="true" debuglevel="lines,vars,source" includeantruntime="false" optimize="on" deprecation="on" compiler="modern" encoding="UTF-8" target="1.8" source="1.8">	     
+	  		<classpath refid="library.ref" />
+	  	  <exclude name="**/*Test*.java" />
+	    </javac>
+	    <copy todir="${build}/classes">
+	      <fileset dir="${src}/java" excludes="**/*.java*,**/*.jbx*" />
+	    </copy>
+	  </target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # Target: about                                             # -->
+	<!-- ############################################################# -->
+	<!-- -->
+	<target name="about">
+		<loadproperties srcfile="buildfiles/build.properties" />
+		<loadfile property="about" srcfile="buildfiles/about.txt" />
+		<echo message="${about}" />
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # Target: about-custom                                      # -->
+	<!-- ############################################################# -->
+	<!-- -->
+	<target name="about-custom">
+		<loadproperties srcfile="buildfiles/build.properties" />
+		<loadfile property="about-custom" srcfile="buildfiles/about-custom.txt" />
+		<echo message="${about-custom}" />
+		<java classname="org.apache.tools.ant.Main">
+			<arg value="-projecthelp" />
+		</java>
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # [DISTRIB]: all-targets                                    # -->
+	<!-- ############################################################# -->
+	<!-- -->
+
+	<target name="all-targets">
+		<echo message="Inizio target all-targets" />
+		<antcall target="distribution" />
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # [DISTRIB]: distribution                                   # -->
+	<!-- ############################################################# -->
+	<!-- -->
+
+	<target name="distribution" depends="package-ear">
+		<echo message="Inizio target distribution" />
+		<echo message="====== L'artefatto si trova nel path: ${build}/archives/${target} ..." />
+		<copy tofile="${dist}/${target}/${ear-file-name}.ear" file="${build}/archives/${target}/${ear-file-name}.ear" />
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # [IVY]: resolve-dependencies                               # -->
+	<!-- ############################################################# -->
+	<!-- -->
+
+	<target name="resolve-dependencies">
+		<echo message="Inizio target resolve-dependencies" />
+		<ivy:configure />
+		<ivy:retrieve />
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # [IVY]: internal target: load-dependencies                 # -->
+	<!-- ############################################################# -->
+	<!-- -->
+
+	<target name="load-dependencies" depends="resolve-dependencies">
+		<echo message="Inizio target load-dependencies" />
+		<echo message="Target eseguito solo in caso di utilizzo di IVY" />
+		<ivy:retrieve />
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # [IVY]: Cleans the cache directory                         # -->
+	<!-- #       as defined in the loaded settings                   # -->
+	<!-- #                               (by default ~/.ivy2/cache)  # -->
+	<!-- ############################################################# -->
+	<!-- -->
+
+	<target name="ivy-cleancache">
+		<ivy:cleancache />
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # Target: crea-properties                                  # -->
+	<!-- #         Gestire qui i replace delle variabile d'ambiente # -->
+	<!-- ############################################################# -->
+	<!-- -->
+
+	<target name="crea-properties" description="crea file properties per il frontend">
+		<echo message="Inizio target crea-properties" />
+		
+		<copy tofile="buildfiles/${fileProperties}" file="${conf}/business/${contesto}/configurazioni.properties" overwrite="true" />
+		<replace file="buildfiles/${fileProperties}" token="@BUILD_VERSION@" value="${BUILD_VERSION}" />
+
+		<replace file="buildfiles/${fileProperties}" token="@API_COM_GE_RISTORAZIONE@" value="${API_COM_GE_RISTORAZIONE}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_COM_GE_RISTORAZIONE_POST@" value="${API_COM_GE_RISTORAZIONE_POST}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_MIP_GESTIONALI_VERTICALI@" value="${API_MIP_GESTIONALI_VERTICALI}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_COM_GE_DEMOGRAFICO@" value="${API_COM_GE_DEMOGRAFICO}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_COM_GE_DEMOGRAFICO_GRAPHQL@" value="${API_COM_GE_DEMOGRAFICO_GRAPHQL}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_COM_GE_CONFIGURAZIONE@" value="${API_COM_GE_CONFIGURAZIONE}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_COM_GE_PRIVACY@" value="${API_COM_GE_PRIVACY}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_COM_GE_PERSON@" value="${API_COM_GE_PERSON}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_COM_GE_FAMILY@" value="${API_COM_GE_FAMILY}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_COM_GE_INPS@" value="${API_COM_GE_INPS}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_COM_GE_SEGNALAZIONITRAFFICO@" value="${API_COM_GE_SEGNALAZIONITRAFFICO}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_COM_GE_SCADENZE@" value="${API_COM_GE_SCADENZE}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_COM_GE_AUDIT@" value="${API_COM_GE_AUDIT}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_COM_GE_MESSAGGIUTENTE@" value="${API_COM_GE_MESSAGGIUTENTE}" />
+		<replace file="buildfiles/${fileProperties}" token="@TOKEN@" value="${TOKEN}" />
+		<replace file="buildfiles/${fileProperties}" token="@TOKEN_RL@" value="${TOKEN_RL}" />
+		<replace file="buildfiles/${fileProperties}" token="@TOKEN_CALL_PRODUZIONE_TO_TEST@" value="${TOKEN_CALL_PRODUZIONE_TO_TEST}" />
+
+		<replace file="buildfiles/${fileProperties}" token="@API_COM_GE_TASSA_AUTO@" value="${API_COM_GE_TASSA_AUTO}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_BOLLO@" value="${API_BOLLO}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_COM_GE_ASSICURAZIONE_VEICOLO@" value="${API_COM_GE_ASSICURAZIONE_VEICOLO}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_FDC_CONFIGURAZIONE_UTENTE@" value="${API_FDC_CONFIGURAZIONE_UTENTE}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_VERBALI_CONTRAVVENZIONI@" value="${API_VERBALI_CONTRAVVENZIONI}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_VERBALI_MOCK@" value="${API_VERBALI_MOCK}" />
+		<replace file="buildfiles/${fileProperties}" token="@AMBIENTE_PAGAMENTO_BOLLO@" value="${AMBIENTE_PAGAMENTO_BOLLO}" />
+		<replace file="buildfiles/${fileProperties}" token="@URL_PAGOPA_BOLLO_OK@" value="${URL_PAGOPA_BOLLO_OK}" />
+		<replace file="buildfiles/${fileProperties}" token="@URL_PAGOPA_BOLLO_KO@" value="${URL_PAGOPA_BOLLO_KO}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_MIP_GLOBALI@" value="${API_MIP_GLOBALI}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_MIP_GLOBALI_MOCK@" value="${API_MIP_GLOBALI_MOCK}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_TARI_NETRIBE@" value="${API_TARI_NETRIBE}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_TARI_ENG@" value="${API_TARI_ENG}" />		
+		<replace file="buildfiles/${fileProperties}" token="@API_TARI_RIMBORSI_ENG@" value="${API_TARI_RIMBORSI_ENG}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_IMU_RIMBORSI_ENG@" value="${API_IMU_RIMBORSI_ENG}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_BORSE_STUDIO@" value="${API_BORSE_STUDIO}" />
+		<replace file="buildfiles/${fileProperties}" token="@URI_SERVER_PAGAMENTO@" value="${URI_SERVER_PAGAMENTO}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_AVATAR@" value="${API_AVATAR}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_CONTATTI_UTENTE@" value="${API_CONTATTI_UTENTE}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_BIBLIOTECHE@" value="${API_BIBLIOTECHE}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_TRIBUTI_ARGO_MOCK@" value="${API_TRIBUTI_ARGO_MOCK}" />
+		<replace file="buildfiles/${fileProperties}" token="@URL_PAGOPA_MIP_OK@" value="${URL_PAGOPA_MIP_OK}" />
+		<replace file="buildfiles/${fileProperties}" token="@URL_PAGOPA_MIP_KO@" value="${URL_PAGOPA_MIP_KO}" />
+		<replace file="buildfiles/${fileProperties}" token="@EMAIL_PAGAMENTO_DEFAULT@" value="${EMAIL_PAGAMENTO_DEFAULT}" />
+		<replace file="buildfiles/${fileProperties}" token="@NOME_UTENTE_MAIL@" value="${NOME_UTENTE_MAIL}" />
+		<replace file="buildfiles/${fileProperties}" token="@FROM_ADDRESS@" value="${FROM_ADDRESS}" />
+		<replace file="buildfiles/${fileProperties}" token="@FROM_NAME@" value="${FROM_NAME}" />
+		<replace file="buildfiles/${fileProperties}" token="@HOST_SMTP@" value="${HOST_SMTP}" />
+		<replace file="buildfiles/${fileProperties}" token="@TO_ADDRESS@" value="${TO_ADDRESS}" />
+		<replace file="buildfiles/${fileProperties}" token="@CC_ADDRESS@" value="${CC_ADDRESS}" />	
+		<replace file="buildfiles/${fileProperties}" token="@CC_ERRORE_ADDRESS@" value="${CC_ERRORE_ADDRESS}" />	
+		<replace file="buildfiles/${fileProperties}" token="@TO_STATOCIVLE_ADDRESS@" value="${TO_STATOCIVLE_ADDRESS}" />
+		<replace file="buildfiles/${fileProperties}" token="@CC_STATOCIVLE_ADDRESS@" value="${CC_STATOCIVLE_ADDRESS}" />			
+		<replace file="buildfiles/${fileProperties}" token="@API_SEGNALAZIONI@" value="${API_SEGNALAZIONI}" />
+		<replace file="buildfiles/${fileProperties}" token="@TOKEN_SEGNALAZIONI@" value="${TOKEN_SEGNALAZIONI}" />
+		<replace file="buildfiles/${fileProperties}" token="@MINORE_DI@" value="${MINORE_DI}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_TRIBUTI@" value="${API_TRIBUTI}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_DIETE_MOCK@" value="${API_DIETE_MOCK}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_ANAGRAFICI@" value="${API_ANAGRAFICI}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_COMMISSIONI_MENSA@" value="${API_COMMISSIONI_MENSA}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_COM_GE_CEDOLE_LIBRARIE@" value="${API_COM_GE_CEDOLE_LIBRARIE}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_GEOSERVER@" value="${API_GEOSERVER}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_SUPPORTO_ISTANZE_VERBALI_PL@" value="${API_SUPPORTO_ISTANZE_VERBALI_PL}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_BACKEND_CERTIFICATI@" value="${API_BACKEND_CERTIFICATI}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_PUNTI_TARI@" value="${API_PUNTI_TARI}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_PLASTIPREMIA@" value="${API_PLASTIPREMIA}" />
+		<replace file="buildfiles/${fileProperties}" token="@TO_ANAGRAFE_ADDRESS@" value="${TO_ANAGRAFE_ADDRESS}" />
+		<replace file="buildfiles/${fileProperties}" token="@CC_ANAGRAFE_ADDRESS@" value="${CC_ANAGRAFE_ADDRESS}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_PERMESSI_PERSONALIZZATI@" value="${API_PERMESSI_PERSONALIZZATI}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_SEGGI@" value="${API_SEGGI}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_GENOVA_PARCHEGGI@" value="${API_GENOVA_PARCHEGGI}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_ABBONAMENTI_AMT@" value="${API_ABBONAMENTI_AMT}" />	
+		<replace file="buildfiles/${fileProperties}" token="@API_ALLERTE_ZONA_ROSSA@" value="${API_ALLERTE_ZONA_ROSSA}" />	
+		<replace file="buildfiles/${fileProperties}" token="@API_ALLERTE_CORTESIA@" value="${API_ALLERTE_CORTESIA}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_GEOREF_TOPONOMASTICA@" value="${API_GEOREF_TOPONOMASTICA}" />	
+		<replace file="buildfiles/${fileProperties}" token="@API_ARTE@" value="${API_ARTE}" />	
+		<replace file="buildfiles/${fileProperties}" token="@API_ARPAL@" value="${API_ARPAL}" />	
+		<replace file="buildfiles/${fileProperties}" token="@API_EDILIZIA_ABITABILITA@" value="${API_EDILIZIA_ABITABILITA}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_EDILIZIA_CONDONO@" value="${API_EDILIZIA_CONDONO}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_EDILIZIA_PRATICHE@" value="${API_EDILIZIA_PRATICHE}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_CAITEL@" value="${API_CAITEL}" />	
+		<replace file="buildfiles/${fileProperties}" token="@API_TELERISCALDAMENTO@" value="${API_TELERISCALDAMENTO}" />	
+		<replace file="buildfiles/${fileProperties}" token="@API_TELERISCALDAMENTO_IREN@" value="${API_TELERISCALDAMENTO_IREN}" />	
+		<replace file="buildfiles/${fileProperties}" token="@URN_SMART_COMUNE_GENOVA@" value="${URN_SMART_COMUNE_GENOVA}" />	
+		<replace file="buildfiles/${fileProperties}" token="@API_SPORTELLO_GLOBO@" value="${API_SPORTELLO_GLOBO}" />
+		<replace file="buildfiles/${fileProperties}" token="@URL_LOGOUT_GLOBO@" value="${URL_LOGOUT_GLOBO}" />
+		<replace file="buildfiles/${fileProperties}" token="@URL_SSO_GLOBO@" value="${URL_SSO_GLOBO}" />
+		<replace file="buildfiles/${fileProperties}" token="@API_PERICOLOSITA@" value="${API_PERICOLOSITA}" />
+		<replace file="buildfiles/${fileProperties}" token="@URL_PAGOPA_GEPARK_OK@" value="${URL_PAGOPA_GEPARK_OK}" />
+		<replace file="buildfiles/${fileProperties}" token="@URL_PAGOPA_GEPARK_KO@" value="${URL_PAGOPA_GEPARK_KO}" />
+		<replace file="buildfiles/${fileProperties}" token="@URI_SERVER_PAGAMENTO_GEPARK@" value="${URI_SERVER_PAGAMENTO_GEPARK}" />
+		<replace file="buildfiles/${fileProperties}" token="@URL_LOGOUT_FDC@" value="${URL_LOGOUT_FDC}" />	
+		<replace file="buildfiles/${fileProperties}" token="@INPS_IDENTITY_USER_ID@" value="${INPS_IDENTITY_USER_ID}" />
+		<replace file="buildfiles/${fileProperties}" token="@INPS_CODICE_UFFICIO@" value="${INPS_CODICE_UFFICIO}" />		
+		<replace file="buildfiles/${fileProperties}" token="@SALVATAGGIO_CONTATTI_ACCESO@" value="${SALVATAGGIO_CONTATTI_ACCESO}"/>
+		<replace file="buildfiles/${fileProperties}" token="@API_OGGETTI_SMARRITI@" value="${API_OGGETTI_SMARRITI}"/>			
+		<replace file="buildfiles/${fileProperties}" token="@API_SEGNALAZIONE_DANNI_BENI_PRIVATI@" value="${API_SEGNALAZIONE_DANNI_BENI_PRIVATI}"/>			
+		<replace file="buildfiles/${fileProperties}" token="@CHATBOT_SALESFORCE@" value="${CHATBOT_SALESFORCE}"/>
+		<replace file="buildfiles/${fileProperties}" token="@CHATBOT_SALESFORCE_PARTNER@" value="${CHATBOT_SALESFORCE_PARTNER}"/>
+		<replace file="buildfiles/${fileProperties}" token="@CHATBOT_ID_INIT@" value="${CHATBOT_ID_INIT}"/>
+		<replace file="buildfiles/${fileProperties}" token="@CHATBOT_CRISTOFOROCOLOMBO@" value="${CHATBOT_CRISTOFOROCOLOMBO}"/>
+		<replace file="buildfiles/${fileProperties}" token="@CHATBOT_SALESFORCE_LIVEAGENT_CONTENT@" value="${CHATBOT_SALESFORCE_LIVEAGENT_CONTENT}"/>
+		<replace file="buildfiles/${fileProperties}" token="@CHATBOT_ID_DEPLOYMENT@" value="${CHATBOT_ID_DEPLOYMENT}"/>
+		<replace file="buildfiles/${fileProperties}" token="@CHATBOT_ID_BUTTON@" value="${CHATBOT_ID_BUTTON}"/>
+		<replace file="buildfiles/${fileProperties}" token="@CHATBOT_SALESFORCE_LIVEAGENT_CHAT@" value="${CHATBOT_SALESFORCE_LIVEAGENT_CHAT}"/>
+		<replace file="buildfiles/${fileProperties}" token="@CHATBOT_DEVNAME@" value="${CHATBOT_DEVNAME}"/>
+		<replace file="buildfiles/${fileProperties}" token="@API_PAGAMENTO_CANONE_IDRICO@" value="${API_PAGAMENTO_CANONE_IDRICO}"/>
+		<replace file="buildfiles/${fileProperties}" token="@API_ACCENTURE@" value="${API_ACCENTURE}"/>
+		<replace file="buildfiles/${fileProperties}" token="@TOKEN_ACCENTURE@" value="${TOKEN_ACCENTURE}"/>
+		<replace file="buildfiles/${fileProperties}" token="@API_DOMANDE_ALLOGGIO@" value="${API_DOMANDE_ALLOGGIO}"/>
+		<replace file="buildfiles/${fileProperties}" token="@API_DOMANDE_LOCAZIONE@" value="${API_DOMANDE_LOCAZIONE}"/>
+		<replace file="buildfiles/${fileProperties}" token="@API_CONTROLLI_ALBI@" value="${API_CONTROLLI_ALBI}"/>
+		<replace file="buildfiles/${fileProperties}" token="@FDC2_RICHIESTA_PAGAMENTO_CANONE_IDRICO@" value="${FDC2_RICHIESTA_PAGAMENTO_CANONE_IDRICO}"/>
+		<replace file="buildfiles/${fileProperties}" token="@FDC2_RICHIESTA_DOMANDA_MATRIMONIO@" value="${FDC2_RICHIESTA_DOMANDA_MATRIMONIO}"/>
+		<replace file="buildfiles/${fileProperties}" token="@FDC2_RICHIESTA_DOMANDA_ALLOGGIO@" value="${FDC2_RICHIESTA_DOMANDA_ALLOGGIO}"/>
+		<replace file="buildfiles/${fileProperties}" token="@FDC2_RICHIESTA_DOMANDA_LOCAZIONE@" value="${FDC2_RICHIESTA_DOMANDA_LOCAZIONE}"/>
+		<replace file="buildfiles/${fileProperties}" token="@FDC2_RICHIESTA_PERMESSO_AREABLU@" value="${FDC2_RICHIESTA_PERMESSO_AREABLU}"/>
+		<replace file="buildfiles/${fileProperties}" token="@FDC2_RICHIESTA_PERMESSO_CUDE@" value="${FDC2_RICHIESTA_PERMESSO_CUDE}"/>
+		<replace file="buildfiles/${fileProperties}" token="@FDC2_RICHIESTA_PERMESSO_ZTL@" value="${FDC2_RICHIESTA_PERMESSO_ZTL}"/>		
+		<replace file="buildfiles/${fileProperties}" token="@FDC2_RICHIESTA_RICORSO_AL_PREFETTO@" value="${FDC2_RICHIESTA_RICORSO_AL_PREFETTO}"/>
+		<replace file="buildfiles/${fileProperties}" token="@FDC2_RICHIESTA_RICORSO_AL_PREFETTO@" value="${FDC2_RICHIESTA_RICORSO_AL_PREFETTO}"/>
+		<replace file="buildfiles/${fileProperties}" token="@API_GEOWORKS@" value="${API_GEOWORKS}"/>
+		<replace file="buildfiles/${fileProperties}" token="@API_GEOWORKS_DETTAGLI@" value="${API_GEOWORKS_DETTAGLI}"/>
+		<replace file="buildfiles/${fileProperties}" token="@API_GEOWORKS_DOMANDA@" value="${API_GEOWORKS_DOMANDA}"/>
+		<replace file="buildfiles/${fileProperties}" token="@FDC2_RICHIESTA_DOMANDA_ISCRIZIONE_MENSA_RESIDENTE@" value="${FDC2_RICHIESTA_DOMANDA_ISCRIZIONE_MENSA_RESIDENTE}"/>
+		<replace file="buildfiles/${fileProperties}" token="@FDC2_RICHIESTA_DOMANDA_AGEVOLAZIONE_TARIFFARIA_MENSA@" value="${FDC2_RICHIESTA_DOMANDA_AGEVOLAZIONE_TARIFFARIA_MENSA}"/>
+		<replace file="buildfiles/${fileProperties}" token="@FDC2_PAGAMENTO_VERBALE_PL@" value="${FDC2_PAGAMENTO_VERBALE_PL}"/>
+		<replace file="buildfiles/${fileProperties}" token="@TOKEN_SCAI_REALGIM@" value="${TOKEN_SCAI_REALGIM}"/>
+		<replace file="buildfiles/${fileProperties}" token="@API_REALGIM_BANDI@" value="${API_REALGIM_BANDI}"/>	
+		<replace file="buildfiles/${fileProperties}" token="@FDC2_RICHIESTA_PRENOTAZIONE_APPUNTAMENTO@" value="${FDC2_RICHIESTA_PRENOTAZIONE_APPUNTAMENTO}"/>
+		<replace file="buildfiles/${fileProperties}" token="@FDC2_RICHIESTA_DOMANDA_SEPARAZIONE_DIVORZI@" value="${FDC2_RICHIESTA_DOMANDA_SEPARAZIONE_DIVORZI}"/>
+		<replace file="buildfiles/${fileProperties}" token="@FDC2_RICHIESTA_DOMANDA_UNIONI_CIVILI@" value="${FDC2_RICHIESTA_DOMANDA_UNIONI_CIVILI}"/>
+		<replace file="buildfiles/${fileProperties}" token="@FDC2_RICHIESTA_DOMANDA_ISCRIZIONE_ALBO_PRESIDENTI@" value="${FDC2_RICHIESTA_DOMANDA_ISCRIZIONE_ALBO_PRESIDENTI}"/>
+		<replace file="buildfiles/${fileProperties}" token="@FDC2_RICHIESTA_DOMANDA_RINNOVO_ALBO_PRESIDENTI@" value="${FDC2_RICHIESTA_DOMANDA_RINNOVO_ALBO_PRESIDENTI}"/>
+		<replace file="buildfiles/${fileProperties}" token="@FDC2_RICHIESTA_DOMANDA_ISCRIZIONE_ALBO_SCRUTATORI@" value="${FDC2_RICHIESTA_DOMANDA_ISCRIZIONE_ALBO_SCRUTATORI}"/>
+		<replace file="buildfiles/${fileProperties}" token="@FDC2_RICHIESTA_DOMANDA_RINNOVO_ALBO_SCRUTATORI@" value="${FDC2_RICHIESTA_DOMANDA_RINNOVO_ALBO_SCRUTATORI}"/>
+		<replace file="buildfiles/${fileProperties}" token="@FDC2_RICHIESTA_DOMANDA_CANCELLAZIONE_ALBO_SCRUTATORI@" value="${FDC2_RICHIESTA_DOMANDA_CANCELLAZIONE_ALBO_SCRUTATORI}"/>
+		<replace file="buildfiles/${fileProperties}" token="@FDC2_RICHIESTA_DOMANDA_TRASPORTO_BAMBINI_DISABILI_A_SCUOLA@" value="${FDC2_RICHIESTA_DOMANDA_TRASPORTO_BAMBINI_DISABILI_A_SCUOLA}"/>
+		<replace file="buildfiles/${fileProperties}" token="@FDC2_RICHIESTA_DOMANDA_TRASCRIZIONI_MATRIMONIO@" value="${FDC2_RICHIESTA_DOMANDA_TRASCRIZIONI_MATRIMONIO}"/>
+		<replace file="buildfiles/${fileProperties}" token="@FDC2_RICHIESTA_DOMANDA_TRASCRIZIONI_SCIOGLIMENTO_MATRIMONIO@" value="${FDC2_RICHIESTA_DOMANDA_TRASCRIZIONI_SCIOGLIMENTO_MATRIMONIO}"/>
+		<replace file="buildfiles/${fileProperties}" token="@FDC2_RICHIESTA_SEGNALAZIONE_DANNI_BENI_PRIVATI@" value="${FDC2_RICHIESTA_SEGNALAZIONE_DANNI_BENI_PRIVATI}"/>
+
+		<replace file="buildfiles/${fileProperties}" token="@FDC2_RICHIESTA_AUTODICHIARAZIONE_FIGLI@" value="${FDC2_RICHIESTA_AUTODICHIARAZIONE_FIGLI}"/>
+		<replace file="buildfiles/${fileProperties}" token="@FDC2_RICHIESTA_BOLLETTAZIONE_MENSA@" value="${FDC2_RICHIESTA_BOLLETTAZIONE_MENSA}"/>
+	</target>
+	
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # Target: crea-properties-build-version                     # -->
+	<!-- #         copia buil version nell'ear                       # -->
+	<!-- ############################################################# -->
+	<!-- -->
+	<target name="crea-properties-build-version" description="crea file properties da includere nell'ear">
+		<echo message="crea-properties-build-version" />
+		<copy tofile="${src}/java/${dir.prefix}/business/common/build-version.properties" file="${conf}/business/${contesto}/build-version.properties" overwrite="true" />
+		<replace file="${src}/java/${dir.prefix}/business/common/build-version.properties" token="@BUILD_VERSION@" value="${BUILD_VERSION}" />
+	</target>
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # [PKG]: business-framework-jar                                   # -->
+	<!-- ############################################################# -->
+	<!-- -->
+
+	<target name="web-framework-jar">
+		<echo message="Inizio target web-framework-jar" />
+		<jar jarfile="${build}/archives/${target}/${webapp}-framework.jar">
+			<fileset dir="${build}/classes">
+				<include name="it/liguriadigitale/framework/presentation/**/*.*" />
+				<include name="it/liguriadigitale/${prodotto}/${componente}/presentation/*.*" />
+				<include name="it/liguriadigitale/${prodotto}/${componente}/presentation/**/*.*" />
+				<include name="resources/**/*.*" />
+			</fileset>
+			<metainf dir="${build}/temp/conf/business/${contesto}/META-INF">
+				<patternset id="all-xml">
+					<include name="**/*.xml" />
+				</patternset>
+			</metainf>
+			<manifest>
+				<attribute name="Built-By" value="LIGURIADIGITALE" />
+				<attribute name="Built-Date" value="${DSTAMP}" />
+				<attribute name="Deploy" value="JBOSS" />
+				<attribute name="tier" value="LIBRARY" />
+				<attribute name="Class-Path" value="${lib-ear-product} ${webapp}-integration.jar ${webapp}-commons.jar ${webapp}-business.jar" />
+			</manifest>
+		</jar>
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # [PKG]: package-ear                                        # -->
+	<!-- ############################################################# -->
+	<!-- -->
+
+	<target name="package-ear" depends="environment-recreate,crea-properties-build-version,compile-all, commons-jar,
+                  					   	 business-ejb-jar, integration-jar,web-framework-jar">
+		<echo message="Inizio target package-ear" />
+		<copy todir="${build}/classes">
+			<fileset dir="${conf}/web/${webapp}/WEB-INF" includes="struts*.xml" />
+		</copy>
+		<war destfile="${build}/archives/${target}/${war-file-name}.war" webxml="${build}/temp/conf/web/${webapp}/WEB-INF/web.xml" roundup="false">
+			<webinf dir="${conf}/web/${webapp}/WEB-INF" />
+			<fileset dir="${srcweb}" />
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Built-Date" value="${DSTAMP}" />
+				<attribute name="target" value="${target}" />
+				<attribute name="Deploy" value="${appserver}" />
+				<attribute name="tier" value="WEBAPP" />
+			</manifest>
+		</war>
+		<copy todir="${temp}/${target}/${earLib}">
+			<fileset dir="${lib}" excludes="${war-exclude-libs-filter-tm}" />
+			<fileset dir="${build}/archives/${target}" includes="*.jar" excludes="${war-file-name}.war,*-business.jar" />
+		</copy>
+		<copy todir="${temp}/conf/ear/${webapp}/META-INF">
+			<fileset dir="${conf}/ear/${webapp}/META-INF" includes="*.xml" />
+		</copy>
+
+		<ear appxml="${temp}/conf/ear/${webapp}/META-INF/application.xml" destfile="${build}/archives/${target}/${ear-file-name}.ear">
+			<fileset dir="${temp}/${target}">
+				<include name="${earLib}/*.*" />
+			</fileset>
+			<fileset dir="${build}/archives/${target}" includes="${war-file-name}.war,*-business.jar" />
+			<metainf dir="${temp}/conf/ear/${webapp}/META-INF" includes="*.xml" />
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Built-Date" value="${DSTAMP}" />
+				<attribute name="Target" value="${target}" />
+				<attribute name="Appl-Version" value="${version}" />
+			</manifest>
+		</ear>
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # [PKG]: package-war                                        # -->
+	<!-- ############################################################# -->
+	<!-- -->
+
+	<target name="package-war">
+		<echo message="Inizio target package-war" />
+		<copy todir="${build}/classes">
+			<fileset dir="${conf}/web/${webapp}/WEB-INF" includes="struts*.xml" />
+		</copy>
+		<war destfile="${build}/archives/${target}/${war-file-name}.war" webxml="${build}/temp/conf/web/${webapp}/WEB-INF/web.xml" roundup="false" manifest="${build}/temp/conf/web/${webapp}/META-INF/MANIFEST.MF">
+			<webinf dir="${conf}/web/${webapp}/WEB-INF" includes="applicationContext.xml,jboss-web.xml,beanContext.xml" />
+			<fileset dir="${srcweb}" />
+			<classes dir="${build}/jsp" includes="**" />
+			<classes dir="${build}/classes" includes="it/liguriadigitale/${prodotto}/${componente}/presentation/**,*.xml,*.properties" />
+			<lib dir="${lib}" includes="*" excludes="${war-exclude-libs-filter}" />
+		</war>
+	</target>
+
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # [PKG]: integration-jar                                    # -->
+	<!-- ############################################################# -->
+	<!-- -->
+
+	<target name="integration-jar">
+		<echo message="Inizio target integration-jar" />
+		<jar jarfile="${build}/archives/${target}/${webapp}-integration.jar" manifest="${build}/temp/conf/jar/integration/META-INF/MANIFEST.MF">
+			<fileset dir="${build}/classes">
+				<include name="it/liguriadigitale/${prodotto}/${componente}/integration/**" />
+				<include name="it/liguriadigitale/framework/integration/**/*.*" />
+			</fileset>
+		</jar>
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # [PKG]: business-ejb-jar                                   # -->
+	<!-- ############################################################# -->
+	<!-- -->
+
+	<target name="business-ejb-jar">
+		<echo message="Inizio target business-ejb-jar" />
+		<jar jarfile="${build}/archives/${target}/${webapp}-business.jar">
+			<fileset dir="${build}/classes">
+				<include name="it/liguriadigitale/${prodotto}/${componente}/business/*.*" />
+				<include name="it/liguriadigitale/${prodotto}/${componente}/business/**/*.*" />
+				<include name="it/liguriadigitale/framework/business/**/*.*" />
+			</fileset>
+			<metainf dir="${build}/temp/conf/business/${contesto}/META-INF">
+				<patternset id="all-xml">
+					<include name="**/*.xml" />
+				</patternset>
+			</metainf>
+			<manifest>
+				<attribute name="Built-By" value="DATASIEL" />
+				<attribute name="Built-Date" value="${DSTAMP}" />
+				<attribute name="Deploy" value="JBOSS" />
+				<attribute name="tier" value="LIBRARY" />
+			</manifest>
+		</jar>
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # [PKG]: commons-jar                                        # -->
+	<!-- ############################################################# -->
+	<!-- -->
+
+	<target name="commons-jar">
+		<echo message="Inizio target commons-jar" />
+		<jar destfile="${build}/archives/${target}/${webapp}-commons.jar" basedir="${build}/classes" includes="it/liguriadigitale/${prodotto}/${componente}/pojo/**,
+                   it/liguriadigitale/${prodotto}/${componente}/exception/**,
+    			   it/liguriadigitale/framework/pojo/**/*.*	,
+                   it/liguriadigitale/${prodotto}/${componente}/util/**">
+		</jar>
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # [PKG]: client-ejb-jar                                   # -->
+	<!-- ############################################################# -->
+	<!-- -->
+
+	<target name="create-client-ejb-jar" description="crea libreria per ejb esterni" depends="environment-recreate,clean-archives,compile-all">
+		<echo message="Inizio target create-cliente-ejb-jar" />
+		<jar jarfile="${build}/archives/${target}/${webapp}-client-business.jar">
+			<fileset dir="${build}/classes">
+				<include name="it/liguriadigitale/${prodotto}/${componente}/business/${componente}/services/*.*" />
+				<include name="it/liguriadigitale/${prodotto}/${componente}/pojo/**" />
+				<include name="it/liguriadigitale/${prodotto}/${componente}/business/exceptions/**" />
+				<include name="it/liguriadigitale/${prodotto}/${componente}/util/**" />
+			</fileset>
+			<metainf dir="${build}/temp/conf/business/${contesto}/META-INF">
+				<patternset id="all-xml">
+					<include name="**/*.xml" />
+				</patternset>
+			</metainf>
+			<manifest>
+				<attribute name="Built-By" value="LIGURIADIGITALE" />
+				<attribute name="Built-Date" value="${DSTAMP}" />
+				<attribute name="Deploy" value="JBOSS" />
+				<attribute name="tier" value="LIBRARY" />
+			</manifest>
+		</jar>
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # [CLEAN]: clean-all                                        # -->
+	<!-- ############################################################# -->
+	<!-- -->
+	<target name="clean-all" depends="clean-archives,clean-cache,clean-classes,clean-javadoc,clean-temp,clean-lib" />
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # [CLEAN]: clean-cache                                      # -->
+	<!-- ############################################################# -->
+	<!-- -->
+	<target name="clean-cache">
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # [CLEAN]: clean-temp                                       # -->
+	<!-- ############################################################# -->
+	<!-- -->
+	<target name="clean-temp">
+		<delete dir="${temp}" />
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # [CLEAN]: clean-ws                                       # -->
+	<!-- ############################################################# -->
+	<!-- -->
+	<target name="clean-ws">
+		<delete dir="${build}/classesws" />
+	</target>
+
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # [CLEAN]: clean-archives                                  # -->
+	<!-- ############################################################# -->
+	<!-- -->
+	<target name="clean-archives">
+		<mkdir dir="${build}/archives" />
+		<delete includeemptydirs="true">
+			<fileset dir="${build}/archives" defaultexcludes="false">
+				<include name="**/**" />
+			</fileset>
+		</delete>
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # [CLEAN]: clean-dist                                       # -->
+	<!-- ############################################################# -->
+	<!-- -->
+	<target name="clean-dist">
+		<delete dir="${dist}" />
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # [CLEAN]: clean-classes                                    # -->
+	<!-- ############################################################# -->
+	<!-- -->
+	<target name="clean-classes">
+		<mkdir dir="${build}/classes" />
+		<delete includeemptydirs="true">
+			<fileset dir="${build}/classes" defaultexcludes="false">
+				<include name="**/**" />
+			</fileset>
+		</delete>
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # [CLEAN]: clean-javadoc                                    # -->
+	<!-- ############################################################# -->
+	<!-- -->
+	<target name="clean-javadoc">
+		<delete dir="${build}/javadoc" />
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # [CLEAN]: clean-lib                                        # -->
+	<!-- ############################################################# -->
+	<!-- -->
+	<target name="clean-lib" description="--> clean the project libraries directory (dependencies)">
+		<delete includeemptydirs="true" dir="${lib}">
+			<!-- <exclude name="PayServerClientLog4j.jar"/>  -->
+		</delete>
+		<mkdir dir="${lib}" />
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # [CLEAN]: _clean-web-inf                                   # -->
+	<!-- ############################################################# -->
+	<!-- -->
+	<target name="_clean-web-inf">
+		<delete dir="${srcweb}/WEB-INF/classes" />
+		<delete dir="${srcweb}/WEB-INF/lib" />
+	</target>
+
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # [DEPLOY]: deploy artifact to server by FTP                # -->
+	<!-- ############################################################# -->
+	<!-- -->
+	<target name="deploy" description="Deploy su server definito sul target" depends="package-ear">
+		<scp file="build/archives/${target}/${ear-file-name}.ear" todir="${user}:${password}@${servername}:${remotedir}" port="22" trust="true" />
+		<echo message="Copiato nel path: ${remotedir}">
+		</echo>
+		<antcall target="timestamp">
+			<param name="message" value="Fine:" />
+		</antcall>
+	</target>
+
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # [DEPLOY]: deploy artifact to local DIRECTORY              # -->
+	<!-- ############################################################# -->
+	<!-- -->
+	<target name="deployLocale" description="Deploy su server definito sul target" depends="package-ear">
+		
+		<copy todir="${path}">
+			<fileset dir="build/archives/${target}" includes="*.ear" />
+		</copy>
+		<echo message="Copiato nel path: ${path}">
+		</echo>
+		<antcall target="timestamp">
+			<param name="message" value="Fine:" />
+		</antcall>
+	</target>
+
+	<target name="deployLocaleDocker" description="Deploy su server definito sul target" depends="package-ear">
+		<!-- Definisci le proprietà -->
+		<property name="docker.container.name" value="my_container"/> <!-- Nome del tuo container Docker -->
+		
+		<property name="ear.file" value="build/archives/${target}/${ear-file-name}.ear"/> <!-- Assicurati di inserire il nome corretto del tuo EAR -->
+	
+		<!-- Copia l'EAR nel container Docker -->
+		<exec executable="docker" dir="${basedir}">
+			<arg value="cp"/>
+			<arg value="${ear.file}"/>
+			<arg value="${docker.container.name}:/opt/jboss/wildfly/standalone/deployments/${ear-file-name}.ear"/> <!-- Assicurati di sostituire con il percorso desiderato nel container e il nome corretto dell'EAR -->
+		</exec>
+	
+		<!-- Feedback -->
+		<echo message="Copiato nel container Docker: ${docker.container.name}"/>
+	</target>
+
+	
+	
+	
+	
+	
+  <!-- -->
+  <!-- ############################################################# -->
+  <!-- # [DEPLOY]: deploy file properties to local DIRECTORY       # -->
+  <!-- ############################################################# -->
+  <!-- -->
+	
+  <target name="deployProperties"  description = "copia file di properties" depends="crea-properties, crea-properties-build-version">
+  	
+  	<copy tofile="${path}/../configuration/${fileProperties}" file="buildfiles/${fileProperties}" overwrite="true"/>
+  	<copy tofile="${path}/../configuration/${filePackageProperties}" file="buildfiles/${filePackageProperties}" overwrite="true"/>
+  	<echo message="Copiato file properties ${fileProperties} nel path: ${path}/../configuration/"></echo>
+  	<echo message="Copiato file properties ${filePackageProperties} nel path: ${path}/../configuration/"></echo>
+  	<antcall target="timestamp">
+  		<param name="message" value="Fine:" />
+  	</antcall>
+  </target>	
+	
+
+  <!-- -->
+  <!-- ############################################################# -->
+  <!-- # [DEPLOY]: crea file properties fdc_package_finder         # -->
+  <!-- ############################################################# -->
+  <!-- -->	
+	
+  <target name="creaPackageFinderProperties"  description = "prova" depends="environment-recreate,crea-properties-build-version,compile-all">
+	<java classname="it.liguriadigitale.ponmetro.portale.presentation.util.annotation.ScanAnnotationMain" fork="true">
+	    <arg value="${path}/../configuration/"/>
+	    <classpath>
+	        <pathelement path="${build}/classes"/>
+			<fileset dir="${lib}">
+				<include name="**/*.jar" />
+			</fileset>
+	    </classpath>
+	</java>
+  </target>
+
+</project>

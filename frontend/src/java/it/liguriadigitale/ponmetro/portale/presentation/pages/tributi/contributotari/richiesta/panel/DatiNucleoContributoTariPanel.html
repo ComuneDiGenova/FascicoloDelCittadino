@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="form-row mb-2 col-md-12 mx-auto">
+
+			<div class="form-row col-md-12" wicket:id="titoloAutodichiarazioni"></div>
+
+			<wicket:enclosure child="autodichiarazioneCategoriaImmobile">
+				<div class="row">
+					<div class="col">
+						<div class="form-group">
+							<div class="select-wrapper">
+								<label> <wicket:message
+										key="DatiNucleoContributoTariPanel.autodichiarazioneCategoriaImmobile" />
+								</label><select wicket:id="autodichiarazioneCategoriaImmobile"></select>
+							</div>
+						</div>
+					</div>
+					<div class="col"></div>
+				</div>
+			</wicket:enclosure>
+
+			<wicket:enclosure child="autodichiarazioneMqImmobile">
+				<div class="row">
+					<div class="col">
+						<div class="form-group">
+							<div class="select-wrapper">
+								<label wicket:id="autodichiarazioneMqImmobileInfo"> </label><select
+									wicket:id="autodichiarazioneMqImmobile"></select>
+							</div>
+						</div>
+					</div>
+					<div class="col"></div>
+				</div>
+			</wicket:enclosure>
+			
+			<wicket:enclosure child="autodichiarazioneInRegolaTari">
+				<div class="row">
+					<div class="col">
+						<div class="form-group">
+							<div class="select-wrapper">
+								<label> <wicket:message
+										key="DatiNucleoContributoTariPanel.autodichiarazioneInRegolaTari" />
+								</label><select wicket:id="autodichiarazioneInRegolaTari"></select>
+							</div>
+						</div>
+					</div>
+					<div class="col"></div>
+				</div>
+			</wicket:enclosure>
+
+			<wicket:enclosure child="autodichiarazioneAltreAgevolazioni">
+				<div class="row">
+					<div class="col">
+						<div class="form-group">
+							<div class="select-wrapper">
+								<label> <wicket:message
+										key="DatiNucleoContributoTariPanel.autodichiarazioneAltreAgevolazioni" />
+								</label><select wicket:id="autodichiarazioneAltreAgevolazioni"></select>
+							</div>
+						</div>
+					</div>
+					<div class="col"></div>
+				</div>
+			</wicket:enclosure>
+
+			<div class="form-row col-md-12" wicket:id="titoloListaPersoneDaDichiarare"></div>
+
+			<div class="row" wicket:id="listaPersoneDaDichiarare">
+
+				<div class="col-6" wicket:id="nominativoIsee"></div>
+
+				<div class="col-6">
+					<div class="form-group">
+						<div class="select-wrapper">
+							<label> <wicket:message
+									key="DatiNucleoContributoTariPanel.nominativoIseeACarico" />
+							</label><select wicket:id="nominativoIseeACarico"></select>
+						</div>
+					</div>
+				</div>
+				<div class="col"></div>
+			</div>
+
+		</div>
+
+	</wicket:panel>
+
+</body>
+
+</html>

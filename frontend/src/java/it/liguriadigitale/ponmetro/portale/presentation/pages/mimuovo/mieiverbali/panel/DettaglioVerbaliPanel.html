@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<body>
+    <wicket:panel>
+
+        <div class="steppers">
+            <ul class="steppers-header">
+                <li>
+                    <span class="badge badge-pill" wicket:id="statoVerbale"></span>
+                    <span class="sr-only"></span>
+                </li>
+                <li>
+                    <span class="badge badge-pill" wicket:id="statoPagamentoVerbale"></span>
+                    <span class="sr-only"></span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-sm-12 mt-2 mb-2" wicket:id="emergenzaCovid">
+            <div class="alert alert-warning fw-bold" role="alert">
+                <wicket:message key="DettaglioVerbaliPanel.emergenzaCovid" />
+            </div>
+        </div>
+
+        <h3 class="text-start fw-bold col-9"><wicket:message key="DettaglioVerbaliPanel.titolo"/></h3>
+
+        <p>
+            <wicket:enclosure child="numeroAvviso">
+                <span><wicket:message key="DettaglioVerbaliPanel.numeroAvviso" /></span>
+                <span class="fw-bold" wicket:id="numeroAvviso"></span>
+            </wicket:enclosure>
+
+            <wicket:enclosure child="numeroProtocollo">
+                <span class="fw-bold" wicket:id="numeroProtocollo"></span>
+            </wicket:enclosure>
+
+            <wicket:enclosure child="dataVerbale">
+                <span><wicket:message key="DettaglioVerbaliPanel.dataVerbale" /></span>
+                <span class="fw-bold" wicket:id="dataVerbale"></span>
+            </wicket:enclosure>
+
+            <wicket:enclosure child="oraAccertamento">
+                <span><wicket:message key="DettaglioVerbaliPanel.oraAccertamento" /></span>
+                <span class="fw-bold" wicket:id="oraAccertamento"></span>
+            </wicket:enclosure>
+
+            <wicket:enclosure child="tipoVeicolo">
+                <span><wicket:message key="DettaglioVerbaliPanel.tipoVeicolo" /></span>
+                <span class="fw-bold" wicket:id="tipoVeicolo"></span>
+            </wicket:enclosure>
+
+            <wicket:enclosure child="targa">
+                <span><wicket:message key="DettaglioVerbaliPanel.targa" /></span>
+                <span class="fw-bold" wicket:id="targa"></span>
+            </wicket:enclosure>
+
+            <wicket:enclosure child="modello">
+                <span><wicket:message key="DettaglioVerbaliPanel.modello" /></span>
+                <span class="fw-bold" wicket:id="modello"></span>
+            </wicket:enclosure>
+        </p>
+
+        <p>
+            <wicket:enclosure child="serieVerbale">
+                <span><wicket:message key="DettaglioVerbaliPanel.serieVerbale" /></span>
+                <span class="fw-bold" wicket:id="serieVerbale"></span>
+            </wicket:enclosure>
+        </p>
+
+        <p>
+            <wicket:enclosure child="listViewListaAnagrafica">
+                <span><wicket:message key="DettaglioVerbaliPanel.datiAnagrafici" /></span>
+
+                <p wicket:id="listViewListaAnagrafica">
+                    <ul>
+                        <li wicket:id="datiAnagrafici"></li>
+                    </ul>
+                </p>
+
+            </wicket:enclosure>
+        </p>
+
+        <p>
+            <wicket:enclosure child="localita">
+                <span><wicket:message key="DettaglioVerbaliPanel.localita" /></span>
+                <span class="fw-bold" wicket:id="localita"></span>
+            </wicket:enclosure>
+        </p>
+
+        <p>
+            <wicket:enclosure child="listViewArticoliViolati">
+                <span><wicket:message key="DettaglioVerbaliPanel.articoliViolati" /></span>
+
+                <p wicket:id="listViewArticoliViolati">
+                    <ul>
+                        <li class="fw-bold" wicket:id="articoloViolato"></li>
+                    </ul>
+                </p>
+
+            </wicket:enclosure>
+        </p>
+
+        <p>
+            <wicket:enclosure child="listViewDocumentazione">
+                <span><wicket:message key="DettaglioVerbaliPanel.documentazione" /></span>
+
+                <p wicket:id="listViewDocumentazione">
+                    <ul>
+                        <li class="fw-bold" wicket:id="documentazione"></li>
+                    </ul>
+                </p>
+
+            </wicket:enclosure>
+        </p>
+
+        <p>
+            <wicket:enclosure child="totalePuntiPatente">
+                <span><wicket:message key="DettaglioVerbaliPanel.totalePuntiPatente" /></span>
+                <span class="fw-bold" wicket:id="totalePuntiPatente"></span>
+            </wicket:enclosure>
+        </p>
+
+        <p>
+            <wicket:enclosure child="motivoMancataContestazione">
+                <span><wicket:message key="DettaglioVerbaliPanel.motivoMancataContestazione" /></span>
+                <span class="fw-bold" wicket:id="motivoMancataContestazione"></span>
+            </wicket:enclosure>
+        </p>
+
+        <p>
+            <wicket:enclosure child="apparecchiatura">
+                <span><wicket:message key="DettaglioVerbaliPanel.apparecchiatura" /></span>
+                <span class="fw-bold" wicket:id="apparecchiatura"></span>
+            </wicket:enclosure>
+        </p>
+
+        <div class="col-lg-12 mb-4">
+            <div class="card-wrapper">
+                <div class="card card-bg my-2">
+                    <div class="card-body">
+
+                        <div wicket:id="dettaglioPagamentiPanel"></div>
+
+                        <div wicket:id="allegatiPanel"></div>
+
+                        <div wicket:id="documentiPanel"></div>
+                        
+                        <div wicket:id="documentiDppPanel"></div>
+                        
+                        <div wicket:id="istanzePanel"></div>
+                        
+                        <div wicket:id="ricorsiPanel"></div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-wrapper" wicket:id="documentazioneDaPresentare">
+                <div class="card card-bg my-2">
+                    <div class="card-body">
+                    
+                    	<h4 class="text-start fw-bold col-9"><wicket:message key="DettaglioVerbaliPanel.titoloDocumentiDaPresentare"/></h4>                   
+                        
+                        <p class="text-start">
+				            <wicket:enclosure child="dataFineDpp">
+				                <span><wicket:message key="DettaglioVerbaliPanel.dataFineDpp" /></span>
+				                <span class="fw-bold" wicket:id="dataFineDpp"></span>
+				            </wicket:enclosure>
+        				</p>
+                        
+                        
+                        <div class="col-6" style="display: flex;">
+                        	<p class="card-text text-center fw-bold">
+                        		<a class="btn btn-primary btn-icon" wicket:id="linkPuntiPatente">
+                                	<span><wicket:message key="DettaglioVerbaliPanel.puntiPatente" /></span>
+                                </a>
+                        	</p>                      
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+    </wicket:panel>
+</body>
+
+</html>

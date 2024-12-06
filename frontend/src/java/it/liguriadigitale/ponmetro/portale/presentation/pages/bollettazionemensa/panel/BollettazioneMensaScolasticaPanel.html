@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="col-12">
+			<h3>
+				<wicket:message key="BollettazioneMensaScolasticaPanel.titolo" />
+			</h3>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12"
+				wicket:id="nonSeiUnImpegnatoAlPagamento">
+				<div class="alert alert-warning" role="alert">
+					<wicket:message
+						key="BollettazioneMensaScolasticaPanel.nonSeiUnImpegnatoAlPagamento" />
+
+					<!--  <wicket:enclosure child="btnIscrizioneMensaResidente">
+						<div class="col-sm-12 mt-2 mb-2">
+							<button class="btn btn-outline-primary">
+								<span wicket:id="btnIscrizioneMensaResidente"></span>
+							</button>
+						</div>
+					</wicket:enclosure> -->
+
+					<!--  <wicket:enclosure child="btnIscrizioneMensaNonResidente">
+						<div class="col-sm-12 mt-2 mb-2">
+							<button class="btn btn-outline-primary">
+								<span wicket:id="btnIscrizioneMensaNonResidente"></span>
+							</button>
+						</div>
+					</wicket:enclosure> -->
+					
+					<wicket:enclosure child="btnBambiniAScuola">
+						<div class="col-sm-12 mt-2 mb-2">
+							<button class="btn btn-outline-primary">
+								<span wicket:id="btnBambiniAScuola"></span>
+							</button>
+						</div>
+					</wicket:enclosure>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12"
+				wicket:id="seiUnImpegnatoAlPagamento">
+				<div class="alert alert-warning" role="alert">
+					<wicket:message
+						key="BollettazioneMensaScolasticaPanel.seiUnImpegnatoAlPagamento" />
+				</div>
+			</div>
+		</div>
+
+		<div class="row content my-12 info-traffico">
+			<div class="col-lg-6 mb-4" wicket:id="bollettazione">
+
+				<div class="card-wrapper card-space">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="col-auto color-orange col-3 icon-fogli"></i>
+							</div>
+
+							<div wicket:id="modalitaBollettazione"></div>
+
+							<div wicket:id="emailBollettazione"></div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</wicket:panel>
+</body>
+
+</html>

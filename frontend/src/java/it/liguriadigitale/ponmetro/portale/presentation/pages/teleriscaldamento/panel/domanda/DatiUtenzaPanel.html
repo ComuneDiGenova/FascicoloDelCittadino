@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="form-row mb-2 col-md-12 mx-auto">
+
+			<div class="form-row col-md-12" wicket:id="titolo"></div>
+
+			<div class="alert alert-info" role="alert">
+				<wicket:message key="DatiUtenzaPanel.infoTipoUtenza" />
+
+				<div class="form-row col-12">
+
+					<p>
+						<wicket:message key="DatiUtenzaPanel.infoLettera2" />
+						<a href="#" role="button" wicket:id="btnDownloadEsempio"> <wicket:message
+								key="DatiUtenzaPanel.btnDownloadEsempio" />
+						</a>
+						<wicket:message key="DatiUtenzaPanel.infoLettera3" />
+					</p>
+
+				</div>
+			</div>
+
+			<br></br>
+
+			<div class="form-row col-12">
+				<div class="form-group col-md-6">
+					<div class="select-wrapper" style="margin-top: 30px;">
+						<label for="tipoUtenza"> <wicket:message key="DatiUtenzaPanel.tipoUtenza" /></label>
+						<select id="tipoUtenza" wicket:id="tipoUtenza"></select>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-row col-12">
+				<div class="row">
+					<div class="col-md-6">
+						<div wicket:id="numeroCliente"></div>
+					</div>
+	
+					<div class="col-md-6">
+						<div wicket:id="numeroContratto"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-row col-12">
+				<div class="row">
+					<div class="col-md-6">
+						<div wicket:id="indirizzoCompleto"></div>
+					</div>
+	
+					<div class="col-md-6">
+						<div wicket:id="cap"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-row col-12">
+				<div class="row">
+					<div class="col-md-6">
+						<div wicket:id="comune"></div>
+					</div>
+	
+					<div class="col-md-6">
+						<div wicket:id="provincia"></div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</wicket:panel>
+
+</body>
+
+</html>

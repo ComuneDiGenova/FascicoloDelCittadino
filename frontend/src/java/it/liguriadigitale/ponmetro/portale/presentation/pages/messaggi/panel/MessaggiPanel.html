@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd" >
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+
+<body>
+	<wicket:panel>
+
+		<div class="col-sm-12 mt-2 mb-4">
+			<h3 class="text-left font-weight-semibold mb-0"><wicket:message key="MessaggiPanel.title" /></h3>
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2">
+			<div class="table-responsive" wicket:id="cell">
+			
+				<div class="divMensaTable">
+					<div class="divHead">
+						<div class="divMensaTh"><wicket:message key="MessaggiPanel.comparto"/></div>
+						<div class="divMensaTh"><wicket:message key="MessaggiPanel.testo"/></div>
+						<div class="divMensaTh"><wicket:message key="MessaggiPanel.data"/></div>
+						<div class="divMensaTh"><wicket:message key="MessaggiPanel.azioni"/></div>
+						<div class="divMensaTh"><wicket:message key="MessaggiPanel.vai"/></div>					
+					</div>
+					
+					<div class="divBody" wicket:id="listaMessaggi">
+						<div class="divMensaTd" wicket:id="compartoDescrizione"></div>
+						<div class="divMensaTd" wicket:id="notificaTesto"></div>
+						<div class="divMensaTd" style="width: 181px;" wicket:id="notificaData"></div>
+						<div class="divMensaTd">
+							<a class="btn btn-primary btn-xs" href="#" role="button" wicket:id="segnaImportante"></a>
+						</div>
+						<div class="divMensaTd">
+							<a class="btn btn-primary btn-xs" href="#" role="button" wicket:id="vaiLink">Vai</a>
+						</div>						
+					</div>						
+				</div>
+				
+			</div>
+			<h4 class="card-title" wicket:id="messaggioListaVuota"></h4>
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div> 
+		
+		<script>
+				var elem = document.getElementsByClassName('fa-envelope-o');
+				var len = elem.length;
+				for (var i = 0; i < len; i++){
+					elem[i].style.backgroundColor="#f95e01";
+					elem[i].style.position="relative";
+					elem[i].style.zIndex="10000";
+					
+					}
+				
+				const collection = document.getElementsByClassName("ladda-label");
+
+				for (let i = 0; i < collection.length; i++) {
+					var str = new String(collection.item(i).innerHTML)
+					var excepected = new String('segna come gi\u00E0 letto')
+					if(str.trim() === excepected.trim()){
+						collection.item(i).style.backgroundColor="#f95e01";
+						collection.item(i).style.marginTop="-16.5px";
+						}
+				}
+		</script>
+		
+
+	</wicket:panel>
+</body>
+</html>

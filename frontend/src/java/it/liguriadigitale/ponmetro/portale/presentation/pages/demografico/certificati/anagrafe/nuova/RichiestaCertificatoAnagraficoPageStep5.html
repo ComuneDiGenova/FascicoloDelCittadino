@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<body>
+	<wicket:extend>
+
+		<ul wicket:id="breadcrumbPanel"></ul>
+		<div wicket:id="stepPanel"></div>
+
+
+
+		<div class="container">
+			<div wicket:id="feedback"></div>
+			<form wicket:id="form" aria-labelledby="form-title">
+				<fieldset>
+
+					<div class="form-servizi-anagrafici mb-3">
+
+						<legend id="form-title" class="mb-3">
+							<strong>
+								<wicket:message key="RichiestaCertificatoAnagraficoPage.spiegazione" />
+							</strong>
+						</legend>
+
+
+						<div class="card-body">
+							<div wicket:id="tipo"></div>
+							<div wicket:id="dataStorico"></div>
+							<div wicket:id="dataDa"></div>
+							<div wicket:id="dataA"></div>
+							<div wicket:id="utilizzo"></div>
+							<div wicket:id="consegna"></div>
+							<div wicket:id="bollo"></div>
+							<div wicket:id="dataBollo"></div>
+							<div wicket:id="diritti"></div>
+							<div wicket:id="cfIntestatario"></div>
+							<div wicket:id="nomeIntestatario"></div>
+							<div wicket:id="cognomeIntestatario"></div>
+							<div wicket:id="email"></div>
+							<div wicket:id="mobile"></div>
+						</div>
+					</div>
+					<div class="row justify-content-center">
+						<div class="col-sm-auto">
+							<div class="d-flex justify-content-center">
+								<button type="submit" class="btn btn-primary focus-visible-none mx-3" wicket:id="invia">
+									<wicket:message key="RichiestaCertificatoAnagraficoPage.avanti" />
+								</button>
+								<a class="btn btn-secondary focus-visible-none mx-3" href="#" role="button" wicket:id="indietro">
+									<wicket:message key="RichiestaCertificatoAnagraficoPage.indietro" />
+								</a>
+								<a class="btn btn-secondary focus-visible-none mx-3" href="#" role="button" wicket:id="annulla">
+									<wicket:message key="RichiestaCertificatoAnagraficoPage.annulla" />
+								</a>
+							</div>
+						</div>
+					</div>
+
+				</fieldset>
+
+			</form>
+		</div>
+
+
+
+
+		<wicket:child />
+
+
+
+	</wicket:extend>
+</body>
+
+</html>

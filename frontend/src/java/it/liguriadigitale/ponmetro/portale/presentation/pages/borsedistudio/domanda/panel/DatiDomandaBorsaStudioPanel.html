@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+
+	<wicket:head>
+		<style>
+			div.wicket-aa {
+				font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, Verdana;
+				font-size: 14px;
+				background-color: white;
+				border-width: 1px;
+				border-color: #cccccc;
+				border-style: solid;
+				padding: 2px;
+				margin: 1px 0 0 0;
+				text-align: left;
+			}
+
+			div.wicket-aa ul {
+				list-style: none;
+				padding: 2px;
+				margin: 0;
+			}
+
+			div.wicket-aa ul li.selected {
+				background-color: #4e73df;
+				padding: 2px;
+				color: white;
+				margin: 0;
+			}
+
+			div.wicket-aa ul li {
+				padding: 3.5px;
+			}
+		</style>
+	</wicket:head>
+
+</head>
+
+<body>
+	<wicket:panel>
+		<div class="row">
+			<div class="col-md-12" wicket:id="titolo">
+
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="col-md-6 col-sm-12">
+				<div class="form-group">
+					<div class="select-wrapper">
+						<label wicket:id="lblAnnoScolastico">
+							<wicket:message key="DatiDomandaBorsaStudioPanel.annoScolastico" />
+						</label><select autocomplete="off" wicket:id="annoScolastico"></select>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-6 col-sm-12">
+				<div class="form-group">
+					<div class="select-wrapper">
+						<label wicket:id="lblParentela">
+							<wicket:message key="DatiDomandaBorsaStudioPanel.parentela" />
+						</label><select autocomplete="off" wicket:id="parentela"></select>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6 col-sm-12">
+				<div class="form-group">
+					<div class="select-wrapper">
+						<label wicket:id="lblCategoria">
+							<wicket:message key="DatiDomandaBorsaStudioPanel.categoria" />
+						</label><select autocomplete="off" wicket:id="categoria"></select>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-12">
+				<div class="form-group">
+					<div class="select-wrapper">
+						<label wicket:id="lblScuola">
+							<wicket:message key="DatiDomandaBorsaStudioPanel.scuola" />
+						</label><select autocomplete="off" wicket:id="scuola"></select>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6 col-sm-12">
+				<wicket:enclosure child="classeNumero">
+					<div class="form-group">
+						<label wicket:id="classeNumeroLabel"></label> <input autocomplete="off" wicket:id="classeNumero"
+							type="number" id="classeNumero" class="form-control" required>
+					</div>
+				</wicket:enclosure>
+			</div>
+			<div class="col-md-6 col-sm-12">
+				<div wicket:id="sezione"></div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6 col-sm-12">
+				<div wicket:id="importoEuro"></div>
+			</div>
+
+			<div class="col-md-6 col-sm-12"></div>
+		</div>
+
+		<div class="alert alert-info mb-4" role="alert">
+			<div wicket:id="infoIban"></div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6 col-sm-12">
+				<div wicket:id="iban"></div>
+			</div>
+		</div>
+
+
+		<div class="form-row col-md-12" wicket:id="titoloIndirizzo"></div>
+
+		<div class="row">
+			<div wicket:id="indirizzoResidenza"></div>
+		</div>
+
+		<div class="row" style="margin-bottom: 17px;">
+			<div class="alert alert-info">
+				<wicket:message key="DatiDomandaBorsaStudioPanel.infoDomicilio" />
+			</div>
+		</div>
+
+		<br>
+
+		<div class="row">
+			<div class="col-md-6 col-sm-12">
+				<div class="form-group">
+					<div class="select-wrapper">
+						<label>
+							<wicket:message key="DatiDomandaBorsaStudioPanel.datiResidenzaDomicilioCoincidono" />
+						</label><select autocomplete="off" wicket:id="datiResidenzaDomicilioCoincidono"></select>
+					</div>
+				</div>
+			</div>
+			<div class="col"></div>
+		</div>
+
+		<div class="form-row col-12" wicket:id="containerDatiDomicilio">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group col-12 select-wrapper" style="z-index: 1">
+						<label for="autocompleteProvincia">
+							<wicket:message key="DatiDomandaBorsaStudioPanel.autocompleteProvincia" />:
+						</label> <input type="text" id="autocompleteProvincia" name="autocompleteProvincia"
+							title="provincia" wicket:id="autocompleteProvincia" class="form-control" />
+					</div>
+				</div>
+
+
+				<div wicket:id="wmkComune" class="col-md-6" style="padding-bottom: 20px;">
+
+					<div class="form-group col-12 select-wrapper" style="z-index: 1">
+						<label for="autocompleteComune">
+							<wicket:message key="DatiDomandaBorsaStudioPanel.autocompleteComune" />:
+						</label> <input type="text" id="autocompleteComune" name="autocompleteComune" title="comune"
+							wicket:id="autocompleteComune" class="form-control" />
+					</div>
+
+				</div>
+			</div>
+
+			<div wicket:id="containerInGenova" class="form-row col-12">
+
+				<div class="form-row mb-2 col-md-12 mx-auto" style="padding-bottom: 20px;">
+					<div class="col-12 autocomplete-wrapper">
+						<label for="autocompleteViario">
+							<wicket:message key="DatiDomandaBorsaStudioPanel.autocompleteViario" />:
+						</label> <input type="text" id="autocompleteViario" name="autocompleteViario" title="indirizzo"
+							wicket:id="autocompleteViario" class="form-control" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div wicket:id="internoDomicilioGenova"></div>
+					</div>
+
+					<div class="col-md-6">
+						<div wicket:id="capDomicilioGenova"></div>
+					</div>
+				</div>
+
+			</div>
+
+			<div wicket:id="containerFuoriGenova" class="form-row col-12">
+				<div class="row">
+					<div class="col-md-3">
+						<div wicket:id="viaDomicilioNoGenova"></div>
+					</div>
+
+					<div class="col-md-3">
+						<div wicket:id="civicoDomicilioNoGenova"></div>
+					</div>
+
+					<div class="col-md-3">
+						<div wicket:id="internoDomicilioNoGenova"></div>
+					</div>
+
+					<div class="col-md-3">
+						<div wicket:id="capDomicilioNoGenova"></div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+		<div class="row mb-3">
+			<form class="col-md-6 col-sm-12" wicket:id="formUploadAllegati" enctype="multipart/form-data"
+				onsubmit="return checkForm(this);">
+				<strong>
+					<wicket:message key="DatiDomandaBorsaStudioPanel.inserisciDocumenti" />
+				</strong>
+				<div>
+					<wicket:message key="DatiDomandaBorsaStudioPanel.consigli" />
+				</div>
+				<input type="file" name="fileAllegatoVittimaUpload" id="fileAllegatoVittimaUpload" class="upload"
+					wicket:id="fileAllegatoVittimaUpload" accept="image/*, .pdf" />
+				<label wicket:id="lblFileAllegatoVittimaUpload" for="fileAllegatoVittimaUpload"> <span>
+						<wicket:message key="DatiDomandaBorsaStudioPanel.uploadDocumenti" />
+					</span>
+				</label>
+
+				<div class="col-lg-10" wicket:id="containerAllegatiUpload">
+					<ul class="upload-file-list">
+						<li class="mx-3" style="max-width: 100%;">
+							<p>
+								<span class="sr-only">
+									<wicket:message key="DatiDomandaBorsaStudioPanel.fileCaricati" />
+								</span> <span wicket:id="nomeFileAllegato"></span> <span class="upload-file-weight"
+									wicket:id="dimensioneFileAllegato"></span>
+							</p>
+
+							<button type="button" class="btn btn-primary" wicket:id="eliminaAllegato"><wicket:message key="DatiDomandaBorsaStudioPanel.eliminaFile" /></button>
+						</li>
+					</ul>
+				</div>
+			</form>
+		</div>
+
+		<div class="row mb-3">
+			<form class="col-md-6 col-sm-12" wicket:id="formUploadAllegatoScontrini" enctype="multipart/form-data"
+				onsubmit="return checkForm(this);">
+				<strong>
+					<wicket:message key="DatiDomandaBorsaStudioPanel.inserisciDocumentiScontrini" />
+				</strong>
+				<div>
+					<wicket:message key="DatiDomandaBorsaStudioPanel.consigliScontrini" />
+				</div>
+				<input type="file" name="fileAllegatoScontriniUpload" id="fileAllegatoScontriniUpload" class="upload"
+					wicket:id="fileAllegatoScontriniUpload" accept=".pdf" /> <label
+					wicket:id="lblFileAllegatoScontriniUpload" for="fileAllegatoScontriniUpload"> <span>
+						<wicket:message key="DatiDomandaBorsaStudioPanel.uploadDocumentiScontrini" />
+					</span>
+				</label>
+
+				<div class="col-lg-10" wicket:id="containerAllegatiScontriniUpload">
+					<ul class="upload-file-list">
+						<li class="mx-3" style="max-width: 100%;">
+							<p>
+								<span class="sr-only">
+									<wicket:message key="DatiDomandaBorsaStudioPanel.fileCaricatiScontrini" />
+								</span>
+								<span wicket:id="nomeFileAllegatoScontrini"></span> <span class="upload-file-weight"
+									wicket:id="dimensioneFileAllegatoScontrini"></span>
+							</p>
+
+							<button type="button" class="btn btn-primary" wicket:id="eliminaAllegatoScontrini"><wicket:message key="DatiDomandaBorsaStudioPanel.eliminaFileScontrini" /></button>
+							
+						</li>
+					</ul>
+				</div>
+			</form>
+		</div>
+
+
+	</wicket:panel>
+
+</body>
+
+</html>

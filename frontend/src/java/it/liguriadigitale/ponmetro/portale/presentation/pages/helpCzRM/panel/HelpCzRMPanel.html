@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<wicket:head>
+	<style>
+div.wicket-aa-container {
+	z-index: 1000000;
+}
+
+div.wicket-aa ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	border: 1px solid #979899;
+	border-top: none;
+	box-shadow: 0 0 10px 3px rgb(0 0 0/ 5%);
+	border-top: none;
+	overflow-x: hidden;
+	background-color: #fff;
+}
+
+div.wicket-aa ul li {
+	padding: 12px 24px;
+	background-color: #fff;
+	border: none;
+	font-size: .889rem;
+	font-weight: 600;
+	cursor: pointer;
+}
+</style>
+</wicket:head>
+</head>
+<body>
+	<wicket:panel>
+		<!--  NOTE: Please add the following <FORM> element to your page.             -->
+		<!--  ----------------------------------------------------------------------  -->
+		
+		<!--  <div style="z-index: 21"
+			class="notification dismissable with-icon success" role="alert"
+			id="notificationDismTopFix" aria-labelledby="notificationDismTopFix"
+			wicket:id="feedback"></div> -->
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+		
+		<div wicket:id="containerForm" class="mb-2">
+			<form wicket:id="helpForm" action="">
+				<div class="mt-2 p-2">
+
+					<div class="form-group">
+						<label for="name" class="active">
+						  <wicket:message key="HelpCzRMPanel.cognome"/>:
+						</label> <input id="name" maxlength="80"
+							name="name" size="20" type="text" class="form-control"
+							wicket:id="cognome" />
+					</div>
+					<div class="form-group">
+						<label for="00N5E00000FCnq8" class="active"><wicket:message key="HelpCzRMPanel.nome"/>:</label> <input
+							id="00N5E00000FCnq8" maxlength="40" name="00N5E00000FCnq8"
+							size="20" type="text" class="form-control" wicket:id="nome" />
+					</div>
+					<div class="form-group">
+						<label for="00N5E00000FCjxC" class="active"><wicket:message key="HelpCzRMPanel.cf"/>:</label> <input
+							id="00N5E00000FCjxC" maxlength="16" name="00N5E00000FCjxC"
+							size="20" type="text" class="form-control" wicket:id="cf" />
+					</div>
+					<div class="form-group">
+						<label class="active" for="email"><wicket:message key="HelpCzRMPanel.email"/>:</label> <input id="email" maxlength="80"
+							name="email" size="20" type="text" class="form-control"
+							wicket:id="email" />
+					</div>
+					<div class="form-group">
+						<label class="active" for="phone"><wicket:message key="HelpCzRMPanel.telefono"/>:</label> <input id="phone"
+							maxlength="40" name="phone" size="20" type="text"
+							class="form-control" wicket:id="telefono" />
+					</div>
+
+					<div class="select-wrapper form-group">
+						<label for="00N5E00000FCmFw"><wicket:message key="HelpCzRMPanel.sottofascicolo"/>:</label> <select
+							id="00N5E00000FOODj" name="00N5E00000FOODj"
+							title="Sottofascicolo" wicket:id="sottofascicolo"></select>
+					</div>
+					
+				<!--  	<div class="form-group">
+						<div class="autocomplete-wrapper">
+							<label class="active" for="00N5E00000FOODo"><wicket:message key="HelpCzRMPanel.servizio"/>:</label> <input type="text"
+								id="00N5E00000FOODo" name="00N5E00000FOODo" title="Servizio"
+								wicket:id="servizio" class="form-control" />
+						</div>
+					</div> -->
+					
+					<div class="form-group">
+						<div class="autocomplete-wrapper">
+							<label class="active" for="00N5E00000FOODo"><wicket:message key="HelpCzRMPanel.servizio"/>:</label> <input type="text"
+								id="00N5E00000FOODo" name="00N5E00000FOODo" title="Servizio"
+								wicket:id="serviziAssistenzaAutocomplete" class="form-control" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="subject" class="active"><wicket:message key="HelpCzRMPanel.oggetto"/>:</label> <input id="subject"
+							maxlength="80" name="subject" size="20" type="text"
+							class="form-control" wicket:id="oggetto" />
+					</div>
+					<div class="form-group">
+						<label for="description" class="active"><wicket:message key="HelpCzRMPanel.descrizione"/>:</label>
+						<textarea name="description" wicket:id="descrizione" row="5"></textarea>
+					</div>
+				</div>
+				<div class="d-flex justify-content-center">
+					<!--  <input class="btn btn-primary" type="submit" value="Invia"/> -->
+					<button type="submit" wicket:id="invia" class="btn btn-primary"
+						style="min-width: 100px">
+						<wicket:message key="HelpCzRMPanel.invia" />
+					</button>
+				</div>
+			</form>
+		</div>
+		<div class="row" wicket:id="containerSuccess">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+				<div class="alert alert-success">Richiesta di aiuto inviata
+					correttamente</div>
+			</div>
+		</div>
+
+	</wicket:panel>
+</body>
+</html>

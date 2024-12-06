@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<wicket:panel>
+<!--start card-->
+<div class="card-wrapper card-space">
+	<div class="card card-bg my-2">
+		<div class="card-body">
+			<div class="categoryicon-top row mb-4">
+				<i wicket:message="class:MieiDatiTemplate.icona"></i>
+				<h4 class="card-title text-left fw-bold col-9"><wicket:message key="MieiDatiTemplate.titolo"/></h4>
+			</div>
+			
+			<div wicket:id="feedbackPanel"></div>
+			
+			<div class="container" wicket:id="containerMieiDati">
+				<wicket:child />
+			</div>
+		</div>
+	</div>
+</div>
+<!--end card-->
+</wicket:panel>
+</body>
+</html>

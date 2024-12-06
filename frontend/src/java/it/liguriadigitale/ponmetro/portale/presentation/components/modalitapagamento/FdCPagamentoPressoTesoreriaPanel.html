@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="form-row col-12 alert alert-info"
+			style="margin-bottom: 30px;">
+			<wicket:message key="FdCPagamentoPressoTesoreriaPanel.info" />
+		</div>
+
+		<div class="form-row col-12">
+			<div class="row">
+				<div class="col">
+					<div wicket:id="nomeDelegato"></div>
+				</div>
+				<div class="col">
+					<div wicket:id="cognomeDelegato"></div>
+				</div>
+			</div>
+			
+		</div>
+
+		<div class="form-row col-12">
+			<div class="row">
+				<div class="col">
+					<div wicket:id="codiceFiscaleDelegato"></div>
+				</div>
+				<div class="col"></div>
+			</div>
+			
+		</div>
+
+		<div class="form-row col-12" wicket:id="containerAltriCampi">
+			<div class="row">
+				<div class="col">
+				<div wicket:id="dataDiNascitaDelegato"></div>
+			</div>
+			<div class="col">
+				<div wicket:id="sessoDelegato"></div>
+			</div>
+			<div class="col">
+				<div wicket:id="luogoDiNascitaDelegato"></div>
+			</div>
+			<div class="col">
+				<div wicket:id="cittadinanzaDelegato"></div>
+			</div>
+			
+			</div>
+			
+		</div>
+
+	</wicket:panel>
+</body>
+
+</html>

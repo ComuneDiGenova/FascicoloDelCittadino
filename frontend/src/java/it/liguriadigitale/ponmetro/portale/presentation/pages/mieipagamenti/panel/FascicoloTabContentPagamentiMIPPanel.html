@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1" />
+<title></title>
+</head>
+<body>
+	<wicket:panel>
+		<div class="row content my-4 info-traffico">
+		
+			<div class="col-12 alert alert-warning" role="alert" wicket:id="listaDebitiVuota">
+				<wicket:message key="FascicoloTabContentPagamentiMIPPanel.listaDebitiVuota" />
+			</div>
+			
+			<div class="col-lg-6 mb-4" wicket:id="box" id="boxCard" >
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="" wicket:id="icona"></i>
+
+								<h4 class="card-title text-start col-9 font-weight-normal">
+									<wicket:message
+										key="FascicoloTabContentPagamentiMIPPanel.servizio" />
+									<span class="text-capitalize fw-bold"
+										wicket:id="servizio"></span> <br />
+									<wicket:message
+										key="FascicoloTabContentPagamentiMIPPanel.numeroDocumento" />
+									<span class="text-capitalize fw-bold"
+										wicket:id="numeroDocumento"></span> <br />
+									
+									<wicket:enclosure child="anno">
+										<wicket:message key="FascicoloTabContentPagamentiMIPPanel.anno" />
+										<span class="text-capitalize fw-bold"
+										wicket:id="anno"></span> <br />
+									</wicket:enclosure>
+									
+									<wicket:enclosure child="annoScolastico">
+										<wicket:message key="FascicoloTabContentPagamentiMIPPanel.annoScolastico" />
+										<span class="text-capitalize fw-bold"
+										wicket:id="annoScolastico"></span>	
+									</wicket:enclosure>
+									
+								</h4>
+							</div>
+
+							<wicket:enclosure child="debitore">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message
+												key="FascicoloTabContentPagamentiMIPPanel.debitore" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start d-table h-100"
+											wicket:id="debitore">
+											<span class="d-table-cell align-middle"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="causale">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message
+												key="FascicoloTabContentPagamentiMIPPanel.causale" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start h-100" wicket:id="causale">
+											<span class="d-table-cell align-middle"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+							
+							<wicket:enclosure child="dataCreazione">
+								<div class="row py-1 mb-2 border-bottom">
+									<div class="col-6">
+										<p class="card-text text-start fw-bold">
+											<wicket:message
+												key="FascicoloTabContentPagamentiMIPPanel.dataCreazione" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start h-100" wicket:id="dataCreazione">
+											<span class="d-table-cell align-middle"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<div class="row py-1 mb-2">
+								<div class="col-6">
+									<a class="btn btn-primary btn-xs" href="#" role="button"
+										wicket:id="btnDettagliDebito"> <wicket:message
+											key="FascicoloTabContentPagamentiMIPPanel.dettagli" /></a>
+								</div>
+							</div>
+
+							<div wicket:id="rateMipPanel"></div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-12 mt-2 mb-2" wicket:id="paginationPagamenti"></div>
+
+		    <div class="container calendario" wicket:id="containerMessaggiInfo">
+				<div class="alert alert-info" role="alert">
+					<wicket:message key="FascicoloTabContentPagamentiMIPPanel.info2" />
+				</div>
+			</div>
+	
+			<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+		</div>
+	</wicket:panel>
+</body>
+</html>

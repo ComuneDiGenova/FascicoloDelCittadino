@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="form-row mb-2 col-md-12 mx-auto">
+
+			<div class="form-row col-md-12" wicket:id="titolo"></div>
+
+			<div class="form-row col-12">
+				<div class="row">
+					<div class="col-md-6">
+						<div wicket:id="nome"></div>
+					</div>
+
+					<div class="col-md-6">
+						<div wicket:id="cognome"></div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="form-row col-12">
+				<div class="row">
+					<div class="col-md-6">
+						<div wicket:id="codiceFiscale"></div>
+					</div>
+
+					<div class="col-md-6">
+						<div wicket:id="email"></div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="form-row col-12">
+				<div class="row">
+					<div class="col-md-6">
+						<div wicket:id="cellulare"></div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="form-row col-12">
+				<div class="form-group col-md-12">
+					<div class="select-wrapper">
+						<label> <wicket:message
+								key="DatiRichiedenteContributoTariPanel.modalitaDiPagamento" />
+						</label><select wicket:id="modalitaDiPagamento"></select>
+					</div>
+				</div>
+			</div>
+
+			<div wicket:id="accreditoSuContoCorrentePanel"></div>
+
+			<div wicket:id="ritiroPressoTesoreriaPanel"></div>
+
+			<div class="form-row col-12" wicket:id="containerUploadAllegati">
+
+				<form class="mb-3 col-md-12 mx-auto" enctype="multipart/form-data"
+					onsubmit="return checkForm(this);" wicket:id="formUploadAllegati">
+					<div>
+						<medium> <wicket:message
+							key="DatiRichiedenteContributoTariPanel.inserisciDocumenti" /></medium>
+					</div>
+
+					<medium> <wicket:message
+						key="DatiRichiedenteContributoTariPanel.consigli" /></medium>
+					<br /> <input type="file" name="allegatoContributoUpload"
+						id="allegatoContributoUpload" class="upload" accept="image/*, .pdf"
+						wicket:id="allegatoContributoUpload" /> <label
+						for="allegatoContributoUpload"> <svg class="icon icon-sm"
+							aria-hidden="true">
+                                        <use
+								xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-upload"></use>
+                                    </svg> <span><wicket:message
+								key="DatiRichiedenteContributoTariPanel.uploadDocumenti" /></span>
+					</label>
+
+					<div class="col-lg-12" wicket:id="containerAllegatiUpload">
+						<ul class="upload-file-list">
+							<li class="upload-file success" style="max-width: 100%;"><svg
+									class="icon icon-sm" aria-hidden="true">
+                                                <use
+										xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+                                            </svg>
+								<p>
+									<span class="sr-only"><wicket:message
+											key="DatiRichiedenteContributoTariPanel.fileCaricati" /></span> <span
+										wicket:id="nomeFileAllegato"></span> <span
+										class="upload-file-weight" wicket:id="dimensioneFileAllegato"></span>
+								</p>
+								<button>
+									<svg class="icon" aria-hidden="true" style="fill: #d9364f;"
+										wicket:id="eliminaAllegato">
+                                                    <use
+											xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-close"></use>
+                                                    <title><wicket:message
+												key="DatiRichiedenteContributoTariPanel.eliminaFile" /></title>
+                                                </svg>
+								</button></li>
+						</ul>
+					</div>
+				</form>
+			</div>
+
+		</div>
+
+		<br>
+
+	</wicket:panel>
+
+</body>
+
+</html>

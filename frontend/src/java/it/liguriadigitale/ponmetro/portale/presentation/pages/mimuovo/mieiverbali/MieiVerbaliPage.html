@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<body>
+	<wicket:extend>
+
+		<div wicket:id="breadcrumbPanel"></div>
+		
+		<wicket:enclosure child="btnPagamentoVerbale">
+			<div class="col-sm-12 mt-2 mb-2">
+				<button class="btn btn-outline-primary">
+					<span wicket:id="btnPagamentoVerbale"></span>
+				</button>
+			</div>
+		</wicket:enclosure>
+		
+	    <div class="row content my-4 info-traffico" wicket:id="headerMieiVerbaliPanel"></div> 
+	 	
+		<div class="row content my-4 info-traffico" wicket:id="mieiVerbaliPanel"></div>
+		
+		<wicket:child/>
+		
+    </wicket:extend>    
+</body>
+</html>

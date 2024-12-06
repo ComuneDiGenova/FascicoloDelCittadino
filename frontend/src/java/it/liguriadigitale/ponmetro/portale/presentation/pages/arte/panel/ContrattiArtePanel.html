@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+	
+		<style>
+			@media only screen and (max-width:600px){
+				.testoInAllerte{
+					margin-left:15%;
+				}
+			}
+		</style>
+
+		<div class="col-12">
+			<h3>
+				<wicket:message key="ContrattiArtePanel.titolo" />
+			</h3>
+		</div>
+
+		<!--<div class="alert alert-warning col-12" role="alert"
+			wicket:id="listaVuota">
+			<span class="testoInAllerte"><wicket:message key="ContrattiArtePanel.vuoto" /></span>
+		</div>-->
+		
+		<div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xl-12" wicket:id="listaVuota">
+                <div class="alert alert-warning" role="alert">
+                	<wicket:message key="ContrattiArtePanel.vuoto" />
+                </div>
+            </div>
+		</div> 
+
+		<!--<div class="alert alert-info col-12" role="alert">
+			<span class="testoInAllerte"><wicket:message key="ContrattiArtePanel.sitoArte" /></span>
+		</div>-->
+		
+		<div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+                <div class="alert alert-info" role="alert">
+                	<wicket:message key="ContrattiArtePanel.sitoArte" />
+                </div>
+            </div>
+		</div>
+
+		<div class="alert alert-warning col-12" role="alert"
+			wicket:id="containerMessaggioIsee">
+			<wicket:message key="ContrattiArtePanel.infoIsee" />
+		</div>
+
+		<div class="alert alert-info col-12" role="alert"
+			wicket:id="containerIsee">
+			<div wicket:id="isee"></div>
+		</div>
+
+		
+
+			<div class="row py-1 mb-2 col-12">
+				<div class="col-12">
+					<a class="btn btn-primary btn-xs" href="#" role="button"
+						wicket:id="btnComponenti"> <wicket:message
+							key="ContrattiArtePanel.componenti" />
+					</a>
+				</div>
+			</div>
+
+			<div class="col-lg-6 mb-4" wicket:id="contratti">
+
+				<div class="card-wrapper card-space" >
+					<div class="card card-bg my-2" >
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i
+									class="col-auto color-fc-secondary col-3 icon-contratti-immobili"></i>
+
+								<h4 class="card-title text-left col-9 font-weight-normal">
+									<span class="text-capitalize font-weight-semibold"
+										wicket:id="id"></span>
+								</h4>
+							</div>
+
+							<div wicket:id="desctui"></div>
+
+							<div wicket:id="indirizzo"></div>
+
+							<div wicket:id="localita"></div>
+
+							<div wicket:id="desContratto"></div>
+
+							<div wicket:id="numReg"></div>
+
+							<div wicket:id="serie"></div>
+
+							<div wicket:id="anno"></div>
+
+							<div wicket:id="dregcontratto"></div>
+
+							<div wicket:id="dscadcontratto"></div>
+
+							<div wicket:id="cCat"></div>
+
+							<div wicket:id="rendCat"></div>
+
+							<div wicket:id="sezione"></div>
+
+							<div wicket:id="foglio"></div>
+
+							<div wicket:id="subalterno"></div>
+
+							<div wicket:id="mappale"></div>
+
+							<div wicket:id="canoneAnnuo"></div>
+
+							<div wicket:id="desctuipert"></div>
+
+							<div wicket:id="indirizzoPert"></div>
+
+							<div class="row py-1 mb-2" style="margin-left:-1%">
+								<div class="col-6" >
+									<a class="btn btn-primary btn-xs" href="#" role="button"
+										wicket:id="btnFatture"> <wicket:message
+											key="ContrattiArtePanel.fatture" />
+									</a>
+								</div>
+								
+								<div class="col-6">
+									<a class="btn btn-primary btn-xs" href="#" role="button"
+										wicket:id="btnMore"> <wicket:message
+											key="ContrattiArtePanel.more" />
+									</a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		
+
+		<div wicket:id="pagination"></div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+	</wicket:panel>
+</body>
+
+</html>

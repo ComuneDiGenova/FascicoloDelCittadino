@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<wicket:head>
+	<style>
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+	-moz-appearance: textfield;
+}
+
+div.wicket-aa {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, Verdana;
+	font-size: 14px;
+	background-color: white;
+	border-width: 1px;
+	border-color: #cccccc;
+	border-style: solid;
+	padding: 2px;
+	margin: 1px 0 0 0;
+	text-align: left;
+}
+
+div.wicket-aa ul {
+	list-style: none;
+	padding: 2px;
+	margin: 0;
+}
+
+div.wicket-aa ul li.selected {
+	background-color: #4e73df;
+	padding: 2px;
+	color: white;
+	margin: 0;
+}
+
+</style>
+</wicket:head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+</head>
+<body>
+
+	<wicket:extend>
+		<div class="row p-3">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+				<div class="row">
+					<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+						<div class="select-wrapper form-group">
+							<label> <wicket:message
+									key="InserimentoImmobilePanel.tipo" />
+							</label> <select wicket:id="tipoI"></select>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+						<div class="form-group">
+							<!--  <div wicket:id="indirizzoI"></div> -->
+
+							<div class="col-12 autocomplete-wrapper">
+								<label for="indirizzoI"></label> <input type="text"
+									id="indirizzoI" name="indirizzoI" title="Indirizzo"
+									wicket:id="indirizzoI" class="form-control" placeholder="Indirizzo"/>
+							</div>
+
+							<div wicket:id="indirizzoIReadOnly"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-3 col-lg-3 col-sm-3 col-xl-3">
+						<div wicket:id="internoI"></div>
+					</div>
+					<div class="col-md-3 col-lg-3 col-sm-3 col-xl-3">
+						<div wicket:id="scalaI"></div>
+					</div>
+					<div class="col-md-3 col-lg-3 col-sm-3 col-xl-3">
+						<div wicket:id="pianoI"></div>
+					</div>
+					<div class="col-md-3 col-lg-3 col-sm-3 col-xl-3">
+						<div wicket:id="capI"></div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-2 col-lg-2 col-sm-2 col-xl-2">
+						<div wicket:id="sezioneI"></div>
+					</div>
+					<div class="col-md-2 col-lg-2 col-sm-2 col-xl-2">
+						<div wicket:id="foglioI"></div>
+					</div>
+					<div class="col-md-2 col-lg-2 col-sm-2 col-xl-2">
+						<div wicket:id="particellaI"></div>
+					</div>
+					<div class="col-md-2 col-lg-2 col-sm-2 col-xl-2">
+						<div wicket:id="subalternoI"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8 col-lg-8 col-sm-8 col-xl-8">
+						<div class="form-group">
+							<div class="select-wrapper form-group">
+								<label> <wicket:message
+										key="InserimentoImmobilePanel.categoria" />
+								</label> <select wicket:id="categoriaI"></select>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-4 col-sm-4 col-xl-4">
+						<div wicket:id="classeI"></div>
+					</div>
+
+				</div>
+				<div class="row">
+					<div class="col-md-4 col-lg-4 col-sm-4 col-xl-4">
+						<div class="form-group">
+							<label for="percentualePossesso" class="active"><wicket:message
+									key="InserimentoImmobilePanel.percentualePossesso"></wicket:message></label>
+							<input type="number" min="0" step="any"
+								wicket:id="percentualePossessoI" id="percentualePossesso"
+								class="form-control" required maxlength="5" />
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+						<label for="utilizzo" class="font-weight-bold"> <wicket:message
+								key="InserimentoImmobilePanel.utilizzo"></wicket:message>
+						</label> <span wicket:id="utilizzoI" id="utilizzo"></span>
+					</div>
+				</div>
+				<div class="row mt-4">
+					<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+						<div wicket:id="altroI"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div
+						class="col-md-12 col-lg-12 col-sm-12 col-xl-12 d-flex justify-content-end">
+						<button type="submit" class="btn btn-primary"
+							style="min-width: 100px" wicket:id="btnSalva">
+							<wicket:message key="InserimentoImmobilePanel.salva" />
+						</button>
+						&nbsp;
+						<wicket:enclosure child="btnAnnulla">
+							<button type="submit" class="btn btn-danger"
+								wicket:id="btnAnnulla" style="min-width: 100px">
+								<wicket:message key="InserimentoImmobilePanel.annulla" />
+							</button>
+						</wicket:enclosure>
+					</div>
+				</div>
+			</div>
+		</div>
+	</wicket:extend>
+</body>
+</html>

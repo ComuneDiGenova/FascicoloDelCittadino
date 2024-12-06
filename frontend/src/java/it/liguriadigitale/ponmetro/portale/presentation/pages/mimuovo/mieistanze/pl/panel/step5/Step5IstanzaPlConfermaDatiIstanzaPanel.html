@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="row content my-4 richiesta-agevolazione">
+			<div class="col-md-12 text-start mb-4">
+
+				<div class="col-lg-12 mx-auto riepilogo">
+					<form class="needs-validation was-validated mb-3 col-lg-12 mx-auto"
+						wicket:id="form">
+
+						<div
+							class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici">
+
+							<h4 class="col-12">
+								<wicket:message
+									key="Step5IstanzaPlConfermaDatiIstanzaPanel.titolodatipersonali" />
+							</h4>
+
+							<div class="form-row mb-2 col-md-12 mx-auto">
+								<div class="form-group col-md-2 mb-0">
+									<wicket:message
+										key="Step5IstanzaPlConfermaDatiIstanzaPanel.ilsottoscritto" />
+								</div>
+								<div class="row">
+									<div class="col-md-5">
+										<div class="form-group  mb-0">
+											<input class="form-control" id="richiedenteCognome"
+												type="text" placeholder="Cognome"
+												wicket:id="richiedenteCognome" style="font-size: smaller;"
+												pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+												required> <small> <wicket:message
+													key="Step5IstanzaPlConfermaDatiIstanzaPanel.cognome" /></small> <label
+												class="sr-only" for="richiedenteCognome"> <wicket:message
+													key="Step5IstanzaPlConfermaDatiIstanzaPanel.cognome" />
+											</label>
+										</div>
+									</div>
+									<div class="col-md-5">
+										<div class="form-group  mb-0">
+											<input class="form-control" id="richiedenteNome" type="text"
+												placeholder="Nome" wicket:id="richiedenteNome"
+												style="font-size: smaller;"
+												pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+												required> <small> <wicket:message
+													key="Step5IstanzaPlConfermaDatiIstanzaPanel.nome" /></small> <label
+												class="sr-only" for="richiedenteNome"> <wicket:message
+													key="Step5IstanzaPlConfermaDatiIstanzaPanel.nome" />
+											</label>
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<div class="form-row mb-2 col-md-12 mx-auto">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group mb-0">
+											<input class="form-control" id="nascitaComune" type="text"
+												name="Comune di nascita" placeholder="Comune di nascita"
+												wicket:id="nascitaComune" style="font-size: smaller;"
+												required> <small><wicket:message
+													key="Step5IstanzaPlConfermaDatiIstanzaPanel.nascitacomune" /></small>
+											<label class="sr-only" for="nascitaComune"> <wicket:message
+													key="Step5IstanzaPlConfermaDatiIstanzaPanel.nascitacomune" />
+											</label>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group mb-0">
+											<input class="form-control" id="nascitaData" type="text"
+												placeholder="Data in formato gg/mm/aaaa"
+												wicket:id="nascitaData" style="font-size: smaller;">
+											<small><wicket:message
+													key="Step5IstanzaPlConfermaDatiIstanzaPanel.nascitadata" /></small>
+											<label class="sr-only" for="nascitaData"> <wicket:message
+													key="Step5IstanzaPlConfermaDatiIstanzaPanel.nascitadata" />
+											</label>
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<div class="form-row mb-2 col-md-12 mx-auto">
+								<div class="form-group col-md-12 mb-0">
+									<input class="form-control" id="richiedenteCf" type="text"
+										placeholder="Comune" wicket:id="richiedenteCf"
+										style="font-size: smaller;" required> <small><wicket:message
+											key="Step5IstanzaPlConfermaDatiIstanzaPanel.cf" /></small> <label
+										class="sr-only" for="richiedenteCf"> <wicket:message
+											key="Step5IstanzaPlConfermaDatiIstanzaPanel.cf" />
+									</label>
+								</div>
+							</div>
+							<div class="form-row mb-2 col-md-12 mx-auto">
+								<div class="row">
+									<div class="form-group col-md-4 mb-0">
+										<input class="form-control" id="residenzaComune" type="text"
+											placeholder="Comune" wicket:id="residenzaComune"
+											style="font-size: smaller;" required> <small><wicket:message
+												key="Step5IstanzaPlConfermaDatiIstanzaPanel.residenzacomune" /></small>
+										<label class="sr-only" for="residenzaComune"> <wicket:message
+												key="Step5IstanzaPlConfermaDatiIstanzaPanel.residenzacomune" />
+										</label>
+									</div>
+									<div class="form-group col-md-4 mb-0">
+										<input class="form-control" id="residenzaVia" type="text"
+											placeholder="Via" wicket:id="residenzaVia"
+											style="font-size: smaller;" required> <small><wicket:message
+												key="Step5IstanzaPlConfermaDatiIstanzaPanel.residenzavia" /></small>
+										<label class="sr-only" for="residenzaVia"> <wicket:message
+												key="Step5IstanzaPlConfermaDatiIstanzaPanel.residenzavia" />
+										</label>
+									</div>
+									<div class="form-group col-md-4 mb-0">
+										<input class="form-control" id="residenzaNumeroCivico"
+											type="text" placeholder="Civico"
+											wicket:id="residenzaNumeroCivico" style="font-size: smaller;"
+											required> <small><wicket:message
+												key="Step5IstanzaPlConfermaDatiIstanzaPanel.residenzanum" /></small>
+										<label class="sr-only" for="residenzaNumeroCivico"> <wicket:message
+												key="Step5IstanzaPlConfermaDatiIstanzaPanel.residenzanum" />
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="form-row mb-2 col-md-12 mx-auto">
+								<div class="row">
+									<div class="form-group col-md-6 mb-0">
+										<input class="form-control" id="richiedenteTelefono"
+											type="text"
+											oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+											placeholder="Telefono" wicket:id="richiedenteTelefono"
+											style="font-size: smaller;" required> <small><wicket:message
+												key="Step5IstanzaPlConfermaDatiIstanzaPanel.telefono" /></small> <label
+											class="sr-only" for="richiedenteTelefono"> <wicket:message
+												key="Step5IstanzaPlConfermaDatiIstanzaPanel.telefono" />
+										</label>
+									</div>
+									<div class="form-group col-md-6 mb-0">
+										<input class="form-control" id="richiedenteEmail" type="email"
+											placeholder="Email" wicket:id="richiedenteEmail"
+											style="font-size: smaller;" required> <small><wicket:message
+												key="Step5IstanzaPlConfermaDatiIstanzaPanel.email" /></small> <label
+											class="sr-only" for="richiedenteEmail"> <wicket:message
+												key="Step5IstanzaPlConfermaDatiIstanzaPanel.email" />
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-row mb-2 col-md-12 mx-auto">
+							<h4 class="text-center col-12">
+								<wicket:message
+									key="Step5IstanzaPlConfermaDatiIstanzaPanel.chiedetitolo" />
+							</h4>
+
+						</div>
+
+						<div
+							class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici">
+
+							<div class="form-row mb-2 col-md-12 mx-auto">
+								<div class="row">
+									<div class="form-group col-md-3 mb-0">
+										<p class="text-start">
+											<span class="fw-bold"><wicket:message
+													key="Step5IstanzaPlConfermaDatiIstanzaPanel.chiedecosa" />:</span>
+										</p>
+									</div>
+									<div class="form-group col-md-9 mb-0">
+										<p class="text-start">
+											<input class="form-control" id="numeroVerbalePartenza"
+												type="text" placeholder="Numero Verbale"
+												wicket:id="numeroVerbalePartenza"
+												style="font-size: smaller;" required> <small><wicket:message
+													key="Step5IstanzaPlConfermaDatiIstanzaPanel.numeroVerbalePartenza" /></small>
+											<label class="sr-only" for="numeroVerbalePartenza"> <wicket:message
+													key="Step5IstanzaPlConfermaDatiIstanzaPanel.numeroVerbalePartenza" />
+											</label>
+										</p>
+									</div>
+								</div>
+							</div>
+							<wicket:enclosure child="numeriAltriVerbali">
+								<div class="form-row mb-2 col-md-12 mx-auto">
+									<div class="row">
+										<div class="form-group col-md-3 mb-0">
+											<p class="text-start">
+												<span class="fw-bold"><wicket:message
+														key="Step5IstanzaPlConfermaDatiIstanzaPanel.chiedecosa2" />:</span>
+											</p>
+										</div>
+										<div class="form-group col-md-9 mb-0">
+											<p class="text-start">
+												<input class="form-control" id="numeriAltriVerbali"
+													type="text" placeholder="Numeri Verbali"
+													wicket:id="numeriAltriVerbali" style="font-size: smaller;"
+													required> <small><wicket:message
+														key="Step5IstanzaPlConfermaDatiIstanzaPanel.numeriAltriVerbali" /></small>
+												<label class="sr-only" for="numeriAltriVerbali"> <wicket:message
+														key="Step5IstanzaPlConfermaDatiIstanzaPanel.numeriAltriVerbali" />
+												</label>
+											</p>
+										</div>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+
+							<wicket:enclosure child="autodichiarazioneFurtoStringa">
+
+								<div class="form-row mb-2 col-md-12 mx-auto">
+									<input class="form-control" id="autodichiarazioneFurtoStringa"
+										type="text" placeholder="Autodichiaro Furto"
+										wicket:id="autodichiarazioneFurtoStringa"
+										style="font-size: smaller;" pattern="[a-zA-Z0-9]+" required>
+									<small> <wicket:message
+											key="Step5IstanzaPlConfermaDatiIstanzaPanel.03.autodichiarazione.delfurto" /></small>
+									<label class="sr-only" for="autodichiarazioneFurtoStringa">
+										<wicket:message
+											key="Step5IstanzaPlConfermaDatiIstanzaPanel.03.autodichiarazione.delfurto" />
+									</label>
+
+								</div>
+
+								<div>
+									<h4 class="text-center col-12">
+										<wicket:message
+											key="Step5IstanzaPlConfermaDatiIstanzaPanel.03.autodichiarazione.titolo" />
+									</h4>
+									<div
+										class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici">
+										<div class="form-row mb-2 col-md-12 mx-auto">
+											<p class="text-start">
+												<wicket:message
+													key="Step5IstanzaPlConfermaDatiIstanzaPanel.03.autodichiarazione.testo" />
+											</p>
+										</div>
+
+
+
+										<div class="form-row mb-2 col-md-12 mx-auto">
+											<h4 class="text-center col-12">
+												<wicket:message
+													key="Step5IstanzaPlConfermaDatiIstanzaPanel.03.autodichiarazione.dichiaro.titolo" />
+											</h4>
+										</div>
+
+										<div
+											class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici">
+											<div class="form-row mb-2 col-md-12 mx-auto">
+												<p class="text-start">
+													<wicket:message
+														key="Step5IstanzaPlConfermaDatiIstanzaPanel.03.autodichiarazione.sottotitolo" />
+												</p>
+											</div>
+
+											<div class="form-row mb-2 col-md-12 mx-auto">
+
+												<div class="form-row mb-2 col-md-12 mx-auto">
+													<div class="row">
+														<div class="form-group col-md-4 mb-0">
+															<input class="form-control" id="autodichiarazioneTarga"
+																type="text" placeholder="Targa"
+																wicket:id="autodichiarazioneTarga"
+																style="font-size: smaller;" pattern="[a-zA-Z0-9]+"
+																required> <small> <wicket:message
+																	key="Step5IstanzaPlConfermaDatiIstanzaPanel.03.autodichiarazione.targato" /></small>
+															<label class="sr-only" for="autodichiarazioneTarga">
+																<wicket:message
+																	key="Step5IstanzaPlConfermaDatiIstanzaPanel.03.autodichiarazione.targato" />
+															</label>
+
+
+
+														</div>
+
+														<div class="form-group col-md-4 mb-0">
+															<div class="form-row mb-2 col-md-12 mx-auto">
+																<input class="form-control" id="autodichiarazioneMarca"
+																	type="text" placeholder="Marca"
+																	wicket:id="autodichiarazioneMarca" required
+																	style="font-size: smaller;"> <small><wicket:message
+																		key="Step5IstanzaPlConfermaDatiIstanzaPanel.03.autodichiarazione.marca" /></small>
+																<label class="sr-only" for="autodichiarazioneMarca">
+																	<wicket:message
+																		key="Step5IstanzaPlConfermaDatiIstanzaPanel.03.autodichiarazione.marca" />
+																</label>
+															</div>
+														</div>
+
+
+														<div class="form-group col-md-4 mb-0">
+															<input class="form-control" id="autodichiarazioneModello"
+																type="text" placeholder="Modello"
+																wicket:id="autodichiarazioneModello"
+																style="font-size: smaller;" pattern="[a-zA-Z0-9]+"
+																required> <small> <wicket:message
+																	key="Step5IstanzaPlConfermaDatiIstanzaPanel.03.autodichiarazione.modello" /></small>
+															<label class="sr-only" for="autodichiarazioneModello">
+																<wicket:message
+																	key="Step5IstanzaPlConfermaDatiIstanzaPanel.03.autodichiarazione.modello" />
+															</label>
+														</div>
+													</div>
+												</div>
+
+
+
+												<div class="form-row mb-2 col-md-12 mx-auto">
+													<div class="row">
+														<div class="form-group col-md-4 mb-0">
+															<p class="text-start" style="margin-top: 20px;">
+																<wicket:message
+																	key="Step5IstanzaPlConfermaDatiIstanzaPanel.03.autodichiarazione.dichiaro.rubatoindata" />
+															</p>
+														</div>
+														<div class="form-group col-md-8 mb-0">
+															<p class="text-start">
+
+
+
+																<input class="form-control" id="furtoData" type="text"
+																	placeholder="Data in formato gg/mm/aaaa"
+																	wicket:id="furtoData" style="font-size: smaller;">
+																<small><wicket:message
+																		key="Step5IstanzaPlConfermaDatiIstanzaPanel.03.autodichiarazione.dichiaro.datafurto" /></small>
+																<label class="sr-only" for="furtoData"> <wicket:message
+																		key="Step5IstanzaPlConfermaDatiIstanzaPanel.03.autodichiarazione.dichiaro.datafurto" />
+																</label>
+
+
+
+															</p>
+														</div>
+													</div>
+												</div>
+												<wicket:enclosure
+													child="autodichiarazioneFurtoRitrovamentoStringa">
+													<div class="form-row mb-2 col-md-12 mx-auto">
+														<div class="row">
+															<div class="form-group col-md-4 mb-0">
+																<input class="form-control"
+																	id="autodichiarazioneFurtoRitrovamentoStringa"
+																	type="text" placeholder="Ritrovato"
+																	wicket:id="autodichiarazioneFurtoRitrovamentoStringa"
+																	style="font-size: smaller;" pattern="[a-zA-Z0-9]+"
+																	required> <small> <wicket:message
+																		key="Step5IstanzaPlConfermaDatiIstanzaPanel.03.autodichiarazione.dichiaro.ritrovato" /></small>
+																<label class="sr-only"
+																	for="autodichiarazioneFurtoRitrovamentoStringa">
+																	<wicket:message
+																		key="Step5IstanzaPlConfermaDatiIstanzaPanel.03.autodichiarazione.dichiaro.ritrovato" />
+																</label>
+															</div>
+
+
+
+
+
+
+															<div class="form-group col-md-9 mb-0">
+																<div class="form-servizi-anagrafici">
+																	<div class="form-row mb-2 col-md-12 mx-auto">
+																		<h4 class="text-center col-12">
+																			<wicket:message
+																				key="Step5IstanzaPlConfermaDatiIstanzaPanel.03.autodichiarazione.dichiaro.sottotitolo2" />
+																		</h4>
+																	</div>
+
+																	<div class="form-row mb-2 col-md-12 mx-auto">
+																		<div class="row">
+																			<div class="form-group col-md-3 mb-0">
+																				<p class="text-start">
+																					<wicket:message
+																						key="Step5IstanzaPlConfermaDatiIstanzaPanel.03.autodichiarazione.dichiaro.ritrovatoindata" />
+																				</p>
+																			</div>
+
+																			<div class="form-group col-md-9 mb-0">
+																				<input class="form-control it-date-datepicker"
+																					id="ritrovamentoData" type="text"
+																					placeholder="Data in formato gg/mm/aaaa"
+																					wicket:id="ritrovamentoData"
+																					style="font-size: smaller;"> <small><wicket:message
+																						key="Step5IstanzaPlConfermaDatiIstanzaPanel.03.autodichiarazione.dichiaro.dataritrovamento" /></small>
+																				<label class="sr-only" for="ritrovamentoData">
+																					<wicket:message
+																						key="Step5IstanzaPlConfermaDatiIstanzaPanel.03.autodichiarazione.dichiaro.dataritrovamento" />
+																				</label>
+																			</div>
+																		</div>
+																	</div>
+
+																	<div class="form-row mb-2 col-md-12 mx-auto">
+																		<div class="row">
+																			<div class="form-group col-md-3 mb-0">
+																				<p class="text-start">
+																					<wicket:message
+																						key="Step5IstanzaPlConfermaDatiIstanzaPanel.03.autodichiarazione.dichiaro.riconsegnatopolizia" />
+																				</p>
+																			</div>
+																			<div class="form-group col-md-9 mb-0">
+																				<input class="form-control" id="riconsegnatoPolizia"
+																					type="text" placeholder="Forze dell'ordine"
+																					wicket:id="riconsegnatoPolizia"
+																					style="font-size: smaller;"
+																					pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+																					required> <small> <wicket:message
+																						key="Step5IstanzaPlConfermaDatiIstanzaPanel.03.autodichiarazione.dichiaro.riconsegnatopolizia" /></small>
+																				<label class="sr-only" for="riconsegnatoPolizia">
+																					<wicket:message
+																						key="Step5IstanzaPlConfermaDatiIstanzaPanel.03.autodichiarazione.dichiaro.riconsegnatopolizia.info" />
+																				</label>
+																			</div>
+																		</div>
+																	</div>
+
+																	<div class="form-row mb-2 col-md-12 mx-auto">
+																		<div class="row">
+																			<div class="form-group col-md-3 mb-0">
+																				<p class="text-start">
+																					<wicket:message
+																						key="Step5IstanzaPlConfermaDatiIstanzaPanel.03.autodichiarazione.dichiaro.riconsegnatopoliziacomune" />
+																				</p>
+																			</div>
+																			<div class="form-group col-md-9 mb-0">
+																				<input class="form-control"
+																					id="riconsegnatoPoliziaComune" type="text"
+																					placeholder="Comune forze ordine"
+																					wicket:id="riconsegnatoPoliziaComune"
+																					style="font-size: smaller;"
+																					pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+																					required> <small> <wicket:message
+																						key="Step5IstanzaPlConfermaDatiIstanzaPanel.03.autodichiarazione.dichiaro.riconsegnatopoliziacomune" /></small>
+																				<label class="sr-only"
+																					for="riconsegnatoPoliziaComune"> <wicket:message
+																						key="Step5IstanzaPlConfermaDatiIstanzaPanel.03.autodichiarazione.dichiaro.riconsegnatopoliziacomune.info" />
+																				</label>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</wicket:enclosure>
+											</div>
+										</div>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure
+								child="autodichiarazioneProprietarioETitolareStringa">
+								<div class="form-row mb-2 col-md-12 mx-auto">
+									<div class="mt-4 mb-2 text-start">
+										<h4 id="autodichiarazioneProprietarioETit">
+											<wicket:message
+												key="Step5IstanzaPlConfermaDatiIstanzaPanel.13.autodichiarazioneProprietarioETitolare" />
+										</h4>
+										<input type="text" class="fw-bold"
+											wicket:id="autodichiarazioneProprietarioETitolareStringa"></input>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<div class="form-row mb-2 col-md-12 mx-auto combo-figli">
+								<div class="form-group col-md-12 mb-0">
+
+
+									<p class="text-start">
+										<span class="fw-bold"><wicket:message
+												key="Step5IstanzaPlConfermaDatiIstanzaPanel.chiedemotivo" />:</span>
+									</p>
+									<p class="text-start">
+										<input class="form-control"
+											id="descrizioneCodiceHermesMotivoSelezionato" type="text"
+											placeholder="Motivo"
+											wicket:id="descrizioneCodiceHermesMotivoSelezionato"
+											style="font-size: smaller;" aria-label="descrizione motivo"
+											required>
+									</p>
+
+								</div>
+							</div>
+
+							<wicket:enclosure child="descrizioneTargaErrata">
+								<div class="form-row mb-2 col-md-12 mx-auto">
+									<div class="form-group col-md-12 mb-0">
+										<input type="text" class="fw-bold"
+											wicket:id="descrizioneTargaErrata"></input>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<wicket:enclosure child="descrizioneNonPrprietario">
+								<div class="form-row mb-2 col-md-12 mx-auto">
+									<div class="form-group col-md-12 mb-0">
+										<input type="text" class="fw-bold"
+											wicket:id="descrizioneNonPrprietario"></input>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+
+
+						</div>
+						<div class="form-group col-md-12 mb-3 text-center">
+							<div class="form-group col-md-12 mb-3 text-center">
+								<a class="btn btn-primary" href="#" role="button"
+									wicket:id="avanti"> <wicket:message
+										key="Step5IstanzaPlConfermaDatiIstanzaPanel.avanti" />
+								</a> <a class="btn btn-secondary" href="#" role="button"
+									wicket:id="annulla"> <wicket:message
+										key="Step5IstanzaPlConfermaDatiIstanzaPanel.annulla" />
+								</a>
+							</div>
+						</div>
+
+					</form>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>
+
+		<div wicket:id="messaggiInformativi"></div>
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+		<div class="col-lg-6 mb-4" wicket:id="listaConviventi">
+			<div class="card-wrapper">
+				<div class="card card-bg my-2">
+					<div class="card-body">
+						<div class="categoryicon-top row mb-4">
+							<i class="color-orange col-3 icon-foglio-penna"></i>
+							<h4 class="card-title text-start font-weight-bold col-9">
+								<wicket:message key="AutodichiarazioneGenitorePanel.titolo" />
+							</h4>
+						</div>
+						<form wicket:id="form">
+							<div class="row mb-3">
+								<div class="col-12">
+									<p class="card-text text-start fw-bold">
+										<wicket:message
+											key="AutodichiarazioneGenitorePanel.intestazione" />
+									</p>
+								</div>
+							</div>
+							<div class="row mb-3">
+								<div class="col-3">
+									<p class="card-text text-start fw-bold">
+										<wicket:message key="AutodichiarazioneGenitorePanel.nome" />
+									</p>
+								</div>
+								<div class="col-6">
+									<p class="card-text text-start">
+										<span class="text-capitalize fw-bold" wicket:id="nome"></span>
+									</p>
+								</div>
+							</div>
+							<div class="row mb-3">
+								<div class="col-3">
+									<p class="card-text text-start fw-bold">
+										<wicket:message
+											key="AutodichiarazioneGenitorePanel.codiceFiscale" />
+										:
+									</p>
+								</div>
+								<div class="col-6">
+									<p class="card-text text-start">
+										<span class="text-capitalize" wicket:id="cf"></span>
+									</p>
+								</div>
+							</div>
+							<div class="row mb-3">
+								<div class="col-3">
+									<p class="card-text text-start fw-bold">
+										<wicket:message key="AutodichiarazioneGenitorePanel.parentela" />
+										:
+									</p>
+								</div>
+								<div class="col-6">
+									<label class="sr-only"><wicket:message
+											key="AutodichiarazioneGenitorePanel.parentela" />:</label>
+									<div class="select-wrapper text-start">
+										<select wicket:id="combo"
+											wicket:message="title:AutodichiarazioneGenitorePanel.combo.title"></select>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									<button type="button" class="btn btn-primary btn-xs btn-block"
+										wicket:id="salva">Salva autodichiarazione</button>
+									<button type="button" class="btn btn-danger btn-xs btn-block"
+										wicket:id="cancella">Cancella autodichiarazione</button>
+
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-lg-6 mb-4" wicket:id="listaMaggiorenniOConviventi">
+			<div class="card-wrapper">
+				<div class="card card-bg my-2">
+					<div class="card-body">
+						<div class="categoryicon-top row mb-4">
+							<i class="color-orange col-3 icon-foglio-penna"></i>
+							<h4 class="card-title text-start font-weight-bold col-9">
+								<wicket:message key="AutodichiarazioneGenitorePanel.titolo" />
+							</h4>
+						</div>
+						<form wicket:id="formMaggiorenniOConviventi">
+
+							<wicket:enclosure child="nome">
+								<div class="row mb-3">
+									<div class="col-3">
+										<p class="card-text text-start fw-bold">
+											<wicket:message key="AutodichiarazioneGenitorePanel.per" />
+											:
+										</p>
+									</div>
+									<div class="col-6">
+										<p class="card-text text-start">
+											<span class="text-capitalize fw-bold" wicket:id="nome"></span>
+										</p>
+									</div>
+								</div>
+							</wicket:enclosure>
+
+							<div class="row mb-3">
+								<div class="col-3">
+									<p class="card-text text-start fw-bold">
+										<wicket:message
+											key="AutodichiarazioneGenitorePanel.codiceFiscale" />
+										:
+									</p>
+								</div>
+								<div class="col-6">
+									<p class="card-text text-start">
+										<span class="text-capitalize" wicket:id="cf"></span>
+									</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									<p class="card-text text-start fw-bold">
+										<wicket:message
+											key="AutodichiarazioneGenitorePanel.infoAutocertificazione" />
+									</p>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<wicket:container wicket:id="autodichiarazioneNonResidenti">
+			<div class="col-sm-12 mt-2 mb-2">
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+
+							<h1>AUTODICHIARAZIONE minori conviventi</h1>
+
+							<div wicket:id="aggiungiFiglioPanel"></div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</wicket:container>
+		<div class="col-sm-12 mt-2 mb-2">
+			<p class="card-text text-start fw-bold">
+				<wicket:message key="AutodichiarazioneGenitorePanel.nota" />
+			</p>
+		</div>
+
+		<div class="col-6" style="display: flex;">
+			<a class="btn btn-primary btn-icon" wicket:id="homeBtn"></a>
+		</div>
+
+
+	</wicket:panel>
+
+</body>
+</html>

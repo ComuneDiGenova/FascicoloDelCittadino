@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>
+
+		<div class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici">
+
+			<h4 class="col-12">Dati tutore/genitore</h4>
+
+			<wicket:enclosure>
+				<div class="col-6">
+					<input class="form-control" id="qualificaTutore" type="text" placeholder=""
+						wicket:id="qualificaTutore"> <small><wicket:message
+							key="TutoreGenitorePanel.qualificaTutore" /></small> <label
+						class="sr-only" for="qualificaTutore"> <wicket:message
+							key="TutoreGenitorePanel.qualificaTutore" />
+					</label>
+				</div>
+			</wicket:enclosure>
+
+			<div class="row">
+				<div class="col-6">
+					<input class="form-control" id="codiceFiscaleTutore" type="text" placeholder=""
+						wicket:id="codiceFiscaleTutore"> <small><wicket:message
+							key="TutoreGenitorePanel.codiceFiscaleTutore" /></small> <label
+						class="sr-only" for="codiceFiscaleTutore"> <wicket:message
+							key="TutoreGenitorePanel.codiceFiscaleTutore" />
+					</label>
+				</div>
+	
+				<div class="col-6">
+					<input class="form-control" id="cognomeTutore" type="text" placeholder=""
+						wicket:id="cognomeTutore"> <small><wicket:message
+							key="TutoreGenitorePanel.cognomeTutore" /></small> <label class="sr-only"
+						for="cognomeTutore"> <wicket:message
+							key="TutoreGenitorePanel.cognomeTutore" />
+					</label>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-6">
+					<input class="form-control" id="nomeTutore" type="text" placeholder=""
+						wicket:id="nomeTutore"> <small><wicket:message
+							key="TutoreGenitorePanel.nomeTutore" /></small> <label class="sr-only"
+						for="nomeTutore"> <wicket:message
+							key="TutoreGenitorePanel.nomeTutore" />
+					</label>
+				</div>
+
+				<div class="col-6">
+					<input class="form-control it-date-datepicker"
+						id="dataNascitaTutore" type="date"
+						placeholder="Data in formato gg/mm/aaaa"
+						wicket:id="dataNascitaTutore" style="font-size: smaller;">
+						<small><wicket:message
+								key="TutoreGenitorePanel.dataNascitaTutore" /></small> <label
+							class="sr-only" for="dataNascitaTutore"> <wicket:message
+								key="TutoreGenitorePanel.dataNascitaTutore" />
+						</label>
+				</div>
+			</div>
+			
+			<div class="row">
+					<div class="col-6">
+					<input class="form-control" id="luogoNascitaTutore" type="text" placeholder=""
+						wicket:id="luogoNascitaTutore" required> <small><wicket:message
+							key="TutoreGenitorePanel.luogoNascitaTutore" /></small> <label
+						class="sr-only" for="luogoNascitaTutore"> <wicket:message
+							key="TutoreGenitorePanel.luogoNascitaTutore" />
+					</label>
+				</div>
+				<div class="col-6">
+					<input class="form-control" id="provinciaNascitaTutore" type="text" placeholder=""
+						wicket:id="provinciaNascitaTutore" required> <small><wicket:message
+							key="TutoreGenitorePanel.provinciaNascitaTutore" /></small> <label
+						class="sr-only" for="provinciaNascitaTutore"> <wicket:message
+							key="TutoreGenitorePanel.provinciaNascitaTutore" />
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6">
+					<input class="form-control" id="indirizzoResidenzaTutore" type="text" placeholder=""
+						wicket:id="indirizzoResidenzaTutore" required> <small><wicket:message
+							key="TutoreGenitorePanel.indirizzoResidenzaTutore" /></small> <label
+						class="sr-only" for="indirizzoResidenzaTutore"> <wicket:message
+							key="TutoreGenitorePanel.indirizzoResidenzaTutore" />
+					</label>
+				</div>
+				<div class="col-6">
+					<input class="form-control" id="capResidenzaTutore" type="text"
+						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+						placeholder="" wicket:id="capResidenzaTutore" required> <small><wicket:message
+							key="TutoreGenitorePanel.capResidenzaTutore" /></small> <label
+						class="sr-only" for="capResidenzaTutore"> <wicket:message
+							key="TutoreGenitorePanel.capResidenzaTutore" />
+					</label>
+				</div>
+			</div>
+			
+			<div class="row">
+					<div class="col-6">
+				<input class="form-control" id="cittaResidenzaTutore" type="text" placeholder=""
+					wicket:id="cittaResidenzaTutore" required> <small><wicket:message
+						key="TutoreGenitorePanel.cittaResidenzaTutore" /></small> <label
+					class="sr-only" for="cittaResidenzaTutore"> <wicket:message
+						key="TutoreGenitorePanel.cittaResidenzaTutore" />
+				</label>
+			</div>
+			<div class="col-6">
+				<input class="form-control" id="provinciaResidenzaTutore" type="text" placeholder=""
+					wicket:id="provinciaResidenzaTutore" required> <small><wicket:message
+						key="TutoreGenitorePanel.provinciaResidenzaTutore" /></small> <label
+					class="sr-only" for="provinciaResidenzaTutore"> <wicket:message
+						key="TutoreGenitorePanel.provinciaResidenzaTutore" />
+				</label>
+			</div>
+			</div>
+
+			<div class="row">
+					<div class="form-group col-md-6 mb-0">
+					<input class="form-control" id="cellulareTutore" type="text"
+						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+						placeholder="" wicket:id="cellulareTutore"
+						style="font-size: smaller;" required> <small><wicket:message
+							key="TutoreGenitorePanel.cellulareTutore" /></small> <label
+						class="sr-only" for="cellulareTutore"> <wicket:message
+							key="TutoreGenitorePanel.cellulareTutore" />
+					</label>
+				</div>
+	
+				<div class="form-group col-md-6 mb-0">
+					<input class="form-control" id="telefonoTutore" type="text"
+						oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+						placeholder="" wicket:id="telefonoTutore"
+						style="font-size: smaller;"> <small><wicket:message
+							key="TutoreGenitorePanel.telefonoTutore" /></small> <label
+						class="sr-only" for="telefonoTutore"> <wicket:message
+							key="TutoreGenitorePanel.telefonoTutore" />
+					</label>
+				</div>
+			</div>
+
+
+			<div class="row">
+					<div class="form-group col-md-6 mb-0">
+						<input class="form-control" id="emailTutore" type="email"
+							placeholder="" wicket:id="emailTutore" style="font-size: smaller;"
+							pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" required>
+						<small><wicket:message key="TutoreGenitorePanel.emailTutore" /></small>
+						<label class="sr-only" for="emailTutore"> <wicket:message
+								key="TutoreGenitorePanel.emailTutore" />
+						</label>
+					</div>
+	
+				<div class="form-group col-md-6 mb-0">
+					<input class="form-control" id="pecTutore" type="email"
+						placeholder="" wicket:id="pecTutore"
+						pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+						style="font-size: smaller;"> <small><wicket:message
+							key="TutoreGenitorePanel.pecTutore" /></small> <label class="sr-only"
+						for="pecTutore"> <wicket:message
+							key="TutoreGenitorePanel.pecTutore" />
+					</label>
+				</div>
+			</div>
+		
+<!--  -->
+			<div wicket:id="wmkPatente" class="row">
+				<h4 class="col-12">Patente</h4>
+				<div class="col-6">
+					<select  wicket:id="tipoPatenteTutore"></select> <label
+						class="sr-only" for="tipoPatenteTutore"> <wicket:message
+							key="TutoreGenitorePanel.tipoPatenteTutore" />
+					</label>
+				</div>
+				<div class="col-6">
+					<input class="form-control" id="numeroPantenteTutore" type="text" placeholder=""
+						wicket:id="numeroPantenteTutore"> <small><wicket:message
+							key="TutoreGenitorePanel.numeroPantenteTutore" /></small> <label
+						class="sr-only" for="numeroPantenteTutore"> <wicket:message
+							key="TutoreGenitorePanel.numeroPantenteTutore" />
+					</label>
+				</div>
+
+				<div class="col-6">
+
+					<input class="form-control it-date-datepicker"
+						id="dataRilascioPatenteTutore" type="date"
+						placeholder="Data in formato gg/mm/aaaa"
+						wicket:id="dataRilascioPatenteTutore" style="font-size: smaller;">
+					<small><wicket:message
+							key="TutoreGenitorePanel.dataRilascioPatenteTutore" /></small> <label
+						class="sr-only" for="dataRilascioPatenteTutore"> <wicket:message
+							key="TutoreGenitorePanel.dataRilascioPatenteTutore" />
+					</label>
+
+				</div>
+				<div class="col-6">
+
+					<input class="form-control it-date-datepicker"
+						id="dataScadenzaPatenteTutore" type="date"
+						placeholder="Data in formato gg/mm/aaaa"
+						wicket:id="dataScadenzaPatenteTutore" style="font-size: smaller;">
+					<small><wicket:message
+							key="TutoreGenitorePanel.dataScadenzaPatenteTutore" /></small> <label
+						class="sr-only" for="dataScadenzaPatenteTutore"> <wicket:message
+							key="TutoreGenitorePanel.dataScadenzaPatenteTutore" />
+					</label>
+
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback5"></div>
+	</wicket:panel>
+</body>
+</html>

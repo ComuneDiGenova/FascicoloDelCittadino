@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>
+		<div class="card-icon mt-4 mb-1">
+			<div class="badge"
+				style="background-color: #d9364f; color: #fff; width: 80px;">
+				<wicket:message key="MieSegnalazioniNumeriWidget.inviate" />
+				<span class="badge badge-light" style="font-size: 16px"
+					wicket:id="segnalazioniInviateCounter"></span>
+			</div>
+
+			<div class="badge"
+				style="background-color: #a66300; color: #fff; width: 80px;">
+				<wicket:message key="MieSegnalazioniNumeriWidget.inCarico" />
+				<span class="badge badge-light" style="font-size: 16px"
+					wicket:id="segnalazioniInCaricoCounter"></span>
+			</div>
+
+			<div class="badge"
+				style="background-color: #008758; color: #fff; width: 80px;">
+				<wicket:message key="MieSegnalazioniNumeriWidget.chiuse" />
+				<span class="badge badge-light" style="font-size: 16px"
+					wicket:id="segnalazioniChiuseCounter"></span>
+			</div>
+
+			<br>
+				<div class="d-table mx-auto link-icon" > <span
+				class="icon-omino-grafico-torta color-orange-segnalaci"></span> <span
+				class="bottom-nav-label d-table-row"></span>
+			</div>
+
+		</div>
+	</wicket:panel>
+</body>
+</html>

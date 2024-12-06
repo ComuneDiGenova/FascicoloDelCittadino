@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<body>
+	<wicket:extend>
+
+		<div wicket:id="breadcrumbPanel"></div>
+
+		<dl class="row form-servizi-anagrafici">
+
+			<div class="col-4 col-md-3">
+
+				<div class="nav nav-tabs nav-tabs-vertical" id="nav-vertical-tab"
+					role="tablist" aria-orientation="vertical">
+
+
+					<div class="nav nav-tabs nav-tabs-vertical" id="nav-vertical-tab"
+						role="tablist" aria-orientation="vertical">
+
+						<a class="nav-link active" id="nav-vertical-tab-generali-tab"
+							data-bs-toggle="tab" href="#nav-vertical-tab-generali" role="tab"
+							aria-controls="nav-vertical-tab-generali-tab"
+							aria-selected="true"><wicket:message
+								key="DettaglioPraticheEdiliziePage.generali" /></a> <a
+							class="nav-link" id="nav-vertical-tab-progettista-tab"
+							data-bs-toggle="tab" href="#nav-vertical-tab-progettista"
+							role="tab" aria-controls="nav-vertical-tab-progettista"
+							aria-selected="false"><wicket:message
+								key="DettaglioPraticheEdiliziePage.progettista" /></a> <a
+							class="nav-link" id="nav-vertical-tab-indirizzi-tab"
+							data-bs-toggle="tab" href="#nav-vertical-tab-indirizzi"
+							role="tab" aria-controls="nav-vertical-tab-indirizzi"
+							aria-selected="false"><wicket:message
+								key="DettaglioPraticheEdiliziePage.indirizzi" /></a> <a
+							class="nav-link" id="nav-vertical-tab-richiedente-tab"
+							data-bs-toggle="tab" href="#nav-vertical-tab-richiedente"
+							role="tab" aria-controls="nav-vertical-tab-richiedente"
+							aria-selected="false"><wicket:message
+								key="DettaglioPraticheEdiliziePage.richiedente" /></a> <a
+							class="nav-link" id="nav-vertical-tab-movimentoIter-tab"
+							data-bs-toggle="tab" href="#nav-vertical-tab-movimentoIter"
+							role="tab" aria-controls="nav-vertical-tab-movimentoIter"
+							aria-selected="false"><wicket:message
+								key="DettaglioPraticheEdiliziePage.movimentoIter" /></a>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="col-8 col-md-9">
+
+				<div class="tab-content" id="nav-vertical-tabContent">
+
+					<div class="tab-pane p-3 fade show active"
+						id="nav-vertical-tab-generali" role="tabpanel"
+						aria-labelledby="nav-vertical-tab-generali-tab">
+						<dd>
+						<dd class="col-12">
+							<div wicket:id="PRAVAPROTCODTIPOPROTOCOLLO"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="PRANPROTNUMERO"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="PRANPROTANNO"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="TPAADESCRPRATICA"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="PRAVAOGGETTO"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="PRADPROTRICHIESTA"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="PRADPROTINGRESSOCOMUNE"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="PRADPROTIMMISSIONE"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="PRAVAPRATICACHIUSA"></div>
+						</dd>
+						<br>
+						</dd>
+					</div>
+
+					<div class="tab-pane p-3 fade" id="nav-vertical-tab-progettista"
+						role="tabpanel" aria-labelledby="nav-vertical-tab-progettista-tab">
+
+
+						<dd class="col-12">
+							<div wicket:id="progettistiVuoti">
+								<wicket:message
+									key="DettaglioPraticheEdiliziePage.progettistiVuoti" />
+							</div>
+						</dd>
+
+						<dd wicket:id="listViewProgettista">
+						<dd class="col-12">
+							<div wicket:id="TPGATITOLOPROGETTISTA"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="PROACOGNNOME"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="PROACODICEFISCALE"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="PROAIND"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="PROACAP"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="PROACITTA"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="PROANAZ"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="PROAEMAIL"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="PROATEL"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="PROAFAX"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="PROVADESCRIZIONEENTE"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="PROAISCALBON"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="PROAISCALBOPR"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="ALBVAALBO"></div>
+						</dd>
+
+						<br>
+						</dd>
+
+					</div>
+
+					<div class="tab-pane p-3 fade" id="nav-vertical-tab-indirizzi"
+						role="tabpanel" aria-labelledby="nav-vertical-tab-indirizzi-tab">
+						<dd wicket:id="listViewIndirizzi">
+						<dd class="col-12">
+							<div wicket:id="STRASTRADADESCRIZIONE"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="RCPSICIVICONUMERO"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="RCPSICIVICOCOLORE"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="RCPACCIVICOLETTERA"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="RCPVALOCALITA"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="RCPAINTERNONUMERO"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="RCPAINTERNOLETTERA"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="RCPAINTERNOSCALA"></div>
+						</dd>
+
+						<br>
+						</dd>
+					</div>
+
+
+					<div class="tab-pane p-3 fade" id="nav-vertical-tab-richiedente"
+						role="tabpanel" aria-labelledby="nav-vertical-tab-richiedente-tab">
+						<dd wicket:id="listViewRichiedente">
+						<dd class="col-12">
+							<div wicket:id="TIRATITOLORICHIED"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="RICACOGNNOME"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="RICAIND"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="RICACITTA"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="RICAPROV"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="RICACAP"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="RICANAZ"></div>
+						</dd>
+
+						<br>
+						</dd>
+
+					</div>
+
+					<div class="tab-pane p-3 fade" id="nav-vertical-tab-movimentoIter"
+						role="tabpanel"
+						aria-labelledby="nav-vertical-tab-movimentoIter-tab">
+
+						<dd wicket:id="listViewMovimentoAltri">
+						<dd class="col-12">
+							<div wicket:id="MOVADESCRIZIONEMOVIMENTO"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="RMPDINIMOV"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="RMPDFINEMOV"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="RMPVANOTEMOVIMENTO"></div>
+						</dd>
+						<br>
+						</dd>
+
+						<dd wicket:id="listViewMovimentoIter">
+						<dd class="col-12">
+							<div wicket:id="MOVADESCRIZIONEMOVIMENTO"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="RMPDINIMOV"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="RMPDFINEMOV"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="RMPVANOTEMOVIMENTO"></div>
+						</dd>
+						<br>
+						</dd>
+
+						<dd wicket:id="listViewMovimentiPareri">
+						<dd class="col-12">
+							<div wicket:id="MOVADESCRIZIONEMOVIMENTO"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="RMPDINIMOV"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="RMPDFINEMOV"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="RMPVANOTEMOVIMENTO"></div>
+						</dd>
+						<br>
+						</dd>
+
+						<dd wicket:id="listViewMovimentoSpostamenti">
+						<dd class="col-12">
+							<div wicket:id="MOVADESCRIZIONEMOVIMENTO"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="RMPDINIMOV"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="RMPDFINEMOV"></div>
+						</dd>
+						<dd class="col-12">
+							<div wicket:id="RMPVANOTEMOVIMENTO"></div>
+						</dd>
+
+						<br>
+						</dd>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</dl>
+
+		<wicket:child />
+
+	</wicket:extend>
+</body>
+</html>

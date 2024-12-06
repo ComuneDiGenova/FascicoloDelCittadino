@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<wicket:enclosure child="okTari">
+			<div class="alert alert-success" role="alert" wicket:id="okTari">
+				<p wicket:id="messaggioSuccessoTari"></p>
+			</div>
+		</wicket:enclosure>
+
+		<wicket:enclosure child="okTefa">
+			<div class="alert alert-success" role="alert" wicket:id="okTefa">
+				<p wicket:id="messaggioSuccessoTefa"></p>
+			</div>
+		</wicket:enclosure>
+
+		<wicket:enclosure child="okTariReale">
+			<div class="alert alert-success" role="alert" wicket:id="okTariReale">
+				<p wicket:id="messaggioSuccessoTariReale"></p>
+			</div>
+		</wicket:enclosure>
+
+		<wicket:enclosure child="erroreTari">
+			<div class="alert alert-danger" role="alert" wicket:id="erroreTari">
+				<p wicket:id="messaggioErroreTari"></p>
+			</div>
+		</wicket:enclosure>
+
+		<wicket:enclosure child="erroreTefa">
+			<div class="alert alert-danger" role="alert" wicket:id="erroreTefa">
+				<p wicket:id="messaggioErroreTefa"></p>
+			</div>
+		</wicket:enclosure>
+
+		<wicket:enclosure child="erroreTariReale">
+			<div class="alert alert-danger" role="alert"
+				wicket:id="erroreTariReale">
+				<p wicket:id="messaggioErroreTariReale"></p>
+			</div>
+		</wicket:enclosure>
+
+		<wicket:enclosure child="btnNuovoRimborso">
+			<div class="row py-1 mb-2 col-12">
+				<div class="col-12">
+					<span wicket:id="btnNuovoRimborso"></span>
+				</div>
+			</div>
+		</wicket:enclosure>
+
+	</wicket:panel>
+</body>
+
+</html>

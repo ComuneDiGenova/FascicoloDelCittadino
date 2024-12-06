@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="container">
+
+			<div class="text-center font-weight-semibold mb-2 h4">
+				<wicket:message key="ServiziCortesiaPrivacyPanel.normativa" />
+			</div>
+
+			<div class="row justify-content-md-center mb-5">
+				<div class="col-12 col-lg-8">
+					<form wicket:id="form" aria-labelledby="form-title">
+						<fieldset>
+							<div class="card-wrapper card-space">
+								<div class="card card-bg">
+									<div class="card-body text-left">
+										<div class="it-list-wrapper">
+											<legend id="form-title" class="mb-3">
+												<strong>
+													<div class="it-right-zone">
+														<span class="text-wrap">Ciao <span wicket:id="nome"></span>,per prima cosa leggi
+															l'informativa privacy che fornisce Comune di Genova, quindi
+															se
+															vuoi proseguire indica di averla letta.
+														</span>
+													</div>
+												</strong>
+											</legend>
+											
+											<ul class="it-list">
+												
+												
+
+												<li class="alert alert-info" role="alert">
+													<wicket:message key="ServiziCortesiaPrivacyPanel.info" />
+												</li>
+
+												<li>
+													<div class="it-right-zone">
+														<button
+															class="btn btn-success btn-lg btn-icon focus-visible-none"
+															wicket:id="btnDownload">
+															<svg class="icon icon-white" aria-label="scarica">
+																<use
+																	xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file">
+																</use>
+															</svg>
+															<span>
+																<wicket:message
+																	key="ServiziCortesiaPrivacyPanel.scarica" />
+															</span>
+														</button>
+													</div>
+												</li>
+												<li>
+													<div class="form-row mb-2 it-right-zone" wicket:id="container">
+														<div class="form-check flex-auto">
+															<div class="toggles">
+																<label class="font-weight-semibold p-0"
+																	for="accettaPrivacy">
+																	<wicket:message
+																		key="ServiziCortesiaPrivacyPanel.accettazione" />
+																	<input type="checkbox" id="accettaPrivacy"
+																		wicket:id="accetto">
+																	<span class="lever"></span>
+																</label>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li>
+													<div class="it-right-zone">
+														<button type="submit" class="btn btn-primary focus-visible-none"
+															wicket:id="procedi">
+															<wicket:message key="ServiziCortesiaPrivacyPanel.procedi" />
+														</button>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+
+			<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+		</div>
+	</wicket:panel>
+</body>
+
+</html>

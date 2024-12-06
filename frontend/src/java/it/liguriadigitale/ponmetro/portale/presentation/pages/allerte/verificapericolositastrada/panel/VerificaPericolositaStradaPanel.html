@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<wicket:head>
+	<style>
+div.wicket-aa {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, Verdana;
+	font-size: 14px;
+	background-color: white;
+	border-width: 1px;
+	border-color: #cccccc;
+	border-style: solid;
+	padding: 2px;
+	margin: 1px 0 0 0;
+	text-align: left;
+
+	
+}
+
+div.wicket-aa ul {
+	list-style: none;
+	padding: 2px;
+	margin: 0;
+}
+
+div.wicket-aa ul li.selected {
+	background-color: #4e73df;
+	padding: 2px;
+	color: white;
+	margin: 0;
+}
+
+div.wicket-aa ul li {
+	padding: 3.5px;
+}
+
+</style>
+</wicket:head>
+
+</head>
+
+<body>
+	<wicket:panel>
+
+
+		<div class="form-row mb-2 col-md-12 mx-auto">
+
+		<!--  	<div class="col-12" style="padding-top: 20px;">
+				<div wicket:id="geoserver"></div>
+			</div> -->
+
+			<div class="form-group mb-2 col-md-12 mx-auto" style="z-index:1">
+					<label for="autocompleteViario"  class="sr-only"><wicket:message
+						key="VerificaPericolositaStradaPanel.autocompleteViario" />:</label> 
+					<input
+						type="text" id="autocompleteViario" name="autocompleteViario"
+						title="Indirizzo" wicket:id="autocompleteViario"
+						class="form-control" placeholder="Inserisci via e numero civico"/>
+						<span class="autocomplete-icon" aria-hidden="true">
+							<svg class="icon icon-sm"><use href="/portale/bootstrap-italia/svg/sprites.svg#it-search"></use></svg>
+						</span>
+			</div>
+		
+			<div class="form-row" style="margin-top: 60px;">
+
+				<div class="row">
+					<div class="col">
+						<div wicket:id="pericolositaIdro"></div>
+					</div>
+					<div class="col">
+						<div wicket:id="pericolositaIncendio"></div>
+					</div>
+					<div class="col">
+						<div wicket:id="pericolositaFrane"></div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+				<div class="alert alert-danger" role="alert"
+					wicket:id="containerCortesia">
+
+					<div class="row py-1 mb-2">
+						<div class="col-12 ">
+							<wicket:message key="VerificaPericolositaStradaPanel.cortesia" />
+							<button wicket:id="btnVaiACortesia"></button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="alert alert-danger col-12" role="alert"
+			wicket:id="containerZonaRossa">
+
+			<div class="row py-1 mb-2">
+				<div class="col-6">
+					<wicket:message key="VerificaPericolositaStradaPanel.zonaRossa" />
+					<button wicket:id="btnVaiAZonaRossa"></button>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="form-group col-md-12 mb-3 text-center">
+			<div class="form-group col-md-12 mb-3 text-center">
+
+				<wicket:enclosure child="annulla">
+					<button type="button" class="btn btn-secondary" wicket:id="annulla">
+						<wicket:message key="VerificaPericolositaStradaPanel.annulla" />
+					</button>
+				</wicket:enclosure>
+
+			</div>
+		</div>
+
+	</wicket:panel>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="alert alert-warning col-12" role="alert"
+			wicket:id="containerListaVuota">
+			<span wicket:id="listaVuota"></span>
+		</div>
+
+		<div class="row content my-4 info-traffico">
+
+			<h4 class="col-12" wicket:id="listaPiena"></h4>
+
+			<div class="col-lg-6 mb-4" wicket:id="box">
+
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="" wicket:id="icona"></i>
+
+								<h4 class="card-title text-left col-9 font-weight-normal">
+									<span class="text-capitalize font-weight-semibold"
+										wicket:id="annoSolare"></span>
+								</h4>
+							</div>
+
+							<div wicket:id="importoScuola"></div>
+
+							<div wicket:id="importoAsilo"></div>
+
+							<div wicket:id="numeroProtocolloIn"></div>
+
+							<div wicket:id="annoProtocolloIn"></div>
+
+							<div wicket:id="numeroProtocolloOut"></div>
+
+							<div wicket:id="annoProtocolloOut"></div>
+
+							<div wicket:id="btnScaricaDocumento"></div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div wicket:id="paginationAttestatoPagamenti"></div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+	</wicket:panel>
+</body>
+
+</html>

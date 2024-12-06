@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<wicket:head>
+	<style>
+div.wicket-aa {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, Verdana;
+	font-size: 12px;
+	background-color: white;
+	border-width: 1px;
+	border-color: #cccccc;
+	border-style: solid;
+	padding: 2px;
+	margin: 1px 0 0 0;
+	text-align: left;
+}
+
+div.wicket-aa ul {
+	list-style: none;
+	padding: 2px;
+	margin: 0;
+}
+
+div.wicket-aa ul li.selected {
+	background-color: #4e73df;
+	padding: 2px;
+	margin: 0;
+}
+
+div.wicket-aa ul li {
+	padding: 3.5px;
+}
+</style>
+</wicket:head>
+ 
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="row content my-4 richiesta-agevolazione">
+			<div class="col-md-12 text-start mb-4">
+				<div class="col-12">
+					<div class="col-12 alert alert-info" role="alert">
+						<wicket:message
+							key="Step2IstanzaPlDatiSpecificiIstanzaPanel.infoPagina" />
+					</div>
+				</div>
+
+				<div class="col-lg-12 mx-auto riepilogo">
+					<form class="needs-validation was-validated mb-3 col-lg-12 mx-auto"
+						wicket:id="form">
+						<div
+							class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici">
+
+							<div class="col-12">
+								<p class="text-start">
+									<span class="fw-bold"><wicket:message
+											key="Step2IstanzaPlDatiSpecificiIstanzaPanel.motivoScelto" />:</span>
+								</p>
+								<p class="text-start">
+									<span class="text-uppercase" wicket:id="motivoScelto"></span>
+								</p>
+
+
+								<wicket:enclosure child="labelNessunDatoRichiestoStep2">
+									<hr />
+									<p class="text-start">
+										<wicket:message
+											key="Step2IstanzaPlDatiSpecificiIstanzaPanel.nessunDatoRichiesto" />
+										<span class="text-capitalize"
+											wicket:id="labelNessunDatoRichiestoStep2"></span>
+									</p>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="labelVisualizzaCodice03">
+									<hr />
+									<p class="text-start">
+										<wicket:message
+											key="Step2IstanzaPlDatiSpecificiIstanzaPanel.03.introduzione1" />
+										<span class="text-capitalize"
+											wicket:id="labelVisualizzaCodice03"></span>
+									</p>
+
+									<div class="form-row mb-2 col-md-12 mx-auto">
+										<fieldset role="radiogroup"
+											aria-labelledby="autodichiarazionefff">
+											<div class="form-row mb-2">
+												<div class="mt-4 mb-2 text-start">
+													<h4 id="autodichiarazionefff">
+														<wicket:message
+															key="Step2IstanzaPlDatiSpecificiIstanzaPanel.03.autodichiarazione" />
+													</h4>
+													<span class="fw-bold"
+														wicket:id="autodichiarazioneFurto"></span>
+												</div>
+											</div>
+										</fieldset>
+									</div>
+
+									<div wicket:id="divDatiAutodichiarazione">
+										<h4 class="text-center col-12">
+											<wicket:message
+												key="Step2IstanzaPlDatiSpecificiIstanzaPanel.03.autodichiarazione.titolo" />
+										</h4>
+										<div
+											class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici">
+											<div class="form-row mb-2 col-md-12 mx-auto">
+												<p class="text-start">
+													<wicket:message
+														key="Step2IstanzaPlDatiSpecificiIstanzaPanel.03.autodichiarazione.testo" />
+												</p>
+											</div>
+											<!-- 											 -->
+
+
+											<div class="form-row mb-2 col-md-12 mx-auto">
+												<h4 class="text-center col-12">
+													<wicket:message
+														key="Step2IstanzaPlDatiSpecificiIstanzaPanel.03.autodichiarazione.dichiaro.titolo" />
+												</h4>
+											</div>
+
+											<div
+												class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici">
+												<div class="form-row mb-2 col-md-12 mx-auto">
+													<p class="text-start">
+														<wicket:message
+															key="Step2IstanzaPlDatiSpecificiIstanzaPanel.03.autodichiarazione.sottotitolo" />
+													</p>
+												</div>
+
+												<div class="form-row mb-2 col-md-12 mx-auto">
+													<!-- 													<div class="form-group col-md-3 mb-0">
+														<p class="text-start">
+															<wicket:message
+																key="Step2IstanzaPlDatiSpecificiIstanzaPanel.03.autodichiarazione.dichiaro.sottotitolo" />
+														</p>
+													</div>
+ -->
+													<div class="form-row mb-2 col-md-12 mx-auto">
+														<div class="row">
+															<div class="form-group col-md-4 mb-0">
+																<input class="form-control" id="autodichiarazioneTarga"
+																	type="text" placeholder="Targa"
+																	wicket:id="autodichiarazioneTarga"
+																	style="font-size: smaller;" pattern="[a-zA-Z0-9]+"
+																	required> <small> <wicket:message
+																		key="Step2IstanzaPlDatiSpecificiIstanzaPanel.03.autodichiarazione.targato" /></small>
+																<label class="sr-only" for="autodichiarazioneTarga">
+																	<wicket:message
+																		key="Step2IstanzaPlDatiSpecificiIstanzaPanel.03.autodichiarazione.targato" />
+																</label>
+															</div>
+
+															<div class="form-group col-md-4 mb-0" style="z-index: 1">
+																<div class="form-row mb-2 col-md-12 mx-auto">
+																	<input class="form-control" id="autodichiarazioneMarca"
+																		type="text" placeholder="Marca"
+																		wicket:id="autodichiarazioneMarca" required
+																		style="font-size: smaller;"> <small><wicket:message
+																			key="Step2IstanzaPlDatiSpecificiIstanzaPanel.03.autodichiarazione.marca" /></small>
+																	<label class="sr-only" for="autodichiarazioneMarca">
+																		<wicket:message
+																			key="Step2IstanzaPlDatiSpecificiIstanzaPanel.03.autodichiarazione.marca" />
+																	</label> <span class="autocomplete-icon" aria-hidden="true">
+																		<svg class="icon icon-sm">
+																	<use xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-search"></use></svg>
+																	</span>
+																</div>
+															</div>
+
+
+															<div class="form-group col-md-4 mb-0">
+																<input class="form-control" id="autodichiarazioneModello"
+																	type="text" placeholder="Modello"
+																	wicket:id="autodichiarazioneModello"
+																	style="font-size: smaller;" 
+																	required> <small> <wicket:message
+																		key="Step2IstanzaPlDatiSpecificiIstanzaPanel.03.autodichiarazione.modello" /></small>
+																<label class="sr-only" for="autodichiarazioneModello">
+																	<wicket:message
+																		key="Step2IstanzaPlDatiSpecificiIstanzaPanel.03.autodichiarazione.modello" />
+																</label>
+															</div>
+														</div>
+													</div>
+
+
+													<!-- 
+													<div class="form-group col-md-9 mb-0">
+														<p class="text-start">
+															<input class="form-control" id="autodichiarazioneTarga2"
+																type="text" placeholder="Targa"
+																wicket:id="autodichiarazioneTarga2"
+																style="font-size: smaller;"
+																pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+																required> <small> <wicket:message
+																	key="Step2IstanzaPlDatiSpecificiIstanzaPanel.03.autodichiarazione.targato" />
+															</small> <label class="sr-only" for="autodichiarazioneTarga2">
+																<wicket:message
+																	key="Step2IstanzaPlDatiSpecificiIstanzaPanel.03.autodichiarazione.targato" />
+															</label>
+														</p>
+													</div>
+ -->
+													<div class="form-row mb-2 col-md-12 mx-auto">
+														<div class="row">
+															<div class="form-group col-md-4 mb-0">
+																<p class="text-start" style="margin-top: 20px;">
+																	<wicket:message
+																		key="Step2IstanzaPlDatiSpecificiIstanzaPanel.03.autodichiarazione.dichiaro.rubatoindata" />
+																</p>
+															</div>
+															<div class="form-group col-md-8 mb-0">
+																<p class="text-start">
+																	<input class="form-control it-date-datepicker"
+																		id="furtoData" type="date"
+																		placeholder="Data in formato gg/mm/aaaa"
+																		wicket:id="furtoData" style="font-size: smaller;" required>
+																	<small><wicket:message
+																			key="Step2IstanzaPlDatiSpecificiIstanzaPanel.03.autodichiarazione.dichiaro.datafurto" /></small>
+																	<label class="sr-only" for="furtoData"> <wicket:message
+																			key="Step2IstanzaPlDatiSpecificiIstanzaPanel.03.autodichiarazione.dichiaro.datafurto" />
+																	</label>
+																</p>
+															</div>
+														</div>
+													</div>
+													<div class="form-row mb-2 col-md-12 mx-auto">
+														<fieldset role="radiogroup"
+															aria-labelledby="autodichiarazioneritrovamento">
+															<div class="form-row mb-2">
+																<div class="mt-4 mb-2 text-start">
+																	<h4 id="autodichiarazioneritrovamento">
+																		<wicket:message
+																			key="Step2IstanzaPlDatiSpecificiIstanzaPanel.03.autodichiarazione.dichiaro.ritrovato" />
+																	</h4>
+																	<span class="fw-bold"
+																		wicket:id="autodichiarazioneFurtoRitrovamento"></span>
+																</div>
+															</div>
+														</fieldset>
+
+
+														<div class="form-group col-md-9 mb-0">
+															<div class="form-servizi-anagrafici"
+																wicket:id="divDatiAutodichiarazioneRitrovamento">
+																<div class="form-row mb-2 col-md-12 mx-auto">
+																	<h4 class="text-center col-12">
+																		<wicket:message
+																			key="Step2IstanzaPlDatiSpecificiIstanzaPanel.03.autodichiarazione.dichiaro.sottotitolo2" />
+																	</h4>
+																</div>
+
+																<div class="form-row mb-2 col-md-12 mx-auto">
+																	<div class="form-group col-md-3 mb-0">
+																		<p class="text-start">
+																			<wicket:message
+																				key="Step2IstanzaPlDatiSpecificiIstanzaPanel.03.autodichiarazione.dichiaro.ritrovatoindata" />
+																		</p>
+																	</div>
+
+																	<div class="form-group col-md-9 mb-0">
+																		<input class="form-control it-date-datepicker"
+																			id="ritrovamentoData" type="date"
+																			placeholder="Data in formato gg/mm/aaaa"
+																			wicket:id="ritrovamentoData"
+																			style="font-size: smaller;" required> <small><wicket:message
+																				key="Step2IstanzaPlDatiSpecificiIstanzaPanel.03.autodichiarazione.dichiaro.dataritrovamento" /></small>
+																		<label class="sr-only" for="ritrovamentoData">
+																			<wicket:message
+																				key="Step2IstanzaPlDatiSpecificiIstanzaPanel.03.autodichiarazione.dichiaro.dataritrovamento" />
+																		</label>
+																	</div>
+																</div>
+
+																<div class="form-row mb-2 col-md-12 mx-auto">
+																	<div class="form-group col-md-3 mb-0">
+																		<p class="text-start">
+																			<wicket:message
+																				key="Step2IstanzaPlDatiSpecificiIstanzaPanel.03.autodichiarazione.dichiaro.riconsegnatopolizia" />
+																		</p>
+																	</div>
+																	<div class="form-group col-md-9 mb-0">
+																		<input class="form-control" id="riconsegnatoPolizia"
+																			type="text" placeholder="Forze dell'ordine"
+																			wicket:id="riconsegnatoPolizia"
+																			style="font-size: smaller;"
+																			
+																			required> <small> <wicket:message
+																				key="Step2IstanzaPlDatiSpecificiIstanzaPanel.03.autodichiarazione.dichiaro.riconsegnatopolizia" /></small>
+																		<label class="sr-only" for="riconsegnatoPolizia">
+																			<wicket:message
+																				key="Step2IstanzaPlDatiSpecificiIstanzaPanel.03.autodichiarazione.dichiaro.riconsegnatopolizia.info" />
+																		</label>
+																	</div>
+																</div>
+
+																<div class="form-row mb-2 col-md-12 mx-auto">
+																	<div class="form-group col-md-3 mb-0">
+																		<p class="text-start">
+																			<wicket:message
+																				key="Step2IstanzaPlDatiSpecificiIstanzaPanel.03.autodichiarazione.dichiaro.riconsegnatopoliziacomune" />
+																		</p>
+																	</div>
+																	<div class="form-group col-md-9 mb-0">
+																		<input class="form-control"
+																			id="riconsegnatoPoliziaComune" type="text"
+																			placeholder="Comune forze ordine"
+																			wicket:id="riconsegnatoPoliziaComune"
+																			style="font-size: smaller;"
+																			
+																			required> <small> <wicket:message
+																				key="Step2IstanzaPlDatiSpecificiIstanzaPanel.03.autodichiarazione.dichiaro.riconsegnatopoliziacomune" /></small>
+																		<label class="sr-only" for="riconsegnatoPoliziaComune">
+																			<wicket:message
+																				key="Step2IstanzaPlDatiSpecificiIstanzaPanel.03.autodichiarazione.dichiaro.riconsegnatopoliziacomune.info" />
+																		</label>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="labelVisualizzaCodice05">
+									<hr />
+									<p class="text-start">
+										<wicket:message
+											key="Step2IstanzaPlDatiSpecificiIstanzaPanel.05.introduzione1" />
+										<span class="text-capitalize"
+											wicket:id="labelVisualizzaCodice05"></span>
+									</p>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="labelVisualizzaCodice09">
+									<hr />
+									<p class="text-start">
+										<wicket:message
+											key="Step2IstanzaPlDatiSpecificiIstanzaPanel.09.introduzione1" />
+										<span class="text-capitalize"
+											wicket:id="labelVisualizzaCodice09"></span>
+									</p>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="labelVisualizzaCodice13">
+									<hr />
+									<p class="text-start">
+										<wicket:message
+											key="Step2IstanzaPlDatiSpecificiIstanzaPanel.13.introduzione1" />
+										<span class="text-capitalize"
+											wicket:id="labelVisualizzaCodice13"></span>
+
+									</p>
+									<div
+										class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici">
+										<div class="form-row mb-2 col-md-12 mx-auto">
+											<p class="text-start">
+												<wicket:message
+													key="Step2IstanzaPlDatiSpecificiIstanzaPanel.13.introduzione2" />
+											</p>
+										</div>
+									</div>
+									<div
+										class="form-row mb-2 col-md-12 mx-auto form-servizi-anagrafici">
+										<div class="form-row mb-2 col-md-12 mx-auto">
+											<fieldset role="radiogroup"
+												aria-labelledby="autodichiarazioneProprietarioETit">
+												<div class="form-row mb-2">
+													<div class="mt-4 mb-2 text-start">
+														<h4 id="autodichiarazioneProprietarioETit">
+															<wicket:message
+																key="Step2IstanzaPlDatiSpecificiIstanzaPanel.13.autodichiarazioneProprietarioETitolare" />
+														</h4>
+														<span class="fw-bold"
+															wicket:id="autodichiarazioneProprietarioETitolare"></span>
+													</div>
+												</div>
+												
+											</fieldset>
+										</div>
+										<div wicket:id="divSeNonProprietario">
+											<div class="form-row mb-2 col-md-12 mx-auto">
+												<p class="text-start">
+													<wicket:message
+														key="Step2IstanzaPlDatiSpecificiIstanzaPanel.13.proprietario.no.info1" />
+												</p>
+											</div>
+											<div class="form-row mb-2 col-md-12 mx-auto">
+												<p class="text-start">
+													<wicket:message
+														key="Step2IstanzaPlDatiSpecificiIstanzaPanel.13.proprietario.no.info2" />
+												</p>
+											</div>
+										</div>
+									</div>
+								</wicket:enclosure>
+								
+								<wicket:enclosure child="nonProprietarioPanel">
+									<div wicket:id="nonProprietarioPanel"></div>
+								</wicket:enclosure>
+								
+								<wicket:enclosure child="targaErrataPanel">
+									<div wicket:id="targaErrataPanel"></div>
+								</wicket:enclosure>
+								
+							</div>
+						</div>
+
+						<div class="col-12">
+							<div class="col-12 alert alert-info" role="alert">
+								<wicket:message
+									key="Step2IstanzaPlDatiSpecificiIstanzaPanel.infoBottoni" />
+							</div>
+						</div>
+						<div class="form-group col-md-12 mb-3 text-center">
+							<div class="form-group col-md-12 mb-3 text-center">
+								<a class="btn btn-primary" href="#" role="button"
+									wicket:id="avanti"> <wicket:message
+										key="Step2IstanzaPlDatiSpecificiIstanzaPanel.avanti" />
+								</a> <a class="btn btn-secondary" href="#" role="button"
+									wicket:id="indietro"> <wicket:message
+										key="Step2IstanzaPlDatiSpecificiIstanzaPanel.indietro" />
+								</a> <a class="btn btn-secondary" href="#" role="button"
+									wicket:id="annulla"> <wicket:message
+										key="Step2IstanzaPlDatiSpecificiIstanzaPanel.annulla" />
+								</a>
+							</div>
+						</div>
+
+					</form>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

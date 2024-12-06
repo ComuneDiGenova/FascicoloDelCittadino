@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:extend>
+
+		<div class="row">
+		
+				<div class="form-group col-md-6">
+					<div class="select-wrapper" style="margin-top: 30px;">
+						<label> <wicket:message key="MioISEEPanel.componenteNucleo" />
+						</label><select wicket:id="componenteNucleo"></select>
+					</div>
+				</div>
+				<div class="form-group col-md-6">
+					<div class="select-wrapper" style="margin-top: 30px;">
+						<label> <wicket:message key="MioISEEPanel.indicatore" />
+						</label><select wicket:id="indicatore"></select>
+					</div>
+				</div>
+			
+		
+		</div>
+	
+		<div class="row">
+			<div class="form-group col-md-12 text-center">
+				<button type="button" class="btn btn-primary" wicket:id="btnCerca">Cerca</button>
+			</div>
+		</div>
+
+
+
+		<div class="row content my-12 info-traffico" wicket:id="risultatoISEE">
+
+			<div class="col-lg-12 mb-4">
+
+				<div class="categoryicon-top row mb-2">
+					<i class="color-yellow col-3 icon-isee"></i>
+				</div>
+
+				<div wicket:id="ISE"></div>
+
+				<div wicket:id="scalaEquivalenza"></div>
+
+				<div wicket:id="ISEE"></div>
+
+				<div wicket:id="ISR"></div>
+
+				<div wicket:id="ISP"></div>
+
+				<div wicket:id="dataPresentazione"></div>
+
+				<div wicket:id="protocolloDSU"></div>
+
+				<div wicket:id="codiceFiscale"></div>
+
+				<div wicket:id="dataValidita"></div>
+				
+			</div>
+		</div>
+
+		<div class="row content my-12 info-traffico"
+			wicket:id="nessunRisultatoISEE">
+
+			<div class="col-lg-12 mb-4">
+				<div class="alert alert-danger" role="alert">
+					Nessun ISEE presente per i parametri selezionati.
+				</div>
+
+				
+			</div>
+		</div>
+
+
+	</wicket:extend>
+</body>
+
+</html>

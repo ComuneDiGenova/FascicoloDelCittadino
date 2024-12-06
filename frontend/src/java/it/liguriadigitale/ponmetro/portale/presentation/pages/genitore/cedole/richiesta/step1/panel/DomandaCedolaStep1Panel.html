@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>
+
+		<div class="container">
+			<div class="card-wrapper">
+				<div class="card">
+					<div class="card-body">
+						<div class="form-servizi-anagrafici">
+
+							<form
+								class="needs-validation was-validated mb-3 col-lg-12 mx-auto"
+								wicket:id="form">
+
+								<div class="form-row col-md-12" style="margin-bottom: 30px;">
+									<h4 class="col-12">
+										<wicket:message key="DomandaCedolaStep1Panel.spiegazione" />
+										<span wicket:id="annoScolastico"></span>
+									</h4>
+								</div>
+
+								<div class="form-row col-12">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<div class="select-wrapper">
+													<label> <wicket:message
+															key="DomandaCedolaStep1Panel.scuola" />
+													</label><select wicket:id="comboScuola"></select>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<div class="select-wrapper">
+													<label> <wicket:message
+															key="DomandaCedolaStep1Panel.classe" />
+													</label><select wicket:id="comboClasse" required></select>
+												</div>
+											</div>										
+										</div>
+									</div>
+									
+
+								</div>
+								<br> <br>
+								<div class="form-row col-12">
+									<div class="row">
+										<div class="col-md-6">
+											<div wicket:id="indirizzo"></div>
+										</div>
+										<div class="col-md-6">
+											<div wicket:id="comune"></div>
+										</div>
+									</div>
+								</div>
+
+								<div class="form-row col-12">
+									<div class="row">
+										<div class="col-md-6">
+											<div wicket:id="cap"></div>
+										</div>
+										
+									</div>
+								</div>
+								<div class="form-row col-12">
+									<div class="row">
+										<div class="col-md-6">
+											<div wicket:id="email"></div>
+										</div>
+										<div class="col-md-6">
+												<div wicket:id="telefono"></div>
+										</div>
+									</div>
+								</div>
+
+								<wicket:enclosure child="containerLibroReligione">
+									<div class="form-row mb-12" wicket:id="containerLibroReligione">
+										<div class="form-group col-md-6">
+											<div class="select-wrapper">
+												<label> <wicket:message
+														key="PrenotazioneCedolaPanel.libroReligione" />
+												</label><select wicket:id="libroReligione"></select>
+											</div>
+										</div>
+										<div class="form-group col-md-6 alert alert-info"><wicket:message key="PrenotazioneCedolaPanel.infoLibroReligione"/> </div>
+									</div>									
+								</wicket:enclosure>
+
+								<div class="form-row mb-12" wicket:id="containerInfoNoReligione">
+									<div class="alert alert-info" role="alert">
+										<wicket:message key="PrenotazioneCedolaPanel.infoNoReligione" />
+									</div>
+								</div>
+
+								<div class="form-group col-md-12 mb-3 text-center">
+									<div class="form-group col-md-12 mb-3 text-center">
+										<button type="submit" class="btn btn-primary">
+											<wicket:message key="DomandaCedolaStep1Panel.avanti" />
+										</button>
+
+										<button type="button" class="btn btn-secondary"
+											wicket:id="annulla">
+											<wicket:message key="DomandaCedolaStep1Panel.annulla" />
+										</button>
+									</div>
+								</div>
+
+
+
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+	</wicket:panel>
+
+</body>
+</html>

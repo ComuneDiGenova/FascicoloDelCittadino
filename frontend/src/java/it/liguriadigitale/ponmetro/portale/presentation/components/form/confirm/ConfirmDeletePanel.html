@@ -1,0 +1,26 @@
+ <?xml version="1.0" encoding="UTF-8" ?>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Tab Riepilogo e Validazione</title>
+</head>
+<body>
+	<wicket:panel>		
+		<div class="alert alert-danger col-home" role="alert">
+			<div class='lb-form-control'>
+				<span wicket:id="message"></span>
+			</div>
+			<div class="row">
+				<div class='col-md-2 col-md-offset-5'>
+					<button wicket:id="confirm"  type="submit" class="btn btn-danger btn-sm" >
+						<i class="glyphicon glyphicon-ok"></i> <wicket:message key="ConfirmDeletePanel.confirm"/>
+					</button>
+					<button wicket:id="cancel"  type="submit" class="btn btn-danger btn-sm" >
+						<i class="glyphicon glyphicon-remove"></i> <wicket:message key="ConfirmDeletePanel.cancel"/>
+					</button>
+				</div>
+			</div>
+		</div>
+	</wicket:panel>
+</body>
+</html>

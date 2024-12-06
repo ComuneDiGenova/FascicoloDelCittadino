@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>
+		<div class="row content my-4 info-traffico">
+			<div class="col-lg-6 mb-4" wicket:id="lista">
+
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+
+							<div wicket:id="PRAVAPROTCODTIPOPROTOCOLLO"></div>
+
+							<div wicket:id="PRANPROTNUMERO"></div>
+
+							<div wicket:id="PRANPROTANNO"></div>	
+							
+							<div wicket:id="TPAADESCRPRATICA"></div>
+							
+							<div wicket:id="PRAVAOGGETTO"></div>
+							
+							<div wicket:id="PRADPROTRICHIESTA"></div>
+
+							<div wicket:id="PRADPROTINGRESSOCOMUNE"></div>
+
+							<div wicket:id="PRADPROTIMMISSIONE"></div>
+
+							<div wicket:id="PRAVAPRATICACHIUSA"></div>
+
+
+							<button type="button" class="btn btn-primary"
+								wicket:id="btnDettaglio">
+								<wicket:message key="ElencoPratichePanel.btnDettaglio" />
+							</button>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div wicket:id="feedback"></div>
+		<div wicket:id="pagination"></div>
+	</wicket:panel>
+</body>
+</html>

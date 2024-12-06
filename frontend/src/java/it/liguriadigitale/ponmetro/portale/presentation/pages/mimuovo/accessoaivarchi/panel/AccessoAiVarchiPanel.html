@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="alert alert-warning col-12" role="alert"
+			wicket:id="listaVarchiVuota">
+			<wicket:message key="AccessoAiVarchiPanel.listaVarchiVuota" />
+			</div>
+
+		<div class="row content my-4 info-traffico">
+
+			<div class="col-lg-6 mb-4" wicket:id="box">
+
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="color-cyan col-3 icon-genova-pass"></i>
+
+								<h4 class="card-title text-start col-9 font-weight-normal">
+									<span class="text-capitalize fw-bold" wicket:id="gate"></span>
+									<br />
+								</h4>
+							</div>
+
+							<div wicket:id="transitDate"></div>
+
+							<div wicket:id="transitPlate"></div>
+
+							<div wicket:id="permitCode"></div>
+
+							<div wicket:id="categoryDescription"></div>
+
+							<div wicket:id="zoneDescription"></div>
+
+							<div wicket:id="permitType"></div>
+
+							<div wicket:id="permitStatusDescription"></div>
+
+							<wicket:enclosure child="boxAzioni">
+								<div wicket:id="boxAzioni">
+									<span wicket:id="btnAzione"></span>
+								</div>
+							</wicket:enclosure>
+
+							<div class="row">
+								<wicket:enclosure child="btnMieiVerbali">
+									<div class="col-sm-6 mt-2 mb-2">
+										<button class="btn btn-outline-primary">
+											<span wicket:id="btnMieiVerbali"></span>
+										</button>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="btnRichiediZtl">
+									<div class="col-sm-6 mt-2 mb-2">
+										<button class="btn btn-outline-primary">
+											<span wicket:id="btnRichiediZtl"></span>
+										</button>
+									</div>
+								</wicket:enclosure>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div wicket:id="paginationVarchi"></div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

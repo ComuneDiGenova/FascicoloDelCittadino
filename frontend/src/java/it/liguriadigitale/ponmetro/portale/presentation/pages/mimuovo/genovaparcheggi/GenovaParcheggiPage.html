@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<body>
+	<wicket:extend>
+
+		<div wicket:id="breadcrumbPanel"></div>
+
+		<div wicket:id="legendaPanel"></div>
+
+		<div wicket:id="messaggiInformativi"></div>
+
+		<wicket:enclosure child="btnDomandaAreaBlu">
+			<div class="col-sm-12 mt-2 mb-2">
+				<button class="btn btn-outline-primary">
+					<span wicket:id="btnDomandaAreaBlu"></span>
+				</button>
+			</div>
+		</wicket:enclosure>
+
+		<div class="col-12" wicket:id="genovaParcheggiPanel"></div>
+
+		<wicket:child />
+
+	</wicket:extend>
+</body>
+</html>

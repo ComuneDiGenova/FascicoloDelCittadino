@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<wicket:enclosure child="soggettoA">
+			<hr />
+			<h6>
+				<span wicket:id="soggettoA"></span>
+			</h6>
+
+			<div class="row mb-6">
+				<div class="col-6">
+					<p class="card-text text-center font-weight-semibold">
+						<a class="icon-casa btn btn-primary btn-icon"
+							wicket:id="buttonImu"> <span><wicket:message
+									key="SoggettoAPanel.imu" /></span>
+						</a>
+					</p>
+				</div>
+
+				<div class="col-6">
+					<p class="card-text text-center font-weight-semibold">
+						<a class="icon-cassonetto btn btn-primary btn-icon"
+							wicket:id="buttonTari"> <span><wicket:message
+									key="SoggettoAPanel.tari" /></span>
+						</a>
+					</p>
+				</div>
+			</div>
+		</wicket:enclosure>
+
+		<wicket:enclosure child="soggettoACosa">
+			<div class="row py-1 mb-2 border-bottom">
+				<div class="col-5">
+					<p class="card-text text-left font-weight-semibold">
+						<wicket:message key="SoggettoAPanel.soggettoATitolo" />
+					</p>
+				</div>
+				<div class="col-7">
+					<p class="card-text text-left d-table h-100">
+						<span class="d-table-cell text-capitalize align-middle"
+							wicket:id="soggettoACosa"></span>
+					</p>
+				</div>
+			</div>
+		</wicket:enclosure>
+
+
+	</wicket:panel>
+</body>
+
+</html>

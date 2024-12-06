@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="row content my-4 richiesta-agevolazione">
+			<div class="col-md-12 text-start mb-4">
+
+				<h4 class="col-12">
+					<wicket:message key="ConfermaDatiPanel.titolo" />
+				</h4>
+
+				<div class="col-lg-12 mx-auto riepilogo">
+					<div class="col-md-12 text-start mb-4">
+						<div class="alert alert-info fw-bold" role="alert">
+							<wicket:message key="ConfermaDatiPanel.info" />
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-12 mb-4">
+
+					<div class="card-wrapper">
+						<div class="card card-bg my-2">
+							<div class="card-body">					
+
+								<wicket:enclosure child="idPratica">
+									<div class="row py-1 mb-2">
+										<div class="col-6">
+											<p class="card-text text-start fw-bold">
+												<wicket:message key="ConfermaDatiPanel.idPratica" />
+											</p>
+										</div>
+										<div class="col-6" style="word-break: break-word;">
+											<p class="card-text text-start d-table h-100">
+												<span class="d-table-cell text-capitalize align-middle"
+													wicket:id="idPratica"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="tipoPratica">
+									<div class="row py-1 mb-2">
+										<div class="col-6">
+											<p class="card-text text-start fw-bold">
+												<wicket:message key="ConfermaDatiPanel.tipoPratica" />
+											</p>
+										</div>
+										<div class="col-6" style="word-break: break-word;">
+											<p class="card-text text-start d-table h-100">
+												<span class="d-table-cell text-capitalize align-middle"
+													wicket:id="tipoPratica"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="dataRichiesta">
+									<div class="row py-1 mb-2">
+										<div class="col-6">
+											<p class="card-text text-start fw-bold">
+												<wicket:message key="ConfermaDatiPanel.dataRichiesta" />
+											</p>
+										</div>
+										<div class="col-6" style="word-break: break-word;">
+											<p class="card-text text-start d-table h-100">
+												<span class="d-table-cell text-capitalize align-middle"
+													wicket:id="dataRichiesta"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>
+
+								<wicket:enclosure child="nuovoIndirizzo">
+									<div class="row py-1 mb-2">
+										<div class="col-6">
+											<p class="card-text text-start fw-bold">
+												<wicket:message key="ConfermaDatiPanel.nuovoIndirizzo" />
+											</p>
+										</div>
+										<div class="col-6" style="word-break: break-word;">
+											<p class="card-text text-start d-table h-100">
+												<span class="d-table-cell text-capitalize align-middle"
+													wicket:id="nuovoIndirizzo"></span>
+											</p>
+										</div>
+									</div>
+								</wicket:enclosure>
+
+								<div class="it-list-wrapper">
+
+									<p class="card-text text-start fw-bold">
+										<wicket:message key="ConfermaDatiPanel.individui" />
+									</p>
+
+									<ul class="it-list" wicket:id="listaIndividui">
+
+										<li class="li-anagrafici">
+											<div class="it-rounded-icon">
+												<svg class="icon">
+            <use xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-user"></use>
+          </svg>
+											</div>
+											<div class="it-right-zone" style="text-align: left;">
+												<span class="text" wicket:id="nominativoIndividuo"></span>
+											</div>
+										</li>
+									</ul>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-12 mx-auto riepilogo">
+					<form class="mb-3 col-lg-12 mx-auto"
+						onsubmit="return checkForm(this);" wicket:id="form">
+
+						<div class="col-lg-12 mx-auto riepilogo">
+							<div class="col-md-12 text-start mb-4">
+								<div class="alert alert-info fw-bold" role="alert">
+									<wicket:message key="ConfermaDatiPanel.infoBottoni" />
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group col-md-12 mb-3 text-center">
+							<div class="form-group col-md-12 mb-3 text-center">
+								<a class="btn btn-primary" href="#" role="button"
+									wicket:id="avanti"> <wicket:message
+										key="CaricaDocumentiPanel.avanti" />
+								</a> <a class="btn btn-secondary" href="#" role="button"
+									wicket:id="sospendi"> <wicket:message
+										key="ConfermaDatiPanel.sospendi" />
+								</a>
+							</div>
+						</div>
+
+					</form>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback5"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

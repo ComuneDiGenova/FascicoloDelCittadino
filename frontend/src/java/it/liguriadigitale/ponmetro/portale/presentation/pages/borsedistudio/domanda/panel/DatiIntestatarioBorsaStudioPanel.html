@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+
+		<div class="alert alert-warning" role="alert" wicket:id="containerIseeNonPresente">
+			<wicket:message key="DatiIntestatarioBorsaStudioPanel.iseeNonPresente" />
+		</div>
+
+		<div class="alert alert-warning" role="alert" wicket:id="containerIseeDifformita">
+			<wicket:message key="DatiIntestatarioBorsaStudioPanel.iseeDifformita" />
+		</div>
+
+		<div class="alert alert-warning" role="alert" wicket:id="containerNonAccetto">
+			<wicket:message key="DatiIntestatarioBorsaStudioPanel.nonAccetto" />
+		</div>
+
+		<div class="alert alert-warning" role="alert" wicket:id="containerAccetto">
+			<wicket:message key="DatiIntestatarioBorsaStudioPanel.accetto" />
+		</div>
+
+		<div class="alert alert-warning" role="alert" wicket:id="containerNucleoIseeDiversoNucleoAnagrafico">
+			<wicket:message key="DatiIntestatarioBorsaStudioPanel.containerNucleoIseeDiversoNucleoAnagrafico" />
+
+			<div>
+				<p>
+					<wicket:message key="DatiIntestatarioBorsaStudioPanel.listaComponentiIsee" />
+				</p>
+
+				<div class="col-lg-6 mb-4" wicket:id="listaNucleoIsee">
+					<ul>
+						<li wicket:id="nominativoIsee"></li>
+					</ul>
+				</div>
+			</div>
+
+			<div>
+				<p>
+					<wicket:message key="DatiIntestatarioBorsaStudioPanel.listaComponentiAnagrafe" />
+				</p>
+
+				<div class="col-lg-6 mb-4" wicket:id="listaNucleoAnagrafe">
+					<ul>
+						<li wicket:id="nominativoAnagrafe"></li>
+					</ul>
+				</div>
+			</div>
+
+			<p>
+				<wicket:message key="DatiIntestatarioBorsaStudioPanel.accettazioneNuclei" />
+			</p>
+
+			<div class="form-row mb-12">
+				<div class="select-wrapper text-left">
+					<select wicket:id="accettazioneNucleiSiNo"></select>
+				</div>
+			</div>
+
+			<br>
+
+			<wicket:message key="DatiIntestatarioBorsaStudioPanel.sitoInps" />
+
+		</div>
+
+		<div class="alert alert-warning mb-3" role="alert" wicket:id="containerIntestatarioLoggato">
+			
+			<p><wicket:message key="DatiIntestatarioBorsaStudioPanel.infoIntestatarioLoggato" /></p>
+
+			<div class="form-row mb-12">
+				<div class="select-wrapper text-left">
+					<label wicket:id="lblAccettazioneIntestatario"><wicket:message key="DatiIntestatarioBorsaStudioPanel.accettazioneIntestatario" /></label>
+					<select autocomplete="off" wicket:id="accettazioneIntestatarioSiNo"></select>
+				</div>
+			</div>
+
+			<br>
+
+
+		</div>
+		<br>
+
+		<div class="form-row col-12" wicket:id="containerDati">
+
+			<div class="row">
+				<div class="form-group col-md-6">
+					<div class="select-wrapper">
+						<label wicket:id="lblnucleoAnagrafe" class="text-wrap lh-1" style="position: relative;
+    top: 10px;">
+							<wicket:message key="DatiIntestatarioBorsaStudioPanel.nucleoAnagrafe" />
+						</label><select autocomplete="off" wicket:id="nucleoAnagrafe"></select>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div wicket:id="nomeIntestatarioBorsa"></div>
+				</div>
+
+				<div class="col-md-6">
+					<div wicket:id="cognomeIntestatarioBorsa"></div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div wicket:id="codiceIntestatarioBorsa"></div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="form-row col-12" wicket:id="containerDatiIseeIntestatario">
+
+			<div class="row">
+				<div class="col-md-6">
+					<div wicket:id="importoIsee"></div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div wicket:id="dataPresentazioneIsee"></div>
+				</div>
+
+				<div class="col-md-6">
+					<div wicket:id="dataValiditaIsee"></div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div wicket:id="iseeDifformeValue"></div>
+				</div>
+			</div>
+
+		</div>
+
+
+	</wicket:panel>
+
+</body>
+
+</html>

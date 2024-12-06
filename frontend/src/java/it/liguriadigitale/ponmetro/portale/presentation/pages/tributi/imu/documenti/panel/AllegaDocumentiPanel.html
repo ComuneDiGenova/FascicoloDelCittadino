@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel class="form-card-speciali">
+		<div class="row mb-2 mx-auto" wicket:id="titolo">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+				<h4 class="text-center text-uppercase font-weight-semibold">
+					<wicket:message key="AllegaDocumentiPanel.titolo" />
+				</h4>
+			</div>
+		</div>
+
+		<div class="row mb-2 mx-auto" wicket:id="titoloReadOnly">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+				<h4 class="text-center text-uppercase font-weight-semibold">
+					<wicket:message key="AllegaDocumentiPanel.titoloReadOnly" />
+				</h4>
+			</div>
+		</div>
+
+		<div class="row" wicket:id="containerLink">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+				<div class="alert alert-info" role="alert">
+					<div class="d-flex flex-column">
+						<div>
+							<h5 class="font-weight-bold text-uppercase">
+								<wicket:message key="AllegaDocumentiPanel.elencoAllegati"></wicket:message>
+							</h5>
+						</div>
+
+						<div>
+							<ul>
+								<li><wicket:message
+										key="AllegaDocumentiPanel.versamentiTributari"></wicket:message></li>
+								<li><a wicket:id="autocertificazionErediLink"></a></li>
+								<li><a wicket:id="linkDelegaRiscossione"></a></li>
+								<li><wicket:message
+										key="AllegaDocumentiPanel.documentoDelegato"></wicket:message></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row mb-4">
+			<div class="col-lg-4 col-sm-4 col-md-4 col-xl-4">
+				<a class="btn btn-primary" wicket:id="btnAggiungi"> <wicket:message
+						key="AllegaDocumentiPanel.aggiungi" />
+				</a>
+			</div>
+		</div>
+		<div class="row form-card-speciali" wicket:id="containerCaricaFile">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+
+				<div class="row">
+					<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+						<label for="tipoAllegato" class="font-weight-bold"> <wicket:message
+								key="AllegaDocumentiPanel.tipoAllegato"></wicket:message>
+						</label> <span wicket:id="tipoAllegato" id="tipoAllegato"></span>
+					</div>
+				</div>
+				<div class="row mb-1" wicket:id="containerAltro">
+					<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+						<label for="altro" class="font-weight-bold"> <wicket:message
+								key="AllegaDocumentiPanel.altro"></wicket:message>
+						</label><input type="text" wicket:id="altro" class="form-control"
+							id="altro" />
+					</div>
+				</div>
+				<div class="row mb-1">
+					<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+						<form wicket:id="formFileAllegato">
+							<span class="font-weight-bold"><wicket:message
+									key="AllegaDocumentiPanel.inserisciFile" /></span> <br></br> <input
+								type="file" name="fileAllegatoUpload" id="fileAllegatoUpload"
+								class="upload" wicket:id="fileAllegatoUpload"
+								accept=".pdf, .jpg" /> <label for="fileAllegatoUpload">
+								<svg class="icon icon-sm" aria-hidden="true">
+			                        		<use
+										xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-upload"></use>
+			                    		</svg> <span>Upload allegato</span>
+							</label>
+
+							<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12"
+								wicket:id="containerFile">
+								<ul class="upload-file-list">
+									<li class="upload-file success" style="max-width: 100%;"><svg
+											class="icon icon-sm" aria-hidden="true">
+					                                <use
+												xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+					                            </svg>
+										<p>
+											<span class="sr-only">File caricato:</span> <span
+												wicket:id="nomeFile"></span><span class="upload-file-weight"
+												wicket:id="dimensioneFile"></span>
+										</p>
+
+										<button>
+											<svg class="icon" aria-hidden="true" style="fill: #d9364f;"
+												wicket:id="eliminaFile">
+					                                    <use
+													xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-close"></use>
+					                                    <title>Elimina file</title>
+	                                				</svg>
+										</button></li>
+								</ul>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12 p-1">
+						<medium> <wicket:message
+							key="AllegaDocumentiPanel.consigli" /></medium>
+					</div>
+				</div>
+				<form wicket:id="insertFile">
+					<div class="row">
+						<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+							<div class="d-flex justify-content-end" style="gap: 5px">
+								<div>
+									<a wicket:id="btnSalva" class="btn btn-primary"
+										style="min-width: 100px"> <wicket:message
+											key="AllegaDocumentiPanel.salva" />
+									</a>
+								</div>
+								<div>
+									<wicket:enclosure child="btnAnnulla">
+										<a class="btn btn-danger" wicket:id="btnAnnulla"
+											style="min-width: 100px"> <wicket:message
+												key="AllegaDocumentiPanel.annulla" />
+										</a>
+									</wicket:enclosure>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div class="row" wicket:id="listaVuota">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+				<div class="alert alert-warning" role="alert">
+					<span><wicket:message key="AllegaDocumentiPanel.listaVuota" /></span>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row" wicket:id="containerElencoDocumenti">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+				<div class="row">
+					<div class="col-md-5 col-lg-5 col-sm-5 col-xl-5 mb-2"
+						wicket:id="listview">
+						<div class="card-wrapper">
+							<div class="card card-bg my-auto mb-2">
+								<div class="card-body">
+									<div class="categoryicon-top row mb-2">
+										<i class="" wicket:id="icona"></i>
+									</div>
+
+									<div wicket:id="tipoDocumento"></div>
+									<div wicket:id="nomeFile" style="word-wrap: break-word"></div>
+
+									<div class="row">
+										<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12 mt-2 mb-2">
+											<div class="d-flex justify-content-center" style="gap: 5px">
+												<div>
+													<form wicket:id="formElimina">
+														<div wicket:id="modalViewPanel"></div>
+														<button class="btn btn-danger" wicket:id="eliminaAllegato">
+															<svg class="icon" aria-hidden="true" style="fill: #fff;">
+					                                    <use
+																	xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-close"></use>
+					                                    <title>Elimina file</title>
+	                                				</svg>
+															<wicket:message
+																key="AllegaDocumentiPanel.eliminaDocumento" />
+														</button>
+													</form>
+												</div>
+												<div>
+													<a class="btn btn-success" wicket:id="downloadFile"> <svg
+															style="fill: #fff;" class="icon" aria-hidden="true">
+					                                    <use
+																xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-download"></use>
+					                                    <title>Download file</title>
+	                                				</svg> <wicket:message
+															key="AllegaDocumentiPanel.scaricaDocumento" />
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12 mt-2 mb-2">
+
+						<div class="col-12 mt-1" wicket:id="pagination"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row mb-2" wicket:id="containerInvia">
+			<div
+				class="col-md-12 col-lg-12 col-sm-12 col-xl-12 d-flex justify-content-center">
+				<form wicket:id="formInvia">
+					<button type="button" class="btn btn-primary" wicket:id="invia">
+						<wicket:message key="AllegaDocumentiPanel.invia" />
+					</button>
+
+					<button type="button" class="btn btn-secondary" wicket:id="annulla">
+						<wicket:message key="AllegaDocumentiPanel.annulla" />
+					</button>
+
+				</form>
+			</div>
+		</div>
+
+		<div class="row mb-2" wicket:id="containerEsito">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+				<div class="alert alert-success text-center" role="alert">
+					<h3>
+						<wicket:message key="AllegaDocumentiPanel.inviataSuccesso" />
+					</h3>
+				</div>
+			</div>
+		</div>
+
+		<div style="z-index: 21"
+			class="notification dismissable with-icon success" role="alert"
+			id="notificationDismTopFix" aria-labelledby="notificationDismTopFix"
+			wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+</html>

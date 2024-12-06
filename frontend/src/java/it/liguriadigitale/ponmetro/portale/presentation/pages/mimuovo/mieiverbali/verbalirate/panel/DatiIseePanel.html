@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<wicket:panel>
+
+		<div class="row" wicket:id="iseeNonPresente">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+				<div class="alert alert-info" role="alert">
+					<label wicket:id="differenzaGiorni"></label>
+				</div>
+			</div>
+		</div>
+
+		<div class="row" wicket:id="superamentoISEEAlert">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+				<div class="alert alert-danger" role="alert">
+					<wicket:message key="DatiIseePanel.superamentoISEE" />
+				</div>
+			</div>
+		</div>
+
+		<div class="row" wicket:id="containerDati">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+				<div class="row mb-4">
+					<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+						<h4>
+							<wicket:message key="DatiIseePanel.titolo" />
+						</h4>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6 col-lg-6 col-sm-6 col-xl-6">
+						<div wicket:id="importo"></div>
+					</div>
+					<div class="col-md-6 col-lg-6 col-sm-6 col-xl-6">
+					    <div wicket:id="numeroComponenti"></div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6 col-lg-6 col-sm-6 col-xl-6">
+						<div wicket:id="dataISEE"></div>
+					</div>
+					<div class="col-md-6 col-lg-6 col-sm-6 col-xl-6">
+						<div wicket:id="anno"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</wicket:panel>
+
+
+</body>
+</html>

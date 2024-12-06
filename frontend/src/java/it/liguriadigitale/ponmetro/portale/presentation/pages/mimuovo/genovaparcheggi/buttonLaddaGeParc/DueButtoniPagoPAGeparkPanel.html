@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+	
+		<style>
+			.brPerMobile{ display: none; }
+			@media only screen and (max-width: 600px) {
+				.brPerMobile{
+					display:block!important;
+					
+				}
+					 
+			}
+		</style>
+
+		<div class="row col-12">
+			<div class="col-6">
+				<span wicket:id="btnAzioneLaddaScaricaAvviso"></span>
+			</div>
+			<span class="brPerMobile">
+				<br> <br> <br> 
+			</span>
+			
+			<div class="col-6">
+				<a style="min-width: 200px;" wicket:id="btnAzioneLaddaPagoPa" class="btn btn-primary" href="#"
+					role="button"><wicket:message
+						key="DueButtoniPagoPAGeparkPanel.paga" /></a>
+			</div>
+		</div>
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+	</wicket:panel>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<wicket:panel>
+	<div class="col-lg-6 mb-4" >
+		<!--start card-->
+		<div class="card-wrapper">
+			<div class="card card-bg my-2">
+				<div class="card-body">
+					<div class="categoryicon-top row mb-4">
+						<i class="color-orange col-3 icon-famiglia"></i>
+						<h4 class="card-title text-start font-weight-bold col-9"><wicket:message key="MieiFigliPanel.titolo"/></h4>
+					</div>
+					<div class="container">
+						<!-- scheda convivente -->
+						<div class="miei-figli border-top py-3" wicket:id="listaConviventi">
+							<div class="row mb-2">
+								<div class="col-6">
+									<p class="card-text text-start fw-bold">Parentela:</p>
+								</div>
+								<div class="col-6">
+									<p class="card-text text-start"><span class="fw-bold" wicket:id="parentela"></span></p>
+								</div>
+							</div>
+							<div class="row mb-2">
+								<div class="col-6">
+									<p class="card-text text-start fw-bold"><wicket:message key="MieiFigliPanel.nome"/>:</p>
+								</div>
+								<div class="col-6">
+									<p class="card-text text-start"><span class="text-capitalize fw-bold" wicket:id="nome"></span></p>
+								</div>
+							</div>
+							
+							<div class="row mb-2">
+								<div class="col-6">
+									<p class="card-text text-start fw-bold"><wicket:message key="MieiFigliPanel.codiceFiscale"/>:</p>
+								</div>
+								<div class="col-6">
+									<p class="card-text text-start"><span class="text-capitalize" wicket:id="cf"></span></p>
+								</div>
+							</div>
+							<div class="row mb-2">
+								<div class="col-6">
+									<p class="card-text text-start fw-bold"><wicket:message key="MieiFigliPanel.residente"/>:</p>
+								</div>
+								<div class="col-6">
+									<p class="card-text text-start"><span class="text-capitalize" wicket:id="residente"></span></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-6">
+									<p class="card-text text-start fw-bold"><wicket:message key="MieiFigliPanel.fonteDati"/>:</p>
+								</div>
+								<div class="col-6">
+									<p class="card-text text-start"><span class="text-capitalize" wicket:id="fonteDati"></span></p>
+								</div>
+							</div>
+						</div>
+						<!-- scheda convivente END-->
+						<div class="row mb-2">
+							<div class="col-12">
+								<div wicket:id="feedback"></div>
+							</div>
+						</div>
+						<!-- scheda check -->
+						<div class="row mt-2">
+							<div class="col-12">
+								<div class="form-check-relazione">
+								<wicket:enclosure child="infoLink">
+									<small id="checkbox-help" class="form-text"><wicket:message key="MieiFigliPanel.info"/>
+										<a href="#" wicket:id="infoLink"><wicket:message key="MieiFigliPanel.infoLink"/></a>
+									</small>
+								</wicket:enclosure>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--end card-->
+	</div>
+</wicket:panel>
+</body>
+</html>

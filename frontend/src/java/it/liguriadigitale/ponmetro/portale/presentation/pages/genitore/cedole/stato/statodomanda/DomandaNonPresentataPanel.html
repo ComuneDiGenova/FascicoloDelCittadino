@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>
+		<div class="row py-1 mb-2 border-bottom">
+			<div class="col-6">
+				<p class="card-text text-left font-weight-semibold">				
+				</p>
+			</div>
+			<div class="col-6">
+				<p class="card-text text-left d-table h-100">				
+				</p>
+			</div>
+		</div>
+		
+		<!--  <div class="row py-1 mb-2 border-bottom">
+			<div class="col-12">
+				<a class="btn btn-primary btn-xs" href="#" role="button" wicket:id="nuova"> 
+					<wicket:message	key="DomandaNonPresentataPanel.nuova" />
+				</a> 
+			</div>
+		</div>-->
+		
+		
+		<wicket:enclosure child="nuova">
+			<div class="col-lg-6 mb-4">
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="card-icon mt-4 mb-1">
+								<span wicket:id="nuova"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</wicket:enclosure>
+		
+		
+	</wicket:panel>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title></title>
+</head>
+<body>
+	<wicket:extend>
+		
+		<div wicket:id="breadcrumbPanel"></div>
+		
+		<div class="col-sm-12 mt-2 mb-4">
+			<h3>
+				<span><wicket:message key="ConfigurazionePage.widgetTitle" /></span>
+			</h3>
+			<span><wicket:message key="ConfigurazionePage.widgetSubtitle" /></span>
+		</div>
+		<div class="row my-4">
+			<wicket:container wicket:id="sezioni">
+				<wicket:enclosure child="scegli">
+					<div class="col-lg-4 col-sm-6 hero-feature mb-4 mx-auto"
+						wicket:id="scegli"></div>
+				</wicket:enclosure>
+			</wicket:container>
+		</div>
+
+		<h4>
+			<span><wicket:message
+					key="ConfigurazionePage.testoFondoPagina" /></span>
+		</h4>
+
+	</wicket:extend>
+</body>
+</html>

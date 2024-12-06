@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="col-12">
+			<h3 wicket:id="titolo"></h3>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12"
+				wicket:id="listaVuota">
+				<div class="alert alert-warning" role="alert"
+					wicket:id="messaggioListaVuota"></div>
+			</div>
+		</div>
+
+		<div class="row content my-12 info-traffico">
+			<div class="col-lg-6 mb-4" wicket:id="pratiche">
+
+				<div class="card-wrapper card-space">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="color-fc-pink col-3 icon-mappa"></i>
+
+								<h4 class="card-title text-left col-9 font-weight-normal">
+									<wicket:message key="GeoworksPanel.requestFormCode" />
+									<span class="text-capitalize font-weight-semibold"
+										wicket:id="requestFormCode"></span>
+								</h4>
+							</div>
+
+							<div wicket:id="currentStatusTemplateExternalDescr"></div>
+
+							<div wicket:id="ownerName"></div>
+
+							<!--  <div wicket:id="requesterName"></div> -->
+							
+							<wicket:enclosure child="requesterName">
+                                <div class="row py-1 mb-2 border-bottom">
+                                    <div class="col-5">
+                                        <p class="card-text text-start fw-bold">
+                                            <wicket:message key="GeoworksPanel.requesterName" /></p>
+                                    </div>
+                                    <div class="col-7">
+                                        <p class="card-text text-start d-table h-100"><span class="d-table-cell text-capitalize align-middle" wicket:id="requesterName"></span></p>
+                                    </div>
+                                </div>
+                            </wicket:enclosure>
+
+							<div wicket:id="requestFormTrunks"></div>
+
+							<div wicket:id="currentStatusChangeStatusDate"></div>
+
+							<wicket:enclosure child="btnDettagli">
+								<div>
+									<a wicket:id="btnDettagli" class="btn btn-primary btn-xs"
+										target="_blank"> <wicket:message
+											key="GeoworksPanel.btnDettagli" />
+									</a>
+								</div>
+							</wicket:enclosure>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-12" wicket:id="pagination"></div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

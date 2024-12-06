@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+    <wicket:head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Login page</title>
+        <!-- Just for debugging purposes. Don't actually copy this line! -->
+        <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </wicket:head>
+    <body>
+        <div class="container">
+            <div class="row justify-content-md-center mb-5">
+                <div class="col-12 col-lg-5 mb-5">
+                    <form class="form-signin" wicket:id="signInForm">
+                        <div class="form-group" wicket:id="feedback"></div>
+
+                        <h2 class="form-signin-heading">
+                            <wicket:message key="LoginPage.cf" />
+                        </h2>
+
+                        <div class="form-group">
+                            <input wicket:id="username" type="text" class="form-control" placeholder="codice fiscale" required autofocus /> <label class="sr-only" for="inputUsername"><wicket:message key="LoginPage.codiceFiscale" /></label>
+                        </div>          
+
+                        <h6>
+                            <wicket:message key="LoginPage.info" />
+                        </h6>
+
+                        <div class="form-group">
+                            <input wicket:id="nome" type="text" class="form-control" placeholder="nome" autofocus /> <label class="sr-only" for="inputNome"><wicket:message key="LoginPage.nome" /></label>
+                        </div>
+
+                        <div class="form-group">
+                            <input wicket:id="cognome" type="text" class="form-control" placeholder="cognome" autofocus /> <label class="sr-only" for="inputCognome"><wicket:message key="LoginPage.cognome" /></label>
+                        </div>
+
+                        <div class="form-check">
+                            <input id="remember-me" type="checkbox" value="remember-me" />
+                            <label for="remember-me"><wicket:message key="LoginPage.remember" /></label>
+                        </div>
+
+                        <button class="btn btn-success btn-lg btn-icon" type="submit">
+                            <span class="rounded-icon"> <i class="icon-omino color-white col-3"></i> </span> <span><wicket:message key="LoginPage.spid" /></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+		<h7>Ambiente <span wicket:id="ambienteDeploy"></span></h7>
+    </body>
+</html>

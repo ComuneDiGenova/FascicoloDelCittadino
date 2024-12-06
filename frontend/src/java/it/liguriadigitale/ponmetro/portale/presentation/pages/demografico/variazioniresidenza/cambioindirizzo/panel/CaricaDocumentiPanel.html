@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="row content my-4 richiesta-agevolazione">
+			<div class="col-md-12 text-start mb-4">
+
+				<div class="row content my-4 info-traffico">
+					<h4 wicket:id="idPratica"></h4>
+				</div>
+
+				<div class="row content my-4 info-traffico">
+					<h4 wicket:id="domandaDi"></h4>
+				</div>
+
+				<div class="col-lg-12 mx-auto riepilogo">
+					<div class="col-md-12 text-start mb-4">
+						<div class="alert alert-info font-weight-semibold" role="alert">
+							<wicket:message key="CaricaDocumentiPanel.info" />
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-12 mx-auto riepilogo">
+
+					<div class="col-lg-12 mb-4" wicket:id="containerDichiarazione">
+
+						<h4 class="col-12">
+							<wicket:message key="CaricaDocumentiPanel.titolo1" />
+						</h4>
+
+						<div class="card-wrapper">
+							<div class="card card-bg my-2">
+								<div class="card-body">
+
+									<wicket:enclosure child="nomeDocumento">
+										<div class="row py-1 mb-2">
+											<div class="col-6">
+												<p class="card-text text-start font-weight-semibold">
+													<wicket:message key="CaricaDocumentiPanel.nomeDocumento" />
+												</p>
+											</div>
+											<div class="col-6" style="word-break: break-word;">
+												<p class="card-text text-start d-table h-100">
+													<span class="d-table-cell text-capitalize align-middle"
+														wicket:id="nomeDocumento"></span>
+												</p>
+											</div>
+										</div>
+									</wicket:enclosure>
+
+									<div class="row py-1 mb-2">
+										<div class="col-6">
+											<a class="btn btn-success btn-xs" href="#" role="button"
+												wicket:id="btnDownloadDichiarazione"> <svg
+													class="icon icon-white">
+                                    <use
+														xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-download"></use>
+                                </svg> <wicket:message
+													key="CaricaDocumentiPanel.downloadDichiarazione" />
+											</a> <span class="col-3"></span>
+
+										</div>
+
+									</div>
+
+									<div class="col-lg-12 mx-auto riepilogo">
+										<div class="col-md-12 text-start mb-4">
+											<div class="alert alert-info font-weight-semibold"
+												role="alert">
+												<wicket:message
+													key="CaricaDocumentiPanel.infoScaricaDichiarazione" />
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<h4 class="col-12">
+						<wicket:message key="CaricaDocumentiPanel.titolo2" />
+					</h4>
+
+					<div class="row content my-4 info-traffico">
+						<div class="col-lg-6 mb-4" wicket:id="boxDocumentiDaCaricare">
+
+							<div class="card-wrapper">
+								<div class="card card-bg my-2">
+									<div class="card-body">
+
+										<div class="categoryicon-top row mb-2">
+											<i class="" wicket:id="icona"></i>
+
+											<wicket:enclosure child="nominativoIndividuo">
+												<h4 class="card-title text-start col-9 font-weight-normal">
+													<span class="font-weight-semibold"
+														wicket:id="nominativoIndividuo"></span>
+												</h4>
+											</wicket:enclosure>
+										</div>
+
+										<div class="it-list-wrapper">
+											<ul class="it-list">
+
+												<wicket:enclosure child="documentoDiRiconoscimento">
+													<li class="li-anagrafici">
+														<div class="it-rounded-icon">
+															<svg class="icon">
+            <use xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+          </svg>
+														</div>
+														<div class="it-right-zone" style="text-align: left;">
+															<span wicket:id="documentoDiRiconoscimento"></span>
+														</div>
+													</li>
+												</wicket:enclosure>
+
+												<wicket:enclosure child="permessoDiSoggiorno">
+													<li class="li-anagrafici">
+														<div class="it-rounded-icon">
+															<svg class="icon">
+            <use xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+          </svg>
+														</div>
+														<div class="it-right-zone" style="text-align: left;">
+															<span wicket:id="permessoDiSoggiorno"></span>
+														</div>
+													</li>
+												</wicket:enclosure>
+
+												<wicket:enclosure child="nessunDocumento">
+													<li class="li-anagrafici">
+														<div class="it-rounded-icon">
+															<svg class="icon">
+            <use xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+          </svg>
+														</div>
+														<div class="it-right-zone" style="text-align: left;">
+															<span wicket:id="nessunDocumento"></span>
+														</div>
+													</li>
+												</wicket:enclosure>
+
+												<wicket:enclosure child="passaportoDaAllegare">
+													<li class="li-anagrafici">
+														<div class="it-rounded-icon">
+															<svg class="icon">
+            <use xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+          </svg>
+														</div>
+														<div class="it-right-zone" style="text-align: left;">
+															<span wicket:id="passaportoDaAllegare"></span>
+														</div>
+													</li>
+												</wicket:enclosure>
+
+											</ul>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row content my-4 info-traffico">
+						<div class="col-lg-6 mb-4"
+							wicket:id="boxDocumentiDaCaricareImmigrazione">
+
+							<div class="card-wrapper">
+								<div class="card card-bg my-2">
+									<div class="card-body">
+
+										<div class="categoryicon-top row mb-2">
+											<i class="" wicket:id="icona"></i>
+
+											<wicket:enclosure child="nominativoIndividuo">
+												<h4 class="card-title text-start col-9 font-weight-normal">
+													<span class="font-weight-semibold"
+														wicket:id="nominativoIndividuo"></span>
+												</h4>
+											</wicket:enclosure>
+										</div>
+
+										<div class="it-list-wrapper">
+											<ul class="it-list">
+
+												<wicket:enclosure child="documentoDiRiconoscimento">
+													<li class="li-anagrafici">
+														<div class="it-rounded-icon">
+															<svg class="icon">
+            <use xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+          </svg>
+														</div>
+														<div class="it-right-zone" style="text-align: left;">
+															<span wicket:id="documentoDiRiconoscimento"></span>
+														</div>
+													</li>
+												</wicket:enclosure>
+
+												<li class="li-anagrafici">
+													<div class="it-rounded-icon">
+														<svg class="icon">
+            <use xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+          </svg>
+													</div>
+													<div class="it-right-zone" style="text-align: left;">
+														<span><wicket:message
+																key="CaricaDocumentiPanel.permessoDiSoggiorno" /></span>
+													</div>
+												</li>
+
+												<wicket:enclosure child="passaportoDaAllegare">
+													<li class="li-anagrafici">
+														<div class="it-rounded-icon">
+															<svg class="icon">
+            <use xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+          </svg>
+														</div>
+														<div class="it-right-zone" style="text-align: left;">
+															<span wicket:id="passaportoDaAllegare"></span>
+														</div>
+													</li>
+												</wicket:enclosure>
+
+
+											</ul>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-12" wicket:id="pagination"></div>
+
+					<div class="row content my-4 info-traffico">
+
+						<!-- card del coabitante -->
+
+						<div class="col-lg-6 mb-4" wicket:id="containerCoabitante">
+							<div class="card-wrapper">
+								<div class="card card-bg my-2">
+									<div class="card-body">
+
+										<div class="categoryicon-top row mb-2">
+											<i class="color-yellow col-3 icon-casa"></i>
+
+											<h4 class="card-title text-start col-9 font-weight-normal">
+												<span class="font-weight-semibold"><wicket:message
+														key="CaricaDocumentiPanel.coabitazione" /></span>
+											</h4>
+
+										</div>
+
+										<div class="it-list-wrapper">
+											<ul class="it-list">
+
+												<li class="li-anagrafici">
+													<div class="it-rounded-icon">
+														<svg class="icon">
+            <use xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+          </svg>
+													</div>
+													<div class="it-right-zone" style="text-align: left;">
+														<span wicket:id="nominativoCoabitante"></span> <span><wicket:message
+																key="CaricaDocumentiPanel.urlSmartCoabitante" /></span>
+													</div>
+
+												</li>
+
+												<li class="li-anagrafici">
+													<div class="it-rounded-icon">
+														<svg class="icon">
+            <use xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+          </svg>
+													</div>
+													<div class="it-right-zone" style="text-align: left;">
+														<span><wicket:message
+																key="CaricaDocumentiPanel.documentoRiconoscimentoDichiarazione" /></span>
+													</div>
+
+												</li>
+
+											</ul>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- card per i minori -->
+
+						<div class="col-lg-6 mb-4" wicket:id="containerMinorenne">
+							<div class="card-wrapper">
+								<div class="card card-bg my-2">
+									<div class="card-body">
+
+										<div class="categoryicon-top row mb-2">
+											<i class="color-yellow col-3 icon-bimbo"></i>
+
+											<h4 class="card-title text-start col-9 font-weight-normal">
+												<span class="font-weight-semibold"><wicket:message
+														key="CaricaDocumentiPanel.minorenne" /></span>
+											</h4>
+										</div>
+
+										<div class="it-list-wrapper">
+											<ul class="it-list">
+
+												<li class="li-anagrafici">
+													<div class="it-rounded-icon">
+														<svg class="icon">
+            <use xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+          </svg>
+													</div>
+													<div class="it-right-zone" style="text-align: left;">
+														<span><wicket:message
+																key="CaricaDocumentiPanel.dichiarazioneGenitore" /></span>
+													</div>
+
+													<div class="it-right-zone" style="text-align: left;">
+														<span><wicket:message
+																key="CaricaDocumentiPanel.urlSmartMinorenne" /></span>
+													</div>
+
+												</li>
+
+												<li class="li-anagrafici">
+													<div class="it-rounded-icon">
+														<svg class="icon">
+            <use xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+          </svg>
+													</div>
+													<div class="it-right-zone" style="text-align: left;">
+														<span><wicket:message
+																key="CaricaDocumentiPanel.documentoRiconoscimentoDichiarazione" /></span>
+													</div>
+
+												</li>
+
+											</ul>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<!-- card per il properitario -->
+
+						<div class="col-lg-6 mb-4" wicket:id="containerProprietario">
+							<div class="card-wrapper">
+								<div class="card card-bg my-2">
+									<div class="card-body">
+
+										<div class="categoryicon-top row mb-2">
+											<i class="color-yellow col-3 icon-omino"></i>
+
+											<h4 class="card-title text-start col-9 font-weight-normal">
+												<span class="font-weight-semibold"><wicket:message
+														key="CaricaDocumentiPanel.proprietario" /></span>
+											</h4>
+										</div>
+
+										<div class="it-list-wrapper">
+											<ul class="it-list">
+
+												<li class="li-anagrafici">
+													<div class="it-rounded-icon">
+														<svg class="icon">
+            <use xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+          </svg>
+													</div>
+													<div class="it-right-zone" style="text-align: left;">
+														<span wicket:id="nominativoProprietario"></span> <span><wicket:message
+																key="CaricaDocumentiPanel.urlSmartProprietario" /></span>
+													</div>
+
+												</li>
+
+												<li class="li-anagrafici">
+													<div class="it-rounded-icon">
+														<svg class="icon">
+            <use xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+          </svg>
+													</div>
+													<div class="it-right-zone" style="text-align: left;">
+														<span><wicket:message
+																key="CaricaDocumentiPanel.documentoRiconoscimentoDichiarazione" /></span>
+													</div>
+
+												</li>
+
+											</ul>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- card caso edilizia -->
+
+						<div class="col-lg-6 mb-4" wicket:id="containerEdilizia">
+							<div class="card-wrapper">
+								<div class="card card-bg my-2">
+									<div class="card-body">
+
+										<div class="categoryicon-top row mb-2">
+											<i class="color-yellow col-3 icon-casa"></i>
+
+											<h4 class="card-title text-start col-9 font-weight-normal">
+												<span class="font-weight-semibold"><wicket:message
+														key="CaricaDocumentiPanel.edilizia" /></span>
+											</h4>
+
+										</div>
+
+										<div class="it-list-wrapper">
+											<ul class="it-list">
+												<li class="li-anagrafici">
+													<div class="it-rounded-icon">
+														<svg class="icon">
+            <use xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+          </svg>
+													</div>
+													<div class="it-right-zone" style="text-align: left;">
+														<span><wicket:message
+																key="CaricaDocumentiPanel.infoEdilizia" /></span>
+													</div>
+
+												</li>
+
+											</ul>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<form class="mb-3 col-lg-12 mx-auto" enctype="multipart/form-data"
+						onsubmit="return checkForm(this);" wicket:id="form">
+
+						<!--  per upload file -->
+
+						<div class="col-lg-12" wicket:id="containerUploadFile">
+							<form class="mb-3 col-md-12 mx-auto"
+								wicket:id="formUploadAllegati">
+
+								<medium> <wicket:message
+									key="CaricaDocumentiPanel.inserisciDocumenti" /></medium>
+								<br />
+								<medium> <wicket:message
+									key="CaricaDocumentiPanel.consigli" /></medium>
+								<br /> <input type="file" name="documentoUpload"
+									id="documentoUpload" class="upload" accept="image/*, .pdf"
+									wicket:id="documentoUpload" /> <label for="documentoUpload">
+									<svg class="icon icon-sm" aria-hidden="true">
+                                        <use
+											xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-upload"></use>
+                                    </svg> <span><wicket:message
+											key="CaricaDocumentiPanel.uploadDocumenti" /></span>
+								</label>
+
+								<div class="col-lg-12" wicket:id="containerFileUpload">
+
+
+									<div class="col-12 alert alert-info" role="alert">
+										<wicket:message key="CaricaDocumentiPanel.infoCarica" />
+									</div>
+
+									<ul class="upload-file-list">
+										<li class="upload-file success col-12"
+											style="max-width: 100%;"><svg class="icon icon-sm"
+												aria-hidden="true">
+			                                <use
+													xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+			                            </svg>
+											<p>
+												<span class="sr-only">File caricato:</span> <span
+													wicket:id="nomeFile" maxlength="50"
+													style="word-break: break-all;"></span><span
+													class="upload-file-weight" wicket:id="dimensioneFile"></span>
+											</p>
+
+											<div class="col-3">
+												<a class="btn btn-primary btn-xs" href="#" role="button"
+													wicket:id="btnCaricaFile"> <svg class="icon icon-white">
+                                    <use
+															xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-plus-circle"></use>
+                                </svg> <wicket:message
+														key="CaricaDocumentiPanel.carica" />
+												</a> <span class="col-3"></span>
+											</div>
+
+											<div class="col-3">
+												<button>
+													<svg class="icon" aria-hidden="true" style="fill: #d9364f;"
+														wicket:id="eliminaFile">
+			                                    <use
+															xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-close-circle"></use>
+			                                    <title>Elimina file</title>
+			                                </svg>
+												</button>
+											</div></li>
+									</ul>
+								</div>
+
+							</form>
+
+						</div>
+
+						<br>
+
+						<div class="col-lg-12" wicket:id="containerDocumentiCaricati">
+
+							<h4 class="col-12">
+								<wicket:message key="CaricaDocumentiPanel.titolo3" />
+							</h4>
+
+							<div class="row content my-4 info-traffico">
+								<div class="col-lg-4 mb-4" wicket:id="boxDocumentiCaricati">
+
+									<div class="card-wrapper">
+										<div class="card card-bg my-2">
+											<div class="card-body">
+
+												<div class="categoryicon-top row mb-2">
+													<i class="color-yellow col-3 icon-foglio"></i>
+
+													<wicket:enclosure child="idDocumento">
+														<h4 class="card-title text-start col-9 font-weight-normal">
+															<span class="font-weight-semibold"
+																wicket:id="idDocumento"></span>
+														</h4>
+													</wicket:enclosure>
+												</div>
+
+												<wicket:enclosure child="nomeDocumento">
+													<div class="row py-1 mb-2 border-bottom">
+														<div class="col-5">
+															<p class="card-text text-start font-weight-semibold">
+																<wicket:message key="CaricaDocumentiPanel.nomeDocumento" />
+															</p>
+														</div>
+														<div class="col-7">
+															<p class="card-text text-start d-table h-100">
+																<span class="d-table-cell text-capitalize align-middle"
+																	style="word-break: break-all;"
+																	wicket:id="nomeDocumento"></span>
+															</p>
+														</div>
+													</div>
+												</wicket:enclosure>
+
+												<div class="row py-1 mb-2">
+
+													<div class="col-6">
+														<a class="btn btn-success btn-xs" href="#" role="button"
+															wicket:id="btnDownloadDocumento"> <svg
+																class="icon icon-white">
+                                    <use
+																	xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-download"></use>
+                                </svg> <wicket:message
+																key="CaricaDocumentiPanel.downloadDichiarazione" />
+														</a> <span class="col-3"></span>
+													</div>
+													
+													<div class="col-6">
+													<wicket:enclosure child="btnCancellaDocumento">
+														<div wicket:id="modaleEliminaAllegato"></div>
+														<a class="btn btn-lg btn-primary btn-icon"
+															data-toggle="modal" wicket:id="btnCancellaDocumento"
+															style="color: white; max-width: 250px;"> <span><wicket:message
+																	key="CaricaDocumentiPanel.eliminaFile" /></span>
+														</a>
+													</wicket:enclosure>
+													</div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-12" wicket:id="paginationDocumentiCaricati"></div>
+
+							</div>
+						</div>
+
+						<div class="col-12 alert alert-info" role="alert">
+							<wicket:message key="CaricaDocumentiPanel.infoBottoni" />
+						</div>
+
+						<div class="form-group col-md-12 mb-3 text-center">
+							<div class="form-group col-md-12 mb-3 text-center">
+								<button class="btn btn-primary" type="submit"
+									wicket:id="avanti"> <wicket:message
+										key="CaricaDocumentiPanel.avanti" />
+								</button> <a class="btn btn-secondary" href="#" role="button"
+									wicket:id="sospendi"> <wicket:message
+										key="CaricaDocumentiPanel.sospendi" />
+								</a>
+							</div>
+						</div>
+					</form>
+				</div>
+
+				<div class="col-12 alert alert-danger" role="alert"
+					wicket:id="alertMinimoDocumentiDaCaricare">
+					<wicket:message
+						key="CaricaDocumentiPanel.minimoDocumentiDaCaricare" />
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback4"></div>
+
+	</wicket:panel>
+</body>
+
+</html>

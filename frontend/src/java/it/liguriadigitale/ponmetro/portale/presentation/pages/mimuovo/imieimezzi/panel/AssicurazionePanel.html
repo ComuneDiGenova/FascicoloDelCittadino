@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <wicket:panel>
+        <wicket:extend>
+            <wicket:enclosure child="situazioneAl">
+                <div class="row py-1 mb-2 border-bottom">
+                    <div class="col-6">
+                        <p class="card-text text-start fw-bold">
+                            <wicket:message key="AssicurazionePanel.situazioneAl" />:</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="card-text text-start d-table h-100" wicket:id="situazioneAl"><span class="d-table-cell text-capitalize align-middle"></span></p>
+                    </div>
+                </div>
+            </wicket:enclosure>
+
+            <wicket:enclosure child="compagniaAssicurativa">
+                <div class="row py-1 mb-2 border-bottom">
+                    <div class="col-6">
+                        <p class="card-text text-start fw-bold">
+                            <wicket:message key="AssicurazionePanel.compagniaAssicuratrice" />:</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="card-text text-start d-table h-100" wicket:id="compagniaAssicurativa"><span class="d-table-cell text-capitalize align-middle"></span></p>
+                    </div>
+                </div>
+            </wicket:enclosure>
+
+            <wicket:enclosure child="numeroPolizza">
+                <div class="row py-1 mb-2 border-bottom">
+                    <div class="col-6">
+                        <p class="card-text text-start fw-bold">
+                            <wicket:message key="AssicurazionePanel.numeroPolizza" />:</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="card-text text-start d-table h-100" wicket:id="numeroPolizza"><span class="d-table-cell text-capitalize align-middle"></span></p>
+                    </div>
+                </div>
+            </wicket:enclosure>
+
+            <wicket:enclosure child="veicoloAssicurato">
+                <div class="row py-1 mb-2 border-bottom">
+                    <div class="col-6">
+                        <p class="card-text text-start fw-bold">
+                            <wicket:message key="AssicurazionePanel.veicoloAssicurato" />:</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="card-text text-start d-table h-100" wicket:id="veicoloAssicurato"><span class="d-table-cell text-capitalize align-middle"></span></p>
+                    </div>
+                </div>
+            </wicket:enclosure>
+
+            <wicket:enclosure child="dataDecorrenzaAssicurazione">
+                <div class="row py-1 mb-2 border-bottom">
+                    <div class="col-6">
+                        <p class="card-text text-start fw-bold">
+                            <wicket:message key="AssicurazionePanel.dataDecorrenzaAssicurazione" />:</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="card-text text-start d-table h-100" wicket:id="dataDecorrenzaAssicurazione"><span class="d-table-cell text-capitalize align-middle"></span></p>
+                    </div>
+                </div>
+            </wicket:enclosure>
+
+            <wicket:enclosure child="dataScadenzaAssicurazione">
+                <div class="row py-1 mb-2 border-bottom">
+                    <div class="col-6">
+                        <p class="card-text text-start fw-bold">
+                            <wicket:message key="AssicurazionePanel.dataScadenzaAssicurazione" />:</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="card-text text-start d-table h-100" wicket:id="dataScadenzaAssicurazione"><span class="d-table-cell text-capitalize align-middle"></span></p>
+                    </div>
+                </div>
+            </wicket:enclosure>
+
+            <wicket:enclosure child="dataFineComporto">
+                <div class="row py-1 mb-2 border-bottom">
+                    <div class="col-6">
+                        <p class="card-text text-start fw-bold">
+                            <wicket:message key="AssicurazionePanel.dataFineComporto" />:</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="card-text text-start d-table h-100" wicket:id="dataFineComporto"><span class="d-table-cell text-capitalize align-middle"></span></p>
+                    </div>
+                </div>
+            </wicket:enclosure>
+
+        </wicket:extend>
+
+    </wicket:panel>
+</body>
+
+</html>

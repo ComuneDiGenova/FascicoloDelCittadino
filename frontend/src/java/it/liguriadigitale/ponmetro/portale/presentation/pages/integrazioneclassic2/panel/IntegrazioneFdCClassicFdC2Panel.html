@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+
+	<wicket:panel>
+		<div class="col-lg-10 mx-auto riepilogo">
+
+			<form wicket:id="form" method="post">
+
+				<input type="hidden" name="comge_codicefiscale"
+					wicket:id="comge_codicefiscale" /> 
+				
+				<input type="hidden" name="comge_emailAddress"
+					wicket:id="comge_emailAddress" />
+					
+				<input type="hidden" name="comge_cellulare"
+					wicket:id="comge_cellulare" />
+					
+				<input type="hidden" name="comge_nome"
+					wicket:id="comge_nome" />
+					
+				<input type="hidden" name="comge_cognome"
+					wicket:id="comge_cognome" />
+					
+				<input type="hidden" name="comge_sesso"
+					wicket:id="comge_sesso" />
+					
+				<input type="hidden" name="residente"
+					wicket:id="residente" />
+					
+				<input type="hidden"
+					name="fdc_classic" wicket:id="fdc_classic" />
+
+			</form>
+
+			<script>
+ 		 		document.addEventListener('DOMContentLoaded', function () {
+ 		 			document.querySelector("#form").submit();
+ 		 		}, false);
+			</script>
+
+		</div>
+
+	</wicket:panel>
+
+</body>
+</html>

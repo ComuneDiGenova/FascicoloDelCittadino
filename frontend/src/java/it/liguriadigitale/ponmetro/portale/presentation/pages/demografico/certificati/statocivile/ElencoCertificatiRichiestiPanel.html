@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <wicket:panel>
+        <!--start card-->
+        <div class="col-lg-6 mb-4" wicket:id="lista">
+            <div class="card-wrapper">
+                <div class="card card-bg my-2">
+                    <div class="card-body">
+                        <div class="categoryicon-top row mb-2">
+                            <i wicket:message="class:ElencoCertificatiRichiestiPanel.icona"></i>
+
+                            <wicket:enclosure child="stato">
+                                <strong>
+                                    <div class="card-title text-left col-9 font-weight-normal">
+                                        <wicket:message key="ElencoCertificatiRichiestiPanel.stato" />
+                                        <span class="text-capitalize font-weight-semibold" wicket:id="stato"></span>
+                                    </div>
+                                </strong>
+                            </wicket:enclosure>
+                        </div>
+
+                        <div wicket:id="tipo"></div>
+                        <div wicket:id="dataRichiesta"></div>
+                        <div wicket:id="idRichiesta"></div>
+                        <div wicket:id="tipoConsegnaScelta"></div>
+                        <div wicket:id="cfIntestatario"></div>
+                        <div wicket:id="nomeIntestatario"></div>
+                        <div wicket:id="cognomeIntestatario"></div>
+                        <div wicket:id="cfRichiedente"></div>
+                        <div wicket:id="nomeRichiedente"></div>
+                        <div wicket:id="cognomeRichiedente"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end card-->
+        <div wicket:id="feedback"></div>
+        <div wicket:id="pagination"></div>
+    </wicket:panel>
+</body>
+
+</html>
+
+<wicket:enclosure child="btnDownload">
+    <div class="col-6">
+        <a class="btn btn-primary btn-xs" href="#" role="button" wicket:id="btnDownload">
+            <wicket:message key="ElencoCertificatiRichiestiPanel.pdf" />
+        </a>
+    </div>
+</wicket:enclosure>
+
+
+<wicket:enclosure child="tipo">
+    <div class="row py-1 mb-2 border-bottom">
+        <div class="col-5">
+            <p class="card-text text-left font-weight-semibold">
+                <wicket:message key="ElencoCertificatiRichiestiPanel.tipo" />:
+            </p>
+        </div>
+        <div class="col-7">
+            <p class="card-text text-left d-table h-100"><span class="d-table-cell text-capitalize align-middle"
+                    wicket:id="tipo"></span></p>
+        </div>
+    </div>
+</wicket:enclosure>
+<wicket:enclosure child="dataRichiesta">
+    <div class="row py-1 mb-2 border-bottom">
+        <div class="col-5">
+            <p class="card-text text-left font-weight-semibold">
+                <wicket:message key="ElencoCertificatiRichiestiPanel.dataRichiesta" />:
+            </p>
+        </div>
+        <div class="col-7">
+            <p class="card-text text-left d-table h-100"><span class="d-table-cell text-capitalize align-middle"
+                    wicket:id="dataRichiesta"></span></p>
+        </div>
+    </div>
+</wicket:enclosure>

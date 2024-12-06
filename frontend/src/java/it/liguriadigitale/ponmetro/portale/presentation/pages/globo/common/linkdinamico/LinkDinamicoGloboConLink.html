@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Componente Link Dinamico</title>
+<style type="text/css">
+.spanAlternativa{
+	cursor:pointer; 
+	color:blue; 
+}
+.spanAlternativa:hover {
+	text-decoration: underline;
+}
+</style>
+</head>
+<!-- Attenzione richiede Wicket Bootstrap -->
+<body>
+	<wicket:panel>
+	<div style="flex-direction: column; height:100%;">
+		<div style="height: 85%;">
+			<div class="card-icon mt-4 mb-1">
+				<a href="#" wicket:id="link"></a>
+	        </div>
+	     </div>
+	    	
+	     <div>
+	    	<div class="flex-container" style="justify-content: center;display: flex;flex-wrap: nowrap;flex-direction: row;align-items: center;margin-top: -10px;align-content: space-around;">
+		       	<div wicket:id="listaLinkEsterni" >
+					<wicket:enclosure child="linkEsterno">
+						<div wicket:id="linkEsterno" style="width: 40px; justify-content: center;"></div>
+					</wicket:enclosure>
+				</div>
+			</div>
+		 </div>
+     </div>
+    </wicket:panel>
+</body>
+</html>

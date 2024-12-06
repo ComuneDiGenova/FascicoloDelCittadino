@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+		<div class="col-lg-6 mb-4">
+			<div class="card-wrapper">
+				<div class="card card-bg my-2">
+					<div class="card-body">
+						<div class="categoryicon-top row mb-2">
+							<i class="" wicket:id="icona"></i>
+
+							<h4 class="card-title text-left col-9 font-weight-normal">
+								<wicket:message key="MieiDatiNonResidentiPanel.titolo" />
+							</h4>
+						</div>
+						<div wicket:id="panel">
+						</div>
+							
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="col-lg-12 mb-4" wicket:id="feedback"></div>
+	</wicket:panel>
+							<div wicket:id="Nome"></div>
+							<div wicket:id="Cognome"></div>
+							<div wicket:id="CodiceFiscaleOperatore"></div>
+							<div wicket:id="LuogoNascita"></div>
+							<div wicket:id="DataDiNascita"></div>
+							<div wicket:id="Domicilio"></div>
+							<div wicket:id="Mobile"></div>
+							<div wicket:id="Mail"></div>
+</body>
+
+</html>

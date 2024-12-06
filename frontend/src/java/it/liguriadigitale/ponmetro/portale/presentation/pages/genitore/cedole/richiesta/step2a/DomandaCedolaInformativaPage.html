@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title></title>
+</head>
+<body>
+	<wicket:extend>
+		<div wicket:id="breadcrumbPanel"></div>
+		<div class="row content my-4 io-genitore" >
+			<div class="row col-lg-12 mx-auto" wicket:id="bambino"></div>
+		</div>
+		<div class="col-sm-12 mt-2 mb-2">
+				<div class="alert alert-info" role="alert">
+					<wicket:message key="DomandaCedolaInformativaPage.info" />
+				</div>
+		</div>
+		<div class="row py-1 mb-2 border-bottom">
+			<div class="col-3">
+				<a class="btn btn-primary btn-xs" href="#" role="button" wicket:id="btnPrivacy"> 
+					<wicket:message	key="DomandaCedolaInformativaPage.scarica" />
+				</a> 
+			</div>
+		</div>
+		<wicket:child/>
+    </wicket:extend>    
+</body>
+</html>

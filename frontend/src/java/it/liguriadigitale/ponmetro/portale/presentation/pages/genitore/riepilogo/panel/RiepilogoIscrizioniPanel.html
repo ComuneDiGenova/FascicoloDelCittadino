@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1" />
+<title>Insert title here</title>
+
+
+
+</head>
+
+<body>
+	<wicket:panel>
+		<style>
+.oneRow {
+	display: inline-flex !important;
+	width: 100%;
+	align-items: center;
+	margin-bottom: 4px !important;
+	margin-left: -20px !important;
+}
+
+.oneRow :first-child {
+	width: 80%;
+}
+
+.oneRow>* {
+	flex: 1 0 auto;
+}
+
+.senzaVideo {
+	margin-left: -10px;
+}
+</style>
+
+		<!--  
+		<div class="row">
+
+			<div class="it-right-zone">
+				<button class="btn btn-success btn-lg btn-icon"
+					wicket:id="btnDownload">
+					<svg class="icon icon-white">
+													<use
+							xlink:href="/portale/bootstrap-italia/svg/sprites.svg#it-file"></use>
+												</svg>
+					<span PROVAAAAA></span>
+				</button>
+			</div>
+
+		</div>
+		-->
+
+		<div class="row">
+			<h4 class="card-title text-start col-12 font-weight-normal">
+				<span> <wicket:message key="RiepilogoIscrizioniPanel.info" /></span>
+			</h4>
+		</div>
+		<div wicket:id="box">
+
+			<div class="col-lg-6 mb-4">
+				<div class="card-wrapper">
+					<div class="card card-bg my-2">
+						<div class="card-body">
+							<div class="categoryicon-top row mb-2">
+								<i class="" wicket:id="icona"></i>
+								<h4 class="card-title text-start col-9 font-weight-normal">
+									<span class="fw-bold" wicket:id="nome"></span> <br />
+									<wicket:message key="RiepilogoIscrizioniPanel.dataNascita" />
+									<span class="fw-bold" wicket:id="data"></span> <br />
+									<wicket:message key="RiepilogoIscrizioniPanel.eta" />
+									<span class="fw-bold" wicket:id="eta"></span> <span
+										wicket:id="mesiAnni"></span>
+								</h4>
+							</div>
+							<wicket:enclosure child="scuola">
+								<div class="row mb-4 border-bottom">
+									<div class="col-3">
+										<p class="card-text text-start fw-bold" wicket:id="iscritto"></p>
+									</div>
+									<div class="col-9">
+										<p class="card-text text-start mb-2">
+											<!--  <wicket:message key="RiepilogoIscrizioniPanel.scuola" />-->
+											<span class="text-capitalize fw-bold" wicket:id="scuola"></span><br />
+											<wicket:enclosure child="classe">
+												<wicket:message key="RiepilogoIscrizioniPanel.classe" />
+												<span class="text-capitalize fw-bold" wicket:id="classe"></span>
+											</wicket:enclosure>
+											<wicket:message key="RiepilogoIscrizioniPanel.sezione" />
+											<span class="text-capitalize fw-bold" wicket:id="sezione"></span>
+
+											<!--  <wicket:message key="RiepilogoIscrizioniPanel.iscrittoDal"/> 
+	                                    <span class="text-capitalize fw-bold" wicket:id="iscrittoDal"></span> -->
+										</p>
+
+										<!--  <p class="card-text text-start mb-1">Agevolazione tariffaria non disponibile col tuo ISEE</p> -->
+									</div>
+								</div>
+							</wicket:enclosure>
+							<div class="row mb-4">
+								<div class="col-3">
+									<p class="card-text text-start fw-bold">
+										<wicket:message
+											key="RiepilogoIscrizioniPanel.domandaServizioRistorazione" />
+										:
+									</p>
+								</div>
+								<div class="col-9">
+									<p class="card-text text-start font-weight-normal mb-2">
+										<span wicket:id="stato" class="text-start"></span>&nbsp;
+										<wicket:enclosure child="dataIscrizione">
+											<wicket:message key="RiepilogoIscrizioniPanel.dal" />&nbsp;
+											<span class="fw-bold" wicket:id="dataIscrizione"></span>
+
+										</wicket:enclosure>
+									</p>
+
+									<wicket:enclosure child="statoChiusuraIscrizione">
+										<p class="card-text text-start mb-1">
+											<wicket:message key="RiepilogoIscrizioniPanel.statoChiusura" />
+											: <span wicket:id="statoChiusuraIscrizione"
+												class="text-start"></span>
+										</p>
+									</wicket:enclosure>
+
+									<wicket:enclosure child="situazionepagamenti">
+										<p class=" card-text text-start mb-1">
+											<span wicket:id="situazionepagamenti" class="text-start"></span>
+										</p>
+									</wicket:enclosure>
+									<wicket:enclosure child="nonInRegolaConPagamenti">
+										<p class=" card-text text-start mb-1 senzaVideo">
+											<span wicket:id="nonInRegolaConPagamenti" class="text-start"></span>
+										</p>
+									</wicket:enclosure>
+
+									<wicket:enclosure child="labelNonInRegolaConPagamenti">
+										<p class=" card-text text-start mb-1">
+											<span wicket:id="labelNonInRegolaConPagamenti"
+												class="text-start"></span>
+										</p>
+									</wicket:enclosure>
+
+									<div class="oneRow">
+										<wicket:enclosure child="partitario">
+											<p class=" card-text text-start mb-1">
+												<span wicket:id="partitario"></span> <span
+													wicket:id="VideoTutorialMovimentiPagamenti"></span>
+											</p>
+										</wicket:enclosure>
+									</div>
+
+									<div class="oneRow">
+										<wicket:enclosure child="chiusuraIscrizione">
+											<p class=" card-text text-start mb-1">
+												<span wicket:id="chiusuraIscrizione"></span> <span
+													wicket:id="videoTutorialChiusuraIscrizioneRistorazione"></span>
+											</p>
+										</wicket:enclosure>
+									</div>
+
+									<!--  		<p class="card-text text-start mb-1" style="margin-left: -10px">
+										<a href="#" wicket:id="nuovaIscrizione"> 
+										</a>
+									</p> -->
+
+									<div class=" oneRow">
+										<wicket:enclosure child="nuovaIscrizione">
+											<p class=" card-text text-start mb-1">
+												<span wicket:id="nuovaIscrizione"></span>
+											</p>
+										</wicket:enclosure>
+									</div>
+
+									<div class=" oneRow">
+										<wicket:enclosure child="iscrizioneMensaNonResidente">
+											<p class=" card-text text-start mb-1">
+												<span wicket:id="iscrizioneMensaNonResidente"></span>
+											</p>
+										</wicket:enclosure>
+									</div>
+									
+									<div class=" oneRow">
+										<wicket:enclosure child="nuovaIscrizionePNRR">
+											<p class=" card-text text-start mb-1">
+												<span wicket:id="nuovaIscrizionePNRR"></span>
+											</p>
+										</wicket:enclosure>
+									</div>
+									
+									<div class="oneRow">
+										<p class=" card-text text-start mb-1">
+											<span wicket:id="iscrizione"></span>
+										</p>
+									</div>
+
+
+									<div class=" oneRow">
+										<wicket:enclosure child="dieteSpeciali">
+											<p class=" card-text text-start mb-1">
+												<span wicket:id="dieteSpeciali"></span> <span
+													wicket:id="videoTutorialDieteSpeciali"></span>
+											</p>
+										</wicket:enclosure>
+									</div>
+
+									<div class=" oneRow">
+										<wicket:enclosure child="cedoleLibrarie">
+											<p class=" card-text text-start mb-1">
+												<span wicket:id="cedoleLibrarie"></span> <span
+													wicket:id="videoTutorialCedoleLibrarie"></span>
+											</p>
+										</wicket:enclosure>
+									</div>
+
+									<div class=" oneRow">
+										<p class=" card-text text-start mb-1">
+											<span wicket:id="commissioniMensa"></span> <span
+												wicket:id="videoTutorialVerbaliDiCommissioniMensa"></span>
+										</p>
+									</div>
+
+									<div class=" oneRow">
+										<wicket:enclosure child="attestatoPagamenti">
+											<p class=" card-text text-start mb-1">
+												<span wicket:id="attestatoPagamenti"></span> <span
+													wicket:id="videoTutorialAttestazioniDiPagamento"></span>
+											</p>
+										</wicket:enclosure>
+									</div>
+
+
+									<p class=" card-text text-start mb-1 senzaVideo" >
+
+										<span wicket:id="mensa"></span>
+									</p>
+
+								
+
+									<div class=" oneRow">
+										<p class=" card-text text-start mb-1">
+											<span wicket:id="richiestaAgevolazione"></span>
+											<span wicket:id="richiestaAgevolazionePNRR"></span> <span
+												wicket:id="videoTutorialRichiestaAgevolazioneTariffaria"></span>
+										</p>
+									</div>
+
+									<div class=" oneRow">
+										<p class="card-text text-start mb-1">
+											<span wicket:id="statoAgevolazione"></span> <span
+												wicket:id="videoTutorialStoricoRichiesteAgevolazioneTariffaria"></span>
+										</p>
+									</div>
+									<p class=" card-text text-start mb-1">
+										<a href="#" target="_blank" wicket:id="simulazioneTariffaria"><wicket:message
+												key="RiepilogoIscrizioniPanel.agevolazioneTariffaria" /></a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- <div class="row">
+			<div class="alert alert-info" role="alert">
+				<wicket:message
+					key="RiepilogoIscrizioniPanel.infoBollettini" />
+			</div>
+		</div>-->
+
+	</wicket:panel>
+</body>
+</html>

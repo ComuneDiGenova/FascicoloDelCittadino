@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<wicket:panel>
+
+		<div class="col-sm-12 mt-2 mb-2">
+			<h3 class="text-start fw-bold mb-0">
+				<wicket:message key="RichiestaAgevolazionePanel.title" />
+			</h3>
+		</div>
+
+		<div class="col-lg-12 mx-auto">
+			<div class="steppers">
+				<ul class="steppers-header">
+					<li class="active no-line"><span class="steppers-number"><span
+							class="sr-only">Step </span>1</span> <span class="steppers-status"><wicket:message
+								key="RichiestaAgevolazionePanel.step1"></wicket:message></span> <span
+						class="sr-only"><wicket:message
+								key="RichiestaAgevolazionePanel.step1"></wicket:message></span></li>
+					<li><span class="steppers-number"><span class="sr-only">Step
+						</span>2</span> <span class="steppers-status"><wicket:message
+								key="RichiestaAgevolazionePanel.step2"></wicket:message></span> <span
+						class="sr-only"><wicket:message
+								key="RichiestaAgevolazionePanel.step2"></wicket:message></span></li>
+					<li><span class="steppers-number"><span class="sr-only">Step
+						</span>3</span> <span class="steppers-status"><wicket:message
+								key="RichiestaAgevolazionePanel.step3"></wicket:message></span> <span
+						class="sr-only"><wicket:message
+								key="RichiestaAgevolazionePanel.step3"></wicket:message></span></li>
+					<li class="steppers-index" aria-hidden="true"><span
+						class="active">1</span> <span>2</span> <span><wicket:message
+								key="RichiestaAgevolazionePanel.step3"></wicket:message></span></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="col-sm-12 mt-2 mb-2" wicket:id="feedback"></div>
+
+		<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12"
+			wicket:id="containerControlloNuclei">
+			<div class="alert alert-warning" role="alert">
+				<wicket:message
+					key="RichiestaAgevolazionePanel.containerControlloNuclei" />
+
+				<div>
+					<p>
+						<wicket:message
+							key="RichiestaAgevolazionePanel.listaComponentiIsee" />
+					</p>
+
+					<div class="col-lg-6 mb-4" wicket:id="listaNucleoIsee">
+						<ul>
+							<li wicket:id="nominativoIsee"></li>
+						</ul>
+					</div>
+				</div>
+
+				<div>
+					<p>
+						<wicket:message
+							key="RichiestaAgevolazionePanel.listaComponentiAnagrafe" />
+					</p>
+
+					<div class="col-lg-6 mb-4" wicket:id="listaNucleoAnagrafe">
+						<ul>
+							<li wicket:id="nominativoAnagrafe"></li>
+						</ul>
+					</div>
+				</div>
+
+				<p>
+					<wicket:message key="RichiestaAgevolazionePanel.accettazioneNuclei" />
+				</p>
+
+				<div class="form-row mb-12">
+					<div class="select-wrapper text-start">
+						<select wicket:id="accettazioneNucleiSiNo"></select>
+					</div>
+				</div>
+
+				<br>
+
+				<wicket:message key="RichiestaAgevolazionePanel.sitoInps" />
+
+
+			</div>
+		</div>
+
+		<div class="form-row col-lg-12 mx-auto" wicket:id="containerAnno">
+
+			<div class="form-group flex-auto mb-1">
+				<p class="text-start fw-bold my-2">
+					<wicket:message key="RichiestaAgevolazionePanel.richiestaAnno" />
+				</p>
+			</div>
+
+			<div class="col-md-2">
+				<div class="select-wrapper">
+					<label class="sr-only" for="annoScolastico"> <wicket:message
+							key="RichiestaAgevolazionePanel.richiestaAnno" />
+					</label> <select id="annoScolastico" wicket:id="comboAnno">
+					</select>
+				</div>
+				<br>
+			</div>
+		</div>
+
+		<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+			<div class="alert alert-info" role="alert"
+				wicket:id="messaggioInfoIseeOrdinario"></div>
+		</div>
+
+		<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+			<div class="alert alert-info" role="alert"
+				wicket:id="infoIseeConOmissioni">
+				<wicket:message
+					key="RichiestaAgevolazionePanel.messaggioOmissioniONonConformita" />
+			</div>
+		</div>
+
+
+		<div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+			<div class="alert alert-info" role="alert"
+				wicket:id="infoIseeConIseeNonCalcolabile">
+				<wicket:message
+					key="RichiestaAgevolazionePanel.messaggioIseeNonCalcolabile" />
+			</div>
+		</div>
+
+		<form class="needs-validation was-validated mb-5 col-11 mx-auto"
+			novalidate="" wicket:id="form">
+
+			<div class="form-group flex-auto mb-1">
+				<p class="text-start fw-bold my-2">
+					<wicket:message key="RichiestaAgevolazionePanel.per" />
+				</p>
+			</div>
+
+			<div class="form-group col-md-12 mb-4">
+				<div class="divMensaTable">
+					<div class="divHead">
+						<div class="divMensaTh">&nbsp;</div>
+						<div class="divMensaTh">
+							<wicket:message key="RichiestaAgevolazionePanel.nomeCognome" />
+						</div>
+						<div class="divMensaTh">
+							<wicket:message key="RichiestaAgevolazionePanel.dataNascita" />
+						</div>
+						<div class="divMensaTh">
+							<wicket:message key="RichiestaAgevolazionePanel.annoScolastico" />
+						</div>
+						<div class="divMensaTh">
+							<wicket:message key="RichiestaAgevolazionePanel.statoRichiesta" />
+						</div>
+						<div class="divMensaTh">
+							<wicket:message key="RichiestaAgevolazionePanel.valoreIseeMinore" />
+						</div>
+					</div>
+
+					<div class="divBody" wicket:id="lista">
+						<div class="divMensaTd">
+							<div class="form-check">
+								<input id="checkbox1" wicket:id="check" type="checkbox">
+								<label wicket:id="lblCheck" for="checkbox1">Selezionato</label>
+							</div>
+						</div>
+						<div class="divMensaTd" wicket:id="nomeCognome"></div>
+						<div class="divMensaTd" wicket:id="dataNascita"></div>
+						<div class="divMensaTd" wicket:id="annoScolastico">&nbsp;</div>
+						<div class="divMensaTd" wicket:id="statoRichiesta">&nbsp;</div>
+						<div class="divMensaTd" wicket:id="valoreIseeMinore">&nbsp;</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="form-row mt-5 mb-0">
+				<div class="form-group col-md-12 mb-3 text-center">
+					<button type="submit" class="btn btn-primary">
+						<wicket:message key="RichiestaAgevolazionePanel.prosegui" />
+					</button>
+					<button type="button" class="btn btn-secondary" wicket:id="annulla">
+						<wicket:message key="RichiestaAgevolazionePanel.annulla" />
+					</button>
+				</div>
+			</div>
+
+		</form>
+
+		<div class="col-lg-12 mx-auto">
+			<p class="card-text text-start fw-bold">
+				<span wicket:id="messaggio"></span> <a wicket:id="linkInps"
+					target="_blank"> <wicket:message
+						key="RichiestaAgevolazionePanel.vaiAlSitoInps" />
+				</a>
+			</p>
+		</div>
+
+	</wicket:panel>
+
+</body>
+</html>

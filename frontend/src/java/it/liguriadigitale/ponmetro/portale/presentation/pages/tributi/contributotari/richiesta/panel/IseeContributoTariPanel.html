@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.3-strict.dtd">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<wicket:panel>
+
+		<div class="form-row mb-2 col-md-12 mx-auto">
+
+			<div class="form-row col-md-12" wicket:id="titolo"></div>
+
+			<div class="form-row col-12" wicket:id="containerDatiIsee">
+				<div class="row">
+					<div class="col-4">
+						<div wicket:id="nominativoIsee"></div>
+					</div>
+
+					<wicket:enclosure child="importoIsee">
+						<div class="col-4">
+							<div wicket:id="importoIsee"></div>
+						</div>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="protocolloDSU">
+						<div class="col-4">
+							<div wicket:id="protocolloDSU"></div>
+						</div>
+					</wicket:enclosure>
+
+					<wicket:enclosure child="iseeAssente">
+						<div class="col-8 alert alert-info" role="alert"
+							wicket:id="iseeAssente">
+							<wicket:message key="IseeContributoTariPanel.iseeAssente" />
+						</div>
+					</wicket:enclosure>
+
+				</div>
+
+			</div>
+
+			<wicket:enclosure child="importoIseeTotale">
+				<div class="form-row col-4">
+					<div wicket:id="importoIseeTotale"></div>
+				</div>
+			</wicket:enclosure>
+
+			<!--  
+			<wicket:enclosure child="containerIseeNonPresente">
+				<div class="alert alert-warning" role="alert"
+					wicket:id="containerIseeNonPresente">
+					<wicket:message key="IseeContributoTariPanel.iseeNonPresente" />
+				</div>
+			</wicket:enclosure>
+			-->
+
+			<wicket:enclosure child="containerIseePresente">
+				<div class="alert alert-warning" role="alert"
+					wicket:id="containerIseePresente">
+					<wicket:message key="IseeContributoTariPanel.issePresente" />
+				</div>
+			</wicket:enclosure>
+
+			<div class="alert alert-warning" role="alert"
+				wicket:id="containerNucleoIseeDiversoNucleoAnagrafico">
+				<wicket:message
+					key="IseeContributoTariPanel.containerNucleoIseeDiversoNucleoAnagrafico" />
+
+				<div>
+					<p>
+						<wicket:message key="IseeContributoTariPanel.listaComponentiIsee" />
+					</p>
+
+					<div class="col-lg-6 mb-4" wicket:id="listaNucleoIsee">
+						<ul>
+							<li wicket:id="nominativoIsee"></li>
+						</ul>
+					</div>
+				</div>
+
+				<div>
+					<p>
+						<wicket:message
+							key="IseeContributoTariPanel.listaComponentiAnagrafe" />
+					</p>
+
+					<div class="col-lg-6 mb-4" wicket:id="listaNucleoAnagrafe">
+						<ul>
+							<li wicket:id="nominativoAnagrafe"></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="alert alert-warning" role="alert"
+				wicket:id="domandaNonPresentabile">
+				<!-- <wicket:message key="IseeContributoTariPanel.domandaNonPresentabile" /> -->
+				<span wicket:id="messaggioDomandaNonPresentabile"></span>
+			</div>
+
+		</div>
+	</wicket:panel>
+
+</body>
+
+</html>
