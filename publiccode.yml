@@ -1,11 +1,11 @@
 publiccodeYmlVersion: "0.4"
 name: Fascicolo del Cittadino
 applicationSuite: Fascicolo del Cittadino
-url: https://git.liguriadigitale.it/davi/Fascicolo_del_Cittadino_OpenSource/
+url: https://github.com/ComuneDiGenova/FascicoloDelCittadino
 landingURL: https://fascicolo.comune.genova.it/portale/web/homepage/home
-softwareVersion: 1.26.0
+softwareVersion: 1.25.3
 releaseDate: 2024-10-31
-logo: https://git.liguriadigitale.it/davi/Fascicolo_del_Cittadino_OpenSource/raw/branch/main/logo-fdc.png
+logo: https://raw.githubusercontent.com/ComuneDiGenova/FascicoloDelCittadino/refs/heads/main/logo-fdc.png
 platforms:
   - web
 categories:
