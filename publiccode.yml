@@ -5,7 +5,6 @@ url: https://github.com/ComuneDiGenova/FascicoloDelCittadino
 landingURL: https://fascicolo.comune.genova.it/portale/web/homepage/home
 softwareVersion: 1.25.3
 releaseDate: 2024-10-31
-logo: https://raw.githubusercontent.com/ComuneDiGenova/FascicoloDelCittadino/refs/heads/main/logo-fdc.png
 platforms:
   - web
 categories:
