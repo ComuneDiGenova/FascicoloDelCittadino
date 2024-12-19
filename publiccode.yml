@@ -67,4 +67,6 @@ it:
     pagopa: true
     io: true
   riuso:
-    codiceIPA: cmge
+    codiceIPA: c_d969
+  usedBy:
+    - Comune di Genova
