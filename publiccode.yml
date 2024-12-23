@@ -1,27 +1,26 @@
 publiccodeYmlVersion: "0.4"
 name: Fascicolo del Cittadino
-applicationSuite: Fascicolo del Cittadino
 url: https://github.com/ComuneDiGenova/FascicoloDelCittadino
 landingURL: https://fascicolo.comune.genova.it/portale/web/homepage/home
 softwareVersion: 1.25.3
-releaseDate: 2024-10-31
+releaseDate: 2024-11-27
 platforms:
   - web
 categories:
   - customer-service-and-support
   - communications
-  - data-analytics
   - data-visualization
   - digital-citizenship
   - e-signature
   - mobile-payment
   - online-booking
-  - payment-gateway
   - taxes-management
+usedBy:
+  - Comune di Genova
 developmentStatus: stable
 softwareType: standalone/web
 description:
-  it-IT:
+  it:
     localisedName: Fascicolo del Cittadino
     shortDescription: Applicazione per la gestione dei servizi e delle pratiche
       amministrative comunali nella provincia di Genova
@@ -48,25 +47,13 @@ description:
 legal:
   license: EUPL-1.2
 maintenance:
-  type: internal
+  type: contract
+  contacts:
+    - name: Comune di Genova
+      email: sales-el@liguriadigitale.it
+      phone: ""
+      affiliation: ""
 localisation:
-  localisationReady: true
+  localisationReady: false
   availableLanguages:
     - it
-    - it-IT
-    - it-CH
-    - it-VA
-    - it-SM
-it:
-  countryExtensionVersion: "1.0"
-  conforme:
-    gdpr: true
-  piattaforme:
-    spid: true
-    cie: true
-    pagopa: true
-    io: true
-  riuso:
-    codiceIPA: c_d969
-  usedBy:
-    - Comune di Genova
