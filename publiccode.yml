@@ -44,15 +44,17 @@ description:
       - "Domande per servizi comunali: Possibilità di inviare richieste per
         ottenere servizi o benefici (ad esempio, asili nido, mense scolastiche,
         bonus sociali)."
+    screenshots:
+      - screenshot.png
 legal:
   license: EUPL-1.2
 maintenance:
   type: contract
   contacts:
-    - name: Comune di Genova
+    - name: Sales
       email: sales-el@liguriadigitale.it
       phone: ""
-      affiliation: ""
+      affiliation: Liguria Digitale
 localisation:
   localisationReady: false
   availableLanguages:
