@@ -81,7 +81,7 @@ Dopo aver importato il progetto in Eclipse, puoi eseguire l'applicazione diretta
 ## Contatti
 
 - **Amministrazione proprietaria** : Comune di Genova
-- **Contatto e-mail amministrazione propietaria** : <sales-el@liguriadigitale.it>
+- **Contatto e-mail amministrazione propietaria** : <transizionedigitale@comune.genova.it>
 - **Contatto e-mail referente di progetto (per segnalazioni e richiesta informazioni)** : <sales-el@liguriadigitale.it>
   
 ---
