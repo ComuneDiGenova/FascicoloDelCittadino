@@ -4,6 +4,7 @@ url: https://github.com/ComuneDiGenova/FascicoloDelCittadino
 landingURL: https://fascicolo.comune.genova.it/portale/web/homepage/home
 softwareVersion: 1.25.3
 releaseDate: 2024-11-27
+logo: ""
 platforms:
   - web
 categories:
@@ -46,6 +47,20 @@ description:
         bonus sociali)."
     screenshots:
       - screenshot.png
+it:
+  conforme:
+    gdpr: true
+    lineeGuidaDesign: true
+    misureMinimeSicurezza: true
+    modelloInteroperabilita: true
+  countryExtensionVersion: '0.2'
+  piattaforme:
+    anpr: false
+    cie: true
+    pagopa: true
+    spid: true
+  riuso:
+    codiceIPA: c_d969
 legal:
   license: EUPL-1.2
 maintenance:
@@ -58,4 +73,4 @@ maintenance:
 localisation:
   localisationReady: false
   availableLanguages:
-    - it
+    - it-IT
