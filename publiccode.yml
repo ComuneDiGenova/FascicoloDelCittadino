@@ -23,15 +23,17 @@ softwareType: standalone/web
 description:
   it:
     localisedName: Fascicolo del Cittadino
-    shortDescription: Applicazione per la gestione dei servizi e delle pratiche
-      amministrative comunali nella provincia di Genova
-    longDescription: Il Fascicolo del Cittadino del Comune di Genova è
-      un'applicazione che consente ai residenti e non solo di interagire
-      facilmente con i servizi comunali attraverso una piattaforma digitale.
-      Permette di consultare dati anagrafici, monitorare pratiche
-      amministrative, accedere a documenti ufficiali e molto altro,
-      centralizzando tutte le informazioni e le interazioni con la pubblica
-      amministrazione.
+    shortDescription: >
+        Applicazione per la gestione dei servizi e delle pratiche
+        amministrative comunali nella provincia di Genova
+    longDescription: >
+        Il Fascicolo del Cittadino del Comune di Genova è
+        un'applicazione che consente ai residenti e non solo di interagire
+        facilmente con i servizi comunali attraverso una piattaforma digitale.
+        Permette di consultare dati anagrafici, monitorare pratiche
+        amministrative, accedere a documenti ufficiali e molto altro,
+        centralizzando tutte le informazioni e le interazioni con la pubblica
+        amministrazione.
     features:
       - "Consultazione dati anagrafici: Visualizzazione delle informazioni
         relative alla propria residenza e status anagrafico."
@@ -48,12 +50,12 @@ description:
     screenshots:
       - screenshot.png
 it:
+  countryExtensionVersion: '1.0'
   conforme:
-    gdpr: true
     lineeGuidaDesign: true
     misureMinimeSicurezza: true
     modelloInteroperabilita: true
-  countryExtensionVersion: '0.2'
+    gdpr: true    
   piattaforme:
     anpr: false
     cie: true
@@ -63,6 +65,8 @@ it:
     codiceIPA: c_d969
 legal:
   license: EUPL-1.2
+  mainCopyrightOwner: Comune di Genova
+  repoOwner: Comune di Genova
 maintenance:
   type: contract
   contacts:
