@@ -23,17 +23,15 @@ softwareType: standalone/web
 description:
   it:
     localisedName: Fascicolo del Cittadino
-    shortDescription: >
-        Applicazione per la gestione dei servizi e delle pratiche
-        amministrative comunali nella provincia di Genova
-    longDescription: >
-        Il Fascicolo del Cittadino del Comune di Genova è
-        un'applicazione che consente ai residenti e non solo di interagire
-        facilmente con i servizi comunali attraverso una piattaforma digitale.
-        Permette di consultare dati anagrafici, monitorare pratiche
-        amministrative, accedere a documenti ufficiali e molto altro,
-        centralizzando tutte le informazioni e le interazioni con la pubblica
-        amministrazione.
+    shortDescription: Applicazione per la gestione dei servizi e delle pratiche
+      amministrative comunali nella provincia di Genova
+    longDescription: Il Fascicolo del Cittadino del Comune di Genova è
+      un'applicazione che consente ai residenti e non solo di interagire
+      facilmente con i servizi comunali attraverso una piattaforma digitale.
+      Permette di consultare dati anagrafici, monitorare pratiche
+      amministrative, accedere a documenti ufficiali e molto altro,
+      centralizzando tutte le informazioni e le interazioni con la pubblica
+      amministrazione.
     features:
       - "Consultazione dati anagrafici: Visualizzazione delle informazioni
         relative alla propria residenza e status anagrafico."
@@ -50,28 +48,33 @@ description:
     screenshots:
       - screenshot.png
 it:
-  countryExtensionVersion: '1.0'
   conforme:
+    gdpr: true
     lineeGuidaDesign: true
     misureMinimeSicurezza: true
     modelloInteroperabilita: true
-    gdpr: true    
+  countryExtensionVersion: '1.0'
   piattaforme:
     anpr: false
     cie: true
     pagopa: true
     spid: true
+    io: true
   riuso:
     codiceIPA: c_d969
 legal:
   license: EUPL-1.2
-  mainCopyrightOwner: Comune di Genova
-  repoOwner: Comune di Genova
 maintenance:
-  type: contract
+  type: "contract"
+  contractors:
+    - name: "Liguria Digitale"
+      email: "sales-el@liguriadigitale.it"
+      website: "https://www.liguriadigitale.it"
+      until: "2026-12-31"
+      
   contacts:
-    - name: Sales
-      email: sales-el@liguriadigitale.it
+    - name: "Sales"
+      email: "sales-el@liguriadigitale.it"
       phone: ""
       affiliation: Liguria Digitale
 localisation:
